@@ -52,4 +52,7 @@ extern u16 D_800A0940;
 extern u16 D_800A0942;
 extern s16 D_800A0944;
 
+extern s32* D_802DA480; // map flags
+extern s32* D_802DA484; // map vars
+
 #endif

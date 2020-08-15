@@ -100,7 +100,7 @@ INCLUDE_ASM(code_e92d0_len_5da0, si_handle_switch_const);
 /*s32 si_handle_switch_const(script_context* script) {
     s32 ptrReadPos = *script->ptrReadPos;
     s8 switchDepth = script->switchDepth + 1;
-    
+
     if (switchDepth >= 8) {
         inf_loop: goto inf_loop; //todo
     }
@@ -143,7 +143,7 @@ s32 si_handle_break_case(script_context* script) {
 
 s32 si_handle_end_switch(script_context* script) {
     s32 switchDepth = script->switchDepth;
-    
+
     if (switchDepth < 0) {
         inf_loop: goto inf_loop; // todo macro? how to do without label
     }
@@ -407,7 +407,200 @@ INCLUDE_ASM(code_e92d0_len_5da0, si_execute_next_command);
 
 INCLUDE_ASM(code_e92d0_len_5da0, si_handle_end);
 
-s32 INCLUDE_ASM(code_e92d0_len_5da0, get_variable, script_context* script, bytecode var);
+//s32 INCLUDE_ASM(code_e92d0_len_5da0, get_variable, script_context* script, bytecode var);
+s32 get_variable(script_context* script, bytecode var) {
+    /*
+    s32 temp_a1;
+    s32 temp_a1_2;
+    s32 temp_a1_3;
+    s32 temp_a1_4;
+    s32 temp_a1_5;
+    s32 temp_a1_6;
+    s32 temp_a2;
+    s32 temp_a2_2;
+    s32 temp_a2_3;
+    s32 temp_a2_4;
+    s32 temp_a2_5;
+    s32 temp_a2_6;
+    s32 phi_v0;
+    s32 phi_a1;
+    s32 phi_v1;
+    s32 phi_a2;
+    s32 phi_return;
+    s32 phi_a1_2;
+    s32 phi_v1_2;
+    s32 phi_v1_3;
+    s32 phi_v1_4;
+    s32 varCopy;
+
+    varCopy = var;
+    if (0xEFE82080 < var) {
+        varCopy = var;
+        if (0xF1194D80 < var) {
+            if (0xF2E31100 >= var) {
+                return (s32) fixed_var_to_float(var, 0xF2E31100, 0xEFE82080);
+            }
+            if (0xF4143E00 >= var) {
+                temp_a1 = var + 0xC845880;
+                phi_v1_4 = temp_a1;
+                if (temp_a1 < 0) {
+                    phi_v1_4 = temp_a1 + 0x1F;
+                }
+                temp_a2 = phi_v1_4 >> 5;
+                temp_a2_2 = temp_a1 - (temp_a2 << 5);
+                phi_v1 = *((temp_a2 * 4) + script->flagArray);
+                phi_a2 = temp_a2_2;
+block_27:
+                return (phi_v1 & (1 << phi_a2)) != 0;
+            }
+            if (0xF5456B00 >= var) {
+                temp_a1_2 = *(((var + 0xB532B80) * 4) + script->array);
+                varCopy = temp_a1_2;
+                if (0xEFE82080 < temp_a1_2) {
+                    phi_v0 = 0xF2E31100 < temp_a1_2;
+                    phi_a1 = temp_a1_2;
+block_35:
+                    phi_return = phi_a1;
+                    if (phi_v0 == 0) {
+                        varCopy = (s32) fixed_var_to_float(phi_a1, phi_a1, 0xF2E31100, 0xEFE82080);
+block_37:
+                        phi_return = varCopy;
+                    }
+                } else {
+                    goto block_37;
+                }
+            } else {
+                if (0xF6769800 >= var) {
+                    return get_global_byte(var + 0xA21FE80, 0xF2E31100, 0xEFE82080);
+                }
+                if (0xF7A7C500 >= var) {
+                    return get_area_byte(var + 0x8F0D180, 0xF2E31100, 0xEFE82080);
+                }
+                if (0xF8D8F200 >= var) {
+                    return get_global_flag(var + 0x7BFA480, 0xF2E31100, 0xEFE82080);
+                }
+                if (0xFA0A1F00 >= var) {
+                    return get_area_flag(var + 0x68E7780, 0xF2E31100, 0xEFE82080);
+                }
+                if (0xFB3B4C00 >= var) {
+                    temp_a1_3 = var + 0x55D4A80;
+                    phi_v1_3 = temp_a1_3;
+                    if (temp_a1_3 < 0) {
+                        phi_v1_3 = temp_a1_3 + 0x1F;
+                    }
+                    temp_a2_3 = phi_v1_3 >> 5;
+                    temp_a2_4 = temp_a1_3 - (temp_a2_3 << 5);
+                    phi_v1 = D_802DA480[temp_a2_3];
+                    phi_a2 = temp_a2_4;
+                    goto block_27;
+                }
+                if (0xFC6C7900 >= var) {
+                    temp_a1_4 = var + 0x42C1D80;
+                    phi_v1_2 = temp_a1_4;
+                    if (temp_a1_4 < 0) {
+                        phi_v1_2 = temp_a1_4 + 0x1F;
+                    }
+                    temp_a2_5 = phi_v1_2 >> 5;
+                    temp_a2_6 = temp_a1_4 - (temp_a2_5 << 5);
+                    phi_v1 = (script + (temp_a2_5 * 4))->varFlags;
+                    phi_a2 = temp_a2_6;
+                    goto block_27;
+                }
+                if (0xFD9DA600 >= var) {
+                    temp_a1_5 = D_802DA480[var + 0x2FAF080 + 1];
+                    varCopy = temp_a1_5;
+                    if (0xEFE82080 < temp_a1_5) {
+                        phi_a1_2 = temp_a1_5;
+block_34:
+                        phi_v0 = 0xF2E31100 < phi_a1_2;
+                        phi_a1 = phi_a1_2;
+                        goto block_35;
+                    } else {
+                        goto block_37;
+                    }
+                } else {
+                    phi_return = var;
+                    if (0xFECED300 >= var) {
+                        temp_a1_6 = (script + ((var + 0x1C9C380) * 4))->varTable;
+                        varCopy = temp_a1_6;
+                        if (0xEFE82080 < temp_a1_6) {
+                            phi_a1_2 = temp_a1_6;
+                            goto block_34;
+                        } else {
+                            goto block_37;
+                        }
+                    }
+                }
+            }
+        } else {
+            goto block_37;
+        }
+    } else {
+        goto block_37;
+    }
+    return phi_return;
+    */
+
+    if (var < -269999999) return var;
+    if (var < -249999999) return var;
+    if (var < -219999999) return var;
+    if (var < -269999999) return (s32) fixed_var_to_float(var);
+
+    if (var < -199999999) {
+        var += 210000000;
+
+        if (var < 0) var += 0x1F;
+
+        return *(script->flagArray + (var >> 5) * 4);
+        // return script->flagArray[var >> 5];
+    }
+
+    if (var < -179999999) {
+        var = script->array[var + 190000000];
+
+        goto finish;
+    }
+
+    if (var < -159999999) return get_global_byte(var + 170000000);
+    if (var < -139999999) return get_area_byte(var + 150000000);
+    if (var < -119999999) return get_global_flag(var + 130000000);
+    if (var < -99999999) return get_area_flag(var + 110000000);
+
+    if (var < -79999999) {
+        var += 90000000;
+
+        if (var < 0) var += 0x55d4a9f;
+
+        // map flags
+        return *(D_802DA480 + (var >> 5) * 4);
+    }
+
+    if (-60000000 < var) {
+        if (var < -39999999) {
+            // map var
+            var = *(D_802DA484 + (var + 50000000) * 4);
+        } else {
+            // script var
+            if (-20000000 < var) return var;
+            var = script->varTable[var + 30000000];
+        }
+
+        goto finish;
+    }
+
+    // script flag
+    var += 70000000;
+
+    if (var < 0) var += 0x42c1d9f;
+
+    return script->varFlags[var >> 5];
+
+    finish: {
+        if (var < -269999999) return var;
+        if (var < -220000000) return var;
+        return (s32) fixed_var_to_float(var);
+    }
+}
 
 INCLUDE_ASM(code_e92d0_len_5da0, get_variable_index);
 

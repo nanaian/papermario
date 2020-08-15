@@ -247,8 +247,8 @@ typedef struct script_context {
     /* 0x110 */ u8 switchBlockState[8];
     /* 0x118 */ s32 switchBlockValue[8];
     /* 0x138 */ s32* buffer;
-    /* 0x13C */ UNK_PTR array;
-    /* 0x140 */ UNK_PTR flagArray;
+    /* 0x13C */ s32** array;
+    /* 0x140 */ s32** flagArray;
     /* 0x144 */ s32 uniqueID;
     /* 0x148 */ struct enemy* ownerActorID; /* controller*, battle ID, trigger* */
     /* 0x14C */ u32 ownerID; /* can be an npcID, a triggerID, a trigger ptr */

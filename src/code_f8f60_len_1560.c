@@ -119,7 +119,7 @@ s32 IsPlayerWithin(script_context* script, s32 initialCall) {
     s32* distanceRequired = &script->functionTemp[2];
 
     f32 distance;
-    bytecode outVar = SI_VAR_0;
+    bytecode outVar = SI_VAR_SCRIPT_VAR_0;
 
     if (initialCall) {
         *targetX = get_variable(script, *ptrReadPos++);
