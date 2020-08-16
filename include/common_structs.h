@@ -183,8 +183,8 @@ typedef struct script_context {
     /* 0x007 */ s8 switchDepth; /* how many nested switches we are in, max = 8 */
     /* 0x008 */ bytecode* ptrNextLine;
     /* 0x00C */ bytecode* ptrReadPos;
-    /* 0x010 */ u8 labelIndices[16];
-    /* 0x020 */ UNK_PTR labelPositions[16];
+    /* 0x010 */ s8 labelIndices[16];
+    /* 0x020 */ bytecode* labelPositions[16];
     /* 0x060 */ s32 deleted; /* set to zero in KillScript when malloc'd */
     /* 0x064 */ struct script_context* blockingParent; /* parent? */
     /* 0x068 */ struct script_context* childScript;

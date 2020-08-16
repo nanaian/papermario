@@ -23,7 +23,7 @@ s32 si_handle_label(script_context* script) {
 }
 
 s32 si_handle_goto(script_context* script) {
-    script->ptrNextLine = si_goto_label(script, get_variable(script, *script->ptrReadPos));
+    script->ptrNextLine = si_find_label(script, get_variable(script, *script->ptrReadPos));
     return 2;
 }
 
@@ -100,7 +100,7 @@ INCLUDE_ASM(code_e92d0_len_5da0, si_handle_switch_const);
 /*s32 si_handle_switch_const(script_context* script) {
     s32 ptrReadPos = *script->ptrReadPos;
     s8 switchDepth = script->switchDepth + 1;
-    
+
     if (switchDepth >= 8) {
         inf_loop: goto inf_loop; //todo
     }
@@ -143,7 +143,7 @@ s32 si_handle_break_case(script_context* script) {
 
 s32 si_handle_end_switch(script_context* script) {
     s32 switchDepth = script->switchDepth;
-    
+
     if (switchDepth < 0) {
         inf_loop: goto inf_loop; // todo macro? how to do without label
     }
@@ -419,7 +419,25 @@ f32 INCLUDE_ASM(code_e92d0_len_5da0, get_float_variable, script_context* script,
 
 f32 INCLUDE_ASM(code_e92d0_len_5da0, set_float_variable, script_context* script, s32 dest, f32 value);
 
-INCLUDE_ASM(code_e92d0_len_5da0, si_goto_label);
+bytecode* si_find_label(script_context* script, s32 label) {
+    bytecode* labelPos = script->ptrReadPos;
+    s32 i;
+
+    if (label < -270000000) return (bytecode*) label;
+
+    for (i = 0; i < ARRAY_COUNT(script->labelPositions); i++) {
+        if (script->labelIndices[i] == label) {
+            labelPos = script->labelPositions[i];
+            break;
+        }
+    }
+
+    if (i >= ARRAY_COUNT(script->labelPositions)) {
+        while (1) {}
+    }
+
+    return labelPos;
+}
 
 INCLUDE_ASM(code_e92d0_len_5da0, si_skip_if);
 
