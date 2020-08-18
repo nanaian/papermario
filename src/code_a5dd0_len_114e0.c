@@ -72,7 +72,65 @@ INCLUDE_ASM(code_a5dd0_len_114e0, create_entity);
 
 INCLUDE_ASM(code_a5dd0_len_114e0, create_shadow_from_data);
 
-INCLUDE_API_ASM(code_a5dd0_len_114e0, MakeEntity);
+INCLUDE_ASM(code_a5dd0_len_114e0, MakeEntity);
+/*
+ApiStatus MakeEntity(ScriptInstance* script, s32 isInitialCall) {
+    s32 temp_a1;
+    s32 temp_a1_2;
+    s32 temp_a1_3;
+    s32 temp_a1_4;
+    s32 temp_a1_5;
+    StaticEntityData* entity;
+    s32 angle;
+    s32 z;
+    s32 x;
+    s32 y;
+    s32 vararg = 0;
+    s32 index;
+    Bytecode* ptrReadPos = script->ptrReadPos;
+    UNK_TYPE* varargs;
+    UNK_TYPE* data;
+    s32* data2;
+
+    if (isInitialCall != TRUE) {
+        return ApiStatus_DONE2;
+    }
+
+    temp_a1 = *ptrReadPos++;
+
+    data = &D_8015C7D8;
+
+    entity = (StaticEntityData*)get_variable(script, temp_a1);
+    x = get_variable(script, *ptrReadPos++);
+    y = get_variable(script, *ptrReadPos++);
+    z = get_variable(script, *ptrReadPos++);
+    angle = get_variable(script, *ptrReadPos++); // s3, s5
+
+    *data-- = 0;
+    *data-- = 0;
+
+    *data = 0;
+    while (TRUE) {
+        *data = vararg = get_variable(script, *ptrReadPos++);
+
+        if (vararg == 0x80000000) {
+            break;
+        }
+
+        data++;
+    }
+
+    data2 = &D_8015C7D0;
+
+    index = create_entity(
+        entity, x, y, z, angle, data2[0], data2[1], data2[2], 0x80000000);
+
+    D_801512EC = index;
+    script->varTable[0] = index;
+
+    return ApiStatus_DONE2;
+}
+*/
 
 INCLUDE_API_ASM(code_a5dd0_len_114e0, AssignScript);
 

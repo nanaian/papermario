@@ -31,6 +31,7 @@ extern u32** gCurrentModelSpecialDlsPtr[32];
 extern Entity* gWorldEntityList[30];
 extern Entity* gBattleEntityList[30];
 extern Entity** gCurrentEntityListPtr[30];
+extern D_801512EC; // gLatestEntityIndex?
 
 extern UNK_TYPE* gWorldDynamicEntityList[16];
 extern UNK_TYPE* gBattleDynamicEntityList[16];
@@ -79,5 +80,11 @@ extern UNK_TYPE D_80108558;
 extern u16 D_800A0940;
 extern u16 D_800A0942;
 extern s16 D_800A0944;
+
+// Related to entities
+extern UNK_TYPE* D_8015C7D0;
+extern UNK_TYPE* D_8015C7D4;
+extern UNK_TYPE* D_8015C7D8;
+
 
 #endif

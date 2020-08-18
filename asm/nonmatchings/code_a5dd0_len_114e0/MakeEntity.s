@@ -104,20 +104,21 @@ glabel MakeEntity
 /* 0A85AC 80111EAC 8C8412EC */  lw    $a0, 0x12ec($a0)
 /* 0A85B0 80111EB0 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 0A85B4 80111EB4 0C04417A */  jal   get_entity_by_index
-/* 0A85B8 80111EB8 00000000 */   nop   
+/* 0A85B8 80111EB8 00000000 */   nop
 /* 0A85BC 80111EBC 8E03000C */  lw    $v1, 0xc($s0)
 /* 0A85C0 80111EC0 0200202D */  daddu $a0, $s0, $zero
 /* 0A85C4 80111EC4 8C650000 */  lw    $a1, ($v1)
 /* 0A85C8 80111EC8 0C0B1EAF */  jal   get_variable
 /* 0A85CC 80111ECC 0040802D */   daddu $s0, $v0, $zero
 /* 0A85D0 80111ED0 0040182D */  daddu $v1, $v0, $zero
-/* 0A85D4 80111ED4 54600004 */  bnel  $v1, $zero, .L80111EE8
-/* 0A85D8 80111ED8 24020001 */   addiu $v0, $zero, 1
+/* 0A85D4 80111ED4 54600004 */  bne  $v1, $zero, .L80111EE8
+nop
 /* 0A85DC 80111EDC 8E020000 */  lw    $v0, ($s0)
 /* 0A85E0 80111EE0 080447C5 */  j     .L80111F14
 /* 0A85E4 80111EE4 34420002 */   ori   $v0, $v0, 2
 
 .L80111EE8:
+addiu $v0, $zero, 1
 /* 0A85E8 80111EE8 14620004 */  bne   $v1, $v0, .L80111EFC
 /* 0A85EC 80111EEC 24020002 */   addiu $v0, $zero, 2
 /* 0A85F0 80111EF0 8E020000 */  lw    $v0, ($s0)
@@ -148,7 +149,7 @@ glabel MakeEntity
 /* 0A863C 80111F3C 8C8412EC */  lw    $a0, 0x12ec($a0)
 /* 0A8640 80111F40 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 0A8644 80111F44 0C04417A */  jal   get_entity_by_index
-/* 0A8648 80111F48 00000000 */   nop   
+/* 0A8648 80111F48 00000000 */   nop
 /* 0A864C 80111F4C 8E03000C */  lw    $v1, 0xc($s0)
 /* 0A8650 80111F50 0200202D */  daddu $a0, $s0, $zero
 /* 0A8654 80111F54 8C650000 */  lw    $a1, ($v1)
