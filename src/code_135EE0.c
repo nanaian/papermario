@@ -1,6 +1,13 @@
 #include "common.h"
 
+#ifdef NON_MATCHING
+// Delay slot issue
+void pause_set_cursor_opacity(s32 opacity) {
+    gPauseCursorOpacity = opacity;
+}
+#else
 INCLUDE_ASM(s32, "code_135EE0", pause_set_cursor_opacity);
+#endif
 
 INCLUDE_ASM(s32, "code_135EE0", func_80242BAC);
 

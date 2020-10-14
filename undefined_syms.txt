@@ -152,6 +152,8 @@ gCurrentSaveFile = 0x800DACC0;
 gMapFlags = 0x802DA480;
 gMapVars = 0x802DA484;
 
+gPauseCursorOpacity = 0x8024EFB0;
+
 func_802A91F8 = 0x802A91F8;
 func_802A9208 = 0x802A9208;
 func_802A9228 = 0x802A9228;

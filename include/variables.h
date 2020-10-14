@@ -132,6 +132,8 @@ extern u32 gBattleMapFlags[MAX_MAPFLAGS];
 
 extern s32 D_8009A5D8;
 
+extern s32 gPauseCursorOpacity;
+
 // Scripts
 extern Bytecode* SCRIPT_NpcDefeat;
 
