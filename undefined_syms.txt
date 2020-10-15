@@ -1,5 +1,11 @@
 osTvType = 0x80000300;
 
+D_80073E00 = 0x80073E00;
+gCurrentFramebufferPtr = 0x80073E04;
+D_80073E08 = 0x80073E08;
+D_80073E0A = 0x80073E0A;
+gFramebufferList = 0x8009A680;
+
 gGameStatusPtr = 0x8007419C;
 gRandSeed = 0x80074410;
 gUIStatus = 0x8010EF58;
