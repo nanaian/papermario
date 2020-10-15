@@ -79,4 +79,7 @@ void gfxRetrace_Callback(s32 pendingGfx) {
 
 INCLUDE_ASM(void, "code_1370_len_7d0", func_80026164, void);
 
-INCLUDE_ASM(void, "code_1370_len_7d0", gfxPreNMI_Callback, void);
+void gfxPreNMI_Callback(void) {
+    D_80073E00 = 1;
+    nuContRmbForceStop();
+}
