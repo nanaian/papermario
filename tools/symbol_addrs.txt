@@ -1709,6 +1709,7 @@ test_below_player;0x800DDFD0
 test_down_ray_triangle;0x8005C49C
 test_item_player_collision;0x80133B0C
 test_player_entity_aabb;0x80110AAC
+get_half_perp_vector;0x800DF3FC
 test_player_lateral;0x800DF460
 test_ray_colliders;0x8005CCD0
 test_ray_entities;0x8005D448

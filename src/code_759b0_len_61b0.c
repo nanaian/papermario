@@ -44,7 +44,11 @@ INCLUDE_ASM(s32, "code_759b0_len_61b0", func_800DEE5C);
 
 INCLUDE_ASM(s32, "code_759b0_len_61b0", func_800DF15C);
 
-INCLUDE_ASM(s32, "code_759b0_len_61b0", func_800DF3FC);
+void get_half_perp_vector(f32* outX, f32* outZ, f32 distX, f32 distZ, f32 normX, f32 normZ) {
+    f32 dot = distX * normX + distZ * normZ;
+    *outX = (distX - dot * normX) * 0.5f;
+    *outZ = (distZ - dot * normZ) * 0.5f;
+}
 
 INCLUDE_ASM(s32, "code_759b0_len_61b0", test_player_lateral);
 
