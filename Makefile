@@ -269,6 +269,11 @@ $(BUILD_DIR)/$(TARGET).bin: $(BUILD_DIR)/$(TARGET).elf
 include/ld_addrs.h: $(BUILD_DIR)/$(LD_SCRIPT)
 	grep -E "[^\. ]+ =" $< -o | sed 's/^/extern void* /; s/ =/;/' > $@
 
+# Project64 symbols file
+$(BUILD_DIR)/PAPER\ MARIO.sym: $(LD_MAP)
+	grep -P "0x0000000080[0-9a-f]{6}                [a-zA-Z][a-zA-Z0-9_]*" $< -o | sed 's/                /,code,/; s/0x00000000//' > "$@"
+
+
 ### Make Settings ###
 
 .PHONY: clean tools test setup submodules split $(ROM) include/sprite
