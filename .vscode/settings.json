@@ -16,6 +16,7 @@
     "git.ignoreLimitWarning": true,
     "search.exclude": {
         "build": true,
+        "build/papermario.map": false,
         "docs/doxygen": true,
     },
     "python.autoComplete.extraPaths": [
