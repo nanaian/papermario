@@ -208,7 +208,7 @@ Script N(main) = SCRIPT({
     if (SI_SAVE_VAR(0) == 6) {
         MakeNpcs(0, N(npcGroupList_80241EF0));
     }
-    spawn 0x80240A30;
+    spawn N(script_EnterSingleDoor_80240A30);
     SetTexPanner(23, 0);
     spawn {
         SI_VAR(0) = 0;
@@ -277,9 +277,9 @@ NpcSettings N(npcSettings_80241068) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x1A,
@@ -503,7 +503,7 @@ Script N(script_802420AC) = SCRIPT({
 // Unable to use DSL: DSL does not support script opcode 0x4E
 Script N(script_802421E0) = {
     SI_CMD(ScriptOpcode_CALL, func_80240694_AF3334, SI_VAR(0)),
-    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_802420AC), 0x10, 0, 0x80244E78, 0, 1),
+    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_802420AC), 0x10, 0, D_80244E78_A1B098, 0, 1),
     SI_CMD(ScriptOpcode_CALL, func_8024056C_AF320C, SI_VAR(0)),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)

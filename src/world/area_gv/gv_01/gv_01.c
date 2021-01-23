@@ -390,7 +390,7 @@ Script N(script_80241690) = {
         SI_CMD(ScriptOpcode_SPAWN, N(script_80241690)),
         SI_CMD(ScriptOpcode_SLEEP_FRAMES, 18),
         SI_CMD(ScriptOpcode_SET, SI_VAR(0), 18),
-        SI_CMD(ScriptOpcode_SPAWN, 0x802416EC),
+        SI_CMD(ScriptOpcode_SPAWN, pad_0016EC),
     SI_CMD(ScriptOpcode_END_SPAWN_THREAD),
     SI_CMD(ScriptOpcode_SPAWN_THREAD),
         SI_CMD(ScriptOpcode_CALL, UseSettingsFrom, 0, 0, 10, 0),

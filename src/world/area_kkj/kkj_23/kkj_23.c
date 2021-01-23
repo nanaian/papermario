@@ -176,7 +176,7 @@ Script N(main) = SCRIPT({
     spawn N(script_80240A30);
     UseDoorSounds(2);
     bind N(script_ExitDoubleDoor_80240B74) to TriggerFlag_WALL_INTERACT 2;
-    bind 0x80240AD0 to TriggerFlag_WALL_INTERACT 7;
+    bind N(npcSettings_80240AD0) to TriggerFlag_WALL_INTERACT 7;
     spawn N(script_EnterDoubleDoor_80240C18);
 });
 
@@ -427,9 +427,9 @@ NpcSettings N(npcSettings_80241BA0) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x1A,

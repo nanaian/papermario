@@ -254,7 +254,7 @@ Script N(script_80240AB4) = SCRIPT({
         bind N(script_802408E8) to TriggerFlag_WALL_INTERACT 7;
         bind N(script_ExitWalk_802409CC) to 0x80000 26;
     }
-    bind 0x802407F0 to TriggerFlag_WALL_INTERACT 2;
+    bind func_802407F0_A0C4E0 to TriggerFlag_WALL_INTERACT 2;
 });
 
 Script N(script_EnterWalk_80240B54) = SCRIPT({
@@ -1075,9 +1075,9 @@ NpcSettings N(npcSettings_802439FC) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x1A,
@@ -1152,9 +1152,9 @@ NpcSettings N(npcSettings_80243E8C) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x1A,
@@ -1229,9 +1229,9 @@ NpcSettings N(npcSettings_8024431C) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x1A,

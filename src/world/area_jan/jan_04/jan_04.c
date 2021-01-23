@@ -216,7 +216,7 @@ Script N(script_ExitWalk_8024134C) = SCRIPT({
 });
 
 Script N(script_802413E0) = SCRIPT({
-    bind 0x80241384 to 0x80000 0;
+    bind N(npcSettings_80241384) to 0x80000 0;
 });
 
 Script N(script_EnterWalk_8024140C) = SCRIPT({
@@ -354,9 +354,9 @@ NpcSettings N(npcSettings_80241A40) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xE,

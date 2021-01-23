@@ -1913,7 +1913,7 @@ Script N(script_802485C0) = SCRIPT({
 
 // Unable to use DSL: DSL does not support script opcode 0x3C
 Script N(script_80248634) = {
-    SI_CMD(ScriptOpcode_USE_ARRAY, 0x8024E548),
+    SI_CMD(ScriptOpcode_USE_ARRAY, N(script_NpcAI_8024E548)),
     SI_CMD(ScriptOpcode_SET, SI_SAVE_FLAG(1769), 1),
     SI_CMD(ScriptOpcode_CALL, DisablePlayerPhysics, 1),
     SI_CMD(ScriptOpcode_CALL, SetPlayerFlagBits, 0x400000, 1),

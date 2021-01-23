@@ -1287,9 +1287,9 @@ NpcSettings N(npcSettings_802465EC) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xE,
@@ -1922,7 +1922,7 @@ Script N(script_80248AB4) = SCRIPT({
 
 // Unable to use DSL: DSL does not support script opcode 0x3C
 Script N(script_80248B28) = {
-    SI_CMD(ScriptOpcode_USE_ARRAY, 0x802513D8),
+    SI_CMD(ScriptOpcode_USE_ARRAY, N(npcGroupList_802513D8)),
     SI_CMD(ScriptOpcode_SET, SI_SAVE_FLAG(1769), 1),
     SI_CMD(ScriptOpcode_CALL, DisablePlayerPhysics, 1),
     SI_CMD(ScriptOpcode_CALL, SetPlayerFlagBits, 0x400000, 1),

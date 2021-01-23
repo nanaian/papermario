@@ -350,9 +350,9 @@ NpcSettings N(npcSettings_802420C0) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x6,
@@ -458,7 +458,7 @@ Script N(script_802421A4) = SCRIPT({
 // Unable to use DSL: DSL does not support script opcode 0x4E
 Script N(script_802422E8) = {
     SI_CMD(ScriptOpcode_CALL, func_802411D8_D6FB88, SI_VAR(0)),
-    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_802421A4), 0x10, 0, 0x802479F0, 0, 1),
+    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_802421A4), 0x10, 0, N(script_OpenDoor_802479F0), 0, 1),
     SI_CMD(ScriptOpcode_CALL, func_8024114C_D6FAFC, SI_VAR(0)),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)

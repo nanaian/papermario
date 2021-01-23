@@ -1115,14 +1115,14 @@ Script N(script_80244C78) = SCRIPT({
 Script N(script_80245010) = SCRIPT({
     spawn {
         func_80241BC0_C8F770(0, 15);
-        PlayModelAnimation(0, 0x80200000);
+        PlayModelAnimation(0, gBackgroundImage);
         SetAnimModelPosition(0, 220, 20, 0xFFFFFFD8);
         func_80241BC0_C8F770(3, 36);
         PlayModelAnimation(3, 0x8020A000);
         SetAnimModelPosition(3, 220, 20, 0xFFFFFFD8);
         sleep 59;
         func_80241BC0_C8F770(0, 0);
-        PlayModelAnimation(0, 0x80200000);
+        PlayModelAnimation(0, gBackgroundImage);
         func_80241BC0_C8F770(3, 34);
         PlayModelAnimation(3, 0x8020A000);
     }
@@ -1146,7 +1146,7 @@ Script N(script_80245010) = SCRIPT({
 
 Script N(script_8024522C) = SCRIPT({
     func_80241BC0_C8F770(0, 0);
-    PlayModelAnimation(0, 0x80200000);
+    PlayModelAnimation(0, gBackgroundImage);
     func_80241BC0_C8F770(1, 31);
     PlayModelAnimation(1, 0x80204000);
     func_80241BC0_C8F770(3, 34);
@@ -1158,12 +1158,12 @@ Script N(script_8024522C) = SCRIPT({
 
 Script N(script_802452E8) = SCRIPT({
     func_80241BC0_C8F770(0, 17);
-    PlayModelAnimation(0, 0x80200000);
+    PlayModelAnimation(0, gBackgroundImage);
 });
 
 Script N(script_80245320) = SCRIPT({
     func_80241BC0_C8F770(0, 16);
-    PlayModelAnimation(0, 0x80200000);
+    PlayModelAnimation(0, gBackgroundImage);
     func_80241BC0_C8F770(1, 33);
     PlayModelAnimation(1, 0x80204000);
     func_80241BC0_C8F770(2, 33);
@@ -1184,7 +1184,7 @@ Script N(script_Idle_802453D0) = SCRIPT({
     SetMusicTrack(0, 87, 0, 8);
     LoadModelAnimation(0, N(unk_802431F8));
     func_80241BC0_C8F770(0, 0);
-    PlayModelAnimation(0, 0x80200000);
+    PlayModelAnimation(0, gBackgroundImage);
     SetAnimModelPosition(0, 220, 0xFFFFFF9C, 0xFFFFFFD8);
     0x802CD418(0, 128, 1);
     LoadModelAnimation(1, N(unk_80243388));

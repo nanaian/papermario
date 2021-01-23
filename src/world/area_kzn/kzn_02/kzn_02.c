@@ -807,9 +807,9 @@ NpcSettings N(npcSettings_802449B8) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80244948),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x11,
@@ -881,7 +881,7 @@ Script N(script_80244A7C) = SCRIPT({
 // Unable to use DSL: DSL does not support script opcode 0x4E
 Script N(script_80244BC0) = {
     SI_CMD(ScriptOpcode_CALL, func_8024239C_C5CADC, SI_VAR(0)),
-    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80244A7C), 0x10, 0, 0x802465D0, 0, 1),
+    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80244A7C), 0x10, 0, D_802465D0_915C80, 0, 1),
     SI_CMD(ScriptOpcode_CALL, func_80242310_C5CA50, SI_VAR(0)),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)
@@ -950,7 +950,7 @@ Script N(script_80244FB4) = {
     SI_CMD(ScriptOpcode_SET, SI_VAR(0), SI_VAR(11)),
     SI_CMD(ScriptOpcode_SET, SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_8024239C_C5CADC, SI_VAR(0)),
-    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80244C90), 0x10, 0, 0x802465D0, 0, 1),
+    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80244C90), 0x10, 0, D_802465D0_915C80, 0, 1),
     SI_CMD(ScriptOpcode_CALL, func_80242310_C5CA50, SI_VAR(0)),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)

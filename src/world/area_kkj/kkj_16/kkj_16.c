@@ -148,7 +148,7 @@ Script N(main) = SCRIPT({
         SetMusicTrack(0, 117, 0, 8);
     }
     UseDoorSounds(0);
-    bind 0x80241120 to TriggerFlag_WALL_INTERACT 2;
+    bind N(header) to TriggerFlag_WALL_INTERACT 2;
     spawn N(script_EnterSingleDoor_802411C4);
     sleep 1;
 });

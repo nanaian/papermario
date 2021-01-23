@@ -1469,7 +1469,7 @@ Script N(script_802453F4) = SCRIPT({
     }
     sleep 30;
     FadeOutMusic(0, 1000);
-    await 0x80240910;
+    await N(script_ExitDoubleDoor_80240910);
     PanToTarget(0, 0, 0);
     EnablePartnerAI();
     DisablePlayerPhysics(0);
@@ -1503,9 +1503,9 @@ NpcSettings N(npcSettings_802462BC) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x1A,
@@ -1519,9 +1519,9 @@ NpcSettings N(npcSettings_802462E8) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x63,
@@ -1732,9 +1732,9 @@ NpcSettings N(npcSettings_802475CC) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x1A,

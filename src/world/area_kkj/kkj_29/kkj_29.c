@@ -120,7 +120,7 @@ Script N(main) = SCRIPT({
         FadeOutMusic(0, 500);
     }
     UseDoorSounds(0);
-    bind 0x80240110 to TriggerFlag_WALL_INTERACT 2;
+    bind N(entryList) to TriggerFlag_WALL_INTERACT 2;
     spawn N(script_EnterSingleDoor_802401B4);
 });
 

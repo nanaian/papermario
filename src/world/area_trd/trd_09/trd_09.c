@@ -320,7 +320,7 @@ Script N(script_80240C2C) = SCRIPT({
 s32 unk_missing_80240CE4[] = {
     0x002E0001, 0x001A0020, N(script_80240820), 0x00000000, N(script_80240844), N(script_80240A48), 0x00000000, N(script_80240B80),
     0x00000000, 0x00000000, 0x000A0000, 0x002D0001, 0x000E001F, N(script_80240C0C), 0x00000000, N(unk_80240C1C),
-    0x80077F70, 0x00000000, N(script_80240C2C), 0x00000000, 0x00000000, 0x00050000,
+    EnemyNpcHit, 0x00000000, N(script_80240C2C), 0x00000000, 0x00000000, 0x00050000,
 };
 
 Script N(script_80240D3C) = SCRIPT({
@@ -669,7 +669,7 @@ NpcSettings N(npcSettings_8024217C) = {
     .otherAI = &N(script_80240C0C),
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80241B6C),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
     .onDefeat = &N(script_80241FB8),
     .flags = 0,

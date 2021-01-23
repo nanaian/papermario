@@ -161,7 +161,7 @@ Script N(script_802415B0) = SCRIPT({
 });
 
 s32 unk_missing_802415D0[] = {
-    0x00000000, 0x005A0041, 0x00000000, 0x00000000, N(script_802415B0), 0x80077F70, 0x00000000, 0x8007809C,
+    0x00000000, 0x005A0041, 0x00000000, 0x00000000, N(script_802415B0), EnemyNpcHit, 0x00000000, EnemyNpcDefeat,
     0x00000000, 0x00000000, 0x000D0000,
 };
 
@@ -172,9 +172,9 @@ NpcSettings N(npcSettings_802415FC) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xD,

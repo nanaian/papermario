@@ -595,9 +595,9 @@ NpcSettings N(npcSettings_80244D3C) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80244C68),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x11,
@@ -705,9 +705,9 @@ Script N(script_80245080) = SCRIPT({
 });
 
 s32 unk_missing_80245174[] = {
-    0x00000000, 0x00140016, 0x00000000, 0x00000000, N(script_80244ED0), 0x80077F70, 0x00000000, 0x8007809C,
+    0x00000000, 0x00140016, 0x00000000, 0x00000000, N(script_80244ED0), EnemyNpcHit, 0x00000000, EnemyNpcDefeat,
     0x00000000, 0x00000000, 0x000A0000, 0x00000000, 0x00140016, 0x00000000, 0x00000000, N(script_80245080),
-    0x80077F70, 0x00000000, 0x8007809C, 0x00000000, 0x00000000, 0x000A0000,
+    EnemyNpcHit, 0x00000000, EnemyNpcDefeat, 0x00000000, 0x00000000, 0x000A0000,
 };
 
 NpcSettings N(npcSettings_802451CC) = {
@@ -717,9 +717,9 @@ NpcSettings N(npcSettings_802451CC) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80244F70),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x11,
@@ -727,7 +727,7 @@ NpcSettings N(npcSettings_802451CC) = {
 };
 
 s32 unk_missing_802451F8[] = {
-    0x00000000, 0x00180018, 0x00000000, 0x00000000, N(script_80245010), 0x80077F70, 0x00000000, 0x8007809C,
+    0x00000000, 0x00180018, 0x00000000, 0x00000000, N(script_80245010), EnemyNpcHit, 0x00000000, EnemyNpcDefeat,
     0x00000000, 0x00000000, 0x00190000,
 };
 
@@ -796,7 +796,7 @@ Script N(script_802452BC) = SCRIPT({
 // Unable to use DSL: DSL does not support script opcode 0x4E
 Script N(script_80245400) = {
     SI_CMD(ScriptOpcode_CALL, func_8024367C_C7A35C, SI_VAR(0)),
-    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_802452BC), 0x10, 0, 0x802474A0, 0, 1),
+    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_802452BC), 0x10, 0, D_802474A0_B65750, 0, 1),
     SI_CMD(ScriptOpcode_CALL, func_802435F0_C7A2D0, SI_VAR(0)),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)
@@ -865,7 +865,7 @@ Script N(script_802457F4) = {
     SI_CMD(ScriptOpcode_SET, SI_VAR(0), SI_VAR(11)),
     SI_CMD(ScriptOpcode_SET, SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_8024367C_C7A35C, SI_VAR(0)),
-    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_802454D0), 0x10, 0, 0x802474A0, 0, 1),
+    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_802454D0), 0x10, 0, D_802474A0_B65750, 0, 1),
     SI_CMD(ScriptOpcode_CALL, func_802435F0_C7A2D0, SI_VAR(0)),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)

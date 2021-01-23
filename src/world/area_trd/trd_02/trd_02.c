@@ -421,9 +421,9 @@ NpcSettings N(npcSettings_80242B20) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80242B00),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x6,
@@ -444,7 +444,7 @@ Script N(script_80242B7C) = SCRIPT({
 });
 
 s32 unk_missing_80242BEC[] = {
-    0x00000000, 0x00230018, 0x00000000, 0x00000000, N(script_80242B7C), 0x80077F70, 0x00000000, 0x8007809C,
+    0x00000000, 0x00230018, 0x00000000, 0x00000000, N(script_80242B7C), EnemyNpcHit, 0x00000000, EnemyNpcDefeat,
     0x00000000, 0x00000000, 0x00060000,
 };
 
@@ -477,9 +477,9 @@ NpcSettings N(npcSettings_80242CA4) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80242C48),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x6,

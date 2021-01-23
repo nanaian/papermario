@@ -251,7 +251,7 @@ Script N(script_80242EC0) = SCRIPT({
 });
 
 s32 unk_missing_80242EE0[] = {
-    0x00000000, 0x00170016, 0x00000000, 0x00000000, N(script_80242EC0), 0x80077F70, 0x00000000, 0x8007809C,
+    0x00000000, 0x00170016, 0x00000000, 0x00000000, N(script_80242EC0), EnemyNpcHit, 0x00000000, EnemyNpcDefeat,
     0x00000000, 0x00000000, 0x000E0001,
 };
 
@@ -281,9 +281,9 @@ NpcSettings N(npcSettings_80242F5C) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80242F3C),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xF,
@@ -308,7 +308,7 @@ Script N(script_80242FD0) = SCRIPT({
 });
 
 s32 unk_missing_80243040[] = {
-    0x00000000, 0x00190016, 0x00000000, 0x00000000, N(script_80242FD0), 0x80077F70, 0x00000000, 0x8007809C,
+    0x00000000, 0x00190016, 0x00000000, 0x00000000, N(script_80242FD0), EnemyNpcHit, 0x00000000, EnemyNpcDefeat,
     0x00000000, 0x00000000, 0x000E0001,
 };
 
@@ -387,7 +387,7 @@ Script N(script_Interact_80243224) = SCRIPT({
     } else {
         SpeakToPlayer(-1, 0xC10004, 0xC10001, 0, 0xF0041);
     }
-    SI_VAR(0) = 0x802457C0;
+    SI_VAR(0) = func_802457C0_A2FA00;
     SI_VAR(1) = -1;
     await N(script_802431D4);
     if (SI_VAR(0) <= 0) {

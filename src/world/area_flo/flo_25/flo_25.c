@@ -271,9 +271,9 @@ NpcSettings N(npcSettings_802429D4) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80242964),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x13,
@@ -310,9 +310,9 @@ NpcSettings N(npcSettings_80242AA0) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80242A30),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x13,
@@ -353,7 +353,7 @@ Script N(script_80242AD4) = SCRIPT({
 // Unable to use DSL: DSL does not support script opcode 0x4E
 Script N(script_80242C08) = {
     SI_CMD(ScriptOpcode_CALL, func_80241DE4_CF49B4, SI_VAR(0)),
-    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80242AD4), 0x10, 0, 0x80244FA0, 0, 1),
+    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80242AD4), 0x10, 0, N(unk_80244FA0), 0, 1),
     SI_CMD(ScriptOpcode_CALL, func_80241D58_CF4928, SI_VAR(0)),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)
@@ -373,7 +373,7 @@ Script N(script_Interact_80242C58) = SCRIPT({
         SpeakToPlayer(-1, 0xC60102, 0xC60101, 0, 0x11003B);
         SetPlayerAnimation(0x10021);
         func_80241FB4_CF4B84();
-        SI_VAR(0) = 0x80245110;
+        SI_VAR(0) = N(npcGroup_80245110);
         SI_VAR(1) = 0;
         await N(script_80242C08);
         match SI_VAR(0) {

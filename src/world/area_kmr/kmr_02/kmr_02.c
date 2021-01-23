@@ -793,7 +793,7 @@ s32 N(intTable_80244B2C)[] = {
 
 s32 N(unk_80244B3C)[] = {
     0x40000000, 0x0000000F, 0x0000001E, 0x00000000, 0x00000000, 0xFFFFFFFF, 0x00000000, 0x00000000,
-    0x00000000, 0x00000000, 0x00000000, 0x00000001, 0x00000043, 0x00000002, 0x8004A47C, N(unk_80244B3C),
+    0x00000000, 0x00000000, 0x00000000, 0x00000001, 0x00000043, 0x00000002, DoBasicAI, N(unk_80244B3C),
     0x00000002, 0x00000000, 0x00000001, 0x00000000,
 };
 
@@ -1774,9 +1774,9 @@ NpcSettings N(npcSettings_80247D80) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80247D60),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x1A,

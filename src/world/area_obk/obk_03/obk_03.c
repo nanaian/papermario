@@ -702,7 +702,7 @@ Script N(script_80242F38) = SCRIPT({
 // Unable to use DSL: DSL does not support script opcode 0x4E
 Script N(script_8024307C) = {
     SI_CMD(ScriptOpcode_CALL, func_80240540_BC47C0, SI_VAR(0)),
-    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80242F38), 0x10, 0, 0x80243BE0, 0, 1),
+    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80242F38), 0x10, 0, N(script_80243BE0), 0, 1),
     SI_CMD(ScriptOpcode_CALL, func_802404B4_BC4734, SI_VAR(0)),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)
@@ -771,7 +771,7 @@ Script N(script_80243470) = {
     SI_CMD(ScriptOpcode_SET, SI_VAR(0), SI_VAR(11)),
     SI_CMD(ScriptOpcode_SET, SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240540_BC47C0, SI_VAR(0)),
-    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_8024314C), 0x10, 0, 0x80243BE0, 0, 1),
+    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_8024314C), 0x10, 0, N(script_80243BE0), 0, 1),
     SI_CMD(ScriptOpcode_CALL, func_802404B4_BC4734, SI_VAR(0)),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)

@@ -946,7 +946,7 @@ if __name__ == "__main__":
         with open(f"/mnt/c/Users/alex/Desktop/Paper Mario/rom/dump/map/src/{map_name}.midx", "r") as f:
             midx = parse_midx(f, offset, map_name)
 
-        symbol_map = {}
+        symbol_map = disasm_script.script_lib()
         for struct in midx:
             symbol_map[struct["vaddr"]] = struct["name"]
 
