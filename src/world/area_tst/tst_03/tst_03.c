@@ -88,4 +88,3 @@ Script N(script_MakeEntities) = SCRIPT({
 // rodata: D_802405E0_B1B560
 
 // rodata: D_802405E8_B1B568
-

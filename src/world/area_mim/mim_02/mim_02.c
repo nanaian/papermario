@@ -181,17 +181,17 @@ NpcSettings N(npcSettings_802415E0) = {
 };
 
 NpcAISettings N(aISettings_8024160C) = {
-    .moveSpeed = 1.0,
+    .moveSpeed = 1.0f,
     .moveTime = 0x1E,
     .waitTime = 0xA,
-    .alertRadius = 120.0,
-    .unk_10 = 0.0,
+    .alertRadius = 120.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0x5,
-    .chaseSpeed = 4.5,
+    .chaseSpeed = 4.5f,
     .unk_1C = 0x5A,
     .unk_20 = 0x5,
-    .chaseRadius = 160.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 160.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -751,4 +751,3 @@ Script N(script_80243650) = SCRIPT({
 s32 pad_003874[] = {
     0x00000000, 0x00000000, 0x00000000,
 };
-

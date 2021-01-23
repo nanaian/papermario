@@ -212,4 +212,3 @@ s32 pad_000AAC[] = {
 // rodata: D_80240AB0_A4CA10
 
 // rodata: D_80240AB8_A4CA18
-

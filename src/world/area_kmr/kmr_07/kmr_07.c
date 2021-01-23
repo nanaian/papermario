@@ -134,14 +134,14 @@ Script N(main) = SCRIPT({
 });
 
 NpcAISettingsSmall N(aISettings_80240E90) = {
-    .alertRadius = 130.0,
-    .unk_10 = 0.0,
+    .alertRadius = 130.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0x1,
-    .chaseSpeed = 2.5,
+    .chaseSpeed = 2.5f,
     .unk_1C = 0xB4,
     .unk_20 = 0x3,
-    .chaseRadius = 150.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 150.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -403,4 +403,3 @@ s32 pad_001E7C[] = {
 s32 pad_002038[] = {
     0x00000000, 0x00000000,
 };
-

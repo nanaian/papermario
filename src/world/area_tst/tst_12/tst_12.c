@@ -81,4 +81,3 @@ Script N(main) = SCRIPT({
 s32 pad_00046C[] = {
     0x00000000,
 };
-

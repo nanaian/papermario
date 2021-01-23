@@ -906,4 +906,3 @@ s32 pad_003BB8[] = {
 // rodata: D_80243BD0_BC7E50
 
 // rodata: D_80243BD8_BC7E58
-

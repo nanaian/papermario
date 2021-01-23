@@ -173,7 +173,7 @@ Script N(script_EnterDoubleDoor_80240B88) = SCRIPT({
     resume group 1;
 });
 
-Vec4f N(triggerCoord_80240CD4) =  { 300.0, 0.0, 0.0, 0.0 };
+Vec4f N(triggerCoord_80240CD4) =  { 300.0f, 0.0f, 0.0f, 0.0f };
 
 Script N(script_80240CE4) = SCRIPT({
     PlayEffect(66, 0, 29, 0, 1, 10, 30, 0, 0, 0, 0, 0, 0, 0);
@@ -725,4 +725,3 @@ s32 pad_003054[] = {
 s32 pad_003088[] = {
     0x00000000, 0x00000000,
 };
-

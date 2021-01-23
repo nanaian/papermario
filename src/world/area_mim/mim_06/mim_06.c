@@ -650,17 +650,17 @@ Script N(script_802449F0) = SCRIPT({
 });
 
 NpcAISettings N(aISettings_80244AAC) = {
-    .moveSpeed = 0.0,
+    .moveSpeed = 0.0f,
     .moveTime = 0x1E,
     .waitTime = 0x1E,
-    .alertRadius = 150.0,
-    .unk_10 = 0.0,
+    .alertRadius = 150.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0x1,
-    .chaseSpeed = 0.0,
+    .chaseSpeed = 0.0f,
     .unk_1C = 0,
     .unk_20 = 0,
-    .chaseRadius = 0.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 0.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0,
 };
 
@@ -729,17 +729,17 @@ NpcSettings N(npcSettings_80244CE8) = {
 };
 
 NpcAISettings N(aISettings_80244D14) = {
-    .moveSpeed = 1.0,
+    .moveSpeed = 1.0f,
     .moveTime = 0x1E,
     .waitTime = 0xA,
-    .alertRadius = 120.0,
-    .unk_10 = 0.0,
+    .alertRadius = 120.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0x5,
-    .chaseSpeed = 4.5,
+    .chaseSpeed = 4.5f,
     .unk_1C = 0x5A,
     .unk_20 = 0x5,
-    .chaseRadius = 160.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 160.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -881,4 +881,3 @@ s32 pad_0057A8[] = {
 s32 pad_0059BC[] = {
     0x00000000,
 };
-

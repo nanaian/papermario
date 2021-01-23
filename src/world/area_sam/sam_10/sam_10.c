@@ -354,7 +354,7 @@ Script N(script_802412E0) = {
 };
 // *INDENT-ON*
 
-Vec4f N(triggerCoord_80242138) =  { 337.0, -20.0, -103.0, 0.0 };
+Vec4f N(triggerCoord_80242138) =  { 337.0f, -20.0f, -103.0f, 0.0f };
 
 Script N(script_80242148) = SCRIPT({
     PlayEffect(66, 2, 135, 11, 1, 10, 30, 0, 0, 0, 0, 0, 0, 0);
@@ -451,17 +451,17 @@ s32 N(extraAnimationList_80242664)[] = {
 };
 
 NpcAISettings N(aISettings_8024266C) = {
-    .moveSpeed = 1.5,
+    .moveSpeed = 1.5f,
     .moveTime = 0x78,
     .waitTime = 0x1E,
-    .alertRadius = 100.0,
-    .unk_10 = 40.0,
+    .alertRadius = 100.0f,
+    .unk_10 = 40.0f,
     .unk_14 = 0x7,
-    .chaseSpeed = 3.799999952316284,
+    .chaseSpeed = 3.8f,
     .unk_1C = 0x5A,
     .unk_20 = 0xF,
-    .chaseRadius = 200.0,
-    .unk_28 = 160.0,
+    .chaseRadius = 200.0f,
+    .unk_28 = 160.0f,
     .unk_2C = 0x1,
 };
 
@@ -571,4 +571,3 @@ s32 pad_002C28[] = {
 s32 pad_002DC8[] = {
     0x00000000, 0x00000000,
 };
-

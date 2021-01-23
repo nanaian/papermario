@@ -107,17 +107,17 @@ Script N(script_80240630) = SCRIPT({
 });
 
 NpcAISettings N(aISettings_802406C8) = {
-    .moveSpeed = 2.700000047683716,
+    .moveSpeed = 2.7f,
     .moveTime = 0x2D,
     .waitTime = 0x1E,
-    .alertRadius = 450.0,
-    .unk_10 = 0.0,
+    .alertRadius = 450.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0xA,
-    .chaseSpeed = 8.300000190734863,
+    .chaseSpeed = 8.3f,
     .unk_1C = 0xB4,
     .unk_20 = 0x64,
-    .chaseRadius = 550.0,
-    .unk_28 = 100.0,
+    .chaseRadius = 550.0f,
+    .unk_28 = 100.0f,
     .unk_2C = 0x1,
 };
 
@@ -408,7 +408,7 @@ ShakeTree N(shakeTreeEvent_Tree1) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_80241548) =  { 228.0, 0.0, -306.0, 0.0 };
+Vec4f N(triggerCoord_80241548) =  { 228.0f, 0.0f, -306.0f, 0.0f };
 
 Script N(script_80241558) = SCRIPT({
     SI_VAR(0) = N(shakeTreeEvent_Tree1);
@@ -433,4 +433,3 @@ s32 pad_0016A8[] = {
 // rodata: D_802416B0_933C70
 
 // rodata: D_802416B8_933C78
-

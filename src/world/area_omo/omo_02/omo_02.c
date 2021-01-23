@@ -331,7 +331,7 @@ s32 N(intTable_802435B0)[] = {
     0x00000040, 0x00000044, 0x00000046, 0x00000048,
 };
 
-Vec4f N(triggerCoord_802435E0) =  { -520.0, 0.0, 0.0, 0.0 };
+Vec4f N(triggerCoord_802435E0) =  { -520.0f, 0.0f, 0.0f, 0.0f };
 
 // Unable to use DSL: DSL does not support script opcode 0x30
 // *INDENT-OFF*
@@ -685,17 +685,17 @@ Script N(script_80244918) = SCRIPT({
 });
 
 NpcAISettings N(aISettings_802449E8) = {
-    .moveSpeed = 1.5,
+    .moveSpeed = 1.5f,
     .moveTime = 0x3C,
     .waitTime = 0xF,
-    .alertRadius = 90.0,
-    .unk_10 = 50.0,
+    .alertRadius = 90.0f,
+    .unk_10 = 50.0f,
     .unk_14 = 0x3,
-    .chaseSpeed = 3.799999952316284,
+    .chaseSpeed = 3.8f,
     .unk_1C = 0x8,
     .unk_20 = 0x1,
-    .chaseRadius = 140.0,
-    .unk_28 = 60.0,
+    .chaseRadius = 140.0f,
+    .unk_28 = 60.0f,
     .unk_2C = 0x1,
 };
 
@@ -725,17 +725,17 @@ NpcSettings N(npcSettings_80244A94) = {
 };
 
 NpcAISettings N(aISettings_80244AC0) = {
-    .moveSpeed = 8.0,
+    .moveSpeed = 8.0f,
     .moveTime = 0,
     .waitTime = 0,
-    .alertRadius = 4.0,
-    .unk_10 = 0.5,
+    .alertRadius = 4.0f,
+    .unk_10 = 0.5f,
     .unk_14 = 0xFFFFFFFF,
-    .chaseSpeed = 0.0,
+    .chaseSpeed = 0.0f,
     .unk_1C = 0,
     .unk_20 = 0,
-    .chaseRadius = 0.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 0.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0,
 };
 
@@ -1269,4 +1269,3 @@ s32 pad_007858[] = {
 // rodata: D_80247BD8_DA50A8
 
 // rodata: jtbl_80247BE0_DA50B0
-

@@ -76,7 +76,7 @@ Script N(main) = SCRIPT({
     spawn N(script_EnterWalk_80240158);
 });
 
-Vec4f N(triggerCoord_802402A0) =  { -237.0, 0.0, 50.0, 0.0 };
+Vec4f N(triggerCoord_802402A0) =  { -237.0f, 0.0f, 50.0f, 0.0f };
 
 Script N(script_802402B0) = SCRIPT({
     PlayEffect(66, 1, 23, 26, 1, 10, 30, 0, 0, 0, 0, 0, 0, 0);
@@ -134,4 +134,3 @@ s32 pad_00054C[] = {
 s32 pad_000558[] = {
     0x00000000, 0x00000000,
 };
-

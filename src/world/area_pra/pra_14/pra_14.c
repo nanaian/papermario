@@ -208,9 +208,9 @@ Script N(script_EnterWalk_8024163C) = SCRIPT({
     spawn EnterWalk;
 });
 
-Vec4f N(triggerCoord_80241668) =  { 13.0, 0.0, 70.0, 0.0 };
+Vec4f N(triggerCoord_80241668) =  { 13.0f, 0.0f, 70.0f, 0.0f };
 
-Vec4f N(triggerCoord_80241678) =  { 13.0, 0.0, -70.0, 0.0 };
+Vec4f N(triggerCoord_80241678) =  { 13.0f, 0.0f, -70.0f, 0.0f };
 
 Script N(script_80241688) = SCRIPT({
     EnableModel(15, 0);
@@ -312,4 +312,3 @@ s32 pad_001AF4[] = {
 s32 pad_001B08[] = {
     0x00000000, 0x00000000,
 };
-

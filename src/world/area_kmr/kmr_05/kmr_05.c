@@ -141,17 +141,17 @@ Script N(main) = SCRIPT({
 });
 
 NpcAISettings N(aISettings_80241AB0) = {
-    .moveSpeed = 1.5,
+    .moveSpeed = 1.5f,
     .moveTime = 0x1E,
     .waitTime = 0x1E,
-    .alertRadius = 130.0,
-    .unk_10 = 0.0,
+    .alertRadius = 130.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0x1,
-    .chaseSpeed = 2.5,
+    .chaseSpeed = 2.5f,
     .unk_1C = 0xB4,
     .unk_20 = 0x3,
-    .chaseRadius = 150.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 150.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -176,21 +176,21 @@ NpcSettings N(npcSettings_80241B00) = {
 };
 
 f32 N(floatTable_80241B2C)[] = {
-    4.500000f, 3.500000f, 2.600000f, 2.000000f, 1.500000f, 20.000000f,
+    4.5f, 3.5f, 2.6f, 2.0f, 1.5f, 20.0f,
 };
 
 NpcAISettings N(aISettings_80241B44) = {
-    .moveSpeed = 1.600000023841858,
+    .moveSpeed = 1.6f,
     .moveTime = 0x3C,
     .waitTime = 0x1E,
-    .alertRadius = 80.0,
-    .unk_10 = 0.0,
+    .alertRadius = 80.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0x5,
-    .chaseSpeed = 2.200000047683716,
+    .chaseSpeed = 2.2f,
     .unk_1C = 0x3C,
     .unk_20 = 0xF,
-    .chaseRadius = 100.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 100.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -219,17 +219,17 @@ NpcSettings N(npcSettings_80241BE4) = {
 };
 
 NpcAISettings N(aISettings_80241C10) = {
-    .moveSpeed = 1.5,
+    .moveSpeed = 1.5f,
     .moveTime = 0x1E,
     .waitTime = 0x1E,
-    .alertRadius = 130.0,
-    .unk_10 = 0.0,
+    .alertRadius = 130.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0x1,
-    .chaseSpeed = 2.5,
+    .chaseSpeed = 2.5f,
     .unk_1C = 0xB4,
     .unk_20 = 0x3,
-    .chaseRadius = 150.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 150.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -614,7 +614,7 @@ ModelIdList N(treeModelList_Tree1_Trunk) = {
 
 TreeEffectVectorList N(treeEffectVectors_Tree1) = {
     .count = 0x2,
-    .vectors = { { 6.151700258385947e-43, 4.400077177979926e-43, nan }, { 7.342803953062041e-43, 4.400077177979926e-43, nan } },
+    .vectors = { { 6.15e-43f, 4.4e-43f, nanf }, { 7.34e-43f, 4.4e-43f, nanf } },
 };
 
 Script N(script_Tree1_Callback) = SCRIPT({
@@ -642,7 +642,7 @@ ShakeTree N(shakeTreeEvent_Tree1) = {
     .callback = &N(script_Tree1_Callback),
 };
 
-Vec4f N(triggerCoord_802433C8) =  { 488.0, 245.0, -196.0, 0.0 };
+Vec4f N(triggerCoord_802433C8) =  { 488.0f, 245.0f, -196.0f, 0.0f };
 
 Script N(script_802433D8) = SCRIPT({
     SI_VAR(0) = N(shakeTreeEvent_Tree1);
@@ -665,4 +665,3 @@ Script N(script_802433D8) = SCRIPT({
 s32 pad_003494[] = {
     0x00000000, 0x00000000, 0x00000000,
 };
-

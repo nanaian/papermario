@@ -129,17 +129,17 @@ Script N(script_802406D0) = SCRIPT({
 });
 
 NpcAISettings N(aISettings_80240768) = {
-    .moveSpeed = 2.700000047683716,
+    .moveSpeed = 2.7f,
     .moveTime = 0x2D,
     .waitTime = 0x1E,
-    .alertRadius = 450.0,
-    .unk_10 = 0.0,
+    .alertRadius = 450.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0xA,
-    .chaseSpeed = 8.300000190734863,
+    .chaseSpeed = 8.3f,
     .unk_1C = 0xB4,
     .unk_20 = 0x64,
-    .chaseRadius = 550.0,
-    .unk_28 = 100.0,
+    .chaseRadius = 550.0f,
+    .unk_28 = 100.0f,
     .unk_2C = 0x1,
 };
 
@@ -202,17 +202,17 @@ NpcSettings N(npcSettings_80240A04) = {
 };
 
 NpcAISettings N(aISettings_80240A30) = {
-    .moveSpeed = 1.7999999523162842,
+    .moveSpeed = 1.8f,
     .moveTime = 0x32,
     .waitTime = 0xA,
-    .alertRadius = 250.0,
-    .unk_10 = 0.0,
+    .alertRadius = 250.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0x2,
-    .chaseSpeed = 3.5,
+    .chaseSpeed = 3.5f,
     .unk_1C = 0x2D,
     .unk_20 = 0x6,
-    .chaseRadius = 300.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 300.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -498,7 +498,7 @@ ShakeTree N(shakeTreeEvent_Tree1) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_80241A48) =  { -228.0, 0.0, -306.0, 0.0 };
+Vec4f N(triggerCoord_80241A48) =  { -228.0f, 0.0f, -306.0f, 0.0f };
 
 ModelIdList N(treeModelList_Tree2_Leaves) = {
     .count = 0x1,
@@ -522,7 +522,7 @@ ShakeTree N(shakeTreeEvent_Tree2) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_80241A9C) =  { -178.0, 0.0, 164.0, 0.0 };
+Vec4f N(triggerCoord_80241A9C) =  { -178.0f, 0.0f, 164.0f, 0.0f };
 
 ModelIdList N(treeModelList_Tree3_Leaves) = {
     .count = 0x1,
@@ -542,7 +542,7 @@ ShakeTree N(shakeTreeEvent_Tree3) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_80241AD0) =  { 351.0, 0.0, -101.0, 0.0 };
+Vec4f N(triggerCoord_80241AD0) =  { 351.0f, 0.0f, -101.0f, 0.0f };
 
 Script N(script_80241AE0) = SCRIPT({
     SI_VAR(0) = N(shakeTreeEvent_Tree1);
@@ -576,4 +576,3 @@ Script N(script_MakeEntities) = SCRIPT({
 s32 pad_001C68[] = {
     0x00000000, 0x00000000,
 };
-

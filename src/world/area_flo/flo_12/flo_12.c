@@ -696,4 +696,3 @@ NpcGroupList N(npcGroupList_802429B8) = {
 // rodata: D_802429D0_CC3800
 
 // rodata: D_802429D8_CC3808
-

@@ -576,17 +576,17 @@ s32 pad_0035F8[] = {
 };
 
 NpcAISettings N(aISettings_80243600) = {
-    .moveSpeed = 1.0,
+    .moveSpeed = 1.0f,
     .moveTime = 0x3C,
     .waitTime = 0x1E,
-    .alertRadius = 0.0,
-    .unk_10 = 0.0,
+    .alertRadius = 0.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0xFFFFFFFF,
-    .chaseSpeed = 0.0,
+    .chaseSpeed = 0.0f,
     .unk_1C = 0,
     .unk_20 = 0,
-    .chaseRadius = 0.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 0.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0xFFFFFFFF,
 };
 
@@ -611,17 +611,17 @@ NpcSettings N(npcSettings_80243650) = {
 };
 
 NpcAISettings N(aISettings_8024367C) = {
-    .moveSpeed = 1.5,
+    .moveSpeed = 1.5f,
     .moveTime = 0x3C,
     .waitTime = 0x1E,
-    .alertRadius = 0.0,
-    .unk_10 = 0.0,
+    .alertRadius = 0.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0xFFFFFFFF,
-    .chaseSpeed = 0.0,
+    .chaseSpeed = 0.0f,
     .unk_1C = 0,
     .unk_20 = 0,
-    .chaseRadius = 0.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 0.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -1784,17 +1784,17 @@ Script N(script_802484A8) = SCRIPT({
 });
 
 NpcAISettings N(aISettings_802484C4) = {
-    .moveSpeed = 0.699999988079071,
+    .moveSpeed = 0.7f,
     .moveTime = 0x1E,
     .waitTime = 0x14,
-    .alertRadius = 0.0,
-    .unk_10 = 0.0,
+    .alertRadius = 0.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0xFFFFFFFF,
-    .chaseSpeed = 0.0,
+    .chaseSpeed = 0.0f,
     .unk_1C = 0,
     .unk_20 = 0,
-    .chaseRadius = 0.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 0.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -4083,7 +4083,7 @@ ShakeTree N(shakeTreeEvent_Tree1) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_80251830) =  { 198.0, 0.0, 147.0, 0.0 };
+Vec4f N(triggerCoord_80251830) =  { 198.0f, 0.0f, 147.0f, 0.0f };
 
 Script N(script_80251840) = SCRIPT({
     SI_VAR(0) = N(searchBushEvent_Bush1);
@@ -4136,4 +4136,3 @@ s32 pad_011A7C[] = {
 s32 pad_011C38[] = {
     0x00000000, 0x00000000,
 };
-

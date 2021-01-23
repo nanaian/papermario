@@ -613,17 +613,17 @@ s32 pad_002F64[] = {
 };
 
 NpcAISettings N(aISettings_80242F70) = {
-    .moveSpeed = 1.5,
+    .moveSpeed = 1.5f,
     .moveTime = 0x1E,
     .waitTime = 0x32,
-    .alertRadius = 60.0,
-    .unk_10 = 30.0,
+    .alertRadius = 60.0f,
+    .unk_10 = 30.0f,
     .unk_14 = 0x3,
-    .chaseSpeed = 6.0,
+    .chaseSpeed = 6.0f,
     .unk_1C = 0,
     .unk_20 = 0,
-    .chaseRadius = 100.0,
-    .unk_28 = 30.0,
+    .chaseRadius = 100.0f,
+    .unk_28 = 30.0f,
     .unk_2C = 0x3,
 };
 
@@ -718,4 +718,3 @@ s32 pad_00363C[] = {
 s32 pad_0036AC[] = {
     0x00000000,
 };
-

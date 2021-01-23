@@ -1333,4 +1333,3 @@ s32 pad_005ECC[] = {
 // rodata: D_80245F40_AD4080
 
 // rodata: D_80245F48_AD4088
-

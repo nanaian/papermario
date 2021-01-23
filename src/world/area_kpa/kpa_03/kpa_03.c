@@ -185,17 +185,17 @@ s32 pad_002188[] = {
 };
 
 NpcAISettings N(aISettings_80242190) = {
-    .moveSpeed = 1.0,
+    .moveSpeed = 1.0f,
     .moveTime = 0x1E,
     .waitTime = 0x32,
-    .alertRadius = 90.0,
-    .unk_10 = 40.0,
+    .alertRadius = 90.0f,
+    .unk_10 = 40.0f,
     .unk_14 = 0x2,
-    .chaseSpeed = 11.0,
+    .chaseSpeed = 11.0f,
     .unk_1C = 0,
     .unk_20 = 0,
-    .chaseRadius = 100.0,
-    .unk_28 = 40.0,
+    .chaseRadius = 100.0f,
+    .unk_28 = 40.0f,
     .unk_2C = 0x1,
 };
 
@@ -250,17 +250,17 @@ Script N(script_8024232C) = SCRIPT({
 });
 
 NpcAISettings N(aISettings_8024239C) = {
-    .moveSpeed = 1.0,
+    .moveSpeed = 1.0f,
     .moveTime = 0x14,
     .waitTime = 0x5,
-    .alertRadius = 120.0,
-    .unk_10 = 0.0,
+    .alertRadius = 120.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0x3,
-    .chaseSpeed = 6.0,
+    .chaseSpeed = 6.0f,
     .unk_1C = 0,
     .unk_20 = 0,
-    .chaseRadius = 150.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 150.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -313,11 +313,11 @@ NpcSettings N(npcSettings_802425B4) = {
 };
 
 f32 N(floatTable_802425E0)[] = {
-    0.800000f,
+    0.8f,
 };
 
 f32 N(floatTable_802425E4)[] = {
-    1.000000f,
+    1.0f,
 };
 
 s32 N(byteTable_802425E8)[] = {
@@ -328,17 +328,17 @@ s32 N(byteTable_802425E8)[] = {
 };
 
 NpcAISettings N(aISettings_80242664) = {
-    .moveSpeed = 1.0,
+    .moveSpeed = 1.0f,
     .moveTime = 0x78,
     .waitTime = 0x1E,
-    .alertRadius = 100.0,
-    .unk_10 = 0.0,
+    .alertRadius = 100.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0xA,
-    .chaseSpeed = 3.0,
+    .chaseSpeed = 3.0f,
     .unk_1C = 0x5A,
     .unk_20 = 0xF,
-    .chaseRadius = 200.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 200.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -647,4 +647,3 @@ s32 pad_003914[] = {
 s32 pad_003994[] = {
     0x00000000, 0x00000000, 0x00000000,
 };
-

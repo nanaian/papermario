@@ -678,7 +678,7 @@ ShakeTree N(shakeTreeEvent_Tree1) = {
     .callback = &N(script_Tree1_Callback),
 };
 
-Vec4f N(triggerCoord_80244198) =  { -422.0, 0.0, -120.0, 0.0 };
+Vec4f N(triggerCoord_80244198) =  { -422.0f, 0.0f, -120.0f, 0.0f };
 
 Script N(script_802441A8) = SCRIPT({
     SI_VAR(0) = N(shakeTreeEvent_Tree1);
@@ -687,17 +687,17 @@ Script N(script_802441A8) = SCRIPT({
 });
 
 NpcAISettings N(aISettings_80244200) = {
-    .moveSpeed = 1.5,
+    .moveSpeed = 1.5f,
     .moveTime = 0x2D,
     .waitTime = 0x14,
-    .alertRadius = 70.0,
-    .unk_10 = 50.0,
+    .alertRadius = 70.0f,
+    .unk_10 = 50.0f,
     .unk_14 = 0xA,
-    .chaseSpeed = 7.5,
+    .chaseSpeed = 7.5f,
     .unk_1C = 0,
     .unk_20 = 0,
-    .chaseRadius = 80.0,
-    .unk_28 = 60.0,
+    .chaseRadius = 80.0f,
+    .unk_28 = 60.0f,
     .unk_2C = 0x1,
 };
 
@@ -726,17 +726,17 @@ NpcSettings N(npcSettings_802442A0) = {
 };
 
 NpcAISettings N(aISettings_802442CC) = {
-    .moveSpeed = 1.5,
+    .moveSpeed = 1.5f,
     .moveTime = 0x19,
     .waitTime = 0x14,
-    .alertRadius = 70.0,
-    .unk_10 = 50.0,
+    .alertRadius = 70.0f,
+    .unk_10 = 50.0f,
     .unk_14 = 0xA,
-    .chaseSpeed = 7.0,
+    .chaseSpeed = 7.0f,
     .unk_1C = 0,
     .unk_20 = 0,
-    .chaseRadius = 80.0,
-    .unk_28 = 60.0,
+    .chaseRadius = 80.0f,
+    .unk_28 = 60.0f,
     .unk_2C = 0x1,
 };
 
@@ -764,17 +764,17 @@ NpcSettings N(npcSettings_80244358) = {
 };
 
 NpcAISettings N(aISettings_80244384) = {
-    .moveSpeed = 1.5,
+    .moveSpeed = 1.5f,
     .moveTime = 0x1E,
     .waitTime = 0x1E,
-    .alertRadius = 130.0,
-    .unk_10 = 0.0,
+    .alertRadius = 130.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0x1,
-    .chaseSpeed = 2.5,
+    .chaseSpeed = 2.5f,
     .unk_1C = 0xB4,
     .unk_20 = 0x3,
-    .chaseRadius = 150.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 150.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -799,17 +799,17 @@ NpcSettings N(npcSettings_802443D4) = {
 };
 
 NpcAISettings N(aISettings_80244400) = {
-    .moveSpeed = 1.5,
+    .moveSpeed = 1.5f,
     .moveTime = 0x1E,
     .waitTime = 0x1E,
-    .alertRadius = 130.0,
-    .unk_10 = 0.0,
+    .alertRadius = 130.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0x1,
-    .chaseSpeed = 2.5,
+    .chaseSpeed = 2.5f,
     .unk_1C = 0xB4,
     .unk_20 = 0x3,
-    .chaseRadius = 150.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 150.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -1202,4 +1202,3 @@ s32 pad_005ACC[] = {
 s32 pad_005E08[] = {
     0x00000000, 0x00000000,
 };
-

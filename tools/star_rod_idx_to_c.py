@@ -11,6 +11,64 @@ import disasm_script
 
 DIR = os.path.dirname(__file__)
 
+# From mips_to_c: https://github.com/matt-kempster/mips_to_c/blob/d208400cca045113dada3e16c0d59c50cdac4529/src/translate.py#L2085
+def format_f32_imm(num: int) -> str:
+    import math
+    import struct
+
+    packed = struct.pack(">I", num & (2 ** 32 - 1))
+    value = struct.unpack(">f", packed)[0]
+
+    if not value or value == 4294967296.0:
+        # Zero, negative zero, nan, or INT_MAX.
+        return str(value)
+
+    # Write values smaller than 1e-7 / greater than 1e7 using scientific notation,
+    # and values in between using fixed point.
+    if abs(math.log10(abs(value))) > 6.9:
+        fmt_char = "e"
+    elif abs(value) < 1:
+        fmt_char = "f"
+    else:
+        fmt_char = "g"
+
+    def fmt(prec: int) -> str:
+        """Format 'value' with 'prec' significant digits/decimals, in either scientific
+        or regular notation depending on 'fmt_char'."""
+        ret = ("{:." + str(prec) + fmt_char + "}").format(value)
+        if fmt_char == "e":
+            return ret.replace("e+", "e").replace("e0", "e").replace("e-0", "e-")
+        if "e" in ret:
+            # The "g" format character can sometimes introduce scientific notation if
+            # formatting with too few decimals. If this happens, return an incorrect
+            # value to prevent the result from being used.
+            #
+            # Since the value we are formatting is within (1e-7, 1e7) in absolute
+            # value, it will at least be possible to format with 7 decimals, which is
+            # less than float precision. Thus, this annoying Python limitation won't
+            # lead to us outputting numbers with more precision than we really have.
+            return "0"
+        return ret
+
+    # 20 decimals is more than enough for a float. Start there, then try to shrink it.
+    prec = 20
+    while prec > 0:
+        prec -= 1
+        value2 = float(fmt(prec))
+        if struct.pack(">f", value2) != packed:
+            prec += 1
+            break
+
+    if prec == 20:
+        # Uh oh, even the original value didn't format correctly. Fall back to str(),
+        # which ought to work.
+        return str(value)
+
+    ret = fmt(prec)
+    if "." not in ret:
+        ret += ".0"
+    return ret
+
 def disassemble(bytes, midx, symbol_map={}, comments=True, romstart=0):
     out = ""
     forward_declarations = []
@@ -104,8 +162,8 @@ def disassemble(bytes, midx, symbol_map={}, comments=True, romstart=0):
                 if (i % 0x20) == 0:
                     out += f"\n   "
 
-                word = unpack(">f", bytes.read(4))[0]
-                out += " %ff," % word
+                word = unpack(">I", bytes.read(4))[0]
+                out += " " + format_f32_imm(word) + "f,"
 
             out += f"\n}};\n"
         elif struct["type"] == "NpcGroupList":
@@ -201,8 +259,9 @@ def disassemble(bytes, midx, symbol_map={}, comments=True, romstart=0):
 
             out += "};\n"
         elif struct["type"] == "Vec4f":
-            x, y, z, w = unpack(">ffff", bytes.read(struct["length"]))
-            out += f"Vec4f {name} =  {{ {x}, {y}, {z}, {w} }};\n"
+            x, y, z, w = unpack(">IIII", bytes.read(struct["length"]))
+
+            out += f"Vec4f {name} =  {{ {format_f32_imm(x)}f, {format_f32_imm(y)}f, {format_f32_imm(z)}f, {format_f32_imm(w)}f }};\n"
         elif struct["type"] in TYPES:
             transform = TYPES[struct["type"]]
             out += struct["type"] + " " + name + " = "
@@ -239,7 +298,7 @@ def disassemble(bytes, midx, symbol_map={}, comments=True, romstart=0):
         out += "\n"
 
     # end of data
-    return "\n".join(forward_declarations) + "\n\n" + out
+    return "\n".join(forward_declarations) + "\n\n" + out[:-1]
 
 def parse_midx(file, offset, map_name, prefix = ""):
     structs = []
@@ -394,11 +453,13 @@ def cstruct(struct, length = -1):
                         break
 
                     if ctype == "f32":
-                        data = unpack(">f", stream.read(ctype_size))[0]
-                        ret += " " + str(data) + ","
+                        data = unpack(">I", stream.read(ctype_size))[0]
+                        ret += " " + format_f32_imm(data) + "f,"
+
+
                     elif ctype == "Vec3f":
-                        x, y, z = unpack(">fff", stream.read(ctype_size))
-                        ret += f" {{ {x}, {y}, {z} }},"
+                        x, y, z = unpack(">III", stream.read(ctype_size))
+                        ret += f" {{ {format_f32_imm(x)}f, {format_f32_imm(y)}f, {format_f32_imm(z)}f }},"
                     else:
                         data = int.from_bytes(stream.read(ctype_size), byteorder="big")
 

@@ -220,17 +220,17 @@ s32 pad_001AD8[] = {
 };
 
 NpcAISettings N(aISettings_80241AE0) = {
-    .moveSpeed = 2.0,
+    .moveSpeed = 2.0f,
     .moveTime = 0x3C,
     .waitTime = 0xF,
-    .alertRadius = 100.0,
-    .unk_10 = 30.0,
+    .alertRadius = 100.0f,
+    .unk_10 = 30.0f,
     .unk_14 = 0x4,
-    .chaseSpeed = 4.0,
+    .chaseSpeed = 4.0f,
     .unk_1C = 0x6,
     .unk_20 = 0x1,
-    .chaseRadius = 140.0,
-    .unk_28 = 30.0,
+    .chaseRadius = 140.0f,
+    .unk_28 = 30.0f,
     .unk_2C = 0x1,
 };
 
@@ -255,17 +255,17 @@ NpcSettings N(npcSettings_80241B30) = {
 };
 
 NpcAISettings N(aISettings_80241B5C) = {
-    .moveSpeed = 1.7000000476837158,
+    .moveSpeed = 1.7f,
     .moveTime = 0x50,
     .waitTime = 0x1,
-    .alertRadius = 100.0,
-    .unk_10 = 0.0,
+    .alertRadius = 100.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0x4,
-    .chaseSpeed = 4.5,
+    .chaseSpeed = 4.5f,
     .unk_1C = 0x14,
     .unk_20 = 0x1,
-    .chaseRadius = 140.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 140.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -622,4 +622,3 @@ Script N(script_MakeEntities) = SCRIPT({
 // rodata: D_80243088_DE5518
 
 // rodata: jtbl_80243090_DE5520
-

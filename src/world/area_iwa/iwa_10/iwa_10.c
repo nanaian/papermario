@@ -1834,7 +1834,7 @@ s32 N(treeDropList_Bush1)[] = {
 
 TreeEffectVectorList N(treeEffectVectors_Bush1) = {
     .count = 0x1,
-    .vectors = { { nan, 2.1019476964872256e-44, 7.300764999132297e-43 } },
+    .vectors = { { nanf, 2.1e-44f, 7.3e-43f } },
 };
 
 s32 N(searchBushEvent_Bush1)[] = {
@@ -1852,7 +1852,7 @@ s32 N(treeDropList_Bush2)[] = {
 
 TreeEffectVectorList N(treeEffectVectors_Bush2) = {
     .count = 0x1,
-    .vectors = { { nan, 3.0828566215145976e-44, 5.3809861030072976e-43 } },
+    .vectors = { { nanf, 3.1e-44f, 5.38e-43f } },
 };
 
 s32 N(searchBushEvent_Bush2)[] = {
@@ -1870,7 +1870,7 @@ s32 N(treeDropList_Bush3)[] = {
 
 TreeEffectVectorList N(treeEffectVectors_Bush3) = {
     .count = 0x1,
-    .vectors = { { nan, 2.942726775082116e-44, 5.675258780515509e-43 } },
+    .vectors = { { nanf, 3e-44.0f, 5.68e-43f } },
 };
 
 s32 N(searchBushEvent_Bush3)[] = {
@@ -1888,7 +1888,7 @@ s32 N(treeDropList_Bush4)[] = {
 
 TreeEffectVectorList N(treeEffectVectors_Bush4) = {
     .count = 0x1,
-    .vectors = { { nan, 3.2229864679470793e-44, 3.923635700109488e-43 } },
+    .vectors = { { nanf, 3.2e-44f, 3.92e-43f } },
 };
 
 s32 N(searchBushEvent_Bush4)[] = {
@@ -1915,4 +1915,3 @@ s32 pad_008454[] = {
 // rodata: D_80248468_9269D8
 
 // rodata: D_80248470_9269E0
-

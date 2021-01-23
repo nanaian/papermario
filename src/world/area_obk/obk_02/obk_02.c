@@ -339,7 +339,7 @@ NpcGroupList N(npcGroupList_80241198) = {
     {},
 };
 
-Vec4f N(triggerCoord_802411B0) =  { 237.0, -210.0, 53.0, 0.0 };
+Vec4f N(triggerCoord_802411B0) =  { 237.0f, -210.0f, 53.0f, 0.0f };
 
 Script N(script_802411C0) = SCRIPT({
     PlayEffect(66, 1, 33, 33, 1, 10, 30, 0, 0, 0, 0, 0, 0, 0);
@@ -469,4 +469,3 @@ s32 pad_0017C8[] = {
 s32 pad_0017E8[] = {
     0x00000000, 0x00000000,
 };
-

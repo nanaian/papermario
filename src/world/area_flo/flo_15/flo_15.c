@@ -418,4 +418,3 @@ Script N(script_802413B0) = {
 // rodata: D_80241760_CD1E20
 
 // rodata: D_80241768_CD1E28
-

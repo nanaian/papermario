@@ -242,4 +242,3 @@ Script N(script_80240B78) = SCRIPT({
 // rodata: D_80240C40_B13D60
 
 // rodata: D_80240C48_B13D68
-

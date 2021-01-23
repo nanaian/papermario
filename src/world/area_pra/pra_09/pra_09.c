@@ -269,7 +269,7 @@ Script N(script_EnterWalk_80241A28) = SCRIPT({
     }
 });
 
-Vec4f N(triggerCoord_80241AE8) =  { 487.0, 0.0, 80.0, 0.0 };
+Vec4f N(triggerCoord_80241AE8) =  { 487.0f, 0.0f, 80.0f, 0.0f };
 
 Script N(script_80241AF8) = SCRIPT({
     PlayEffect(66, 0, 38, 30, 1, 10, 30, 0, 0, 0, 0, 0, 0, 0);
@@ -1342,4 +1342,3 @@ s32 pad_006A08[] = {
 // rodata: D_80246A10_D5F2A0
 
 // rodata: D_80246A18_D5F2A8
-

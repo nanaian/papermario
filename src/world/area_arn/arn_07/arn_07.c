@@ -633,21 +633,21 @@ Script N(script_MakeEntities) = SCRIPT({
 });
 
 f32 N(floatTable_80243BC0)[] = {
-    4.500000f, 3.500000f, 2.600000f, 2.000000f, 1.500000f, 20.000000f,
+    4.5f, 3.5f, 2.6f, 2.0f, 1.5f, 20.0f,
 };
 
 NpcAISettings N(aISettings_80243BD8) = {
-    .moveSpeed = 1.7999999523162842,
+    .moveSpeed = 1.8f,
     .moveTime = 0x3C,
     .waitTime = 0xF,
-    .alertRadius = 120.0,
-    .unk_10 = 0.0,
+    .alertRadius = 120.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0x3,
-    .chaseSpeed = 4.0,
+    .chaseSpeed = 4.0f,
     .unk_1C = 0x5,
     .unk_20 = 0x1,
-    .chaseRadius = 150.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 150.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -1528,4 +1528,3 @@ s32 pad_007948[] = {
 s32 pad_0079A4[] = {
     0x00000000, 0x00000000, 0x00000000,
 };
-

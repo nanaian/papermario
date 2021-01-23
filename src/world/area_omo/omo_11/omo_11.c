@@ -441,17 +441,17 @@ s32 pad_002648[] = {
 };
 
 NpcAISettings N(aISettings_80242650) = {
-    .moveSpeed = 3.0,
+    .moveSpeed = 3.0f,
     .moveTime = 0x1E,
     .waitTime = 0x3C,
-    .alertRadius = 100.0,
-    .unk_10 = 30.0,
+    .alertRadius = 100.0f,
+    .unk_10 = 30.0f,
     .unk_14 = 0x4,
-    .chaseSpeed = 5.0,
+    .chaseSpeed = 5.0f,
     .unk_1C = 0x8,
     .unk_20 = 0x1,
-    .chaseRadius = 140.0,
-    .unk_28 = 30.0,
+    .chaseRadius = 140.0f,
+    .unk_28 = 30.0f,
     .unk_2C = 0x1,
 };
 
@@ -518,4 +518,3 @@ NpcGroupList N(npcGroupList_80242AAC) = {
 // rodata: D_80242AD0_DDF300
 
 // rodata: D_80242AD8_DDF308
-

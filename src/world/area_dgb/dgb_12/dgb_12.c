@@ -203,4 +203,3 @@ Script N(script_MakeEntities) = SCRIPT({
 s32 pad_000A68[] = {
     0x00000000, 0x00000000,
 };
-

@@ -954,7 +954,7 @@ Script N(script_MakeEntities) = SCRIPT({
 });
 
 f32 N(floatTable_80244CD0)[] = {
-    4.500000f, 3.500000f, 2.600000f, 2.000000f, 1.500000f, 20.000000f,
+    4.5f, 3.5f, 2.6f, 2.0f, 1.5f, 20.0f,
 };
 
 Script N(script_80244CE8) = SCRIPT({
@@ -963,17 +963,17 @@ Script N(script_80244CE8) = SCRIPT({
 });
 
 NpcAISettings N(aISettings_80244D24) = {
-    .moveSpeed = 1.5,
+    .moveSpeed = 1.5f,
     .moveTime = 0x5A,
     .waitTime = 0x1E,
-    .alertRadius = 240.0,
-    .unk_10 = 0.0,
+    .alertRadius = 240.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0x1,
-    .chaseSpeed = 5.300000190734863,
+    .chaseSpeed = 5.3f,
     .unk_1C = 0xB4,
     .unk_20 = 0x1,
-    .chaseRadius = 240.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 240.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -1075,17 +1075,17 @@ NpcSettings N(npcSettings_8024526C) = {
 };
 
 NpcAISettings N(aISettings_80245298) = {
-    .moveSpeed = 4.5,
+    .moveSpeed = 4.5f,
     .moveTime = 0,
     .waitTime = 0,
-    .alertRadius = 170.0,
-    .unk_10 = 90.0,
+    .alertRadius = 170.0f,
+    .unk_10 = 90.0f,
     .unk_14 = 0x1,
-    .chaseSpeed = 3.9000000953674316,
+    .chaseSpeed = 3.9f,
     .unk_1C = 0xB4,
     .unk_20 = 0x2,
-    .chaseRadius = 170.0,
-    .unk_28 = 90.0,
+    .chaseRadius = 170.0f,
+    .unk_28 = 90.0f,
     .unk_2C = 0x1,
 };
 
@@ -6323,4 +6323,3 @@ s32 pad_023474[] = {
 s32 pad_0236B8[] = {
     0x00000000, 0x00000000,
 };
-

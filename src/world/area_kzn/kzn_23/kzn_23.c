@@ -474,4 +474,3 @@ s32 pad_001C04[] = {
 // rodata: D_80241C10_C9DF10
 
 // rodata: D_80241C18_C9DF18
-

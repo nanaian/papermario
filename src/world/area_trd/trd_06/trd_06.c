@@ -182,7 +182,7 @@ Script N(script_EnterDoubleDoor_80240FC0) = SCRIPT({
     }
 });
 
-Vec4f N(triggerCoord_802410EC) =  { 160.0, 0.0, 160.0, 0.0 };
+Vec4f N(triggerCoord_802410EC) =  { 160.0f, 0.0f, 160.0f, 0.0f };
 
 Script N(script_802410FC) = SCRIPT({
     SetPlayerFlagBits(192, 1);
@@ -969,17 +969,17 @@ s32 pad_00482C[] = {
 };
 
 NpcAISettings N(aISettings_80244830) = {
-    .moveSpeed = 1.5,
+    .moveSpeed = 1.5f,
     .moveTime = 0x3C,
     .waitTime = 0x1E,
-    .alertRadius = 0.0,
-    .unk_10 = 0.0,
+    .alertRadius = 0.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0xFFFFFFFF,
-    .chaseSpeed = 0.0,
+    .chaseSpeed = 0.0f,
     .unk_1C = 0,
     .unk_20 = 0,
-    .chaseRadius = 0.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 0.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -1100,4 +1100,3 @@ s32 pad_0051B8[] = {
 s32 N(unk_802451D8)[] = {
     0x70617274, 0x795F7069, 0x6E6B6900, 0x00000000, 0x00000000, 0x00000000,
 };
-

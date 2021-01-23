@@ -256,17 +256,17 @@ s32 unk_missing_80242EE0[] = {
 };
 
 NpcAISettings N(aISettings_80242F0C) = {
-    .moveSpeed = 1.7000000476837158,
+    .moveSpeed = 1.7f,
     .moveTime = 0x50,
     .waitTime = 0x1,
-    .alertRadius = 100.0,
-    .unk_10 = 0.0,
+    .alertRadius = 100.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0x4,
-    .chaseSpeed = 4.5,
+    .chaseSpeed = 4.5f,
     .unk_1C = 0x14,
     .unk_20 = 0x1,
-    .chaseRadius = 140.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 140.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -291,7 +291,7 @@ NpcSettings N(npcSettings_80242F5C) = {
 };
 
 f32 N(floatTable_80242F88)[] = {
-    4.500000f, 3.500000f, 2.600000f, 2.000000f, 1.500000f, 20.000000f,
+    4.5f, 3.5f, 2.6f, 2.0f, 1.5f, 20.0f,
 };
 
 s32 N(unk_80242FA0)[] = {
@@ -823,4 +823,3 @@ s32 pad_005644[] = {
 };
 
 // rodata: D_80245648_DB7908
-
