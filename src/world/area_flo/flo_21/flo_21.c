@@ -1102,4 +1102,3 @@ NpcGroupList N(npcGroupList_80245AEC) = {
 s32 pad_005B34[] = {
     0x00000000, 0x00000000, 0x00000000,
 };
-

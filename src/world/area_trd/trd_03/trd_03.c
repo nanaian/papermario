@@ -204,9 +204,9 @@ Script N(script_EnterWalk_80240ED8) = SCRIPT({
     }
 });
 
-Vec4f N(triggerCoord_80241044) =  { -160.0, 0.0, -10.0, 0.0 };
+Vec4f N(triggerCoord_80241044) =  { -160.0f, 0.0f, -10.0f, 0.0f };
 
-Vec4f N(triggerCoord_80241054) =  { 360.0, 0.0, -10.0, 0.0 };
+Vec4f N(triggerCoord_80241054) =  { 360.0f, 0.0f, -10.0f, 0.0f };
 
 Script N(script_80241064) = SCRIPT({
     PlayEffect(66, 0, 40, 10, 1, 10, 30, 0, 0, 0, 0, 0, 0, 0);
@@ -379,17 +379,17 @@ s32 pad_001A94[] = {
 };
 
 NpcAISettings N(aISettings_80241AA0) = {
-    .moveSpeed = 1.5,
+    .moveSpeed = 1.5f,
     .moveTime = 0x2D,
     .waitTime = 0x14,
-    .alertRadius = 70.0,
-    .unk_10 = 50.0,
+    .alertRadius = 70.0f,
+    .unk_10 = 50.0f,
     .unk_14 = 0xA,
-    .chaseSpeed = 7.5,
+    .chaseSpeed = 7.5f,
     .unk_1C = 0,
     .unk_20 = 0,
-    .chaseRadius = 80.0,
-    .unk_28 = 60.0,
+    .chaseRadius = 80.0f,
+    .unk_28 = 60.0f,
     .unk_2C = 0x1,
 };
 
@@ -434,17 +434,17 @@ NpcSettings N(npcSettings_80241B6C) = {
 };
 
 NpcAISettings N(aISettings_80241B98) = {
-    .moveSpeed = 1.5,
+    .moveSpeed = 1.5f,
     .moveTime = 0x3C,
     .waitTime = 0xA,
-    .alertRadius = 110.0,
-    .unk_10 = 65.0,
+    .alertRadius = 110.0f,
+    .unk_10 = 65.0f,
     .unk_14 = 0x8,
-    .chaseSpeed = 3.4000000953674316,
+    .chaseSpeed = 3.4f,
     .unk_1C = 0x78,
     .unk_20 = 0x2,
-    .chaseRadius = 110.0,
-    .unk_28 = 65.0,
+    .chaseRadius = 110.0f,
+    .unk_28 = 65.0f,
     .unk_2C = 0x1,
 };
 
@@ -946,4 +946,3 @@ s32 pad_003D24[] = {
 s32 pad_003D9C[] = {
     0x00000000,
 };
-

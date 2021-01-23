@@ -456,7 +456,7 @@ ShakeTree N(shakeTreeEvent_Tree1) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_802430F4) =  { -185.0, 90.0, -225.0, 0.0 };
+Vec4f N(triggerCoord_802430F4) =  { -185.0f, 90.0f, -225.0f, 0.0f };
 
 ModelIdList N(treeModelList_Tree2_Leaves) = {
     .count = 0x1,
@@ -476,7 +476,7 @@ ShakeTree N(shakeTreeEvent_Tree2) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_80243128) =  { -451.0, 60.0, 80.0, 0.0 };
+Vec4f N(triggerCoord_80243128) =  { -451.0f, 60.0f, 80.0f, 0.0f };
 
 ModelIdList N(treeModelList_Tree3_Leaves) = {
     .count = 0x1,
@@ -496,7 +496,7 @@ ShakeTree N(shakeTreeEvent_Tree3) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_8024315C) =  { -405.0, 0.0, 228.0, 0.0 };
+Vec4f N(triggerCoord_8024315C) =  { -405.0f, 0.0f, 228.0f, 0.0f };
 
 ModelIdList N(treeModelList_Tree4_Leaves) = {
     .count = 0x1,
@@ -516,7 +516,7 @@ ShakeTree N(shakeTreeEvent_Tree4) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_80243190) =  { 291.0, 0.0, 385.0, 0.0 };
+Vec4f N(triggerCoord_80243190) =  { 291.0f, 0.0f, 385.0f, 0.0f };
 
 ModelIdList N(treeModelList_Tree5_Leaves) = {
     .count = 0x1,
@@ -536,7 +536,7 @@ ShakeTree N(shakeTreeEvent_Tree5) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_802431C4) =  { 108.0, 83.0, 115.0, 0.0 };
+Vec4f N(triggerCoord_802431C4) =  { 108.0f, 83.0f, 115.0f, 0.0f };
 
 Script N(script_ExitWalk_802431D4) = SCRIPT({
     group 27;
@@ -792,17 +792,17 @@ s32 pad_003FB8[] = {
 };
 
 NpcAISettings N(aISettings_80243FC0) = {
-    .moveSpeed = 1.5,
+    .moveSpeed = 1.5f,
     .moveTime = 0x3C,
     .waitTime = 0x1E,
-    .alertRadius = 0.0,
-    .unk_10 = 0.0,
+    .alertRadius = 0.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0xFFFFFFFF,
-    .chaseSpeed = 0.0,
+    .chaseSpeed = 0.0f,
     .unk_1C = 0,
     .unk_20 = 0,
-    .chaseRadius = 0.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 0.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -817,17 +817,17 @@ s32 unk_missing_80244010[] = {
 };
 
 NpcAISettings N(aISettings_80244068) = {
-    .moveSpeed = 1.5,
+    .moveSpeed = 1.5f,
     .moveTime = 0x3C,
     .waitTime = 0x1E,
-    .alertRadius = 0.0,
-    .unk_10 = 0.0,
+    .alertRadius = 0.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0xFFFFFFFF,
-    .chaseSpeed = 0.0,
+    .chaseSpeed = 0.0f,
     .unk_1C = 0,
     .unk_20 = 0,
-    .chaseRadius = 0.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 0.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -852,17 +852,17 @@ NpcSettings N(npcSettings_802440B8) = {
 };
 
 NpcAISettings N(aISettings_802440E4) = {
-    .moveSpeed = 1.5,
+    .moveSpeed = 1.5f,
     .moveTime = 0x3C,
     .waitTime = 0x1E,
-    .alertRadius = 0.0,
-    .unk_10 = 0.0,
+    .alertRadius = 0.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0xFFFFFFFF,
-    .chaseSpeed = 0.0,
+    .chaseSpeed = 0.0f,
     .unk_1C = 0,
     .unk_20 = 0,
-    .chaseRadius = 0.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 0.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -908,21 +908,21 @@ s32 unk_missing_8024418C[] = {
 };
 
 f32 N(floatTable_802441B8)[] = {
-    4.500000f, 3.500000f, 2.600000f, 2.000000f, 1.500000f, 20.000000f,
+    4.5f, 3.5f, 2.6f, 2.0f, 1.5f, 20.0f,
 };
 
 NpcAISettings N(aISettings_802441D0) = {
-    .moveSpeed = 1.2000000476837158,
+    .moveSpeed = 1.2f,
     .moveTime = 0x3C,
     .waitTime = 0x1E,
-    .alertRadius = 0.0,
-    .unk_10 = 0.0,
+    .alertRadius = 0.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0xFFFFFFFF,
-    .chaseSpeed = 0.0,
+    .chaseSpeed = 0.0f,
     .unk_1C = 0,
     .unk_20 = 0,
-    .chaseRadius = 0.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 0.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -2622,4 +2622,3 @@ s32 pad_00BE38[] = {
 s32 pad_00BE94[] = {
     0x00000000, 0x00000000, 0x00000000,
 };
-

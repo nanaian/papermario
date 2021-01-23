@@ -744,17 +744,17 @@ Script N(script_8024469C) = SCRIPT({
 });
 
 NpcAISettings N(aISettings_802449D0) = {
-    .moveSpeed = 1.5,
+    .moveSpeed = 1.5f,
     .moveTime = 0x3C,
     .waitTime = 0x1E,
-    .alertRadius = 0.0,
-    .unk_10 = 0.0,
+    .alertRadius = 0.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0xFFFFFFFF,
-    .chaseSpeed = 0.0,
+    .chaseSpeed = 0.0f,
     .unk_1C = 0,
     .unk_20 = 0,
-    .chaseRadius = 0.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 0.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -1624,17 +1624,17 @@ Script N(script_80247B34) = SCRIPT({
 });
 
 NpcAISettings N(aISettings_80247B50) = {
-    .moveSpeed = 0.699999988079071,
+    .moveSpeed = 0.7f,
     .moveTime = 0x1E,
     .waitTime = 0x14,
-    .alertRadius = 0.0,
-    .unk_10 = 0.0,
+    .alertRadius = 0.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0xFFFFFFFF,
-    .chaseSpeed = 0.0,
+    .chaseSpeed = 0.0f,
     .unk_1C = 0,
     .unk_20 = 0,
-    .chaseRadius = 0.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 0.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -1664,14 +1664,14 @@ s32 unk_missing_80247BCC[] = {
 };
 
 NpcAISettingsSmall N(aISettings_80247BF8) = {
-    .alertRadius = 0.0,
-    .unk_10 = 0.0,
+    .alertRadius = 0.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0xFFFFFFFF,
-    .chaseSpeed = 0.0,
+    .chaseSpeed = 0.0f,
     .unk_1C = 0,
     .unk_20 = 0,
-    .chaseRadius = 300.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 300.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1E,
 };
 
@@ -1701,17 +1701,17 @@ s32 unk_missing_80247C68[] = {
 };
 
 NpcAISettings N(aISettings_80247C94) = {
-    .moveSpeed = 1.5,
+    .moveSpeed = 1.5f,
     .moveTime = 0x3C,
     .waitTime = 0x1E,
-    .alertRadius = 0.0,
-    .unk_10 = 0.0,
+    .alertRadius = 0.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0xFFFFFFFF,
-    .chaseSpeed = 0.0,
+    .chaseSpeed = 0.0f,
     .unk_1C = 0,
     .unk_20 = 0,
-    .chaseRadius = 0.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 0.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -1752,14 +1752,14 @@ NpcSettings N(npcSettings_80247D10) = {
 };
 
 NpcAISettingsSmall N(aISettings_80247D3C) = {
-    .alertRadius = 0.0,
-    .unk_10 = 0.0,
+    .alertRadius = 0.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0xFFFFFFFF,
-    .chaseSpeed = 0.0,
+    .chaseSpeed = 0.0f,
     .unk_1C = 0,
     .unk_20 = 0,
-    .chaseRadius = 300.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 300.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1E,
 };
 
@@ -1871,17 +1871,17 @@ s32 N(intTable_802480AC)[] = {
 };
 
 NpcAISettings N(aISettings_802480BC) = {
-    .moveSpeed = 2.0,
+    .moveSpeed = 2.0f,
     .moveTime = 0xF,
     .waitTime = 0x1E,
-    .alertRadius = 0.0,
-    .unk_10 = 0.0,
+    .alertRadius = 0.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0xFFFFFFFF,
-    .chaseSpeed = 0.0,
+    .chaseSpeed = 0.0f,
     .unk_1C = 0,
     .unk_20 = 0,
-    .chaseRadius = 0.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 0.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -3997,17 +3997,17 @@ NpcGroupList N(npcGroupList_802513D8) = {
 };
 
 NpcAISettings N(aISettings_802513F0) = {
-    .moveSpeed = 1.5,
+    .moveSpeed = 1.5f,
     .moveTime = 0x3C,
     .waitTime = 0x1E,
-    .alertRadius = 0.0,
-    .unk_10 = 0.0,
+    .alertRadius = 0.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0xFFFFFFFF,
-    .chaseSpeed = 0.0,
+    .chaseSpeed = 0.0f,
     .unk_1C = 0,
     .unk_20 = 0,
-    .chaseRadius = 0.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 0.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -4905,17 +4905,17 @@ Script N(script_80255588) = SCRIPT({
 });
 
 NpcAISettings N(aISettings_80255630) = {
-    .moveSpeed = 1.5,
+    .moveSpeed = 1.5f,
     .moveTime = 0x3C,
     .waitTime = 0x1E,
-    .alertRadius = 0.0,
-    .unk_10 = 0.0,
+    .alertRadius = 0.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0xFFFFFFFF,
-    .chaseSpeed = 0.0,
+    .chaseSpeed = 0.0f,
     .unk_1C = 0,
     .unk_20 = 0,
-    .chaseRadius = 0.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 0.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -4953,17 +4953,17 @@ s32 N(intTable_8025578C)[] = {
 };
 
 NpcAISettings N(aISettings_8025579C) = {
-    .moveSpeed = 2.0,
+    .moveSpeed = 2.0f,
     .moveTime = 0xF,
     .waitTime = 0x1E,
-    .alertRadius = 0.0,
-    .unk_10 = 0.0,
+    .alertRadius = 0.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0xFFFFFFFF,
-    .chaseSpeed = 0.0,
+    .chaseSpeed = 0.0f,
     .unk_1C = 0,
     .unk_20 = 0,
-    .chaseRadius = 0.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 0.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -5490,7 +5490,7 @@ ModelIdList N(treeModelList_Bush1_Bush) = {
 
 TreeEffectVectorList N(treeEffectVectors_Bush1) = {
     .count = 0x1,
-    .vectors = { { nan, 2.2420775429197073e-44, 3.3210773604498165e-43 } },
+    .vectors = { { nanf, 2.2e-44f, 3.32e-43f } },
 };
 
 s32 N(searchBushEvent_Bush1)[] = {
@@ -5508,7 +5508,7 @@ s32 N(treeDropList_Bush2)[] = {
 
 TreeEffectVectorList N(treeEffectVectors_Bush2) = {
     .count = 0x1,
-    .vectors = { { 1.7376100957627732e-43, 2.2420775429197073e-44, 6.20775219695894e-43 } },
+    .vectors = { { 1.74e-43f, 2.2e-44f, 6.21e-43f } },
 };
 
 s32 N(searchBushEvent_Bush2)[] = {
@@ -5522,7 +5522,7 @@ ModelIdList N(treeModelList_Bush3_Bush) = {
 
 TreeEffectVectorList N(treeEffectVectors_Bush3) = {
     .count = 0x1,
-    .vectors = { { nan, 2.942726775082116e-44, nan } },
+    .vectors = { { nanf, 3e-44.0f, nanf } },
 };
 
 s32 N(searchBushEvent_Bush3)[] = {
@@ -5545,7 +5545,7 @@ s32 N(treeDropList_Tree1)[] = {
 
 TreeEffectVectorList N(treeEffectVectors_Tree1) = {
     .count = 0x2,
-    .vectors = { { 4.974609548353101e-43, 2.2420775429197073e-43, 9.10844001811131e-44 }, { 6.165713243029195e-43, 2.2420775429197073e-43, 1.9197788961249994e-43 } },
+    .vectors = { { 4.97e-43f, 2.24e-43f, 9.1e-44f }, { 6.17e-43f, 2.24e-43f, 1.92e-43f } },
 };
 
 ShakeTree N(shakeTreeEvent_Tree1) = {
@@ -5556,7 +5556,7 @@ ShakeTree N(shakeTreeEvent_Tree1) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_802579FC) =  { 387.0, 0.0, 92.0, 0.0 };
+Vec4f N(triggerCoord_802579FC) =  { 387.0f, 0.0f, 92.0f, 0.0f };
 
 Script N(script_80257A0C) = SCRIPT({
     SI_VAR(0) = N(searchBushEvent_Bush1);
@@ -5633,4 +5633,3 @@ s32 pad_017EF8[] = {
 s32 pad_017F1C[] = {
     0x00000000,
 };
-

@@ -205,17 +205,17 @@ s32 pad_00197C[] = {
 };
 
 NpcAISettings N(aISettings_80241980) = {
-    .moveSpeed = 1.5,
+    .moveSpeed = 1.5f,
     .moveTime = 0x1E,
     .waitTime = 0xA,
-    .alertRadius = 150.0,
-    .unk_10 = 0.0,
+    .alertRadius = 150.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0x3,
-    .chaseSpeed = 5.0,
+    .chaseSpeed = 5.0f,
     .unk_1C = 0x46,
     .unk_20 = 0x5,
-    .chaseRadius = 200.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 200.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -847,7 +847,7 @@ ShakeTree N(shakeTreeEvent_Tree1) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_80243EE8) =  { 160.0, 0.0, -287.0, 0.0 };
+Vec4f N(triggerCoord_80243EE8) =  { 160.0f, 0.0f, -287.0f, 0.0f };
 
 ModelIdList N(treeModelList_Tree2_Leaves) = {
     .count = 0x2,
@@ -871,7 +871,7 @@ ShakeTree N(shakeTreeEvent_Tree2) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_80243F40) =  { -628.0, 0.0, -95.0, 0.0 };
+Vec4f N(triggerCoord_80243F40) =  { -628.0f, 0.0f, -95.0f, 0.0f };
 
 ModelIdList N(treeModelList_Tree3_Leaves) = {
     .count = 0x2,
@@ -895,7 +895,7 @@ ShakeTree N(shakeTreeEvent_Tree3) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_80243F98) =  { -391.0, 0.0, -135.0, 0.0 };
+Vec4f N(triggerCoord_80243F98) =  { -391.0f, 0.0f, -135.0f, 0.0f };
 
 ModelIdList N(treeModelList_Tree4_Leaves) = {
     .count = 0x2,
@@ -919,7 +919,7 @@ ShakeTree N(shakeTreeEvent_Tree4) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_80243FF0) =  { -341.0, 0.0, -115.0, 0.0 };
+Vec4f N(triggerCoord_80243FF0) =  { -341.0f, 0.0f, -115.0f, 0.0f };
 
 ModelIdList N(treeModelList_Tree5_Leaves) = {
     .count = 0x2,
@@ -943,7 +943,7 @@ ShakeTree N(shakeTreeEvent_Tree5) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_80244048) =  { 68.0, 0.0, -155.0, 0.0 };
+Vec4f N(triggerCoord_80244048) =  { 68.0f, 0.0f, -155.0f, 0.0f };
 
 ModelIdList N(treeModelList_Tree6_Leaves) = {
     .count = 0x2,
@@ -967,7 +967,7 @@ ShakeTree N(shakeTreeEvent_Tree6) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_802440A0) =  { 251.0, 0.0, -135.0, 0.0 };
+Vec4f N(triggerCoord_802440A0) =  { 251.0f, 0.0f, -135.0f, 0.0f };
 
 s32 N(unk_802440B0)[] = {
     0x00000002, 0x00000047, 0x00000048,
@@ -993,7 +993,7 @@ s32 N(unk_80244118)[] = {
     N(unk_802440B0), N(unk_802440BC), N(unk_802440E4), 0x00000000, 0x00000000,
 };
 
-Vec4f N(triggerCoord_8024412C) =  { 431.0, 0.0, -155.0, 0.0 };
+Vec4f N(triggerCoord_8024412C) =  { 431.0f, 0.0f, -155.0f, 0.0f };
 
 Script N(script_8024413C) = SCRIPT({
     SI_AREA_FLAG(14) = 0;
@@ -1044,4 +1044,3 @@ s32 pad_0043D4[] = {
 s32 pad_004434[] = {
     0x00000000, 0x00000000, 0x00000000,
 };
-

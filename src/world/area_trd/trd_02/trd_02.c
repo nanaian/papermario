@@ -270,7 +270,7 @@ Script N(script_80241FC8) = SCRIPT({
     unbind;
 });
 
-Vec4f N(triggerCoord_8024240C) =  { 255.0, 50.0, -80.0, 0.0 };
+Vec4f N(triggerCoord_8024240C) =  { 255.0f, 50.0f, -80.0f, 0.0f };
 
 Script N(script_8024241C) = SCRIPT({
     group 0;
@@ -396,17 +396,17 @@ s32 pad_002AC8[] = {
 };
 
 NpcAISettings N(aISettings_80242AD0) = {
-    .moveSpeed = 1.5,
+    .moveSpeed = 1.5f,
     .moveTime = 0x3C,
     .waitTime = 0xA,
-    .alertRadius = 110.0,
-    .unk_10 = 65.0,
+    .alertRadius = 110.0f,
+    .unk_10 = 65.0f,
     .unk_14 = 0x8,
-    .chaseSpeed = 3.4000000953674316,
+    .chaseSpeed = 3.4f,
     .unk_1C = 0x78,
     .unk_20 = 0x2,
-    .chaseRadius = 110.0,
-    .unk_28 = 65.0,
+    .chaseRadius = 110.0f,
+    .unk_28 = 65.0f,
     .unk_2C = 0x1,
 };
 
@@ -449,17 +449,17 @@ s32 unk_missing_80242BEC[] = {
 };
 
 NpcAISettings N(aISettings_80242C18) = {
-    .moveSpeed = 1.5,
+    .moveSpeed = 1.5f,
     .moveTime = 0x19,
     .waitTime = 0x14,
-    .alertRadius = 70.0,
-    .unk_10 = 50.0,
+    .alertRadius = 70.0f,
+    .unk_10 = 50.0f,
     .unk_14 = 0xA,
-    .chaseSpeed = 7.0,
+    .chaseSpeed = 7.0f,
     .unk_1C = 0,
     .unk_20 = 0,
-    .chaseRadius = 80.0,
-    .unk_28 = 60.0,
+    .chaseRadius = 80.0f,
+    .unk_28 = 60.0f,
     .unk_2C = 0x1,
 };
 
@@ -563,4 +563,3 @@ s32 pad_00333C[] = {
 // rodata: jtbl_80243350_9A4330
 
 // rodata: jtbl_802434E0_9A44C0
-

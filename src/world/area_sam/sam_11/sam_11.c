@@ -526,7 +526,7 @@ ShakeTree N(shakeTreeEvent_Tree1) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_80242C70) =  { 447.0, 0.0, -144.0, 0.0 };
+Vec4f N(triggerCoord_80242C70) =  { 447.0f, 0.0f, -144.0f, 0.0f };
 
 ModelIdList N(treeModelList_Tree2_Leaves) = {
     .count = 0x1,
@@ -546,7 +546,7 @@ ShakeTree N(shakeTreeEvent_Tree2) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_80242CA4) =  { -440.0, 0.0, -178.0, 0.0 };
+Vec4f N(triggerCoord_80242CA4) =  { -440.0f, 0.0f, -178.0f, 0.0f };
 
 ModelIdList N(treeModelList_Tree3_Leaves) = {
     .count = 0x1,
@@ -566,7 +566,7 @@ ShakeTree N(shakeTreeEvent_Tree3) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_80242CD8) =  { -450.0, 0.0, -80.0, 0.0 };
+Vec4f N(triggerCoord_80242CD8) =  { -450.0f, 0.0f, -80.0f, 0.0f };
 
 Script N(script_ExitWalk_80242CE8) = SCRIPT({
     if (SI_MAP_VAR(9) == 1) {
@@ -1183,17 +1183,17 @@ Script N(script_MakeEntities) = SCRIPT({
 });
 
 NpcAISettings N(aISettings_80244E20) = {
-    .moveSpeed = 1.5,
+    .moveSpeed = 1.5f,
     .moveTime = 0x3C,
     .waitTime = 0x1E,
-    .alertRadius = 0.0,
-    .unk_10 = 0.0,
+    .alertRadius = 0.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0xFFFFFFFF,
-    .chaseSpeed = 0.0,
+    .chaseSpeed = 0.0f,
     .unk_1C = 0,
     .unk_20 = 0,
-    .chaseRadius = 0.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 0.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -1912,17 +1912,17 @@ Script N(script_802474DC) = SCRIPT({
 });
 
 NpcAISettings N(aISettings_802474F8) = {
-    .moveSpeed = 0.699999988079071,
+    .moveSpeed = 0.7f,
     .moveTime = 0x1E,
     .waitTime = 0x14,
-    .alertRadius = 0.0,
-    .unk_10 = 0.0,
+    .alertRadius = 0.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0xFFFFFFFF,
-    .chaseSpeed = 0.0,
+    .chaseSpeed = 0.0f,
     .unk_1C = 0,
     .unk_20 = 0,
-    .chaseRadius = 0.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 0.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -3317,7 +3317,7 @@ Script N(script_8024D8A4) = SCRIPT({
     SI_MAP_VAR(7) = 0;
 });
 
-Vec4f N(triggerCoord_8024D984) =  { 0.0, -10.0, 220.0, 300.0 };
+Vec4f N(triggerCoord_8024D984) =  { 0.0f, -10.0f, 220.0f, 300.0f };
 
 Script N(script_8024D994) = SCRIPT({
     EnableGroup(161, 0);
@@ -4025,4 +4025,3 @@ s32 pad_011428[] = {
 s32 pad_011448[] = {
     0x00000000, 0x00000000,
 };
-

@@ -166,14 +166,14 @@ Script N(script_NpcAI_80240BC4) = SCRIPT({
 });
 
 NpcAISettingsSmall N(aISettings_80240C24) = {
-    .alertRadius = 0.0,
-    .unk_10 = 0.0,
+    .alertRadius = 0.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0xA,
-    .chaseSpeed = 0.0,
+    .chaseSpeed = 0.0f,
     .unk_1C = 0,
     .unk_20 = 0,
-    .chaseRadius = 0.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 0.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0,
 };
 
@@ -182,17 +182,17 @@ Script N(script_NpcAI_80240C48) = SCRIPT({
 });
 
 NpcAISettings N(aISettings_80240C68) = {
-    .moveSpeed = 0.0,
+    .moveSpeed = 0.0f,
     .moveTime = 0,
     .waitTime = 0,
-    .alertRadius = 0.0,
-    .unk_10 = 0.0,
+    .alertRadius = 0.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0,
-    .chaseSpeed = 7.300000190734863,
+    .chaseSpeed = 7.3f,
     .unk_1C = 0,
     .unk_20 = 0,
-    .chaseRadius = 0.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 0.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -775,4 +775,3 @@ s32 pad_00473C[] = {
 // rodata: D_80244750_AA7470
 
 // rodata: D_80244758_AA7478
-

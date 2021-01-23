@@ -805,13 +805,13 @@ Script N(script_80242E28) = {
 };
 // *INDENT-ON*
 
-Vec4f N(triggerCoord_8024367C) =  { 5.0, 0.0, -10.0, 0.0 };
+Vec4f N(triggerCoord_8024367C) =  { 5.0f, 0.0f, -10.0f, 0.0f };
 
-Vec4f N(triggerCoord_8024368C) =  { -5.0, 0.0, -20.0, 0.0 };
+Vec4f N(triggerCoord_8024368C) =  { -5.0f, 0.0f, -20.0f, 0.0f };
 
-Vec4f N(triggerCoord_8024369C) =  { 50.0, 0.0, -10.0, 0.0 };
+Vec4f N(triggerCoord_8024369C) =  { 50.0f, 0.0f, -10.0f, 0.0f };
 
-Vec4f N(triggerCoord_802436AC) =  { 105.0, 0.0, -10.0, 0.0 };
+Vec4f N(triggerCoord_802436AC) =  { 105.0f, 0.0f, -10.0f, 0.0f };
 
 Script N(script_802436BC) = SCRIPT({
     if (SI_SAVE_VAR(0) >= 53) {
@@ -1375,13 +1375,13 @@ Script N(script_80245624) = SCRIPT({
     }
 });
 
-Vec4f N(triggerCoord_80245694) =  { 5.0, 0.0, -10.0, 0.0 };
+Vec4f N(triggerCoord_80245694) =  { 5.0f, 0.0f, -10.0f, 0.0f };
 
-Vec4f N(triggerCoord_802456A4) =  { -5.0, 0.0, -20.0, 0.0 };
+Vec4f N(triggerCoord_802456A4) =  { -5.0f, 0.0f, -20.0f, 0.0f };
 
-Vec4f N(triggerCoord_802456B4) =  { 50.0, 0.0, -10.0, 0.0 };
+Vec4f N(triggerCoord_802456B4) =  { 50.0f, 0.0f, -10.0f, 0.0f };
 
-Vec4f N(triggerCoord_802456C4) =  { 105.0, 0.0, -10.0, 0.0 };
+Vec4f N(triggerCoord_802456C4) =  { 105.0f, 0.0f, -10.0f, 0.0f };
 
 Script N(script_802456D4) = SCRIPT({
     SI_MAP_VAR(10) = -1;
@@ -1764,4 +1764,3 @@ s32 pad_007034[] = {
 // rodata: D_80247040_CE36E0
 
 // rodata: D_80247048_CE36E8
-

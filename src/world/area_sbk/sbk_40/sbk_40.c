@@ -105,17 +105,17 @@ Script N(script_80240460) = SCRIPT({
 });
 
 NpcAISettings N(aISettings_802404F8) = {
-    .moveSpeed = 2.700000047683716,
+    .moveSpeed = 2.7f,
     .moveTime = 0x2D,
     .waitTime = 0x1E,
-    .alertRadius = 450.0,
-    .unk_10 = 0.0,
+    .alertRadius = 450.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0xA,
-    .chaseSpeed = 8.300000190734863,
+    .chaseSpeed = 8.3f,
     .unk_1C = 0xB4,
     .unk_20 = 0x64,
-    .chaseRadius = 550.0,
-    .unk_28 = 100.0,
+    .chaseRadius = 550.0f,
+    .unk_28 = 100.0f,
     .unk_2C = 0x1,
 };
 
@@ -238,4 +238,3 @@ Script N(script_MakeEntities) = SCRIPT({
 s32 pad_000C98[] = {
     0x00000000, 0x00000000,
 };
-

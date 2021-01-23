@@ -2679,4 +2679,3 @@ s32 pad_00A6A4[] = {
 // rodata: D_8024A6E0_AE5580
 
 // rodata: D_8024A6E8_AE5588
-

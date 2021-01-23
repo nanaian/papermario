@@ -1224,4 +1224,3 @@ s32 pad_004F84[] = {
 // rodata: D_80244FC0_ADAE90
 
 // rodata: D_80244FC8_ADAE98
-

@@ -1594,4 +1594,3 @@ Script N(script_80243F14) = SCRIPT({
 s32 pad_0061EC[] = {
     0x00000000,
 };
-

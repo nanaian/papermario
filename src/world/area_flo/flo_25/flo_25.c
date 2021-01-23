@@ -238,21 +238,21 @@ NpcSettings N(npcSettings_802428F0) = {
 };
 
 f32 N(floatTable_8024291C)[] = {
-    4.500000f, 3.500000f, 2.600000f, 2.000000f, 1.500000f, 20.000000f,
+    4.5f, 3.5f, 2.6f, 2.0f, 1.5f, 20.0f,
 };
 
 NpcAISettings N(aISettings_80242934) = {
-    .moveSpeed = 1.0,
+    .moveSpeed = 1.0f,
     .moveTime = 0x2D,
     .waitTime = 0x3C,
-    .alertRadius = 100.0,
-    .unk_10 = 0.0,
+    .alertRadius = 100.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0x3,
-    .chaseSpeed = 3.5999999046325684,
+    .chaseSpeed = 3.6f,
     .unk_1C = 0xA,
     .unk_20 = 0x1,
-    .chaseRadius = 120.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 120.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -281,17 +281,17 @@ NpcSettings N(npcSettings_802429D4) = {
 };
 
 NpcAISettings N(aISettings_80242A00) = {
-    .moveSpeed = 1.0,
+    .moveSpeed = 1.0f,
     .moveTime = 0x1E,
     .waitTime = 0x5,
-    .alertRadius = 80.0,
-    .unk_10 = 30.0,
+    .alertRadius = 80.0f,
+    .unk_10 = 30.0f,
     .unk_14 = 0x2,
-    .chaseSpeed = 4.5,
+    .chaseSpeed = 4.5f,
     .unk_1C = 0x6,
     .unk_20 = 0x1,
-    .chaseRadius = 90.0,
-    .unk_28 = 30.0,
+    .chaseRadius = 90.0f,
+    .unk_28 = 30.0f,
     .unk_2C = 0x1,
 };
 
@@ -785,7 +785,7 @@ ShakeTree N(shakeTreeEvent_Tree1) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_802446AC) =  { -388.0, 0.0, -92.0, 0.0 };
+Vec4f N(triggerCoord_802446AC) =  { -388.0f, 0.0f, -92.0f, 0.0f };
 
 Script N(script_802446BC) = SCRIPT({
     SI_AREA_FLAG(33) = 0;
@@ -946,4 +946,3 @@ s32 pad_004F34[] = {
 s32 pad_004F94[] = {
     0x00000000, 0x00000000, 0x00000000,
 };
-

@@ -305,9 +305,9 @@ s32 pad_001A1C[] = {
     0x00000000,
 };
 
-Vec4f N(triggerCoord_80241A20) =  { -593.0, -520.0, 104.0, 0.0 };
+Vec4f N(triggerCoord_80241A20) =  { -593.0f, -520.0f, 104.0f, 0.0f };
 
-Vec4f N(triggerCoord_80241A30) =  { -569.0, -780.0, -99.0, 0.0 };
+Vec4f N(triggerCoord_80241A30) =  { -569.0f, -780.0f, -99.0f, 0.0f };
 
 Script N(script_80241A40) = SCRIPT({
     PlayEffect(66, 0, 30, 14, 1, 10, 30, 0, 0, 0, 0, 0, 0, 0);
@@ -389,4 +389,3 @@ s32 pad_001E98[] = {
 // rodata: D_80241EA0_98AA00
 
 // rodata: D_80241EA8_98AA08
-

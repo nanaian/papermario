@@ -579,7 +579,7 @@ s32 N(treeDropList_Bush1)[] = {
 
 TreeEffectVectorList N(treeEffectVectors_Bush1) = {
     .count = 0x1,
-    .vectors = { { 1.639519203260036e-43, 2.802596928649634e-44, nan } },
+    .vectors = { { 1.64e-43f, 2.8e-44f, nanf } },
 };
 
 s32 N(searchBushEvent_Bush1)[] = {
@@ -597,7 +597,7 @@ s32 N(treeDropList_Bush2)[] = {
 
 TreeEffectVectorList N(treeEffectVectors_Bush2) = {
     .count = 0x1,
-    .vectors = { { nan, 2.802596928649634e-44, 2.3401684354224445e-43 } },
+    .vectors = { { nanf, 2.8e-44f, 2.34e-43f } },
 };
 
 s32 N(searchBushEvent_Bush2)[] = {
@@ -611,7 +611,7 @@ ModelIdList N(treeModelList_Bush3_Bush) = {
 
 TreeEffectVectorList N(treeEffectVectors_Bush3) = {
     .count = 0x1,
-    .vectors = { { nan, 2.802596928649634e-44, 1.7656360650492695e-43 } },
+    .vectors = { { nanf, 2.8e-44f, 1.77e-43f } },
 };
 
 s32 N(searchBushEvent_Bush3)[] = {
@@ -625,7 +625,7 @@ ModelIdList N(treeModelList_Bush4_Bush) = {
 
 TreeEffectVectorList N(treeEffectVectors_Bush4) = {
     .count = 0x1,
-    .vectors = { { nan, 2.802596928649634e-44, nan } },
+    .vectors = { { nanf, 2.8e-44f, nanf } },
 };
 
 s32 N(searchBushEvent_Bush4)[] = {
@@ -639,7 +639,7 @@ ModelIdList N(treeModelList_Bush5_Bush) = {
 
 TreeEffectVectorList N(treeEffectVectors_Bush5) = {
     .count = 0x1,
-    .vectors = { { nan, 2.802596928649634e-44, nan } },
+    .vectors = { { nanf, 2.8e-44f, nanf } },
 };
 
 s32 N(searchBushEvent_Bush5)[] = {
@@ -653,7 +653,7 @@ ModelIdList N(treeModelList_Bush6_Bush) = {
 
 TreeEffectVectorList N(treeEffectVectors_Bush6) = {
     .count = 0x1,
-    .vectors = { { nan, 2.802596928649634e-44, nan } },
+    .vectors = { { nanf, 2.8e-44f, nanf } },
 };
 
 s32 N(searchBushEvent_Bush6)[] = {
@@ -667,7 +667,7 @@ ModelIdList N(treeModelList_Bush7_Bush) = {
 
 TreeEffectVectorList N(treeEffectVectors_Bush7) = {
     .count = 0x1,
-    .vectors = { { nan, 3.0828566215145976e-44, nan } },
+    .vectors = { { nanf, 3.1e-44f, nanf } },
 };
 
 s32 N(searchBushEvent_Bush7)[] = {
@@ -681,7 +681,7 @@ ModelIdList N(treeModelList_Bush8_Bush) = {
 
 TreeEffectVectorList N(treeEffectVectors_Bush8) = {
     .count = 0x1,
-    .vectors = { { nan, 2.802596928649634e-44, nan } },
+    .vectors = { { nanf, 2.8e-44f, nanf } },
 };
 
 s32 N(searchBushEvent_Bush8)[] = {
@@ -695,7 +695,7 @@ ModelIdList N(treeModelList_Bush9_Bush) = {
 
 TreeEffectVectorList N(treeEffectVectors_Bush9) = {
     .count = 0x1,
-    .vectors = { { 1.2471556332490872e-43, 2.802596928649634e-44, nan } },
+    .vectors = { { 1.25e-43f, 2.8e-44f, nanf } },
 };
 
 s32 N(searchBushEvent_Bush9)[] = {
@@ -709,7 +709,7 @@ ModelIdList N(treeModelList_Bush10_Bush) = {
 
 TreeEffectVectorList N(treeEffectVectors_Bush10) = {
     .count = 0x1,
-    .vectors = { { 2.129973665773722e-43, 2.802596928649634e-44, nan } },
+    .vectors = { { 2.13e-43f, 2.8e-44f, nanf } },
 };
 
 s32 N(searchBushEvent_Bush10)[] = {
@@ -723,7 +723,7 @@ ModelIdList N(treeModelList_Bush11_Bush) = {
 
 TreeEffectVectorList N(treeEffectVectors_Bush11) = {
     .count = 0x1,
-    .vectors = { { 5.521115949439779e-43, 2.802596928649634e-44, 2.466285297211678e-43 } },
+    .vectors = { { 5.52e-43f, 2.8e-44f, 2.47e-43f } },
 };
 
 s32 N(searchBushEvent_Bush11)[] = {
@@ -737,7 +737,7 @@ ModelIdList N(treeModelList_Bush12_Bush) = {
 
 TreeEffectVectorList N(treeEffectVectors_Bush12) = {
     .count = 0x1,
-    .vectors = { { 3.3491033297363128e-43, 3.0828566215145976e-44, 6.0255833965967134e-43 } },
+    .vectors = { { 3.35e-43f, 3.1e-44f, 6.03e-43f } },
 };
 
 s32 N(searchBushEvent_Bush12)[] = {
@@ -1180,17 +1180,17 @@ Script N(script_80244F5C) = SCRIPT({
 });
 
 NpcAISettings N(aISettings_80245018) = {
-    .moveSpeed = 1.7000000476837158,
+    .moveSpeed = 1.7f,
     .moveTime = 0x64,
     .waitTime = 0x1,
-    .alertRadius = 100.0,
-    .unk_10 = 30.0,
+    .alertRadius = 100.0f,
+    .unk_10 = 30.0f,
     .unk_14 = 0x1,
-    .chaseSpeed = 3.5,
+    .chaseSpeed = 3.5f,
     .unk_1C = 0x14,
     .unk_20 = 0x1,
-    .chaseRadius = 120.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 120.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -1707,7 +1707,7 @@ ModelIdList N(treeModelList_Tree1_Trunk) = {
 
 TreeEffectVectorList N(treeEffectVectors_Tree1) = {
     .count = 0x2,
-    .vectors = { { nan, 1.5974802493302915e-43, nan }, { nan, 1.5974802493302915e-43, nan } },
+    .vectors = { { nanf, 1.6e-43f, nanf }, { nanf, 1.6e-43f, nanf } },
 };
 
 ShakeTree N(shakeTreeEvent_Tree1) = {
@@ -1718,7 +1718,7 @@ ShakeTree N(shakeTreeEvent_Tree1) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_80247294) =  { -357.0, 0.0, -270.0, 0.0 };
+Vec4f N(triggerCoord_80247294) =  { -357.0f, 0.0f, -270.0f, 0.0f };
 
 ModelIdList N(treeModelList_Tree2_Leaves) = {
     .count = 0x5,
@@ -1736,7 +1736,7 @@ s32 N(treeDropList_Tree2)[] = {
 
 TreeEffectVectorList N(treeEffectVectors_Tree2) = {
     .count = 0x2,
-    .vectors = { { nan, 1.5974802493302915e-43, nan }, { nan, 1.5974802493302915e-43, nan } },
+    .vectors = { { nanf, 1.6e-43f, nanf }, { nanf, 1.6e-43f, nanf } },
 };
 
 ShakeTree N(shakeTreeEvent_Tree2) = {
@@ -1747,7 +1747,7 @@ ShakeTree N(shakeTreeEvent_Tree2) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_80247314) =  { -145.0, 0.0, -460.0, 0.0 };
+Vec4f N(triggerCoord_80247314) =  { -145.0f, 0.0f, -460.0f, 0.0f };
 
 ModelIdList N(treeModelList_Tree3_Leaves) = {
     .count = 0x5,
@@ -1765,7 +1765,7 @@ s32 N(treeDropList_Tree3)[] = {
 
 TreeEffectVectorList N(treeEffectVectors_Tree3) = {
     .count = 0x2,
-    .vectors = { { 4.217908377617699e-43, 1.5974802493302915e-43, nan }, { 5.409012072293794e-43, 1.5974802493302915e-43, nan } },
+    .vectors = { { 4.22e-43f, 1.6e-43f, nanf }, { 5.41e-43f, 1.6e-43f, nanf } },
 };
 
 ShakeTree N(shakeTreeEvent_Tree3) = {
@@ -1776,7 +1776,7 @@ ShakeTree N(shakeTreeEvent_Tree3) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_80247394) =  { 341.0, 0.0, -124.0, 0.0 };
+Vec4f N(triggerCoord_80247394) =  { 341.0f, 0.0f, -124.0f, 0.0f };
 
 Script N(script_802473A4) = SCRIPT({
     SI_VAR(0) = N(shakeTreeEvent_Tree1);
@@ -1817,4 +1817,3 @@ s32 pad_0074B8[] = {
 // rodata: jtbl_802474E0_B65790
 
 // rodata: jtbl_80247670_B65920
-

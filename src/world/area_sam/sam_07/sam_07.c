@@ -275,7 +275,7 @@ Script N(script_80242784) = SCRIPT({
     DisablePlayerInput(0);
 });
 
-Vec4f N(triggerCoord_80242A90) =  { -940.0, -130.0, -75.0, 60.0 };
+Vec4f N(triggerCoord_80242A90) =  { -940.0f, -130.0f, -75.0f, 60.0f };
 
 Script N(script_80242AA0) = SCRIPT({
     EnableGroup(137, 1);
@@ -327,17 +327,17 @@ Script N(script_80242C90) = SCRIPT({
 });
 
 NpcAISettings N(aISettings_80242D4C) = {
-    .moveSpeed = 0.5,
+    .moveSpeed = 0.5f,
     .moveTime = 0x3C,
     .waitTime = 0xF,
-    .alertRadius = 100.0,
-    .unk_10 = 0.0,
+    .alertRadius = 100.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0xA,
-    .chaseSpeed = 3.5,
+    .chaseSpeed = 3.5f,
     .unk_1C = 0xB4,
     .unk_20 = 0x14,
-    .chaseRadius = 150.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 150.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -401,17 +401,17 @@ s32 unk_missing_80242EF4[] = {
 };
 
 NpcAISettings N(aISettings_80242F10) = {
-    .moveSpeed = 0.0,
+    .moveSpeed = 0.0f,
     .moveTime = 0x1E,
     .waitTime = 0x1E,
-    .alertRadius = 150.0,
-    .unk_10 = 0.0,
+    .alertRadius = 150.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0x1,
-    .chaseSpeed = 0.0,
+    .chaseSpeed = 0.0f,
     .unk_1C = 0,
     .unk_20 = 0,
-    .chaseRadius = 0.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 0.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0,
 };
 
@@ -604,4 +604,3 @@ NpcGroupList N(npcGroupList_80243D40) = {
 s32 pad_003F48[] = {
     0x00000000, 0x00000000,
 };
-

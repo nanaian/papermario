@@ -839,4 +839,3 @@ s32 pad_003794[] = {
 // rodata: D_802437B0_AAFFE0
 
 // rodata: D_802437B8_AAFFE8
-

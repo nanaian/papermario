@@ -2157,4 +2157,3 @@ s32 pad_00816C[] = {
 // rodata: D_802481B0_DAD3F0
 
 // rodata: D_802481B8_DAD3F8
-

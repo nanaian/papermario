@@ -20,4 +20,3 @@ Script N(main) = SCRIPT({
     SetCamBGColor(0, 0, 0, 0);
     SetCamEnabled(0, 1);
 });
-

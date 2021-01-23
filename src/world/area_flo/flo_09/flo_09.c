@@ -609,7 +609,7 @@ ShakeTree N(shakeTreeEvent_Tree1) = {
     .callback = &N(script_Tree1_Callback),
 };
 
-Vec4f N(triggerCoord_80243428) =  { -200.0, 0.0, 1.0, 0.0 };
+Vec4f N(triggerCoord_80243428) =  { -200.0f, 0.0f, 1.0f, 0.0f };
 
 ModelIdList N(treeModelList_Tree2_Leaves) = {
     .count = 0x2,
@@ -629,7 +629,7 @@ ShakeTree N(shakeTreeEvent_Tree2) = {
     .callback = &N(script_Tree2_Callback),
 };
 
-Vec4f N(triggerCoord_80243460) =  { 0.0, 0.0, 1.0, 0.0 };
+Vec4f N(triggerCoord_80243460) =  { 0.0f, 0.0f, 1.0f, 0.0f };
 
 ModelIdList N(treeModelList_Tree3_Leaves) = {
     .count = 0x2,
@@ -649,7 +649,7 @@ ShakeTree N(shakeTreeEvent_Tree3) = {
     .callback = &N(script_Tree3_Callback),
 };
 
-Vec4f N(triggerCoord_80243498) =  { 200.0, 0.0, 1.0, 0.0 };
+Vec4f N(triggerCoord_80243498) =  { 200.0f, 0.0f, 1.0f, 0.0f };
 
 Script N(script_802434A8) = SCRIPT({
     SI_AREA_VAR(4) = 0;
@@ -666,17 +666,17 @@ Script N(script_802434A8) = SCRIPT({
 });
 
 NpcAISettings N(aISettings_802435B0) = {
-    .moveSpeed = 1.0,
+    .moveSpeed = 1.0f,
     .moveTime = 0x1F4,
     .waitTime = 0xA,
-    .alertRadius = 50.0,
-    .unk_10 = 30.0,
+    .alertRadius = 50.0f,
+    .unk_10 = 30.0f,
     .unk_14 = 0x3,
-    .chaseSpeed = 3.5,
+    .chaseSpeed = 3.5f,
     .unk_1C = 0x28,
     .unk_20 = 0x3,
-    .chaseRadius = 100.0,
-    .unk_28 = 30.0,
+    .chaseRadius = 100.0f,
+    .unk_28 = 30.0f,
     .unk_2C = 0x1,
 };
 
@@ -701,21 +701,21 @@ NpcSettings N(npcSettings_80243600) = {
 };
 
 f32 N(floatTable_8024362C)[] = {
-    4.500000f, 3.500000f, 2.600000f, 2.000000f, 1.500000f, 20.000000f,
+    4.5f, 3.5f, 2.6f, 2.0f, 1.5f, 20.0f,
 };
 
 NpcAISettings N(aISettings_80243644) = {
-    .moveSpeed = 1.0,
+    .moveSpeed = 1.0f,
     .moveTime = 0x1E,
     .waitTime = 0x5,
-    .alertRadius = 80.0,
-    .unk_10 = 30.0,
+    .alertRadius = 80.0f,
+    .unk_10 = 30.0f,
     .unk_14 = 0x2,
-    .chaseSpeed = 4.5,
+    .chaseSpeed = 4.5f,
     .unk_1C = 0x6,
     .unk_20 = 0x1,
-    .chaseRadius = 90.0,
-    .unk_28 = 30.0,
+    .chaseRadius = 90.0f,
+    .unk_28 = 30.0f,
     .unk_2C = 0x1,
 };
 
@@ -901,4 +901,3 @@ s32 pad_004188[] = {
 s32 pad_0041F4[] = {
     0x00000000, 0x00000000, 0x00000000,
 };
-

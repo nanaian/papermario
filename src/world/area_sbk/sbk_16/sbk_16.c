@@ -296,7 +296,7 @@ ShakeTree N(shakeTreeEvent_Tree1) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_80240F18) =  { -351.0, 0.0, -101.0, 0.0 };
+Vec4f N(triggerCoord_80240F18) =  { -351.0f, 0.0f, -101.0f, 0.0f };
 
 ModelIdList N(treeModelList_Tree2_Leaves) = {
     .count = 0x1,
@@ -316,7 +316,7 @@ ShakeTree N(shakeTreeEvent_Tree2) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_80240F4C) =  { 228.0, 0.0, -306.0, 0.0 };
+Vec4f N(triggerCoord_80240F4C) =  { 228.0f, 0.0f, -306.0f, 0.0f };
 
 Script N(script_80240F5C) = SCRIPT({
     SI_VAR(0) = N(shakeTreeEvent_Tree1);
@@ -340,4 +340,3 @@ s32 pad_000FFC[] = {
 s32 pad_001018[] = {
     0x00000000, 0x00000000,
 };
-

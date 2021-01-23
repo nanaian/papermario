@@ -359,4 +359,3 @@ Script N(script_802412B0) = {
 // rodata: D_80241500_D377F0
 
 // rodata: D_80241508_D377F8
-

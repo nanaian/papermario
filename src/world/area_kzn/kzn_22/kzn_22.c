@@ -584,4 +584,3 @@ s32 pad_0020E4[] = {
 // rodata: D_802420F0_C9C2F0
 
 // rodata: D_802420F8_C9C2F8
-

@@ -536,7 +536,7 @@ ModelIdList N(treeModelList_Bush1_Bush) = {
 
 TreeEffectVectorList N(treeEffectVectors_Bush1) = {
     .count = 0x1,
-    .vectors = { { nan, 1.6815581571897805e-44, 1.14906474074635e-43 } },
+    .vectors = { { nanf, 1.7e-44f, 1.15e-43f } },
 };
 
 s32 N(searchBushEvent_Bush1)[] = {
@@ -1017,14 +1017,14 @@ s32 pad_0042F8[] = {
 };
 
 NpcAISettingsSmall N(aISettings_80244300) = {
-    .alertRadius = 130.0,
-    .unk_10 = 0.0,
+    .alertRadius = 130.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0x1,
-    .chaseSpeed = 2.5,
+    .chaseSpeed = 2.5f,
     .unk_1C = 0xB4,
     .unk_20 = 0x3,
-    .chaseRadius = 150.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 150.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -1753,7 +1753,7 @@ ModelIdList N(treeModelList_Bush2_Bush) = {
 
 TreeEffectVectorList N(treeEffectVectors_Bush2) = {
     .count = 0x1,
-    .vectors = { { nan, 1.8216880036222622e-44, 4.484155085839415e-44 } },
+    .vectors = { { nanf, 1.8e-44f, 4.5e-44f } },
 };
 
 s32 N(searchBushEvent_Bush2)[] = {
@@ -1767,7 +1767,7 @@ ModelIdList N(treeModelList_Bush3_Bush) = {
 
 TreeEffectVectorList N(treeEffectVectors_Bush3) = {
     .count = 0x1,
-    .vectors = { { 5.815388626947991e-43, 2.942726775082116e-44, nan } },
+    .vectors = { { 5.82e-43f, 3e-44.0f, nanf } },
 };
 
 s32 N(searchBushEvent_Bush3)[] = {
@@ -1781,7 +1781,7 @@ ModelIdList N(treeModelList_Bush4_Bush) = {
 
 TreeEffectVectorList N(treeEffectVectors_Bush4) = {
     .count = 0x1,
-    .vectors = { { nan, 2.942726775082116e-44, 1.0089348943138683e-43 } },
+    .vectors = { { nanf, 3e-44.0f, 1.01e-43f } },
 };
 
 s32 N(searchBushEvent_Bush4)[] = {
@@ -1804,7 +1804,7 @@ s32 N(treeDropList_Tree1)[] = {
 
 TreeEffectVectorList N(treeEffectVectors_Tree1) = {
     .count = 0x2,
-    .vectors = { { nan, 1.639519203260036e-43, nan }, { nan, 1.5134023414708024e-43, nan } },
+    .vectors = { { nanf, 1.64e-43f, nanf }, { nanf, 1.51e-43f, nanf } },
 };
 
 ShakeTree N(shakeTreeEvent_Tree1) = {
@@ -1815,7 +1815,7 @@ ShakeTree N(shakeTreeEvent_Tree1) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_80246E6C) =  { -665.0, 0.0, -149.0, 0.0 };
+Vec4f N(triggerCoord_80246E6C) =  { -665.0f, 0.0f, -149.0f, 0.0f };
 
 ModelIdList N(treeModelList_Tree2_Leaves) = {
     .count = 0x1,
@@ -1833,7 +1833,7 @@ s32 N(treeDropList_Tree2)[] = {
 
 TreeEffectVectorList N(treeEffectVectors_Tree2) = {
     .count = 0x2,
-    .vectors = { { 3.629363022601276e-43, 1.0789998175301091e-43, nan }, { 4.9605965637098524e-43, 1.3452465257518244e-43, nan } },
+    .vectors = { { 3.63e-43f, 1.08e-43f, nanf }, { 4.96e-43f, 1.35e-43f, nanf } },
 };
 
 ShakeTree N(shakeTreeEvent_Tree2) = {
@@ -1844,7 +1844,7 @@ ShakeTree N(shakeTreeEvent_Tree2) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_80246EDC) =  { 320.0, 0.0, -496.0, 0.0 };
+Vec4f N(triggerCoord_80246EDC) =  { 320.0f, 0.0f, -496.0f, 0.0f };
 
 Script N(script_80246EEC) = SCRIPT({
     SI_VAR(0) = N(searchBushEvent_Bush2);
@@ -3701,4 +3701,3 @@ s32 pad_0110A8[] = {
 s32 pad_011258[] = {
     0x00000000, 0x00000000,
 };
-

@@ -113,17 +113,17 @@ Script N(script_80240630) = SCRIPT({
 });
 
 NpcAISettings N(aISettings_802406C8) = {
-    .moveSpeed = 2.700000047683716,
+    .moveSpeed = 2.7f,
     .moveTime = 0x2D,
     .waitTime = 0x1E,
-    .alertRadius = 450.0,
-    .unk_10 = 0.0,
+    .alertRadius = 450.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0xA,
-    .chaseSpeed = 8.300000190734863,
+    .chaseSpeed = 8.3f,
     .unk_1C = 0xB4,
     .unk_20 = 0x64,
-    .chaseRadius = 550.0,
-    .unk_28 = 100.0,
+    .chaseRadius = 550.0f,
+    .unk_28 = 100.0f,
     .unk_2C = 0x1,
 };
 
@@ -500,7 +500,7 @@ ShakeTree N(shakeTreeEvent_Tree1) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_80241F18) =  { -326.0, 0.0, -204.0, 0.0 };
+Vec4f N(triggerCoord_80241F18) =  { -326.0f, 0.0f, -204.0f, 0.0f };
 
 ModelIdList N(treeModelList_Tree2_Leaves) = {
     .count = 0x1,
@@ -520,7 +520,7 @@ ShakeTree N(shakeTreeEvent_Tree2) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_80241F4C) =  { 116.0, 0.0, -394.0, 0.0 };
+Vec4f N(triggerCoord_80241F4C) =  { 116.0f, 0.0f, -394.0f, 0.0f };
 
 ModelIdList N(treeModelList_Tree3_Leaves) = {
     .count = 0x1,
@@ -544,7 +544,7 @@ ShakeTree N(shakeTreeEvent_Tree3) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_80241FA0) =  { 398.0, 0.0, -116.0, 0.0 };
+Vec4f N(triggerCoord_80241FA0) =  { 398.0f, 0.0f, -116.0f, 0.0f };
 
 Script N(script_80241FB0) = SCRIPT({
     SI_VAR(0) = N(shakeTreeEvent_Tree1);
@@ -584,4 +584,3 @@ s32 pad_0021E8[] = {
 // rodata: D_802421F0_95AEA0
 
 // rodata: D_802421F8_95AEA8
-

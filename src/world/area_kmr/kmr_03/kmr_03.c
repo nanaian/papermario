@@ -547,7 +547,7 @@ ModelIdList N(treeModelList_Bush1_Bush) = {
 
 TreeEffectVectorList N(treeEffectVectors_Bush1) = {
     .count = 0x1,
-    .vectors = { { 2.0038568039844884e-43, 2.2420775429197073e-44, 6.473998905180655e-43 } },
+    .vectors = { { 2e-43.0f, 2.2e-44f, 6.47e-43f } },
 };
 
 s32 N(searchBushEvent_Bush1)[] = {
@@ -566,7 +566,7 @@ ModelIdList N(treeModelList_Tree1_Trunk) = {
 
 TreeEffectVectorList N(treeEffectVectors_Tree1) = {
     .count = 0x2,
-    .vectors = { { nan, 1.821688003622262e-43, 2.5223372357846707e-44 }, { 3.923635700109488e-44, 1.821688003622262e-43, 5.465064010866787e-44 } },
+    .vectors = { { nanf, 1.82e-43f, 2.5e-44f }, { 3.9e-44f, 1.82e-43f, 5.5e-44f } },
 };
 
 Script N(script_Tree1_Callback) = SCRIPT({
@@ -594,7 +594,7 @@ ShakeTree N(shakeTreeEvent_Tree1) = {
     .callback = &N(script_Tree1_Callback),
 };
 
-Vec4f N(triggerCoord_802422A8) =  { -42.0, 0.0, -13.0, 0.0 };
+Vec4f N(triggerCoord_802422A8) =  { -42.0f, 0.0f, -13.0f, 0.0f };
 
 Script N(script_802422B8) = SCRIPT({
     SI_VAR(0) = N(searchBushEvent_Bush1);
@@ -700,4 +700,3 @@ s32 pad_002958[] = {
 // rodata: D_80242960_8CA8F0
 
 // rodata: D_80242968_8CA8F8
-

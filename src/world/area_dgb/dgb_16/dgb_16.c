@@ -173,17 +173,17 @@ s32 N(extraAnimationList_802418A4)[] = {
 };
 
 NpcAISettings N(aISettings_802418AC) = {
-    .moveSpeed = 1.0,
+    .moveSpeed = 1.0f,
     .moveTime = 0x78,
     .waitTime = 0x1E,
-    .alertRadius = 100.0,
-    .unk_10 = 40.0,
+    .alertRadius = 100.0f,
+    .unk_10 = 40.0f,
     .unk_14 = 0xA,
-    .chaseSpeed = 3.5,
+    .chaseSpeed = 3.5f,
     .unk_1C = 0x5A,
     .unk_20 = 0xF,
-    .chaseRadius = 200.0,
-    .unk_28 = 160.0,
+    .chaseRadius = 200.0f,
+    .unk_28 = 160.0f,
     .unk_2C = 0x1,
 };
 
@@ -436,4 +436,3 @@ s32 pad_0031E8[] = {
 // rodata: jtbl_80243200_C55740
 
 // rodata: jtbl_80243390_C558D0
-

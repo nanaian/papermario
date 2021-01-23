@@ -230,4 +230,3 @@ s32 pad_000AFC[] = {
 // rodata: D_80240B00_C4DEE0
 
 // rodata: D_80240B08_C4DEE8
-

@@ -92,7 +92,7 @@ Script N(script_EnterWalk_8024026C) = SCRIPT({
     }
 });
 
-Vec4f N(triggerCoord_802402E0) =  { 1186.0, 30.0, -562.0, 0.0 };
+Vec4f N(triggerCoord_802402E0) =  { 1186.0f, 30.0f, -562.0f, 0.0f };
 
 Script N(main) = SCRIPT({
     SI_SAVE_VAR(425) = 22;
@@ -390,4 +390,3 @@ s32 pad_00168C[] = {
 // rodata: D_80241690_A5E0B0
 
 // rodata: D_80241698_A5E0B8
-

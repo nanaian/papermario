@@ -641,7 +641,7 @@ ShakeTree N(shakeTreeEvent_Tree1) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_80242758) =  { 131.0, 0.0, -89.0, 0.0 };
+Vec4f N(triggerCoord_80242758) =  { 131.0f, 0.0f, -89.0f, 0.0f };
 
 Script N(script_80242768) = SCRIPT({
     SI_VAR(0) = N(shakeTreeEvent_Tree1);
@@ -656,4 +656,3 @@ Script N(script_80242768) = SCRIPT({
 // rodata: D_802427D0_9486A0
 
 // rodata: D_802427D8_9486A8
-

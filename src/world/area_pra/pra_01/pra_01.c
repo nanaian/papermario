@@ -672,4 +672,3 @@ Script N(script_80242F80) = SCRIPT({
 s32 pad_002FA8[] = {
     0x00000000, 0x00000000,
 };
-

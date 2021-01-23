@@ -699,4 +699,3 @@ s32 pad_002FFC[] = {
 // rodata: D_80243000_CE66F0
 
 // rodata: D_80243008_CE66F8
-

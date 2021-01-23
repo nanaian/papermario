@@ -327,7 +327,7 @@ Script N(script_EnterWalk_802431C4) = SCRIPT({
     }
 });
 
-Vec4f N(triggerCoord_802432A8) =  { 13.0, 0.0, -80.0, 0.0 };
+Vec4f N(triggerCoord_802432A8) =  { 13.0f, 0.0f, -80.0f, 0.0f };
 
 Script N(script_802432B8) = SCRIPT({
     EnableGroup(25, 0);
@@ -393,17 +393,17 @@ s32 N(extraAnimationList_80243594)[] = {
 };
 
 NpcAISettings N(aISettings_8024359C) = {
-    .moveSpeed = 2.0,
+    .moveSpeed = 2.0f,
     .moveTime = 0,
     .waitTime = 0,
-    .alertRadius = 100.0,
-    .unk_10 = 40.0,
+    .alertRadius = 100.0f,
+    .unk_10 = 40.0f,
     .unk_14 = 0x7,
-    .chaseSpeed = 3.799999952316284,
+    .chaseSpeed = 3.8f,
     .unk_1C = 0x3C,
     .unk_20 = 0xA,
-    .chaseRadius = 110.0,
-    .unk_28 = 50.0,
+    .chaseRadius = 110.0f,
+    .unk_28 = 50.0f,
     .unk_2C = 0x1,
 };
 
@@ -459,17 +459,17 @@ NpcSettings N(npcSettings_80243710) = {
 };
 
 NpcAISettings N(aISettings_8024373C) = {
-    .moveSpeed = 2.0,
+    .moveSpeed = 2.0f,
     .moveTime = 0,
     .waitTime = 0,
-    .alertRadius = 100.0,
-    .unk_10 = 0.0,
+    .alertRadius = 100.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0x4,
-    .chaseSpeed = 3.5,
+    .chaseSpeed = 3.5f,
     .unk_1C = 0x1E,
     .unk_20 = 0x3,
-    .chaseRadius = 150.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 150.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -621,4 +621,3 @@ Script N(script_MakeEntities) = SCRIPT({
 s32 pad_0044A8[] = {
     0x00000000, 0x00000000,
 };
-

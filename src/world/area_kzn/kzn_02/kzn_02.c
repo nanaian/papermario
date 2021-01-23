@@ -774,21 +774,21 @@ Script N(script_802444A4) = {
 };
 
 f32 N(floatTable_80244900)[] = {
-    4.500000f, 3.500000f, 2.600000f, 2.000000f, 1.500000f, 20.000000f,
+    4.5f, 3.5f, 2.6f, 2.0f, 1.5f, 20.0f,
 };
 
 NpcAISettings N(aISettings_80244918) = {
-    .moveSpeed = 0.800000011920929,
+    .moveSpeed = 0.8f,
     .moveTime = 0x64,
     .waitTime = 0,
-    .alertRadius = 90.0,
-    .unk_10 = 0.0,
+    .alertRadius = 90.0f,
+    .unk_10 = 0.0f,
     .unk_14 = 0x4,
-    .chaseSpeed = 3.200000047683716,
+    .chaseSpeed = 3.2f,
     .unk_1C = 0xA,
     .unk_20 = 0x1,
-    .chaseRadius = 100.0,
-    .unk_28 = 0.0,
+    .chaseRadius = 100.0f,
+    .unk_28 = 0.0f,
     .unk_2C = 0x1,
 };
 
@@ -1298,4 +1298,3 @@ s32 pad_0065B4[] = {
 s32 pad_0065C8[] = {
     0x00000000, 0x00000000,
 };
-

@@ -1929,17 +1929,17 @@ NpcSettings N(npcSettings_80247650) = {
 };
 
 NpcAISettings N(aISettings_8024767C) = {
-    .moveSpeed = 2.0,
+    .moveSpeed = 2.0f,
     .moveTime = 0x3C,
     .waitTime = 0xF,
-    .alertRadius = 100.0,
-    .unk_10 = 30.0,
+    .alertRadius = 100.0f,
+    .unk_10 = 30.0f,
     .unk_14 = 0x4,
-    .chaseSpeed = 4.0,
+    .chaseSpeed = 4.0f,
     .unk_1C = 0x6,
     .unk_20 = 0x1,
-    .chaseRadius = 140.0,
-    .unk_28 = 30.0,
+    .chaseRadius = 140.0f,
+    .unk_28 = 30.0f,
     .unk_2C = 0x1,
 };
 
@@ -2174,4 +2174,3 @@ s32 pad_008724[] = {
 // rodata: D_80248768_DCCB38
 
 // rodata: jtbl_80248770_DCCB40
-

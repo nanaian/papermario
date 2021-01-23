@@ -387,7 +387,7 @@ ShakeTree N(shakeTreeEvent_Tree1) = {
     .callback = NULL,
 };
 
-Vec4f N(triggerCoord_80241718) =  { 1.0, 0.0, -192.0, 0.0 };
+Vec4f N(triggerCoord_80241718) =  { 1.0f, 0.0f, -192.0f, 0.0f };
 
 Script N(script_80241728) = SCRIPT({
     SI_AREA_FLAG(31) = 0;
@@ -594,4 +594,3 @@ s32 pad_002268[] = {
 s32 pad_002288[] = {
     0x00000000, 0x00000000,
 };
-

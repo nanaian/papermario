@@ -404,7 +404,7 @@ s32 pad_001CE8[] = {
     0x00000000, 0x00000000,
 };
 
-Vec4f N(triggerCoord_80241CF0) =  { -230.0, -10.0, 0.0, 0.0 };
+Vec4f N(triggerCoord_80241CF0) =  { -230.0f, -10.0f, 0.0f, 0.0f };
 
 Script N(script_80241D00) = SCRIPT({
     PlayEffect(66, 0, 18, 0, 1, 10, 30, 0, 0, 0, 0, 0, 0, 0);
@@ -724,4 +724,3 @@ NpcGroupList N(npcGroupList_80242E58) = {
 // rodata: D_80242E70_892A10
 
 // rodata: D_80242E78_892A18
-
