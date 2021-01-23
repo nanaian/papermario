@@ -142,7 +142,8 @@ Script N(script_80240F58) = SCRIPT({
         == 3 {}
         == 4 {
             spawn N(script_80240F20);
-        } else {
+        }
+        else {
             if (SI_SAVE_FLAG(532) == 0) {
                 SetMusicTrack(0, 99, 1, 8);
             } else {
@@ -574,9 +575,9 @@ Script N(script_80242474) = SCRIPT({
     MakeLerp(SI_VAR(3), SI_VAR(4), 30, 10);
     loop {
         UpdateLerp();
-        SI_VAR(2) = f SI_VAR(0);
+        SI_VAR(2) =f SI_VAR(0);
         SI_VAR(2) *= 0.1005859375;
-        SI_VAR(2) += f SI_MAP_VAR(11);
+        SI_VAR(2) +=f SI_MAP_VAR(11);
         TranslateGroup(171, SI_MAP_VAR(10), SI_VAR(2), 0);
         RotateGroup(171, SI_MAP_VAR(12), 0, 1, 0);
         sleep 1;

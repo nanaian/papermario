@@ -166,7 +166,7 @@ Script N(script_80242240) = SCRIPT({
         SI_VAR(0) = 0;
         SI_VAR(1) = 0;
         SI_VAR(2) = 0;
-10:
+    10:
         SetTexPanOffset(1, 0, SI_VAR(0), 0);
         SetTexPanOffset(1, 1, SI_VAR(1), SI_VAR(2));
         SI_VAR(0) -= 100;
@@ -621,7 +621,7 @@ Script N(script_Idle_8024344C) = SCRIPT({
     }
     DisablePlayerInput(1);
     parallel {
-10:
+    10:
         sleep 3;
         PlayerFaceNpc(-1, 0);
         sleep 1;

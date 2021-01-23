@@ -689,20 +689,20 @@ Script N(script_80243684) = SCRIPT({
     SI_VAR(6) = 0;
     SI_VAR(7) = 0;
     loop 60 {
-        SI_VAR(2) = f SI_MAP_VAR(0);
-        SI_VAR(3) = f SI_MAP_VAR(1);
-        SI_VAR(2) -= f SI_VAR(0);
-        SI_VAR(3) -= f SI_VAR(1);
-        SI_VAR(4) = f SI_VAR(2);
-        SI_VAR(5) = f SI_VAR(3);
+        SI_VAR(2) =f SI_MAP_VAR(0);
+        SI_VAR(3) =f SI_MAP_VAR(1);
+        SI_VAR(2) -=f SI_VAR(0);
+        SI_VAR(3) -=f SI_VAR(1);
+        SI_VAR(4) =f SI_VAR(2);
+        SI_VAR(5) =f SI_VAR(3);
         SI_VAR(4) *= 0.09375;
         SI_VAR(5) *= 0.09375;
         SI_VAR(6) *= 0.80078125;
         SI_VAR(7) *= 0.80078125;
-        SI_VAR(6) += f SI_VAR(4);
-        SI_VAR(7) += f SI_VAR(5);
-        SI_VAR(0) += f SI_VAR(6);
-        SI_VAR(1) += f SI_VAR(7);
+        SI_VAR(6) +=f SI_VAR(4);
+        SI_VAR(7) +=f SI_VAR(5);
+        SI_VAR(0) +=f SI_VAR(6);
+        SI_VAR(1) +=f SI_VAR(7);
         TranslateModel(95, SI_MAP_VAR(0), 0, 0);
         TranslateModel(97, SI_MAP_VAR(1), 0, 0);
         func_80240888_B66338(95, SI_VAR(6));
@@ -716,13 +716,13 @@ Script N(script_8024384C) = SCRIPT({
     SI_VAR(0) = SI_MAP_VAR(2);
     SI_VAR(6) = 0;
     loop 60 {
-        SI_VAR(2) = f SI_MAP_VAR(2);
-        SI_VAR(2) -= f SI_VAR(0);
-        SI_VAR(4) = f SI_VAR(2);
+        SI_VAR(2) =f SI_MAP_VAR(2);
+        SI_VAR(2) -=f SI_VAR(0);
+        SI_VAR(4) =f SI_VAR(2);
         SI_VAR(4) *= 0.09375;
         SI_VAR(6) *= 0.80078125;
-        SI_VAR(6) += f SI_VAR(4);
-        SI_VAR(0) += f SI_VAR(6);
+        SI_VAR(6) +=f SI_VAR(4);
+        SI_VAR(0) +=f SI_VAR(6);
         TranslateModel(99, SI_MAP_VAR(2), 0, 0);
         func_80240888_B66338(99, SI_VAR(6));
         sleep 1;
@@ -736,20 +736,20 @@ Script N(script_80243954) = SCRIPT({
     SI_VAR(6) = 0;
     SI_VAR(7) = 0;
     loop 60 {
-        SI_VAR(2) = f SI_MAP_VAR(3);
-        SI_VAR(3) = f SI_MAP_VAR(4);
-        SI_VAR(2) -= f SI_VAR(0);
-        SI_VAR(3) -= f SI_VAR(1);
-        SI_VAR(4) = f SI_VAR(2);
-        SI_VAR(5) = f SI_VAR(3);
+        SI_VAR(2) =f SI_MAP_VAR(3);
+        SI_VAR(3) =f SI_MAP_VAR(4);
+        SI_VAR(2) -=f SI_VAR(0);
+        SI_VAR(3) -=f SI_VAR(1);
+        SI_VAR(4) =f SI_VAR(2);
+        SI_VAR(5) =f SI_VAR(3);
         SI_VAR(4) *= 0.09375;
         SI_VAR(5) *= 0.09375;
         SI_VAR(6) *= 0.80078125;
         SI_VAR(7) *= 0.80078125;
-        SI_VAR(6) += f SI_VAR(4);
-        SI_VAR(7) += f SI_VAR(5);
-        SI_VAR(0) += f SI_VAR(6);
-        SI_VAR(1) += f SI_VAR(7);
+        SI_VAR(6) +=f SI_VAR(4);
+        SI_VAR(7) +=f SI_VAR(5);
+        SI_VAR(0) +=f SI_VAR(6);
+        SI_VAR(1) +=f SI_VAR(7);
         TranslateModel(101, SI_MAP_VAR(3), 0, 0);
         TranslateModel(103, SI_MAP_VAR(4), 0, 0);
         func_80240888_B66338(101, SI_VAR(6));
@@ -765,8 +765,8 @@ Script N(script_80243B1C) = SCRIPT({
     MakeLerp(0, 45, 30, 5);
     loop {
         UpdateLerp();
-        SI_MAP_VAR(1) = f SI_VAR(0);
-        SI_MAP_VAR(0) = f SI_MAP_VAR(1);
+        SI_MAP_VAR(1) =f SI_VAR(0);
+        SI_MAP_VAR(0) =f SI_MAP_VAR(1);
         SI_MAP_VAR(0) *= -1;
         sleep 1;
         if (SI_VAR(1) == 0) {
@@ -783,7 +783,7 @@ Script N(script_80243C08) = SCRIPT({
     MakeLerp(0, 45, 30, 5);
     loop {
         UpdateLerp();
-        SI_MAP_VAR(2) = f SI_VAR(0);
+        SI_MAP_VAR(2) =f SI_VAR(0);
         sleep 1;
         if (SI_VAR(1) == 0) {
             break;
@@ -799,8 +799,8 @@ Script N(script_80243CD4) = SCRIPT({
     MakeLerp(0, 45, 30, 5);
     loop {
         UpdateLerp();
-        SI_MAP_VAR(4) = f SI_VAR(0);
-        SI_MAP_VAR(3) = f SI_MAP_VAR(4);
+        SI_MAP_VAR(4) =f SI_VAR(0);
+        SI_MAP_VAR(3) =f SI_MAP_VAR(4);
         SI_MAP_VAR(3) *= -1;
         sleep 1;
         if (SI_VAR(1) == 0) {
@@ -818,9 +818,9 @@ Script N(script_80243DC0) = SCRIPT({
     MakeLerp(0, 45, 30, 5);
     loop {
         UpdateLerp();
-        SI_MAP_VAR(2) = f SI_VAR(0);
-        SI_MAP_VAR(4) = f SI_VAR(0);
-        SI_MAP_VAR(3) = f SI_MAP_VAR(4);
+        SI_MAP_VAR(2) =f SI_VAR(0);
+        SI_MAP_VAR(4) =f SI_VAR(0);
+        SI_MAP_VAR(3) =f SI_MAP_VAR(4);
         SI_MAP_VAR(3) *= -1;
         sleep 1;
         if (SI_VAR(1) == 0) {

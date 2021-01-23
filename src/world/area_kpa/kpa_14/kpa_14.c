@@ -257,7 +257,7 @@ Script N(script_802410BC) = SCRIPT({
                 GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
                 if (SI_VAR(1) < 120) {
                     match SI_VAR(0) {
-                        1200..1245
+                    1200..1245
                         DisablePlayerInput(1);
                         DisablePlayerPhysics(1);
                         SI_MAP_VAR(11) = 1;

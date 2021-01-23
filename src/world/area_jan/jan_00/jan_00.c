@@ -398,7 +398,7 @@ Script N(script_80242434) = SCRIPT({
             RemoveKeyItemAt(SI_VAR(1));
             GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_80240568_B20AA8(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |= c 50000;
+            SI_VAR(0) |=c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SetPlayerAnimation(0x60005);
             sleep 30;
@@ -441,7 +441,7 @@ Script N(script_80242648) = SCRIPT({
             DisablePartnerAI(0);
             GetNpcPos(0xFFFFFFFC, SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_80240950_B20E90(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |= c 50000;
+            SI_VAR(0) |=c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SI_VAR(10) = spawn N(script_802425C8);
             SetNpcAnimation(0xFFFFFFFC, 0x40002);
@@ -517,7 +517,8 @@ Script N(script_802429DC) = SCRIPT({
                     SpeakToPlayer(0xFFFFFFFC, 0x40006, 0x40001, 5, SI_VAR(8));
                     EnablePartnerAI();
                     SI_VAR(12) = 1;
-                } else {
+                }
+                else {
                     DisablePartnerAI(0);
                     sleep 1;
                     SpeakToPlayer(0xFFFFFFFC, 0x40006, 0x40001, 5, SI_VAR(9));
@@ -807,7 +808,7 @@ Script N(script_Interact_80243908) = SCRIPT({
         func_80240F14_B21454(0);
         EnableGroup(91, 0);
     } else {
-90:
+    90:
         spawn N(script_802437C4);
         func_80240F14_B21454(0);
         EnableGroup(91, 0);
@@ -1110,7 +1111,7 @@ Script N(script_8024595C) = SCRIPT({
 
 Script N(script_802459D4) = SCRIPT({
     func_802416F8_B21C38(SI_VAR(12), SI_VAR(0), 0, 30, 30, 1, 0);
-    SI_VAR(1) = f SI_VAR(0);
+    SI_VAR(1) =f SI_VAR(0);
     SI_VAR(1) /= 3.0;
     RotateModel(83, SI_VAR(0), 0, 0, 1);
     RotateGroup(88, SI_VAR(1), 0, 0, -1);
@@ -1133,7 +1134,7 @@ Script N(script_802459D4) = SCRIPT({
 Script N(script_80245C10) = SCRIPT({
     func_802416F8_B21C38(SI_VAR(12), SI_VAR(0), 0, 0xFFFFFFE2, 8, 1, 0);
     SI_VAR(0) += 30.0;
-    SI_VAR(1) = f SI_VAR(0);
+    SI_VAR(1) =f SI_VAR(0);
     SI_VAR(1) /= 3.0;
     RotateModel(83, SI_VAR(0), 0, 0, 1);
     RotateGroup(88, SI_VAR(1), 0, 0, -1);
@@ -1284,13 +1285,13 @@ Script N(script_802467AC) = SCRIPT({
     0x802C94A0(2, func_80241654_B21B94, 0);
     0x802C90FC(85, 2, -1);
     spawn {
-0:
+    0:
         func_802411EC_B2172C(0, SI_VAR(0), SI_VAR(1), SI_VAR(2));
-        SI_VAR(0) -= f 0xFFFFFFB0;
-        SI_VAR(1) -= f 0xFFFFFFEE;
+        SI_VAR(0) -=f 0xFFFFFFB0;
+        SI_VAR(1) -=f 0xFFFFFFEE;
         SI_VAR(2) -= 420;
         SI_VAR(0) += 55;
-        SI_VAR(1) += f 0xFFFFFFEC;
+        SI_VAR(1) +=f 0xFFFFFFEC;
         SI_VAR(2) += 0;
         TranslateModel(89, SI_VAR(0), SI_VAR(1), SI_VAR(2));
         TranslateModel(75, SI_VAR(0), SI_VAR(1), SI_VAR(2));
@@ -1301,7 +1302,7 @@ Script N(script_802467AC) = SCRIPT({
         TranslateGroup(88, SI_VAR(0), SI_VAR(1), SI_VAR(2));
         GetNpcYaw(0, SI_VAR(0));
         SI_VAR(0) *= -1;
-        SI_VAR(0) += f 0xFFFFFFA6;
+        SI_VAR(0) +=f 0xFFFFFFA6;
         TranslateModel(89, 0xFFFFFF9C, 0, 0);
         TranslateModel(75, 0xFFFFFF9C, 0, 0);
         TranslateModel(77, 0xFFFFFF9C, 0, 0);

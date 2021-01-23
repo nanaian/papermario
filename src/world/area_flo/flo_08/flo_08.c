@@ -153,7 +153,8 @@ Script N(script_80241F40) = SCRIPT({
     match SI_SAVE_VAR(0) {
         < 53 {
             SetMusicTrack(0, 48, 0, 8);
-        } else {
+        }
+        else {
             SetMusicTrack(0, 49, 0, 8);
         }
     }
@@ -305,10 +306,10 @@ Script N(script_80242680) = SCRIPT({
     SI_VAR(14) = SI_VAR(4);
     SI_VAR(12) -= SI_VAR(0);
     SI_VAR(13) -= SI_VAR(1);
-    SI_VAR(0) = f SI_VAR(12);
+    SI_VAR(0) =f SI_VAR(12);
     SI_VAR(0) /= 100.0;
     SI_VAR(15) = 100.0;
-    SI_VAR(15) /= f SI_VAR(0);
+    SI_VAR(15) /=f SI_VAR(0);
     SI_VAR(15) += 11;
     SI_VAR(5) = 200;
     SI_VAR(5) /= SI_VAR(15);
@@ -390,7 +391,7 @@ Script N(main) = SCRIPT({
     spawn {
         SI_VAR(0) = 0;
         SI_VAR(1) = 0;
-0:
+    0:
         SI_VAR(0) += 140;
         if (SI_VAR(0) > 0x10000) {
             SI_VAR(0) += 0xFFFF0000;
@@ -589,7 +590,8 @@ Script N(script_Interact_80243214) = SCRIPT({
             <= 0 {
                 SetPlayerAnimation(0x10000);
                 SpeakToPlayer(-1, 0xC60202, 0xC60201, 0, 0x110043);
-            } else {
+            }
+            else {
                 SI_VAR(8) = SI_VAR(0);
                 func_80241B5C_CB089C(SI_VAR(0));
                 MakeItemEntity(SI_VAR(8), 0xFFFFFD49, 20, 0xFFFFFFE3, 1, 0);
@@ -609,8 +611,8 @@ Script N(script_Interact_80243214) = SCRIPT({
                         MakeLerp(0, 100, 30, 1);
                         loop {
                             UpdateLerp();
-                            SI_VAR(8) = f SI_VAR(0);
-                            SI_VAR(9) = f SI_VAR(0);
+                            SI_VAR(8) =f SI_VAR(0);
+                            SI_VAR(9) =f SI_VAR(0);
                             SI_VAR(8) *= 0.5;
                             SI_VAR(9) *= 1.2001953125;
                             RotateModel(103, SI_VAR(8), 0, 1, 0);
@@ -634,7 +636,8 @@ Script N(script_Interact_80243214) = SCRIPT({
                     == 158 {
                         SpeakToPlayer(-1, 0xC60204, 0xC60201, 0, 0x110045);
                         SetNpcAnimation(-1, 0xC60201);
-                    } else {
+                    }
+                    else {
                         SpeakToPlayer(-1, 0xC60204, 0xC60201, 0, 0x110044);
                         SetNpcAnimation(-1, 0xC60206);
                         PlaySoundAtNpc(-1, 8342, 0);
@@ -649,9 +652,9 @@ Script N(script_Interact_80243214) = SCRIPT({
                                 SI_VAR(2) = -0.5;
                                 SI_VAR(3) = -0.19921875;
                                 SI_VAR(4) = 0.900390625;
-                                SI_VAR(2) *= f SI_VAR(0);
-                                SI_VAR(3) *= f SI_VAR(0);
-                                SI_VAR(4) *= f SI_VAR(0);
+                                SI_VAR(2) *=f SI_VAR(0);
+                                SI_VAR(3) *=f SI_VAR(0);
+                                SI_VAR(4) *=f SI_VAR(0);
                                 SI_VAR(2) += -700.0;
                                 SI_VAR(3) += 15.0;
                                 SI_VAR(4) += -25.0;
@@ -668,9 +671,9 @@ Script N(script_Interact_80243214) = SCRIPT({
                                 SI_VAR(2) = 0.5;
                                 SI_VAR(3) = -0.19921875;
                                 SI_VAR(4) = 0.900390625;
-                                SI_VAR(2) *= f SI_VAR(0);
-                                SI_VAR(3) *= f SI_VAR(0);
-                                SI_VAR(4) *= f SI_VAR(0);
+                                SI_VAR(2) *=f SI_VAR(0);
+                                SI_VAR(3) *=f SI_VAR(0);
+                                SI_VAR(4) *=f SI_VAR(0);
                                 SI_VAR(2) += -690.0;
                                 SI_VAR(3) += 15.0;
                                 SI_VAR(4) += -25.0;
@@ -1134,10 +1137,10 @@ Script N(script_80245990) = SCRIPT({
     SI_VAR(14) = SI_VAR(4);
     SI_VAR(12) -= SI_VAR(0);
     SI_VAR(13) -= SI_VAR(1);
-    SI_VAR(0) = f SI_VAR(12);
+    SI_VAR(0) =f SI_VAR(12);
     SI_VAR(0) /= 100.0;
     SI_VAR(15) = 100.0;
-    SI_VAR(15) /= f SI_VAR(0);
+    SI_VAR(15) /=f SI_VAR(0);
     SI_VAR(15) += 11;
     SI_VAR(5) = 200;
     SI_VAR(5) /= SI_VAR(15);

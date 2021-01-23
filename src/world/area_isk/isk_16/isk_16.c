@@ -68,7 +68,8 @@ Script N(script_80240B60) = SCRIPT({
         }
         == 0xFFFFFFC8 {
             SI_VAR(0) = 1;
-        } else {
+        }
+        else {
             return;
         }
     }
@@ -416,10 +417,10 @@ Script N(script_80241A50) = SCRIPT({
     UpdateLerp();
     SI_VAR(5) = 0.470703125;
     SI_VAR(6) = -0.939453125;
-    SI_VAR(5) *= f SI_VAR(0);
-    SI_VAR(6) *= f SI_VAR(0);
-    SI_VAR(5) += f SI_VAR(2);
-    SI_VAR(6) += f SI_VAR(4);
+    SI_VAR(5) *=f SI_VAR(0);
+    SI_VAR(6) *=f SI_VAR(0);
+    SI_VAR(5) +=f SI_VAR(2);
+    SI_VAR(6) +=f SI_VAR(4);
     SetNpcPos(1, SI_VAR(5), SI_VAR(3), SI_VAR(6));
     sleep 1;
     if (SI_VAR(1) == 1) {

@@ -719,7 +719,7 @@ Script N(main) = SCRIPT({
                 spawn {
                     DisablePlayerPhysics(1);
                     SetPlayerPos(0, 0xFFFFFC18, 0);
-0:
+                0:
                     if (SI_MAP_FLAG(11) == 0) {
                         sleep 1;
                         goto 0;
@@ -759,7 +759,8 @@ Script N(script_MoveWalls_80243FB0) = SCRIPT({
                 SI_MAP_FLAG(12) = 0;
                 SetNpcFlagBits(0, 2, 1);
             }
-        } else {
+        }
+        else {
             EnableGroup(117, 1);
             EnableGroup(114, 1);
         }
@@ -808,7 +809,8 @@ Script N(script_80244228) = SCRIPT({
             EnableGroup(117, 0);
             EnableGroup(114, 0);
             func_80240330_8EC150();
-        } else {
+        }
+        else {
             SI_VAR(0) = 3;
             spawn N(script_ToggleVis_80244100);
         }
@@ -2196,7 +2198,7 @@ Script N(script_80249654) = SCRIPT({
     await N(script_80249A5C);
     spawn {
         MakeLerp(0, 255, 60, 0);
-0:
+    0:
         UpdateLerp();
         func_802412E8_8ED108(3, SI_VAR(0));
         sleep 1;
@@ -2211,7 +2213,7 @@ Script N(script_80249654) = SCRIPT({
         func_80241564_8ED384(SI_VAR(10));
         sleep 45;
         MakeLerp(255, 0, 30, 0);
-1:
+    1:
         UpdateLerp();
         func_802412E8_8ED108(0, SI_VAR(0));
         sleep 1;
@@ -2356,7 +2358,7 @@ Script N(script_80249FE4) = SCRIPT({
     func_802413E4_8ED204(SI_VAR(9));
     spawn {
         MakeLerp(0, 255, 60, 0);
-0:
+    0:
         UpdateLerp();
         func_802412E8_8ED108(3, SI_VAR(0));
         sleep 1;
@@ -2371,7 +2373,7 @@ Script N(script_80249FE4) = SCRIPT({
         func_80241564_8ED384(SI_VAR(10));
         sleep 30;
         MakeLerp(255, 0, 30, 0);
-1:
+    1:
         UpdateLerp();
         func_802412E8_8ED108(0, SI_VAR(0));
         sleep 1;
@@ -2694,7 +2696,8 @@ Script N(script_8024AC34) = SCRIPT({
         }
         == 4 {
             SpeakToPlayer(0xFFFFFFFC, 264, 262, 5, 0xB00E2);
-        } else {
+        }
+        else {
             SpeakToPlayer(0xFFFFFFFC, 257, 265, 5, 0xB00DB);
         }
     }
@@ -3815,7 +3818,7 @@ Script N(script_8024FD70) = SCRIPT({
             UpdateLerp();
             TranslateGroup(90, SI_VAR(0), 0, 0);
             SI_VAR(2) = 0;
-            SI_VAR(2) -= f SI_VAR(0);
+            SI_VAR(2) -=f SI_VAR(0);
             TranslateGroup(92, SI_VAR(2), 0, 0);
             if (SI_VAR(1) == 0) {
                 break;
@@ -3830,7 +3833,7 @@ Script N(script_8024FD70) = SCRIPT({
             UpdateLerp();
             TranslateGroup(94, SI_VAR(0), 0, 0);
             SI_VAR(2) = 0;
-            SI_VAR(2) -= f SI_VAR(0);
+            SI_VAR(2) -=f SI_VAR(0);
             TranslateGroup(96, SI_VAR(2), 0, 0);
             if (SI_VAR(1) == 0) {
                 break;
@@ -3846,7 +3849,7 @@ Script N(script_8024FD70) = SCRIPT({
             TranslateGroup(98, SI_VAR(0), 0, 0);
             TranslateGroup(106, SI_VAR(0), 0, 0);
             SI_VAR(2) = 0;
-            SI_VAR(2) -= f SI_VAR(0);
+            SI_VAR(2) -=f SI_VAR(0);
             TranslateGroup(100, SI_VAR(2), 0, 0);
             TranslateGroup(102, SI_VAR(2), 0, 0);
             TranslateGroup(104, SI_VAR(2), 0, 0);

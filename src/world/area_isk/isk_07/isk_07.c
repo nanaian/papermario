@@ -611,7 +611,7 @@ Script N(script_80242190) = SCRIPT({
         ModifyColliderFlags(0, 47, 0x7FFFFE00);
         ModifyColliderFlags(0, 48, 0x7FFFFE00);
         ModifyColliderFlags(0, 49, 0x7FFFFE00);
-10:
+    10:
         if (SI_SAVE_FLAG(886) == 0) {
             sleep 1;
             goto 10;

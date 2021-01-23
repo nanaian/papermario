@@ -463,7 +463,7 @@ Script N(script_80243B7C) = SCRIPT({
     spawn {
         if (SI_VAR(0) < 25) {
             MakeLerp(0, 180, 30, 10);
-10:
+        10:
             UpdateLerp();
             RotateModel(93, SI_VAR(0), 0, 1, 0);
             sleep 1;
@@ -472,7 +472,7 @@ Script N(script_80243B7C) = SCRIPT({
             }
         } else {
             MakeLerp(180, 0, 30, 10);
-11:
+        11:
             UpdateLerp();
             RotateModel(93, SI_VAR(0), 0, 1, 0);
             sleep 1;
@@ -592,7 +592,7 @@ Script N(script_NpcAI_80244140) = SCRIPT({
                 SI_VAR(2) = SI_MAP_VAR(0);
                 SI_VAR(2) += 180;
                 MakeLerp(SI_MAP_VAR(0), SI_VAR(2), 30, 10);
-10:
+            10:
                 UpdateLerp();
                 RotateModel(93, SI_VAR(0), 0, 1, 0);
                 UpdateColliderTransform(21);
@@ -1094,12 +1094,12 @@ Script N(script_802465BC) = SCRIPT({
         SI_VAR(3) = SI_VAR(9);
         SI_VAR(4) = SI_VAR(10);
         SI_VAR(5) = SI_VAR(11);
-        SI_VAR(3) -= f SI_VAR(6);
-        SI_VAR(4) -= f SI_VAR(7);
-        SI_VAR(5) -= f SI_VAR(8);
-        SI_VAR(6) = f SI_VAR(9);
-        SI_VAR(7) = f SI_VAR(10);
-        SI_VAR(8) = f SI_VAR(11);
+        SI_VAR(3) -=f SI_VAR(6);
+        SI_VAR(4) -=f SI_VAR(7);
+        SI_VAR(5) -=f SI_VAR(8);
+        SI_VAR(6) =f SI_VAR(9);
+        SI_VAR(7) =f SI_VAR(10);
+        SI_VAR(8) =f SI_VAR(11);
         if (SI_VAR(3) != 0) {
             if (SI_VAR(5) != 0) {
                 PlayEffect(31, 0, SI_VAR(0), SI_VAR(1), SI_VAR(2), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1.0, 0, 0, 0, 0, 0);

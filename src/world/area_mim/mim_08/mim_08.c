@@ -200,7 +200,7 @@ Script N(main) = SCRIPT({
     bind N(script_802431F0) to TriggerFlag_WALL_HAMMER 25;
     func_80240000_BAD940();
     spawn {
-0:
+    0:
         WaitForCam(0, 1.0);
         func_80240068_BAD9A8();
         if (SI_VAR(0) < 350) {
@@ -302,7 +302,7 @@ Script N(script_802439C4) = SCRIPT({
         == 0 {
             spawn {
                 MakeLerp(10, 90, 10, 1);
-10:
+            10:
                 UpdateLerp();
                 RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
                 UpdateColliderTransform(SI_VAR(9));
@@ -321,7 +321,7 @@ Script N(script_802439C4) = SCRIPT({
             SI_VAR(1) = 1;
             spawn N(script_80243540);
             MakeLerp(90, 360, 30, 0);
-20:
+        20:
             UpdateLerp();
             RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
             UpdateColliderTransform(SI_VAR(9));
@@ -336,7 +336,7 @@ Script N(script_802439C4) = SCRIPT({
         == 1 {
             spawn {
                 MakeLerp(360, 270, 10, 1);
-30:
+            30:
                 UpdateLerp();
                 RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
                 UpdateColliderTransform(SI_VAR(9));
@@ -355,7 +355,7 @@ Script N(script_802439C4) = SCRIPT({
             SI_VAR(1) = 2;
             spawn N(script_80243540);
             MakeLerp(270, 0xFFFFFFF6, 30, 0);
-40:
+        40:
             UpdateLerp();
             RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
             UpdateColliderTransform(SI_VAR(9));
@@ -368,7 +368,7 @@ Script N(script_802439C4) = SCRIPT({
         == 2 {
             spawn {
                 MakeLerp(0xFFFFFFF6, 90, 10, 1);
-50:
+            50:
                 UpdateLerp();
                 RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
                 UpdateColliderTransform(SI_VAR(9));
@@ -387,7 +387,7 @@ Script N(script_802439C4) = SCRIPT({
             SI_VAR(1) = 1;
             spawn N(script_80243540);
             MakeLerp(90, 360, 30, 0);
-60:
+        60:
             UpdateLerp();
             RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
             UpdateColliderTransform(SI_VAR(9));

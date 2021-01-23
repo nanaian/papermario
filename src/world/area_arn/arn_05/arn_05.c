@@ -106,7 +106,8 @@ Script N(script_80241360) = SCRIPT({
         }
         < 0xFFFFFFF0 {
             SetMusicTrack(0, 31, 0, 8);
-        } else {
+        }
+        else {
             SetMusicTrack(0, 29, 0, 8);
         }
     }
@@ -851,13 +852,13 @@ Script N(script_Idle_8024459C) = SCRIPT({
     SI_VAR(4) += 60;
     loop {
         RandInt(5, SI_VAR(5));
-        SI_VAR(6) = f SI_VAR(5);
+        SI_VAR(6) =f SI_VAR(5);
         SI_VAR(6) *= 0.1005859375;
         SI_VAR(6) += 0.80078125;
         SetNpcSpeed(-1, SI_VAR(6));
         NpcMoveTo(-1, SI_VAR(3), SI_VAR(2), 0);
         RandInt(5, SI_VAR(5));
-        SI_VAR(6) = f SI_VAR(5);
+        SI_VAR(6) =f SI_VAR(5);
         SI_VAR(6) *= 0.1005859375;
         SI_VAR(6) += 0.80078125;
         SetNpcSpeed(-1, SI_VAR(6));

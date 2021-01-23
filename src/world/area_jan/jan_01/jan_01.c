@@ -386,7 +386,8 @@ Script N(script_Hit_80242114) = SCRIPT({
         }
         == 6 {
             SI_VAR(1) = 1;
-        } else {
+        }
+        else {
             SI_VAR(1) = 0;
         }
     }
@@ -421,7 +422,7 @@ Script N(script_Idle_802422D8) = SCRIPT({
         loop {
             GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
             match SI_VAR(0) {
-                SI_VAR(3)..SI_VAR(4)
+            SI_VAR(3)..SI_VAR(4)
                 SetSelfEnemyFlagBits(0x1000000, 0);
                 SetSelfEnemyFlagBits(0x10000000, 0);
                 else {
@@ -457,7 +458,7 @@ Script N(script_Idle_802422D8) = SCRIPT({
         SI_VAR(0) += SI_VAR(4);
         SetNpcJumpscale(-1, 1.0);
         NpcJump0(-1, SI_VAR(0), 0xFFFFFFF4, SI_VAR(2), 15);
-1:
+    1:
         sleep 1;
         if (SI_AREA_FLAG(9) == 1) {
             goto 1;

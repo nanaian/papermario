@@ -168,7 +168,7 @@ Script N(script_80240EE0) = SCRIPT({
 Script N(script_8024121C) = SCRIPT({
     group 11;
     spawn {
-0:
+    0:
         RandInt(50, SI_VAR(0));
         SI_VAR(0) += 10;
         func_80240120_A109A0();
@@ -176,7 +176,7 @@ Script N(script_8024121C) = SCRIPT({
         goto 0;
     }
     spawn {
-1:
+    1:
         RandInt(50, SI_VAR(0));
         SI_VAR(0) += 20;
         func_8024031C_A10B9C();
@@ -184,7 +184,7 @@ Script N(script_8024121C) = SCRIPT({
         goto 1;
     }
     spawn {
-2:
+    2:
         RandInt(50, SI_VAR(0));
         SI_VAR(0) += 20;
         func_80240534_A10DB4();
@@ -306,7 +306,7 @@ Script N(main) = SCRIPT({
     SetCamEnabled(0, 1);
     SetCamLeadPlayer(0, 0);
     spawn {
-1:
+    1:
         if (SI_SAVE_VAR(0) != 0xFFFFFF96) {
             sleep 1;
             goto 1;
@@ -501,7 +501,7 @@ Script N(script_80241D48) = SCRIPT({
             await N(script_80241C34);
         } else {
             func_80240C84_A11504(0);
-10:
+        10:
             if (SI_MAP_VAR(11) != 1) {
                 sleep 1;
                 goto 10;
@@ -889,10 +889,10 @@ Script N(script_Aux_80243758) = SCRIPT({
         loop 20 {
             SI_VAR(0) += 4.0;
             SI_VAR(1) += 4.0;
-            SI_VAR(2) = f SI_VAR(0);
-            SI_VAR(2) += f SI_MAP_VAR(0);
-            SI_VAR(3) = f SI_VAR(1);
-            SI_VAR(3) += f SI_MAP_VAR(1);
+            SI_VAR(2) =f SI_VAR(0);
+            SI_VAR(2) +=f SI_MAP_VAR(0);
+            SI_VAR(3) =f SI_VAR(1);
+            SI_VAR(3) +=f SI_MAP_VAR(1);
             if (SI_VAR(2) < 0) {
                 SI_VAR(2) = 0.0;
             }
@@ -911,10 +911,10 @@ Script N(script_Aux_80243758) = SCRIPT({
         loop 20 {
             SI_VAR(0) += -4.0;
             SI_VAR(1) += -4.0;
-            SI_VAR(2) = f SI_VAR(0);
-            SI_VAR(2) += f SI_MAP_VAR(0);
-            SI_VAR(3) = f SI_VAR(1);
-            SI_VAR(3) += f SI_MAP_VAR(1);
+            SI_VAR(2) =f SI_VAR(0);
+            SI_VAR(2) +=f SI_MAP_VAR(0);
+            SI_VAR(3) =f SI_VAR(1);
+            SI_VAR(3) +=f SI_MAP_VAR(1);
             if (SI_VAR(2) < 0) {
                 SI_VAR(2) = 0.0;
             }
@@ -1169,7 +1169,7 @@ Script N(script_80245580) = SCRIPT({
     sleep 30;
     func_80240DD0_A11650();
     spawn {
-10:
+    10:
         SetCamSpeed(0, 90.0);
         GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
         SetPanTarget(0, SI_VAR(0), SI_VAR(1), SI_VAR(2));

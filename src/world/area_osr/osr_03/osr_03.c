@@ -125,7 +125,8 @@ Script N(script_EnterWalk_802404F0) = SCRIPT({
         }
         == 6 {
             spawn N(script_8024191C);
-        } else {
+        }
+        else {
             SI_VAR(0) = N(script_802404E0);
             spawn EnterWalk;
         }
@@ -143,7 +144,8 @@ Script N(main) = SCRIPT({
     match SI_VAR(0) {
         == 4 {
             MakeNpcs(0, N(npcGroupList_80240AFC));
-        } else {
+        }
+        else {
         }
     }
     match SI_SAVE_VAR(0) {
@@ -162,7 +164,8 @@ Script N(main) = SCRIPT({
         == 87 {
             ClearAmbientSounds(250);
             FadeOutMusic(0, 500);
-        } else {
+        }
+        else {
             if (SI_SAVE_FLAG(509) == 0) {
             } else {
                 SetMusicTrack(0, 95, 0, 8);
@@ -577,7 +580,7 @@ Script N(script_80241CFC) = SCRIPT({
     }
     spawn {
         LoadPath(120, N(vectorList_80241C90), 9, 0);
-90:
+    90:
         GetNextPathPos();
         SI_MAP_VAR(10) = SI_VAR(1);
         SI_MAP_VAR(11) = SI_VAR(2);
@@ -823,7 +826,7 @@ Script N(script_80242AE0) = SCRIPT({
     MakeLerp(220, 600, 90, 1);
     loop {
         UpdateLerp();
-        SI_VAR(2) = f SI_VAR(0);
+        SI_VAR(2) =f SI_VAR(0);
         SI_VAR(2) /= 10;
         SetCamPerspective(0, 3, SI_VAR(2), 16, 4096);
         sleep 1;
@@ -834,7 +837,7 @@ Script N(script_80242AE0) = SCRIPT({
     MakeLerp(600, 1200, 250, 5);
     loop {
         UpdateLerp();
-        SI_VAR(2) = f SI_VAR(0);
+        SI_VAR(2) =f SI_VAR(0);
         SI_VAR(2) /= 10;
         SetCamPerspective(0, 3, SI_VAR(2), 1, 4096);
         sleep 1;

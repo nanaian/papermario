@@ -760,7 +760,8 @@ Script N(script_80243094) = SCRIPT({
                     SI_SAVE_VAR(0) = 0xFFFFFFDB;
                 }
             }
-        } else {
+        }
+        else {
             DisablePlayerPhysics(1);
             DisablePartnerAI(0);
             SetPlayerAnimation(0x1010006);
@@ -929,12 +930,12 @@ Script N(script_80243D70) = SCRIPT({
     MakeLerp(10, 450, 8, 1);
     loop {
         UpdateLerp();
-        SI_VAR(2) = f SI_VAR(0);
+        SI_VAR(2) =f SI_VAR(0);
         SI_VAR(2) /= 100.0;
         SetNpcScale(0, SI_VAR(2), SI_VAR(2), SI_VAR(2));
         SI_VAR(2) *= 12;
-        SI_VAR(6) = f SI_VAR(4);
-        SI_VAR(6) -= f SI_VAR(2);
+        SI_VAR(6) =f SI_VAR(4);
+        SI_VAR(6) -=f SI_VAR(2);
         SetNpcPos(0, SI_VAR(3), SI_VAR(6), SI_VAR(5));
         sleep 1;
         if (SI_VAR(1) == 0) {
@@ -1048,7 +1049,7 @@ Script N(script_8024415C) = SCRIPT({
             RemoveKeyItemAt(SI_VAR(1));
             GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_80240954_BBDAF4(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |= c 50000;
+            SI_VAR(0) |=c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SetPlayerAnimation(0x60005);
             sleep 30;
@@ -1091,7 +1092,7 @@ Script N(script_80244370) = SCRIPT({
             DisablePartnerAI(0);
             GetNpcPos(0xFFFFFFFC, SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_80240D3C_BBDEDC(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |= c 50000;
+            SI_VAR(0) |=c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SI_VAR(10) = spawn N(script_802442F0);
             SetNpcAnimation(0xFFFFFFFC, 0x40002);
@@ -1167,7 +1168,8 @@ Script N(script_80244704) = SCRIPT({
                     SpeakToPlayer(0xFFFFFFFC, 0x40006, 0x40001, 5, SI_VAR(8));
                     EnablePartnerAI();
                     SI_VAR(12) = 1;
-                } else {
+                }
+                else {
                     DisablePartnerAI(0);
                     sleep 1;
                     SpeakToPlayer(0xFFFFFFFC, 0x40006, 0x40001, 5, SI_VAR(9));

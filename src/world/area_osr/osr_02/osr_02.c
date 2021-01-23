@@ -919,7 +919,8 @@ Script N(script_Interact_80243C24) = SCRIPT({
         }
         == 3 {
             SI_VAR(1) = 0x14014B;
-        } else {
+        }
+        else {
             SI_VAR(1) = 0x14014C;
         }
     }

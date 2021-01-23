@@ -266,7 +266,8 @@ Script N(script_80242164) = SCRIPT({
                 return;
             }
             SI_VAR(0) = 1;
-        } else {
+        }
+        else {
             return;
         }
     }
@@ -812,7 +813,7 @@ Script N(script_80243DE0) = SCRIPT({
             RemoveKeyItemAt(SI_VAR(1));
             GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_802415DC_C8F18C(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |= c 50000;
+            SI_VAR(0) |=c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SetPlayerAnimation(0x60005);
             sleep 30;
@@ -855,7 +856,7 @@ Script N(script_80243FF4) = SCRIPT({
             DisablePartnerAI(0);
             GetNpcPos(0xFFFFFFFC, SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_802419C4_C8F574(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |= c 50000;
+            SI_VAR(0) |=c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SI_VAR(10) = spawn N(script_80243F74);
             SetNpcAnimation(0xFFFFFFFC, 0x40002);
@@ -931,7 +932,8 @@ Script N(script_80244388) = SCRIPT({
                     SpeakToPlayer(0xFFFFFFFC, 0x40006, 0x40001, 5, SI_VAR(8));
                     EnablePartnerAI();
                     SI_VAR(12) = 1;
-                } else {
+                }
+                else {
                     DisablePartnerAI(0);
                     sleep 1;
                     SpeakToPlayer(0xFFFFFFFC, 0x40006, 0x40001, 5, SI_VAR(9));
@@ -973,7 +975,7 @@ Script N(script_802446D8) = SCRIPT({
 
 Script N(script_Idle_8024473C) = SCRIPT({
     if (SI_SAVE_FLAG(1327) == 0) {
-0:
+    0:
         GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
         if (SI_VAR(0) < 300) {
             sleep 1;
@@ -985,7 +987,7 @@ Script N(script_Idle_8024473C) = SCRIPT({
         SI_SAVE_FLAG(1327) = 1;
         DisablePlayerInput(0);
         SetSelfVar(0, 0);
-5:
+    5:
         InterpNpcYaw(-1, 90, 0);
         sleep 30;
         InterpNpcYaw(-1, 270, 0);

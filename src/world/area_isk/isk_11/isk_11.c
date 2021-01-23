@@ -336,7 +336,7 @@ Script N(script_80241104) = SCRIPT({
     SI_MAP_VAR(1) = 0;
     spawn {
         sleep 20;
-20:
+    20:
         SetPlayerAnimation(0x60002);
         sleep 8;
         SetPlayerAnimation(0x60003);
@@ -349,7 +349,7 @@ Script N(script_80241104) = SCRIPT({
     spawn {
         sleep 20;
         SetPlayerSpeed(4);
-30:
+    30:
         PlayerMoveTo(66, 555, 0);
         PlayerMoveTo(0xFFFFFFBE, 555, 0);
         if (SI_MAP_VAR(0) == 0) {

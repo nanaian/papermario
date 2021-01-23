@@ -238,7 +238,7 @@ Script N(script_80240A34) = SCRIPT({
             }
         }
     }
-    SI_VAR(4) += f SI_VAR(5);
+    SI_VAR(4) +=f SI_VAR(5);
     TranslateModel(41, 0, SI_VAR(4), 0);
     sleep 1;
     goto 10;

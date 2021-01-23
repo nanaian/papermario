@@ -516,7 +516,8 @@ Script N(script_802434A0) = SCRIPT({
         }
         < 0xFFFFFFF0 {
             SetMusicTrack(0, 31, 0, 8);
-        } else {
+        }
+        else {
             SetMusicTrack(0, 30, 0, 8);
         }
     }
@@ -905,7 +906,8 @@ Script N(script_802449C4) = SCRIPT({
         < 0xFFFFFFF0 {
             SetGroupEnabled(112, 0);
             ModifyColliderFlags(0, 40, 0x7FFFFE00);
-        } else {
+        }
+        else {
             SetGroupEnabled(210, 0);
             ModifyColliderFlags(0, 50, 0x7FFFFE00);
         }

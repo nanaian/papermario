@@ -226,9 +226,9 @@ Script N(script_80240AD4) = SCRIPT({
     UpdateLerp();
     SI_VAR(0) /= 100;
     SI_VAR(2) = 1;
-    SI_VAR(2) += f SI_VAR(0);
+    SI_VAR(2) +=f SI_VAR(0);
     SI_VAR(3) = 1;
-    SI_VAR(3) -= f SI_VAR(0);
+    SI_VAR(3) -=f SI_VAR(0);
     ScaleModel(70, SI_VAR(2), SI_VAR(3), SI_VAR(2));
     sleep 1;
     if (SI_VAR(1) == 1) {
@@ -242,7 +242,7 @@ Script N(script_80240BB4) = SCRIPT({
     UpdateLerp();
     SI_VAR(0) /= 10;
     SI_VAR(2) = 0;
-    SI_VAR(2) -= f SI_VAR(0);
+    SI_VAR(2) -=f SI_VAR(0);
     TranslateGroup(60, 0, SI_VAR(0), 0);
     TranslateModel(59, 0, SI_VAR(2), 0);
     sleep 1;
@@ -254,7 +254,7 @@ Script N(script_80240BB4) = SCRIPT({
     UpdateLerp();
     SI_VAR(0) /= 10;
     SI_VAR(2) = 0;
-    SI_VAR(2) -= f SI_VAR(0);
+    SI_VAR(2) -=f SI_VAR(0);
     TranslateGroup(60, 0, SI_VAR(0), 0);
     TranslateModel(59, 0, SI_VAR(2), 0);
     sleep 1;

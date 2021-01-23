@@ -217,7 +217,7 @@ Script N(script_80241B6C) = SCRIPT({
 
 Script N(script_80241BE4) = SCRIPT({
     func_80240A18_865558(SI_VAR(12), SI_VAR(0), 0, 30, 30, 1, 0);
-    SI_VAR(1) = f SI_VAR(0);
+    SI_VAR(1) =f SI_VAR(0);
     SI_VAR(1) /= 3.0;
     RotateModel(8, SI_VAR(0), 0, 0, 1);
     RotateGroup(13, SI_VAR(1), 0, 0, -1);
@@ -240,7 +240,7 @@ Script N(script_80241BE4) = SCRIPT({
 Script N(script_80241E20) = SCRIPT({
     func_80240A18_865558(SI_VAR(12), SI_VAR(0), 0, 0xFFFFFFE2, 8, 1, 0);
     SI_VAR(0) += 30.0;
-    SI_VAR(1) = f SI_VAR(0);
+    SI_VAR(1) =f SI_VAR(0);
     SI_VAR(1) /= 3.0;
     RotateModel(8, SI_VAR(0), 0, 0, 1);
     RotateGroup(13, SI_VAR(1), 0, 0, -1);
@@ -396,13 +396,13 @@ Script N(script_80242A14) = SCRIPT({
     0x802C90FC(11, 2, -1);
     SetNpcVar(0, 0, 0);
     spawn {
-0:
+    0:
         func_8024050C_86504C(0, SI_VAR(0), SI_VAR(1), SI_VAR(2));
-        SI_VAR(0) -= f 0xFFFFFFB0;
-        SI_VAR(1) -= f 0xFFFFFFEE;
+        SI_VAR(0) -=f 0xFFFFFFB0;
+        SI_VAR(1) -=f 0xFFFFFFEE;
         SI_VAR(2) -= 420;
         SI_VAR(0) += 130;
-        SI_VAR(1) += f 0xFFFFFFEC;
+        SI_VAR(1) +=f 0xFFFFFFEC;
         SI_VAR(2) += 0;
         TranslateModel(14, SI_VAR(0), SI_VAR(1), SI_VAR(2));
         TranslateModel(0, SI_VAR(0), SI_VAR(1), SI_VAR(2));
@@ -413,7 +413,7 @@ Script N(script_80242A14) = SCRIPT({
         TranslateGroup(13, SI_VAR(0), SI_VAR(1), SI_VAR(2));
         GetNpcYaw(0, SI_VAR(0));
         SI_VAR(0) *= -1;
-        SI_VAR(0) += f 0xFFFFFFA6;
+        SI_VAR(0) +=f 0xFFFFFFA6;
         TranslateModel(14, 0xFFFFFF9C, 0, 0);
         TranslateModel(0, 0xFFFFFF9C, 0, 0);
         TranslateModel(2, 0xFFFFFF9C, 0, 0);
@@ -712,7 +712,7 @@ Script N(script_80243AEC) = SCRIPT({
 0:
     GetNextPathPos();
     TranslateModel(22, SI_VAR(1), SI_VAR(2), SI_VAR(3));
-    SI_VAR(8) = f SI_VAR(2);
+    SI_VAR(8) =f SI_VAR(2);
     SI_VAR(8) *= -1;
     TranslateModel(0x2AF8, SI_VAR(1), SI_VAR(8), SI_VAR(3));
     func_80241388_865EC8();
@@ -752,48 +752,48 @@ Script N(script_80243CAC) = SCRIPT({
         SI_VAR(14) += -1;
     }
     func_802412AC_865DEC(SI_VAR(14), SI_MAP_VAR(0), SI_MAP_VAR(1), SI_MAP_VAR(2));
-    SI_VAR(0) = f SI_MAP_VAR(0);
-    SI_VAR(0) -= f SI_VAR(1);
+    SI_VAR(0) =f SI_MAP_VAR(0);
+    SI_VAR(0) -=f SI_VAR(1);
     if (SI_VAR(0) < 0) {
         SI_VAR(8) += -1;
     } else {
         SI_VAR(8) += 1;
     }
     if (SI_VAR(8) <= 0xFFFFFFF6) {
-        SI_VAR(8) = f 0xFFFFFFF6;
+        SI_VAR(8) =f 0xFFFFFFF6;
     }
     if (SI_VAR(8) >= 10) {
         SI_VAR(8) = 10;
     }
-    SI_VAR(1) += f SI_VAR(8);
-    SI_VAR(0) = f SI_MAP_VAR(1);
-    SI_VAR(0) -= f SI_VAR(2);
+    SI_VAR(1) +=f SI_VAR(8);
+    SI_VAR(0) =f SI_MAP_VAR(1);
+    SI_VAR(0) -=f SI_VAR(2);
     if (SI_VAR(0) < 0) {
         SI_VAR(9) += -1;
     } else {
         SI_VAR(9) += 1;
     }
     if (SI_VAR(9) <= 0xFFFFFFF6) {
-        SI_VAR(9) = f 0xFFFFFFF6;
+        SI_VAR(9) =f 0xFFFFFFF6;
     }
     if (SI_VAR(9) >= 10) {
         SI_VAR(9) = 10;
     }
-    SI_VAR(2) += f SI_VAR(9);
-    SI_VAR(0) = f SI_MAP_VAR(2);
-    SI_VAR(0) -= f SI_VAR(3);
+    SI_VAR(2) +=f SI_VAR(9);
+    SI_VAR(0) =f SI_MAP_VAR(2);
+    SI_VAR(0) -=f SI_VAR(3);
     if (SI_VAR(0) < 0) {
         SI_VAR(10) += -1;
     } else {
         SI_VAR(10) += 1;
     }
     if (SI_VAR(10) <= 0xFFFFFFF6) {
-        SI_VAR(10) = f 0xFFFFFFF6;
+        SI_VAR(10) =f 0xFFFFFFF6;
     }
     if (SI_VAR(10) >= 10) {
         SI_VAR(10) = 10;
     }
-    SI_VAR(3) += f SI_VAR(10);
+    SI_VAR(3) +=f SI_VAR(10);
     TranslateModel(SI_VAR(15), SI_VAR(1), SI_VAR(2), SI_VAR(3));
     func_80241388_865EC8();
     RotateModel(SI_VAR(15), SI_VAR(7), 0, 1, 0);

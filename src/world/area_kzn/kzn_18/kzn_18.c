@@ -284,7 +284,7 @@ s32 unk_missing_80240E18[] = {
 
 Script N(script_Idle_80240E44) = SCRIPT({
     if (SI_SAVE_VAR(0) < 33) {
-0:
+    0:
         GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
         if (SI_VAR(0) < 0xFFFFFF83) {
             sleep 1;

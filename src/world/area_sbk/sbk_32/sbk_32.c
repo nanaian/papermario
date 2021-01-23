@@ -97,7 +97,8 @@ Script N(script_EnterWalk_802403E0) = SCRIPT({
     match SI_VAR(0) {
         == 4 {
             spawn N(script_80240360);
-        } else {
+        }
+        else {
             SI_VAR(0) = N(script_80240360);
             spawn EnterWalk;
         }

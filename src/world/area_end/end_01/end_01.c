@@ -1347,12 +1347,12 @@ Script N(script_80247620) = SCRIPT({
 
 Script N(script_80247854) = SCRIPT({
     GetNpcPos(38, SI_VAR(0), SI_VAR(1), SI_VAR(2));
-    SI_VAR(0) = f SI_VAR(0);
-    SI_VAR(1) = f SI_VAR(0);
+    SI_VAR(0) =f SI_VAR(0);
+    SI_VAR(1) =f SI_VAR(0);
     SI_VAR(1) += 30;
-    SI_VAR(2) = f SI_VAR(0);
+    SI_VAR(2) =f SI_VAR(0);
     SI_VAR(2) += 60;
-    SI_VAR(3) = f SI_VAR(0);
+    SI_VAR(3) =f SI_VAR(0);
     SI_VAR(3) += 90;
     SetNpcPos(38, SI_VAR(0), 0, 0xFFFFFFE2);
     SetNpcPos(39, SI_VAR(0), 0, 0);

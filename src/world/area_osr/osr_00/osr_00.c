@@ -116,7 +116,8 @@ Script N(script_80240820) = SCRIPT({
         }
         == 96 {
             SetMusicTrack(0, 63, 0, 8);
-        } else {
+        }
+        else {
             SetMusicTrack(0, 0, 0, 8);
         }
     }
@@ -181,7 +182,8 @@ Script N(script_EnterWalk_80240AD4) = SCRIPT({
         }
         == 4 {
             spawn N(script_802435F8);
-        } else {
+        }
+        else {
             SI_VAR(0) = N(script_80240A8C);
             spawn EnterWalk;
         }

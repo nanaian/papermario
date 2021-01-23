@@ -270,7 +270,7 @@ Script N(script_80241180) = SCRIPT({
     }
     spawn {
         MakeLerp(0, 150, 45, 10);
-10:
+    10:
         UpdateLerp();
         func_802405FC_9AECFC(0, 0.0, 0.0, SI_VAR(0));
         sleep 1;
@@ -284,17 +284,17 @@ Script N(script_80241180) = SCRIPT({
     LoadPath(45, N(vectorList_80241120), 4, 10);
 0:
     GetNextPathPos();
-    SI_VAR(1) += f SI_VAR(4);
-    SI_VAR(2) += f SI_VAR(5);
-    SI_VAR(3) += f SI_VAR(6);
+    SI_VAR(1) +=f SI_VAR(4);
+    SI_VAR(2) +=f SI_VAR(5);
+    SI_VAR(3) +=f SI_VAR(6);
     func_80240508_9AEC08(SI_VAR(1), SI_VAR(2), SI_VAR(3));
     sleep 1;
     if (SI_VAR(0) == 1) {
         goto 0;
     }
-    SI_VAR(4) = f SI_VAR(1);
-    SI_VAR(5) = f SI_VAR(2);
-    SI_VAR(6) = f SI_VAR(3);
+    SI_VAR(4) =f SI_VAR(1);
+    SI_VAR(5) =f SI_VAR(2);
+    SI_VAR(6) =f SI_VAR(3);
     spawn {
         sleep 5;
         PlaySound(373);
@@ -305,12 +305,12 @@ Script N(script_80241180) = SCRIPT({
     SI_VAR(7) = -1.0;
     SI_VAR(8) = -1.7314453125;
     SI_VAR(9) = 0.0;
-    SI_VAR(7) *= f SI_VAR(0);
-    SI_VAR(8) *= f SI_VAR(0);
-    SI_VAR(9) *= f SI_VAR(0);
-    SI_VAR(7) += f SI_VAR(4);
-    SI_VAR(8) += f SI_VAR(5);
-    SI_VAR(9) += f SI_VAR(6);
+    SI_VAR(7) *=f SI_VAR(0);
+    SI_VAR(8) *=f SI_VAR(0);
+    SI_VAR(9) *=f SI_VAR(0);
+    SI_VAR(7) +=f SI_VAR(4);
+    SI_VAR(8) +=f SI_VAR(5);
+    SI_VAR(9) +=f SI_VAR(6);
     func_80240508_9AEC08(SI_VAR(7), SI_VAR(8), SI_VAR(9));
     sleep 1;
     if (SI_VAR(1) == 1) {
@@ -327,7 +327,7 @@ Script N(script_802414B4) = SCRIPT({
     }
     spawn {
         MakeLerp(0, 0xFFFFFF79, 45, 10);
-10:
+    10:
         UpdateLerp();
         SetNpcRotation(0xFFFFFFFC, 0.0, 0.0, SI_VAR(0));
         sleep 1;
@@ -341,9 +341,9 @@ Script N(script_802414B4) = SCRIPT({
 0:
     GetNextPathPos();
     SI_VAR(1) *= -1.0;
-    SI_VAR(1) += f SI_VAR(4);
-    SI_VAR(2) += f SI_VAR(5);
-    SI_VAR(3) += f SI_VAR(6);
+    SI_VAR(1) +=f SI_VAR(4);
+    SI_VAR(2) +=f SI_VAR(5);
+    SI_VAR(3) +=f SI_VAR(6);
     SetNpcPos(0xFFFFFFFC, SI_VAR(1), SI_VAR(2), SI_VAR(3));
     sleep 1;
     if (SI_VAR(0) == 1) {
@@ -361,12 +361,12 @@ Script N(script_802414B4) = SCRIPT({
     SI_VAR(7) = 1.0;
     SI_VAR(8) = -2.0;
     SI_VAR(9) = 0.0;
-    SI_VAR(7) *= f SI_VAR(0);
-    SI_VAR(8) *= f SI_VAR(0);
-    SI_VAR(9) *= f SI_VAR(0);
-    SI_VAR(7) += f SI_VAR(4);
-    SI_VAR(8) += f SI_VAR(5);
-    SI_VAR(9) += f SI_VAR(6);
+    SI_VAR(7) *=f SI_VAR(0);
+    SI_VAR(8) *=f SI_VAR(0);
+    SI_VAR(9) *=f SI_VAR(0);
+    SI_VAR(7) +=f SI_VAR(4);
+    SI_VAR(8) +=f SI_VAR(5);
+    SI_VAR(9) +=f SI_VAR(6);
     SetNpcPos(0xFFFFFFFC, SI_VAR(7), SI_VAR(8), SI_VAR(9));
     sleep 1;
     if (SI_VAR(1) == 1) {

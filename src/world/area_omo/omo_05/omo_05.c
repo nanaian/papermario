@@ -420,9 +420,9 @@ Script N(script_Interact_80243224) = SCRIPT({
                 SI_VAR(2) = -1.0;
                 SI_VAR(3) = -0.349609375;
                 SI_VAR(4) = 0.0;
-                SI_VAR(2) *= f SI_VAR(0);
-                SI_VAR(3) *= f SI_VAR(0);
-                SI_VAR(4) *= f SI_VAR(0);
+                SI_VAR(2) *=f SI_VAR(0);
+                SI_VAR(3) *=f SI_VAR(0);
+                SI_VAR(4) *=f SI_VAR(0);
                 SI_VAR(2) += -270.0;
                 SI_VAR(3) += 35.0;
                 SI_VAR(4) += 110.0;
@@ -438,9 +438,9 @@ Script N(script_Interact_80243224) = SCRIPT({
                 SI_VAR(2) = -1.0;
                 SI_VAR(3) = 0.3505859375;
                 SI_VAR(4) = 0.0;
-                SI_VAR(2) *= f SI_VAR(0);
-                SI_VAR(3) *= f SI_VAR(0);
-                SI_VAR(4) *= f SI_VAR(0);
+                SI_VAR(2) *=f SI_VAR(0);
+                SI_VAR(3) *=f SI_VAR(0);
+                SI_VAR(4) *=f SI_VAR(0);
                 SI_VAR(2) += -355.0;
                 SI_VAR(3) += 0.0;
                 SI_VAR(4) += 110.0;
@@ -457,9 +457,9 @@ Script N(script_Interact_80243224) = SCRIPT({
                 SI_VAR(2) = 1.0;
                 SI_VAR(3) = -0.349609375;
                 SI_VAR(4) = 0.0;
-                SI_VAR(2) *= f SI_VAR(0);
-                SI_VAR(3) *= f SI_VAR(0);
-                SI_VAR(4) *= f SI_VAR(0);
+                SI_VAR(2) *=f SI_VAR(0);
+                SI_VAR(3) *=f SI_VAR(0);
+                SI_VAR(4) *=f SI_VAR(0);
                 SI_VAR(2) += -240.0;
                 SI_VAR(3) += 35.0;
                 SI_VAR(4) += 110.0;
@@ -475,9 +475,9 @@ Script N(script_Interact_80243224) = SCRIPT({
                 SI_VAR(2) = 1.0;
                 SI_VAR(3) = 0.3505859375;
                 SI_VAR(4) = 0.0;
-                SI_VAR(2) *= f SI_VAR(0);
-                SI_VAR(3) *= f SI_VAR(0);
-                SI_VAR(4) *= f SI_VAR(0);
+                SI_VAR(2) *=f SI_VAR(0);
+                SI_VAR(3) *=f SI_VAR(0);
+                SI_VAR(4) *=f SI_VAR(0);
                 SI_VAR(2) += -155.0;
                 SI_VAR(3) += 0.0;
                 SI_VAR(4) += 110.0;
@@ -597,7 +597,7 @@ Script N(script_Interact_80243224) = SCRIPT({
             PanToTarget(0, 0, 1);
             SetSelfVar(0, 1);
             spawn {
-19:
+            19:
                 PlayerFaceNpc(-1, 0);
                 GetSelfVar(0, SI_VAR(0));
                 if (SI_VAR(0) != 0) {
@@ -621,14 +621,14 @@ Script N(script_Interact_80243224) = SCRIPT({
             SetNpcRotation(-1, 0, 0, 0xFFFFFFD3);
             InterpNpcYaw(-1, 90, 0);
             MakeLerp(0, 100, 30, 0);
-10:
+        10:
             UpdateLerp();
             SI_VAR(2) = 3.9501953125;
             SI_VAR(3) = -1.8994140625;
             SI_VAR(4) = 0.0;
-            SI_VAR(2) *= f SI_VAR(0);
-            SI_VAR(3) *= f SI_VAR(0);
-            SI_VAR(4) *= f SI_VAR(0);
+            SI_VAR(2) *=f SI_VAR(0);
+            SI_VAR(3) *=f SI_VAR(0);
+            SI_VAR(4) *=f SI_VAR(0);
             SI_VAR(2) += -445.0;
             SI_VAR(3) += 130.0;
             SI_VAR(4) += 230.0;
@@ -659,7 +659,7 @@ Script N(script_Interact_80243224) = SCRIPT({
                 SetSelfVar(0, 2);
             }
             ShowMessageAtScreenPos(0xF0045, 160, 40);
-12:
+        12:
             GetSelfVar(0, SI_VAR(0));
             if (SI_VAR(0) != 2) {
                 sleep 1;

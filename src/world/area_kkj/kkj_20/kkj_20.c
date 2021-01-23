@@ -650,7 +650,7 @@ Script N(script_80242E6C) = SCRIPT({
     await N(script_8024390C);
     spawn {
         MakeLerp(0, 255, 60, 0);
-0:
+    0:
         UpdateLerp();
         func_80240308_AFDE48(3, SI_VAR(0));
         sleep 1;
@@ -665,7 +665,7 @@ Script N(script_80242E6C) = SCRIPT({
         func_80240584_AFE0C4(SI_VAR(10));
         sleep 45;
         MakeLerp(255, 0, 30, 0);
-1:
+    1:
         UpdateLerp();
         func_80240308_AFDE48(0, SI_VAR(0));
         sleep 1;
@@ -969,7 +969,8 @@ Script N(script_Init_80244394) = SCRIPT({
                 BindNpcIdle(-1, N(script_Idle_8024426C));
             }
             bind N(script_80243484) to TriggerFlag_WALL_INTERACT 23;
-        } else {
+        }
+        else {
             if (SI_SAVE_FLAG(505) == 0) {
                 SetNpcPos(-1, 0xFFFFFFF6, 30, 0xFFFFFF7C);
                 SetSelfVar(0, 1);

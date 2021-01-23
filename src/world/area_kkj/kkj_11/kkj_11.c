@@ -310,7 +310,8 @@ Script N(main) = SCRIPT({
             EnableModel(129, 0);
             func_80240000_ACE140();
             MakeNpcs(0, N(npcGroupList_80245EB4));
-        } else {
+        }
+        else {
             EnableModel(127, 0);
             EnableModel(128, 0);
             EnableModel(129, 0);

@@ -263,9 +263,9 @@ Script N(script_80240D84) = SCRIPT({
     UpdateLerp();
     SI_VAR(0) /= 100;
     SI_VAR(2) = 1;
-    SI_VAR(2) += f SI_VAR(0);
+    SI_VAR(2) +=f SI_VAR(0);
     SI_VAR(3) = 1;
-    SI_VAR(3) -= f SI_VAR(0);
+    SI_VAR(3) -=f SI_VAR(0);
     ScaleModel(111, SI_VAR(2), SI_VAR(3), SI_VAR(2));
     sleep 1;
     if (SI_VAR(1) == 1) {
@@ -279,7 +279,7 @@ Script N(script_80240E64) = SCRIPT({
     UpdateLerp();
     SI_VAR(0) /= 10;
     SI_VAR(2) = 0;
-    SI_VAR(2) -= f SI_VAR(0);
+    SI_VAR(2) -=f SI_VAR(0);
     TranslateGroup(103, 0, SI_VAR(0), 0);
     TranslateModel(152, 0, SI_VAR(2), 0);
     sleep 1;
@@ -291,7 +291,7 @@ Script N(script_80240E64) = SCRIPT({
     UpdateLerp();
     SI_VAR(0) /= 10;
     SI_VAR(2) = 0;
-    SI_VAR(2) -= f SI_VAR(0);
+    SI_VAR(2) -=f SI_VAR(0);
     TranslateGroup(103, 0, SI_VAR(0), 0);
     TranslateModel(152, 0, SI_VAR(2), 0);
     sleep 1;
@@ -473,7 +473,7 @@ Script N(script_80241924) = SCRIPT({
     spawn {
         PlaySoundAt(88, 0, 449, 0xFFFFFCCA, 148);
         MakeLerp(0xFFFFFFCE, 0, 60, 1);
-20:
+    20:
         UpdateLerp();
         TranslateGroup(131, SI_VAR(0), 0, 0);
         sleep 1;
@@ -487,7 +487,7 @@ Script N(script_80241924) = SCRIPT({
     spawn {
         PlaySoundAt(88, 0, 460, 0xFFFFFCDA, 108);
         MakeLerp(0xFFFFFFCE, 0, 60, 1);
-22:
+    22:
         UpdateLerp();
         TranslateGroup(134, SI_VAR(0), 0, 0);
         sleep 1;
@@ -501,7 +501,7 @@ Script N(script_80241924) = SCRIPT({
     spawn {
         PlaySoundAt(88, 0, 432, 0xFFFFFCC7, 189);
         MakeLerp(0xFFFFFFCE, 0, 60, 1);
-24:
+    24:
         UpdateLerp();
         TranslateGroup(137, SI_VAR(0), 0, 0);
         sleep 1;
@@ -515,7 +515,7 @@ Script N(script_80241924) = SCRIPT({
     spawn {
         PlaySoundAt(88, 0, 451, 0xFFFFFCD4, 137);
         MakeLerp(0xFFFFFFCE, 0, 50, 1);
-26:
+    26:
         UpdateLerp();
         TranslateGroup(140, SI_VAR(0), 0, 0);
         sleep 1;
@@ -556,14 +556,14 @@ Script N(script_80241E74) = SCRIPT({
             if (SI_SAVE_FLAG(897) == 0) {
                 TranslateModel(150, 0, 0xFFFFFFF2, 0);
                 UpdateColliderTransform(62);
-10:
+            10:
                 if (SI_SAVE_FLAG(897) == 0) {
                     sleep 1;
                     goto 10;
                 }
                 DisablePlayerInput(1);
                 MakeLerp(0xFFFFFFF2, 0, 30, 0);
-20:
+            20:
                 UpdateLerp();
                 TranslateModel(150, 0, SI_VAR(0), 0);
                 UpdateColliderTransform(62);

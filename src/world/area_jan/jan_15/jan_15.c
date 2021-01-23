@@ -215,7 +215,7 @@ Script N(script_802407CC) = SCRIPT({
 
 Script N(script_Idle_802409F4) = SCRIPT({
     if (SI_SAVE_FLAG(1273) == 0) {
-0:
+    0:
         GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
         if (SI_VAR(0) < 34) {
             sleep 1;

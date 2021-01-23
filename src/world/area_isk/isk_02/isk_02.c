@@ -201,7 +201,7 @@ Script N(script_8024077C) = SCRIPT({
         TranslateModel(SI_VAR(3), 0, 0, 13);
         sleep 3;
         MakeLerp(0, 35, 9, 10);
-10:
+    10:
         UpdateLerp();
         SI_VAR(2) = SI_VAR(0);
         SI_VAR(2) *= 1.1005859375;
@@ -221,7 +221,7 @@ Script N(script_8024077C) = SCRIPT({
 
 Script N(script_80240904) = SCRIPT({
     if (SI_AREA_FLAG(4) == 0) {
-5:
+    5:
         func_80240040_978750(0xFFFFFF2E, 580);
         sleep 1;
         if (SI_VAR(0) == 0) {
@@ -241,7 +241,7 @@ Script N(script_80240904) = SCRIPT({
 
 Script N(script_80240A20) = SCRIPT({
     if (SI_AREA_FLAG(5) == 0) {
-5:
+    5:
         func_80240040_978750(0xFFFFFFE2, 670);
         sleep 1;
         if (SI_VAR(0) == 0) {
@@ -262,7 +262,7 @@ Script N(script_80240A20) = SCRIPT({
 
 Script N(script_80240B60) = SCRIPT({
     if (SI_AREA_FLAG(6) == 0) {
-5:
+    5:
         func_80240040_978750(220, 600);
         sleep 1;
         if (SI_VAR(0) == 0) {

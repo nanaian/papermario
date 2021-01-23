@@ -139,7 +139,7 @@ Script N(script_80240920) = SCRIPT({
     RandInt(5, SI_VAR(0));
     SI_VAR(7) = 1.0;
     SI_VAR(0) *= 0.1005859375;
-    SI_VAR(7) += f SI_VAR(0);
+    SI_VAR(7) +=f SI_VAR(0);
     PlayEffect(119, SI_VAR(10), SI_VAR(1), SI_VAR(2), SI_VAR(3), SI_VAR(4), SI_VAR(5), SI_VAR(6), SI_VAR(7), 70, 0, 0, 0, 0);
     func_80240310_90B9E0(SI_VAR(15));
     if (SI_VAR(10) != 2) {
@@ -277,10 +277,10 @@ Script N(script_80240C10) = SCRIPT({
         SI_VAR(3) = -6.0;
         SI_VAR(4) = 0.6005859375;
         SI_VAR(5) = -0.0048828125;
-        SI_VAR(2) *= f SI_VAR(0);
-        SI_VAR(3) *= f SI_VAR(0);
-        SI_VAR(4) *= f SI_VAR(0);
-        SI_VAR(5) *= f SI_VAR(0);
+        SI_VAR(2) *=f SI_VAR(0);
+        SI_VAR(3) *=f SI_VAR(0);
+        SI_VAR(4) *=f SI_VAR(0);
+        SI_VAR(5) *=f SI_VAR(0);
         SI_VAR(5) += 1.0;
         ScaleGroup(84, SI_VAR(5), SI_VAR(5), SI_VAR(5));
         TranslateGroup(84, SI_VAR(2), SI_VAR(3), SI_VAR(4));

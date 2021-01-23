@@ -397,7 +397,7 @@ Script N(script_80241B18) = SCRIPT({
             RemoveKeyItemAt(SI_VAR(1));
             GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_8024030C_AF7C5C(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |= c 50000;
+            SI_VAR(0) |=c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SetPlayerAnimation(0x60005);
             sleep 30;
@@ -580,7 +580,8 @@ Script N(script_80242340) = SCRIPT({
         }
         == 20 {
             SI_VAR(0) = 102;
-        } else {
+        }
+        else {
             return;
         }
     }
@@ -733,7 +734,8 @@ Script N(script_80242A18) = SCRIPT({
                 }
                 == 95 {
                     SI_AREA_FLAG(10) = 1;
-                } else {
+                }
+                else {
                     SI_AREA_FLAG(14) = 0;
                 }
             }
@@ -753,7 +755,8 @@ Script N(script_80242A18) = SCRIPT({
                 }
                 == 98 {
                     SI_AREA_FLAG(13) = 1;
-                } else {
+                }
+                else {
                     SI_AREA_FLAG(14) = 0;
                 }
             }
@@ -772,7 +775,8 @@ Script N(script_80242A18) = SCRIPT({
                     if (SI_VAR(0) != 97) {
                         SI_AREA_FLAG(9) = 1;
                     }
-                } else {
+                }
+                else {
                     SI_AREA_FLAG(9) = 1;
                 }
             }
@@ -787,7 +791,8 @@ Script N(script_80242A18) = SCRIPT({
                         SI_AREA_VAR(5) = SI_VAR(0);
                     }
                     SI_AREA_FLAG(16) = 1;
-                } else {
+                }
+                else {
                     MakeItemEntity(356, 287, 20, 0xFFFFFFE2, 1, 0);
                     SI_AREA_VAR(5) = SI_VAR(0);
                     SI_AREA_FLAG(15) = 1;

@@ -128,7 +128,7 @@ Script N(script_80240E60) = SCRIPT({
 Script N(script_80240F6C) = SCRIPT({
     loop {
         MakeLerp(0, 160, 60, 10);
-1:
+    1:
         UpdateLerp();
         RotateModel(117, SI_VAR(0), 0, -1, 0);
         RotateModel(119, SI_VAR(0), 0, 1, 0);
@@ -141,7 +141,7 @@ Script N(script_80240F6C) = SCRIPT({
             goto 1;
         }
         MakeLerp(160, 0, 60, 10);
-2:
+    2:
         UpdateLerp();
         RotateModel(117, SI_VAR(0), 0, -1, 0);
         RotateModel(119, SI_VAR(0), 0, 1, 0);
@@ -159,7 +159,7 @@ Script N(script_80240F6C) = SCRIPT({
 Script N(script_802411D8) = SCRIPT({
     loop {
         MakeLerp(0, 0xFFFFFE98, 100, 0);
-1:
+    1:
         UpdateLerp();
         RotateModel(130, SI_VAR(0), 0, 0, 1);
         RotateModel(135, SI_VAR(0), 1, 0, 1);
@@ -290,7 +290,7 @@ Script N(script_Init_802416A0) = SCRIPT({
     if (SI_SAVE_FLAG(1108) == 0) {
         SI_VAR(1) = 48;
         SI_VAR(2) = 1;
-        SI_VAR(3) = c 0xF8405FD4;
+        SI_VAR(3) =c 0xF8405FD4;
     } else {
         SI_VAR(1) = 163;
         SI_VAR(2) = 0;

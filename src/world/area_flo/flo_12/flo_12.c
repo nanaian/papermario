@@ -80,7 +80,8 @@ Script N(script_80240750) = SCRIPT({
         match SI_SAVE_VAR(0) {
             < 53 {
                 SetMusicTrack(0, 48, 0, 8);
-            } else {
+            }
+            else {
                 SetMusicTrack(0, 49, 0, 8);
             }
         }
@@ -110,10 +111,10 @@ Script N(script_80240870) = SCRIPT({
     SI_VAR(14) = SI_VAR(4);
     SI_VAR(12) -= SI_VAR(0);
     SI_VAR(13) -= SI_VAR(1);
-    SI_VAR(0) = f SI_VAR(12);
+    SI_VAR(0) =f SI_VAR(12);
     SI_VAR(0) /= 100.0;
     SI_VAR(15) = 100.0;
-    SI_VAR(15) /= f SI_VAR(0);
+    SI_VAR(15) /=f SI_VAR(0);
     SI_VAR(15) += 11;
     SI_VAR(5) = 200;
     SI_VAR(5) /= SI_VAR(15);
@@ -444,7 +445,7 @@ Script N(script_80241858) = SCRIPT({
             RemoveKeyItemAt(SI_VAR(1));
             GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_802403F0_CC1220(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |= c 50000;
+            SI_VAR(0) |=c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SetPlayerAnimation(0x60005);
             sleep 30;
@@ -592,7 +593,8 @@ Script N(script_Interact_80241C8C) = SCRIPT({
             match SI_VAR(0) {
                 <= 0 {
                     SpeakToPlayer(-1, 0xCA0004, 0xCA0002, 5, 0x110093);
-                } else {
+                }
+                else {
                     SpeakToPlayer(-1, 0xCA0004, 0xCA0002, 5, 0x110095);
                     RemoveItemEntity(SI_VAR(7));
                     MakeItemEntity(30, 0xFFFFFFDF, 14, 19, 1, 1380);
@@ -619,7 +621,8 @@ Script N(script_Interact_80241C8C) = SCRIPT({
         }
         < 60 {
             SpeakToPlayer(-1, 0xCA0004, 0xCA0002, 5, 0x110098);
-        } else {
+        }
+        else {
             SpeakToPlayer(-1, 0xCA0004, 0xCA0002, 5, 0x110099);
         }
     }
@@ -648,7 +651,8 @@ Script N(script_Init_802423D0) = SCRIPT({
             SetNpcAnimation(-1, 0xCA0002);
             MakeItemEntity(87, 0xFFFFFFDF, 14, 19, 1, 1380);
             SI_VAR(10) = SI_VAR(0);
-        } else {
+        }
+        else {
             SetNpcFlagBits(1, 256, 0);
             SetNpcAnimation(-1, 0xCA0002);
             MakeItemEntity(30, 0xFFFFFFDF, 14, 19, 1, 1380);

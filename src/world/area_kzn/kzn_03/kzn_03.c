@@ -625,7 +625,7 @@ Script N(script_8024420C) = SCRIPT({
             RemoveKeyItemAt(SI_VAR(1));
             GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_80242710_C63420(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |= c 50000;
+            SI_VAR(0) |=c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SetPlayerAnimation(0x60005);
             sleep 30;
@@ -668,7 +668,7 @@ Script N(script_80244420) = SCRIPT({
             DisablePartnerAI(0);
             GetNpcPos(0xFFFFFFFC, SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_80242AF8_C63808(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |= c 50000;
+            SI_VAR(0) |=c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SI_VAR(10) = spawn N(script_802443A0);
             SetNpcAnimation(0xFFFFFFFC, 0x40002);
@@ -744,7 +744,8 @@ Script N(script_802447B4) = SCRIPT({
                     SpeakToPlayer(0xFFFFFFFC, 0x40006, 0x40001, 5, SI_VAR(8));
                     EnablePartnerAI();
                     SI_VAR(12) = 1;
-                } else {
+                }
+                else {
                     DisablePartnerAI(0);
                     sleep 1;
                     SpeakToPlayer(0xFFFFFFFC, 0x40006, 0x40001, 5, SI_VAR(9));
@@ -826,7 +827,7 @@ Script N(script_Idle_80244B68) = SCRIPT({
     spawn {
         GetNpcPos(-1, SI_VAR(3), SI_VAR(4), SI_VAR(5));
         SetNpcJumpscale(-1, 2.5);
-5:
+    5:
         PlaySoundAtNpc(-1, 812, 0);
         NpcJump0(-1, SI_VAR(3), SI_VAR(4), SI_VAR(5), 9);
         GetSelfVar(0, SI_VAR(0));
@@ -858,7 +859,7 @@ Script N(script_Interact_80244EF8) = SCRIPT({
         spawn {
             GetNpcPos(-1, SI_VAR(3), SI_VAR(4), SI_VAR(5));
             SetNpcJumpscale(-1, 2.5);
-5:
+        5:
             PlaySoundAtNpc(-1, 812, 0);
             NpcJump0(-1, SI_VAR(3), SI_VAR(4), SI_VAR(5), 9);
             GetSelfVar(0, SI_VAR(0));

@@ -113,7 +113,7 @@ Script N(script_80240430) = SCRIPT({
         MakeLerp(6, 100, 100, 0);
         loop {
             UpdateLerp();
-            SI_VAR(10) = f SI_VAR(0);
+            SI_VAR(10) =f SI_VAR(0);
             SI_VAR(10) *= 0.0107421875;
             ScaleGroup(37, SI_VAR(10), 1, 1);
             sleep 1;

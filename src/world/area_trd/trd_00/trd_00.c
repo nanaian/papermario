@@ -93,7 +93,8 @@ Script N(script_802406D0) = SCRIPT({
         }
         == 0xFFFFFFB4 {
             SetMusicTrack(0, 120, 1, 8);
-        } else {
+        }
+        else {
             SetMusicTrack(0, 17, 0, 8);
             PlaySound(0x8000005C);
         }
@@ -434,7 +435,7 @@ Script N(script_Idle_802416C0) = SCRIPT({
     spawn {
         PlaySoundAtCollider(6, 451, 0);
         MakeLerp(0, 100, 10, 10);
-0:
+    0:
         UpdateLerp();
         RotateModel(67, SI_VAR(0), 0, -1, 0);
         RotateModel(65, SI_VAR(0), 0, 1, 0);

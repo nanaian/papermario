@@ -524,9 +524,9 @@ Script N(script_802430D0) = SCRIPT({
     MakeLerp(100, 200, 30, 10);
 31:
     UpdateLerp();
-    SI_VAR(2) = f SI_VAR(0);
+    SI_VAR(2) =f SI_VAR(0);
     func_8024143C_BD002C();
-    SI_VAR(2) /= f SI_VAR(3);
+    SI_VAR(2) /=f SI_VAR(3);
     func_8024146C_BD005C();
     sleep 1;
     if (SI_VAR(1) == 1) {
@@ -535,9 +535,9 @@ Script N(script_802430D0) = SCRIPT({
     MakeLerp(200, 100, 30, 10);
 32:
     UpdateLerp();
-    SI_VAR(2) = f SI_VAR(0);
+    SI_VAR(2) =f SI_VAR(0);
     func_8024143C_BD002C();
-    SI_VAR(2) /= f SI_VAR(3);
+    SI_VAR(2) /=f SI_VAR(3);
     func_8024146C_BD005C();
     sleep 1;
     if (SI_VAR(1) == 1) {

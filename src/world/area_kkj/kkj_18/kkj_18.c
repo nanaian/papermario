@@ -455,7 +455,7 @@ Script N(script_80241F18) = SCRIPT({
             RemoveKeyItemAt(SI_VAR(1));
             GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_8024039C_AF303C(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |= c 50000;
+            SI_VAR(0) |=c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SetPlayerAnimation(0x60005);
             sleep 30;
@@ -767,8 +767,8 @@ Script N(script_802432A4) = SCRIPT({
         UpdateLerp();
         SI_VAR(2) = 3.30078125;
         SI_VAR(3) = -2.2998046875;
-        SI_VAR(2) *= f SI_VAR(0);
-        SI_VAR(3) *= f SI_VAR(0);
+        SI_VAR(2) *=f SI_VAR(0);
+        SI_VAR(3) *=f SI_VAR(0);
         SI_VAR(2) += -100.0;
         SI_VAR(3) += 150.0;
         SI_VAR(4) = 100.0;
@@ -805,9 +805,9 @@ Script N(script_802435FC) = SCRIPT({
         SI_VAR(2) = 0.2001953125;
         SI_VAR(3) = -0.2998046875;
         SI_VAR(4) = 0.5;
-        SI_VAR(2) *= f SI_VAR(0);
-        SI_VAR(3) *= f SI_VAR(0);
-        SI_VAR(4) *= f SI_VAR(0);
+        SI_VAR(2) *=f SI_VAR(0);
+        SI_VAR(3) *=f SI_VAR(0);
+        SI_VAR(4) *=f SI_VAR(0);
         SI_VAR(2) += 105.0;
         SI_VAR(3) += 30.0;
         SI_VAR(4) += 20.0;
@@ -823,9 +823,9 @@ Script N(script_802435FC) = SCRIPT({
         SI_VAR(2) = 0.2001953125;
         SI_VAR(3) = 0.30078125;
         SI_VAR(4) = 0.5;
-        SI_VAR(2) *= f SI_VAR(0);
-        SI_VAR(3) *= f SI_VAR(0);
-        SI_VAR(4) *= f SI_VAR(0);
+        SI_VAR(2) *=f SI_VAR(0);
+        SI_VAR(3) *=f SI_VAR(0);
+        SI_VAR(4) *=f SI_VAR(0);
         SI_VAR(2) += 125.0;
         SI_VAR(3) += 0.0;
         SI_VAR(4) += 70.0;

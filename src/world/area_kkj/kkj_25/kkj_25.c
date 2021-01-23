@@ -1300,7 +1300,7 @@ Script N(script_80245784) = SCRIPT({
         sleep 20;
         func_802401C4_B06BC4(SI_MAP_VAR(0), SI_VAR(7), SI_VAR(8), SI_VAR(9));
         MakeLerp(0, 0xFFFFFFF3, 5, 10);
-0:
+    0:
         UpdateLerp();
         func_802400FC_B06AFC(SI_MAP_VAR(0), SI_VAR(7), SI_VAR(0), SI_VAR(9));
         if (SI_VAR(1) == 1) {
@@ -1395,7 +1395,7 @@ Script N(script_80245AF0) = SCRIPT({
             NpcJump0(0xFFFFFFFC, SI_VAR(3), SI_VAR(1), SI_VAR(5), 12);
             EnablePartnerAI();
         }
-1:
+    1:
     }
     SpeakToPlayer(0, 0x800006, 0x800002, 0, 0x13007C);
     sleep 20;
@@ -2686,7 +2686,8 @@ Script N(script_8024B254) = SCRIPT({
     match SI_VAR(0) {
         7, 9 {
             sleep 30;
-        } else {
+        }
+        else {
             loop 3 {
                 GetNpcPos(0xFFFFFFFC, SI_VAR(1), SI_VAR(2), SI_VAR(3));
                 NpcJump0(0xFFFFFFFC, SI_VAR(1), SI_VAR(2), SI_VAR(3), 10);

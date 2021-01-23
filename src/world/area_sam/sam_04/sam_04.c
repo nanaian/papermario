@@ -635,23 +635,23 @@ Script N(script_80241BCC) = {
 
 Script N(script_80241D90) = SCRIPT({
     GetNpcPos(SI_VAR(0), SI_VAR(5), SI_VAR(6), SI_VAR(7));
-    SI_VAR(8) = f SI_VAR(1);
-    SI_VAR(9) = f SI_VAR(2);
-    SI_VAR(10) = f SI_VAR(3);
-    SI_VAR(11) = f SI_VAR(4);
-    SI_VAR(8) -= f SI_VAR(5);
-    SI_VAR(9) -= f SI_VAR(6);
-    SI_VAR(10) -= f SI_VAR(7);
-    SI_VAR(8) /= f SI_VAR(11);
-    SI_VAR(9) /= f SI_VAR(11);
-    SI_VAR(10) /= f SI_VAR(11);
+    SI_VAR(8) =f SI_VAR(1);
+    SI_VAR(9) =f SI_VAR(2);
+    SI_VAR(10) =f SI_VAR(3);
+    SI_VAR(11) =f SI_VAR(4);
+    SI_VAR(8) -=f SI_VAR(5);
+    SI_VAR(9) -=f SI_VAR(6);
+    SI_VAR(10) -=f SI_VAR(7);
+    SI_VAR(8) /=f SI_VAR(11);
+    SI_VAR(9) /=f SI_VAR(11);
+    SI_VAR(10) /=f SI_VAR(11);
     loop SI_VAR(11) {
-        SI_VAR(5) += f SI_VAR(8);
-        SI_VAR(6) += f SI_VAR(9);
-        SI_VAR(7) += f SI_VAR(10);
-        SI_VAR(1) = f SI_VAR(5);
-        SI_VAR(2) = f SI_VAR(6);
-        SI_VAR(3) = f SI_VAR(7);
+        SI_VAR(5) +=f SI_VAR(8);
+        SI_VAR(6) +=f SI_VAR(9);
+        SI_VAR(7) +=f SI_VAR(10);
+        SI_VAR(1) =f SI_VAR(5);
+        SI_VAR(2) =f SI_VAR(6);
+        SI_VAR(3) =f SI_VAR(7);
         SI_VAR(4) = 20;
         await N(script_80241BCC);
         PlaySoundAtNpc(SI_VAR(0), 908, 0);
@@ -715,14 +715,14 @@ Script N(script_80241F04) = SCRIPT({
         GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
         func_80240240_D13810(SI_VAR(3), SI_VAR(0), SI_VAR(2), 0, 0);
         GetDist2D(SI_VAR(4), SI_VAR(0), SI_VAR(2), 0, 0);
-        SI_VAR(5) = f SI_VAR(4);
+        SI_VAR(5) =f SI_VAR(4);
         SI_VAR(5) /= 5.0;
-        SI_VAR(8) = f SI_VAR(3);
+        SI_VAR(8) =f SI_VAR(3);
         SI_VAR(8) -= 90.0;
         loop 4 {
             AddVectorPolar(SI_VAR(0), SI_VAR(2), SI_VAR(5), SI_VAR(3));
-            SI_VAR(6) = f SI_VAR(0);
-            SI_VAR(7) = f SI_VAR(2);
+            SI_VAR(6) =f SI_VAR(0);
+            SI_VAR(7) =f SI_VAR(2);
             AddVectorPolar(SI_VAR(6), SI_VAR(7), 20.0, SI_VAR(8));
             SetPlayerJumpscale(2.0);
             PlayerJump1(SI_VAR(6), 0, SI_VAR(7), 16);
@@ -1046,7 +1046,7 @@ Script N(script_80243884) = SCRIPT({
             RemoveKeyItemAt(SI_VAR(1));
             GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_8024036C_D1393C(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |= c 50000;
+            SI_VAR(0) |=c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SetPlayerAnimation(0x60005);
             sleep 30;

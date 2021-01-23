@@ -272,7 +272,8 @@ Script N(script_8024126C) = SCRIPT({
             }
             == 2 {
                 SI_VAR(13) = 0xFFFFFFF8;
-            } else {
+            }
+            else {
                 SI_VAR(11) = 0;
                 if (SI_VAR(12) < 0) {
                     SI_VAR(12) += 0.2001953125;
@@ -300,9 +301,9 @@ Script N(script_8024126C) = SCRIPT({
         if (SI_VAR(13) > 0) {
             SI_VAR(13) -= 1;
             GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
-            SI_VAR(3) = f SI_VAR(13);
+            SI_VAR(3) =f SI_VAR(13);
             SI_VAR(3) *= 1.80078125;
-            SI_VAR(0) -= f SI_VAR(3);
+            SI_VAR(0) -=f SI_VAR(3);
             SetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
         } else {
             SI_VAR(13) += 1;
@@ -493,7 +494,7 @@ Script N(script_80241C14) = SCRIPT({
     spawn {
         PlaySoundAtCollider(54, 619, 0);
         MakeLerp(100, 0, 40, 1);
-0:
+    0:
         UpdateLerp();
         TranslateModel(12, 0, SI_VAR(0), -1);
         sleep 1;

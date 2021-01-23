@@ -81,10 +81,10 @@ Script N(script_80240690) = SCRIPT({
     SI_VAR(14) = SI_VAR(4);
     SI_VAR(12) -= SI_VAR(0);
     SI_VAR(13) -= SI_VAR(1);
-    SI_VAR(0) = f SI_VAR(12);
+    SI_VAR(0) =f SI_VAR(12);
     SI_VAR(0) /= 100.0;
     SI_VAR(15) = 100.0;
-    SI_VAR(15) /= f SI_VAR(0);
+    SI_VAR(15) /=f SI_VAR(0);
     SI_VAR(15) += 11;
     SI_VAR(5) = 200;
     SI_VAR(5) /= SI_VAR(15);
@@ -426,7 +426,7 @@ Script N(script_8024183C) = SCRIPT({
     PlaySound(0x80000050);
     spawn {
         MakeLerp(80, 90, 10, 0);
-0:
+    0:
         UpdateLerp();
         RotateModel(101, SI_VAR(0), 1, 0, 0);
         RotateModel(103, SI_VAR(0), 1, 0, 0);
@@ -450,140 +450,140 @@ Script N(script_8024183C) = SCRIPT({
             sleep 100;
         });
 
-        Script N(script_80241ABC) = SCRIPT({
-            if (SI_SAVE_VAR(0) < 49) {
-                EnableGroup(94, 0);
-                ModifyColliderFlags(0, 30, 0x7FFFFE00);
-            } else {
-                EnableGroup(65, 0);
-            }
-            GetEntryID(SI_VAR(0));
-            if (SI_VAR(0) != 2) {
-                EnableGroup(105, 0);
-            }
-            EnableTexPanning(89, 1);
-            EnableTexPanning(97, 1);
-            EnableTexPanning(90, 1);
-            EnableTexPanning(98, 1);
-            EnableTexPanning(91, 1);
-            EnableTexPanning(92, 1);
-            EnableTexPanning(101, 1);
-            EnableTexPanning(103, 1);
-            EnableTexPanning(99, 1);
-            spawn {
-                SI_VAR(0) = 1;
-                SI_VAR(1) = 140;
-                SI_VAR(2) = 0xFFFFFFB0;
-                SI_VAR(3) = 0xFFFFFFBA;
-                SI_VAR(4) = 100;
-                SI_VAR(5) = 1;
-                SI_VAR(6) = 1;
-                SI_VAR(7) = 1;
-                SI_VAR(8) = 1;
-                SI_VAR(9) = 0;
-                SI_VAR(10) = 0;
-                SI_VAR(11) = 0;
-                SI_VAR(12) = 0;
-                spawn N(script_UpdateTexturePan_802417A0);
-            }
-            spawn {
-                SI_VAR(0) = 2;
-                SI_VAR(1) = 0xFFFFFFBA;
-                SI_VAR(2) = 100;
-                SI_VAR(3) = 100;
-                SI_VAR(4) = 0xFFFFFFD8;
-                SI_VAR(5) = 1;
-                SI_VAR(6) = 1;
-                SI_VAR(7) = 1;
-                SI_VAR(8) = 1;
-                SI_VAR(9) = 0;
-                SI_VAR(10) = 0;
-                SI_VAR(11) = 0;
-                SI_VAR(12) = 0;
-                spawn N(script_UpdateTexturePan_802417A0);
-            }
-            spawn {
-                SI_VAR(0) = 3;
-                SI_VAR(1) = 0;
-                SI_VAR(2) = 0xFFFFFCE0;
-                SI_VAR(3) = 0;
-                SI_VAR(4) = 0;
-                SI_VAR(5) = 0;
-                SI_VAR(6) = 1;
-                SI_VAR(7) = 0;
-                SI_VAR(8) = 0;
-                SI_VAR(9) = 0;
-                SI_VAR(10) = 0;
-                SI_VAR(11) = 0;
-                SI_VAR(12) = 0;
-                spawn N(script_UpdateTexturePan_802417A0);
-            }
-            spawn {
-                SI_VAR(0) = 4;
-                SI_VAR(1) = 0;
-                SI_VAR(2) = 0xFFFFFCE0;
-                SI_VAR(3) = 0xFFFFFF38;
-                SI_VAR(4) = 100;
-                SI_VAR(5) = 0;
-                SI_VAR(6) = 1;
-                SI_VAR(7) = 1;
-                SI_VAR(8) = 1;
-                SI_VAR(9) = 0;
-                SI_VAR(10) = 0;
-                SI_VAR(11) = 0;
-                SI_VAR(12) = 0;
-                spawn N(script_UpdateTexturePan_802417A0);
-            }
-            spawn {
-                SI_VAR(0) = 5;
-                SI_VAR(1) = 0;
-                SI_VAR(2) = 0xFFFFF63C;
-                SI_VAR(3) = 0;
-                SI_VAR(4) = 0;
-                SI_VAR(5) = 0;
-                SI_VAR(6) = 1;
-                SI_VAR(7) = 0;
-                SI_VAR(8) = 0;
-                SI_VAR(9) = 0;
-                SI_VAR(10) = 0;
-                SI_VAR(11) = 0;
-                SI_VAR(12) = 0;
-                spawn N(script_UpdateTexturePan_802417A0);
-            }
-            spawn {
-                SI_VAR(0) = 6;
-                SI_VAR(1) = 0;
-                SI_VAR(2) = 0xFFFFF63C;
-                SI_VAR(3) = 0xFFFFFF38;
-                SI_VAR(4) = 100;
-                SI_VAR(5) = 1;
-                SI_VAR(6) = 1;
-                SI_VAR(7) = 1;
-                SI_VAR(8) = 1;
-                SI_VAR(9) = 0;
-                SI_VAR(10) = 0;
-                SI_VAR(11) = 0;
-                SI_VAR(12) = 0;
-                spawn N(script_UpdateTexturePan_802417A0);
-            }
-        });
+Script N(script_80241ABC) = SCRIPT({
+    if (SI_SAVE_VAR(0) < 49) {
+        EnableGroup(94, 0);
+        ModifyColliderFlags(0, 30, 0x7FFFFE00);
+    } else {
+        EnableGroup(65, 0);
+    }
+    GetEntryID(SI_VAR(0));
+    if (SI_VAR(0) != 2) {
+        EnableGroup(105, 0);
+    }
+    EnableTexPanning(89, 1);
+    EnableTexPanning(97, 1);
+    EnableTexPanning(90, 1);
+    EnableTexPanning(98, 1);
+    EnableTexPanning(91, 1);
+    EnableTexPanning(92, 1);
+    EnableTexPanning(101, 1);
+    EnableTexPanning(103, 1);
+    EnableTexPanning(99, 1);
+    spawn {
+        SI_VAR(0) = 1;
+        SI_VAR(1) = 140;
+        SI_VAR(2) = 0xFFFFFFB0;
+        SI_VAR(3) = 0xFFFFFFBA;
+        SI_VAR(4) = 100;
+        SI_VAR(5) = 1;
+        SI_VAR(6) = 1;
+        SI_VAR(7) = 1;
+        SI_VAR(8) = 1;
+        SI_VAR(9) = 0;
+        SI_VAR(10) = 0;
+        SI_VAR(11) = 0;
+        SI_VAR(12) = 0;
+        spawn N(script_UpdateTexturePan_802417A0);
+    }
+    spawn {
+        SI_VAR(0) = 2;
+        SI_VAR(1) = 0xFFFFFFBA;
+        SI_VAR(2) = 100;
+        SI_VAR(3) = 100;
+        SI_VAR(4) = 0xFFFFFFD8;
+        SI_VAR(5) = 1;
+        SI_VAR(6) = 1;
+        SI_VAR(7) = 1;
+        SI_VAR(8) = 1;
+        SI_VAR(9) = 0;
+        SI_VAR(10) = 0;
+        SI_VAR(11) = 0;
+        SI_VAR(12) = 0;
+        spawn N(script_UpdateTexturePan_802417A0);
+    }
+    spawn {
+        SI_VAR(0) = 3;
+        SI_VAR(1) = 0;
+        SI_VAR(2) = 0xFFFFFCE0;
+        SI_VAR(3) = 0;
+        SI_VAR(4) = 0;
+        SI_VAR(5) = 0;
+        SI_VAR(6) = 1;
+        SI_VAR(7) = 0;
+        SI_VAR(8) = 0;
+        SI_VAR(9) = 0;
+        SI_VAR(10) = 0;
+        SI_VAR(11) = 0;
+        SI_VAR(12) = 0;
+        spawn N(script_UpdateTexturePan_802417A0);
+    }
+    spawn {
+        SI_VAR(0) = 4;
+        SI_VAR(1) = 0;
+        SI_VAR(2) = 0xFFFFFCE0;
+        SI_VAR(3) = 0xFFFFFF38;
+        SI_VAR(4) = 100;
+        SI_VAR(5) = 0;
+        SI_VAR(6) = 1;
+        SI_VAR(7) = 1;
+        SI_VAR(8) = 1;
+        SI_VAR(9) = 0;
+        SI_VAR(10) = 0;
+        SI_VAR(11) = 0;
+        SI_VAR(12) = 0;
+        spawn N(script_UpdateTexturePan_802417A0);
+    }
+    spawn {
+        SI_VAR(0) = 5;
+        SI_VAR(1) = 0;
+        SI_VAR(2) = 0xFFFFF63C;
+        SI_VAR(3) = 0;
+        SI_VAR(4) = 0;
+        SI_VAR(5) = 0;
+        SI_VAR(6) = 1;
+        SI_VAR(7) = 0;
+        SI_VAR(8) = 0;
+        SI_VAR(9) = 0;
+        SI_VAR(10) = 0;
+        SI_VAR(11) = 0;
+        SI_VAR(12) = 0;
+        spawn N(script_UpdateTexturePan_802417A0);
+    }
+    spawn {
+        SI_VAR(0) = 6;
+        SI_VAR(1) = 0;
+        SI_VAR(2) = 0xFFFFF63C;
+        SI_VAR(3) = 0xFFFFFF38;
+        SI_VAR(4) = 100;
+        SI_VAR(5) = 1;
+        SI_VAR(6) = 1;
+        SI_VAR(7) = 1;
+        SI_VAR(8) = 1;
+        SI_VAR(9) = 0;
+        SI_VAR(10) = 0;
+        SI_VAR(11) = 0;
+        SI_VAR(12) = 0;
+        spawn N(script_UpdateTexturePan_802417A0);
+    }
+});
 
-        s32 pad_0021A4[] = {
-            0x00000000, 0x00000000, 0x00000000,
-        };
+s32 pad_0021A4[] = {
+    0x00000000, 0x00000000, 0x00000000,
+};
 
-        Script N(script_MakeEntities) = SCRIPT({
-            MakeEntity(0x802EA564, 0xFFFFFEBB, 60, 0xFFFFFF74, 0, 154, 0x80000000);
-            AssignBlockFlag(SI_SAVE_FLAG(1393));
-            MakeEntity(0x802EA588, 325, 60, 0xFFFFFF74, 0, 163, 0x80000000);
-            AssignBlockFlag(SI_SAVE_FLAG(1394));
-            MakeEntity(0x802EAB04, 335, 0, 0xFFFFFF60, 0, 8, 0x80000000);
-            AssignPanelFlag(SI_SAVE_FLAG(1406));
-        });
+Script N(script_MakeEntities) = SCRIPT({
+    MakeEntity(0x802EA564, 0xFFFFFEBB, 60, 0xFFFFFF74, 0, 154, 0x80000000);
+    AssignBlockFlag(SI_SAVE_FLAG(1393));
+    MakeEntity(0x802EA588, 325, 60, 0xFFFFFF74, 0, 163, 0x80000000);
+    AssignBlockFlag(SI_SAVE_FLAG(1394));
+    MakeEntity(0x802EAB04, 335, 0, 0xFFFFFF60, 0, 8, 0x80000000);
+    AssignPanelFlag(SI_SAVE_FLAG(1406));
+});
 
-        s32 pad_002268[] = {
-            0x00000000, 0x00000000,
-        };
+s32 pad_002268[] = {
+    0x00000000, 0x00000000,
+};
 
 // rodata: D_80242270_CF2BB0
 
@@ -591,6 +591,6 @@ Script N(script_8024183C) = SCRIPT({
 
 // rodata: D_80242280_CF2BC0
 
-        s32 pad_002288[] = {
-            0x00000000, 0x00000000,
-        };
+s32 pad_002288[] = {
+    0x00000000, 0x00000000,
+};

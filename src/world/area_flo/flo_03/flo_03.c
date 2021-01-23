@@ -104,7 +104,8 @@ Script N(script_802406A0) = SCRIPT({
             }
             < 53 {
                 SetMusicTrack(0, 48, 0, 8);
-            } else {
+            }
+            else {
                 SetMusicTrack(0, 49, 0, 8);
             }
         }
@@ -138,10 +139,10 @@ Script N(script_80240880) = SCRIPT({
     SI_VAR(14) = SI_VAR(4);
     SI_VAR(12) -= SI_VAR(0);
     SI_VAR(13) -= SI_VAR(1);
-    SI_VAR(0) = f SI_VAR(12);
+    SI_VAR(0) =f SI_VAR(12);
     SI_VAR(0) /= 100.0;
     SI_VAR(15) = 100.0;
-    SI_VAR(15) /= f SI_VAR(0);
+    SI_VAR(15) /=f SI_VAR(0);
     SI_VAR(15) += 11;
     SI_VAR(5) = 200;
     SI_VAR(5) /= SI_VAR(15);
@@ -473,7 +474,8 @@ Script N(script_Interact_802412BC) = SCRIPT({
         }
         < 60 {
             SpeakToPlayer(-1, 0xC70002, 0xC70001, 0, 0x11005C);
-        } else {
+        }
+        else {
             if (SI_AREA_VAR(1) == 0) {
                 SpeakToPlayer(-1, 0xC70002, 0xC70001, 0, 0x11005D);
                 SI_AREA_VAR(1) = 1;
@@ -501,7 +503,8 @@ Script N(script_Init_80241E10) = SCRIPT({
     match SI_SAVE_VAR(0) {
         < 44 {
             SetNpcPos(1, 0, 0xFFFFFC18, 0);
-        } else {
+        }
+        else {
             if (SI_SAVE_FLAG(1366) == 0) {
                 SetEnemyFlagBits(1, 1, 0);
                 BindNpcIdle(-1, N(script_NpcAI_8024119C));
@@ -913,7 +916,8 @@ Script N(script_Init_8024338C) = SCRIPT({
             } else {
                 SetNpcPos(2, 0, 0xFFFFFC18, 0);
             }
-        } else {
+        }
+        else {
             SetNpcPos(2, 0, 0xFFFFFC18, 0);
         }
     }
@@ -936,7 +940,8 @@ Script N(script_Init_802434CC) = SCRIPT({
             } else {
                 SetNpcPos(3, 0, 0xFFFFFC18, 0);
             }
-        } else {
+        }
+        else {
             SetNpcPos(3, 0, 0xFFFFFC18, 0);
         }
     }
@@ -959,7 +964,8 @@ Script N(script_Init_8024360C) = SCRIPT({
             } else {
                 SetNpcPos(4, 0, 0xFFFFFC18, 0);
             }
-        } else {
+        }
+        else {
             SetNpcPos(4, 0, 0xFFFFFC18, 0);
         }
     }
@@ -982,7 +988,8 @@ Script N(script_Init_8024374C) = SCRIPT({
             } else {
                 SetNpcPos(5, 0, 0xFFFFFC18, 0);
             }
-        } else {
+        }
+        else {
             SetNpcPos(5, 0, 0xFFFFFC18, 0);
         }
     }

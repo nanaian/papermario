@@ -98,14 +98,15 @@ Script N(script_802400CC) = SCRIPT({
                     goto 11;
                 }
                 == 15 {
-11:
+                11:
                     GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
                     UseSettingsFrom(0, SI_VAR(0), 250, 100);
                     SetPanTarget(0, SI_VAR(0), 0xFFFFFF9C, SI_VAR(2));
                     SetCamSpeed(0, 90.0);
                     PanToTarget(0, 0, 1);
                     SI_MAP_VAR(5) = -1;
-                } else {
+                }
+                else {
                     sleep 10;
                 }
             }
@@ -727,7 +728,8 @@ Script N(script_Init_80242ABC) = SCRIPT({
         }
         >= 24 {
             BindNpcInteract(-1, N(script_Interact_80242A8C));
-        } else {
+        }
+        else {
             RemoveNpc(-1);
         }
     }

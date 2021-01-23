@@ -1334,7 +1334,7 @@ Script N(script_80245838) = SCRIPT({
 
 Script N(script_802458F8) = SCRIPT({
     match SI_AREA_VAR(5) {
-        0..1
+    0..1
         match SI_AREA_VAR(6) {
             == 0 {
                 GotoMapSpecial(D_80248750_DCCB20, 2, 1);
@@ -1695,7 +1695,7 @@ Script N(script_80246B08) = SCRIPT({
         SI_MAP_FLAG(0) = 1;
         sleep 1;
         SI_VAR(11) = spawn N(script_80244EF8);
-10:
+    10:
         if (SI_MAP_FLAG(0) == 1) {
             sleep 1;
             goto 10;
@@ -1720,7 +1720,7 @@ Script N(script_80246B08) = SCRIPT({
         SI_MAP_FLAG(0) = 1;
         sleep 1;
         spawn N(script_80245B9C);
-20:
+    20:
         if (SI_MAP_VAR(11) > 0xFFFFFEA2) {
             sleep 1;
             goto 20;
@@ -1755,7 +1755,7 @@ Script N(script_80246E30) = SCRIPT({
         SI_MAP_FLAG(0) = 1;
         sleep 1;
         SI_VAR(11) = spawn N(script_80244EF8);
-10:
+    10:
         if (SI_MAP_FLAG(0) == 1) {
             sleep 1;
             goto 10;
@@ -1780,7 +1780,7 @@ Script N(script_80246E30) = SCRIPT({
         SI_MAP_FLAG(0) = 1;
         sleep 1;
         spawn N(script_80245B9C);
-20:
+    20:
         if (SI_MAP_VAR(11) < 350) {
             sleep 1;
             goto 20;
@@ -1884,7 +1884,8 @@ Script N(script_80247450) = SCRIPT({
             }
             == 2 {
                 spawn N(script_80246B08);
-            } else {
+            }
+            else {
                 SI_MAP_VAR(0) = 0;
                 SI_MAP_VAR(1) = N(unk_80247438);
                 SI_MAP_VAR(2) = 0;
@@ -1995,7 +1996,8 @@ Script N(script_Interact_80247758) = SCRIPT({
         }
         < 4 {
             SpeakToPlayer(-1, 0x8C0304, 0x8C0301, 0, 0xF002F);
-        } else {
+        }
+        else {
             SpeakToPlayer(-1, 0x8C0304, 0x8C0301, 0, 0xF0030);
         }
     }

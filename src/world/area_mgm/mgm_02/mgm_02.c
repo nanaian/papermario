@@ -834,7 +834,8 @@ Script N(script_80244A60) = SCRIPT({
         == 0 {
             SetSelfVar(3, 0);
             SpeakToPlayer(-1, 0x830004, 0x830001, 0, 0x80044);
-        } else {
+        }
+        else {
             SpeakToPlayer(-1, 0x830004, 0x830001, 0, 0x80042);
             ShowCoinCounter(1);
             sleep 10;
@@ -903,7 +904,8 @@ Script N(script_Interact_80245048) = SCRIPT({
             }
             ContinueSpeech(0, 0x830004, 0x830001, 0, 0x8003F);
             func_802423A4_E18124();
-        } else {
+        }
+        else {
             func_802423A4_E18124();
             sleep 5;
             ContinueSpeech(0, 0x830004, 0x830001, 0, 0x80040);
@@ -981,7 +983,8 @@ Script N(script_Init_80245738) = SCRIPT({
         }
         == 13 {
             SetSelfVar(8, 817);
-        } else {
+        }
+        else {
             SetSelfVar(8, 818);
         }
     }
@@ -1012,7 +1015,8 @@ Script N(script_Init_802458D8) = SCRIPT({
         }
         == 32 {
             SetSelfVar(8, 812);
-        } else {
+        }
+        else {
             SetSelfVar(8, 813);
         }
     }

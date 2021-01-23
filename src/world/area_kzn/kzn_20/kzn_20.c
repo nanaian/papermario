@@ -179,7 +179,7 @@ s32 N(lavaResetList_80240E88)[] = {
 Script N(script_80240EB8) = SCRIPT({
     loop {
         if (SI_SAVE_VAR(0) >= 37) {
-1:
+        1:
             if (SI_MAP_VAR(10) < 110) {
                 SI_MAP_VAR(11) -= 0.0107421875;
                 SI_MAP_VAR(12) += 0.0107421875;
@@ -247,12 +247,12 @@ Script N(script_8024106C) = SCRIPT({
         loop {
             UpdateLerp();
             SI_VAR(0) /= 100.0;
-            SI_VAR(0) -= f SI_MAP_VAR(11);
-            SI_VAR(3) = f SI_MAP_VAR(10);
-            SI_VAR(4) = f SI_MAP_VAR(10);
-            SI_VAR(3) /= f SI_MAP_VAR(12);
-            SI_VAR(3) *= f SI_VAR(0);
-            SI_VAR(4) += f SI_VAR(3);
+            SI_VAR(0) -=f SI_MAP_VAR(11);
+            SI_VAR(3) =f SI_MAP_VAR(10);
+            SI_VAR(4) =f SI_MAP_VAR(10);
+            SI_VAR(3) /=f SI_MAP_VAR(12);
+            SI_VAR(3) *=f SI_VAR(0);
+            SI_VAR(4) +=f SI_VAR(3);
             TranslateModel(38, 0, SI_VAR(4), 0);
             ScaleModel(38, 1, SI_VAR(0), 1);
             TranslateModel(38, 0, SI_MAP_VAR(10), 0);
@@ -266,12 +266,12 @@ Script N(script_8024106C) = SCRIPT({
         loop {
             UpdateLerp();
             SI_VAR(0) /= 100.0;
-            SI_VAR(0) -= f SI_MAP_VAR(11);
-            SI_VAR(3) = f SI_MAP_VAR(10);
-            SI_VAR(4) = f SI_MAP_VAR(10);
-            SI_VAR(3) /= f SI_MAP_VAR(12);
-            SI_VAR(3) *= f SI_VAR(0);
-            SI_VAR(4) += f SI_VAR(3);
+            SI_VAR(0) -=f SI_MAP_VAR(11);
+            SI_VAR(3) =f SI_MAP_VAR(10);
+            SI_VAR(4) =f SI_MAP_VAR(10);
+            SI_VAR(3) /=f SI_MAP_VAR(12);
+            SI_VAR(3) *=f SI_VAR(0);
+            SI_VAR(4) +=f SI_VAR(3);
             TranslateModel(38, 0, SI_VAR(4), 0);
             ScaleModel(38, 1, SI_VAR(0), 1);
             TranslateModel(38, 0, SI_MAP_VAR(10), 0);
@@ -394,7 +394,7 @@ Script N(script_802417EC) = SCRIPT({
             RemoveKeyItemAt(SI_VAR(1));
             GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_80240484_C963B4(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |= c 50000;
+            SI_VAR(0) |=c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SetPlayerAnimation(0x60005);
             sleep 30;
@@ -437,7 +437,7 @@ Script N(script_80241A00) = SCRIPT({
             DisablePartnerAI(0);
             GetNpcPos(0xFFFFFFFC, SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_8024086C_C9679C(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |= c 50000;
+            SI_VAR(0) |=c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SI_VAR(10) = spawn N(script_80241980);
             SetNpcAnimation(0xFFFFFFFC, 0x40002);
@@ -513,7 +513,8 @@ Script N(script_80241D94) = SCRIPT({
                     SpeakToPlayer(0xFFFFFFFC, 0x40006, 0x40001, 5, SI_VAR(8));
                     EnablePartnerAI();
                     SI_VAR(12) = 1;
-                } else {
+                }
+                else {
                     DisablePartnerAI(0);
                     sleep 1;
                     SpeakToPlayer(0xFFFFFFFC, 0x40006, 0x40001, 5, SI_VAR(9));
@@ -724,7 +725,7 @@ Script N(script_Idle_802427B4) = SCRIPT({
             NpcJump0(-1, 0xFFFFFFDD, 125, 0xFFFFFFEC, 12);
             PlayerFaceNpc(-1, 0);
             SetNpcSpeed(-1, 1.0);
-25:
+        25:
             NpcMoveTo(-1, 0xFFFFFFF1, 0xFFFFFFEC, 0);
             NpcMoveTo(-1, 0xFFFFFFD8, 0xFFFFFFEC, 0);
             if (SI_AREA_FLAG(10) == 0) {
@@ -919,7 +920,7 @@ Script N(script_Idle_802434BC) = SCRIPT({
             }
             sleep 10;
             SpeakToPlayer(-1, 0x160009, 0x160008, 5, 0x10010E);
-30:
+        30:
             if (SI_MAP_VAR(13) == 30) {
                 sleep 1;
                 goto 30;

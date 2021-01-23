@@ -48,7 +48,8 @@ Script N(script_802400A0) = SCRIPT({
         }
         < 0xFFFFFFF0 {
             SetMusicTrack(0, 85, 0, 8);
-        } else {
+        }
+        else {
             SetMusicTrack(0, 29, 0, 8);
         }
     }

@@ -680,7 +680,8 @@ Script N(script_Interact_80243594) = SCRIPT({
         }
         == 1 {
             SpeakToPlayer(-1, 0x830104, 0x830101, 0, 0x80026);
-        } else {
+        }
+        else {
             GetSelfVar(0, SI_VAR(0));
             if (SI_VAR(0) == 0) {
                 SpeakToPlayer(-1, 0x830104, 0x830101, 0, 0x80027);
@@ -726,7 +727,8 @@ Script N(script_Interact_802438E8) = SCRIPT({
         }
         < 75 {
             SpeakToPlayer(-1, 0x830204, 0x830201, 0, 0x8002B);
-        } else {
+        }
+        else {
             SpeakToPlayer(-1, 0x830204, 0x830201, 0, 0x8002C);
         }
     }

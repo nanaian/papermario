@@ -255,7 +255,7 @@ Script N(script_80241470) = SCRIPT({
     UpdateLerp();
     SI_VAR(0) *= 0.40625;
     SI_VAR(6) += 1;
-    SI_VAR(9) = f SI_VAR(8);
+    SI_VAR(9) =f SI_VAR(8);
     SI_VAR(9) *= -1.0;
     func_80240184_9EDD74(SI_VAR(6), SI_VAR(7), SI_VAR(9), SI_VAR(8), 3, 0, 0);
     SI_VAR(8) *= 0.90625;
@@ -553,7 +553,7 @@ Script N(script_80242500) = SCRIPT({
 Script N(script_Idle_8024274C) = SCRIPT({
     match SI_SAVE_VAR(0) {
         == 0xFFFFFFA3 {
-0:
+        0:
             GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
             if (SI_VAR(0) < 60) {
                 sleep 1;
@@ -638,7 +638,7 @@ Script N(script_Idle_80242C5C) = SCRIPT({
 0:
     if (SI_MAP_VAR(2) == 1) {
         StartBossBattle(3);
-1:
+    1:
         if (SI_MAP_VAR(2) == 1) {
             sleep 1;
             goto 1;
@@ -739,7 +739,7 @@ Script N(script_Defeat_8024317C) = SCRIPT({
         == 0 {
             SI_AREA_FLAG(5) = 1;
             SI_AREA_FLAG(8) = 0;
-10:
+        10:
             if (SI_AREA_FLAG(8) == 0) {
                 sleep 1;
                 goto 10;
@@ -965,14 +965,14 @@ Script N(script_802433B8) = SCRIPT({
         PlaySoundAtNpc(0, 0xB0000017, 0);
         NpcJump0(0, SI_VAR(10), SI_VAR(11), SI_VAR(12), 15);
         SetPlayerAnimation(0x10002);
-21:
+    21:
         if (SI_AREA_FLAG(5) == 0) {
             sleep 1;
             goto 21;
         }
         SetNpcPos(0, 0xFFFFFF01, 0, 287);
         GetNpcPos(0, SI_VAR(10), SI_VAR(11), SI_VAR(12));
-31:
+    31:
         SetNpcJumpscale(0, 2.0);
         PlaySoundAtNpc(0, 0xB0000017, 0);
         NpcJump0(0, SI_VAR(10), SI_VAR(11), SI_VAR(12), 15);
@@ -1005,14 +1005,14 @@ Script N(script_802433B8) = SCRIPT({
         NpcJump0(3, 0xFFFFFF3B, 0, 227, 20);
         PlaySoundAtNpc(3, 0xB0000017, 0);
         NpcJump0(3, 0xFFFFFF17, 0, 285, 10);
-22:
+    22:
         if (SI_AREA_FLAG(5) == 0) {
             sleep 1;
             goto 22;
         }
         SetNpcPos(3, 0xFFFFFF2E, 0, 244);
         GetNpcPos(3, SI_VAR(10), SI_VAR(11), SI_VAR(12));
-32:
+    32:
         SetNpcJumpscale(3, 2.0);
         PlaySoundAtNpc(3, 0xB0000017, 0);
         NpcJump0(3, SI_VAR(10), SI_VAR(11), SI_VAR(12), 12);
@@ -1041,7 +1041,7 @@ Script N(script_802433B8) = SCRIPT({
         NpcJump0(4, 0xFFFFFF4F, 0, 242, 10);
         PlaySoundAtNpc(4, 0xB0000017, 0);
         NpcJump0(4, 0xFFFFFF2B, 0, 300, 15);
-23:
+    23:
         if (SI_AREA_FLAG(5) == 0) {
             sleep 1;
             goto 23;
@@ -1049,7 +1049,7 @@ Script N(script_802433B8) = SCRIPT({
         SetNpcPos(4, 0xFFFFFF2E, 0, 266);
         GetNpcPos(4, SI_VAR(10), SI_VAR(11), SI_VAR(12));
         sleep 2;
-33:
+    33:
         SetNpcJumpscale(4, 2.0);
         PlaySoundAtNpc(4, 0xB0000017, 0);
         NpcJump0(4, SI_VAR(10), SI_VAR(11), SI_VAR(12), 12);
@@ -1078,7 +1078,7 @@ Script N(script_802433B8) = SCRIPT({
         NpcJump0(5, 0xFFFFFF27, 0, 212, 10);
         PlaySoundAtNpc(5, 0xB0000017, 0);
         NpcJump0(5, 0xFFFFFF03, 0, 270, 10);
-24:
+    24:
         if (SI_AREA_FLAG(5) == 0) {
             sleep 1;
             goto 24;
@@ -1086,7 +1086,7 @@ Script N(script_802433B8) = SCRIPT({
         SetNpcPos(5, 0xFFFFFF49, 0, 257);
         GetNpcPos(5, SI_VAR(10), SI_VAR(11), SI_VAR(12));
         sleep 5;
-34:
+    34:
         SetNpcJumpscale(5, 2.0);
         PlaySoundAtNpc(5, 0xB0000017, 0);
         NpcJump0(5, SI_VAR(10), SI_VAR(11), SI_VAR(12), 12);

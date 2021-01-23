@@ -534,7 +534,8 @@ Script N(script_Interact_80241DD0) = SCRIPT({
             InterpNpcYaw(-1, 180, 5);
             SI_AREA_FLAG(1) = 1;
             bind N(script_ExitSingleDoor_80241138) to TriggerFlag_WALL_INTERACT 10;
-        } else {
+        }
+        else {
             SpeakToPlayer(-1, 0x870304, 0x870301, 16, 65);
         }
     }

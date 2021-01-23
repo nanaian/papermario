@@ -211,7 +211,7 @@ Script N(script_802423DC) = SCRIPT({
         SI_VAR(0) = 0;
         SI_VAR(1) = 0;
         SI_VAR(2) = 0;
-10:
+    10:
         SetTexPanOffset(1, 0, SI_VAR(0), 0);
         SetTexPanOffset(1, 1, SI_VAR(1), SI_VAR(2));
         SI_VAR(0) -= 100;
@@ -298,7 +298,7 @@ Script N(script_Tree1_Callback) = SCRIPT({
         0x802D5830(1);
         DisablePlayerInput(1);
         MakeLerp(95, 0, 12, 1);
-0:
+    0:
         UpdateLerp();
         func_80240224_9FAA14(SI_MAP_VAR(0), 0xFFFFFE2A, SI_VAR(0), 0xFFFFFF6A);
         sleep 1;
@@ -858,7 +858,7 @@ Script N(script_Idle_802444F8) = SCRIPT({
     spawn {
         PlaySoundAtNpc(-1, 993, 0);
         MakeLerp(0xFFFFFFA6, 0, 10, 0);
-1:
+    1:
         UpdateLerp();
         SetNpcRotation(-1, SI_VAR(0), 0, 0);
         sleep 1;
@@ -867,7 +867,7 @@ Script N(script_Idle_802444F8) = SCRIPT({
         }
         GetNpcPos(-1, SI_VAR(10), SI_VAR(11), SI_VAR(12));
         MakeLerp(0, 360, 15, 0);
-2:
+    2:
         UpdateLerp();
         SetNpcRotation(-1, 0, SI_VAR(0), 0);
         sleep 1;

@@ -583,7 +583,7 @@ Script N(script_802440E0) = SCRIPT({
             RemoveKeyItemAt(SI_VAR(1));
             GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_80242710_C881C0(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |= c 50000;
+            SI_VAR(0) |=c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SetPlayerAnimation(0x60005);
             sleep 30;
@@ -626,7 +626,7 @@ Script N(script_802442F4) = SCRIPT({
             DisablePartnerAI(0);
             GetNpcPos(0xFFFFFFFC, SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_80242AF8_C885A8(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |= c 50000;
+            SI_VAR(0) |=c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SI_VAR(10) = spawn N(script_80244274);
             SetNpcAnimation(0xFFFFFFFC, 0x40002);
@@ -702,7 +702,8 @@ Script N(script_80244688) = SCRIPT({
                     SpeakToPlayer(0xFFFFFFFC, 0x40006, 0x40001, 5, SI_VAR(8));
                     EnablePartnerAI();
                     SI_VAR(12) = 1;
-                } else {
+                }
+                else {
                     DisablePartnerAI(0);
                     sleep 1;
                     SpeakToPlayer(0xFFFFFFFC, 0x40006, 0x40001, 5, SI_VAR(9));
@@ -768,7 +769,7 @@ Script N(script_80244B1C) = SCRIPT({
     spawn {
         SetNpcCollisionSize(0, 20, 24);
         LoadPath(30, N(vectorList_80244A8C), 5, 0);
-0:
+    0:
         GetNextPathPos();
         SetNpcPos(0, SI_VAR(1), SI_VAR(2), SI_VAR(3));
         sleep 1;
@@ -838,7 +839,8 @@ Script N(script_Init_80244F5C) = SCRIPT({
             SetNpcCollisionSize(0, 20, 24);
             spawn N(script_80244C8C);
             return;
-        } else {
+        }
+        else {
             RemoveNpc(-1);
         }
     }
@@ -1046,7 +1048,7 @@ Script N(script_80245CE8) = SCRIPT({
                 if (SI_VAR(3) < SI_VAR(0)) {
                     DisablePlayerInput(1);
                     SI_AREA_FLAG(7) = 1;
-12:
+                12:
                     sleep 1;
                     if (SI_AREA_FLAG(7) != 0) {
                         goto 12;

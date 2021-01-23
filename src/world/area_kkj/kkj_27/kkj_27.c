@@ -172,7 +172,7 @@ Script N(script_80240B04) = SCRIPT({
         MakeLerp(0, 0xFFFFFE3E, 120, 0);
         loop {
             UpdateLerp();
-            SI_VAR(2) = f SI_VAR(0);
+            SI_VAR(2) =f SI_VAR(0);
             SI_VAR(2) /= 10;
             RotateGroup(53, SI_VAR(2), 0, 1, 0);
             func_80240310_B14080();

@@ -780,7 +780,7 @@ Script N(script_802452BC) = SCRIPT({
             RemoveKeyItemAt(SI_VAR(1));
             GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_80243420_C7A100(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |= c 50000;
+            SI_VAR(0) |=c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SetPlayerAnimation(0x60005);
             sleep 30;
@@ -823,7 +823,7 @@ Script N(script_802454D0) = SCRIPT({
             DisablePartnerAI(0);
             GetNpcPos(0xFFFFFFFC, SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_80243808_C7A4E8(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |= c 50000;
+            SI_VAR(0) |=c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SI_VAR(10) = spawn N(script_80245450);
             SetNpcAnimation(0xFFFFFFFC, 0x40002);
@@ -899,7 +899,8 @@ Script N(script_80245864) = SCRIPT({
                     SpeakToPlayer(0xFFFFFFFC, 0x40006, 0x40001, 5, SI_VAR(8));
                     EnablePartnerAI();
                     SI_VAR(12) = 1;
-                } else {
+                }
+                else {
                     DisablePartnerAI(0);
                     sleep 1;
                     SpeakToPlayer(0xFFFFFFFC, 0x40006, 0x40001, 5, SI_VAR(9));
@@ -993,7 +994,7 @@ Script N(script_Idle_80245C18) = SCRIPT({
     SetSelfVar(0, 2);
     spawn {
         SetNpcJumpscale(-1, 2.5);
-1:
+    1:
         PlaySoundAtNpc(-1, 812, 0);
         NpcJump0(-1, 0xFFFFFE66, 870, 0xFFFFFFF1, 10);
         GetSelfVar(0, SI_VAR(0));
@@ -1031,7 +1032,7 @@ Script N(script_Idle_80245C18) = SCRIPT({
     InterpNpcYaw(-1, 270, 0);
     SetSelfVar(0, 1);
     spawn {
-3:
+    3:
         0x802D7E08(-1, 1, 0xFFFFFFD3, 1, 0, 0, 0, 0, 20);
         GetSelfVar(0, SI_VAR(0));
         if (SI_VAR(0) == 1) {
@@ -1079,7 +1080,7 @@ Script N(script_Idle_80245C18) = SCRIPT({
         SetPlayerSpeed(4.0);
         PlayerMoveTo(0xFFFFFE98, 0, 0);
         SetPlayerAnimation(0x1000C);
-5:
+    5:
         GetSelfVar(0, SI_VAR(0));
         if (SI_VAR(0) == 1) {
             sleep 1;

@@ -362,7 +362,7 @@ Script N(script_Hit_8024104C) = SCRIPT({
     SetNpcAnimation(2, 0x6D0003);
     SetNpcAnimation(3, 0x6D0004);
     spawn {
-10:
+    10:
         SetNpcFlagBits(2, 2, 1);
         SetNpcFlagBits(3, 2, 1);
         sleep 2;
@@ -574,25 +574,25 @@ Script N(script_Defeat_80241EE0) = SCRIPT({
             SetNpcAnimation(-1, 0x6D0007);
             SetNpcSpeed(-1, 10.0);
             NpcMoveTo(-1, 400, 0, 0);
-0:
+        0:
             if (SI_MAP_FLAG(0) == 0) {
                 sleep 1;
                 goto 0;
             }
             GetNpcPos(2, SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(3) -= f SI_VAR(0);
-            SI_VAR(4) -= f SI_VAR(1);
-            SI_VAR(5) -= f SI_VAR(2);
+            SI_VAR(3) -=f SI_VAR(0);
+            SI_VAR(4) -=f SI_VAR(1);
+            SI_VAR(5) -=f SI_VAR(2);
             SI_VAR(3) /= 60.0;
             SI_VAR(4) /= 60.0;
             SI_VAR(5) /= 60.0;
             SI_VAR(6) = 2.1669921875;
             SI_VAR(7) = 100.0;
             loop 60 {
-                SI_VAR(0) += f SI_VAR(3);
-                SI_VAR(1) += f SI_VAR(4);
-                SI_VAR(2) += f SI_VAR(5);
-                SI_VAR(7) += f SI_VAR(6);
+                SI_VAR(0) +=f SI_VAR(3);
+                SI_VAR(1) +=f SI_VAR(4);
+                SI_VAR(2) +=f SI_VAR(5);
+                SI_VAR(7) +=f SI_VAR(6);
                 func_80240314_DDF624(SI_VAR(0), SI_VAR(1), SI_VAR(2), SI_VAR(7));
                 sleep 1;
             }

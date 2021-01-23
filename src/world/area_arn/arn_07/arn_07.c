@@ -154,7 +154,8 @@ Script N(script_80241F10) = SCRIPT({
         }
         == 0xFFFFFFF2 {
             SetMusicTrack(0, 120, 1, 8);
-        } else {
+        }
+        else {
             SetMusicTrack(0, 29, 0, 8);
             PlayAmbientSounds(1);
         }
@@ -529,7 +530,8 @@ Script N(main) = SCRIPT({
         }
         == 0xFFFFFFF2 {
             MakeNpcs(0, N(npcGroupList_802478E8));
-        } else {
+        }
+        else {
             MakeNpcs(0, N(npcGroupList_802478B8));
         }
     }
@@ -577,13 +579,13 @@ Script N(script_802437AC) = SCRIPT({
     SI_VAR(2) = 1.0;
     loop 50 {
         SI_VAR(2) -= 0.0107421875;
-        SI_VAR(0) += f SI_VAR(2);
+        SI_VAR(0) +=f SI_VAR(2);
         RotateModel(27, SI_VAR(0), 0, 0, 1);
         sleep 1;
     }
     loop 50 {
         SI_VAR(2) += 0.0107421875;
-        SI_VAR(0) += f SI_VAR(2);
+        SI_VAR(0) +=f SI_VAR(2);
         RotateModel(27, SI_VAR(0), 0, 0, 1);
         sleep 1;
     }
@@ -994,7 +996,7 @@ Script N(script_Idle_80244CC8) = SCRIPT({
         MakeLerp(50, 80, 15, 0);
         loop {
             UpdateLerp();
-            SI_VAR(2) = f SI_VAR(0);
+            SI_VAR(2) =f SI_VAR(0);
             SI_VAR(2) /= 100;
             SetNpcScale(-1, SI_VAR(2), SI_VAR(2), SI_VAR(2));
             sleep 1;

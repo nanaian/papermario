@@ -1609,7 +1609,7 @@ Script N(script_80248BAC) = SCRIPT({
 
 Script N(script_80248F30) = SCRIPT({
     GetNpcPos(SI_VAR(0), SI_VAR(1), SI_VAR(2), SI_VAR(3));
-    SI_VAR(1) = f SI_VAR(1);
+    SI_VAR(1) =f SI_VAR(1);
     loop {
         SI_VAR(1) += 0.8701171875;
         SetNpcPos(SI_VAR(0), SI_VAR(1), SI_VAR(2), SI_VAR(3));
@@ -1619,7 +1619,7 @@ Script N(script_80248F30) = SCRIPT({
 
 Script N(script_80248FB8) = SCRIPT({
     GetNpcPos(35, SI_VAR(0), SI_VAR(1), SI_VAR(2));
-    SI_VAR(0) = f SI_VAR(0);
+    SI_VAR(0) =f SI_VAR(0);
     loop {
         SI_VAR(0) += 0.8701171875;
         SetNpcPos(35, SI_VAR(0), 0, 0);
@@ -1834,9 +1834,9 @@ s32 N(unk_80249D60)[] = {
 
 Script N(script_80249D64) = SCRIPT({
     GetNpcPos(49, SI_VAR(0), SI_VAR(1), SI_VAR(2));
-    SI_VAR(0) = f SI_VAR(0);
-    SI_VAR(3) = f SI_VAR(0);
-    SI_VAR(4) = f SI_VAR(0);
+    SI_VAR(0) =f SI_VAR(0);
+    SI_VAR(3) =f SI_VAR(0);
+    SI_VAR(4) =f SI_VAR(0);
     SI_VAR(3) -= 25.0;
     SI_VAR(4) += 25.0;
     SetNpcPos(50, SI_VAR(0), 20, 2);
@@ -2110,14 +2110,14 @@ s32 pad_00AFD4[] = {
 
 Script N(script_8024AFE0) = SCRIPT({
     GetNpcPos(64, SI_VAR(0), SI_VAR(1), SI_VAR(2));
-    SI_VAR(0) = f SI_VAR(0);
-    SI_VAR(3) = f SI_VAR(0);
+    SI_VAR(0) =f SI_VAR(0);
+    SI_VAR(3) =f SI_VAR(0);
     SI_VAR(3) -= 40;
-    SI_VAR(4) = f SI_VAR(0);
+    SI_VAR(4) =f SI_VAR(0);
     SI_VAR(4) -= 80;
-    SI_VAR(5) = f SI_VAR(0);
+    SI_VAR(5) =f SI_VAR(0);
     SI_VAR(5) -= 120;
-    SI_VAR(6) = f SI_VAR(0);
+    SI_VAR(6) =f SI_VAR(0);
     SI_VAR(6) -= 160;
     SetNpcPos(64, SI_VAR(0), SI_VAR(1), SI_VAR(2));
     SetNpcPos(65, SI_VAR(3), SI_VAR(1), SI_VAR(2));
@@ -2141,10 +2141,10 @@ Script N(script_8024AFE0) = SCRIPT({
 
 Script N(script_8024B1B8) = SCRIPT({
     GetNpcPos(69, SI_VAR(0), SI_VAR(1), SI_VAR(2));
-    SI_VAR(0) = f SI_VAR(0);
-    SI_VAR(3) = f SI_VAR(0);
+    SI_VAR(0) =f SI_VAR(0);
+    SI_VAR(3) =f SI_VAR(0);
     SI_VAR(3) += 80;
-    SI_VAR(4) = f SI_VAR(0);
+    SI_VAR(4) =f SI_VAR(0);
     SI_VAR(4) -= 80;
     SetNpcPos(69, SI_VAR(0), SI_VAR(1), SI_VAR(2));
     SetNpcPos(70, SI_VAR(0), SI_VAR(1), SI_VAR(2));
@@ -2323,7 +2323,7 @@ Script N(script_8024B67C) = SCRIPT({
         MakeLerp(750, 375, 5, 0);
         loop {
             UpdateLerp();
-            SI_VAR(2) = f SI_VAR(0);
+            SI_VAR(2) =f SI_VAR(0);
             SI_VAR(2) /= 1000;
             SetNpcScale(69, SI_VAR(2), SI_VAR(2), 1);
             SetNpcScale(70, SI_VAR(2), SI_VAR(2), 1);
@@ -2338,7 +2338,7 @@ Script N(script_8024B67C) = SCRIPT({
         MakeLerp(100, 50, 5, 0);
         loop {
             UpdateLerp();
-            SI_VAR(2) = f SI_VAR(0);
+            SI_VAR(2) =f SI_VAR(0);
             SI_VAR(2) /= 100;
             SetNpcScale(72, SI_VAR(2), SI_VAR(2), 1);
             SetNpcScale(73, SI_VAR(2), SI_VAR(2), 1);
@@ -2352,7 +2352,7 @@ Script N(script_8024B67C) = SCRIPT({
         MakeLerp(600, 300, 5, 0);
         loop {
             UpdateLerp();
-            SI_VAR(2) = f SI_VAR(0);
+            SI_VAR(2) =f SI_VAR(0);
             SI_VAR(2) /= 100;
             SI_VAR(0) = 69;
             spawn N(script_802447B8);

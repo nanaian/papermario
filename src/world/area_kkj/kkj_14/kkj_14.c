@@ -434,7 +434,7 @@ Script N(script_80241250) = SCRIPT({
                 ShowMessageAtScreenPos(0x14017B, 160, 40);
             }
         }
-        0xFFFFFFCA..88
+    0xFFFFFFCA..88
         ShowMessageAtScreenPos(0x14017B, 160, 40);
         else {
             ShowMessageAtScreenPos(67, 160, 40);
@@ -467,7 +467,7 @@ Script N(script_8024143C) = SCRIPT({
                 ShowMessageAtScreenPos(0x14017C, 160, 40);
             }
         }
-        0xFFFFFFCA..88
+    0xFFFFFFCA..88
         ShowMessageAtScreenPos(0x14017C, 160, 40);
         else {
             ShowMessageAtScreenPos(68, 160, 40);
@@ -479,7 +479,7 @@ Script N(script_8024143C) = SCRIPT({
 Script N(script_80241608) = SCRIPT({
     DisablePlayerInput(1);
     match SI_SAVE_VAR(0) {
-        0xFFFFFFB4..88
+    0xFFFFFFB4..88
         func_802403A0_ADB240(SI_VAR(0));
         if (SI_VAR(0) == 0) {
             InterpPlayerYaw(45, 10);
@@ -497,7 +497,8 @@ Script N(script_80241608) = SCRIPT({
             SpeakToPlayer(0xFFFFFFFE, 0xC0001, 0xC0026, 5, 0x140044);
             SpeakToPlayer(0xFFFFFFFC, 0x200009, 0x200001, 0, 0x140045);
             EnablePartnerAI();
-        } else {
+        }
+        else {
             ShowMessageAtScreenPos(69, 160, 40);
         }
     }
@@ -528,7 +529,7 @@ Script N(script_802417D4) = SCRIPT({
                 ShowMessageAtScreenPos(0x14017D, 160, 40);
             }
         }
-        0xFFFFFFCA..88
+    0xFFFFFFCA..88
         ShowMessageAtScreenPos(0x14017D, 160, 40);
         else {
             ShowMessageAtScreenPos(70, 160, 40);
@@ -561,7 +562,7 @@ Script N(script_802419A0) = SCRIPT({
                 ShowMessageAtScreenPos(0x14017E, 160, 40);
             }
         }
-        0xFFFFFFCA..88
+    0xFFFFFFCA..88
         ShowMessageAtScreenPos(0x14017E, 160, 40);
         else {
             ShowMessageAtScreenPos(71, 160, 40);
@@ -594,7 +595,7 @@ Script N(script_80241B6C) = SCRIPT({
                 ShowMessageAtScreenPos(0x14017F, 160, 40);
             }
         }
-        0xFFFFFFCA..88
+    0xFFFFFFCA..88
         ShowMessageAtScreenPos(0x14017F, 160, 40);
         else {
             ShowMessageAtScreenPos(72, 160, 40);
@@ -791,7 +792,8 @@ Script N(script_80242744) = SCRIPT({
             }
             < 95 {
                 bind N(script_80242228) to TriggerFlag_WALL_INTERACT 24;
-            } else {
+            }
+            else {
             }
         }
     } else {
