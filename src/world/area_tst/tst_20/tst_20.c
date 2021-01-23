@@ -10,7 +10,6 @@ MapConfig N(header) = {
     .main = N(main),
     .entryList = N(entryList),
     .entryCount = ENTRY_COUNT(N(entryList)),
-    .tattle = 0x0,
 };
 
 Script N(main) = SCRIPT({
@@ -20,4 +19,3 @@ Script N(main) = SCRIPT({
     SetCamBGColor(0, 0, 0, 0);
     SetCamEnabled(0, 1);
 });
-
