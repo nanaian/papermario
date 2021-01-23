@@ -204,12 +204,12 @@ async def main():
     n.newline()
 
     n.rule("cc",
-        command=f"bash -o pipefail -c '{ccache} {cpp} $cppflags $in -o - | $iconv | {ccache} tools/$os/cc1 $cflags -o - | tools/$os/mips-nintendo-nu64-as -EB -G 0 - -o $out'",
+        command=f"bash -o pipefail -c '{ccache} {cpp} $cppflags $in -MD -MF $out.d -o - | $iconv | {ccache} tools/$os/cc1 $cflags -o - | tools/$os/mips-nintendo-nu64-as -EB -G 0 - -o $out'",
         description="cc $in",
         depfile="$out.d",
         deps="gcc")
     n.rule("cc_dsl",
-        command=f"bash -o pipefail -c '{ccache} {cpp} $cppflags $in -o - | $python tools/compile_dsl_macros.py | $iconv | {ccache} tools/$os/cc1 $cflags -o - | tools/$os/mips-nintendo-nu64-as -EB -G 0 - -o $out'",
+        command=f"bash -o pipefail -c '{ccache} {cpp} $cppflags $in -MD -MF $out.d -o - | $python tools/compile_dsl_macros.py | $iconv | {ccache} tools/$os/cc1 $cflags -o - | tools/$os/mips-nintendo-nu64-as -EB -G 0 - -o $out'",
         description="cc (with dsl) $in",
         depfile="$out.d",
         deps="gcc")
