@@ -5709,9 +5709,8 @@ segments:
     start: 0xB022A0
     vram: 0x80240000
     files:
-    - [0xB022A0, bin]
-    - [0xB024E0, bin] # rodata
-    - [0xB024F0, bin] # rodata
+    - [0xB022A0, .data, world/area_kkj/kkj_21/kkj_21]
+    - [0xB024E0, .rodata, world/area_kkj/kkj_21/kkj_21]
   - name: world/area_kkj/kkj_22/
     type: code
     overlay: True

@@ -1,11 +1,6 @@
 #include "kkj_21.h"
 
-Script N(script_ExitSingleDoor_80240050);
-Script N(script_EnterSingleDoor_802400F4);
 Script N(main);
-s32 pad_000238[2];
-const char D_80240240_B024E0[8]; // "kkj_10"
-s32 pad_000248[2];
 
 EntryList N(entryList) = {
     { 325.0f, 0.0f, -30.0f, 270.0f },
@@ -27,7 +22,7 @@ Script N(script_ExitSingleDoor_80240050) = SCRIPT({
     SI_VAR(3) = -1;
     spawn ExitSingleDoor;
     sleep 17;
-    GotoMap(D_80240240_B024E0, 2);
+    GotoMap("kkj_10", 2);
     sleep 100;
 });
 
@@ -54,14 +49,3 @@ Script N(main) = SCRIPT({
     spawn N(script_EnterSingleDoor_802400F4);
     sleep 1;
 });
-
-s32 pad_000238[] = {
-    0x00000000, 0x00000000,
-};
-
-// rodata: D_80240240_B024E0
-
-s32 pad_000248[] = {
-    0x00000000, 0x00000000,
-};
-
