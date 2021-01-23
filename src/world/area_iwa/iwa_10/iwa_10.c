@@ -249,7 +249,7 @@ Script N(main) = SCRIPT({
     PlaySoundAtF(0x80000009, 1, 0xFFFFFDD0, 0, 0xFFFFFF17);
     spawn {
         SI_VAR(15) = 0;
-    10:
+10:
         SI_VAR(15) += 1;
         func_80240000_91E570();
         RotateModel(91, SI_VAR(0), 0, 0, -1);
@@ -263,7 +263,7 @@ Script N(main) = SCRIPT({
         EnableTexPanning(106, 1);
         EnableTexPanning(104, 1);
         SI_VAR(0) = 0;
-    20:
+20:
         SI_VAR(0) -= 3000;
         SetTexPanOffset(2, 0, 0, SI_VAR(0));
         sleep 1;
@@ -421,8 +421,7 @@ Script N(script_Interact_80242154) = SCRIPT({
         }
         < 39 {
             SI_VAR(0) = 0xD0007;
-        }
-        else {
+        } else {
             SI_VAR(0) = 0xD0008;
         }
     }
@@ -576,11 +575,11 @@ s32 pad_0032B8[] = {
 
 Script N(script_802432C0) = SCRIPT({
     PlaySoundAtModel(59, 0xB000001A, 0);
-    SI_VAR(0) =f SI_MAP_VAR(0);
+    SI_VAR(0) = f SI_MAP_VAR(0);
     if (SI_MAP_FLAG(5) == 0) {
-        SI_VAR(0) +=f 0xFFFFFECA;
+        SI_VAR(0) += f 0xFFFFFECA;
     } else {
-        SI_VAR(0) +=f 0xFFFFFE3E;
+        SI_VAR(0) += f 0xFFFFFE3E;
     }
     SI_VAR(1) = 140;
     SI_VAR(2) = 0;
@@ -591,7 +590,7 @@ Script N(script_802432C0) = SCRIPT({
     loop 20 {
         TranslateModel(SI_VAR(11), SI_VAR(0), SI_VAR(1), SI_VAR(2));
         ScaleModel(SI_VAR(11), SI_VAR(3), SI_VAR(3), 1);
-        SI_VAR(1) +=f SI_VAR(4);
+        SI_VAR(1) += f SI_VAR(4);
         SI_VAR(3) += 0.046875;
         SI_VAR(4) *= 0.90625;
         sleep 1;
@@ -711,7 +710,7 @@ Script N(script_80243660) = SCRIPT({
         SI_VAR(2) = 1000;
         SI_VAR(2) -= SI_MAP_VAR(0);
     }
-    SI_VAR(0) =f SI_VAR(2);
+    SI_VAR(0) = f SI_VAR(2);
     SI_VAR(0) *= -2.40625;
     RotateModel(65, SI_VAR(0), 0, 0, 1);
     RotateModel(67, SI_VAR(0), 0, 0, 1);
@@ -743,7 +742,7 @@ Script N(script_80243660) = SCRIPT({
         func_80240160_91E6D0(SI_VAR(13), SI_VAR(0), 0.703125, 1.0, 10, 0, 180);
         func_80240160_91E6D0(SI_VAR(13), SI_VAR(2), 0.0, 0.296875, 10, 0, 180);
         SI_VAR(1) = 0.296875;
-        SI_VAR(1) -=f SI_VAR(2);
+        SI_VAR(1) -= f SI_VAR(2);
         SI_VAR(1) += 1.0;
         ScaleModel(59, SI_VAR(1), SI_VAR(0), SI_VAR(1));
         ScaleModel(58, SI_VAR(1), SI_VAR(0), SI_VAR(1));
@@ -751,7 +750,7 @@ Script N(script_80243660) = SCRIPT({
         SI_VAR(0) = 1.0;
         SI_VAR(2) = 0.296875;
         SI_VAR(1) = 0.296875;
-        SI_VAR(1) -=f SI_VAR(2);
+        SI_VAR(1) -= f SI_VAR(2);
         SI_VAR(1) += 1.0;
         ScaleModel(59, SI_VAR(1), SI_VAR(0), SI_VAR(1));
         ScaleModel(58, SI_VAR(1), SI_VAR(0), SI_VAR(1));
@@ -928,7 +927,7 @@ Script N(script_80244B5C) = SCRIPT({
     SI_MAP_FLAG(5) = 0;
 0:
     SI_MAP_VAR(1) = 0;
-    SI_MAP_VAR(1) -=f SI_MAP_VAR(0);
+    SI_MAP_VAR(1) -= f SI_MAP_VAR(0);
     SI_MAP_VAR(1) += 10.0;
     SI_MAP_VAR(1) /= 10.0;
     if (SI_MAP_VAR(1) > 10) {
@@ -1304,7 +1303,7 @@ Script N(script_80246274) = SCRIPT({
             RemoveKeyItemAt(SI_VAR(1));
             GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_80241210_91F780(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |=c 50000;
+            SI_VAR(0) |= c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SetPlayerAnimation(0x60005);
             sleep 30;
@@ -1534,8 +1533,7 @@ Script N(script_Interact_80246E90) = SCRIPT({
         }
         == -1 {
             SpeakToPlayer(4, 0x40006, 0x40001, 0, 0xD0013);
-        }
-        else {
+        } else {
             RemoveKeyItemAt(SI_VAR(0));
             SI_SAVE_VAR(122) += 1;
             match SI_SAVE_VAR(122) {
@@ -1619,8 +1617,7 @@ Script N(script_Init_80247688) = SCRIPT({
         }
         < 0xFFFFFFBA {
             BindNpcIdle(-1, N(script_Idle_802474F8));
-        }
-        else {
+        } else {
             RemoveNpc(-1);
         }
     }

@@ -377,7 +377,7 @@ Script N(script_80241350) = SCRIPT({
 Script N(script_80241360) = SCRIPT({
     spawn {
         SI_VAR(0) = 0;
-    10:
+10:
         RotateModel(51, SI_VAR(0), 0, 0, 1);
         SI_VAR(0) += 0xFFFFFFFA;
         sleep 30;
@@ -385,7 +385,7 @@ Script N(script_80241360) = SCRIPT({
     }
     spawn {
         SI_VAR(0) = 0;
-    20:
+20:
         RotateModel(53, SI_VAR(0), 0, 0, 1);
         SI_VAR(0) += -1;
         sleep 60;
@@ -393,7 +393,7 @@ Script N(script_80241360) = SCRIPT({
     }
     spawn {
         SI_VAR(1) = 0;
-    30:
+30:
         func_80240240_BC2CD0();
         RotateModel(55, SI_VAR(0), 0, 0, 1);
         sleep 1;

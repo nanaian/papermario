@@ -108,8 +108,7 @@ Script N(script_80243280) = SCRIPT({
     match SI_SAVE_VAR(0) {
         < 53 {
             SetMusicTrack(0, 48, 0, 8);
-        }
-        else {
+        } else {
             SetMusicTrack(0, 49, 0, 8);
         }
     }
@@ -124,10 +123,10 @@ Script N(script_802432F0) = SCRIPT({
     SI_VAR(14) = SI_VAR(4);
     SI_VAR(12) -= SI_VAR(0);
     SI_VAR(13) -= SI_VAR(1);
-    SI_VAR(0) =f SI_VAR(12);
+    SI_VAR(0) = f SI_VAR(12);
     SI_VAR(0) /= 100.0;
     SI_VAR(15) = 100.0;
-    SI_VAR(15) /=f SI_VAR(0);
+    SI_VAR(15) /= f SI_VAR(0);
     SI_VAR(15) += 11;
     SI_VAR(5) = 200;
     SI_VAR(5) /= SI_VAR(15);
@@ -282,7 +281,7 @@ Script N(main) = SCRIPT({
     spawn {
         SI_VAR(0) = 0;
         SI_VAR(1) = 0;
-    0:
+0:
         SI_VAR(0) += 140;
         if (SI_VAR(0) > 0x10000) {
             SI_VAR(0) += 0xFFFF0000;
@@ -347,7 +346,7 @@ Script N(script_80243FD0) = SCRIPT({
                 ModifyColliderFlags(1, SI_VAR(9), 0x7FFFFE00);
             }
         }
-    50:
+50:
         if (SI_VAR(7) >= 90) {
             SI_VAR(8) = -1;
             SI_VAR(7) = 90;

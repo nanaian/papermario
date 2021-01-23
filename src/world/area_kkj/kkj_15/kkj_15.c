@@ -208,8 +208,7 @@ Script N(script_EnterSingleDoor_80240A30) = SCRIPT({
                 }
                 == 0xFFFFFFF2 {
                     spawn N(script_802453F4);
-                }
-                else {
+                } else {
                     spawn N(script_80241550);
                     spawn N(script_80240A04);
                 }
@@ -320,7 +319,7 @@ Script N(script_80241010) = SCRIPT({
     MakeLerp(0, 0xFFFFF8F8, 360, 0);
     loop {
         UpdateLerp();
-        SI_VAR(2) =f SI_VAR(0);
+        SI_VAR(2) = f SI_VAR(0);
         SI_VAR(2) /= 10;
         RotateGroup(95, SI_VAR(2), 0, 1, 0);
         func_80240340_AE58D0();
@@ -343,7 +342,7 @@ Script N(script_802411DC) = SCRIPT({
     MakeLerp(0xFFFFFABA, 0xFFFFF8F8, 90, 0);
     loop {
         UpdateLerp();
-        SI_VAR(2) =f SI_VAR(0);
+        SI_VAR(2) = f SI_VAR(0);
         SI_VAR(2) /= 10;
         RotateGroup(95, SI_VAR(2), 0, 1, 0);
         func_80240340_AE58D0();
@@ -396,8 +395,7 @@ Script N(script_80241550) = SCRIPT({
     match SI_SAVE_VAR(0) {
         == 0xFFFFFFB4 {
             await N(script_80241408);
-        }
-        else {
+        } else {
             await N(script_8024135C);
         }
     }

@@ -106,8 +106,7 @@ Script N(script_EnterWalk_8024041C) = SCRIPT({
     match SI_VAR(0) {
         == 2 {
             SI_AREA_VAR(11) = 5;
-        }
-        else {
+        } else {
         }
     }
     SI_VAR(0) = N(script_8024039C);

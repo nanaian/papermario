@@ -79,7 +79,7 @@ Script N(script_80240370) = SCRIPT({
     MakeLerp(100, 0, 20, 2);
     loop {
         UpdateLerp();
-        SI_VAR(5) =f SI_VAR(0);
+        SI_VAR(5) = f SI_VAR(0);
         SI_VAR(5) *= 0.0107421875;
         ScaleGroup(65, SI_VAR(5), 1, 1);
         sleep 1;
@@ -93,7 +93,7 @@ Script N(script_8024043C) = SCRIPT({
     MakeLerp(0, 100, 20, 2);
     loop {
         UpdateLerp();
-        SI_VAR(5) =f SI_VAR(0);
+        SI_VAR(5) = f SI_VAR(0);
         SI_VAR(5) *= 0.0107421875;
         ScaleGroup(65, SI_VAR(5), 1, 1);
         sleep 1;
@@ -171,9 +171,9 @@ Script N(script_802407F0) = SCRIPT({
     MakeLerp(0, 100, 30, 10);
     loop {
         UpdateLerp();
-        SI_VAR(3) =f SI_VAR(0);
+        SI_VAR(3) = f SI_VAR(0);
         SI_VAR(3) *= 0.1005859375;
-        SI_VAR(3) +=f SI_MAP_VAR(10);
+        SI_VAR(3) += f SI_MAP_VAR(10);
         TranslateGroup(78, 0, SI_VAR(3), 0);
         RotateGroup(78, SI_MAP_VAR(11), 0, 1, 0);
         spawn N(script_80240780);
@@ -185,9 +185,9 @@ Script N(script_802407F0) = SCRIPT({
     MakeLerp(100, 0, 30, 10);
     loop {
         UpdateLerp();
-        SI_VAR(3) =f SI_VAR(0);
+        SI_VAR(3) = f SI_VAR(0);
         SI_VAR(3) *= 0.1005859375;
-        SI_VAR(3) +=f SI_MAP_VAR(10);
+        SI_VAR(3) += f SI_MAP_VAR(10);
         TranslateGroup(78, 0, SI_VAR(3), 0);
         RotateGroup(78, SI_MAP_VAR(11), 0, 1, 0);
         spawn N(script_80240780);

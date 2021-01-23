@@ -395,8 +395,7 @@ Script N(main) = SCRIPT({
     match SI_VAR(0) {
         2, 3 {
             await N(script_80243D10);
-        }
-        else {
+        } else {
             SI_VAR(0) = N(script_80243C9C);
             spawn EnterWalk;
         }
@@ -405,7 +404,7 @@ Script N(main) = SCRIPT({
     spawn {
         SetTexPanner(162, 1);
         SI_VAR(0) = 0;
-    123:
+123:
         SI_VAR(0) += 420;
         if (SI_VAR(0) > 0x10000) {
             SI_VAR(0) += 0xFFFF0000;
@@ -693,7 +692,7 @@ Script N(script_80244F84) = SCRIPT({
     if (SI_VAR(0) > 0) {
         SI_VAR(0) = 370;
     } else {
-        SI_VAR(0) =f 0xFFFFFE8E;
+        SI_VAR(0) = f 0xFFFFFE8E;
     }
     SetCamDistance(0, SI_VAR(0));
     GetCamPitch(0, SI_VAR(0), SI_VAR(1));
@@ -712,7 +711,7 @@ Script N(script_80245120) = SCRIPT({
     if (SI_VAR(0) > 0) {
         SI_VAR(0) = 17;
     } else {
-        SI_VAR(0) =f 0xFFFFFFEF;
+        SI_VAR(0) = f 0xFFFFFFEF;
     }
     SetCamDistance(0, SI_VAR(0));
     SetCamSpeed(0, 90.0);
@@ -731,22 +730,22 @@ Script N(script_80245258) = SCRIPT({
     spawn {
         SI_VAR(2) = 0;
         loop 60 {
-            SI_VAR(3) =f SI_VAR(0);
-            SI_VAR(4) =f SI_VAR(1);
-            SI_VAR(3) *=f SI_VAR(2);
-            SI_VAR(4) *=f SI_VAR(2);
+            SI_VAR(3) = f SI_VAR(0);
+            SI_VAR(4) = f SI_VAR(1);
+            SI_VAR(3) *= f SI_VAR(2);
+            SI_VAR(4) *= f SI_VAR(2);
             SI_VAR(3) /= 60;
             SI_VAR(4) /= 60;
-            SI_VAR(3) +=f SI_ARRAY(1);
-            SI_VAR(4) +=f SI_ARRAY(3);
+            SI_VAR(3) += f SI_ARRAY(1);
+            SI_VAR(4) += f SI_ARRAY(3);
             SetPlayerPos(SI_VAR(3), SI_ARRAY(2), SI_VAR(4));
             SI_VAR(2) += 1;
             sleep 1;
         }
-        SI_VAR(3) =f SI_VAR(0);
-        SI_VAR(4) =f SI_VAR(1);
-        SI_VAR(3) +=f SI_ARRAY(1);
-        SI_VAR(4) +=f SI_ARRAY(3);
+        SI_VAR(3) = f SI_VAR(0);
+        SI_VAR(4) = f SI_VAR(1);
+        SI_VAR(3) += f SI_ARRAY(1);
+        SI_VAR(4) += f SI_ARRAY(3);
         SetPlayerPos(SI_VAR(3), SI_ARRAY(2), SI_VAR(4));
     }
     func_8024111C_96A2DC();
@@ -757,16 +756,16 @@ Script N(script_80245258) = SCRIPT({
 Script N(script_80245408) = SCRIPT({
     GetNpcPos(0xFFFFFFFC, SI_VAR(10), SI_VAR(11), SI_VAR(12));
     func_80240F80_96A140(SI_VAR(10), SI_VAR(12), 108, SI_VAR(0), SI_VAR(1));
-    SI_VAR(5) =f SI_ARRAY(2);
-    SI_VAR(5) -=f SI_VAR(11);
+    SI_VAR(5) = f SI_ARRAY(2);
+    SI_VAR(5) -= f SI_VAR(11);
     spawn {
         func_80241210_96A3D0();
-        SI_VAR(3) =f SI_VAR(0);
-        SI_VAR(4) =f SI_VAR(1);
-        SI_VAR(6) =f SI_VAR(5);
-        SI_VAR(3) +=f SI_VAR(10);
-        SI_VAR(4) +=f SI_VAR(12);
-        SI_VAR(6) +=f SI_VAR(11);
+        SI_VAR(3) = f SI_VAR(0);
+        SI_VAR(4) = f SI_VAR(1);
+        SI_VAR(6) = f SI_VAR(5);
+        SI_VAR(3) += f SI_VAR(10);
+        SI_VAR(4) += f SI_VAR(12);
+        SI_VAR(6) += f SI_VAR(11);
         SetNpcPos(0xFFFFFFFC, SI_VAR(3), SI_VAR(6), SI_VAR(4));
     }
     func_80241180_96A340();
@@ -780,14 +779,14 @@ Script N(script_80245540) = SCRIPT({
     spawn {
         SI_VAR(2) = 0;
         loop 60 {
-            SI_VAR(3) =f SI_VAR(0);
-            SI_VAR(4) =f SI_VAR(1);
-            SI_VAR(3) *=f SI_VAR(2);
-            SI_VAR(4) *=f SI_VAR(2);
+            SI_VAR(3) = f SI_VAR(0);
+            SI_VAR(4) = f SI_VAR(1);
+            SI_VAR(3) *= f SI_VAR(2);
+            SI_VAR(4) *= f SI_VAR(2);
             SI_VAR(3) /= 60;
             SI_VAR(4) /= 60;
-            SI_VAR(3) +=f SI_VAR(10);
-            SI_VAR(4) +=f SI_VAR(12);
+            SI_VAR(3) += f SI_VAR(10);
+            SI_VAR(4) += f SI_VAR(12);
             SetNpcPos(10, SI_VAR(3), SI_ARRAY(2), SI_VAR(4));
             SI_VAR(2) += 1;
             sleep 1;
@@ -998,10 +997,10 @@ Script N(script_802462A4) = SCRIPT({
 Script N(script_802462E4) = SCRIPT({
     spawn {
         func_80240F80_96A140(SI_ARRAY(1), SI_ARRAY(3), 25, SI_VAR(0), SI_VAR(1));
-        SI_VAR(2) =f SI_ARRAY(1);
-        SI_VAR(2) +=f SI_VAR(0);
-        SI_VAR(3) =f SI_ARRAY(3);
-        SI_VAR(3) +=f SI_VAR(1);
+        SI_VAR(2) = f SI_ARRAY(1);
+        SI_VAR(2) += f SI_VAR(0);
+        SI_VAR(3) = f SI_ARRAY(3);
+        SI_VAR(3) += f SI_VAR(1);
         SetNpcAnimation(0xFFFFFFFC, 258);
         NpcMoveTo(0xFFFFFFFC, SI_VAR(2), SI_VAR(3), 40);
         SetNpcAnimation(0xFFFFFFFC, 262);
@@ -1778,7 +1777,7 @@ Script N(script_80248788) = SCRIPT({
             RemoveKeyItemAt(SI_VAR(1));
             GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_802430F0_96C2B0(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |=c 50000;
+            SI_VAR(0) |= c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SetPlayerAnimation(0x60005);
             sleep 30;
@@ -2237,7 +2236,7 @@ Script N(script_Interact_8024ADE4) = SCRIPT({
     await N(script_8024D494);
     spawn {
         MakeLerp(0, 255, 60, 0);
-    0:
+0:
         UpdateLerp();
         func_802434CC_96C68C(3, SI_VAR(0));
         sleep 1;
@@ -2252,7 +2251,7 @@ Script N(script_Interact_8024ADE4) = SCRIPT({
         func_80243748_96C908(SI_VAR(10));
         sleep 45;
         MakeLerp(255, 0, 30, 0);
-    1:
+1:
         UpdateLerp();
         func_802434CC_96C68C(0, SI_VAR(0));
         sleep 1;
@@ -2289,7 +2288,7 @@ Script N(script_8024B20C) = SCRIPT({
             DisablePartnerAI(0);
             GetNpcPos(0xFFFFFFFC, SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_80243870_96CA30(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |=c 50000;
+            SI_VAR(0) |= c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SI_VAR(10) = spawn N(script_8024B18C);
             SetNpcAnimation(0xFFFFFFFC, 0x40002);
@@ -2365,8 +2364,7 @@ Script N(script_8024B5A0) = SCRIPT({
                     SpeakToPlayer(0xFFFFFFFC, 0x40006, 0x40001, 5, SI_VAR(8));
                     EnablePartnerAI();
                     SI_VAR(12) = 1;
-                }
-                else {
+                } else {
                     DisablePartnerAI(0);
                     sleep 1;
                     SpeakToPlayer(0xFFFFFFFC, 0x40006, 0x40001, 5, SI_VAR(9));
@@ -2418,8 +2416,7 @@ Script N(script_Interact_8024B8F0) = SCRIPT({
                     }
                 }
             }
-        }
-        else {
+        } else {
             SpeakToPlayer(-1, 0xB80004, 0xB80001, 0, 0xD00B3);
         }
     }
@@ -2443,8 +2440,7 @@ Script N(script_Interact_8024BA9C) = SCRIPT({
         }
         < 39 {
             SpeakToPlayer(-1, 0x930204, 0x930201, 0, 0xD0093);
-        }
-        else {
+        } else {
             SpeakToPlayer(-1, 0x930204, 0x930201, 0, 0xD0094);
         }
     }
@@ -2471,8 +2467,7 @@ Script N(script_Interact_8024BBD0) = SCRIPT({
         }
         < 39 {
             SpeakToPlayer(-1, 0x930004, 0x930001, 0, 0xD00A3);
-        }
-        else {
+        } else {
             SpeakToPlayer(-1, 0x930004, 0x930001, 0, 0xD00A4);
         }
     }
@@ -2509,8 +2504,7 @@ Script N(script_Interact_8024BD4C) = SCRIPT({
                 SpeakToPlayer(-1, 0x940005, 0x940001, 0, 0xD00A8);
                 SI_AREA_FLAG(4) = 0;
             }
-        }
-        else {
+        } else {
             if (SI_AREA_FLAG(4) == 0) {
                 SpeakToPlayer(-1, 0x940005, 0x940001, 0, 0xD00A9);
                 SI_AREA_FLAG(4) = 1;
@@ -2539,8 +2533,7 @@ Script N(script_Interact_8024BF34) = SCRIPT({
         }
         < 39 {
             SpeakToPlayer(-1, 0x940005, 0x940001, 0, 0xD00AD);
-        }
-        else {
+        } else {
             SpeakToPlayer(-1, 0x940005, 0x940001, 0, 0xD00AE);
         }
     }
@@ -2634,7 +2627,7 @@ Script N(script_Interact_8024C4EC) = SCRIPT({
         < 0xFFFFFFC0 {
             SI_VAR(11) = 0;
             SpeakToPlayer(2, 0xBC0004, 0xBC0001, 0, 0xD00B4);
-        0:
+0:
             ShowChoice(0x1E0019);
             if (SI_VAR(0) == 1) {
                 ContinueSpeech(2, 0xBC0004, 0xBC0001, 0, 0xD00B6);
@@ -2643,7 +2636,7 @@ Script N(script_Interact_8024C4EC) = SCRIPT({
             } else {
                 EndSpeech(2, 0xBC0004, 0xBC0001, 0);
             }
-        1:
+1:
             SI_VAR(0) = 0;
             SI_VAR(1) = 2;
             await N(script_80248A50);
@@ -2813,8 +2806,7 @@ Script N(script_Init_8024D04C) = SCRIPT({
             InterpNpcYaw(-1, 270, 0);
             SetNpcFlagBits(-1, 0x200000, 1);
             SetNpcAnimation(-1, 0xBC0005);
-        }
-        else {
+        } else {
             BindNpcIdle(-1, N(script_Idle_8024C450));
             BindNpcInteract(-1, N(script_Interact_8024C4EC));
         }

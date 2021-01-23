@@ -142,12 +142,11 @@ Script N(script_80240940) = SCRIPT({
     } else {
         GetEntryID(SI_VAR(0));
         match SI_VAR(0) {
-        2..3
+            2..3
             SetMusicTrack(0, 33, 0, 8);
             == 5 {
                 FadeInMusic(0, 32, 0, 3000, 0, 127);
-            }
-            else {
+            } else {
                 SetMusicTrack(0, 32, 0, 8);
             }
         }
@@ -185,7 +184,7 @@ Script N(script_EnterWalk_80240B40) = SCRIPT({
     }
     GetEntryID(SI_VAR(0));
     match SI_VAR(0) {
-    0..1
+        0..1
         SI_VAR(0) = N(script_80240AF8);
         spawn EnterWalk;
         sleep 1;
@@ -199,8 +198,7 @@ Script N(script_EnterWalk_80240B40) = SCRIPT({
         }
         == 6 {
             spawn N(script_802476AC);
-        }
-        else {
+        } else {
             spawn N(script_80240AF8);
             sleep 3;
         }
@@ -590,8 +588,7 @@ Script N(script_Interact_80241F00) = SCRIPT({
         }
         < 4 {
             SpeakToPlayer(-1, 0x8C0204, 0x8C0201, 0, 0xF0021);
-        }
-        else {
+        } else {
             SpeakToPlayer(-1, 0x8C0204, 0x8C0201, 0, 0xF0022);
         }
     }
@@ -1254,7 +1251,7 @@ Script N(script_80245178) = SCRIPT({
 
 Script N(script_80245238) = SCRIPT({
     match SI_AREA_VAR(5) {
-    0..1
+        0..1
         match SI_AREA_VAR(6) {
             == 0 {
                 GotoMapSpecial(D_802481A0_DAD3E0, 2, 1);
@@ -1577,7 +1574,7 @@ Script N(script_80246108) = SCRIPT({
             SI_MAP_VAR(1) = N(unk_802460A0);
             SI_MAP_VAR(2) = 3;
             SI_MAP_FLAG(0) = 1;
-        20:
+20:
             if (SI_MAP_FLAG(0) == 1) {
                 sleep 1;
                 goto 20;
@@ -1601,7 +1598,7 @@ Script N(script_80246108) = SCRIPT({
             SI_MAP_FLAG(0) = 1;
             sleep 1;
             spawn N(script_802454DC);
-        30:
+30:
             if (SI_MAP_VAR(11) < 350) {
                 sleep 1;
                 goto 30;
@@ -1704,7 +1701,7 @@ Script N(script_802468F8) = SCRIPT({
         SI_MAP_FLAG(0) = 1;
         sleep 1;
         SI_VAR(11) = spawn N(script_80244118);
-    10:
+10:
         if (SI_MAP_FLAG(0) == 1) {
             sleep 1;
             goto 10;
@@ -1730,7 +1727,7 @@ Script N(script_802468F8) = SCRIPT({
         SI_MAP_FLAG(0) = 1;
         sleep 1;
         spawn N(script_802454DC);
-    20:
+20:
         if (SI_MAP_VAR(11) > 0xFFFFFEA2) {
             sleep 1;
             goto 20;
@@ -1940,8 +1937,7 @@ Script N(script_8024746C) = SCRIPT({
             == 6 {
                 EnableGroup(141, 0);
                 EnableGroup(172, 1);
-            }
-            else {
+            } else {
                 SI_MAP_VAR(0) = 0;
                 SI_MAP_VAR(1) = N(unk_80247454);
                 SI_MAP_VAR(2) = 0;

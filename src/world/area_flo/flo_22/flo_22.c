@@ -60,8 +60,7 @@ Script N(script_802402E0) = SCRIPT({
     match SI_SAVE_VAR(0) {
         < 53 {
             SetMusicTrack(0, 48, 0, 8);
-        }
-        else {
+        } else {
             SetMusicTrack(0, 49, 0, 8);
         }
     }
@@ -338,8 +337,7 @@ Script N(script_80241028) = SCRIPT({
             } else {
                 ShowMessageAtWorldPos(0x1100DE, 35, 35, 0);
             }
-        }
-        else {
+        } else {
             await N(script_80240E84);
             RemoveItemAt(SI_VAR(1));
             ShowMessageAtWorldPos(0x1100DC, 35, 35, 0);

@@ -512,7 +512,7 @@ Script N(script_802417F8) = SCRIPT({
 
 Script N(script_NpcAI_802419DC) = SCRIPT({
     if (SI_SAVE_VAR(0) < 0xFFFFFFB1) {
-    100:
+100:
         GetNpcVar(70, 0, SI_VAR(0));
         if (SI_VAR(0) == 0) {
             sleep 1;

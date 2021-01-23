@@ -425,7 +425,7 @@ Script N(script_80241F9C) = SCRIPT({
             RemoveKeyItemAt(SI_VAR(1));
             GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_80240FDC_D4E01C(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |=c 50000;
+            SI_VAR(0) |= c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SetPlayerAnimation(0x60005);
             sleep 30;

@@ -85,8 +85,7 @@ Script N(script_EnterWalk_802402C0) = SCRIPT({
             SI_VAR(3) = 87;
             spawn EnterDoubleDoor;
             spawn N(script_8024025C);
-        }
-        else {
+        } else {
             SI_VAR(0) = N(script_8024025C);
             spawn EnterWalk;
         }

@@ -189,7 +189,7 @@ Script N(script_802419E0) = SCRIPT({
         }
     } else {
         match SI_SAVE_VAR(0) {
-        22..23
+            22..23
             if (SI_VAR(0) != 1) {
                 SetMusicTrack(0, 40, 0, 8);
                 SI_AREA_FLAG(3) = 0;
@@ -203,8 +203,7 @@ Script N(script_802419E0) = SCRIPT({
                 }
                 SetMusicTrack(0, 37, 0, 8);
                 SI_AREA_FLAG(3) = 0;
-            }
-            else {
+            } else {
                 SetMusicTrack(0, 37, 0, 8);
             }
         }
@@ -320,8 +319,7 @@ Script N(script_EnterWalk_8024202C) = SCRIPT({
         }
         == 38 {
             spawn N(script_80241CD4);
-        }
-        else {
+        } else {
             SI_VAR(0) = N(script_80241CD4);
             spawn EnterWalk;
             sleep 1;
@@ -342,8 +340,7 @@ Script N(main) = SCRIPT({
         }
         == 38 {
             MakeNpcs(0, N(npcGroupList_8024966C));
-        }
-        else {
+        } else {
             MakeNpcs(0, N(npcGroupList_8024969C));
         }
     }
@@ -569,7 +566,7 @@ Script N(script_80242688) = SCRIPT({
             SI_VAR(5) += 5;
         }
         SI_VAR(2) = 200.0;
-        SI_VAR(2) -=f SI_VAR(0);
+        SI_VAR(2) -= f SI_VAR(0);
         SI_VAR(2) /= 200.0;
         ScaleModel(64, 1, SI_VAR(2), 1);
         TranslateModel(61, 0, SI_VAR(0), 0);
@@ -589,7 +586,7 @@ Script N(script_80242688) = SCRIPT({
         loop {
             UpdateLerp();
             SI_VAR(2) = 200.0;
-            SI_VAR(2) -=f SI_VAR(0);
+            SI_VAR(2) -= f SI_VAR(0);
             SI_VAR(2) /= 200.0;
             ScaleModel(64, 1, SI_VAR(2), 1);
             TranslateModel(61, 0, SI_VAR(0), 0);
@@ -715,8 +712,7 @@ Script N(script_Init_802432F0) = SCRIPT({
             SetNpcPos(-1, 125, 0, 0xFFFFFFD8);
             SetNpcFlagBits(-1, 256, 0);
             BindNpcInteract(-1, N(script_Interact_80243118));
-        }
-        else {
+        } else {
             RemoveNpc(-1);
         }
     }
@@ -858,7 +854,7 @@ Script N(script_Idle_8024364C) = SCRIPT({
             sleep 50;
             SetNpcVar(1, 0, 10);
             sleep 140;
-        11:
+11:
             GetNpcVar(1, 0, SI_VAR(0));
             if (SI_VAR(0) != 0) {
                 sleep 1;
@@ -912,7 +908,7 @@ Script N(script_Idle_8024364C) = SCRIPT({
                     SI_VAR(3) += 9;
                     SetNpcPos(7, 200, SI_VAR(3), 0);
                     SI_VAR(2) = 200.0;
-                    SI_VAR(2) -=f SI_VAR(0);
+                    SI_VAR(2) -= f SI_VAR(0);
                     SI_VAR(2) /= 200.0;
                     ScaleModel(64, 1, SI_VAR(2), 1);
                     TranslateModel(61, 0, SI_VAR(0), 0);
@@ -1040,7 +1036,7 @@ Script N(script_Init_80244A5C) = SCRIPT({
             BindNpcIdle(-1, N(script_Idle_8024364C));
             spawn N(script_80242E08);
         }
-    24..37
+        24..37
         BindNpcInteract(-1, N(script_Interact_802433A0));
         SetNpcPos(6, 260, 205, 0xFFFFFFE7);
         SetNpcFlagBits(6, 256, 0);
@@ -1048,7 +1044,7 @@ Script N(script_Init_80244A5C) = SCRIPT({
         else {
             ModifyColliderFlags(0, 39, 0x7FFFFE00);
             RemoveNpc(6);
-        30:
+30:
             RemoveNpc(7);
             RemoveNpc(8);
             RemoveNpc(9);
@@ -1311,7 +1307,7 @@ Script N(script_Idle_80245B14) = SCRIPT({
             DisablePlayerInput(1);
             SpeakToPlayer(-1, 0xB60008, 0xB60001, 0, 0x1000CF);
             spawn {
-            20:
+20:
                 PlayerFaceNpc(1, 0);
                 GetSelfVar(0, SI_VAR(0));
                 if (SI_VAR(0) == 20) {
@@ -1337,7 +1333,7 @@ Script N(script_Idle_80245B14) = SCRIPT({
                 SI_VAR(6) += SI_VAR(0);
                 SetNpcPos(-1, SI_VAR(3), SI_VAR(6), SI_VAR(5));
                 SI_VAR(2) = 200.0;
-                SI_VAR(2) -=f SI_VAR(0);
+                SI_VAR(2) -= f SI_VAR(0);
                 SI_VAR(2) /= 200.0;
                 ScaleModel(64, 1, SI_VAR(2), 1);
                 TranslateModel(61, 0, SI_VAR(0), 0);
@@ -1354,7 +1350,7 @@ Script N(script_Idle_80245B14) = SCRIPT({
             loop {
                 UpdateLerp();
                 SI_VAR(2) = 200.0;
-                SI_VAR(2) -=f SI_VAR(0);
+                SI_VAR(2) -= f SI_VAR(0);
                 SI_VAR(2) /= 200.0;
                 ScaleModel(64, 1, SI_VAR(2), 1);
                 TranslateModel(61, 0, SI_VAR(0), 0);
@@ -1435,8 +1431,7 @@ Script N(script_Hit_80246474) = SCRIPT({
         }
         == 6 {
             SI_VAR(1) = 1;
-        }
-        else {
+        } else {
             SI_VAR(1) = 0;
         }
     }
@@ -1474,7 +1469,7 @@ Script N(script_Init_80246694) = SCRIPT({
             BindNpcInteract(-1, N(script_Interact_802460B0));
             BindNpcIdle(-1, N(script_Idle_802458B0));
         }
-    22..23
+        22..23
         BindNpcIdle(-1, N(script_Idle_80245B14));
         SetNpcPos(-1, 0, 0xFFFFFC18, 0);
         else {
@@ -1513,7 +1508,7 @@ Script N(script_Idle_8024687C) = SCRIPT({
         loop {
             GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
             match SI_VAR(0) {
-            SI_VAR(3)..SI_VAR(4)
+                SI_VAR(3)..SI_VAR(4)
                 SetSelfEnemyFlagBits(0x1000000, 0);
                 SetSelfEnemyFlagBits(0x10000000, 0);
                 else {
@@ -1540,7 +1535,7 @@ Script N(script_Idle_8024687C) = SCRIPT({
         }
         InterpNpcYaw(0, 270, 2);
         sleep 2;
-    1:
+1:
         if (SI_AREA_FLAG(10) == 0) {
             InterpNpcYaw(0, 90, 2);
             if (SI_VAR(8) == 0) {
@@ -2029,7 +2024,7 @@ NpcGroupList N(npcGroupList_8024969C) = {
 
 Script N(script_MakeEntities) = SCRIPT({
     spawn {
-    0:
+0:
         if (SI_SAVE_VAR(0) < 24) {
             sleep 1;
             goto 0;
@@ -2397,20 +2392,20 @@ Script N(script_8024A9E4) = SCRIPT({
     SI_VAR(6) = 0;
     SI_VAR(7) = 0;
     loop 60 {
-        SI_VAR(2) =f SI_MAP_VAR(0);
-        SI_VAR(3) =f SI_MAP_VAR(1);
-        SI_VAR(2) -=f SI_VAR(0);
-        SI_VAR(3) -=f SI_VAR(1);
-        SI_VAR(4) =f SI_VAR(2);
-        SI_VAR(5) =f SI_VAR(3);
+        SI_VAR(2) = f SI_MAP_VAR(0);
+        SI_VAR(3) = f SI_MAP_VAR(1);
+        SI_VAR(2) -= f SI_VAR(0);
+        SI_VAR(3) -= f SI_VAR(1);
+        SI_VAR(4) = f SI_VAR(2);
+        SI_VAR(5) = f SI_VAR(3);
         SI_VAR(4) *= 0.09375;
         SI_VAR(5) *= 0.09375;
         SI_VAR(6) *= 0.80078125;
         SI_VAR(7) *= 0.80078125;
-        SI_VAR(6) +=f SI_VAR(4);
-        SI_VAR(7) +=f SI_VAR(5);
-        SI_VAR(0) +=f SI_VAR(6);
-        SI_VAR(1) +=f SI_VAR(7);
+        SI_VAR(6) += f SI_VAR(4);
+        SI_VAR(7) += f SI_VAR(5);
+        SI_VAR(0) += f SI_VAR(6);
+        SI_VAR(1) += f SI_VAR(7);
         TranslateModel(29, SI_MAP_VAR(0), 0, 0);
         TranslateModel(31, SI_MAP_VAR(1), 0, 0);
         func_80241668_B857E8(29, SI_VAR(6));
@@ -2432,8 +2427,8 @@ Script N(script_8024AC34) = SCRIPT({
     MakeLerp(0, 45, 30, 5);
     loop {
         UpdateLerp();
-        SI_MAP_VAR(1) =f SI_VAR(0);
-        SI_MAP_VAR(0) =f SI_MAP_VAR(1);
+        SI_MAP_VAR(1) = f SI_VAR(0);
+        SI_MAP_VAR(0) = f SI_MAP_VAR(1);
         SI_MAP_VAR(0) *= -1;
         sleep 1;
         if (SI_VAR(1) == 0) {

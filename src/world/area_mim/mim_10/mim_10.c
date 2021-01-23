@@ -51,7 +51,7 @@ MapConfig N(header) = {
 
 Script N(script_802401F0) = SCRIPT({
     match SI_SAVE_VAR(0) {
-    0xFFFFFFF3..5
+        0xFFFFFFF3..5
         SetMusicTrack(0, 74, 0, 8);
         else {
             SetMusicTrack(0, 0, 0, 8);
@@ -327,7 +327,7 @@ Script N(script_80240FC0) = SCRIPT({
         < 0xFFFFFFCE {
             spawn N(script_80240980);
         }
-    0xFFFFFFCE..0xFFFFFFF1
+        0xFFFFFFCE..0xFFFFFFF1
     }
 });
 

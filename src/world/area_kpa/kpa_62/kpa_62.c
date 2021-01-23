@@ -290,8 +290,7 @@ Script N(script_EnterWalk_80240EE8) = SCRIPT({
                 await N(script_80240CCC);
                 spawn N(script_80240E2C);
             }
-        }
-        else {
+        } else {
             SI_VAR(0) = N(script_80240E2C);
             spawn EnterWalk;
             sleep 1;

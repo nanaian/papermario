@@ -445,7 +445,7 @@ Script N(script_Defeat_80241E44) = SCRIPT({
         MakeLerp(100, 200, 210, 10);
         loop {
             UpdateLerp();
-            SI_VAR(10) =f SI_VAR(0);
+            SI_VAR(10) = f SI_VAR(0);
             SI_VAR(10) *= 0.0107421875;
             SetNpcScale(0, SI_VAR(10), SI_VAR(10), 1);
             if (SI_VAR(1) == 0) {

@@ -886,9 +886,9 @@ Script N(script_80245E00) = SCRIPT({
     SetPlayerPos(495, 80, 0);
     GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
     GetNpcPos(6, SI_VAR(3), SI_VAR(4), SI_VAR(5));
-    SI_VAR(0) +=f SI_VAR(3);
-    SI_VAR(1) +=f SI_VAR(4);
-    SI_VAR(2) +=f SI_VAR(5);
+    SI_VAR(0) += f SI_VAR(3);
+    SI_VAR(1) += f SI_VAR(4);
+    SI_VAR(2) += f SI_VAR(5);
     SI_VAR(0) /= 2.0;
     SI_VAR(1) /= 2.0;
     SI_VAR(2) /= 2.0;
@@ -916,7 +916,7 @@ Script N(script_80245E00) = SCRIPT({
         SetNpcAnimation(-1, 0x7E0001);
         spawn N(script_80241DA0);
         DisablePlayerInput(0);
-    4:
+4:
         GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
         sleep 1;
         if (SI_VAR(3) > SI_VAR(0)) {
@@ -1080,9 +1080,9 @@ Script N(script_80246CDC) = SCRIPT({
     SetNpcAnimation(-1, 0x7E000C);
     GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
     GetNpcPos(6, SI_VAR(3), SI_VAR(4), SI_VAR(5));
-    SI_VAR(0) +=f SI_VAR(3);
-    SI_VAR(1) +=f SI_VAR(4);
-    SI_VAR(2) +=f SI_VAR(5);
+    SI_VAR(0) += f SI_VAR(3);
+    SI_VAR(1) += f SI_VAR(4);
+    SI_VAR(2) += f SI_VAR(5);
     SI_VAR(0) /= 2.0;
     SI_VAR(1) /= 2.0;
     SI_VAR(2) /= 2.0;

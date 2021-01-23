@@ -400,7 +400,7 @@ Script N(script_Idle_802416B8) = SCRIPT({
     spawn {
         PlaySoundAtNpc(-1, 993, 0);
         MakeLerp(0xFFFFFFA6, 0, 10, 0);
-    1:
+1:
         UpdateLerp();
         SetNpcRotation(-1, SI_VAR(0), 0, 0);
         sleep 1;
@@ -409,7 +409,7 @@ Script N(script_Idle_802416B8) = SCRIPT({
         }
         GetNpcPos(-1, SI_VAR(10), SI_VAR(11), SI_VAR(12));
         MakeLerp(0, 360, 15, 0);
-    2:
+2:
         UpdateLerp();
         SetNpcRotation(-1, 0, SI_VAR(0), 0);
         sleep 1;

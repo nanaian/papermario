@@ -235,7 +235,7 @@ Script N(script_80241050) = SCRIPT({
     spawn {
         sleep 330;
         MakeLerp(6000, 0x2EE0, 120, 0);
-    25:
+25:
         UpdateLerp();
         func_802404E8_8AC478();
         sleep 1;

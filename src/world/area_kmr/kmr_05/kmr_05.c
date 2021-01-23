@@ -285,7 +285,7 @@ Script N(script_Idle_80241E44) = SCRIPT({
     0x800445D4(SI_VAR(0));
     match SI_VAR(0) {
         == 100 {
-        10:
+10:
             GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
             sleep 1;
             if (SI_VAR(1) < 100) {

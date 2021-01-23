@@ -257,8 +257,7 @@ Script N(main) = SCRIPT({
     match SI_VAR(0) {
         4, 5 {
             await N(script_80241BEC);
-        }
-        else {
+        } else {
             func_80240338_93F8E8();
         }
     }
@@ -334,7 +333,7 @@ Script N(script_80242060) = SCRIPT({
             RemoveKeyItemAt(SI_VAR(1));
             GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_80240F50_940500(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |=c 50000;
+            SI_VAR(0) |= c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SetPlayerAnimation(0x60005);
             sleep 30;
@@ -409,7 +408,7 @@ Script N(script_802423F8) = SCRIPT({
             DisablePartnerAI(0);
             GetNpcPos(0xFFFFFFFC, SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_802413D4_940984(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |=c 50000;
+            SI_VAR(0) |= c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SI_VAR(10) = spawn N(script_80242378);
             SetNpcAnimation(0xFFFFFFFC, 0x40002);
@@ -485,8 +484,7 @@ Script N(script_8024278C) = SCRIPT({
                     SpeakToPlayer(0xFFFFFFFC, 0x40006, 0x40001, 5, SI_VAR(8));
                     EnablePartnerAI();
                     SI_VAR(12) = 1;
-                }
-                else {
+                } else {
                     DisablePartnerAI(0);
                     sleep 1;
                     SpeakToPlayer(0xFFFFFFFC, 0x40006, 0x40001, 5, SI_VAR(9));
@@ -569,8 +567,7 @@ Script N(script_Interact_80242BE4) = SCRIPT({
             >= 1 {
                 await N(script_80242B48);
                 goto 50;
-            }
-            else {
+            } else {
                 SpeakToPlayer(-1, 0xB60008, 0xB60001, 0, 0xD0041);
                 SI_VAR(0) = N(unk_80242B40);
                 SI_VAR(1) = 0;
@@ -578,8 +575,7 @@ Script N(script_Interact_80242BE4) = SCRIPT({
                 match SI_VAR(0) {
                     >= 1 {
                         await N(script_80242B48);
-                    }
-                    else {
+                    } else {
                         SpeakToPlayer(-1, 0xB60008, 0xB60001, 0, 0xD0042);
                         goto 50;
                     }
@@ -679,8 +675,7 @@ Script N(script_Init_802433E4) = SCRIPT({
         4, 5 {
             SetNpcPos(-1, 210, 0, 0xFFFFFF2E);
             BindNpcIdle(-1, N(script_Idle_8024330C));
-        }
-        else {
+        } else {
             BindNpcInteract(-1, N(script_Interact_80242BE4));
             BindNpcIdle(-1, N(script_Idle_80243248));
         }
@@ -709,8 +704,7 @@ Script N(script_Interact_80243540) = SCRIPT({
                 SI_VAR(0) = 0xD004F;
                 SI_AREA_FLAG(2) = 0;
             }
-        }
-        else {
+        } else {
             if (SI_SAVE_FLAG(786) == 0) {
                 SI_VAR(0) = 0xD0050;
             } else {
@@ -741,8 +735,7 @@ Script N(script_Interact_802436B4) = SCRIPT({
                 SI_VAR(0) = 0xD0053;
                 SI_AREA_FLAG(3) = 0;
             }
-        }
-        else {
+        } else {
             if (SI_SAVE_FLAG(786) == 0) {
                 SI_VAR(0) = 0xD0054;
             } else {

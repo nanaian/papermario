@@ -233,7 +233,7 @@ Script N(script_NpcAI_8024090C) = SCRIPT({
         }
         == 0xFFFFFF89 {
             if (SI_AREA_VAR(0) == 0) {
-            10:
+10:
                 sleep 1;
                 GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
                 if (SI_VAR(0) < 360) {
@@ -1047,7 +1047,7 @@ Script N(script_Tree3_Callback) = SCRIPT({
     MakeItemEntity(86, 250, 132, 0xFFFFFF9C, 13, SI_SAVE_FLAG(30));
     SI_AREA_FLAG(9) = 1;
     spawn {
-    10:
+10:
         if (SI_SAVE_FLAG(30) == 0) {
             sleep 1;
             goto 10;

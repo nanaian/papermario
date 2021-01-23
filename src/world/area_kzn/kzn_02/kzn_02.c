@@ -424,7 +424,7 @@ Script N(script_80243430) = SCRIPT({
             goto 15;
         }
     } else {
-    15:
+15:
         if (SI_VAR(11) == SI_VAR(4)) {
             if (SI_VAR(12) != 3) {
                 goto 0;
@@ -865,7 +865,7 @@ Script N(script_80244A7C) = SCRIPT({
             RemoveKeyItemAt(SI_VAR(1));
             GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_80242140_C5C880(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |=c 50000;
+            SI_VAR(0) |= c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SetPlayerAnimation(0x60005);
             sleep 30;
@@ -908,7 +908,7 @@ Script N(script_80244C90) = SCRIPT({
             DisablePartnerAI(0);
             GetNpcPos(0xFFFFFFFC, SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_80242528_C5CC68(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |=c 50000;
+            SI_VAR(0) |= c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SI_VAR(10) = spawn N(script_80244C10);
             SetNpcAnimation(0xFFFFFFFC, 0x40002);
@@ -984,8 +984,7 @@ Script N(script_80245024) = SCRIPT({
                     SpeakToPlayer(0xFFFFFFFC, 0x40006, 0x40001, 5, SI_VAR(8));
                     EnablePartnerAI();
                     SI_VAR(12) = 1;
-                }
-                else {
+                } else {
                     DisablePartnerAI(0);
                     sleep 1;
                     SpeakToPlayer(0xFFFFFFFC, 0x40006, 0x40001, 5, SI_VAR(9));
@@ -1085,7 +1084,7 @@ Script N(script_Idle_802453D8) = SCRIPT({
     0x802D7E08(0, 0, 0xFFFFFFD3, 1, 0, 0, 0, 0, 20);
     SetSelfVar(0, 1);
     spawn {
-    15:
+15:
         GetNpcPos(-1, SI_VAR(0), SI_VAR(1), SI_VAR(2));
         PlayEffect(39, 0, SI_VAR(0), SI_VAR(1), SI_VAR(2), 1, 10, 0, 0, 0, 0, 0, 0, 0);
         GetSelfVar(0, SI_VAR(3));
@@ -1160,8 +1159,7 @@ Script N(script_Init_80245D80) = SCRIPT({
             } else {
                 SetNpcPos(-1, 0, 0xFFFFFC18, 0);
             }
-        }
-        else {
+        } else {
             SetNpcPos(-1, 0, 0xFFFFFC18, 0);
         }
     }

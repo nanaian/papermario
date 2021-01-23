@@ -325,7 +325,7 @@ Script N(script_Defeat_8024191C) = SCRIPT({
     GetBattleOutcome(SI_VAR(0));
     match SI_VAR(0) {
         == 0 {
-        0:
+0:
             if (SI_MAP_VAR(0) == 0) {
                 sleep 1;
                 goto 0;

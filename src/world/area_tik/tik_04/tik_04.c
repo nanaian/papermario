@@ -425,8 +425,7 @@ Script N(main) = SCRIPT({
         == 3 {
             SI_VAR(10) = N(script_80241CB4);
             spawn N(script_80240DBC);
-        }
-        else {
+        } else {
             SI_VAR(0) = N(script_80241CB4);
             spawn EnterWalk;
         }

@@ -181,8 +181,7 @@ Script N(script_EnterWalk_80240F30) = SCRIPT({
         }
         6, 7 {
             spawn N(script_80240EB0);
-        }
-        else {
+        } else {
             SI_VAR(0) = N(script_80240EB0);
             spawn EnterWalk;
         }
@@ -1193,8 +1192,7 @@ Script N(script_Interact_80244DA8) = SCRIPT({
             SetNpcPos(-1, 0, 0xFFFFFC18, 0);
             SI_SAVE_FLAG(1788) = 0;
             SI_SAVE_VAR(354) += 1;
-        }
-        else {
+        } else {
             SpeakToPlayer(-1, 0x830404, 0x830401, 0, 0xD00F3);
         }
     }

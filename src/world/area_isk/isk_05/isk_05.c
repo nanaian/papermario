@@ -272,7 +272,7 @@ Script N(script_Idle_80242658) = SCRIPT({
         sleep 5;
         PlaySoundAtCollider(2, 614, 0);
         MakeLerp(65, 0, 15, 1);
-    101:
+101:
         UpdateLerp();
         TranslateGroup(31, 0, SI_VAR(0), 0);
         sleep 1;
@@ -298,7 +298,7 @@ Script N(script_Idle_80242658) = SCRIPT({
     spawn {
         sleep 15;
         MakeLerp(0, 360, 15, 0);
-    10:
+10:
         UpdateLerp();
         func_80241D44_97F814(SI_VAR(0), 0, 0);
         sleep 1;
@@ -339,7 +339,7 @@ Script N(script_Defeat_80242A8C) = SCRIPT({
             spawn {
                 sleep 5;
                 MakeLerp(0, 65, 65, 0);
-            10:
+10:
                 UpdateLerp();
                 TranslateGroup(31, 0, SI_VAR(0), 0);
                 sleep 1;

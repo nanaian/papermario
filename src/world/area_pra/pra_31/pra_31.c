@@ -264,7 +264,7 @@ Script N(script_802411A4) = SCRIPT({
             RemoveKeyItemAt(SI_VAR(1));
             GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_8024007C_D7EDDC(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |=c 50000;
+            SI_VAR(0) |= c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SetPlayerAnimation(0x60005);
             sleep 30;
@@ -321,15 +321,15 @@ Script N(script_8024146C) = {
 Script N(script_802414BC) = SCRIPT({
     func_80240410_D7F170();
     match SI_VAR(0) {
-    45..134
+        45..134
         SI_VAR(5) = 90;
         SI_VAR(6) = 0x4F0000;
         SI_VAR(10) = 90;
-    135..224
+        135..224
         SI_VAR(5) = 180;
         SI_VAR(6) = 0x4F0001;
         SI_VAR(10) = 270;
-    225..314
+        225..314
         SI_VAR(5) = 270;
         SI_VAR(6) = 0x4F0000;
         SI_VAR(10) = 270;
@@ -387,8 +387,7 @@ Script N(script_802414BC) = SCRIPT({
                 }
                 SetNpcRotation(-1, 0, 0, 0);
                 SetNpcYaw(-1, SI_VAR(10));
-            }
-            else {
+            } else {
                 spawn {
                     sleep 15;
                     SetNpcYaw(-1, SI_VAR(10));

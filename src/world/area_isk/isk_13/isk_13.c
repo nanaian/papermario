@@ -250,7 +250,7 @@ Script N(script_Idle_802426F4) = SCRIPT({
     spawn {
         sleep 5;
         MakeLerp(0, 360, 10, 10);
-    10:
+10:
         UpdateLerp();
         func_80241E34_991614(SI_VAR(0), 0, 90.0);
         sleep 1;

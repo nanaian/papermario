@@ -134,7 +134,7 @@ MapConfig N(header) = {
 
 Script N(script_80240D90) = SCRIPT({
     match SI_SAVE_VAR(0) {
-    0xFFFFFFF3..5
+        0xFFFFFFF3..5
         SetMusicTrack(0, 74, 0, 6);
         else {
             SetMusicTrack(0, 0, 0, 6);
@@ -261,7 +261,7 @@ Script N(script_802410B0) = SCRIPT({
 Script N(script_802413EC) = SCRIPT({
     group 11;
     spawn {
-    0:
+0:
         RandInt(50, SI_VAR(0));
         SI_VAR(0) += 10;
         func_80240170_A0BE60();
@@ -269,7 +269,7 @@ Script N(script_802413EC) = SCRIPT({
         goto 0;
     }
     spawn {
-    1:
+1:
         RandInt(50, SI_VAR(0));
         SI_VAR(0) += 20;
         func_8024036C_A0C05C();
@@ -277,7 +277,7 @@ Script N(script_802413EC) = SCRIPT({
         goto 1;
     }
     spawn {
-    2:
+2:
         RandInt(50, SI_VAR(0));
         SI_VAR(0) += 20;
         func_80240584_A0C274();
@@ -292,7 +292,7 @@ Script N(script_ExitWalk_80241554) = SCRIPT({
     UseExitHeading(60, 0);
     spawn ExitWalk;
     match SI_SAVE_VAR(0) {
-    0xFFFFFF81..95
+        0xFFFFFF81..95
         GotoMap(D_80244B60_A10850, 1);
         else {
             GotoMap(D_80244B58_A10848, 1);
@@ -788,7 +788,7 @@ Script N(script_80242F20) = SCRIPT({
     spawn {
         SI_VAR(3) = 360;
         loop 3 {
-        22:
+22:
             sleep 1;
             SI_VAR(3) -= 45;
             if (SI_VAR(3) > 0) {
@@ -842,9 +842,9 @@ Script N(script_80242F20) = SCRIPT({
     LoadPath(70, N(vectorList_802429D4), 10, 0);
 1:
     GetNextPathPos();
-    SI_VAR(1) +=f SI_VAR(4);
-    SI_VAR(2) +=f SI_VAR(5);
-    SI_VAR(3) +=f SI_VAR(6);
+    SI_VAR(1) += f SI_VAR(4);
+    SI_VAR(2) += f SI_VAR(5);
+    SI_VAR(3) += f SI_VAR(6);
     SetNpcPos(0, SI_VAR(1), SI_VAR(2), SI_VAR(3));
     func_80240994_A0C684();
     sleep 1;
@@ -921,7 +921,7 @@ Script N(script_80242F20) = SCRIPT({
             goto 15;
         }
     } else {
-    15:
+15:
         ContinueSpeech(0, 0x200009, 0x200001, 0, 0xA0016);
         SpeakToPlayer(0xFFFFFFFC, 0x10008, 0x10001, 0, 0xA0017);
         SpeakToPlayer(0, 0x200009, 0x200001, 0, 0xA0018);
@@ -1055,9 +1055,9 @@ Script N(script_80244210) = SCRIPT({
     LoadPath(85, N(vectorList_80242A88), 8, 0);
 0:
     GetNextPathPos();
-    SI_VAR(1) +=f SI_VAR(4);
-    SI_VAR(2) +=f SI_VAR(5);
-    SI_VAR(3) +=f SI_VAR(6);
+    SI_VAR(1) += f SI_VAR(4);
+    SI_VAR(2) += f SI_VAR(5);
+    SI_VAR(3) += f SI_VAR(6);
     SetNpcPos(0, SI_VAR(1), SI_VAR(2), SI_VAR(3));
     func_80240994_A0C684();
     sleep 1;
@@ -1067,7 +1067,7 @@ Script N(script_80244210) = SCRIPT({
     sleep 45;
     spawn {
         LoadPath(60, N(vectorList_80242AE8), 6, 0);
-    1:
+1:
         GetNextPathPos();
         SetNpcPos(0, SI_VAR(1), SI_VAR(2), SI_VAR(3));
         func_80240994_A0C684();
@@ -1092,11 +1092,11 @@ Script N(script_80244210) = SCRIPT({
     spawn {
         GetNpcPos(0, SI_VAR(4), SI_VAR(5), SI_VAR(6));
         LoadPath(120, N(vectorList_80242B30), 9, 1);
-    2:
+2:
         GetNextPathPos();
-        SI_VAR(1) +=f SI_VAR(4);
-        SI_VAR(2) +=f SI_VAR(5);
-        SI_VAR(3) +=f SI_VAR(6);
+        SI_VAR(1) += f SI_VAR(4);
+        SI_VAR(2) += f SI_VAR(5);
+        SI_VAR(3) += f SI_VAR(6);
         SetNpcPos(0, SI_VAR(1), SI_VAR(2), SI_VAR(3));
         func_80240994_A0C684();
         sleep 1;

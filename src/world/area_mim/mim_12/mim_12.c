@@ -62,8 +62,7 @@ Script N(script_80240640) = SCRIPT({
     match SI_SAVE_VAR(0) {
         < 0xFFFFFFD0 {
             SetMusicTrack(0, 27, 1, 8);
-        }
-        else {
+        } else {
             SetMusicTrack(0, 26, 0, 8);
         }
     }
@@ -77,8 +76,7 @@ Script N(script_802406C0) = SCRIPT({
         }
         < 0xFFFFFFF0 {
             SetMusicTrack(0, 31, 0, 8);
-        }
-        else {
+        } else {
             SetMusicTrack(0, 29, 0, 8);
         }
     }

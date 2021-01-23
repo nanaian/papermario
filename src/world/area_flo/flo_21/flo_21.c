@@ -121,8 +121,7 @@ Script N(script_80240E3C) = SCRIPT({
         }
         == 56 {
             SI_VAR(0) = 1;
-        }
-        else {
+        } else {
             return;
         }
     }
@@ -256,7 +255,7 @@ Script N(script_802415E0) = SCRIPT({
 Script N(script_80241600) = SCRIPT({
     spawn {
         SI_VAR(15) = 0;
-    0:
+0:
         func_80240B40_CE7240(SI_VAR(15), SI_VAR(0), 0.96875, 1.03125, 15, 0, 0);
         func_80240B40_CE7240(SI_VAR(15), SI_VAR(1), 1.03125, 0.96875, 15, 0, 0);
         ScaleModel(88, SI_VAR(1), SI_VAR(0), 1);
@@ -357,7 +356,7 @@ Script N(script_80241920) = SCRIPT({
     spawn {
         SetPlayerAnimation(0x80017);
         LoadPath(30, N(vectorList_8024189C), 3, 0);
-    0:
+0:
         GetNextPathPos();
         SetPlayerPos(SI_VAR(1), SI_VAR(2), SI_VAR(3));
         sleep 1;
@@ -481,8 +480,7 @@ Script N(script_80242290) = SCRIPT({
         == 1 {
             SI_VAR(3) = 5;
             SI_VAR(2) = 1;
-        }
-        else {
+        } else {
             return;
         }
     }

@@ -413,8 +413,7 @@ Script N(script_Init_80241A94) = SCRIPT({
         >= 0xFFFFFFDC {
             SetNpcPos(1, 30, 70, 0xFFFFFFB5);
             SetNpcYaw(1, 270);
-        }
-        else {
+        } else {
         }
     }
 });

@@ -127,7 +127,7 @@ Script N(script_80240BC0) = SCRIPT({
     } else {
         GetEntryID(SI_VAR(0));
         match SI_VAR(0) {
-        2..3
+            2..3
             SetMusicTrack(0, 33, 0, 8);
             else {
                 SetMusicTrack(0, 32, 0, 8);
@@ -175,7 +175,7 @@ Script N(script_EnterWalk_80240E08) = SCRIPT({
     }
     GetEntryID(SI_VAR(0));
     match SI_VAR(0) {
-    2..3
+        2..3
         spawn N(script_80240DA4);
         sleep 3;
         else {
@@ -749,7 +749,7 @@ Script N(script_80243258) = SCRIPT({
 
 Script N(script_80243318) = SCRIPT({
     match SI_AREA_VAR(5) {
-    0..1
+        0..1
         match SI_AREA_VAR(6) {
             == 0 {
                 GotoMapSpecial(D_80245988_DBD298, 2, 1);
@@ -1109,7 +1109,7 @@ Script N(script_80244518) = SCRIPT({
         SI_MAP_FLAG(0) = 1;
         sleep 1;
         SI_VAR(11) = spawn N(script_80242918);
-    10:
+10:
         if (SI_MAP_FLAG(0) == 1) {
             sleep 1;
             goto 10;
@@ -1134,7 +1134,7 @@ Script N(script_80244518) = SCRIPT({
         SI_MAP_FLAG(0) = 1;
         sleep 1;
         spawn N(script_802435BC);
-    20:
+20:
         if (SI_MAP_VAR(11) > 0xFFFFFE20) {
             sleep 1;
             goto 20;
@@ -1169,7 +1169,7 @@ Script N(script_80244840) = SCRIPT({
         SI_MAP_FLAG(0) = 1;
         sleep 1;
         SI_VAR(11) = spawn N(script_80242918);
-    10:
+10:
         if (SI_MAP_FLAG(0) == 1) {
             sleep 1;
             goto 10;
@@ -1194,7 +1194,7 @@ Script N(script_80244840) = SCRIPT({
         SI_MAP_FLAG(0) = 1;
         sleep 1;
         spawn N(script_802435BC);
-    20:
+20:
         if (SI_MAP_VAR(11) < 350) {
             sleep 1;
             goto 20;
@@ -1313,8 +1313,7 @@ Script N(script_80244F40) = SCRIPT({
             }
             == 3 {
                 spawn N(script_80244518);
-            }
-            else {
+            } else {
                 SI_MAP_VAR(0) = 0;
                 SI_MAP_VAR(1) = N(unk_80244F28);
                 SI_MAP_VAR(2) = 0;
@@ -1377,8 +1376,7 @@ Script N(script_Interact_8024511C) = SCRIPT({
         }
         < 4 {
             SpeakToPlayer(-1, 0x8C0104, 0x8C0101, 0, 0xF0029);
-        }
-        else {
+        } else {
             SpeakToPlayer(-1, 0x8C0104, 0x8C0101, 0, 0xF002A);
         }
     }

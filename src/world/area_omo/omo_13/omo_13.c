@@ -431,7 +431,7 @@ Script N(script_Idle_802422A8) = SCRIPT({
     }
     if (SI_VAR(0) == 1) {
         StartBossBattle(3);
-    1:
+1:
         GetSelfVar(0, SI_VAR(0));
         if (SI_VAR(0) != 0) {
             sleep 1;
@@ -460,7 +460,7 @@ Script N(script_Idle_802422A8) = SCRIPT({
         InterpNpcYaw(-1, 90, 0);
         SetNpcAnimation(-1, 0x3B0515);
         SetNpcFlagBits(-1, 256, 0);
-    9:
+9:
         sleep 1;
         goto 9;
     }

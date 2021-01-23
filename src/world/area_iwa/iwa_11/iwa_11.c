@@ -128,11 +128,11 @@ s32 pad_00063C[] = {
 
 Script N(script_80240640) = SCRIPT({
     PlaySoundAtModel(14, 0xB000001A, 0);
-    SI_VAR(0) =f SI_MAP_VAR(0);
+    SI_VAR(0) = f SI_MAP_VAR(0);
     if (SI_MAP_FLAG(5) == 0) {
-        SI_VAR(0) +=f 0xFFFFFECA;
+        SI_VAR(0) += f 0xFFFFFECA;
     } else {
-        SI_VAR(0) +=f 0xFFFFFE3E;
+        SI_VAR(0) += f 0xFFFFFE3E;
     }
     SI_VAR(1) = 140;
     SI_VAR(2) = 0;
@@ -143,7 +143,7 @@ Script N(script_80240640) = SCRIPT({
     loop 20 {
         TranslateModel(SI_VAR(11), SI_VAR(0), SI_VAR(1), SI_VAR(2));
         ScaleModel(SI_VAR(11), SI_VAR(3), SI_VAR(3), 1);
-        SI_VAR(1) +=f SI_VAR(4);
+        SI_VAR(1) += f SI_VAR(4);
         SI_VAR(3) += 0.046875;
         SI_VAR(4) *= 0.90625;
         sleep 1;
@@ -262,7 +262,7 @@ Script N(script_802407B8) = SCRIPT({
         func_80240020_926A10(SI_VAR(13), SI_VAR(0), 0.703125, 1.0, 10, 0, 180);
         func_80240020_926A10(SI_VAR(13), SI_VAR(2), 0.0, 0.296875, 10, 0, 180);
         SI_VAR(1) = 0.296875;
-        SI_VAR(1) -=f SI_VAR(2);
+        SI_VAR(1) -= f SI_VAR(2);
         SI_VAR(1) += 1.0;
         ScaleModel(14, SI_VAR(1), SI_VAR(0), SI_VAR(1));
         ScaleModel(13, SI_VAR(1), SI_VAR(0), SI_VAR(1));
@@ -270,7 +270,7 @@ Script N(script_802407B8) = SCRIPT({
         SI_VAR(0) = 1.0;
         SI_VAR(2) = 0.296875;
         SI_VAR(1) = 0.296875;
-        SI_VAR(1) -=f SI_VAR(2);
+        SI_VAR(1) -= f SI_VAR(2);
         SI_VAR(1) += 1.0;
         ScaleModel(14, SI_VAR(1), SI_VAR(0), SI_VAR(1));
         ScaleModel(13, SI_VAR(1), SI_VAR(0), SI_VAR(1));

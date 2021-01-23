@@ -217,7 +217,7 @@ Script N(main) = SCRIPT({
     SetMusicTrack(0, 32, 0, 8);
     GetEntryID(SI_VAR(0));
     match SI_VAR(0) {
-    4..5
+        4..5
         await N(script_80245DE4);
         sleep 3;
         else {
@@ -707,7 +707,7 @@ Script N(script_802458F8) = SCRIPT({
 
 Script N(script_802459B8) = SCRIPT({
     match SI_AREA_VAR(5) {
-    0..1
+        0..1
         match SI_AREA_VAR(6) {
             == 0 {
                 GotoMapSpecial(D_802475F8_DF6498, 2, 1);
@@ -816,7 +816,7 @@ Script N(script_80245DE4) = SCRIPT({
             spawn N(script_80243DF0);
             SI_MAP_FLAG(0) = 1;
             spawn {
-            10:
+10:
                 if (SI_MAP_VAR(11) < 600) {
                     sleep 1;
                     goto 10;
@@ -832,7 +832,7 @@ Script N(script_80245DE4) = SCRIPT({
             spawn N(script_80243DF0);
             SI_MAP_FLAG(0) = 1;
             spawn {
-            20:
+20:
                 if (SI_MAP_VAR(11) > 0xFFFFFDA8) {
                     sleep 1;
                     goto 20;

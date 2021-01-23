@@ -288,8 +288,7 @@ Script N(script_EnterWalk_80240ECC) = SCRIPT({
         }
         == 5 {
             spawn N(script_80241670);
-        }
-        else {
+        } else {
             await N(script_80240E80);
             SI_VAR(0) = N(script_80240E1C);
             spawn EnterWalk;
@@ -434,7 +433,7 @@ Script N(script_80241670) = SCRIPT({
     spawn {
         PlaySound(387);
         LoadPath(45, N(vectorList_80241640), 4, 0);
-    90:
+90:
         GetNextPathPos();
         SI_MAP_VAR(10) = SI_VAR(1);
         SI_MAP_VAR(11) = SI_VAR(2);

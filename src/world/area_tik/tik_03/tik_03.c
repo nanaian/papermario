@@ -371,8 +371,7 @@ Script N(script_EnterWalk_80241A68) = SCRIPT({
             SI_VAR(10) = N(script_80241A20);
             SI_VAR(11) = 6;
             spawn N(script_80240EC4);
-        }
-        else {
+        } else {
             SI_VAR(0) = N(script_80241A20);
             spawn EnterWalk;
         }
@@ -638,9 +637,9 @@ Script N(script_80242940) = SCRIPT({
     ParentColliderToModel(SI_VAR(11), SI_VAR(10));
     SI_VAR(0) = 0.0;
     SI_VAR(13) = -300.0;
-    SI_VAR(13) -=f SI_VAR(12);
+    SI_VAR(13) -= f SI_VAR(12);
 0:
-    SI_VAR(1) =f SI_VAR(12);
+    SI_VAR(1) = f SI_VAR(12);
     SI_VAR(0) -= 80.0;
 1:
     func_80240960_86F460();
@@ -653,7 +652,7 @@ Script N(script_80242940) = SCRIPT({
         goto 1;
     }
     TranslateModel(SI_VAR(10), 0, SI_VAR(13), 0);
-    SI_VAR(0) =f SI_VAR(13);
+    SI_VAR(0) = f SI_VAR(13);
     SI_VAR(12) = -300.0;
     sleep 1;
     goto 0;

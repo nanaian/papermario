@@ -90,8 +90,7 @@ Script N(script_802403E0) = SCRIPT({
     match SI_SAVE_VAR(0) {
         < 53 {
             SetMusicTrack(0, 48, 0, 8);
-        }
-        else {
+        } else {
             SetMusicTrack(0, 49, 0, 8);
         }
     }
@@ -106,10 +105,10 @@ Script N(script_80240450) = SCRIPT({
     SI_VAR(14) = SI_VAR(4);
     SI_VAR(12) -= SI_VAR(0);
     SI_VAR(13) -= SI_VAR(1);
-    SI_VAR(0) =f SI_VAR(12);
+    SI_VAR(0) = f SI_VAR(12);
     SI_VAR(0) /= 100.0;
     SI_VAR(15) = 100.0;
-    SI_VAR(15) /=f SI_VAR(0);
+    SI_VAR(15) /= f SI_VAR(0);
     SI_VAR(15) += 11;
     SI_VAR(5) = 200;
     SI_VAR(5) /= SI_VAR(15);
@@ -784,7 +783,7 @@ Script N(script_Defeat_80242AC4) = SCRIPT({
     GetBattleOutcome(SI_VAR(0));
     match SI_VAR(0) {
         == 0 {
-        0:
+0:
             if (SI_MAP_VAR(0) == 0) {
                 sleep 1;
                 goto 0;

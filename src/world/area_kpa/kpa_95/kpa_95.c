@@ -737,7 +737,7 @@ Script N(script_8024436C) = SCRIPT({
     await N(script_80244774);
     spawn {
         MakeLerp(0, 255, 60, 0);
-    0:
+0:
         UpdateLerp();
         func_80241650_A8E0D0(3, SI_VAR(0));
         sleep 1;
@@ -752,7 +752,7 @@ Script N(script_8024436C) = SCRIPT({
         func_802418CC_A8E34C(SI_VAR(10));
         sleep 45;
         MakeLerp(255, 0, 30, 0);
-    1:
+1:
         UpdateLerp();
         func_80241650_A8E0D0(0, SI_VAR(0));
         sleep 1;

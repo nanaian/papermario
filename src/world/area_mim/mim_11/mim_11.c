@@ -112,8 +112,7 @@ Script N(script_80240C60) = SCRIPT({
     match SI_SAVE_VAR(0) {
         < 0xFFFFFFD0 {
             SetMusicTrack(0, 27, 1, 8);
-        }
-        else {
+        } else {
             SetMusicTrack(0, 26, 0, 8);
         }
     }
@@ -812,8 +811,7 @@ Script N(script_Init_802433B8) = SCRIPT({
         < 0xFFFFFFD1 {
             EnableNpcShadow(-1, 0);
             0x802CFD30(-1, 7, 0, 0, 0, 0);
-        }
-        else {
+        } else {
             RemoveNpc(-1);
         }
     }

@@ -120,8 +120,7 @@ Script N(script_80241780) = SCRIPT({
         }
         < 0xFFFFFFF0 {
             SetMusicTrack(0, 31, 0, 8);
-        }
-        else {
+        } else {
             SetMusicTrack(0, 29, 0, 8);
         }
     }
@@ -286,7 +285,7 @@ Script N(script_80241CD4) = SCRIPT({
             RemoveKeyItemAt(SI_VAR(1));
             GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_80241424_BE01B4(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |=c 50000;
+            SI_VAR(0) |= c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SetPlayerAnimation(0x60005);
             sleep 30;
@@ -509,7 +508,7 @@ Script N(script_802429D4) = SCRIPT({
     }
     spawn {
         MakeLerp(0, 255, 40, 0);
-    10:
+10:
         UpdateLerp();
         0x802CFD30(4, 7, SI_VAR(0), 0, 0, 0);
         sleep 1;
@@ -530,7 +529,7 @@ Script N(script_80242B0C) = SCRIPT({
     }
     spawn {
         MakeLerp(255, 0, 40, 0);
-    10:
+10:
         UpdateLerp();
         0x802CFD30(4, 7, SI_VAR(0), 0, 0, 0);
         sleep 1;
@@ -756,13 +755,13 @@ Script N(script_Idle_80243D28) = SCRIPT({
     SI_VAR(4) += 60;
     loop {
         RandInt(5, SI_VAR(5));
-        SI_VAR(6) =f SI_VAR(5);
+        SI_VAR(6) = f SI_VAR(5);
         SI_VAR(6) *= 0.1005859375;
         SI_VAR(6) += 0.80078125;
         SetNpcSpeed(-1, SI_VAR(6));
         NpcMoveTo(-1, SI_VAR(3), SI_VAR(2), 0);
         RandInt(5, SI_VAR(5));
-        SI_VAR(6) =f SI_VAR(5);
+        SI_VAR(6) = f SI_VAR(5);
         SI_VAR(6) *= 0.1005859375;
         SI_VAR(6) += 0.80078125;
         SetNpcSpeed(-1, SI_VAR(6));

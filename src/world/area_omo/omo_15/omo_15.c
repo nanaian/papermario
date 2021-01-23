@@ -68,8 +68,7 @@ Script N(script_80240850) = SCRIPT({
         }
         == 4 {
             FadeOutMusic(0, 500);
-        }
-        else {
+        } else {
             SetMusicTrack(0, 32, 0, 8);
         }
     }
@@ -83,8 +82,7 @@ Script N(script_802408E0) = SCRIPT({
         }
         == 4 {
             SI_VAR(0) = 1;
-        }
-        else {
+        } else {
             return;
         }
     }

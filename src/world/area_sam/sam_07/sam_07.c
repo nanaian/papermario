@@ -236,7 +236,7 @@ Script N(script_80242784) = SCRIPT({
         PlaySoundAtCollider(22, 921, 0);
         SI_VAR(8) -= 0xFFFFFF4C;
         MakeLerp(0xFFFFFF4C, 0, 120, 10);
-    0:
+0:
         UpdateLerp();
         TranslateModel(22, 0, SI_VAR(0), 0);
         TranslateModel(23, 0, SI_VAR(0), 0);
@@ -257,7 +257,7 @@ Script N(script_80242784) = SCRIPT({
         EnableModel(135, 0);
         PlaySoundAtCollider(22, 922, 0);
         MakeLerp(0, 0xFFFFFF4C, 120, 10);
-    1:
+1:
         UpdateLerp();
         TranslateModel(22, 0, SI_VAR(0), 0);
         TranslateModel(23, 0, SI_VAR(0), 0);

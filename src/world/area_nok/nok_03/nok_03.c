@@ -113,7 +113,7 @@ Script N(script_802410AC) = SCRIPT({
         SI_VAR(0) = 0;
         SI_VAR(1) = 0;
         SI_VAR(2) = 0;
-    10:
+10:
         SetTexPanOffset(1, 0, SI_VAR(0), 0);
         SetTexPanOffset(1, 1, SI_VAR(1), SI_VAR(2));
         SI_VAR(0) -= 100;
@@ -234,7 +234,7 @@ NpcSettings N(npcSettings_802414A4) = {
 
 Script N(script_Idle_802414D0) = SCRIPT({
     spawn {
-    0:
+0:
         GetNpcPos(4, SI_VAR(0), SI_VAR(1), SI_VAR(2));
         SI_VAR(2) += 2;
         SetNpcPos(5, SI_VAR(0), SI_VAR(1), SI_VAR(2));

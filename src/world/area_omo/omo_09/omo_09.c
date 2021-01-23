@@ -315,7 +315,7 @@ Script N(script_80243AB0) = SCRIPT({
     EnableTexPanning(83, 1);
     spawn {
         SI_VAR(0) = 0;
-    0:
+0:
         func_80240054_DCCD24();
         SI_VAR(1) += 0xFFFFFB00;
         SetTexPanOffset(1, 0, 0, SI_VAR(1));
@@ -326,7 +326,7 @@ Script N(script_80243AB0) = SCRIPT({
         goto 0;
     }
     spawn {
-    10:
+10:
         func_80240078_DCCD48();
         sleep 1;
         goto 10;
@@ -908,8 +908,7 @@ Script N(script_802456FC) = SCRIPT({
                         SetNpcFlagBits(3, 64, 0);
                     }
                     sleep 20;
-                }
-                else {
+                } else {
                     SI_MAP_VAR(11) = 2.0;
                 }
             }
@@ -934,8 +933,7 @@ Script N(script_802456FC) = SCRIPT({
                     await N(script_80243CBC);
                     MakeItemEntity(343, 535, 150, 50, 3, 0);
                     sleep 30;
-                }
-                else {
+                } else {
                     SI_MAP_VAR(11) = 2.0;
                 }
             }
@@ -960,8 +958,7 @@ Script N(script_802456FC) = SCRIPT({
                     await N(script_80243CBC);
                     MakeItemEntity(138, 535, 150, 50, 3, 0);
                     sleep 30;
-                }
-                else {
+                } else {
                     SI_MAP_VAR(11) = 2.0;
                 }
             }
@@ -1886,7 +1883,7 @@ Script N(script_Init_8024931C) = SCRIPT({
     SI_VAR(0) = 8;
     SI_VAR(1) = 37;
     SI_VAR(2) = 1;
-    SI_VAR(3) =c 0xF8405FFD;
+    SI_VAR(3) = c 0xF8405FFD;
     spawn N(script_80247B6C);
 });
 
@@ -2045,12 +2042,12 @@ Script N(script_8024A01C) = SCRIPT({
         SI_VAR(3) = SI_VAR(9);
         SI_VAR(4) = SI_VAR(10);
         SI_VAR(5) = SI_VAR(11);
-        SI_VAR(3) -=f SI_VAR(6);
-        SI_VAR(4) -=f SI_VAR(7);
-        SI_VAR(5) -=f SI_VAR(8);
-        SI_VAR(6) =f SI_VAR(9);
-        SI_VAR(7) =f SI_VAR(10);
-        SI_VAR(8) =f SI_VAR(11);
+        SI_VAR(3) -= f SI_VAR(6);
+        SI_VAR(4) -= f SI_VAR(7);
+        SI_VAR(5) -= f SI_VAR(8);
+        SI_VAR(6) = f SI_VAR(9);
+        SI_VAR(7) = f SI_VAR(10);
+        SI_VAR(8) = f SI_VAR(11);
         if (SI_VAR(3) != 0) {
             if (SI_VAR(5) != 0) {
                 PlayEffect(31, 0, SI_VAR(0), SI_VAR(1), SI_VAR(2), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1.0, 0, 0, 0, 0, 0);

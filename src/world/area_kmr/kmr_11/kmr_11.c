@@ -609,7 +609,7 @@ Script N(script_80242170) = SCRIPT({
     sleep 10;
     spawn {
         MakeLerp(100, 10, 150, 0);
-    0:
+0:
         UpdateLerp();
         SI_VAR(0) *= 0.0107421875;
         SetNpcScale(2, SI_VAR(0), SI_VAR(0), SI_VAR(0));
@@ -1066,7 +1066,7 @@ Script N(script_Idle_80244390) = SCRIPT({
                 SetPlayerSpeed(3.0);
                 PlayerMoveTo(0xFFFFFDCC, 0xFFFFFFC0, 0);
             } else {
-            0:
+0:
                 GetSelfVar(0, SI_VAR(0));
                 if (SI_VAR(0) == 0) {
                     sleep 1;
@@ -1544,7 +1544,7 @@ Script N(script_802460C0) = SCRIPT({
     spawn {
         GetNpcPos(4, SI_VAR(7), SI_VAR(8), SI_VAR(9));
         LoadPath(80, N(vectorList_80246090), 4, 0);
-    0:
+0:
         GetNextPathPos();
         SI_VAR(1) += SI_VAR(7);
         SI_VAR(2) += SI_VAR(8);

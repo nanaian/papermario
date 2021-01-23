@@ -748,9 +748,9 @@ Script N(script_802449C0) = SCRIPT({
     ParentColliderToModel(SI_VAR(11), SI_VAR(10));
     SI_VAR(0) = 0.0;
     SI_VAR(13) = -90.0;
-    SI_VAR(13) -=f SI_VAR(12);
+    SI_VAR(13) -= f SI_VAR(12);
 0:
-    SI_VAR(1) =f SI_VAR(12);
+    SI_VAR(1) = f SI_VAR(12);
 1:
     func_80241390_87AF70();
     SI_VAR(0) += 1.5;
@@ -762,7 +762,7 @@ Script N(script_802449C0) = SCRIPT({
         goto 1;
     }
     TranslateModel(SI_VAR(10), 0, SI_VAR(13), 0);
-    SI_VAR(0) =f SI_VAR(13);
+    SI_VAR(0) = f SI_VAR(13);
     SI_VAR(12) = -90.0;
     sleep 1;
     goto 0;

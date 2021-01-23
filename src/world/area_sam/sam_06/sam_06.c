@@ -638,9 +638,9 @@ Script N(main) = SCRIPT({
     }
     spawn {
         SI_VAR(2) = 0;
-    0:
+0:
         MakeLerp(100, 90, 5, 0);
-    1:
+1:
         UpdateLerp();
         SI_VAR(0) *= 0.0107421875;
         SI_VAR(2) += 8;
@@ -650,7 +650,7 @@ Script N(main) = SCRIPT({
             goto 1;
         }
         MakeLerp(90, 100, 5, 0);
-    2:
+2:
         UpdateLerp();
         SI_VAR(0) *= 0.0107421875;
         SI_VAR(2) += 8;
@@ -1047,7 +1047,7 @@ Script N(script_8024443C) = SCRIPT({
             RemoveKeyItemAt(SI_VAR(1));
             GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_80241BBC_D21A4C(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |=c 50000;
+            SI_VAR(0) |= c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SetPlayerAnimation(0x60005);
             sleep 30;
@@ -1506,7 +1506,7 @@ Script N(script_Interact_80246A94) = SCRIPT({
     await N(script_80249AB0);
     spawn {
         MakeLerp(0, 255, 60, 0);
-    0:
+0:
         UpdateLerp();
         func_80241F98_D21E28(3, SI_VAR(0));
         sleep 1;
@@ -1521,7 +1521,7 @@ Script N(script_Interact_80246A94) = SCRIPT({
         func_80242214_D220A4(SI_VAR(10));
         sleep 45;
         MakeLerp(255, 0, 30, 0);
-    1:
+1:
         UpdateLerp();
         func_80241F98_D21E28(0, SI_VAR(0));
         sleep 1;
@@ -1558,7 +1558,7 @@ Script N(script_80246EBC) = SCRIPT({
             DisablePartnerAI(0);
             GetNpcPos(0xFFFFFFFC, SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_8024233C_D221CC(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |=c 50000;
+            SI_VAR(0) |= c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SI_VAR(10) = spawn N(script_80246E3C);
             SetNpcAnimation(0xFFFFFFFC, 0x40002);
@@ -1634,8 +1634,7 @@ Script N(script_80247250) = SCRIPT({
                     SpeakToPlayer(0xFFFFFFFC, 0x40006, 0x40001, 5, SI_VAR(8));
                     EnablePartnerAI();
                     SI_VAR(12) = 1;
-                }
-                else {
+                } else {
                     DisablePartnerAI(0);
                     sleep 1;
                     SpeakToPlayer(0xFFFFFFFC, 0x40006, 0x40001, 5, SI_VAR(9));
@@ -1898,7 +1897,7 @@ Script N(script_802480C4) = SCRIPT({
     }
     spawn {
         MakeLerp(0, 90, 10, 1);
-    71:
+71:
         UpdateLerp();
         RotateGroup(74, SI_VAR(0), 0, 0, 1);
         RotateGroup(71, SI_VAR(0), 0, 0, -1);

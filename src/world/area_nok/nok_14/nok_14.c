@@ -160,7 +160,7 @@ Script N(script_80242648) = SCRIPT({
         SI_VAR(0) = 0;
         SI_VAR(1) = 0;
         SI_VAR(2) = 0;
-    10:
+10:
         SetTexPanOffset(1, 0, SI_VAR(0), 0);
         SetTexPanOffset(1, 1, SI_VAR(1), SI_VAR(2));
         SI_VAR(0) -= 100;
@@ -175,7 +175,7 @@ Script N(script_80242648) = SCRIPT({
         SI_VAR(0) = 0;
         SI_VAR(1) = 0;
         SI_VAR(2) = 0;
-    20:
+20:
         SetTexPanOffset(2, 0, SI_VAR(0), 0);
         SetTexPanOffset(2, 1, SI_VAR(1), SI_VAR(2));
         SI_VAR(0) -= 100;
@@ -329,7 +329,7 @@ Script N(script_80242F70) = SCRIPT({
     PlaySoundAt(103, 0, 0xFFFFFFAC, 0, 0xFFFFFFC4);
     spawn {
         MakeLerp(0, 90, 8, 10);
-    20:
+20:
         UpdateLerp();
         RotateModel(55, SI_VAR(0), -1, 0, 0);
         sleep 1;
@@ -341,7 +341,7 @@ Script N(script_80242F70) = SCRIPT({
     PlaySoundAt(104, 0, 0xFFFFFFC8, 0, 0xFFFFFFC4);
     spawn {
         MakeLerp(0, 90, 8, 0);
-    24:
+24:
         UpdateLerp();
         RotateModel(62, SI_VAR(0), 1, 0, 0);
         sleep 1;
@@ -353,7 +353,7 @@ Script N(script_80242F70) = SCRIPT({
     PlaySoundAt(105, 0, 0xFFFFFFE4, 0, 0xFFFFFFC4);
     spawn {
         MakeLerp(0, 90, 8, 0);
-    21:
+21:
         UpdateLerp();
         RotateModel(69, SI_VAR(0), -1, 0, 0);
         sleep 1;
@@ -365,7 +365,7 @@ Script N(script_80242F70) = SCRIPT({
     PlaySoundAt(106, 0, 0, 0, 0xFFFFFFC4);
     spawn {
         MakeLerp(0, 90, 8, 0);
-    25:
+25:
         UpdateLerp();
         RotateModel(76, SI_VAR(0), 1, 0, 0);
         sleep 1;
@@ -377,7 +377,7 @@ Script N(script_80242F70) = SCRIPT({
     PlaySoundAt(107, 0, 28, 0, 0xFFFFFFC4);
     spawn {
         MakeLerp(0, 90, 8, 0);
-    22:
+22:
         UpdateLerp();
         RotateModel(83, SI_VAR(0), -1, 0, 0);
         sleep 1;
@@ -389,7 +389,7 @@ Script N(script_80242F70) = SCRIPT({
     PlaySoundAt(108, 0, 56, 0, 0xFFFFFFC4);
     spawn {
         MakeLerp(0, 90, 8, 0);
-    26:
+26:
         UpdateLerp();
         RotateModel(90, SI_VAR(0), 1, 0, 0);
         sleep 1;
@@ -401,7 +401,7 @@ Script N(script_80242F70) = SCRIPT({
     PlaySoundAt(109, 0, 84, 0, 0xFFFFFFC4);
     spawn {
         MakeLerp(0, 90, 8, 0);
-    23:
+23:
         UpdateLerp();
         RotateModel(96, SI_VAR(0), -1, 0, 0);
         sleep 1;
@@ -595,7 +595,7 @@ Script N(script_Idle_80243B28) = SCRIPT({
     SetNpcFlagBits(-1, 0x240040, 1);
     spawn {
         MakeLerp(0, 360, 20, 0);
-    1:
+1:
         UpdateLerp();
         SetNpcRotation(-1, 0, SI_VAR(0), 0);
         sleep 1;

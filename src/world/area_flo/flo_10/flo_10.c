@@ -120,8 +120,7 @@ Script N(script_802414E0) = SCRIPT({
         match SI_SAVE_VAR(0) {
             < 53 {
                 SetMusicTrack(0, 48, 0, 8);
-            }
-            else {
+            } else {
                 SetMusicTrack(0, 49, 0, 8);
             }
         }
@@ -164,10 +163,10 @@ Script N(script_80241680) = SCRIPT({
     SI_VAR(14) = SI_VAR(4);
     SI_VAR(12) -= SI_VAR(0);
     SI_VAR(13) -= SI_VAR(1);
-    SI_VAR(0) =f SI_VAR(12);
+    SI_VAR(0) = f SI_VAR(12);
     SI_VAR(0) /= 100.0;
     SI_VAR(15) = 100.0;
-    SI_VAR(15) /=f SI_VAR(0);
+    SI_VAR(15) /= f SI_VAR(0);
     SI_VAR(15) += 11;
     SI_VAR(5) = 200;
     SI_VAR(5) /= SI_VAR(15);
@@ -247,8 +246,7 @@ Script N(main) = SCRIPT({
         == 2 {
             spawn N(script_802427EC);
             spawn N(script_80241988);
-        }
-        else {
+        } else {
             ModifyColliderFlags(0, 1, 0x7FFFFE00);
             SI_VAR(0) = N(script_80241988);
             spawn EnterWalk;
@@ -308,8 +306,8 @@ Script N(script_80241E40) = SCRIPT({
     MakeLerp(0, 100, 90, 1);
 1:
     UpdateLerp();
-    SI_VAR(2) =f SI_VAR(0);
-    SI_VAR(3) =f SI_VAR(0);
+    SI_VAR(2) = f SI_VAR(0);
+    SI_VAR(3) = f SI_VAR(0);
     SI_VAR(2) /= 333.0;
     SI_VAR(3) /= 100.0;
     SI_VAR(2) += 0.703125;
@@ -430,8 +428,8 @@ Script N(script_802424DC) = SCRIPT({
     MakeLerp(100, 15, 150, 1);
 1:
     UpdateLerp();
-    SI_VAR(2) =f SI_VAR(0);
-    SI_VAR(3) =f SI_VAR(0);
+    SI_VAR(2) = f SI_VAR(0);
+    SI_VAR(3) = f SI_VAR(0);
     SI_VAR(2) /= 333.0;
     SI_VAR(3) /= 100.0;
     SI_VAR(2) += 0.703125;
@@ -699,8 +697,7 @@ Script N(script_8024339C) = SCRIPT({
                 0x802D5830(0);
                 sleep 10;
                 SpeakToPlayer(0, 0xC90004, 0xC90008, 0, 0x110081);
-            }
-            else {
+            } else {
                 GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
                 PlayerMoveTo(0xFFFFFFEF, 0xFFFFFFEF, 20);
                 0x802CF56C(2);
@@ -743,7 +740,7 @@ Script N(script_80243628) = SCRIPT({
     SI_VAR(1) -= SI_VAR(6);
     SI_VAR(4) += SI_VAR(6);
     match SI_VAR(3) {
-    SI_VAR(1)..SI_VAR(4)
+        SI_VAR(1)..SI_VAR(4)
         spawn {
             if (SI_VAR(3) < SI_VAR(0)) {
                 SI_VAR(0) -= 40;
@@ -830,8 +827,7 @@ Script N(script_Interact_802437C8) = SCRIPT({
         }
         < 60 {
             SpeakToPlayer(-1, 0xC90003, 0xC90007, 0, 0x110086);
-        }
-        else {
+        } else {
             SpeakToPlayer(-1, 0xC90002, 0xC90001, 0, 0x110087);
         }
     }

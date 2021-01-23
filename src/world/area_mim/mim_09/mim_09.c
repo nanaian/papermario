@@ -140,7 +140,7 @@ Script N(main) = SCRIPT({
     await N(script_802419A0);
     func_80240000_BB2E00();
     spawn {
-    0:
+0:
         WaitForCam(0, 1.0);
         func_80240068_BB2E68();
         if (SI_VAR(0) < 350) {
@@ -224,7 +224,7 @@ Script N(script_802417FC) = SCRIPT({
         SetGroupEnabled(68, 1);
         PlaySound(8285);
         MakeLerp(10, 100, 30, 0);
-    0:
+0:
         UpdateLerp();
         SI_VAR(0) *= 0.0107421875;
         ScaleModel(59, SI_VAR(0), SI_VAR(0), SI_VAR(0));
@@ -334,7 +334,7 @@ Script N(script_80241EB4) = SCRIPT({
         == 0 {
             spawn {
                 MakeLerp(10, 90, 10, 1);
-            10:
+10:
                 UpdateLerp();
                 RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
                 UpdateColliderTransform(SI_VAR(9));
@@ -353,7 +353,7 @@ Script N(script_80241EB4) = SCRIPT({
             SI_VAR(1) = 1;
             spawn N(script_80241A30);
             MakeLerp(90, 360, 30, 0);
-        20:
+20:
             UpdateLerp();
             RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
             UpdateColliderTransform(SI_VAR(9));
@@ -368,7 +368,7 @@ Script N(script_80241EB4) = SCRIPT({
         == 1 {
             spawn {
                 MakeLerp(360, 270, 10, 1);
-            30:
+30:
                 UpdateLerp();
                 RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
                 UpdateColliderTransform(SI_VAR(9));
@@ -387,7 +387,7 @@ Script N(script_80241EB4) = SCRIPT({
             SI_VAR(1) = 2;
             spawn N(script_80241A30);
             MakeLerp(270, 0xFFFFFFF6, 30, 0);
-        40:
+40:
             UpdateLerp();
             RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
             UpdateColliderTransform(SI_VAR(9));
@@ -400,7 +400,7 @@ Script N(script_80241EB4) = SCRIPT({
         == 2 {
             spawn {
                 MakeLerp(0xFFFFFFF6, 90, 10, 1);
-            50:
+50:
                 UpdateLerp();
                 RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
                 UpdateColliderTransform(SI_VAR(9));
@@ -419,7 +419,7 @@ Script N(script_80241EB4) = SCRIPT({
             SI_VAR(1) = 1;
             spawn N(script_80241A30);
             MakeLerp(90, 360, 30, 0);
-        60:
+60:
             UpdateLerp();
             RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
             UpdateColliderTransform(SI_VAR(9));

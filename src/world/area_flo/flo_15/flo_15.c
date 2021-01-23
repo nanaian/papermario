@@ -45,8 +45,7 @@ Script N(script_80240060) = SCRIPT({
         match SI_SAVE_VAR(0) {
             < 53 {
                 SetMusicTrack(0, 52, 0, 8);
-            }
-            else {
+            } else {
                 SetMusicTrack(0, 53, 0, 8);
             }
         }
@@ -258,8 +257,7 @@ Script N(script_Interact_80240B28) = SCRIPT({
             } else {
                 SpeakToPlayer(10, 0xCB0007, 0xCB0001, 517, 0x11009E);
             }
-        }
-        else {
+        } else {
             SpeakToPlayer(10, 0xCB0007, 0xCB0001, 517, 0x11009F);
         }
     }

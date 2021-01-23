@@ -163,12 +163,11 @@ MapConfig N(header) = {
 Script N(script_80241180) = SCRIPT({
     GetEntryID(SI_VAR(0));
     match SI_VAR(0) {
-    1..2
+        1..2
         SetMusicTrack(0, 42, 0, 8);
         == 3 {
             FadeInMusic(0, 36, 0, 3000, 0, 127);
-        }
-        else {
+        } else {
             SetMusicTrack(0, 36, 0, 8);
         }
     }
@@ -227,7 +226,7 @@ Script N(script_EnterWalk_8024140C) = SCRIPT({
             SI_VAR(0) = N(script_802413E0);
             spawn EnterWalk;
         }
-    1..2
+        1..2
         spawn N(script_802449E0);
         == 3 {
             spawn N(script_80244454);
@@ -335,7 +334,7 @@ Script N(script_8024194C) = SCRIPT({
 
 Script N(script_MakeEntities) = SCRIPT({
     match SI_SAVE_VAR(0) {
-    38..95
+        38..95
         MakeEntity(0x802EAE30, 0, 0, 0, 0, 0, 0x80000000);
         AssignFlag(SI_SAVE_FLAG(1228));
         AssignScript(N(script_8024194C));
@@ -614,8 +613,7 @@ Script N(script_Interact_80242714) = SCRIPT({
         }
         < 42 {
             SpeakToPlayer(1, 0x990303, 0x990302, 0, 0x1000AB);
-        }
-        else {
+        } else {
             SpeakToPlayer(1, 0x990303, 0x990302, 0, 0x1000AC);
         }
     }
@@ -1071,7 +1069,7 @@ Script N(script_80244454) = SCRIPT({
         SetNpcPos(2, 0xFFFFFEA2, 0, 15);
         SetNpcAnimation(2, 0x970003);
         LoadPath(90, N(vectorList_80244400), 7, 0);
-    10:
+10:
         GetNextPathPos();
         SetNpcPos(2, SI_VAR(1), SI_VAR(2), SI_VAR(3));
         sleep 1;
@@ -1084,7 +1082,7 @@ Script N(script_80244454) = SCRIPT({
         SetNpcPos(6, 0xFFFFFEA2, 0, 15);
         SetNpcAnimation(6, 0x970203);
         LoadPath(90, N(vectorList_80244400), 7, 0);
-    11:
+11:
         GetNextPathPos();
         SetNpcPos(6, SI_VAR(1), SI_VAR(2), SI_VAR(3));
         sleep 1;

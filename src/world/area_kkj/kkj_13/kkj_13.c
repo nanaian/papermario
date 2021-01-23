@@ -108,8 +108,7 @@ Script N(script_802407E0) = SCRIPT({
             } else {
                 SetMusicTrack(0, 102, 0, 8);
             }
-        }
-        else {
+        } else {
         }
     }
     UseDoorSounds(2);

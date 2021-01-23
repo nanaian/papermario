@@ -715,7 +715,7 @@ Script N(script_802437FC) = SCRIPT({
         SetTexPanner(31, 0);
         SI_VAR(0) = 0;
         SI_VAR(1) = 0;
-    20:
+20:
         SI_VAR(0) += 300;
         SI_VAR(1) += 100;
         SetTexPanOffset(0, 0, SI_VAR(0), SI_VAR(1));

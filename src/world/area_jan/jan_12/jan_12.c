@@ -188,9 +188,9 @@ Script N(script_802414F0) = SCRIPT({
         SetPlayerAnimation(0x8000D);
         loop 50 {
             func_802400F8_B731A8(SI_VAR(0), -15.0, SI_VAR(2));
-            SI_VAR(1) +=f SI_VAR(2);
+            SI_VAR(1) += f SI_VAR(2);
             SI_VAR(1) *= 0.9306640625;
-            SI_VAR(0) +=f SI_VAR(1);
+            SI_VAR(0) += f SI_VAR(1);
             TranslateModel(SI_VAR(13), 0, SI_VAR(0), 0);
             TranslateModel(SI_VAR(14), 0, SI_VAR(0), 0);
             SI_VAR(3) = SI_VAR(7);
@@ -246,9 +246,9 @@ Script N(script_802414F0) = SCRIPT({
             SI_VAR(1) = 0.0;
             loop 100 {
                 func_802400F8_B731A8(SI_VAR(0), 20.0, SI_VAR(2));
-                SI_VAR(1) +=f SI_VAR(2);
+                SI_VAR(1) += f SI_VAR(2);
                 SI_VAR(1) *= 0.9306640625;
-                SI_VAR(0) +=f SI_VAR(1);
+                SI_VAR(0) += f SI_VAR(1);
                 TranslateModel(SI_VAR(13), 0, SI_VAR(0), 0);
                 TranslateModel(SI_VAR(14), 0, SI_VAR(0), 0);
                 sleep 1;
@@ -269,20 +269,20 @@ Script N(script_80241D90) = SCRIPT({
     SI_VAR(6) = 0;
     SI_VAR(7) = 0;
     loop 60 {
-        SI_VAR(2) =f SI_MAP_VAR(0);
-        SI_VAR(3) =f SI_MAP_VAR(1);
-        SI_VAR(2) -=f SI_VAR(0);
-        SI_VAR(3) -=f SI_VAR(1);
-        SI_VAR(4) =f SI_VAR(2);
-        SI_VAR(5) =f SI_VAR(3);
+        SI_VAR(2) = f SI_MAP_VAR(0);
+        SI_VAR(3) = f SI_MAP_VAR(1);
+        SI_VAR(2) -= f SI_VAR(0);
+        SI_VAR(3) -= f SI_VAR(1);
+        SI_VAR(4) = f SI_VAR(2);
+        SI_VAR(5) = f SI_VAR(3);
         SI_VAR(4) *= 0.09375;
         SI_VAR(5) *= 0.09375;
         SI_VAR(6) *= 0.80078125;
         SI_VAR(7) *= 0.80078125;
-        SI_VAR(6) +=f SI_VAR(4);
-        SI_VAR(7) +=f SI_VAR(5);
-        SI_VAR(0) +=f SI_VAR(6);
-        SI_VAR(1) +=f SI_VAR(7);
+        SI_VAR(6) += f SI_VAR(4);
+        SI_VAR(7) += f SI_VAR(5);
+        SI_VAR(0) += f SI_VAR(6);
+        SI_VAR(1) += f SI_VAR(7);
         TranslateModel(28, SI_MAP_VAR(0), 0, 0);
         TranslateModel(30, SI_MAP_VAR(1), 0, 0);
         func_802401CC_B7327C(28, SI_VAR(6));
@@ -298,8 +298,8 @@ Script N(script_80241F58) = SCRIPT({
     MakeLerp(0, 45, 30, 5);
     loop {
         UpdateLerp();
-        SI_MAP_VAR(1) =f SI_VAR(0);
-        SI_MAP_VAR(0) =f SI_MAP_VAR(1);
+        SI_MAP_VAR(1) = f SI_VAR(0);
+        SI_MAP_VAR(0) = f SI_MAP_VAR(1);
         SI_MAP_VAR(0) *= -1;
         sleep 1;
         if (SI_VAR(1) == 0) {

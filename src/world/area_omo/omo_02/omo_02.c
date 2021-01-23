@@ -849,7 +849,7 @@ Script N(script_Idle_80244E8C) = SCRIPT({
     } else {
         SI_MAP_VAR(10) = spawn N(script_80244D64);
         SetNpcPos(-1, 0xFFFFFDC1, 0, 0xFFFFFFEC);
-    10:
+10:
         GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
         if (SI_VAR(0) < 0xFFFFFD08) {
             sleep 1;

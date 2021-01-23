@@ -480,7 +480,7 @@ Script N(script_Idle_802418DC) = SCRIPT({
         sleep 30;
         SetNpcAnimation(1, 0x580006);
         SetNpcSpeed(1, 4.0);
-    10:
+10:
         NpcMoveTo(1, 550, 0xFFFFFF5B, 0);
         sleep 5;
         NpcMoveTo(1, 510, 0xFFFFFF5B, 0);

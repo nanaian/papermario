@@ -129,8 +129,7 @@ Script N(script_802423F0) = SCRIPT({
     match SI_SAVE_VAR(0) {
         < 53 {
             SetMusicTrack(0, 48, 0, 8);
-        }
-        else {
+        } else {
             SetMusicTrack(0, 49, 0, 8);
         }
     }
@@ -275,10 +274,10 @@ Script N(script_80242C00) = SCRIPT({
     SI_VAR(14) = SI_VAR(4);
     SI_VAR(12) -= SI_VAR(0);
     SI_VAR(13) -= SI_VAR(1);
-    SI_VAR(0) =f SI_VAR(12);
+    SI_VAR(0) = f SI_VAR(12);
     SI_VAR(0) /= 100.0;
     SI_VAR(15) = 100.0;
-    SI_VAR(15) /=f SI_VAR(0);
+    SI_VAR(15) /= f SI_VAR(0);
     SI_VAR(15) += 11;
     SI_VAR(5) = 200;
     SI_VAR(5) /= SI_VAR(15);
@@ -482,14 +481,14 @@ Script N(script_80243870) = SCRIPT({
     SI_VAR(9) = 180;
     loop SI_VAR(9) {
         TranslateModel(123, 591, 55, 121);
-        SI_VAR(3) =f SI_VAR(2);
+        SI_VAR(3) = f SI_VAR(2);
         SI_VAR(3) /= 10;
         ScaleModel(123, SI_VAR(3), SI_VAR(3), SI_VAR(3));
         TranslateModel(123, SI_VAR(4), SI_VAR(5), SI_VAR(6));
         SI_VAR(2) += 0.05078125;
         if (SI_VAR(9) > 90) {
-            SI_VAR(4) +=f SI_VAR(7);
-            SI_VAR(5) +=f SI_VAR(8);
+            SI_VAR(4) += f SI_VAR(7);
+            SI_VAR(5) += f SI_VAR(8);
         }
         sleep 1;
     }
@@ -501,8 +500,8 @@ Script N(script_80243870) = SCRIPT({
         TranslateModel(123, 591, 55, 121);
         ScaleModel(123, SI_VAR(3), SI_VAR(3), SI_VAR(3));
         TranslateModel(123, SI_VAR(4), SI_VAR(5), SI_VAR(6));
-        SI_VAR(4) +=f SI_VAR(7);
-        SI_VAR(6) +=f SI_VAR(8);
+        SI_VAR(4) += f SI_VAR(7);
+        SI_VAR(6) += f SI_VAR(8);
         sleep 1;
     }
     SI_AREA_FLAG(36) = 0;
@@ -821,7 +820,7 @@ Script N(script_Interact_80244790) = SCRIPT({
                 sleep 40;
                 InterpPlayerYaw(315, 0);
             }
-        10:
+10:
             if (SI_AREA_FLAG(37) == 0) {
                 sleep 1;
                 goto 10;
@@ -929,7 +928,7 @@ Script N(script_80244F70) = SCRIPT({
                 ModifyColliderFlags(1, SI_VAR(9), 0x7FFFFE00);
             }
         }
-    50:
+50:
         if (SI_VAR(7) >= 90) {
             SI_VAR(8) = -1;
             SI_VAR(7) = 90;

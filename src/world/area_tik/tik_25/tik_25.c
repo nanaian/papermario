@@ -284,7 +284,7 @@ s32 pad_001448[] = {
 
 Script N(script_80241450) = SCRIPT({
     if (SI_SAVE_FLAG(423) == 0) {
-    10:
+10:
         if (SI_SAVE_FLAG(423) == 0) {
             sleep 1;
             goto 10;

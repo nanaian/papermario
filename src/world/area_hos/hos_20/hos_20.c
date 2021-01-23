@@ -191,7 +191,7 @@ Script N(script_80240A20) = SCRIPT({
         MakeLerp(SI_VAR(3), SI_VAR(4), 30, 10);
         loop {
             UpdateLerp();
-            SI_VAR(2) =f SI_VAR(0);
+            SI_VAR(2) = f SI_VAR(0);
             SI_VAR(2) *= 0.1005859375;
             TranslateGroup(10, SI_MAP_VAR(10), SI_VAR(2), 0);
             RotateGroup(10, SI_MAP_VAR(11), 0, 1, 0);

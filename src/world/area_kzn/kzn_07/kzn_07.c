@@ -227,7 +227,7 @@ f32 N(floatTable_80242930)[] = {
 
 Script N(script_802429A0) = SCRIPT({
     if (SI_SAVE_FLAG(1315) == 0) {
-    10:
+10:
         if (SI_SAVE_FLAG(1315) == 0) {
             sleep 1;
             goto 10;

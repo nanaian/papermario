@@ -145,7 +145,7 @@ Script N(script_80240854) = SCRIPT({
 Script N(script_80240A64) = SCRIPT({
     func_802401AC_B7695C();
     if (SI_VAR(3) < 1.0) {
-        SI_VAR(4) =f SI_VAR(3);
+        SI_VAR(4) = f SI_VAR(3);
     } else {
         SI_VAR(4) = 1.0;
     }
@@ -377,7 +377,7 @@ Script N(script_80241154) = SCRIPT({
             SI_VAR(4) -= 120;
             SI_VAR(5) += 120;
             match SI_VAR(3) {
-            SI_VAR(4)..SI_VAR(5)
+                SI_VAR(4)..SI_VAR(5)
                 SI_VAR(0) += SI_VAR(3);
                 SI_VAR(0) /= 2;
             }
@@ -560,8 +560,8 @@ Script N(script_80241F5C) = SCRIPT({
                 }
                 SI_VAR(3) *= 10;
                 SI_VAR(5) *= 10;
-                SI_VAR(3) +=f SI_VAR(0);
-                SI_VAR(5) +=f SI_VAR(2);
+                SI_VAR(3) += f SI_VAR(0);
+                SI_VAR(5) += f SI_VAR(2);
                 SI_VAR(3) /= 11;
                 SI_VAR(5) /= 11;
                 SetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));

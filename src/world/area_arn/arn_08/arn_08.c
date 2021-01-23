@@ -77,8 +77,7 @@ Script N(script_80240300) = SCRIPT({
         }
         < 0xFFFFFFF0 {
             SetMusicTrack(0, 85, 0, 8);
-        }
-        else {
+        } else {
             SetMusicTrack(0, 29, 0, 8);
         }
     }
@@ -236,7 +235,7 @@ Script N(script_80240BA0) = SCRIPT({
     PlaySound(0x8000004B);
     spawn {
         SI_VAR(0) = 0;
-    10:
+10:
         RotateModel(9, SI_VAR(0), 0, 0, 1);
         RotateModel(15, SI_VAR(0), 0, 0, 1);
         RotateModel(11, SI_VAR(0), 0, 0, 1);

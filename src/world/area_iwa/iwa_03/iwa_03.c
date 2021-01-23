@@ -259,7 +259,7 @@ Script N(script_NpcAI_80241C4C) = SCRIPT({
     0x800445D4(SI_VAR(0));
     if (SI_VAR(0) == 100) {
         SetSelfEnemyFlagBits(32, 1);
-    10:
+10:
         GetNpcPos(-1, SI_VAR(0), SI_VAR(1), SI_VAR(2));
         IsPlayerWithin(SI_VAR(0), SI_VAR(2), 80, SI_VAR(3));
         if (SI_VAR(3) != 1) {
@@ -287,219 +287,219 @@ Script N(script_NpcAI_80241C4C) = SCRIPT({
         DoBasicAI(N(aISettings_80241C1C));
     });
 
-NpcSettings N(npcSettings_80241E98) = {
-    .unk_00 = { 0, 0, 0, 0 },
-    .height = 0x18,
-    .radius = 0x16,
-    .otherAI = &N(script_80241B00),
-    .onInteract = NULL,
-    .ai = &N(script_NpcAI_80241C4C),
-    .onHit = 0x80077F70,
-    .aux = NULL,
-    .onDefeat = 0x8007809C,
-    .flags = 0,
-    .unk_24 = { 0, 0, 0, 0 },
-    .level = 0x8,
-    .unk_2A = 0x1,
-};
+    NpcSettings N(npcSettings_80241E98) = {
+        .unk_00 = { 0, 0, 0, 0 },
+        .height = 0x18,
+        .radius = 0x16,
+        .otherAI = &N(script_80241B00),
+        .onInteract = NULL,
+        .ai = &N(script_NpcAI_80241C4C),
+        .onHit = 0x80077F70,
+        .aux = NULL,
+        .onDefeat = 0x8007809C,
+        .flags = 0,
+        .unk_24 = { 0, 0, 0, 0 },
+        .level = 0x8,
+        .unk_2A = 0x1,
+    };
 
-NpcSettings N(npcSettings_80241EC4) = {
-    .unk_00 = { 0, 0, 0, 0 },
-    .height = 0x18,
-    .radius = 0x16,
-    .otherAI = &N(script_80241B9C),
-    .onInteract = NULL,
-    .ai = NULL,
-    .onHit = NULL,
-    .aux = NULL,
-    .onDefeat = NULL,
-    .flags = 0,
-    .unk_24 = { 0, 0, 0, 0 },
-    .level = 0x8,
-    .unk_2A = 0x1,
-};
+    NpcSettings N(npcSettings_80241EC4) = {
+        .unk_00 = { 0, 0, 0, 0 },
+        .height = 0x18,
+        .radius = 0x16,
+        .otherAI = &N(script_80241B9C),
+        .onInteract = NULL,
+        .ai = NULL,
+        .onHit = NULL,
+        .aux = NULL,
+        .onDefeat = NULL,
+        .flags = 0,
+        .unk_24 = { 0, 0, 0, 0 },
+        .level = 0x8,
+        .unk_2A = 0x1,
+    };
 
-NpcAISettings N(aISettings_80241EF0) = {
-    .moveSpeed = 1.0f,
-    .moveTime = 0x1E,
-    .waitTime = 0x1E,
-    .alertRadius = 120.0f,
-    .unk_10 = 0.0f,
-    .unk_14 = 0x3,
-    .chaseSpeed = 7.0f,
-    .unk_1C = 0x3C,
-    .unk_20 = 0x5,
-    .chaseRadius = 100.0f,
-    .unk_28 = 60.0f,
-    .unk_2C = 0x1,
-};
+    NpcAISettings N(aISettings_80241EF0) = {
+        .moveSpeed = 1.0f,
+        .moveTime = 0x1E,
+        .waitTime = 0x1E,
+        .alertRadius = 120.0f,
+        .unk_10 = 0.0f,
+        .unk_14 = 0x3,
+        .chaseSpeed = 7.0f,
+        .unk_1C = 0x3C,
+        .unk_20 = 0x5,
+        .chaseRadius = 100.0f,
+        .unk_28 = 60.0f,
+        .unk_2C = 0x1,
+    };
 
-Script N(script_NpcAI_80241F20) = SCRIPT({
-    func_80240FD0_919B80(N(aISettings_80241EF0), 16);
-});
+    Script N(script_NpcAI_80241F20) = SCRIPT({
+        func_80240FD0_919B80(N(aISettings_80241EF0), 16);
+    });
 
-NpcSettings N(npcSettings_80241F44) = {
-    .unk_00 = { 0, 0, 0, 0 },
-    .height = 0x1A,
-    .radius = 0x18,
-    .otherAI = NULL,
-    .onInteract = NULL,
-    .ai = &N(script_NpcAI_80241F20),
-    .onHit = 0x80077F70,
-    .aux = NULL,
-    .onDefeat = 0x8007809C,
-    .flags = 0,
-    .unk_24 = { 0, 0, 0, 0 },
-    .level = 0xA,
-    .unk_2A = 0,
-};
+    NpcSettings N(npcSettings_80241F44) = {
+        .unk_00 = { 0, 0, 0, 0 },
+        .height = 0x1A,
+        .radius = 0x18,
+        .otherAI = NULL,
+        .onInteract = NULL,
+        .ai = &N(script_NpcAI_80241F20),
+        .onHit = 0x80077F70,
+        .aux = NULL,
+        .onDefeat = 0x8007809C,
+        .flags = 0,
+        .unk_24 = { 0, 0, 0, 0 },
+        .level = 0xA,
+        .unk_2A = 0,
+    };
 
-StaticNpc N(npcGroup_80241F70)[] = {
-    {
-        .id = 0,
-        .settings = &N(npcSettings_80241F44),
-        .pos = { -525.0, -75.0, 60.0 },
-        .flags = 0x00000C00,
-        .yaw = 0,
-        .dropFlags = 0x80,
-        .movement = { 0xFFFFFDF3, 0xFFFFFFB5, 0x0000003C, 0x0000001E, 0x00000000, 0xFFFF8001, 0x00000000, 0xFFFFFDF3, 0xFFFFFFB5, 0x0000003C, 0x000000FA, 0x00000000, 0x00000000, 0x00000001 },
-        .animations = {
-            0x00300002, 0x00300006, 0x00300007, 0x00300007, 0x00300002, 0x00300002, 0x00300008, 0x00300008, 0x00300014, 0x00300017, 0x00300013, 0x00300015, 0x00300010, 0x00300011, 0x00300016, 0x00300000,
+    StaticNpc N(npcGroup_80241F70)[] = {
+        {
+            .id = 0,
+            .settings = &N(npcSettings_80241F44),
+            .pos = { -525.0, -75.0, 60.0 },
+            .flags = 0x00000C00,
+            .yaw = 0,
+            .dropFlags = 0x80,
+            .movement = { 0xFFFFFDF3, 0xFFFFFFB5, 0x0000003C, 0x0000001E, 0x00000000, 0xFFFF8001, 0x00000000, 0xFFFFFDF3, 0xFFFFFFB5, 0x0000003C, 0x000000FA, 0x00000000, 0x00000000, 0x00000001 },
+            .animations = {
+                0x00300002, 0x00300006, 0x00300007, 0x00300007, 0x00300002, 0x00300002, 0x00300008, 0x00300008, 0x00300014, 0x00300017, 0x00300013, 0x00300015, 0x00300010, 0x00300011, 0x00300016, 0x00300000,
+            },
         },
-    },
-};
+    };
 
-StaticNpc N(npcGroup_80242160)[] = {
-    {
-        .id = 1,
-        .settings = &N(npcSettings_80241F44),
-        .pos = { -1686.0, -60.0, 180.0 },
-        .flags = 0x00000C00,
-        .yaw = 0,
-        .dropFlags = 0x80,
-        .movement = { 0xFFFFF96A, 0xFFFFFFC4, 0x000000B4, 0x0000001E, 0x00000000, 0xFFFF8001, 0x00000000, 0xFFFFF96A, 0xFFFFFFC4, 0x000000B4, 0x000000FA },
-        .animations = {
-            0x00300002, 0x00300006, 0x00300007, 0x00300007, 0x00300002, 0x00300002, 0x00300008, 0x00300008, 0x00300014, 0x00300017, 0x00300013, 0x00300015, 0x00300010, 0x00300011, 0x00300016, 0x00300000,
+    StaticNpc N(npcGroup_80242160)[] = {
+        {
+            .id = 1,
+            .settings = &N(npcSettings_80241F44),
+            .pos = { -1686.0, -60.0, 180.0 },
+            .flags = 0x00000C00,
+            .yaw = 0,
+            .dropFlags = 0x80,
+            .movement = { 0xFFFFF96A, 0xFFFFFFC4, 0x000000B4, 0x0000001E, 0x00000000, 0xFFFF8001, 0x00000000, 0xFFFFF96A, 0xFFFFFFC4, 0x000000B4, 0x000000FA },
+            .animations = {
+                0x00300002, 0x00300006, 0x00300007, 0x00300007, 0x00300002, 0x00300002, 0x00300008, 0x00300008, 0x00300014, 0x00300017, 0x00300013, 0x00300015, 0x00300010, 0x00300011, 0x00300016, 0x00300000,
+            },
         },
-    },
-};
+    };
 
-StaticNpc N(npcGroup_80242350)[] = {
-    {
-        .id = 2,
-        .settings = &N(npcSettings_80241F44),
-        .pos = { -1300.0, 408.0, -125.0 },
-        .flags = 0x00000C00,
-        .yaw = 0,
-        .dropFlags = 0x80,
-        .movement = { 0xFFFFFAEC, 0x00000198, 0xFFFFFF83, 0x0000001E, 0x00000000, 0xFFFF8001, 0x00000000, 0xFFFFFAF6, 0x00000198, 0xFFFFFF83, 0x0000008C },
-        .animations = {
-            0x00300002, 0x00300006, 0x00300007, 0x00300007, 0x00300002, 0x00300002, 0x00300008, 0x00300008, 0x00300014, 0x00300017, 0x00300013, 0x00300015, 0x00300010, 0x00300011, 0x00300016, 0x00300000,
+    StaticNpc N(npcGroup_80242350)[] = {
+        {
+            .id = 2,
+            .settings = &N(npcSettings_80241F44),
+            .pos = { -1300.0, 408.0, -125.0 },
+            .flags = 0x00000C00,
+            .yaw = 0,
+            .dropFlags = 0x80,
+            .movement = { 0xFFFFFAEC, 0x00000198, 0xFFFFFF83, 0x0000001E, 0x00000000, 0xFFFF8001, 0x00000000, 0xFFFFFAF6, 0x00000198, 0xFFFFFF83, 0x0000008C },
+            .animations = {
+                0x00300002, 0x00300006, 0x00300007, 0x00300007, 0x00300002, 0x00300002, 0x00300008, 0x00300008, 0x00300014, 0x00300017, 0x00300013, 0x00300015, 0x00300010, 0x00300011, 0x00300016, 0x00300000,
+            },
         },
-    },
-};
+    };
 
-StaticNpc N(npcGroup_80242540)[] = {
-    {
-        .id = 3,
-        .settings = &N(npcSettings_80241E98),
-        .pos = { -1000.0, 23.0, 60.0 },
-        .flags = 0x00000400,
-        .yaw = 0,
-        .dropFlags = 0x80,
-        .itemDropChance = 10,
-        .itemDrops = { { ItemId_HONEY_SYRUP, 10 } },
-        .movement = { 0xFFFFFC18, 0x00000017, 0x0000003C, 0x00000028, 0x00000000, 0xFFFF8001, 0x00000000, 0xFFFFFC18, 0x00000017, 0x0000003C, 0x000000FA },
-        .animations = {
-            0x002F0019, 0x002F0002, 0x002F0003, 0x002F0003, 0x002F0019, 0x002F0019, 0x002F0009, 0x002F0009, 0x002F0019, 0x002F0019, 0x002F0019, 0x002F0019, 0x002F0019, 0x002F0019, 0x002F0019, 0x002F0019,
+    StaticNpc N(npcGroup_80242540)[] = {
+        {
+            .id = 3,
+            .settings = &N(npcSettings_80241E98),
+            .pos = { -1000.0, 23.0, 60.0 },
+            .flags = 0x00000400,
+            .yaw = 0,
+            .dropFlags = 0x80,
+            .itemDropChance = 10,
+            .itemDrops = { { ItemId_HONEY_SYRUP, 10 } },
+            .movement = { 0xFFFFFC18, 0x00000017, 0x0000003C, 0x00000028, 0x00000000, 0xFFFF8001, 0x00000000, 0xFFFFFC18, 0x00000017, 0x0000003C, 0x000000FA },
+            .animations = {
+                0x002F0019, 0x002F0002, 0x002F0003, 0x002F0003, 0x002F0019, 0x002F0019, 0x002F0009, 0x002F0009, 0x002F0019, 0x002F0019, 0x002F0019, 0x002F0019, 0x002F0019, 0x002F0019, 0x002F0019, 0x002F0019,
+            },
         },
-    },
-    {
-        .id = 4,
-        .settings = &N(npcSettings_80241EC4),
-        .pos = { -1000.0, 23.0, 60.0 },
-        .flags = 0x00000F21,
-        .yaw = 0,
-        .dropFlags = 0x80,
-        .movement = { 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xFFFF8001, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000001 },
-        .animations = {
-            0x002F0019, 0x002F0002, 0x002F0003, 0x002F0003, 0x002F0019, 0x002F0019, 0x002F0009, 0x002F0009, 0x002F0019, 0x002F0019, 0x002F0019, 0x002F0019, 0x002F0019, 0x002F0019, 0x002F0019, 0x002F0019,
+        {
+            .id = 4,
+            .settings = &N(npcSettings_80241EC4),
+            .pos = { -1000.0, 23.0, 60.0 },
+            .flags = 0x00000F21,
+            .yaw = 0,
+            .dropFlags = 0x80,
+            .movement = { 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xFFFF8001, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000001 },
+            .animations = {
+                0x002F0019, 0x002F0002, 0x002F0003, 0x002F0003, 0x002F0019, 0x002F0019, 0x002F0009, 0x002F0009, 0x002F0019, 0x002F0019, 0x002F0019, 0x002F0019, 0x002F0019, 0x002F0019, 0x002F0019, 0x002F0019,
+            },
         },
-    },
-};
+    };
 
-NpcGroupList N(npcGroupList_80242920) = {
-    NPC_GROUP(N(npcGroup_80241F70), 0x09030001),
-    NPC_GROUP(N(npcGroup_80242160), 0x09000001),
-    NPC_GROUP(N(npcGroup_80242350), 0x09010001),
-    NPC_GROUP(N(npcGroup_80242540), 0x09090001),
-    {},
-};
+    NpcGroupList N(npcGroupList_80242920) = {
+        NPC_GROUP(N(npcGroup_80241F70), 0x09030001),
+        NPC_GROUP(N(npcGroup_80242160), 0x09000001),
+        NPC_GROUP(N(npcGroup_80242350), 0x09010001),
+        NPC_GROUP(N(npcGroup_80242540), 0x09090001),
+        {},
+    };
 
-s32 pad_00295C[] = {
-    0x00000000,
-};
+    s32 pad_00295C[] = {
+        0x00000000,
+    };
 
-s32 N(unk_80242960)[] = {
-    0x42B20000, 0x3ED1EB85, 0xBE800000, 0x41800000, 0x4119CAC1, 0xBEE76C8B, 0x3B449BA6, 0xBCBC6A7F,
-};
+    s32 N(unk_80242960)[] = {
+        0x42B20000, 0x3ED1EB85, 0xBE800000, 0x41800000, 0x4119CAC1, 0xBEE76C8B, 0x3B449BA6, 0xBCBC6A7F,
+    };
 
-Script N(script_80242980) = SCRIPT({
-    SI_VAR(0) = N(unk_80242960);
-    func_80241320_919ED0();
-});
+    Script N(script_80242980) = SCRIPT({
+        SI_VAR(0) = N(unk_80242960);
+        func_80241320_919ED0();
+    });
 
-Script N(script_802429AC) = SCRIPT({
-    DisablePlayerInput(1);
-    sleep 10;
-    spawn {
-        PlaySoundAtCollider(34, 8354, 0);
-        MakeLerp(0, 0xFFFFFFB0, 10, 0);
-        loop {
-            UpdateLerp();
-            RotateModel(13, SI_VAR(0), 0, -1, 0);
-            sleep 1;
-            if (SI_VAR(1) == 0) {
-                break;
+    Script N(script_802429AC) = SCRIPT({
+        DisablePlayerInput(1);
+        sleep 10;
+        spawn {
+            PlaySoundAtCollider(34, 8354, 0);
+            MakeLerp(0, 0xFFFFFFB0, 10, 0);
+            loop {
+                UpdateLerp();
+                RotateModel(13, SI_VAR(0), 0, -1, 0);
+                sleep 1;
+                if (SI_VAR(1) == 0) {
+                    break;
+                }
             }
         }
-    }
-    sleep 15;
-    ModifyColliderFlags(0, 34, 0x7FFFFE00);
-    SetPlayerSpeed(3.0);
-    PlayerMoveTo(0xFFFFFA4C, 0xFFFFFFC4, 0);
-    DisablePlayerInput(0);
-    sleep 100;
-    spawn {
-        PlaySoundAtCollider(34, 8354, 0);
-        MakeLerp(0xFFFFFFB0, 0, 30, 0);
-        loop {
-            UpdateLerp();
-            RotateModel(13, SI_VAR(0), 0, -1, 0);
-            sleep 1;
-            if (SI_VAR(1) == 0) {
-                break;
+        sleep 15;
+        ModifyColliderFlags(0, 34, 0x7FFFFE00);
+        SetPlayerSpeed(3.0);
+        PlayerMoveTo(0xFFFFFA4C, 0xFFFFFFC4, 0);
+        DisablePlayerInput(0);
+        sleep 100;
+        spawn {
+            PlaySoundAtCollider(34, 8354, 0);
+            MakeLerp(0xFFFFFFB0, 0, 30, 0);
+            loop {
+                UpdateLerp();
+                RotateModel(13, SI_VAR(0), 0, -1, 0);
+                sleep 1;
+                if (SI_VAR(1) == 0) {
+                    break;
+                }
             }
         }
-    }
-    ModifyColliderFlags(1, 34, 0x7FFFFE00);
-});
+        ModifyColliderFlags(1, 34, 0x7FFFFE00);
+    });
 
-Script N(script_80242BB8) = SCRIPT({
-    bind N(script_802429AC) to TriggerFlag_WALL_INTERACT 34;
-    bind N(script_80242980) to TriggerFlag_FLOOR_TOUCH 9;
-    ModifyColliderFlags(3, 9, 5);
-});
+    Script N(script_80242BB8) = SCRIPT({
+        bind N(script_802429AC) to TriggerFlag_WALL_INTERACT 34;
+        bind N(script_80242980) to TriggerFlag_FLOOR_TOUCH 9;
+        ModifyColliderFlags(3, 9, 5);
+    });
 
-s32 pad_002C18[] = {
-    0x00000000, 0x00000000,
-};
+    s32 pad_002C18[] = {
+        0x00000000, 0x00000000,
+    };
 
 // rodata: D_80242C20_91B7D0
 
-s32 pad_002C28[] = {
-    0x00000000, 0x00000000,
-};
+    s32 pad_002C28[] = {
+        0x00000000, 0x00000000,
+    };
 
 // rodata: D_80242C30_91B7E0
 
@@ -513,6 +513,6 @@ s32 pad_002C28[] = {
 
 // rodata: jtbl_80242C58_91B808
 
-s32 pad_002D2C[] = {
-    0x00000000,
-};
+    s32 pad_002D2C[] = {
+        0x00000000,
+    };

@@ -149,7 +149,7 @@ NpcSettings N(npcSettings_80240950) = {
 Script N(script_8024097C) = SCRIPT({
 1:
     if (SI_AREA_FLAG(8) == 1) {
-    100:
+100:
         AwaitPlayerLeave(294, 123, 170);
         EnableNpcAI(0, 0);
         DisablePlayerInput(1);
@@ -179,7 +179,7 @@ Script N(script_NpcAI_80240B50) = SCRIPT({
 1:
     match SI_SAVE_VAR(0) {
         == 0xFFFFFF86 {
-        89:
+89:
             func_80240218_8C81A8(0xFFFFFF8A, 86, 0xFFFFFFBA, 0xFFFFFFF1);
             sleep 1;
             if (SI_VAR(0) == 0) {

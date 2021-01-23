@@ -512,7 +512,7 @@ Script N(script_80242238) = SCRIPT({
 
 Script N(script_802422F8) = SCRIPT({
     match SI_AREA_VAR(5) {
-    0..1
+        0..1
         match SI_AREA_VAR(6) {
             == 0 {
                 GotoMapSpecial(D_80242FC8_DEEE98, 2, 1);
@@ -672,7 +672,7 @@ Script N(script_802429C4) = SCRIPT({
         spawn N(script_80240730);
         SI_MAP_FLAG(0) = 1;
         spawn {
-        10:
+10:
             func_8024055C_DEC42C();
             if (SI_VAR(0) == 1) {
                 goto 11;
@@ -697,7 +697,7 @@ Script N(script_802429C4) = SCRIPT({
             }
             sleep 100;
             return;
-        11:
+11:
             await N(script_802422F8);
         }
     } else {
@@ -707,7 +707,7 @@ Script N(script_802429C4) = SCRIPT({
         spawn N(script_80240730);
         SI_MAP_FLAG(0) = 1;
         spawn {
-        30:
+30:
             func_8024055C_DEC42C();
             if (SI_VAR(0) == 1) {
                 goto 31;
@@ -732,7 +732,7 @@ Script N(script_802429C4) = SCRIPT({
             }
             sleep 100;
             return;
-        31:
+31:
             await N(script_80242238);
         }
     }

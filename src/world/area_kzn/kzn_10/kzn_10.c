@@ -248,8 +248,7 @@ Script N(script_80240FB0) = SCRIPT({
                 SI_VAR(0) = SI_VAR(3);
                 SI_VAR(6) = 800;
                 SI_VAR(6) -= SI_VAR(0);
-            }
-            else {
+            } else {
                 SI_VAR(6) = 500;
             }
         }

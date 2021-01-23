@@ -198,8 +198,7 @@ Script N(script_80241598) = SCRIPT({
     match SI_SAVE_VAR(0) {
         == 38 {
             bind N(script_ExitSingleDoor_802414E4) to TriggerFlag_WALL_INTERACT 10;
-        }
-        else {
+        } else {
             bind N(script_ExitSingleDoor_802412C8) to TriggerFlag_WALL_INTERACT 10;
         }
     }
@@ -256,8 +255,7 @@ Script N(main) = SCRIPT({
         == 58 {
             func_80240034_ACAB54(1);
             MakeNpcs(0, N(npcGroupList_80243594));
-        }
-        else {
+        } else {
             EnableModel(130, 0);
             EnableModel(131, 0);
         }

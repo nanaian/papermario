@@ -356,7 +356,7 @@ Script N(script_80241570) = SCRIPT({
     spawn {
         0x802CA988(0, SI_VAR(4), SI_VAR(5), SI_VAR(6), SI_VAR(7));
         MakeLerp(SI_VAR(6), 600, 20, 0);
-    10:
+10:
         UpdateLerp();
         0x802CABE8(0, SI_VAR(4), SI_VAR(5), SI_VAR(0), SI_VAR(7));
         sleep 1;
@@ -366,7 +366,7 @@ Script N(script_80241570) = SCRIPT({
         SI_VAR(2) = SI_VAR(0);
         sleep 5;
         MakeLerp(SI_VAR(7), 0xFFFFFFEC, 20, 0);
-    15:
+15:
         UpdateLerp();
         0x802CABE8(0, SI_VAR(4), SI_VAR(5), SI_VAR(2), SI_VAR(0));
         sleep 1;
@@ -419,7 +419,7 @@ Script N(script_80241968) = SCRIPT({
         sleep 60;
         0x802CA988(0, SI_VAR(4), SI_VAR(5), SI_VAR(6), SI_VAR(7));
         MakeLerp(SI_VAR(6), 600, 20, 0);
-    10:
+10:
         UpdateLerp();
         0x802CABE8(0, SI_VAR(4), SI_VAR(5), SI_VAR(0), SI_VAR(7));
         sleep 1;
@@ -429,7 +429,7 @@ Script N(script_80241968) = SCRIPT({
         SI_VAR(2) = SI_VAR(0);
         sleep 5;
         MakeLerp(SI_VAR(7), 0xFFFFFFEC, 20, 0);
-    15:
+15:
         UpdateLerp();
         0x802CABE8(0, SI_VAR(4), SI_VAR(5), SI_VAR(2), SI_VAR(0));
         sleep 1;
@@ -457,7 +457,7 @@ Script N(script_80241968) = SCRIPT({
     spawn {
         EnableModel(111, 1);
         MakeLerp(400, 0, 20, 0);
-    20:
+20:
         UpdateLerp();
         TranslateModel(111, 0xFFFFFF9C, SI_VAR(0), 0);
         sleep 1;
@@ -468,7 +468,7 @@ Script N(script_80241968) = SCRIPT({
         EnableModel(108, 1);
         EnableModel(113, 1);
         MakeLerp(20, 120, 180, 0);
-    30:
+30:
         UpdateLerp();
         TranslateGroup(105, 0, SI_VAR(0), 0);
         TranslateModel(108, 0, SI_VAR(0), 0);
@@ -479,9 +479,9 @@ Script N(script_80241968) = SCRIPT({
             goto 30;
         }
         MakeLerp(100, 1, 20, 0);
-    40:
+40:
         UpdateLerp();
-        SI_VAR(2) =f SI_VAR(0);
+        SI_VAR(2) = f SI_VAR(0);
         SI_VAR(2) /= 100;
         TranslateModel(113, 0xFFFFFF9C, 120, 0);
         TranslateModel(111, 0xFFFFFF9C, 120, 0);
@@ -573,7 +573,7 @@ Script N(script_8024229C) = SCRIPT({
     spawn {
         0x802CA988(0, SI_VAR(4), SI_VAR(5), SI_VAR(6), SI_VAR(7));
         MakeLerp(SI_VAR(6), 600, 20, 0);
-    10:
+10:
         UpdateLerp();
         0x802CABE8(0, SI_VAR(4), SI_VAR(5), SI_VAR(0), SI_VAR(7));
         sleep 1;
@@ -583,7 +583,7 @@ Script N(script_8024229C) = SCRIPT({
         SI_VAR(2) = SI_VAR(0);
         sleep 5;
         MakeLerp(SI_VAR(7), 0xFFFFFFEC, 20, 0);
-    15:
+15:
         UpdateLerp();
         0x802CABE8(0, SI_VAR(4), SI_VAR(5), SI_VAR(2), SI_VAR(0));
         sleep 1;
@@ -631,7 +631,7 @@ Script N(script_80242624) = SCRIPT({
         sleep 60;
         0x802CA988(0, SI_VAR(4), SI_VAR(5), SI_VAR(6), SI_VAR(7));
         MakeLerp(SI_VAR(6), 600, 20, 0);
-    10:
+10:
         UpdateLerp();
         0x802CABE8(0, SI_VAR(4), SI_VAR(5), SI_VAR(0), SI_VAR(7));
         sleep 1;
@@ -641,7 +641,7 @@ Script N(script_80242624) = SCRIPT({
         SI_VAR(2) = SI_VAR(0);
         sleep 5;
         MakeLerp(SI_VAR(7), 0xFFFFFFEC, 20, 0);
-    15:
+15:
         UpdateLerp();
         0x802CABE8(0, SI_VAR(4), SI_VAR(5), SI_VAR(2), SI_VAR(0));
         sleep 1;
@@ -669,7 +669,7 @@ Script N(script_80242624) = SCRIPT({
     spawn {
         EnableModel(111, 1);
         MakeLerp(400, 0, 20, 0);
-    20:
+20:
         UpdateLerp();
         TranslateModel(111, 300, SI_VAR(0), 0);
         sleep 1;
@@ -679,7 +679,7 @@ Script N(script_80242624) = SCRIPT({
         SetGroupEnabled(105, 1);
         EnableModel(113, 1);
         MakeLerp(120, 220, 180, 0);
-    30:
+30:
         UpdateLerp();
         TranslateGroup(105, 0, SI_VAR(0), 0);
         TranslateModel(106, 0, SI_VAR(0), 0);
@@ -690,9 +690,9 @@ Script N(script_80242624) = SCRIPT({
             goto 30;
         }
         MakeLerp(100, 1, 20, 0);
-    40:
+40:
         UpdateLerp();
-        SI_VAR(2) =f SI_VAR(0);
+        SI_VAR(2) = f SI_VAR(0);
         SI_VAR(2) /= 100;
         TranslateModel(113, 300, 220, 0);
         TranslateModel(111, 300, 220, 0);
