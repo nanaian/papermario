@@ -244,7 +244,7 @@ s32 pad_0010B8[] = {
 
 Script N(script_MakeEntities) = SCRIPT({
     if (SI_SAVE_VAR(0) < 0xFFFFFFAC) {
-        MakeEntity(0x802EA5F4, 0xFFFFFFBA, 300, 0xFFFFFFF1, 0, 0x80000000);
+        MakeEntity(D_802EA5F4, 0xFFFFFFBA, 300, 0xFFFFFFF1, 0, 0x80000000);
         AssignScript(N(script_80241810));
     }
 });
@@ -270,7 +270,7 @@ Script N(script_80241180) = SCRIPT({
     }
     spawn {
         MakeLerp(0, 150, 45, 10);
-10:
+    10:
         UpdateLerp();
         func_802405FC_9AECFC(0, 0.0, 0.0, SI_VAR(0));
         sleep 1;
@@ -284,17 +284,17 @@ Script N(script_80241180) = SCRIPT({
     LoadPath(45, N(vectorList_80241120), 4, 10);
 0:
     GetNextPathPos();
-    SI_VAR(1) += f SI_VAR(4);
-    SI_VAR(2) += f SI_VAR(5);
-    SI_VAR(3) += f SI_VAR(6);
+    SI_VAR(1) +=f SI_VAR(4);
+    SI_VAR(2) +=f SI_VAR(5);
+    SI_VAR(3) +=f SI_VAR(6);
     func_80240508_9AEC08(SI_VAR(1), SI_VAR(2), SI_VAR(3));
     sleep 1;
     if (SI_VAR(0) == 1) {
         goto 0;
     }
-    SI_VAR(4) = f SI_VAR(1);
-    SI_VAR(5) = f SI_VAR(2);
-    SI_VAR(6) = f SI_VAR(3);
+    SI_VAR(4) =f SI_VAR(1);
+    SI_VAR(5) =f SI_VAR(2);
+    SI_VAR(6) =f SI_VAR(3);
     spawn {
         sleep 5;
         PlaySound(373);
@@ -305,12 +305,12 @@ Script N(script_80241180) = SCRIPT({
     SI_VAR(7) = -1.0;
     SI_VAR(8) = -1.7314453125;
     SI_VAR(9) = 0.0;
-    SI_VAR(7) *= f SI_VAR(0);
-    SI_VAR(8) *= f SI_VAR(0);
-    SI_VAR(9) *= f SI_VAR(0);
-    SI_VAR(7) += f SI_VAR(4);
-    SI_VAR(8) += f SI_VAR(5);
-    SI_VAR(9) += f SI_VAR(6);
+    SI_VAR(7) *=f SI_VAR(0);
+    SI_VAR(8) *=f SI_VAR(0);
+    SI_VAR(9) *=f SI_VAR(0);
+    SI_VAR(7) +=f SI_VAR(4);
+    SI_VAR(8) +=f SI_VAR(5);
+    SI_VAR(9) +=f SI_VAR(6);
     func_80240508_9AEC08(SI_VAR(7), SI_VAR(8), SI_VAR(9));
     sleep 1;
     if (SI_VAR(1) == 1) {
@@ -327,7 +327,7 @@ Script N(script_802414B4) = SCRIPT({
     }
     spawn {
         MakeLerp(0, 0xFFFFFF79, 45, 10);
-10:
+    10:
         UpdateLerp();
         SetNpcRotation(0xFFFFFFFC, 0.0, 0.0, SI_VAR(0));
         sleep 1;
@@ -341,9 +341,9 @@ Script N(script_802414B4) = SCRIPT({
 0:
     GetNextPathPos();
     SI_VAR(1) *= -1.0;
-    SI_VAR(1) += f SI_VAR(4);
-    SI_VAR(2) += f SI_VAR(5);
-    SI_VAR(3) += f SI_VAR(6);
+    SI_VAR(1) +=f SI_VAR(4);
+    SI_VAR(2) +=f SI_VAR(5);
+    SI_VAR(3) +=f SI_VAR(6);
     SetNpcPos(0xFFFFFFFC, SI_VAR(1), SI_VAR(2), SI_VAR(3));
     sleep 1;
     if (SI_VAR(0) == 1) {
@@ -361,12 +361,12 @@ Script N(script_802414B4) = SCRIPT({
     SI_VAR(7) = 1.0;
     SI_VAR(8) = -2.0;
     SI_VAR(9) = 0.0;
-    SI_VAR(7) *= f SI_VAR(0);
-    SI_VAR(8) *= f SI_VAR(0);
-    SI_VAR(9) *= f SI_VAR(0);
-    SI_VAR(7) += f SI_VAR(4);
-    SI_VAR(8) += f SI_VAR(5);
-    SI_VAR(9) += f SI_VAR(6);
+    SI_VAR(7) *=f SI_VAR(0);
+    SI_VAR(8) *=f SI_VAR(0);
+    SI_VAR(9) *=f SI_VAR(0);
+    SI_VAR(7) +=f SI_VAR(4);
+    SI_VAR(8) +=f SI_VAR(5);
+    SI_VAR(9) +=f SI_VAR(6);
     SetNpcPos(0xFFFFFFFC, SI_VAR(7), SI_VAR(8), SI_VAR(9));
     sleep 1;
     if (SI_VAR(1) == 1) {
@@ -488,9 +488,9 @@ NpcSettings N(npcSettings_80241EA0) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x63,
@@ -510,11 +510,11 @@ Script N(script_80241ECC) = SCRIPT({
     SetNpcAnimation(0, 0x660204);
     spawn {
         loop 8 {
-            0x802CFD30(0, 7, 0, 0, 0, 0);
-            0x802CFD30(1, 7, 255, 0, 0, 0);
+            func_802CFD30(0, 7, 0, 0, 0, 0);
+            func_802CFD30(1, 7, 255, 0, 0, 0);
             sleep 6;
-            0x802CFD30(0, 7, 255, 0, 0, 0);
-            0x802CFD30(1, 7, 0, 0, 0, 0);
+            func_802CFD30(0, 7, 255, 0, 0, 0);
+            func_802CFD30(1, 7, 0, 0, 0, 0);
             sleep 6;
         }
     }

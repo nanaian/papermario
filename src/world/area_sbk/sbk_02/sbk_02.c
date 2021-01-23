@@ -181,7 +181,8 @@ Script N(script_EnterWalk_80240F30) = SCRIPT({
         }
         6, 7 {
             spawn N(script_80240EB0);
-        } else {
+        }
+        else {
             SI_VAR(0) = N(script_80240EB0);
             spawn EnterWalk;
         }
@@ -444,7 +445,7 @@ Script N(script_80241C90) = SCRIPT({
 });
 
 Script N(script_80241DE0) = SCRIPT({
-    0x802C971C(114);
+    func_802C971C(114);
     EnableGroup(114, 1);
     spawn {
         EnableTexPanning(113, 1);
@@ -510,7 +511,7 @@ Script N(script_80241DE0) = SCRIPT({
 });
 
 Script N(script_802422F0) = SCRIPT({
-    0x802C971C(114);
+    func_802C971C(114);
     EnableGroup(114, 1);
     spawn {
         EnableTexPanning(113, 1);
@@ -732,16 +733,16 @@ Script N(script_80243310) = SCRIPT({
 
 Script N(script_8024358C) = SCRIPT({
     DisablePulseStone(1);
-    0x802D6420();
+    func_802D6420();
     if (SI_VAR(0) <= 0) {
-        0x802D6954();
+        func_802D6954();
         DisablePulseStone(0);
         return;
     }
     DisablePlayerInput(1);
-    0x802CF56C(1);
+    func_802CF56C(1);
     RemoveKeyItemAt(SI_VAR(1));
-    0x802D6954();
+    func_802D6954();
     SI_SAVE_VAR(0) = 0xFFFFFFC2;
     func_80240338_92A5E8();
     SetMusicTrack(0, 131, 1, 8);
@@ -775,7 +776,7 @@ Script N(script_8024358C) = SCRIPT({
         sleep 10;
         SetPlayerSpeed(3.0);
         PlayerMoveTo(SI_VAR(0), 80, 0);
-        0x802D2884(0, 0, 0);
+        func_802D2884(0, 0, 0);
     }
     spawn N(script_80241430);
     sleep 30;
@@ -831,8 +832,8 @@ Script N(script_80243A00) = {
 Script N(script_80243B38) = SCRIPT({
     PlaySound(92);
     DisablePlayerInput(1);
-    0x802CF56C(1);
-    0x802D2884(0, 0, 0);
+    func_802CF56C(1);
+    func_802D2884(0, 0, 0);
     ModifyColliderFlags(0, 13, 0x7FFFFE00);
     EnableModel(130, 0);
     EnableGroup(22, 0);
@@ -880,7 +881,7 @@ Script N(script_80243B38) = SCRIPT({
     SetCamSpeed(0, 90.0);
     WaitForCam(0, 1.0);
     PanToTarget(0, 0, 0);
-    0x802CF56C(0);
+    func_802CF56C(0);
     DisablePlayerInput(0);
 });
 
@@ -941,7 +942,7 @@ s32 N(unk_80244050)[] = {
 
 Script N(script_80244054) = SCRIPT({
     SI_VAR(9) = SI_VAR(1);
-    0x802D663C();
+    func_802D663C();
     SI_VAR(10) = SI_VAR(0);
     match SI_VAR(0) {
         == 0 {}
@@ -958,14 +959,14 @@ Script N(script_80244054) = SCRIPT({
         }
     }
     func_80240970_92AC20(SI_VAR(10));
-    0x802D6954();
+    func_802D6954();
     unbind;
 });
 
 // Unable to use DSL: DSL does not support script opcode 0x4E
 Script N(script_80244188) = {
     SI_CMD(ScriptOpcode_CALL, func_802409A8_92AC58, SI_VAR(0)),
-    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80244054), 0x10, 0, 0x80245630, 0, 1),
+    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80244054), 0x10, 0, N(script_80245630), 0, 1),
     SI_CMD(ScriptOpcode_CALL, func_8024091C_92ABCC, SI_VAR(0)),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)
@@ -1004,7 +1005,7 @@ Script N(script_Idle_8024423C) = SCRIPT({
 
 Script N(script_80244330) = SCRIPT({
     DisablePartnerAI(0);
-    0x802CF56C(2);
+    func_802CF56C(2);
     GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
     SI_VAR(3) = SI_VAR(0);
     SI_VAR(3) += 0xFFFFFFCE;
@@ -1020,7 +1021,7 @@ Script N(script_80244330) = SCRIPT({
     SetCamSpeed(0, 90.0);
     PanToTarget(0, 0, 1);
     sleep 1;
-    0x802D2508();
+    func_802D2508();
     DisablePlayerInput(1);
     SetCamDistance(0, 300.0);
     SetCamSpeed(0, 1.5);
@@ -1192,7 +1193,8 @@ Script N(script_Interact_80244DA8) = SCRIPT({
             SetNpcPos(-1, 0, 0xFFFFFC18, 0);
             SI_SAVE_FLAG(1788) = 0;
             SI_SAVE_VAR(354) += 1;
-        } else {
+        }
+        else {
             SpeakToPlayer(-1, 0x830404, 0x830401, 0, 0xD00F3);
         }
     }
@@ -1249,7 +1251,7 @@ s32 pad_00557C[] = {
 
 Script N(script_MakeEntities) = SCRIPT({
     if (SI_SAVE_VAR(0) >= 0xFFFFFFC2) {
-        MakeEntity(0x802EA7E0, 0xFFFFFF10, 60, 0xFFFFFF38, 0, 6, 0x80000000);
+        MakeEntity(D_802EA7E0, 0xFFFFFF10, 60, 0xFFFFFF38, 0, 6, 0x80000000);
     }
 });
 

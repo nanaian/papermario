@@ -349,7 +349,7 @@ Script N(script_80241B00) = SCRIPT({
         SI_VAR(2) = N(unk_80241A34);
         SI_VAR(3) = N(unk_80241A40);
     }
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_80243C90_D53C80, 1);
     sleep 100;
@@ -368,7 +368,7 @@ Script N(script_80241BF4) = SCRIPT({
         SI_VAR(2) = N(unk_80241AEC);
         SI_VAR(3) = N(unk_80241AFC);
     }
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_80243C98_D53C88, 0);
     sleep 100;
@@ -387,7 +387,7 @@ Script N(script_80241CE8) = SCRIPT({
         SI_VAR(2) = N(unk_80241AAC);
         SI_VAR(3) = N(unk_80241AB4);
     }
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_80243CA0_D53C90, 0);
     sleep 100;
@@ -406,7 +406,7 @@ Script N(script_80241DDC) = SCRIPT({
         SI_VAR(2) = N(unk_80241A9C);
         SI_VAR(3) = N(unk_80241AA4);
     }
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_80243CA8_D53C98, 0);
     sleep 100;
@@ -425,7 +425,7 @@ Script N(script_80241ED0) = SCRIPT({
         SI_VAR(2) = N(unk_80241A8C);
         SI_VAR(3) = N(unk_80241A94);
     }
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_80243CA0_D53C90, 3);
     sleep 100;
@@ -445,7 +445,7 @@ Script N(script_80241FC4) = SCRIPT({
         SI_VAR(3) = N(unk_80241A84);
     }
 }
-spawn 0x80285EEC;
+spawn func_80285EEC;
 sleep 17;
 GotoMap(D_80243CA8_D53C98, 3);
 sleep 100;
@@ -464,7 +464,7 @@ Script N(script_802420C0) = SCRIPT({
         SI_VAR(2) = N(unk_80241AFC);
         SI_VAR(3) = N(unk_80241AF4);
     }
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_80243CB0_D53CA0, 0);
     sleep 100;
@@ -483,7 +483,7 @@ Script N(script_802421B4) = SCRIPT({
         SI_VAR(2) = N(unk_80241A4C);
         SI_VAR(3) = N(unk_80241A54);
     }
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_80243C90_D53C80, 2);
     sleep 100;
@@ -599,7 +599,7 @@ Script N(script_80242448) = SCRIPT({
             }
         }
     }
-    await 0x802861B0;
+    await func_802861B0;
     spawn N(script_802422A8);
 });
 
@@ -656,7 +656,7 @@ s32 N(unk_80242AD0)[] = {
 
 Script N(script_80242AD4) = SCRIPT({
     SI_VAR(9) = SI_VAR(1);
-    0x802D6420();
+    func_802D6420();
     SI_VAR(10) = SI_VAR(0);
     match SI_VAR(0) {
         == 0 {}
@@ -665,7 +665,7 @@ Script N(script_80242AD4) = SCRIPT({
             RemoveKeyItemAt(SI_VAR(1));
             GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_80240F7C_D50F6C(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |= c 50000;
+            SI_VAR(0) |=c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SetPlayerAnimation(0x60005);
             sleep 30;
@@ -674,14 +674,14 @@ Script N(script_80242AD4) = SCRIPT({
         }
     }
     func_802411A0_D51190(SI_VAR(10));
-    0x802D6954();
+    func_802D6954();
     unbind;
 });
 
 // Unable to use DSL: DSL does not support script opcode 0x4E
 Script N(script_80242C18) = {
     SI_CMD(ScriptOpcode_CALL, func_802411D8_D511C8, SI_VAR(0)),
-    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80242AD4), 0x10, 0, 0x80243CC0, 0, 1),
+    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80242AD4), 0x10, 0, N(unk_80243CC0), 0, 1),
     SI_CMD(ScriptOpcode_CALL, func_8024114C_D5113C, SI_VAR(0)),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)
@@ -689,7 +689,7 @@ Script N(script_80242C18) = {
 
 Script N(script_80242C68) = SCRIPT({
     SI_VAR(9) = SI_VAR(1);
-    0x802D663C();
+    func_802D663C();
     SI_VAR(10) = SI_VAR(0);
     match SI_VAR(0) {
         == 0 {}
@@ -706,14 +706,14 @@ Script N(script_80242C68) = SCRIPT({
         }
     }
     func_802411A0_D51190(SI_VAR(10));
-    0x802D6954();
+    func_802D6954();
     unbind;
 });
 
 // Unable to use DSL: DSL does not support script opcode 0x4E
 Script N(script_80242D9C) = {
     SI_CMD(ScriptOpcode_CALL, func_80241274_D51264, SI_VAR(0)),
-    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80242C68), 0x10, 0, 0x80243E88, 0, 1),
+    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80242C68), 0x10, 0, jtbl_80243E88_BA45B8, 0, 1),
     SI_CMD(ScriptOpcode_CALL, func_8024114C_D5113C, SI_VAR(0)),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)
@@ -841,22 +841,22 @@ Script N(script_802434C4) = SCRIPT({
 
 Script N(script_80243564) = SCRIPT({
     group 0;
-    0x802D5830(1);
-    0x802D6420();
+    func_802D5830(1);
+    func_802D6420();
     if (SI_VAR(0) == 0) {
         ShowMessageAtScreenPos(0x1D00D8, 160, 40);
-        0x802D6954();
-        0x802D5830(0);
+        func_802D6954();
+        func_802D5830(0);
         return;
     }
     if (SI_VAR(0) == -1) {
-        0x802D6954();
-        0x802D5830(0);
+        func_802D6954();
+        func_802D5830(0);
         return;
     }
     FindKeyItem(51, SI_VAR(0));
     RemoveKeyItemAt(SI_VAR(0));
-    0x802D6954();
+    func_802D6954();
     SI_SAVE_FLAG(1495) = 1;
     bind N(script_80241CE8) to TriggerFlag_WALL_INTERACT 36;
     bind N(script_80241ED0) to TriggerFlag_WALL_INTERACT 32;
@@ -870,28 +870,28 @@ Script N(script_80243564) = SCRIPT({
     SI_VAR(0) = SI_MAP_VAR(2);
     SI_MAP_VAR(2) = -1;
     func_80241588_D51578();
-    0x802D5830(0);
+    func_802D5830(0);
     unbind;
 });
 
 Script N(script_8024378C) = SCRIPT({
     group 0;
-    0x802D5830(1);
-    0x802D6420();
+    func_802D5830(1);
+    func_802D6420();
     if (SI_VAR(0) == 0) {
         ShowMessageAtScreenPos(0x1D00D8, 160, 40);
-        0x802D6954();
-        0x802D5830(0);
+        func_802D6954();
+        func_802D5830(0);
         return;
     }
     if (SI_VAR(0) == -1) {
-        0x802D6954();
-        0x802D5830(0);
+        func_802D6954();
+        func_802D5830(0);
         return;
     }
     FindKeyItem(52, SI_VAR(0));
     RemoveKeyItemAt(SI_VAR(0));
-    0x802D6954();
+    func_802D6954();
     SI_SAVE_FLAG(1496) = 1;
     bind N(script_80241DDC) to TriggerFlag_WALL_INTERACT 45;
     bind N(script_80241FC4) to TriggerFlag_WALL_INTERACT 41;
@@ -905,7 +905,7 @@ Script N(script_8024378C) = SCRIPT({
     SI_VAR(0) = SI_MAP_VAR(4);
     SI_MAP_VAR(4) = -1;
     func_80241588_D51578();
-    0x802D5830(0);
+    func_802D5830(0);
     unbind;
 });
 
@@ -918,32 +918,32 @@ Script N(script_MakeEntities) = {
     SI_CMD(ScriptOpcode_SET, SI_MAP_VAR(4), -1),
     SI_CMD(ScriptOpcode_SET, SI_VAR(2), 0x4000),
     SI_CMD(ScriptOpcode_IF_EQ, SI_SAVE_FLAG(1495), 0),
-        SI_CMD(ScriptOpcode_CALL, MakeEntity, 0x802BCD68, 987, 8, 84, 0xFFFFFFB0, 0x80000000),
+        SI_CMD(ScriptOpcode_CALL, MakeEntity, D_802BCD68, 987, 8, 84, 0xFFFFFFB0, 0x80000000),
         SI_CMD(ScriptOpcode_CALL, AssignScript, N(script_8024347C)),
         SI_CMD(ScriptOpcode_SET, SI_MAP_VAR(1), SI_VAR(0)),
         SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80243564), TriggerFlag_WALL_INTERACT, SI_VAR(2), N(itemList_80242DF0), 0, 1),
         SI_CMD(ScriptOpcode_ADD, SI_VAR(2), 1),
-        SI_CMD(ScriptOpcode_CALL, 0x80111F2C, 1),
-        SI_CMD(ScriptOpcode_CALL, MakeEntity, 0x802BCD68, 987, 8, 0xFFFFFFAC, 0xFFFFFFB0, 0x80000000),
+        SI_CMD(ScriptOpcode_CALL, func_80111F2C, 1),
+        SI_CMD(ScriptOpcode_CALL, MakeEntity, D_802BCD68, 987, 8, 0xFFFFFFAC, 0xFFFFFFB0, 0x80000000),
         SI_CMD(ScriptOpcode_CALL, AssignScript, N(script_8024347C)),
         SI_CMD(ScriptOpcode_SET, SI_MAP_VAR(2), SI_VAR(0)),
         SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80243564), TriggerFlag_WALL_INTERACT, SI_VAR(2), N(itemList_80242DF0), 0, 1),
         SI_CMD(ScriptOpcode_ADD, SI_VAR(2), 1),
-        SI_CMD(ScriptOpcode_CALL, 0x80111F2C, 1),
+        SI_CMD(ScriptOpcode_CALL, func_80111F2C, 1),
     SI_CMD(ScriptOpcode_END_IF),
     SI_CMD(ScriptOpcode_IF_EQ, SI_SAVE_FLAG(1496), 0),
-        SI_CMD(ScriptOpcode_CALL, MakeEntity, 0x802BCD68, 987, 258, 84, 0xFFFFFFB0, 0x80000000),
+        SI_CMD(ScriptOpcode_CALL, MakeEntity, D_802BCD68, 987, 258, 84, 0xFFFFFFB0, 0x80000000),
         SI_CMD(ScriptOpcode_CALL, AssignScript, N(script_8024347C)),
         SI_CMD(ScriptOpcode_SET, SI_MAP_VAR(3), SI_VAR(0)),
         SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_8024378C), TriggerFlag_WALL_INTERACT, SI_VAR(2), N(itemList_80242DF8), 0, 1),
         SI_CMD(ScriptOpcode_ADD, SI_VAR(2), 1),
-        SI_CMD(ScriptOpcode_CALL, 0x80111F2C, 1),
-        SI_CMD(ScriptOpcode_CALL, MakeEntity, 0x802BCD68, 987, 258, 0xFFFFFFAC, 0xFFFFFFB0, 0x80000000),
+        SI_CMD(ScriptOpcode_CALL, func_80111F2C, 1),
+        SI_CMD(ScriptOpcode_CALL, MakeEntity, D_802BCD68, 987, 258, 0xFFFFFFAC, 0xFFFFFFB0, 0x80000000),
         SI_CMD(ScriptOpcode_CALL, AssignScript, N(script_8024347C)),
         SI_CMD(ScriptOpcode_SET, SI_MAP_VAR(4), SI_VAR(0)),
         SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_8024378C), TriggerFlag_WALL_INTERACT, SI_VAR(2), N(itemList_80242DF8), 0, 1),
         SI_CMD(ScriptOpcode_ADD, SI_VAR(2), 1),
-        SI_CMD(ScriptOpcode_CALL, 0x80111F2C, 1),
+        SI_CMD(ScriptOpcode_CALL, func_80111F2C, 1),
     SI_CMD(ScriptOpcode_END_IF),
     SI_CMD(ScriptOpcode_SPAWN, N(script_802434C4)),
     SI_CMD(ScriptOpcode_CALL, ParentColliderToModel, 62, 43),

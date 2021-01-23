@@ -164,12 +164,12 @@ Script N(script_MakeEntities) = SCRIPT({
     spawn {
         func_80240000_91B8E0();
     }
-    MakeEntity(0x802EAA30, 0xFFFFFDCF, 0xFFFFFF06, 121, 0, 0x80000000);
+    MakeEntity(D_802EAA30, 0xFFFFFDCF, 0xFFFFFF06, 121, 0, 0x80000000);
     AssignScript(N(script_80241484));
-    MakeEntity(0x802BCD9C, 0xFFFFFDFF, 0, 0xFFFFFF9F, 0, 90, 0x80000000);
-    MakeEntity(0x802BCD9C, 600, 0, 200, 0, 270, 0x80000000);
-    MakeEntity(0x802BCD9C, 336, 0xFFFFFF74, 203, 0, 70, 0x80000000);
-    MakeEntity(0x802BCD9C, 730, 0xFFFFFF06, 0xFFFFFFA1, 0, 90, 0x80000000);
+    MakeEntity(D_802BCD9C, 0xFFFFFDFF, 0, 0xFFFFFF9F, 0, 90, 0x80000000);
+    MakeEntity(D_802BCD9C, 600, 0, 200, 0, 270, 0x80000000);
+    MakeEntity(D_802BCD9C, 336, 0xFFFFFF74, 203, 0, 70, 0x80000000);
+    MakeEntity(D_802BCD9C, 730, 0xFFFFFF06, 0xFFFFFFA1, 0, 90, 0x80000000);
     MakeItemEntity(64, 0xFFFFFEED, 0xFFFFFF06, 150, 17, SI_SAVE_FLAG(707));
 });
 
@@ -203,9 +203,9 @@ NpcSettings N(npcSettings_80241714) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_802416F0),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xA,
@@ -272,7 +272,7 @@ Script N(script_NpcAI_802418EC) = SCRIPT({
     DisablePlayerInput(1);
     GetCurrentPartner(SI_VAR(0));
     if (SI_VAR(0) != 0) {
-        0x802D2B6C();
+        func_802D2B6C();
         sleep 5;
     }
     NpcFacePlayer(-1, 0);
@@ -307,7 +307,7 @@ Script N(script_NpcAI_802418EC) = SCRIPT({
         }
     }
     SetPlayerPos(430, 0, 0xFFFFFFE7);
-    0x802CF56C(2);
+    func_802CF56C(2);
     SetNpcPos(-1, 538, 200, 0xFFFFFFE7);
     EnableNpcShadow(-1, 1);
     GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
@@ -328,7 +328,7 @@ Script N(script_NpcAI_802418EC) = SCRIPT({
         SetCamSpeed(0, 1.0);
         PanToTarget(0, 0.5, 1);
         WaitForCam(0, 1.0);
-        0x802CF56C(2);
+        func_802CF56C(2);
     }
     PlayerFaceNpc(-1, 0);
     SetPlayerAnimation(0x1002A);

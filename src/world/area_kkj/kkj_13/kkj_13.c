@@ -108,7 +108,8 @@ Script N(script_802407E0) = SCRIPT({
             } else {
                 SetMusicTrack(0, 102, 0, 8);
             }
-        } else {
+        }
+        else {
         }
     }
     UseDoorSounds(2);
@@ -239,8 +240,8 @@ Script N(main) = SCRIPT({
         SI_VAR(12) = 0;
         spawn N(script_UpdateTexturePan_802408B0);
     }
-    0x802C90FC(154, 0, -1);
-    0x802C9428(0, N(displayList_80240950), 0);
+    func_802C90FC(154, 0, -1);
+    func_802C9428(0, N(displayList_80240950), 0);
     spawn N(script_802407E0);
     bind N(script_ExitDoubleDoor_802409D0) to TriggerFlag_WALL_INTERACT 0;
     bind N(script_ExitDoubleDoor_80240A74) to TriggerFlag_WALL_INTERACT 3;
@@ -668,9 +669,9 @@ NpcSettings N(npcSettings_802427D8) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x1A,
@@ -718,7 +719,7 @@ Script N(script_Idle_8024285C) = SCRIPT({
             break;
         }
     }
-    0x802D585C(1, 0x20000);
+    func_802D585C(1, 0x20000);
     StartBossBattle(102);
 });
 
@@ -907,7 +908,7 @@ Script N(script_8024390C) = SCRIPT({
         ShakeCam(0, 0, 30, 1.0);
         ShakeCam(0, 0, 30, 0.5);
         PlaySound(1075);
-        0x802D62E4(51);
+        func_802D62E4(51);
     }
     spawn {
         SetPlayerJumpscale(0);

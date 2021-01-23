@@ -168,7 +168,7 @@ Script N(script_80240B2C) = SCRIPT({
 Script N(script_80240D00) = SCRIPT({
     SI_VAR(10) = 0;
     SI_VAR(11) = 0;
-    0x802D2508();
+    func_802D2508();
     loop {
         if (SI_VAR(10) == 0) {
             func_80240730_8AAB80();
@@ -329,7 +329,7 @@ Script N(script_802411F8) = SCRIPT({
     sleep 120;
     GotoMap(D_80241B38_8ABF88, 2);
     sleep 100;
-    0x802D2B6C();
+    func_802D2B6C();
     DisablePlayerPhysics(0);
     DisablePlayerInput(0);
 });

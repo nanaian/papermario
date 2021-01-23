@@ -48,7 +48,8 @@ Script N(script_802400A0) = SCRIPT({
         }
         < 0xFFFFFFF0 {
             SetMusicTrack(0, 85, 0, 8);
-        } else {
+        }
+        else {
             SetMusicTrack(0, 29, 0, 8);
         }
     }
@@ -66,7 +67,7 @@ Script N(script_80240140) = SCRIPT({
     SI_VAR(2) = 0;
     SI_VAR(4) = 1;
     SI_VAR(3) = 1;
-    spawn 0x80285DFC;
+    spawn func_80285DFC;
     sleep 17;
     GotoMap(D_80240990_BF69F0, 0);
     sleep 100;
@@ -83,7 +84,7 @@ Script N(script_80240220) = SCRIPT({
             SI_VAR(2) = 0;
             SI_VAR(4) = 1;
             SI_VAR(3) = 1;
-            await 0x80285E24;
+            await func_80285E24;
             spawn N(script_802401F4);
         }
         == 1 {
@@ -128,7 +129,7 @@ Script N(script_802403A0) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EAA30, 0, 0, 0, 0, 0x80000000);
+    MakeEntity(D_802EAA30, 0, 0, 0, 0, 0x80000000);
     AssignScript(N(script_802403A0));
 });
 
@@ -143,7 +144,7 @@ Script N(script_802404D0) = SCRIPT({
     SI_AREA_FLAG(1) = 1;
     DisablePlayerInput(1);
     SetPlayerActionState(8);
-    0x802D2484();
+    func_802D2484();
     SetPlayerActionState(6);
     SetPlayerJumpscale(1.5);
     PlayerJump(50, 0, 0, 16);

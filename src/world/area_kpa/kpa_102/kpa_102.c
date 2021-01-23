@@ -129,7 +129,7 @@ Script N(script_802435F0) = SCRIPT({
     UseDoorSounds(1);
     spawn {
         sleep 30;
-        0x802D5FA4(7);
+        func_802D5FA4(7);
     }
 });
 
@@ -307,7 +307,7 @@ Script N(script_80243F50) = SCRIPT({
         }
         == 2 {
             SetNpcPos(-1, 0, 0xFFFFFC18, 0);
-            0x80045900(1);
+            func_80045900(1);
         }
         == 3 {
             SetEnemyFlagBits(-1, 16, 1);
@@ -346,9 +346,9 @@ NpcSettings N(npcSettings_802440C0) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80244050),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x1B,
@@ -408,7 +408,7 @@ Script N(script_80244188) = {
             SI_CMD(ScriptOpcode_CALL, SetSelfVar, 0, 0),
         SI_CMD(ScriptOpcode_END_CASE_MULTI),
         SI_CMD(ScriptOpcode_CASE_ELSE),
-            SI_CMD(ScriptOpcode_CALL, 0x800457F8),
+            SI_CMD(ScriptOpcode_CALL, func_800457F8),
         SI_CMD(ScriptOpcode_END_CASE_MULTI),
     SI_CMD(ScriptOpcode_END_MATCH),
     SI_CMD(ScriptOpcode_CALL, BindNpcAI, -1, N(script_NpcAI_8024411C)),
@@ -467,9 +467,9 @@ NpcSettings N(npcSettings_80244424) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_802443B4),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x19,
@@ -502,7 +502,7 @@ Script N(script_802444A0) = SCRIPT({
             DoNpcDefeat();
         }
         == 2 {
-            0x80045900(0);
+            func_80045900(0);
         }
         == 3 {
             SetEnemyFlagBits(-1, 16, 1);
@@ -518,7 +518,7 @@ NpcSettings N(npcSettings_8024453C) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80244480),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
     .onDefeat = &N(script_802444A0),
     .flags = 0,
@@ -562,7 +562,7 @@ Script N(script_80244668) = SCRIPT({
         }
         == 2 {
             SetNpcPos(-1, 0, 0xFFFFFC18, 0);
-            0x80045900(1);
+            func_80045900(1);
         }
         == 3 {
             SetEnemyFlagBits(-1, 16, 1);

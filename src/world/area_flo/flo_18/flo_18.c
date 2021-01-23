@@ -110,7 +110,8 @@ Script N(script_80240830) = SCRIPT({
         < 53 {
             SetMusicTrack(0, 51, 0, 8);
             PlaySoundAtCollider(20, 0x80000025, 0);
-        } else {
+        }
+        else {
             SetMusicTrack(0, 49, 0, 8);
         }
     }
@@ -262,18 +263,18 @@ Script N(script_80241094) = SCRIPT({
         SI_VAR(3) += 0;
         SI_VAR(4) += 0.0;
         SI_VAR(5) = 0.0107421875;
-        SI_VAR(0) += f SI_VAR(3);
-        SI_VAR(1) += f SI_VAR(4);
-        SI_VAR(2) += f SI_VAR(5);
+        SI_VAR(0) +=f SI_VAR(3);
+        SI_VAR(1) +=f SI_VAR(4);
+        SI_VAR(2) +=f SI_VAR(5);
         SI_VAR(6) *= 1.0107421875;
         SI_VAR(7) += 0.0107421875;
-        SI_VAR(8) = f SI_VAR(6);
+        SI_VAR(8) =f SI_VAR(6);
         func_80240394_CDCA34(SI_VAR(14), SI_VAR(10), 0.0, 0.203125, 15, 0, 0);
-        SI_VAR(8) += f SI_VAR(10);
-        SI_VAR(9) = f SI_VAR(7);
+        SI_VAR(8) +=f SI_VAR(10);
+        SI_VAR(9) =f SI_VAR(7);
         func_80240394_CDCA34(SI_VAR(14), SI_VAR(10), 0.0, 0.203125, 20, 0, 90);
-        SI_VAR(9) += f SI_VAR(10);
-        SI_VAR(10) = f SI_VAR(0);
+        SI_VAR(9) +=f SI_VAR(10);
+        SI_VAR(10) =f SI_VAR(0);
         SI_VAR(10) *= 10.0;
         TranslateModel(SI_VAR(15), SI_VAR(0), SI_VAR(1), SI_VAR(2));
         ScaleModel(SI_VAR(15), SI_VAR(8), SI_VAR(9), 1);
@@ -293,7 +294,7 @@ Script N(script_80241284) = SCRIPT({
     SI_VAR(1) = 90.0;
     SI_VAR(2) = -30.0;
     RandInt(100, SI_VAR(3));
-    SI_VAR(3) += f 0xFFFFFFCE;
+    SI_VAR(3) +=f 0xFFFFFFCE;
     SI_VAR(3) /= 200.0;
     SI_VAR(4) = 1.0;
     SI_VAR(5) = 0;
@@ -326,9 +327,9 @@ Script N(script_802413F0) = SCRIPT({
         SI_VAR(15) += 1;
         func_80240394_CDCA34(SI_VAR(15), SI_VAR(14), 1.0, 1.09375, 2, 0, 0);
         func_80240394_CDCA34(SI_VAR(15), SI_VAR(13), 1.09375, 1.0, 2, 0, 0);
-        SI_VAR(0) = f SI_VAR(14);
-        SI_VAR(1) = f SI_VAR(13);
-        SI_VAR(2) = f SI_VAR(14);
+        SI_VAR(0) =f SI_VAR(14);
+        SI_VAR(1) =f SI_VAR(13);
+        SI_VAR(2) =f SI_VAR(14);
         if (SI_SAVE_VAR(252) == 0) {
             ScaleModel(31, SI_VAR(0), SI_VAR(1), SI_VAR(2));
             ScaleModel(32, SI_VAR(0), SI_VAR(1), SI_VAR(2));
@@ -456,9 +457,9 @@ Script N(script_80241ED4) = SCRIPT({
     loop 300 {
         SI_VAR(4) += -0.5;
         SI_VAR(5) += 0.09375;
-        SI_VAR(0) += f SI_VAR(3);
-        SI_VAR(1) += f SI_VAR(4);
-        SI_VAR(2) += f SI_VAR(5);
+        SI_VAR(0) +=f SI_VAR(3);
+        SI_VAR(1) +=f SI_VAR(4);
+        SI_VAR(2) +=f SI_VAR(5);
         if (SI_VAR(1) < 0xFFFFFFF6) {
             SI_VAR(1) = -10.0;
             SI_VAR(3) = 0.0;
@@ -479,8 +480,8 @@ Script N(script_80241ED4) = SCRIPT({
     sleep 1;
 }
 0:
-sleep 30;
-ModifyColliderFlags(0, 19, 0x7FFFFE00);
+    sleep 30;
+    ModifyColliderFlags(0, 19, 0x7FFFFE00);
 });
 
 Script N(script_80242174) = SCRIPT({
@@ -496,9 +497,9 @@ Script N(script_80242174) = SCRIPT({
     }
     loop 300 {
         SI_VAR(4) += -0.5;
-        SI_VAR(0) += f SI_VAR(3);
-        SI_VAR(1) += f SI_VAR(4);
-        SI_VAR(2) += f SI_VAR(5);
+        SI_VAR(0) +=f SI_VAR(3);
+        SI_VAR(1) +=f SI_VAR(4);
+        SI_VAR(2) +=f SI_VAR(5);
         if (SI_VAR(2) < 0xFFFFFFD3) {
             SI_VAR(5) = 5;
         }
@@ -540,7 +541,7 @@ Script N(script_80242474) = SCRIPT({
     }
     loop 300 {
         SI_VAR(5) += 0.5;
-        SI_VAR(2) += f SI_VAR(5);
+        SI_VAR(2) +=f SI_VAR(5);
         if (SI_VAR(2) >= 80) {
             SI_VAR(2) = 80;
             SI_VAR(5) *= -0.5;
@@ -569,7 +570,7 @@ Script N(script_80242620) = SCRIPT({
     }
     loop 300 {
         SI_VAR(5) += 0.5;
-        SI_VAR(2) += f SI_VAR(5);
+        SI_VAR(2) +=f SI_VAR(5);
         if (SI_VAR(2) >= 80) {
             SI_VAR(2) = 80;
             SI_VAR(5) *= -0.5;
@@ -612,9 +613,9 @@ Script N(script_80242910) = SCRIPT({
     loop 300 {
         SI_VAR(4) += -0.5;
         SI_VAR(5) += 0.09375;
-        SI_VAR(0) += f SI_VAR(3);
-        SI_VAR(1) += f SI_VAR(4);
-        SI_VAR(2) += f SI_VAR(5);
+        SI_VAR(0) +=f SI_VAR(3);
+        SI_VAR(1) +=f SI_VAR(4);
+        SI_VAR(2) +=f SI_VAR(5);
         if (SI_VAR(1) < 0xFFFFFFE7) {
             SI_VAR(1) = -25.0;
             SI_VAR(3) = 0.0;
@@ -647,11 +648,11 @@ Script N(script_80242B18) = SCRIPT({
     }
     loop 300 {
         SI_VAR(4) += -0.5;
-        SI_VAR(0) += f SI_VAR(3);
-        SI_VAR(1) += f SI_VAR(4);
-        SI_VAR(2) += f SI_VAR(5);
+        SI_VAR(0) +=f SI_VAR(3);
+        SI_VAR(1) +=f SI_VAR(4);
+        SI_VAR(2) +=f SI_VAR(5);
         if (SI_VAR(1) <= 0xFFFFFFD8) {
-            SI_VAR(1) = f 0xFFFFFFD8;
+            SI_VAR(1) =f 0xFFFFFFD8;
             SI_VAR(4) *= -0.5;
             if (SI_VAR(4) <= 1) {
                 goto 1;
@@ -889,11 +890,11 @@ Script N(script_802436BC) = SCRIPT({
     EnableTexPanning(41, 1);
     spawn {
         SI_VAR(14) = 1.0;
-0:
+    0:
         if (SI_SAVE_VAR(253) >= 3) {
             SI_VAR(14) *= 0.953125;
         }
-        SI_VAR(15) += f SI_VAR(14);
+        SI_VAR(15) +=f SI_VAR(14);
         if (SI_VAR(15) == 1080) {
             SI_VAR(15) = 0;
         }
@@ -940,9 +941,9 @@ NpcSettings N(npcSettings_80243F10) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x14,
@@ -956,9 +957,9 @@ NpcSettings N(npcSettings_80243F3C) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x1A,
@@ -1265,7 +1266,7 @@ Script N(script_80245108) = SCRIPT({
         return;
     }
     DisablePlayerInput(1);
-    0x802D2C14(1);
+    func_802D2C14(1);
     SetNpcFlagBits(0xFFFFFFFC, 256, 1);
     AdjustCam(0, 8.0, 0, 300, 17.0, -6.0);
     await N(script_80244E2C);
@@ -1279,7 +1280,7 @@ Script N(script_80245108) = SCRIPT({
             await N(script_80245004);
         }
     }
-    0x802D2C14(0);
+    func_802D2C14(0);
     DisablePlayerInput(0);
 });
 

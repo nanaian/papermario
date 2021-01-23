@@ -57,7 +57,7 @@ Script N(script_80240620) = SCRIPT({
     UseDoorSounds(1);
     spawn {
         sleep 30;
-        0x802D5FA4(5);
+        func_802D5FA4(5);
     }
 });
 
@@ -149,10 +149,10 @@ s32 N(unk_80240AA0)[] = {
 
 Script N(script_80240AA4) = SCRIPT({
     group 0;
-    0x802D5830(2);
+    func_802D5830(2);
     sleep 40;
     ShowGotItem(SI_VAR(0), 0, 0);
-    0x802D5830(0);
+    func_802D5830(0);
     return;
 });
 
@@ -185,7 +185,7 @@ Script N(script_80240BEC) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EAE30, 220, 30, 0xFFFFFF9C, 0, 0, 0x80000000);
+    MakeEntity(D_802EAE30, 220, 30, 0xFFFFFF9C, 0, 0, 0x80000000);
     AssignFlag(SI_SAVE_FLAG(1555));
     AssignScript(N(script_80240BEC));
 });

@@ -212,52 +212,52 @@ Script N(script_80241050) = SCRIPT({
     SI_VAR(0) = -215.4375;
     SI_VAR(1) = 128.59375;
     SI_VAR(2) = -200.0;
-    SI_VAR(1) += f SI_MAP_VAR(12);
+    SI_VAR(1) +=f SI_MAP_VAR(12);
     TranslateGroup(28, SI_VAR(0), SI_VAR(1), SI_VAR(2));
     SI_VAR(0) = -79.859375;
     func_80240340_CE3A30(SI_VAR(15), SI_VAR(1), 5.0, 136.765625, 300, 0, 0);
     SI_VAR(2) = -200.0;
-    SI_VAR(1) += f SI_MAP_VAR(13);
+    SI_VAR(1) +=f SI_MAP_VAR(13);
     TranslateGroup(32, SI_VAR(0), SI_VAR(1), SI_VAR(2));
     SI_VAR(0) = -364.265625;
     func_80240340_CE3A30(SI_VAR(15), SI_VAR(1), 5.0, 106.765625, 300, 0, 0);
     SI_VAR(2) = 10.0;
-    SI_VAR(1) += f SI_MAP_VAR(14);
+    SI_VAR(1) +=f SI_MAP_VAR(14);
     TranslateGroup(36, SI_VAR(0), SI_VAR(1), SI_VAR(2));
     SI_VAR(0) = 295.734375;
     func_80240340_CE3A30(SI_VAR(15), SI_VAR(1), 65.0, 86.984375, 200, 0, 0);
     SI_VAR(2) = -80.0;
-    SI_VAR(1) += f SI_MAP_VAR(15);
+    SI_VAR(1) +=f SI_MAP_VAR(15);
     TranslateGroup(40, SI_VAR(0), SI_VAR(1), SI_VAR(2));
     func_80240340_CE3A30(SI_VAR(15), SI_VAR(2), 0.96875, 1.03125, 15, 0, 0);
     func_80240340_CE3A30(SI_VAR(15), SI_VAR(3), 1.03125, 0.96875, 15, 0, 0);
-    SI_VAR(0) = f SI_MAP_VAR(12);
-    SI_VAR(1) = f SI_MAP_VAR(12);
+    SI_VAR(0) =f SI_MAP_VAR(12);
+    SI_VAR(1) =f SI_MAP_VAR(12);
     SI_VAR(0) *= -0.01953125;
     SI_VAR(1) *= 0.0400390625;
-    SI_VAR(0) += f SI_VAR(2);
-    SI_VAR(1) += f SI_VAR(3);
+    SI_VAR(0) +=f SI_VAR(2);
+    SI_VAR(1) +=f SI_VAR(3);
     ScaleGroup(28, SI_VAR(0), SI_VAR(1), 1);
-    SI_VAR(0) = f SI_MAP_VAR(13);
-    SI_VAR(1) = f SI_MAP_VAR(13);
+    SI_VAR(0) =f SI_MAP_VAR(13);
+    SI_VAR(1) =f SI_MAP_VAR(13);
     SI_VAR(0) *= -0.01953125;
     SI_VAR(1) *= 0.0400390625;
-    SI_VAR(0) += f SI_VAR(2);
-    SI_VAR(1) += f SI_VAR(3);
+    SI_VAR(0) +=f SI_VAR(2);
+    SI_VAR(1) +=f SI_VAR(3);
     ScaleGroup(32, SI_VAR(0), SI_VAR(1), 1);
-    SI_VAR(0) = f SI_MAP_VAR(14);
-    SI_VAR(1) = f SI_MAP_VAR(14);
+    SI_VAR(0) =f SI_MAP_VAR(14);
+    SI_VAR(1) =f SI_MAP_VAR(14);
     SI_VAR(0) *= -0.01953125;
     SI_VAR(1) *= 0.0400390625;
-    SI_VAR(0) += f SI_VAR(2);
-    SI_VAR(1) += f SI_VAR(3);
+    SI_VAR(0) +=f SI_VAR(2);
+    SI_VAR(1) +=f SI_VAR(3);
     ScaleGroup(36, SI_VAR(0), SI_VAR(1), 1);
-    SI_VAR(0) = f SI_MAP_VAR(15);
-    SI_VAR(1) = f SI_MAP_VAR(15);
+    SI_VAR(0) =f SI_MAP_VAR(15);
+    SI_VAR(1) =f SI_MAP_VAR(15);
     SI_VAR(0) *= -0.01953125;
     SI_VAR(1) *= 0.0400390625;
-    SI_VAR(0) += f SI_VAR(2);
-    SI_VAR(1) += f SI_VAR(3);
+    SI_VAR(0) +=f SI_VAR(2);
+    SI_VAR(1) +=f SI_VAR(3);
     ScaleGroup(40, SI_VAR(0), SI_VAR(1), 1);
     UpdateColliderTransform(8);
     UpdateColliderTransform(9);
@@ -267,26 +267,26 @@ Script N(script_80241050) = SCRIPT({
     if (SI_VAR(15) >= 1200) {
         SI_VAR(15) = 0;
     }
-    SI_VAR(0) = f SI_VAR(10);
-    SI_VAR(1) = f SI_VAR(11);
-    SI_VAR(2) = f SI_VAR(12);
-    SI_VAR(3) = f SI_VAR(13);
+    SI_VAR(0) =f SI_VAR(10);
+    SI_VAR(1) =f SI_VAR(11);
+    SI_VAR(2) =f SI_VAR(12);
+    SI_VAR(3) =f SI_VAR(13);
     SI_VAR(0) *= -0.046875;
     SI_VAR(1) *= -0.09375;
     SI_VAR(2) *= -0.09375;
     SI_VAR(3) *= -0.09375;
-    SI_MAP_VAR(12) += f SI_VAR(0);
-    SI_MAP_VAR(13) += f SI_VAR(1);
-    SI_MAP_VAR(14) += f SI_VAR(2);
-    SI_MAP_VAR(15) += f SI_VAR(3);
+    SI_MAP_VAR(12) +=f SI_VAR(0);
+    SI_MAP_VAR(13) +=f SI_VAR(1);
+    SI_MAP_VAR(14) +=f SI_VAR(2);
+    SI_MAP_VAR(15) +=f SI_VAR(3);
     SI_MAP_VAR(12) *= 0.84375;
     SI_MAP_VAR(13) *= 0.84375;
     SI_MAP_VAR(14) *= 0.84375;
     SI_MAP_VAR(15) *= 0.84375;
-    SI_VAR(10) += f SI_MAP_VAR(12);
-    SI_VAR(11) += f SI_MAP_VAR(13);
-    SI_VAR(12) += f SI_MAP_VAR(14);
-    SI_VAR(13) += f SI_MAP_VAR(15);
+    SI_VAR(10) +=f SI_MAP_VAR(12);
+    SI_VAR(11) +=f SI_MAP_VAR(13);
+    SI_VAR(12) +=f SI_MAP_VAR(14);
+    SI_VAR(13) +=f SI_MAP_VAR(15);
     sleep 1;
     goto 0;
 });
@@ -339,7 +339,7 @@ Script N(script_80241780) = SCRIPT({
     bind N(script_80241734) to TriggerFlag_FLOOR_TOUCH 10;
     spawn {
         SI_VAR(15) = 0;
-0:
+    0:
         func_80240340_CE3A30(SI_VAR(15), SI_VAR(0), 0.96875, 1.03125, 15, 0, 0);
         func_80240340_CE3A30(SI_VAR(15), SI_VAR(1), 1.03125, 0.96875, 15, 0, 0);
         ScaleModel(70, SI_VAR(1), SI_VAR(0), 1);
@@ -394,7 +394,7 @@ Script N(script_80241B10) = SCRIPT({
 Script N(script_80241BB0) = SCRIPT({
     TranslateGroup(79, 0, SI_VAR(0), 0);
     TranslateGroup(92, 0, SI_VAR(0), 0);
-    SI_VAR(1) = f SI_VAR(0);
+    SI_VAR(1) =f SI_VAR(0);
     SI_VAR(1) *= -12.0;
     RotateGroup(79, SI_VAR(1), 0, 1, 0);
     RotateGroup(92, SI_VAR(1), 0, 1, 0);
@@ -402,7 +402,7 @@ Script N(script_80241BB0) = SCRIPT({
 
 Script N(script_80241C58) = SCRIPT({
     TranslateGroup(84, 0, SI_VAR(0), 0);
-    SI_VAR(1) = f SI_VAR(0);
+    SI_VAR(1) =f SI_VAR(0);
     SI_VAR(1) *= -12.0;
     RotateGroup(84, SI_VAR(1), 0, 1, 0);
 });
@@ -482,17 +482,17 @@ Script N(script_80241CC4) = SCRIPT({
     loop 344 {
         SI_VAR(15) += 1;
         func_802407B0_CE3EA0(SI_VAR(15), SI_VAR(0), 0xFFFFFF2E, 0, 344, 0, 0);
-        SI_VAR(1) = f SI_VAR(0);
+        SI_VAR(1) =f SI_VAR(0);
         SI_VAR(1) *= -3.0;
         TranslateModel(86, 1.3134765625, SI_VAR(0), -0.56640625);
         RotateModel(86, SI_VAR(1), 0, 1, 0);
         UpdateColliderTransform(12);
-        SI_VAR(2) = f SI_VAR(0);
+        SI_VAR(2) =f SI_VAR(0);
         SI_VAR(2) *= -3.0;
-        SI_VAR(3) = f SI_VAR(0);
+        SI_VAR(3) =f SI_VAR(0);
         func_80240540_CE3C30();
         func_80240660_CE3D50();
-11:
+    11:
         sleep 1;
         if (SI_AREA_FLAG(45) == 1) {
             goto 11;
@@ -517,7 +517,7 @@ Script N(script_80241CC4) = SCRIPT({
 Script N(script_802423F8) = SCRIPT({
     if (SI_AREA_FLAG(44) == 0) {
         DisablePlayerInput(1);
-        0x802D2B6C();
+        func_802D2B6C();
         sleep 15;
         DisablePartnerAI(0);
         SI_AREA_FLAG(44) = 1;
@@ -582,27 +582,27 @@ Script N(script_802423F8) = SCRIPT({
             loop 344 {
                 SI_VAR(15) += 1;
                 func_802407B0_CE3EA0(SI_VAR(15), SI_VAR(0), 0, 0xFFFFFF2E, 344, 0, 0);
-                SI_VAR(1) = f SI_VAR(0);
+                SI_VAR(1) =f SI_VAR(0);
                 SI_VAR(1) *= -3.0;
                 TranslateModel(86, 1.3134765625, SI_VAR(0), -0.56640625);
                 RotateModel(86, SI_VAR(1), 0, 1, 0);
                 UpdateColliderTransform(12);
-                SI_VAR(2) = f SI_VAR(0);
+                SI_VAR(2) =f SI_VAR(0);
                 SI_VAR(2) *= -3.0;
-                SI_VAR(3) = f SI_VAR(0);
+                SI_VAR(3) =f SI_VAR(0);
                 func_80240540_CE3C30();
                 func_80240660_CE3D50();
                 if (SI_VAR(15) == 300) {
                     SI_MAP_VAR(10) = 1;
                 }
-11:
+            11:
                 sleep 1;
                 if (SI_AREA_FLAG(45) == 1) {
                     goto 11;
                 }
             }
         }
-10:
+    10:
         if (SI_MAP_VAR(10) == 0) {
             sleep 1;
             goto 10;
@@ -671,15 +671,15 @@ Script N(script_80242A2C) = SCRIPT({
         }
         SI_VAR(15) += 1;
         func_802407B0_CE3EA0(SI_VAR(15), SI_VAR(0), 0xFFFFFEA2, 0, 400, 0, 0);
-        SI_MAP_VAR(11) = f SI_VAR(15);
+        SI_MAP_VAR(11) =f SI_VAR(15);
         SI_MAP_VAR(11) *= 1.6005859375;
-        SI_VAR(2) = f SI_VAR(0);
+        SI_VAR(2) =f SI_VAR(0);
         SI_VAR(2) *= 1.0;
-        SI_VAR(0) = f SI_VAR(2);
+        SI_VAR(0) =f SI_VAR(2);
         spawn N(script_80241BB0);
-        SI_VAR(2) = f SI_VAR(0);
+        SI_VAR(2) =f SI_VAR(0);
         SI_VAR(2) *= 1.0;
-        SI_VAR(0) = f SI_VAR(2);
+        SI_VAR(0) =f SI_VAR(2);
         spawn N(script_80241C58);
         sleep 1;
     }

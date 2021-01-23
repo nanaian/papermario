@@ -92,7 +92,8 @@ Script N(script_EnterWalk_80240268) = SCRIPT({
     match SI_VAR(0) {
         == 4 {
             spawn N(script_80240204);
-        } else {
+        }
+        else {
             SI_VAR(0) = N(script_80240204);
             spawn EnterWalk;
         }
@@ -156,9 +157,9 @@ NpcSettings N(npcSettings_8024049C) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80240470),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x9,

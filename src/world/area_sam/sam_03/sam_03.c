@@ -140,7 +140,7 @@ Script N(script_Idle_80240CAC) = SCRIPT({
     if (SI_VAR(0) < 400) {
         goto 11;
     }
-    0x802D2B6C();
+    func_802D2B6C();
     DisablePlayerInput(1);
     SetMusicTrack(0, 71, 0, 8);
     SpeakToPlayer(0, 0x210016, 0x210003, 0, 0x1200D8);
@@ -296,7 +296,7 @@ Script N(script_802418F0) = SCRIPT({
         }
         == 2 {
             SetNpcPos(-1, 0, 0xFFFFFC18, 0);
-            0x80045900(1);
+            func_80045900(1);
         }
         == 3 {
             SetEnemyFlagBits(-1, 16, 1);
@@ -335,9 +335,9 @@ NpcSettings N(npcSettings_80241A4C) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_802419DC),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x16,

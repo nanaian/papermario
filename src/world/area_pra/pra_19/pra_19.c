@@ -276,7 +276,7 @@ Script N(script_80241D24) = SCRIPT({
     SI_VAR(1) = 19;
     SI_VAR(2) = N(unk_80241D0C);
     SI_VAR(3) = N(unk_80241D18);
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_802479E0_D76390, 1);
     sleep 100;
@@ -303,7 +303,7 @@ Script N(script_EnterWalk_80241E84) = SCRIPT({
         == 0 {
             SI_VAR(2) = N(unk_80241D0C);
             SI_VAR(3) = N(unk_80241D18);
-            await 0x802861B0;
+            await func_802861B0;
             spawn N(script_80241E24);
         }
         == 1 {
@@ -350,9 +350,9 @@ NpcSettings N(npcSettings_802420C0) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x6,
@@ -433,7 +433,7 @@ s32 N(unk_802421A0)[] = {
 
 Script N(script_802421A4) = SCRIPT({
     SI_VAR(9) = SI_VAR(1);
-    0x802D6420();
+    func_802D6420();
     SI_VAR(10) = SI_VAR(0);
     match SI_VAR(0) {
         == 0 {}
@@ -442,7 +442,7 @@ Script N(script_802421A4) = SCRIPT({
             RemoveKeyItemAt(SI_VAR(1));
             GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_80240F7C_D6F92C(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |= c 50000;
+            SI_VAR(0) |=c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SetPlayerAnimation(0x60005);
             sleep 30;
@@ -451,14 +451,14 @@ Script N(script_802421A4) = SCRIPT({
         }
     }
     func_802411A0_D6FB50(SI_VAR(10));
-    0x802D6954();
+    func_802D6954();
     unbind;
 });
 
 // Unable to use DSL: DSL does not support script opcode 0x4E
 Script N(script_802422E8) = {
     SI_CMD(ScriptOpcode_CALL, func_802411D8_D6FB88, SI_VAR(0)),
-    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_802421A4), 0x10, 0, 0x802479F0, 0, 1),
+    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_802421A4), 0x10, 0, N(script_OpenDoor_802479F0), 0, 1),
     SI_CMD(ScriptOpcode_CALL, func_8024114C_D6FAFC, SI_VAR(0)),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)
@@ -466,7 +466,7 @@ Script N(script_802422E8) = {
 
 Script N(script_80242338) = SCRIPT({
     SI_VAR(9) = SI_VAR(1);
-    0x802D663C();
+    func_802D663C();
     SI_VAR(10) = SI_VAR(0);
     match SI_VAR(0) {
         == 0 {}
@@ -483,14 +483,14 @@ Script N(script_80242338) = SCRIPT({
         }
     }
     func_802411A0_D6FB50(SI_VAR(10));
-    0x802D6954();
+    func_802D6954();
     unbind;
 });
 
 // Unable to use DSL: DSL does not support script opcode 0x4E
 Script N(script_8024246C) = {
     SI_CMD(ScriptOpcode_CALL, func_80241274_D6FC24, SI_VAR(0)),
-    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80242338), 0x10, 0, 0x80247BB8, 0, 1),
+    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80242338), 0x10, 0, D_80247BB8, 0, 1),
     SI_CMD(ScriptOpcode_CALL, func_8024114C_D6FAFC, SI_VAR(0)),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)

@@ -455,7 +455,7 @@ Script N(script_Idle_80241A7C) = SCRIPT({
 Script N(script_Idle_80241B80) = SCRIPT({
     GetEntryID(SI_VAR(0));
     if (SI_VAR(0) == 5) {
-        0x802D2508();
+        func_802D2508();
         GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
         AwaitPlayerLeave(SI_VAR(0), SI_VAR(2), 100);
         sleep 50;
@@ -805,7 +805,7 @@ Script N(script_80243B7C) = SCRIPT({
         NpcMoveTo(0, 20, 320, 0);
         SetNpcAnimation(0, 0x820004);
     }
-    0x802D1270(80, 300, 4.0);
+    func_802D1270(80, 300, 4.0);
     InterpPlayerYaw(270, 5);
     sleep 30;
     SpeakToPlayer(0, 0x820014, 0x820004, 0, 36);
@@ -1607,7 +1607,7 @@ Script N(script_80249178) = SCRIPT({
     PanToTarget(0, 0, 1);
     sleep 10;
     spawn N(script_80248E40);
-    0x802D1270(0, 300, 4.0);
+    func_802D1270(0, 300, 4.0);
     SetNpcAnimation(1, 0x890002);
     NpcMoveTo(1, 74, 243, 10);
     SetNpcAnimation(1, 0x890001);

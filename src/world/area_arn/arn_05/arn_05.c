@@ -106,7 +106,8 @@ Script N(script_80241360) = SCRIPT({
         }
         < 0xFFFFFFF0 {
             SetMusicTrack(0, 31, 0, 8);
-        } else {
+        }
+        else {
             SetMusicTrack(0, 29, 0, 8);
         }
     }
@@ -174,9 +175,9 @@ NpcSettings N(npcSettings_802416B0) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xD,
@@ -575,9 +576,9 @@ Script N(script_80242C50) = SCRIPT({
     SI_VAR(0) = 240.0;
     loop 20 {
         SI_VAR(0) -= 12.0;
-        0x802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
-        0x802CFD30(1, 7, SI_VAR(0), 0, 0, 0);
-        0x802CFD30(4, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(1, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(4, 7, SI_VAR(0), 0, 0, 0);
         sleep 1;
     }
     SetNpcPos(0, 420, 300, 220);
@@ -590,8 +591,8 @@ Script N(script_80242C50) = SCRIPT({
     SI_VAR(0) = 0.0;
     loop 20 {
         SI_VAR(0) += 12.0;
-        0x802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
-        0x802CFD30(1, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(1, 7, SI_VAR(0), 0, 0, 0);
         sleep 1;
     }
     SpeakToPlayer(2, 0x950106, 0x950106, 0, 0xE00A1);
@@ -621,7 +622,7 @@ Script N(script_80242C50) = SCRIPT({
     sleep 5;
     func_802412B0_BE8E90();
     CloseMessage();
-    0x802D2B50();
+    func_802D2B50();
     sleep 60;
     SetMusicTrack(0, 30, 1, 8);
     SetCamType(0, 6, 1);
@@ -650,8 +651,8 @@ Script N(script_80242C50) = SCRIPT({
         SI_VAR(0) = 240.0;
         loop 20 {
             SI_VAR(0) -= 12.0;
-            0x802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
-            0x802CFD30(1, 7, SI_VAR(0), 0, 0, 0);
+            func_802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
+            func_802CFD30(1, 7, SI_VAR(0), 0, 0, 0);
             sleep 1;
         }
         SetNpcPos(0, 0, 0xFFFFFC18, 0);
@@ -770,14 +771,14 @@ Script N(script_80242C50) = SCRIPT({
     SI_VAR(0) = 0.0;
     loop 20 {
         SI_VAR(0) += 12.5;
-        0x802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
-        0x802CFD30(1, 7, SI_VAR(0), 0, 0, 0);
-        0x802CFD30(4, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(1, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(4, 7, SI_VAR(0), 0, 0, 0);
         sleep 1;
     }
-    0x802CFD30(0, 0, 0, 0, 0, 0);
-    0x802CFD30(1, 0, 0, 0, 0, 0);
-    0x802CFD30(4, 0, 0, 0, 0, 0);
+    func_802CFD30(0, 0, 0, 0, 0, 0);
+    func_802CFD30(1, 0, 0, 0, 0, 0);
+    func_802CFD30(4, 0, 0, 0, 0, 0);
     sleep 10;
     SetCamType(0, 4, 0);
     SetCamSpeed(0, 3.0);
@@ -807,7 +808,7 @@ Script N(script_802441FC) = SCRIPT({
             }
             sleep 1;
         }
-        0x802D2B6C();
+        func_802D2B6C();
         await N(script_80242C50);
         BindNpcInteract(0, N(script_Interact_802418F4));
         BindNpcInteract(1, N(script_Interact_80241A84));
@@ -851,13 +852,13 @@ Script N(script_Idle_8024459C) = SCRIPT({
     SI_VAR(4) += 60;
     loop {
         RandInt(5, SI_VAR(5));
-        SI_VAR(6) = f SI_VAR(5);
+        SI_VAR(6) =f SI_VAR(5);
         SI_VAR(6) *= 0.1005859375;
         SI_VAR(6) += 0.80078125;
         SetNpcSpeed(-1, SI_VAR(6));
         NpcMoveTo(-1, SI_VAR(3), SI_VAR(2), 0);
         RandInt(5, SI_VAR(5));
-        SI_VAR(6) = f SI_VAR(5);
+        SI_VAR(6) =f SI_VAR(5);
         SI_VAR(6) *= 0.1005859375;
         SI_VAR(6) += 0.80078125;
         SetNpcSpeed(-1, SI_VAR(6));
@@ -954,7 +955,7 @@ s32 pad_004FF8[] = {
 };
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA7E0, 17, 238, 80, 0, 0x80000000);
+    MakeEntity(D_802EA7E0, 17, 238, 80, 0, 0x80000000);
 });
 
 s32 pad_005034[] = {

@@ -60,7 +60,8 @@ Script N(script_802402E0) = SCRIPT({
     match SI_SAVE_VAR(0) {
         < 53 {
             SetMusicTrack(0, 48, 0, 8);
-        } else {
+        }
+        else {
             SetMusicTrack(0, 49, 0, 8);
         }
     }
@@ -300,8 +301,8 @@ Script N(script_80240E84) = SCRIPT({
 Script N(script_80241028) = SCRIPT({
     DisablePlayerInput(1);
     DisablePlayerInput(0);
-    0x802D663C();
-    0x802D6954();
+    func_802D663C();
+    func_802D6954();
     DisablePlayerInput(1);
     SI_VAR(8) = SI_VAR(0);
     match SI_VAR(8) {
@@ -337,7 +338,8 @@ Script N(script_80241028) = SCRIPT({
             } else {
                 ShowMessageAtWorldPos(0x1100DE, 35, 35, 0);
             }
-        } else {
+        }
+        else {
             await N(script_80240E84);
             RemoveItemAt(SI_VAR(1));
             ShowMessageAtWorldPos(0x1100DC, 35, 35, 0);

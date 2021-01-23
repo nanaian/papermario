@@ -172,10 +172,10 @@ Script N(script_80240894) = {
         SI_CMD(ScriptOpcode_USE_BUFFER, N(intTable_80240880)),
         SI_CMD(ScriptOpcode_LOOP, 5),
             SI_CMD(ScriptOpcode_BUFFER_READ_1, SI_VAR(0)),
-            SI_CMD(ScriptOpcode_CALL, 0x802CFD30, 0, 13, SI_FIXED(0.0), SI_VAR(0), SI_FIXED(200.0), SI_FIXED(100.0)),
+            SI_CMD(ScriptOpcode_CALL, func_802CFD30, 0, 13, SI_FIXED(0.0), SI_VAR(0), SI_FIXED(200.0), SI_FIXED(100.0)),
             SI_CMD(ScriptOpcode_SLEEP_FRAMES, 1),
         SI_CMD(ScriptOpcode_END_LOOP),
-        SI_CMD(ScriptOpcode_CALL, 0x802CFD30, 0, 13, SI_FIXED(0.0), SI_FIXED(0.0), SI_FIXED(0.0), SI_FIXED(100.0)),
+        SI_CMD(ScriptOpcode_CALL, func_802CFD30, 0, 13, SI_FIXED(0.0), SI_FIXED(0.0), SI_FIXED(0.0), SI_FIXED(100.0)),
         SI_CMD(ScriptOpcode_SLEEP_FRAMES, 1),
     SI_CMD(ScriptOpcode_END_LOOP),
     SI_CMD(ScriptOpcode_GOTO, 0),
@@ -220,7 +220,7 @@ Script N(script_80240B84) = SCRIPT({
     DisablePlayerInput(1);
     GetCurrentPartner(SI_VAR(0));
     if (SI_VAR(0) != 0) {
-        0x802D2B6C();
+        func_802D2B6C();
         sleep 20;
     }
     UseSettingsFrom(0, 160, 0, 0);
@@ -238,7 +238,7 @@ Script N(script_80240B84) = SCRIPT({
     SI_VAR(0) = 0.0;
     loop 100 {
         SI_VAR(0) += 1.0;
-        0x802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
         sleep 1;
     }
     SI_VAR(8) = spawn N(script_80240894);
@@ -342,7 +342,7 @@ Script N(script_80240B84) = SCRIPT({
     SI_VAR(0) = 100.0;
     loop 100 {
         SI_VAR(0) += -1.0;
-        0x802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
         sleep 1;
     }
     SetNpcPos(0, 0, 0xFFFFFC18, 0);

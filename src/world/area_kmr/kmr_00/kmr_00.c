@@ -151,7 +151,7 @@ Script N(script_80241050) = SCRIPT({
     SetPanTarget(0, 0, 15, 0);
     PanToTarget(0, 0, 1);
     sleep 1;
-    0x802D4D14(180);
+    func_802D4D14(180);
     SetPlayerPos(0, 2, 0);
     SetPlayerAnimation(0x1000F);
     sleep 60;
@@ -210,7 +210,7 @@ Script N(script_80241050) = SCRIPT({
         func_80240000_8ABF90(50, 50, 50, 0, 0, 0, 50);
     }
     sleep 90;
-    0x802D4D88();
+    func_802D4D88();
     spawn {
         func_802405F0_8AC580(1, 0, 180);
     }
@@ -235,7 +235,7 @@ Script N(script_80241050) = SCRIPT({
     spawn {
         sleep 330;
         MakeLerp(6000, 0x2EE0, 120, 0);
-25:
+    25:
         UpdateLerp();
         func_802404E8_8AC478();
         sleep 1;
@@ -615,12 +615,12 @@ Script N(script_Aux_80242D70) = {
     SI_CMD(ScriptOpcode_LABEL, 1),
     SI_CMD(ScriptOpcode_LOOP, 50),
         SI_CMD(ScriptOpcode_ADD_F, SI_VAR(0), SI_FIXED(0.80078125)),
-        SI_CMD(ScriptOpcode_CALL, 0x802CFD30, -1, 13, 0, SI_ARRAY(0), SI_MAP_VAR(1), SI_VAR(0)),
+        SI_CMD(ScriptOpcode_CALL, func_802CFD30, -1, 13, 0, SI_ARRAY(0), SI_MAP_VAR(1), SI_VAR(0)),
         SI_CMD(ScriptOpcode_SLEEP_FRAMES, 1),
     SI_CMD(ScriptOpcode_END_LOOP),
     SI_CMD(ScriptOpcode_LOOP, 50),
         SI_CMD(ScriptOpcode_ADD_F, SI_VAR(0), SI_FIXED(-0.7998046875)),
-        SI_CMD(ScriptOpcode_CALL, 0x802CFD30, -1, 13, 0, SI_ARRAY(0), SI_MAP_VAR(1), SI_VAR(0)),
+        SI_CMD(ScriptOpcode_CALL, func_802CFD30, -1, 13, 0, SI_ARRAY(0), SI_MAP_VAR(1), SI_VAR(0)),
         SI_CMD(ScriptOpcode_SLEEP_FRAMES, 1),
     SI_CMD(ScriptOpcode_END_LOOP),
     SI_CMD(ScriptOpcode_GOTO, 1),
@@ -756,7 +756,7 @@ s32 pad_004078[] = {
 };
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EAB04, 0, 0, 0, 0, 2, 0x80000000);
+    MakeEntity(D_802EAB04, 0, 0, 0, 0, 2, 0x80000000);
     AssignPanelFlag(SI_SAVE_FLAG(86));
 });
 

@@ -45,7 +45,8 @@ Script N(script_80240060) = SCRIPT({
         match SI_SAVE_VAR(0) {
             < 53 {
                 SetMusicTrack(0, 52, 0, 8);
-            } else {
+            }
+            else {
                 SetMusicTrack(0, 53, 0, 8);
             }
         }
@@ -175,7 +176,7 @@ Script N(script_802404D8) = SCRIPT({
 });
 
 Script N(script_Aux_8024079C) = SCRIPT({
-    0x802CDE68(11, 48);
+    func_802CDE68(11, 48);
     loop {
         MakeLerp(0xFFFFFFE2, 30, 20, 11);
         loop {
@@ -257,7 +258,8 @@ Script N(script_Interact_80240B28) = SCRIPT({
             } else {
                 SpeakToPlayer(10, 0xCB0007, 0xCB0001, 517, 0x11009E);
             }
-        } else {
+        }
+        else {
             SpeakToPlayer(10, 0xCB0007, 0xCB0001, 517, 0x11009F);
         }
     }
@@ -282,10 +284,10 @@ Script N(script_Init_80240CD0) = SCRIPT({
 Script N(script_Init_80240DB4) = SCRIPT({
     EnableNpcShadow(11, 0);
     SetNpcAnimation(11, 0xCB0002);
-    0x802CFE80(10, 3);
-    0x802CFE80(11, 3);
-    0x802CFFC0(10, 0, 1, 5, 5, 13, 5, 0, 0);
-    0x802CFFC0(11, 0, 1, 5, 5, 13, 5, 0, 0);
+    func_802CFE80(10, 3);
+    func_802CFE80(11, 3);
+    func_802CFFC0(10, 0, 1, 5, 5, 13, 5, 0, 0);
+    func_802CFFC0(11, 0, 1, 5, 5, 13, 5, 0, 0);
     if (SI_SAVE_VAR(0) < 53) {
         SetNpcPos(11, 0, 270, 0xFFFFFFFB);
     } else {
@@ -338,7 +340,7 @@ Script N(script_802412E0) = SCRIPT({
 
 Script N(script_MakeEntities) = SCRIPT({
     if (SI_SAVE_FLAG(1401) == 0) {
-        MakeEntity(0x802BCF00, 0xFFFFFF4C, 0, 0xFFFFFFEE, 0, 0x80000000);
+        MakeEntity(D_802BCF00, 0xFFFFFF4C, 0, 0xFFFFFFEE, 0, 0x80000000);
         AssignScript(N(script_802412E0));
     }
 });

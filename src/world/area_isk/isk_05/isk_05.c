@@ -144,7 +144,7 @@ Script N(script_80242210) = SCRIPT({
 Script N(script_MakeEntities) = SCRIPT({
     MakeItemEntity(22, 316, 82, 0xFFFFFE1F, 0, SI_SAVE_FLAG(882));
     if (SI_SAVE_FLAG(894) == 0) {
-        MakeEntity(0x802EA1C0, 431, 0, 0xFFFFFE22, 45, 0x80000000);
+        MakeEntity(D_802EA1C0, 431, 0, 0xFFFFFE22, 45, 0x80000000);
         AssignScript(N(script_80242210));
     }
     PlayEffect(32, 1, 415, 196, 0xFFFFFEDE, 0.30078125, SI_VAR(0), 0, 0, 0, 0, 0, 0, 0);
@@ -197,10 +197,10 @@ Script N(script_8024243C) = {
         SI_CMD(ScriptOpcode_CASE_MULTI_OR_EQ, 4),
         SI_CMD(ScriptOpcode_CASE_MULTI_OR_EQ, 6),
             SI_CMD(ScriptOpcode_CALL, GetSelfAnimationFromTable, 7, SI_VAR(0)),
-            SI_CMD(ScriptOpcode_AWAIT_SCRIPT, 0x800936DC),
+            SI_CMD(ScriptOpcode_AWAIT_SCRIPT, func_800936DC),
         SI_CMD(ScriptOpcode_CASE_EQ, 3),
             SI_CMD(ScriptOpcode_SPAWN_THREAD),
-                SI_CMD(ScriptOpcode_CALL, 0x800458CC, SI_VAR(0)),
+                SI_CMD(ScriptOpcode_CALL, func_800458CC, SI_VAR(0)),
                 SI_CMD(ScriptOpcode_IF_EQ, SI_VAR(0), 0),
                     SI_CMD(ScriptOpcode_SET, SI_VAR(10), 0),
                     SI_CMD(ScriptOpcode_LOOP, 30),
@@ -272,7 +272,7 @@ Script N(script_Idle_80242658) = SCRIPT({
         sleep 5;
         PlaySoundAtCollider(2, 614, 0);
         MakeLerp(65, 0, 15, 1);
-101:
+    101:
         UpdateLerp();
         TranslateGroup(31, 0, SI_VAR(0), 0);
         sleep 1;
@@ -298,7 +298,7 @@ Script N(script_Idle_80242658) = SCRIPT({
     spawn {
         sleep 15;
         MakeLerp(0, 360, 15, 0);
-10:
+    10:
         UpdateLerp();
         func_80241D44_97F814(SI_VAR(0), 0, 0);
         sleep 1;
@@ -323,7 +323,7 @@ Script N(script_Idle_80242658) = SCRIPT({
     EnableNpcShadow(-1, 1);
     sleep 1;
     func_80241C34_97F704();
-    0x802CFD30(-1, 0, 0, 0, 0, 0);
+    func_802CFD30(-1, 0, 0, 0, 0, 0);
     DisablePlayerInput(0);
     BindNpcAI(-1, N(script_NpcAI_802423CC));
 });
@@ -339,7 +339,7 @@ Script N(script_Defeat_80242A8C) = SCRIPT({
             spawn {
                 sleep 5;
                 MakeLerp(0, 65, 65, 0);
-10:
+            10:
                 UpdateLerp();
                 TranslateGroup(31, 0, SI_VAR(0), 0);
                 sleep 1;

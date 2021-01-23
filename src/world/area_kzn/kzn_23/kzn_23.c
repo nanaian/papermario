@@ -253,7 +253,7 @@ Script N(script_Idle_80240DD0) = SCRIPT({
 Script N(script_Init_80240E0C) = SCRIPT({
     InterpNpcYaw(-1, 90, 1);
     sleep 1;
-    0x802CDE68(-1, 10);
+    func_802CDE68(-1, 10);
     SetNpcRotation(-1, 0, 0, 180);
     SetNpcAnimation(-1, 0xB60007);
     BindNpcIdle(-1, N(script_Idle_80240DD0));
@@ -356,7 +356,7 @@ Script N(script_802410F4) = SCRIPT({
                     break;
                 }
             }
-            0x802D7B10(SI_VAR(14));
+            func_802D7B10(SI_VAR(14));
         }
         sleep 8;
     }
@@ -402,7 +402,7 @@ Script N(script_Idle_80241418) = SCRIPT({
     }
     spawn N(script_802410F4);
     sleep 35;
-    MakeEntity(0x802EAE30, 0, 2650, 0, 148, 0x80000000);
+    MakeEntity(D_802EAE30, 0, 2650, 0, 148, 0x80000000);
     SI_VAR(10) = SI_VAR(0);
     spawn {
         func_80240520_C9C820();

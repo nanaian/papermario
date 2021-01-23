@@ -81,7 +81,7 @@ Script N(script_802413A0) = SCRIPT({
     UseDoorSounds(1);
     spawn {
         sleep 30;
-        0x802D5FA4(7);
+        func_802D5FA4(7);
     }
 });
 
@@ -94,14 +94,14 @@ s32 N(itemList_80241410)[] = {
 };
 
 Script N(script_80241418) = SCRIPT({
-    0x802D6420();
+    func_802D6420();
     if (SI_VAR(0) == 0) {
         ShowMessageAtScreenPos(0x1D00D8, 160, 40);
-        0x802D6954();
+        func_802D6954();
         return;
     }
     if (SI_VAR(0) == -1) {
-        0x802D6954();
+        func_802D6954();
         return;
     }
     RemoveKeyItemAt(SI_VAR(1));
@@ -112,7 +112,7 @@ Script N(script_80241418) = SCRIPT({
     func_80240000_A67100();
     SI_VAR(1) = 0;
     sleep 5;
-    0x802D6954();
+    func_802D6954();
     unbind;
     bind N(script_ExitDoubleDoor_802416B4) to TriggerFlag_WALL_INTERACT 15;
 });
@@ -121,7 +121,7 @@ Script N(script_80241418) = SCRIPT({
 // *INDENT-OFF*
 Script N(script_MakeEntities) = {
     SI_CMD(ScriptOpcode_IF_EQ, SI_SAVE_FLAG(1561), 0),
-        SI_CMD(ScriptOpcode_CALL, MakeEntity, 0x802BCD68, 352, 10, 0xFFFFFFE7, 270, 0x80000000),
+        SI_CMD(ScriptOpcode_CALL, MakeEntity, D_802BCD68, 352, 10, 0xFFFFFFE7, 270, 0x80000000),
         SI_CMD(ScriptOpcode_SET, SI_MAP_VAR(0), SI_VAR(0)),
         SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80241418), TriggerFlag_WALL_INTERACT, 0x4000, N(itemList_80241410), 0, 1),
     SI_CMD(ScriptOpcode_ELSE),
@@ -233,7 +233,7 @@ Script N(script_80241A40) = SCRIPT({
         }
         == 2 {
             SetNpcPos(-1, 0, 0xFFFFFC18, 0);
-            0x80045900(1);
+            func_80045900(1);
         }
         == 3 {
             SetEnemyFlagBits(-1, 16, 1);
@@ -272,9 +272,9 @@ NpcSettings N(npcSettings_80241BB0) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80241B40),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x1B,
@@ -334,7 +334,7 @@ Script N(script_80241C78) = {
             SI_CMD(ScriptOpcode_CALL, SetSelfVar, 0, 0),
         SI_CMD(ScriptOpcode_END_CASE_MULTI),
         SI_CMD(ScriptOpcode_CASE_ELSE),
-            SI_CMD(ScriptOpcode_CALL, 0x800457F8),
+            SI_CMD(ScriptOpcode_CALL, func_800457F8),
         SI_CMD(ScriptOpcode_END_CASE_MULTI),
     SI_CMD(ScriptOpcode_END_MATCH),
     SI_CMD(ScriptOpcode_CALL, BindNpcAI, -1, N(script_NpcAI_80241C0C)),

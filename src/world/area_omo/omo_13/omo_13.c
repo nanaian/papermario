@@ -245,9 +245,9 @@ NpcSettings N(npcSettings_80241B30) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80241B10),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xE,
@@ -280,9 +280,9 @@ NpcSettings N(npcSettings_80241BAC) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80241B8C),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xF,
@@ -296,9 +296,9 @@ NpcSettings N(npcSettings_80241BD8) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xE,
@@ -315,7 +315,7 @@ s32 N(unk_80241C08)[] = {
 
 Script N(script_80241C0C) = SCRIPT({
     SI_VAR(9) = SI_VAR(1);
-    0x802D663C();
+    func_802D663C();
     SI_VAR(10) = SI_VAR(0);
     match SI_VAR(0) {
         == 0 {}
@@ -332,14 +332,14 @@ Script N(script_80241C0C) = SCRIPT({
         }
     }
     func_80240F54_DE33E4(SI_VAR(10));
-    0x802D6954();
+    func_802D6954();
     unbind;
 });
 
 // Unable to use DSL: DSL does not support script opcode 0x4E
 Script N(script_80241D40) = {
     SI_CMD(ScriptOpcode_CALL, func_80240F8C_DE341C, SI_VAR(0)),
-    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80241C0C), 0x10, 0, 0x80243220, 0, 1),
+    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80241C0C), 0x10, 0, func_80243220_DC04D0, 0, 1),
     SI_CMD(ScriptOpcode_CALL, func_80240F00_DE3390, SI_VAR(0)),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)
@@ -431,7 +431,7 @@ Script N(script_Idle_802422A8) = SCRIPT({
     }
     if (SI_VAR(0) == 1) {
         StartBossBattle(3);
-1:
+    1:
         GetSelfVar(0, SI_VAR(0));
         if (SI_VAR(0) != 0) {
             sleep 1;
@@ -460,7 +460,7 @@ Script N(script_Idle_802422A8) = SCRIPT({
         InterpNpcYaw(-1, 90, 0);
         SetNpcAnimation(-1, 0x3B0515);
         SetNpcFlagBits(-1, 256, 0);
-9:
+    9:
         sleep 1;
         goto 9;
     }
@@ -562,10 +562,10 @@ s32 N(unk_80242C70)[] = {
 
 Script N(script_80242C74) = SCRIPT({
     group 0;
-    0x802D5830(2);
+    func_802D5830(2);
     sleep 40;
     ShowGotItem(SI_VAR(0), 0, 0);
-    0x802D5830(0);
+    func_802D5830(0);
     return;
 });
 
@@ -598,12 +598,12 @@ Script N(script_80242DBC) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EAE30, 110, 0, 0xFFFFFFC4, 0, 0, 0x80000000);
+    MakeEntity(D_802EAE30, 110, 0, 0xFFFFFFC4, 0, 0, 0x80000000);
     AssignFlag(SI_SAVE_FLAG(1183));
     AssignScript(N(script_80242DBC));
-    MakeEntity(0x802EA564, 0xFFFFFE89, 60, 0xFFFFFFA1, 0, 343, 0x80000000);
+    MakeEntity(D_802EA564, 0xFFFFFE89, 60, 0xFFFFFFA1, 0, 343, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1184));
-    MakeEntity(0x802EA588, 470, 60, 0xFFFFFFC4, 0, 163, 0x80000000);
+    MakeEntity(D_802EA588, 470, 60, 0xFFFFFFC4, 0, 163, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1185));
 });
 

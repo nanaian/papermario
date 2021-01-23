@@ -206,8 +206,8 @@ s32 N(byteTable_80241AE0)[] = {
 
 f32 N(floatTable_80241AEC)[] = {
     -105.0f, -80.0f, -55.0f, -30.0f, -5.0f, -105.0f, -80.0f, -55.0f,
-        -30.0f, -5.0f, 20.0f,
-    };
+    -30.0f, -5.0f, 20.0f,
+};
 
 f32 N(floatTable_80241B18)[] = {
     157.0f, 157.0f, 157.0f, 157.0f, 157.0f, 133.0f, 133.0f, 133.0f,
@@ -315,13 +315,13 @@ Script N(script_80241C4C) = SCRIPT({
     func_80240438_E12B98();
     spawn {
         sleep 15;
-        0x802D5FD8();
+        func_802D5FD8();
     }
     match SI_VAR(11) {
         == 1 {
-            0x802D617C(8215, 0);
+            func_802D617C(8215, 0);
             sleep 10;
-            0x802D617C(8215, 0);
+            func_802D617C(8215, 0);
             sleep 10;
             func_80240DB8_E13518();
             TranslateModel(SI_VAR(1), SI_VAR(5), SI_VAR(6), SI_VAR(7));
@@ -341,7 +341,7 @@ Script N(script_80241C4C) = SCRIPT({
                 == 8 {
                     SpeakToPlayer(0, 0x830004, 0x830001, 0, 0x80037);
                     func_80240D84_E134E4();
-                    0x802D617C(1020, 0);
+                    func_802D617C(1020, 0);
                     sleep 30;
                     func_CalculateScore_E133B4();
                     SpeakToPlayer(0, 0x830004, 0x830001, 0, 0x80038);
@@ -488,7 +488,7 @@ Script N(script_Interact_802424F4) = SCRIPT({
         func_80241234_E13994();
         sleep 10;
         EndSpeech(0, 0x830004, 0x830001, 5);
-        0x802D5FF8(133, 0);
+        func_802D5FF8(133, 0);
         sleep 10;
         EndSpeech(0, 0x830004, 0x830001, 5);
         func_802403FC_E12B5C();
@@ -539,7 +539,7 @@ Script N(script_80242C40) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EAFDC, 0xFFFFFFC9, 0xFFFFFFFE, 0xFFFFFFB0, 0, 0x80000000);
+    MakeEntity(D_802EAFDC, 0xFFFFFFC9, 0xFFFFFFFE, 0xFFFFFFB0, 0, 0x80000000);
     AssignScript(N(script_80242C40));
 });
 

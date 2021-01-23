@@ -51,7 +51,7 @@ MapConfig N(header) = {
 
 Script N(script_802401F0) = SCRIPT({
     match SI_SAVE_VAR(0) {
-        0xFFFFFFF3..5
+    0xFFFFFFF3..5
         SetMusicTrack(0, 74, 0, 8);
         else {
             SetMusicTrack(0, 0, 0, 8);
@@ -110,7 +110,7 @@ s32 pad_0004C8[] = {
 };
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802E9A18, 0xFFFFFF51, 60, 0xFFFFFFCE, 0, 0x80000000);
+    MakeEntity(D_802E9A18, 0xFFFFFF51, 60, 0xFFFFFFCE, 0, 0x80000000);
 });
 
 s32 pad_000504[] = {
@@ -241,7 +241,7 @@ Script N(script_80240980) = SCRIPT({
     }
     DisablePlayerInput(1);
     SetNpcPos(0, 200, 44, 0);
-    0x802CFD30(0, 7, 0, 0, 0, 0);
+    func_802CFD30(0, 7, 0, 0, 0, 0);
     SI_MAP_VAR(0) = 1;
     SetMusicTrack(0, 27, 0, 8);
     sleep 20;
@@ -259,7 +259,7 @@ Script N(script_80240980) = SCRIPT({
     SI_VAR(0) = 0.0;
     loop 20 {
         SI_VAR(0) += 12.0;
-        0x802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
         sleep 1;
     }
     sleep 20;
@@ -284,7 +284,7 @@ Script N(script_80240980) = SCRIPT({
     SI_VAR(0) = 240.0;
     loop 20 {
         SI_VAR(0) -= 12.0;
-        0x802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
         sleep 1;
     }
     sleep 25;
@@ -297,7 +297,7 @@ Script N(script_80240980) = SCRIPT({
         SI_VAR(0) = 0.0;
         loop 20 {
             SI_VAR(0) += 12.0;
-            0x802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
+            func_802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
             sleep 1;
         }
     }
@@ -310,7 +310,7 @@ Script N(script_80240980) = SCRIPT({
     SI_VAR(0) = 240.0;
     loop 20 {
         SI_VAR(0) -= 12.0;
-        0x802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
         sleep 1;
     }
     SI_SAVE_VAR(0) = 0xFFFFFFCE;
@@ -327,7 +327,7 @@ Script N(script_80240FC0) = SCRIPT({
         < 0xFFFFFFCE {
             spawn N(script_80240980);
         }
-        0xFFFFFFCE..0xFFFFFFF1
+    0xFFFFFFCE..0xFFFFFFF1
     }
 });
 
@@ -346,7 +346,7 @@ Script N(script_Init_80241020) = SCRIPT({
 });
 
 Script N(script_Idle_80241098) = SCRIPT({
-    0x802D2508();
+    func_802D2508();
     DisablePlayerInput(1);
     SI_MAP_VAR(0) = 1;
     GetNpcPos(-1, SI_VAR(0), SI_VAR(1), SI_VAR(2));

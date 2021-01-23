@@ -121,7 +121,8 @@ Script N(script_80240E3C) = SCRIPT({
         }
         == 56 {
             SI_VAR(0) = 1;
-        } else {
+        }
+        else {
             return;
         }
     }
@@ -255,7 +256,7 @@ Script N(script_802415E0) = SCRIPT({
 Script N(script_80241600) = SCRIPT({
     spawn {
         SI_VAR(15) = 0;
-0:
+    0:
         func_80240B40_CE7240(SI_VAR(15), SI_VAR(0), 0.96875, 1.03125, 15, 0, 0);
         func_80240B40_CE7240(SI_VAR(15), SI_VAR(1), 1.03125, 0.96875, 15, 0, 0);
         ScaleModel(88, SI_VAR(1), SI_VAR(0), 1);
@@ -286,9 +287,9 @@ NpcSettings N(npcSettings_802417C0) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x10,
@@ -356,7 +357,7 @@ Script N(script_80241920) = SCRIPT({
     spawn {
         SetPlayerAnimation(0x80017);
         LoadPath(30, N(vectorList_8024189C), 3, 0);
-0:
+    0:
         GetNextPathPos();
         SetPlayerPos(SI_VAR(1), SI_VAR(2), SI_VAR(3));
         sleep 1;
@@ -377,7 +378,7 @@ Script N(script_80241B98) = SCRIPT({
     SI_VAR(9) = spawn N(script_802418C0);
     GetCurrentPartner(SI_VAR(0));
     if (SI_VAR(0) != 0) {
-        0x802D2B6C();
+        func_802D2B6C();
         sleep 20;
     }
     DisablePlayerPhysics(1);
@@ -407,7 +408,7 @@ Script N(script_80241B98) = SCRIPT({
         }
         SetPanTarget(0, SI_VAR(0), SI_VAR(2), SI_VAR(4));
     }
-    0x802D2C14(1);
+    func_802D2C14(1);
     SetPlayerPos(SI_VAR(0), SI_VAR(2), SI_VAR(4));
     SetNpcFlagBits(1, 256, 0);
     DisablePlayerPhysics(0);
@@ -432,7 +433,7 @@ Script N(script_80241B98) = SCRIPT({
     SetCamDistance(0, 300.0);
     SetCamPitch(0, 17.0, -9.0);
     PanToTarget(0, 0, 1);
-    0x802D2C14(0);
+    func_802D2C14(0);
     sleep 10;
     GetCurrentPartnerID(SI_VAR(0));
     if (SI_VAR(0) != 8) {
@@ -480,7 +481,8 @@ Script N(script_80242290) = SCRIPT({
         == 1 {
             SI_VAR(3) = 5;
             SI_VAR(2) = 1;
-        } else {
+        }
+        else {
             return;
         }
     }
@@ -568,9 +570,9 @@ Script N(script_8024263C) = SCRIPT({
             MakeLerp(0, 255, 10, 4);
             loop {
                 UpdateLerp();
-                0x802CFD30(0, 9, SI_VAR(0), SI_VAR(0), SI_VAR(0), 0);
-                0x802CFD30(1, 9, SI_VAR(0), SI_VAR(0), SI_VAR(0), 0);
-                0x802CFD30(2, 9, SI_VAR(0), SI_VAR(0), SI_VAR(0), 0);
+                func_802CFD30(0, 9, SI_VAR(0), SI_VAR(0), SI_VAR(0), 0);
+                func_802CFD30(1, 9, SI_VAR(0), SI_VAR(0), SI_VAR(0), 0);
+                func_802CFD30(2, 9, SI_VAR(0), SI_VAR(0), SI_VAR(0), 0);
                 sleep 1;
                 if (SI_VAR(1) == 0) {
                     break;

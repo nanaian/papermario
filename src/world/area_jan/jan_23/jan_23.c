@@ -98,14 +98,15 @@ Script N(script_802400CC) = SCRIPT({
                     goto 11;
                 }
                 == 15 {
-11:
+                11:
                     GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
                     UseSettingsFrom(0, SI_VAR(0), 250, 100);
                     SetPanTarget(0, SI_VAR(0), 0xFFFFFF9C, SI_VAR(2));
                     SetCamSpeed(0, 90.0);
                     PanToTarget(0, 0, 1);
                     SI_MAP_VAR(5) = -1;
-                } else {
+                }
+                else {
                     sleep 10;
                 }
             }
@@ -231,7 +232,7 @@ Script N(script_80240754) = SCRIPT({
 });
 
 Script N(script_80240984) = SCRIPT({
-    0x802CDE68(1, 50);
+    func_802CDE68(1, 50);
     loop 2 {
         SI_VAR(3) = 0xFFFFFFE2;
         loop 20 {
@@ -250,11 +251,11 @@ Script N(script_80240984) = SCRIPT({
         SI_VAR(3) += 3;
         sleep 1;
     }
-    0x802CDE68(1, 0);
+    func_802CDE68(1, 0);
 });
 
 Script N(script_80240AC4) = SCRIPT({
-    0x802CDE68(2, 60);
+    func_802CDE68(2, 60);
     loop 2 {
         SI_VAR(3) = 0xFFFFFFE2;
         loop 20 {
@@ -273,11 +274,11 @@ Script N(script_80240AC4) = SCRIPT({
         SI_VAR(3) += 3;
         sleep 1;
     }
-    0x802CDE68(2, 0);
+    func_802CDE68(2, 0);
 });
 
 Script N(script_80240C04) = SCRIPT({
-    0x802CDE68(3, 50);
+    func_802CDE68(3, 50);
     loop 2 {
         SI_VAR(3) = 0xFFFFFFE2;
         loop 20 {
@@ -296,11 +297,11 @@ Script N(script_80240C04) = SCRIPT({
         SI_VAR(3) += 3;
         sleep 1;
     }
-    0x802CDE68(3, 0);
+    func_802CDE68(3, 0);
 });
 
 Script N(script_80240D44) = SCRIPT({
-    0x802CDE68(4, 60);
+    func_802CDE68(4, 60);
     loop 2 {
         SI_VAR(3) = 0xFFFFFFE2;
         loop 20 {
@@ -319,11 +320,11 @@ Script N(script_80240D44) = SCRIPT({
         SI_VAR(3) += 3;
         sleep 1;
     }
-    0x802CDE68(4, 0);
+    func_802CDE68(4, 0);
 });
 
 Script N(script_80240E84) = SCRIPT({
-    0x802CDE68(5, 50);
+    func_802CDE68(5, 50);
     loop 2 {
         SI_VAR(3) = 0xFFFFFFE2;
         loop 20 {
@@ -342,7 +343,7 @@ Script N(script_80240E84) = SCRIPT({
         SI_VAR(3) += 3;
         sleep 1;
     }
-    0x802CDE68(5, 0);
+    func_802CDE68(5, 0);
 });
 
 Script N(script_80240FC4) = SCRIPT({
@@ -383,7 +384,7 @@ Script N(script_80241168) = SCRIPT({
 
 Script N(script_802411F4) = SCRIPT({
 0:
-    0x802D7E08(5, 1, 0xFFFFFFD3, 1, 0, 0, 0, 0, 20);
+    func_802D7E08(5, 1, 0xFFFFFFD3, 1, 0, 0, 0, 0, 20);
     sleep 8;
     goto 0;
 });
@@ -424,7 +425,7 @@ Script N(script_Interact_8024130C) = SCRIPT({
         SpeakToPlayer(-1, 0xC40008, 0xC40008, 5, 0x1000DC);
         SI_MAP_FLAG(0) = 1;
     }
-    0x802D7CF8(0, 0, 0, 320, 240, 128, 10);
+    func_802D7CF8(0, 0, 0, 320, 240, 128, 10);
     SetNpcAnimation(-1, 0xC40008);
     GetNpcPos(-1, SI_VAR(0), SI_VAR(1), SI_VAR(2));
     SetPanTarget(0, SI_VAR(0), SI_VAR(1), SI_VAR(2));
@@ -439,7 +440,7 @@ Script N(script_Interact_8024130C) = SCRIPT({
         PanToTarget(0, 0, 1);
         WaitForCam(0, 1.0);
     }
-    0x802D7CF8(0, 0, 0, 320, 240, 0, 10);
+    func_802D7CF8(0, 0, 0, 320, 240, 0, 10);
 2:
     if (SI_MAP_FLAG(0) == 0) {
         sleep 1;
@@ -727,7 +728,8 @@ Script N(script_Init_80242ABC) = SCRIPT({
         }
         >= 24 {
             BindNpcInteract(-1, N(script_Interact_80242A8C));
-        } else {
+        }
+        else {
             RemoveNpc(-1);
         }
     }

@@ -72,7 +72,7 @@ Script N(script_80240B50) = SCRIPT({
     UseDoorSounds(1);
     spawn {
         sleep 30;
-        0x802D5FA4(5);
+        func_802D5FA4(5);
     }
 });
 
@@ -99,7 +99,7 @@ Script N(script_80240C6C) = SCRIPT({
     LoadModelAnimation(0, N(unk_8024195C));
     PlayModelAnimation(0, N(unk_80241990));
     SetAnimModelPosition(0, 0, 0, 0);
-    0x802CD348(0, 1);
+    func_802CD348(0, 1);
 });
 
 Script N(script_ExitDoubleDoor_80240CD4) = SCRIPT({
@@ -185,7 +185,7 @@ Script N(main) = SCRIPT({
     SetCamBGColor(0, 0, 0, 0);
     SetCamEnabled(0, 1);
     MakeNpcs(1, N(npcGroupList_802417AC));
-    0x802CCCB0();
+    func_802CCCB0();
     spawn N(script_80240C6C);
     spawn {
         PlaySoundAt(0x80000051, 0, 800, 100, 0xFFFFFF38);
@@ -250,9 +250,9 @@ NpcSettings N(npcSettings_802413A0) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80241330),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x19,

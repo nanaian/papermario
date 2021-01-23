@@ -231,9 +231,9 @@ NpcSettings N(npcSettings_802419EC) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_802419B0),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x10,
@@ -247,9 +247,9 @@ NpcSettings N(npcSettings_80241A18) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x6,
@@ -321,7 +321,7 @@ Script N(script_Idle_80241BCC) = SCRIPT({
             if (SI_VAR(0) > 430) {
                 GetCurrentPartner(SI_VAR(0));
                 if (SI_VAR(0) != 0) {
-                    0x802D2B6C();
+                    func_802D2B6C();
                 }
                 DisablePlayerInput(1);
                 RemoveNpc(1);
@@ -329,7 +329,7 @@ Script N(script_Idle_80241BCC) = SCRIPT({
                 InterpPlayerYaw(270, 4);
                 SetNpcAnimation(-1, 0xB60007);
                 NpcMoveTo(-1, 250, 90, 5);
-                0x802CF56C(2);
+                func_802CF56C(2);
                 GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
                 SI_VAR(3) = SI_VAR(0);
                 SI_VAR(3) += 0xFFFFFFCE;
@@ -354,16 +354,16 @@ Script N(script_Idle_80241BCC) = SCRIPT({
         }
         == 1 {
             group 0;
-            0x802D5830(1);
-            0x802D2C14(1);
+            func_802D5830(1);
+            func_802D2C14(1);
             sleep 10;
             SpeakToPlayer(-1, 0xB60009, 0xB60001, 0, 0x10000F);
             SI_SAVE_FLAG(1220) = 1;
             SetSelfVar(0, 2);
             SI_SAVE_VAR(0) = 12;
             await N(script_80241AB4);
-            0x802D2C14(0);
-            0x802D5830(0);
+            func_802D2C14(0);
+            func_802D5830(0);
             group 11;
             DisablePlayerInput(0);
         }
@@ -386,7 +386,8 @@ Script N(script_Hit_80242114) = SCRIPT({
         }
         == 6 {
             SI_VAR(1) = 1;
-        } else {
+        }
+        else {
             SI_VAR(1) = 0;
         }
     }
@@ -421,7 +422,7 @@ Script N(script_Idle_802422D8) = SCRIPT({
         loop {
             GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
             match SI_VAR(0) {
-                SI_VAR(3)..SI_VAR(4)
+            SI_VAR(3)..SI_VAR(4)
                 SetSelfEnemyFlagBits(0x1000000, 0);
                 SetSelfEnemyFlagBits(0x10000000, 0);
                 else {
@@ -457,7 +458,7 @@ Script N(script_Idle_802422D8) = SCRIPT({
         SI_VAR(0) += SI_VAR(4);
         SetNpcJumpscale(-1, 1.0);
         NpcJump0(-1, SI_VAR(0), 0xFFFFFFF4, SI_VAR(2), 15);
-1:
+    1:
         sleep 1;
         if (SI_AREA_FLAG(9) == 1) {
             goto 1;
@@ -473,7 +474,7 @@ Script N(script_Defeat_80242634) = SCRIPT({
             SetNpcAnimation(0, 0xB60001);
             GetCurrentPartner(SI_VAR(0));
             if (SI_VAR(0) != 0) {
-                0x802D2B6C();
+                func_802D2B6C();
             }
             SetNpcFlagBits(0xFFFFFFFC, 256, 1);
             spawn {
@@ -632,15 +633,15 @@ s32 pad_0033F8[] = {
 
 Script N(script_MakeEntities) = SCRIPT({
     MakeItemEntity(65, 0xFFFFFF92, 90, 0xFFFFFF1A, 17, SI_SAVE_FLAG(1222));
-    MakeEntity(0x802BCBD8, 0xFFFFFE89, 0xFFFFFFFD, 0xFFFFFFB5, 0, 0x80000000);
-    MakeEntity(0x802EA588, 0xFFFFFEB1, 57, 0xFFFFFFC9, 0, 151, 0x80000000);
+    MakeEntity(D_802BCBD8, 0xFFFFFE89, 0xFFFFFFFD, 0xFFFFFFB5, 0, 0x80000000);
+    MakeEntity(D_802EA588, 0xFFFFFEB1, 57, 0xFFFFFFC9, 0, 151, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1246));
-    MakeEntity(0x802BCBD8, 180, 0xFFFFFFFD, 0xFFFFFF8D, 0, 0x80000000);
-    MakeEntity(0x802EA588, 140, 57, 0xFFFFFFAB, 0, 150, 0x80000000);
+    MakeEntity(D_802BCBD8, 180, 0xFFFFFFFD, 0xFFFFFF8D, 0, 0x80000000);
+    MakeEntity(D_802EA588, 140, 57, 0xFFFFFFAB, 0, 150, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1247));
     MakeItemEntity(343, 340, 100, 0xFFFFFFA6, 17, SI_SAVE_FLAG(1221));
     MakeItemEntity(343, 340, 125, 0xFFFFFFA6, 17, SI_SAVE_FLAG(1277));
-    MakeEntity(0x802BC7F4, 340, 0, 0xFFFFFFA6, 0, 0x80000000);
+    MakeEntity(D_802BC7F4, 340, 0, 0xFFFFFFA6, 0, 0x80000000);
 });
 
 s32 pad_003558[] = {

@@ -62,27 +62,27 @@ s32 pad_0002BC[] = {
 };
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA5AC, 567, 60, 100, 0, 0x80000000);
-    MakeEntity(0x802EA5D0, 623, 60, 100, 0, 0x80000000);
-    MakeEntity(0x802EA07C, 300, 60, 0xFFFFFFCE, 0, 0x80000000);
-    MakeEntity(0x802EA0C4, 360, 80, 0xFFFFFFCE, 0, 0x80000000);
-    MakeEntity(0x802EA0E8, 420, 80, 0xFFFFFFCE, 0, 0x80000000);
-    MakeEntity(0x802EA564, 480, 80, 0xFFFFFFCE, 0, 0x80000000);
-    MakeEntity(0x802EA5F4, 540, 80, 0xFFFFFFCE, 0, 0x80000000);
-    MakeEntity(0x802EA588, 600, 60, 0xFFFFFFCE, 0, 138, 0x80000000);
-    MakeEntity(0x802EA910, 300, 60, 160, 0, 0x80000000);
-    MakeEntity(0x802EA7E0, 420, 60, 160, 0, 0x80000000);
-    MakeEntity(0x802E9A18, 480, 60, 160, 0, 0x80000000);
-    MakeEntity(0x802EA2E0, 644, 60, 118, 0, 0x80000000);
-    MakeEntity(0x802EA178, 460, 0, 50, 0, 0x80000000);
-    MakeEntity(0x802EA178, 460, 25, 50, 0, 0x80000000);
-    MakeEntity(0x802EA208, 490, 0, 50, 0, 0x80000000);
-    MakeEntity(0x802EA298, 520, 0, 50, 0, 0x80000000);
-    MakeEntity(0x802EA2E0, 644, 60, 118, 0, 0x80000000);
-    MakeEntity(0x802BCE84, 416, 0, 232, 0, 0x80000000);
-    MakeEntity(0x802EAED4, 336, 0, 232, 0, -1, 0, 0x80000000);
-    MakeEntity(0x802EAED4, 270, 0, 232, 0, 138, 0, 0x80000000);
-    MakeEntity(0x802EAED4, 270, 30, 232, 0, 138, 0, 0x80000000);
+    MakeEntity(D_802EA5AC, 567, 60, 100, 0, 0x80000000);
+    MakeEntity(D_802EA5D0, 623, 60, 100, 0, 0x80000000);
+    MakeEntity(D_802EA07C, 300, 60, 0xFFFFFFCE, 0, 0x80000000);
+    MakeEntity(D_802EA0C4, 360, 80, 0xFFFFFFCE, 0, 0x80000000);
+    MakeEntity(D_802EA0E8, 420, 80, 0xFFFFFFCE, 0, 0x80000000);
+    MakeEntity(D_802EA564, 480, 80, 0xFFFFFFCE, 0, 0x80000000);
+    MakeEntity(D_802EA5F4, 540, 80, 0xFFFFFFCE, 0, 0x80000000);
+    MakeEntity(D_802EA588, 600, 60, 0xFFFFFFCE, 0, 138, 0x80000000);
+    MakeEntity(D_802EA910, 300, 60, 160, 0, 0x80000000);
+    MakeEntity(D_802EA7E0, 420, 60, 160, 0, 0x80000000);
+    MakeEntity(D_802E9A18, 480, 60, 160, 0, 0x80000000);
+    MakeEntity(D_802EA2E0, 644, 60, 118, 0, 0x80000000);
+    MakeEntity(D_802EA178, 460, 0, 50, 0, 0x80000000);
+    MakeEntity(D_802EA178, 460, 25, 50, 0, 0x80000000);
+    MakeEntity(D_802EA208, 490, 0, 50, 0, 0x80000000);
+    MakeEntity(D_802EA298, 520, 0, 50, 0, 0x80000000);
+    MakeEntity(D_802EA2E0, 644, 60, 118, 0, 0x80000000);
+    MakeEntity(D_802BCE84, 416, 0, 232, 0, 0x80000000);
+    MakeEntity(D_802EAED4, 336, 0, 232, 0, -1, 0, 0x80000000);
+    MakeEntity(D_802EAED4, 270, 0, 232, 0, 138, 0, 0x80000000);
+    MakeEntity(D_802EAED4, 270, 30, 232, 0, 138, 0, 0x80000000);
 });
 
 // rodata: D_802405E0_B1B560

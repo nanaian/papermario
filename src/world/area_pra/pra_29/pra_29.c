@@ -135,8 +135,8 @@ s32 pad_00133C[] = {
 Script N(script_MakeEntities) = SCRIPT({
     if (SI_SAVE_VAR(0) >= 83) {
     } else {
-        MakeEntity(0x802E9BD4, 330, 0, 0xFFFFFFB3, 0, 2, 0x80000000);
-        MakeEntity(0x802E9BD4, 330, 0, 77, 0, 1, 0x80000000);
+        MakeEntity(D_802E9BD4, 330, 0, 0xFFFFFFB3, 0, 2, 0x80000000);
+        MakeEntity(D_802E9BD4, 330, 0, 77, 0, 1, 0x80000000);
         AssignAreaFlag(2);
     }
 });
@@ -261,7 +261,7 @@ Script N(script_802416FC) = SCRIPT({
         SI_VAR(2) = N(unk_8024168C);
         SI_VAR(3) = N(unk_80241694);
     }
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_80242200_D7ED50, 2);
     sleep 100;
@@ -279,7 +279,7 @@ Script N(script_802417E0) = SCRIPT({
         SI_VAR(2) = N(unk_802416C4);
         SI_VAR(3) = N(unk_802416CC);
     }
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_80242208_D7ED58, 0);
     sleep 100;
@@ -297,7 +297,7 @@ Script N(script_802418C4) = SCRIPT({
         SI_VAR(2) = N(unk_802416D4);
         SI_VAR(3) = N(unk_802416DC);
     }
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_80242208_D7ED58, 3);
     sleep 100;
@@ -315,7 +315,7 @@ Script N(script_802419A8) = SCRIPT({
         SI_VAR(2) = N(unk_8024169C);
         SI_VAR(3) = N(unk_802416A4);
     }
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_80242200_D7ED50, 3);
     sleep 100;
@@ -368,7 +368,7 @@ Script N(script_80241B0C) = SCRIPT({
             }
         }
     }
-    await 0x802861B0;
+    await func_802861B0;
     spawn N(script_80241A8C);
 });
 
@@ -429,19 +429,19 @@ Script N(script_80241F8C) = SCRIPT({
         EnableModel(56, 0);
         SI_MAP_VAR(0) = 0;
         SI_MAP_VAR(1) = 255;
-        0x802C90FC(53, 0, -1);
-        0x802C90FC(58, 1, -1);
+        func_802C90FC(53, 0, -1);
+        func_802C90FC(58, 1, -1);
         SetModelFlags(53, 16, 0);
         SetModelFlags(58, 16, 0);
-        0x802C94A0(0, func_802410B0_D7DC00, 0);
-        0x802C94A0(1, func_802410B0_D7DC00, 0);
-        0x802C9C70(0, 53, 1);
-        0x802C9C70(1, 52, 0);
-        0x802C9C70(2, 54, 0);
+        func_802C94A0(0, func_802410B0_D7DC00, 0);
+        func_802C94A0(1, func_802410B0_D7DC00, 0);
+        func_802C9C70(0, 53, 1);
+        func_802C9C70(1, 52, 0);
+        func_802C9C70(2, 54, 0);
         SetModelFlags(53, 144, 1);
-        0x802C9C70(3, 58, 1);
-        0x802C9C70(4, 57, 0);
-        0x802C9C70(5, 59, 0);
+        func_802C9C70(3, 58, 1);
+        func_802C9C70(4, 57, 0);
+        func_802C9C70(5, 59, 0);
         SetModelFlags(58, 144, 1);
         bind N(script_80241E60) to TriggerFlag_AREA_FLAG_SET SI_AREA_FLAG(2);
     } else {

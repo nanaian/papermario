@@ -226,9 +226,9 @@ NpcSettings N(npcSettings_80242E80) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80242E10),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x6,
@@ -269,9 +269,9 @@ NpcSettings N(npcSettings_80242F64) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80242EF4),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x6,
@@ -290,7 +290,7 @@ Script N(script_Defeat_80242F90) = SCRIPT({
             DoNpcDefeat();
         }
         == 2 {
-            0x80045900(0);
+            func_80045900(0);
         }
         == 3 {
             SetEnemyFlagBits(-1, 16, 1);
@@ -379,28 +379,28 @@ Script N(script_802436D0) = SCRIPT({
     }
     spawn {
         MakeLerp(100, 120, 20, 1);
-0:
+    0:
         UpdateLerp();
         SI_VAR(0) /= 100.0;
-        SI_MAP_VAR(0) = f SI_VAR(0);
+        SI_MAP_VAR(0) =f SI_VAR(0);
         sleep 1;
         if (SI_VAR(1) == 1) {
             goto 0;
         }
         MakeLerp(120, 80, 20, 4);
-1:
+    1:
         UpdateLerp();
         SI_VAR(0) /= 100.0;
-        SI_MAP_VAR(0) = f SI_VAR(0);
+        SI_MAP_VAR(0) =f SI_VAR(0);
         sleep 1;
         if (SI_VAR(1) == 1) {
             goto 1;
         }
         MakeLerp(80, 100, 20, 1);
-2:
+    2:
         UpdateLerp();
         SI_VAR(0) /= 100.0;
-        SI_MAP_VAR(0) = f SI_VAR(0);
+        SI_MAP_VAR(0) =f SI_VAR(0);
         sleep 1;
         if (SI_VAR(1) == 1) {
             goto 2;
@@ -408,28 +408,28 @@ Script N(script_802436D0) = SCRIPT({
     }
     spawn {
         MakeLerp(100, 80, 20, 1);
-0:
+    0:
         UpdateLerp();
         SI_VAR(0) /= 100.0;
-        SI_MAP_VAR(1) = f SI_VAR(0);
+        SI_MAP_VAR(1) =f SI_VAR(0);
         sleep 1;
         if (SI_VAR(1) == 1) {
             goto 0;
         }
         MakeLerp(80, 120, 20, 4);
-1:
+    1:
         UpdateLerp();
         SI_VAR(0) /= 100.0;
-        SI_MAP_VAR(1) = f SI_VAR(0);
+        SI_MAP_VAR(1) =f SI_VAR(0);
         sleep 1;
         if (SI_VAR(1) == 1) {
             goto 1;
         }
         MakeLerp(120, 100, 20, 1);
-2:
+    2:
         UpdateLerp();
         SI_VAR(0) /= 100.0;
-        SI_MAP_VAR(1) = f SI_VAR(0);
+        SI_MAP_VAR(1) =f SI_VAR(0);
         sleep 1;
         if (SI_VAR(1) == 1) {
             goto 2;
@@ -444,7 +444,7 @@ Script N(script_802436D0) = SCRIPT({
             sleep 1;
         }
         MakeLerp(0, 80, 30, 4);
-1:
+    1:
         UpdateLerp();
         TranslateGroup(SI_VAR(9), 0, SI_VAR(0), 0);
         ScaleGroup(SI_VAR(9), 1.0, SI_MAP_VAR(1), SI_MAP_VAR(0));
@@ -453,7 +453,7 @@ Script N(script_802436D0) = SCRIPT({
             goto 1;
         }
         MakeLerp(80, 70, 10, 1);
-2:
+    2:
         UpdateLerp();
         TranslateGroup(SI_VAR(9), 0, SI_VAR(0), 0);
         ScaleGroup(SI_VAR(9), 1.0, SI_MAP_VAR(1), SI_MAP_VAR(0));
@@ -547,7 +547,7 @@ Script N(script_802440AC) = {
     SI_CMD(ScriptOpcode_SET_GROUP, 0),
     SI_CMD(ScriptOpcode_SUSPEND_GROUP, 1),
     SI_CMD(ScriptOpcode_CALL, DisablePlayerInput, 1),
-    SI_CMD(ScriptOpcode_CALL, 0x802D5830, 1),
+    SI_CMD(ScriptOpcode_CALL, func_802D5830, 1),
     SI_CMD(ScriptOpcode_CALL, PlaySound, 10),
     SI_CMD(ScriptOpcode_CALL, GetPlayerPos, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, UseSettingsFrom, 0, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
@@ -583,7 +583,7 @@ Script N(script_802440AC) = {
     SI_CMD(ScriptOpcode_CALL, ModifyColliderFlags, 1, 5, 0x7FFFFE00),
     SI_CMD(ScriptOpcode_CALL, DisablePlayerInput, 0),
     SI_CMD(ScriptOpcode_RESUME_GROUP, 1),
-    SI_CMD(ScriptOpcode_CALL, 0x802D5830, 0),
+    SI_CMD(ScriptOpcode_CALL, func_802D5830, 0),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)
 };
@@ -595,7 +595,7 @@ Script N(script_80244430) = SCRIPT({
     PlaySound(11);
     sleep 15;
     group 0;
-    0x802D5830(1);
+    func_802D5830(1);
     SI_VAR(0) = 220;
     SI_VAR(1) = 0;
     SI_VAR(2) = 0;
@@ -630,7 +630,7 @@ Script N(script_80244430) = SCRIPT({
     ModifyColliderFlags(0, 2, 0x7FFFFE00);
     ModifyColliderFlags(0, 5, 0x7FFFFE00);
     DisablePlayerInput(0);
-    0x802D5830(0);
+    func_802D5830(0);
 });
 
 Script N(script_8024475C) = SCRIPT({

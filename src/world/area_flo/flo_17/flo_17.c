@@ -108,7 +108,8 @@ Script N(script_80243280) = SCRIPT({
     match SI_SAVE_VAR(0) {
         < 53 {
             SetMusicTrack(0, 48, 0, 8);
-        } else {
+        }
+        else {
             SetMusicTrack(0, 49, 0, 8);
         }
     }
@@ -123,10 +124,10 @@ Script N(script_802432F0) = SCRIPT({
     SI_VAR(14) = SI_VAR(4);
     SI_VAR(12) -= SI_VAR(0);
     SI_VAR(13) -= SI_VAR(1);
-    SI_VAR(0) = f SI_VAR(12);
+    SI_VAR(0) =f SI_VAR(12);
     SI_VAR(0) /= 100.0;
     SI_VAR(15) = 100.0;
-    SI_VAR(15) /= f SI_VAR(0);
+    SI_VAR(15) /=f SI_VAR(0);
     SI_VAR(15) += 11;
     SI_VAR(5) = 200;
     SI_VAR(5) /= SI_VAR(15);
@@ -281,7 +282,7 @@ Script N(main) = SCRIPT({
     spawn {
         SI_VAR(0) = 0;
         SI_VAR(1) = 0;
-0:
+    0:
         SI_VAR(0) += 140;
         if (SI_VAR(0) > 0x10000) {
             SI_VAR(0) += 0xFFFF0000;
@@ -346,7 +347,7 @@ Script N(script_80243FD0) = SCRIPT({
                 ModifyColliderFlags(1, SI_VAR(9), 0x7FFFFE00);
             }
         }
-50:
+    50:
         if (SI_VAR(7) >= 90) {
             SI_VAR(8) = -1;
             SI_VAR(7) = 90;
@@ -420,9 +421,9 @@ NpcSettings N(npcSettings_802444C4) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80244454),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x14,
@@ -461,7 +462,7 @@ Script N(script_80244590) = SCRIPT({
             DoNpcDefeat();
         }
         == 2 {
-            0x80045900(0);
+            func_80045900(0);
         }
         == 3 {
             SetEnemyFlagBits(-1, 16, 1);
@@ -477,7 +478,7 @@ NpcSettings N(npcSettings_8024465C) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80244520),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
     .onDefeat = &N(script_80244590),
     .flags = 0,
@@ -595,7 +596,7 @@ s32 pad_00527C[] = {
 };
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA588, 660, 60, 0xFFFFFF8D, 0, 130, 0x80000000);
+    MakeEntity(D_802EA588, 660, 60, 0xFFFFFF8D, 0, 130, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1390));
     MakeItemEntity(62, 0xFFFFFF0B, 0, 105, 17, SI_SAVE_FLAG(1389));
 });

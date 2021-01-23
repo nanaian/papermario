@@ -154,8 +154,8 @@ Script N(main) = SCRIPT({
         SI_VAR(12) = 0;
         spawn N(script_UpdateTexturePan_80240450);
     }
-    0x802C90FC(147, 0, -1);
-    0x802C9428(0, N(displayList_802404F0), 0);
+    func_802C90FC(147, 0, -1);
+    func_802C9428(0, N(displayList_802404F0), 0);
     spawn N(script_802403A0);
     UseDoorSounds(2);
     spawn N(script_80240614);

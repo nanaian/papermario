@@ -215,7 +215,7 @@ Script N(script_802407CC) = SCRIPT({
 
 Script N(script_Idle_802409F4) = SCRIPT({
     if (SI_SAVE_FLAG(1273) == 0) {
-0:
+    0:
         GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
         if (SI_VAR(0) < 34) {
             sleep 1;
@@ -668,8 +668,8 @@ s32 pad_002654[] = {
 };
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802BC7AC, 385, 0, 0xFFFFFFB5, 10, 0x80000000);
-    MakeEntity(0x802EAB04, 0, 0, 0, 0, 7, 0x80000000);
+    MakeEntity(D_802BC7AC, 385, 0, 0xFFFFFFB5, 10, 0x80000000);
+    MakeEntity(D_802EAB04, 0, 0, 0, 0, 7, 0x80000000);
     AssignPanelFlag(SI_SAVE_FLAG(1270));
 });
 

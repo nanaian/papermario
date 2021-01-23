@@ -59,7 +59,7 @@ Script N(script_802404F0) = SCRIPT({
     UseDoorSounds(1);
     spawn {
         sleep 30;
-        0x802D5FA4(6);
+        func_802D5FA4(6);
     }
 });
 
@@ -236,14 +236,14 @@ s32 pad_000E0C[] = {
 
 Script N(script_MakeEntities) = SCRIPT({
     if (SI_SAVE_FLAG(1587) == 0) {
-        MakeEntity(0x802E9BD4, 60, 115, 10, 0, 0x80000000);
+        MakeEntity(D_802E9BD4, 60, 115, 10, 0, 0x80000000);
         AssignAreaFlag(8);
         AssignScript(N(script_80241540));
     }
     if (SI_SAVE_FLAG(1587) == 1) {
-        MakeEntity(0x802EAA54, 150, 115, 0, 90, 60, 0x80000000);
+        MakeEntity(D_802EAA54, 150, 115, 0, 90, 60, 0x80000000);
     } else {
-        MakeEntity(0x802EAA54, 150, 150, 0xFFFFFF97, 90, 60, 0x80000000);
+        MakeEntity(D_802EAA54, 150, 150, 0xFFFFFF97, 90, 60, 0x80000000);
         SI_MAP_VAR(0) = SI_VAR(0);
         func_80240310_AA7790(0xFFFFFFA6, 0, 0);
         spawn N(script_80240F44);

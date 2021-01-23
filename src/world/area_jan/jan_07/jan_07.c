@@ -178,7 +178,7 @@ Script N(script_802414B8) = SCRIPT({
         }
         == 2 {
             SetNpcPos(-1, 0, 0xFFFFFC18, 0);
-            0x80045900(1);
+            func_80045900(1);
         }
         == 3 {
             SetEnemyFlagBits(-1, 16, 1);
@@ -217,9 +217,9 @@ NpcSettings N(npcSettings_80241614) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_802415A4),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x10,
@@ -397,7 +397,7 @@ Script N(script_Idle_80241F48) = SCRIPT({
     DisablePlayerInput(1);
     GetCurrentPartner(SI_VAR(0));
     if (SI_VAR(0) != 0) {
-        0x802D2B6C();
+        func_802D2B6C();
     }
     sleep 5;
     spawn {

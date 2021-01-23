@@ -32,7 +32,7 @@ Script N(script_80240080) = SCRIPT({
     UseDoorSounds(1);
     spawn {
         sleep 30;
-        0x802D5FA4(7);
+        func_802D5FA4(7);
     }
 });
 
@@ -85,7 +85,8 @@ Script N(script_EnterWalk_802402C0) = SCRIPT({
             SI_VAR(3) = 87;
             spawn EnterDoubleDoor;
             spawn N(script_8024025C);
-        } else {
+        }
+        else {
             SI_VAR(0) = N(script_8024025C);
             spawn EnterWalk;
         }

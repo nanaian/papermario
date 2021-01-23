@@ -56,12 +56,12 @@ s32 pad_000214[] = {
 };
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA564, 136, 80, 63, 0, 347, 0x80000000);
-    MakeEntity(0x802EA564, 190, 0, 63, 0, 0x80000000);
-    MakeEntity(0x802EA588, 201, 60, 0xFFFFFFEC, 0, 342, 0x80000000);
-    MakeEntity(0x802EA588, 230, 60, 0xFFFFFFEC, 0, 342, 0x80000000);
-    MakeEntity(0x802EA5D0, 258, 60, 0xFFFFFFEC, 0, 347, 0x80000000);
-    MakeEntity(0x802EA5AC, 315, 60, 63, 0, 347, 0x80000000);
+    MakeEntity(D_802EA564, 136, 80, 63, 0, 347, 0x80000000);
+    MakeEntity(D_802EA564, 190, 0, 63, 0, 0x80000000);
+    MakeEntity(D_802EA588, 201, 60, 0xFFFFFFEC, 0, 342, 0x80000000);
+    MakeEntity(D_802EA588, 230, 60, 0xFFFFFFEC, 0, 342, 0x80000000);
+    MakeEntity(D_802EA5D0, 258, 60, 0xFFFFFFEC, 0, 347, 0x80000000);
+    MakeEntity(D_802EA5AC, 315, 60, 63, 0, 347, 0x80000000);
 });
 
 s32 pad_00031C[] = {

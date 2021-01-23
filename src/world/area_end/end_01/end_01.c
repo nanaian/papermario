@@ -896,8 +896,8 @@ Script N(script_80245E70) = SCRIPT({
     EnableModel(43, 1);
     EnableModel(44, 1);
     EnableTexPanning(44, 1);
-    0x802C90FC(43, 1, -1);
-    0x802C94A0(1, func_80242C94_E07FF4, 0);
+    func_802C90FC(43, 1, -1);
+    func_802C94A0(1, func_80242C94_E07FF4, 0);
     parallel {
         MakeLerp(0, 255, 90, 0);
         loop {
@@ -1347,12 +1347,12 @@ Script N(script_80247620) = SCRIPT({
 
 Script N(script_80247854) = SCRIPT({
     GetNpcPos(38, SI_VAR(0), SI_VAR(1), SI_VAR(2));
-    SI_VAR(0) = f SI_VAR(0);
-    SI_VAR(1) = f SI_VAR(0);
+    SI_VAR(0) =f SI_VAR(0);
+    SI_VAR(1) =f SI_VAR(0);
     SI_VAR(1) += 30;
-    SI_VAR(2) = f SI_VAR(0);
+    SI_VAR(2) =f SI_VAR(0);
     SI_VAR(2) += 60;
-    SI_VAR(3) = f SI_VAR(0);
+    SI_VAR(3) =f SI_VAR(0);
     SI_VAR(3) += 90;
     SetNpcPos(38, SI_VAR(0), 0, 0xFFFFFFE2);
     SetNpcPos(39, SI_VAR(0), 0, 0);
@@ -1466,7 +1466,7 @@ Script N(script_80247D68) = SCRIPT({
     GetNpcPos(50, SI_VAR(0), SI_VAR(1), SI_VAR(2));
     SI_VAR(0) += 0xFFFFFF4C;
     NpcMoveTo(50, SI_VAR(0), SI_VAR(2), 45);
-    0x802CDE68(50, 10);
+    func_802CDE68(50, 10);
     spawn {
         SI_VAR(0) = 0;
         loop 10 {
@@ -1484,7 +1484,7 @@ Script N(script_80247D68) = SCRIPT({
     SI_VAR(0) = 50;
     SI_VAR(10) = spawn N(script_80244180);
     sleep 80;
-    0x802CDE68(50, 0);
+    func_802CDE68(50, 0);
     kill SI_VAR(10);
     SetNpcAnimation(50, 0x3B0001);
     GetNpcPos(50, SI_VAR(0), SI_VAR(1), SI_VAR(2));
@@ -1502,18 +1502,18 @@ s32 pad_0081A8[] = {
 
 Script N(script_802481B0) = SCRIPT({
     sleep 10;
-    0x802CFE80(51, 3);
-    0x802CFE80(52, 3);
-    0x802CFE80(53, 3);
-    0x802CFE80(54, 3);
-    0x802CFE80(55, 4);
-    0x802CFE80(56, 4);
-    0x802CFFC0(51, 1, 2, 10, 5, 10, 5, 0, 0);
-    0x802CFFC0(52, 1, 2, 10, 5, 10, 5, 0, 0);
-    0x802CFFC0(53, 1, 2, 10, 5, 10, 5, 0, 0);
-    0x802CFFC0(54, 1, 2, 10, 5, 10, 5, 0, 0);
-    0x802CFFC0(55, 1, 2, 10, 5, 10, 5, 4, 5);
-    0x802CFFC0(56, 1, 2, 10, 5, 10, 5, 4, 5);
+    func_802CFE80(51, 3);
+    func_802CFE80(52, 3);
+    func_802CFE80(53, 3);
+    func_802CFE80(54, 3);
+    func_802CFE80(55, 4);
+    func_802CFE80(56, 4);
+    func_802CFFC0(51, 1, 2, 10, 5, 10, 5, 0, 0);
+    func_802CFFC0(52, 1, 2, 10, 5, 10, 5, 0, 0);
+    func_802CFFC0(53, 1, 2, 10, 5, 10, 5, 0, 0);
+    func_802CFFC0(54, 1, 2, 10, 5, 10, 5, 0, 0);
+    func_802CFFC0(55, 1, 2, 10, 5, 10, 5, 4, 5);
+    func_802CFFC0(56, 1, 2, 10, 5, 10, 5, 4, 5);
 });
 
 Script N(script_80248364) = SCRIPT({
@@ -1736,16 +1736,16 @@ Script N(script_80248FC8) = SCRIPT({
 });
 
 Script N(script_80249034) = SCRIPT({
-    0x802CFE80(60, 4);
-    0x802CFE80(61, 4);
-    0x802CFE80(62, 4);
-    0x802CFE80(66, 4);
-    0x802CFE80(67, 4);
-    0x802CFFC0(60, 1, 2, 10, 5, 10, 5, 4, 5);
-    0x802CFFC0(61, 1, 2, 10, 5, 10, 5, 4, 5);
-    0x802CFFC0(62, 1, 2, 10, 5, 10, 5, 4, 5);
-    0x802CFFC0(66, 1, 2, 10, 5, 10, 5, 4, 5);
-    0x802CFFC0(67, 1, 2, 10, 5, 10, 5, 4, 5);
+    func_802CFE80(60, 4);
+    func_802CFE80(61, 4);
+    func_802CFE80(62, 4);
+    func_802CFE80(66, 4);
+    func_802CFE80(67, 4);
+    func_802CFFC0(60, 1, 2, 10, 5, 10, 5, 4, 5);
+    func_802CFFC0(61, 1, 2, 10, 5, 10, 5, 4, 5);
+    func_802CFFC0(62, 1, 2, 10, 5, 10, 5, 4, 5);
+    func_802CFFC0(66, 1, 2, 10, 5, 10, 5, 4, 5);
+    func_802CFFC0(67, 1, 2, 10, 5, 10, 5, 4, 5);
     SI_VAR(0) = 60;
     SI_VAR(1) = 63;
     spawn N(script_80248D8C);
@@ -1789,8 +1789,8 @@ s32 pad_00939C[] = {
 };
 
 s32 N(unk_802493A0)[] = {
-    0x80241C24, 0x80241C54, 0x80241C54, 0x80241C18, 0x80241C18, 0x80241C18, 0x80241C54, 0x80241C54,
-    0x80241C54, 0x80241C54, 0x80241C54, 0x80241C54, 0x80241C54, 0x80241C24, 0x80241C54, 0x80241C2C,
+    N(script_80241C24), N(vectorList_80241C54), N(vectorList_80241C54), D_80241C18_C9DF18, D_80241C18_C9DF18, D_80241C18_C9DF18, N(vectorList_80241C54), N(vectorList_80241C54),
+    N(vectorList_80241C54), N(vectorList_80241C54), N(vectorList_80241C54), N(vectorList_80241C54), N(vectorList_80241C54), N(script_80241C24), N(vectorList_80241C54), N(script_80241C2C),
 };
 
 // rodata: jtbl_802493E0_E0E740

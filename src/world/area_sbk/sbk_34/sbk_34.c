@@ -190,7 +190,7 @@ s32 N(unk_80240E04)[] = {
 
 Script N(script_80240E08) = SCRIPT({
     SI_VAR(9) = SI_VAR(1);
-    0x802D6420();
+    func_802D6420();
     SI_VAR(10) = SI_VAR(0);
     match SI_VAR(0) {
         == 0 {}
@@ -199,7 +199,7 @@ Script N(script_80240E08) = SCRIPT({
             RemoveKeyItemAt(SI_VAR(1));
             GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_802401B4_946084(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |= c 50000;
+            SI_VAR(0) |=c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SetPlayerAnimation(0x60005);
             sleep 30;
@@ -208,14 +208,14 @@ Script N(script_80240E08) = SCRIPT({
         }
     }
     func_802403D8_9462A8(SI_VAR(10));
-    0x802D6954();
+    func_802D6954();
     unbind;
 });
 
 // Unable to use DSL: DSL does not support script opcode 0x4E
 Script N(script_80240F4C) = {
     SI_CMD(ScriptOpcode_CALL, func_80240410_9462E0, SI_VAR(0)),
-    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80240E08), 0x10, 0, 0x802427E0, 0, 1),
+    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80240E08), 0x10, 0, D_802427E0_A517E0, 0, 1),
     SI_CMD(ScriptOpcode_CALL, func_80240384_946254, SI_VAR(0)),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)
@@ -232,7 +232,7 @@ Script N(script_80240F9C) = SCRIPT({
 
 Script N(script_8024101C) = SCRIPT({
     SI_VAR(9) = SI_VAR(1);
-    0x802D6420();
+    func_802D6420();
     SI_VAR(10) = SI_VAR(0);
     match SI_VAR(0) {
         == 0 {}
@@ -242,7 +242,7 @@ Script N(script_8024101C) = SCRIPT({
             DisablePartnerAI(0);
             GetNpcPos(0xFFFFFFFC, SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_8024059C_94646C(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |= c 50000;
+            SI_VAR(0) |=c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SI_VAR(10) = spawn N(script_80240F9C);
             SetNpcAnimation(0xFFFFFFFC, 0x40002);
@@ -275,7 +275,7 @@ Script N(script_8024101C) = SCRIPT({
         }
     }
     func_802403D8_9462A8(SI_VAR(10));
-    0x802D6954();
+    func_802D6954();
     unbind;
 });
 
@@ -284,7 +284,7 @@ Script N(script_80241340) = {
     SI_CMD(ScriptOpcode_SET, SI_VAR(0), SI_VAR(11)),
     SI_CMD(ScriptOpcode_SET, SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240410_9462E0, SI_VAR(0)),
-    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_8024101C), 0x10, 0, 0x802427E0, 0, 1),
+    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_8024101C), 0x10, 0, D_802427E0_A517E0, 0, 1),
     SI_CMD(ScriptOpcode_CALL, func_80240384_946254, SI_VAR(0)),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)
@@ -318,7 +318,8 @@ Script N(script_802413B0) = SCRIPT({
                     SpeakToPlayer(0xFFFFFFFC, 0x40006, 0x40001, 5, SI_VAR(8));
                     EnablePartnerAI();
                     SI_VAR(12) = 1;
-                } else {
+                }
+                else {
                     DisablePartnerAI(0);
                     sleep 1;
                     SpeakToPlayer(0xFFFFFFFC, 0x40006, 0x40001, 5, SI_VAR(9));

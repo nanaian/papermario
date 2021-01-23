@@ -68,7 +68,8 @@ Script N(script_80240B60) = SCRIPT({
         }
         == 0xFFFFFFC8 {
             SI_VAR(0) = 1;
-        } else {
+        }
+        else {
             return;
         }
     }
@@ -373,18 +374,18 @@ Script N(script_80241A50) = SCRIPT({
         sleep 30;
         SetPlayerAnimation(0x10002);
     }
-    0x802CFD30(1, 7, 0, 0, 0, 0);
+    func_802CFD30(1, 7, 0, 0, 0, 0);
     SetNpcPos(1, 410, 0xFFFFFC77, 410);
     SetNpcAnimation(1, 0x680010);
     MakeLerp(0, 255, 100, 1);
 2:
     UpdateLerp();
-    0x802CFD30(1, 7, SI_VAR(0), 0, 0, 0);
+    func_802CFD30(1, 7, SI_VAR(0), 0, 0, 0);
     sleep 1;
     if (SI_VAR(1) == 1) {
         goto 2;
     }
-    0x802CFD30(1, 0, 0, 0, 0, 0);
+    func_802CFD30(1, 0, 0, 0, 0, 0);
     sleep 30;
     SI_VAR(0) = 255;
     loop 60 {
@@ -416,10 +417,10 @@ Script N(script_80241A50) = SCRIPT({
     UpdateLerp();
     SI_VAR(5) = 0.470703125;
     SI_VAR(6) = -0.939453125;
-    SI_VAR(5) *= f SI_VAR(0);
-    SI_VAR(6) *= f SI_VAR(0);
-    SI_VAR(5) += f SI_VAR(2);
-    SI_VAR(6) += f SI_VAR(4);
+    SI_VAR(5) *=f SI_VAR(0);
+    SI_VAR(6) *=f SI_VAR(0);
+    SI_VAR(5) +=f SI_VAR(2);
+    SI_VAR(6) +=f SI_VAR(4);
     SetNpcPos(1, SI_VAR(5), SI_VAR(3), SI_VAR(6));
     sleep 1;
     if (SI_VAR(1) == 1) {
@@ -431,17 +432,17 @@ Script N(script_80241A50) = SCRIPT({
         sleep 59;
         PlaySoundAtNpc(0, 1007, 0);
     }
-    0x802CFD30(0, 7, 255, 0, 0, 0);
-    0x802CFE2C(0, 2048);
-    0x802CFD30(0, 5, 14, 2, 1, 0);
+    func_802CFD30(0, 7, 255, 0, 0, 0);
+    func_802CFE2C(0, 2048);
+    func_802CFD30(0, 5, 14, 2, 1, 0);
     sleep 39;
-    0x802CFE2C(0, 2048);
-    0x802CFD30(0, 5, 13, 2, 1, 0);
+    func_802CFE2C(0, 2048);
+    func_802CFD30(0, 5, 13, 2, 1, 0);
     sleep 39;
-    0x802CFE2C(0, 2048);
-    0x802CFD30(0, 5, 12, 2, 1, 0);
+    func_802CFE2C(0, 2048);
+    func_802CFD30(0, 5, 12, 2, 1, 0);
     sleep 55;
-    0x802CFD30(0, 0, 0, 0, 0, 0);
+    func_802CFD30(0, 0, 0, 0, 0, 0);
     SetNpcPos(1, 457, 0xFFFFFAEC, 316);
     sleep 10;
     SetPanTarget(0, 438, 0xFFFFFCE0, 332);

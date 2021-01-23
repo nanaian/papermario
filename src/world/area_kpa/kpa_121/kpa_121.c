@@ -28,7 +28,7 @@ Script N(script_80240060) = SCRIPT({
     UseDoorSounds(1);
     spawn {
         sleep 30;
-        0x802D5FA4(7);
+        func_802D5FA4(7);
     }
 });
 

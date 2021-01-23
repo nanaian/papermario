@@ -293,8 +293,8 @@ Script N(script_Idle_80240CC4) = SCRIPT({
     loop {
         func_8024000C_BC2A9C();
         func_80240194_BC2C24();
-        0x802CFD30(-1, 7, SI_VAR(0), 0, 0, 0);
-        0x802D0244(-1, 17);
+        func_802CFD30(-1, 7, SI_VAR(0), 0, 0, 0);
+        func_802D0244(-1, 17);
         sleep 1;
     }
 });
@@ -377,7 +377,7 @@ Script N(script_80241350) = SCRIPT({
 Script N(script_80241360) = SCRIPT({
     spawn {
         SI_VAR(0) = 0;
-10:
+    10:
         RotateModel(51, SI_VAR(0), 0, 0, 1);
         SI_VAR(0) += 0xFFFFFFFA;
         sleep 30;
@@ -385,7 +385,7 @@ Script N(script_80241360) = SCRIPT({
     }
     spawn {
         SI_VAR(0) = 0;
-20:
+    20:
         RotateModel(53, SI_VAR(0), 0, 0, 1);
         SI_VAR(0) += -1;
         sleep 60;
@@ -393,7 +393,7 @@ Script N(script_80241360) = SCRIPT({
     }
     spawn {
         SI_VAR(1) = 0;
-30:
+    30:
         func_80240240_BC2CD0();
         RotateModel(55, SI_VAR(0), 0, 0, 1);
         sleep 1;
@@ -449,10 +449,10 @@ Script N(script_802416FC) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EAE30, 0, 0, 0, 0, 0, 0x80000000);
+    MakeEntity(D_802EAE30, 0, 0, 0, 0, 0, 0x80000000);
     AssignFlag(SI_SAVE_FLAG(963));
     AssignScript(N(script_802416FC));
-    MakeEntity(0x802EAB04, 100, 0xFFFFFF2E, 0, 0, 6, 0x80000000);
+    MakeEntity(D_802EAB04, 100, 0xFFFFFF2E, 0, 0, 6, 0x80000000);
     AssignPanelFlag(SI_SAVE_FLAG(964));
 });
 

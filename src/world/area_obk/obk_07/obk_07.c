@@ -171,7 +171,7 @@ Script N(script_80241C50) = SCRIPT({
     SI_VAR(2) = 45;
     SI_VAR(4) = 46;
     SI_VAR(3) = 1;
-    await 0x80285E24;
+    await func_80285E24;
 });
 
 Script N(script_80241CAC) = SCRIPT({
@@ -182,7 +182,7 @@ Script N(script_80241CAC) = SCRIPT({
     SI_VAR(2) = 45;
     SI_VAR(4) = 46;
     SI_VAR(3) = 1;
-    spawn 0x80285DFC;
+    spawn func_80285DFC;
     sleep 17;
     GotoMap(D_80244C70_BD3860, 3);
     sleep 100;
@@ -238,10 +238,10 @@ s32 N(unk_80241FB0)[] = {
 
 Script N(script_80241FB4) = SCRIPT({
     group 0;
-    0x802D5830(2);
+    func_802D5830(2);
     sleep 40;
     ShowGotItem(SI_VAR(0), 0, 0);
-    0x802D5830(0);
+    func_802D5830(0);
     return;
 });
 
@@ -276,7 +276,7 @@ Script N(script_802420FC) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EAE30, 170, 0, 0xFFFFFF60, 0, 0, 0x80000000);
+    MakeEntity(D_802EAE30, 170, 0, 0xFFFFFF60, 0, 0, 0x80000000);
     AssignFlag(SI_SAVE_FLAG(978));
     AssignScript(N(script_802420FC));
 });
@@ -419,8 +419,8 @@ Script N(script_Idle_80242934) = SCRIPT({
     loop {
         func_802402CC_BCEEBC();
         func_80240454_BCF044();
-        0x802CFD30(-1, 7, SI_VAR(0), 0, 0, 0);
-        0x802D0244(-1, 17);
+        func_802CFD30(-1, 7, SI_VAR(0), 0, 0, 0);
+        func_802D0244(-1, 17);
         sleep 1;
     }
 });
@@ -524,9 +524,9 @@ Script N(script_802430D0) = SCRIPT({
     MakeLerp(100, 200, 30, 10);
 31:
     UpdateLerp();
-    SI_VAR(2) = f SI_VAR(0);
+    SI_VAR(2) =f SI_VAR(0);
     func_8024143C_BD002C();
-    SI_VAR(2) /= f SI_VAR(3);
+    SI_VAR(2) /=f SI_VAR(3);
     func_8024146C_BD005C();
     sleep 1;
     if (SI_VAR(1) == 1) {
@@ -535,9 +535,9 @@ Script N(script_802430D0) = SCRIPT({
     MakeLerp(200, 100, 30, 10);
 32:
     UpdateLerp();
-    SI_VAR(2) = f SI_VAR(0);
+    SI_VAR(2) =f SI_VAR(0);
     func_8024143C_BD002C();
-    SI_VAR(2) /= f SI_VAR(3);
+    SI_VAR(2) /=f SI_VAR(3);
     func_8024146C_BD005C();
     sleep 1;
     if (SI_VAR(1) == 1) {
@@ -763,7 +763,7 @@ Script N(script_80243C3C) = SCRIPT({
     if (SI_SAVE_VAR(0) >= 0xFFFFFFD5) {
         goto 50;
     }
-    0x802D6420();
+    func_802D6420();
     if (SI_VAR(0) == 0) {
         ShowMessageAtScreenPos(0x1D015A, 160, 40);
         goto 100;
@@ -783,7 +783,7 @@ Script N(script_80243C3C) = SCRIPT({
     sleep 15;
     SetPlayerAnimation(0x10002);
     sleep 15;
-    0x802D6954();
+    func_802D6954();
 50:
     SI_MAP_VAR(3) = 1;
     if (SI_SAVE_VAR(0) < 0xFFFFFFD6) {
@@ -796,7 +796,7 @@ Script N(script_80243C3C) = SCRIPT({
     await N(script_8024374C);
     return;
 100:
-    0x802D6954();
+    func_802D6954();
     DisablePlayerInput(0);
 });
 
@@ -869,7 +869,7 @@ Script N(script_80244144) = SCRIPT({
     MakeLerp(180, 0, 10, 0);
     loop {
         UpdateLerp();
-        0x802CFD30(2, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(2, 7, SI_VAR(0), 0, 0, 0);
         if (SI_VAR(1) == 0) {
             break;
         }
@@ -879,7 +879,7 @@ Script N(script_80244144) = SCRIPT({
     MakeLerp(0, 180, 10, 0);
     loop {
         UpdateLerp();
-        0x802CFD30(2, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(2, 7, SI_VAR(0), 0, 0, 0);
         if (SI_VAR(1) == 0) {
             break;
         }
@@ -969,7 +969,7 @@ Script N(script_80244728) = SCRIPT({
     MakeLerp(255, 0, 60, 0);
 0:
     UpdateLerp();
-    0x802CFD30(2, 7, SI_VAR(0), 0, 0, 0);
+    func_802CFD30(2, 7, SI_VAR(0), 0, 0, 0);
     sleep 1;
     if (SI_VAR(1) == 1) {
         goto 0;

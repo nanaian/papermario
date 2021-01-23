@@ -128,7 +128,7 @@ Script N(script_80240E60) = SCRIPT({
 Script N(script_80240F6C) = SCRIPT({
     loop {
         MakeLerp(0, 160, 60, 10);
-1:
+    1:
         UpdateLerp();
         RotateModel(117, SI_VAR(0), 0, -1, 0);
         RotateModel(119, SI_VAR(0), 0, 1, 0);
@@ -141,7 +141,7 @@ Script N(script_80240F6C) = SCRIPT({
             goto 1;
         }
         MakeLerp(160, 0, 60, 10);
-2:
+    2:
         UpdateLerp();
         RotateModel(117, SI_VAR(0), 0, -1, 0);
         RotateModel(119, SI_VAR(0), 0, 1, 0);
@@ -159,7 +159,7 @@ Script N(script_80240F6C) = SCRIPT({
 Script N(script_802411D8) = SCRIPT({
     loop {
         MakeLerp(0, 0xFFFFFE98, 100, 0);
-1:
+    1:
         UpdateLerp();
         RotateModel(130, SI_VAR(0), 0, 0, 1);
         RotateModel(135, SI_VAR(0), 1, 0, 1);
@@ -215,9 +215,9 @@ NpcSettings N(npcSettings_80241360) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80241340),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xE,
@@ -269,7 +269,7 @@ Script N(script_Defeat_802415C0) = SCRIPT({
             DoNpcDefeat();
         }
         == 2 {
-            0x80045900(0);
+            func_80045900(0);
         }
         == 3 {
             SetEnemyFlagBits(-1, 16, 1);
@@ -290,7 +290,7 @@ Script N(script_Init_802416A0) = SCRIPT({
     if (SI_SAVE_FLAG(1108) == 0) {
         SI_VAR(1) = 48;
         SI_VAR(2) = 1;
-        SI_VAR(3) = c 0xF8405FD4;
+        SI_VAR(3) =c 0xF8405FD4;
     } else {
         SI_VAR(1) = 163;
         SI_VAR(2) = 0;
@@ -444,9 +444,9 @@ Script N(script_MakeEntities) = SCRIPT({
             MakeItemEntity(48, 0xFFFFFFA3, 0, 35, 17, SI_SAVE_FLAG(1108));
         }
     }
-    MakeEntity(0x802EA588, 0xFFFFFFB0, 60, 0xFFFFFF15, 0, 150, 0x80000000);
+    MakeEntity(D_802EA588, 0xFFFFFFB0, 60, 0xFFFFFF15, 0, 150, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1110));
-    MakeEntity(0x802EA588, 0xFFFFFFE2, 60, 0xFFFFFF15, 0, 152, 0x80000000);
+    MakeEntity(D_802EA588, 0xFFFFFFE2, 60, 0xFFFFFF15, 0, 152, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1111));
 });
 

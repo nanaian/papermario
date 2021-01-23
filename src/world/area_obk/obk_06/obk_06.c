@@ -120,8 +120,8 @@ Script N(script_MakeEntities) = SCRIPT({
             }
         }
     }
-    MakeEntity(0x802EAED4, 0xFFFFFF92, 30, 50, 0, -1, 0x80000000);
-    MakeEntity(0x802EAED4, 0xFFFFFF92, 0, 50, 0, 348, 0x80000000);
+    MakeEntity(D_802EAED4, 0xFFFFFF92, 30, 50, 0, -1, 0x80000000);
+    MakeEntity(D_802EAED4, 0xFFFFFF92, 0, 50, 0, 348, 0x80000000);
     AssignCrateFlag(SI_SAVE_FLAG(976));
 });
 

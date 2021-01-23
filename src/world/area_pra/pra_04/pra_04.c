@@ -210,13 +210,13 @@ Script N(script_MakeEntities) = SCRIPT({
     spawn {
         func_80240138_D547C8();
     }
-    MakeEntity(0x802EAA30, 124, 0xFFFFFF38, 80, 0, 0x80000000);
+    MakeEntity(D_802EAA30, 124, 0xFFFFFF38, 80, 0, 0x80000000);
     AssignScript(N(script_80240EE0));
     if (SI_SAVE_FLAG(1497) == 0) {
-        MakeEntity(0x802BCE84, 124, 0, 80, 0, 0x80000000);
+        MakeEntity(D_802BCE84, 124, 0, 80, 0, 0x80000000);
         AssignScript(N(script_80241074));
     }
-    MakeEntity(0x802EA564, 0xFFFFFF38, 60, 75, 0, 140, 0x80000000);
+    MakeEntity(D_802EA564, 0xFFFFFF38, 60, 75, 0, 140, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1498));
 });
 
@@ -253,7 +253,7 @@ Script N(script_NpcAI_80241230) = SCRIPT({
 });
 
 s32 unk_missing_80241250[] = {
-    0x00000000, 0x00140014, 0x00000000, 0x00000000, N(script_802411E0), 0x80077F70, 0x00000000, 0x8007809C,
+    0x00000000, 0x00140014, 0x00000000, 0x00000000, N(script_802411E0), EnemyNpcHit, 0x00000000, EnemyNpcDefeat,
     0x00000800, 0x00000000, 0x000A0000,
 };
 
@@ -264,9 +264,9 @@ NpcSettings N(npcSettings_8024127C) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80241230),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0x800,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x16,

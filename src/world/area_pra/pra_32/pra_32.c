@@ -218,7 +218,7 @@ Script N(script_80241188) = SCRIPT({
     SI_VAR(1) = 5;
     SI_VAR(2) = N(unk_80241178);
     SI_VAR(3) = N(unk_80241180);
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_80242CCC_D896CC, 1);
     sleep 100;
@@ -231,7 +231,7 @@ Script N(script_8024122C) = SCRIPT({
 Script N(script_80241258) = SCRIPT({
     SI_VAR(2) = N(unk_80241178);
     SI_VAR(3) = N(unk_80241180);
-    await 0x802861B0;
+    await func_802861B0;
     spawn N(script_8024122C);
 });
 
@@ -263,9 +263,9 @@ NpcSettings N(npcSettings_802413F0) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x63,
@@ -335,11 +335,11 @@ Script N(script_Idle_80241660) = SCRIPT({
         goto 0;
     }
     DisablePlayerInput(1);
-    0x802D2B6C();
+    func_802D2B6C();
     SetMusicTrack(0, 89, 0, 8);
     ShowMessageAtScreenPos(0x12016A, 160, 40);
     SetNpcPos(0, 588, 200, 116);
-    0x802CFD30(0, 7, 0, 0, 0, 0);
+    func_802CFD30(0, 7, 0, 0, 0, 0);
     GetNpcPos(0, SI_VAR(0), SI_VAR(1), SI_VAR(2));
     UseSettingsFrom(0, SI_VAR(0), SI_VAR(1), SI_VAR(2));
     SI_VAR(1) += 0xFFFFFFE2;
@@ -383,7 +383,7 @@ Script N(script_Idle_80241660) = SCRIPT({
     MakeLerp(0, 255, 120, 0);
 5:
     UpdateLerp();
-    0x802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
+    func_802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
     sleep 1;
     if (SI_VAR(1) == 1) {
         goto 5;
@@ -430,7 +430,7 @@ Script N(script_Defeat_80241E44) = SCRIPT({
     WaitForCam(0, 1.0);
     SpeakToPlayer(0, 0x7F0009, 0x7F0009, 0, 0x12016C);
     spawn {
-        0x802CDE68(0, 30);
+        func_802CDE68(0, 30);
         MakeLerp(0, 6840, 210, 10);
         loop {
             UpdateLerp();
@@ -445,7 +445,7 @@ Script N(script_Defeat_80241E44) = SCRIPT({
         MakeLerp(100, 200, 210, 10);
         loop {
             UpdateLerp();
-            SI_VAR(10) = f SI_VAR(0);
+            SI_VAR(10) =f SI_VAR(0);
             SI_VAR(10) *= 0.0107421875;
             SetNpcScale(0, SI_VAR(10), SI_VAR(10), 1);
             if (SI_VAR(1) == 0) {
@@ -457,7 +457,7 @@ Script N(script_Defeat_80241E44) = SCRIPT({
     MakeLerp(255, 122, 30, 10);
     loop {
         UpdateLerp();
-        0x802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
         if (SI_VAR(1) == 0) {
             break;
         }
@@ -472,13 +472,13 @@ Script N(script_Defeat_80241E44) = SCRIPT({
     MakeLerp(120, 0, 30, 10);
     loop {
         UpdateLerp();
-        0x802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
         if (SI_VAR(1) == 0) {
             break;
         }
         sleep 1;
     }
-    0x802CFD30(0, 7, 0, 0, 0, 0);
+    func_802CFD30(0, 7, 0, 0, 0, 0);
     GetNpcPos(0, SI_VAR(0), SI_VAR(1), SI_VAR(2));
     SI_VAR(1) += 20;
     PlayEffect(17, 1, SI_VAR(0), SI_VAR(1), SI_VAR(2), 40, 0, 0, 0, 0, 0, 0, 0, 0);

@@ -52,14 +52,14 @@ Script N(script_802400B0) = SCRIPT({
     SI_VAR(3) = 35;
     SI_VAR(4) = 39;
     SI_VAR(5) = 36;
-    spawn 0x80285E9C;
+    spawn func_80285E9C;
     sleep 17;
     GotoMap(D_80240C38_B13D58, 1);
     sleep 100;
 });
 
 Script N(script_802401C4) = SCRIPT({
-    bind 0x80240100 to TriggerFlag_WALL_INTERACT 2;
+    bind func_80240100 to TriggerFlag_WALL_INTERACT 2;
 });
 
 Script N(script_802401F0) = SCRIPT({
@@ -70,7 +70,7 @@ Script N(script_802401F0) = SCRIPT({
             SI_VAR(3) = 35;
             SI_VAR(4) = 39;
             SI_VAR(5) = 36;
-            await 0x80285EC4;
+            await func_80285EC4;
             spawn N(script_802401C4);
         }
         == 1 {
@@ -123,7 +123,7 @@ Script N(script_802403E0) = SCRIPT({
     SetCamSpeed(0, 90.0);
     PanToTarget(0, 0, 1);
     sleep 50;
-    0x802D1270(550, 0xFFFFFFEC, 2.0);
+    func_802D1270(550, 0xFFFFFFEC, 2.0);
     sleep 30;
     SetPlayerAnimation(0xC0000);
     sleep 10;
@@ -163,7 +163,7 @@ Script N(script_80240640) = SCRIPT({
     SpeakToPlayer(0xFFFFFFFE, 0xD0004, 0xA0001, 5, 0x140160);
     sleep 10;
     EnablePartnerAI();
-    0x802D1270(480, 0xFFFFFFEC, 2.0);
+    func_802D1270(480, 0xFFFFFFEC, 2.0);
     SetPlayerAnimation(0xC000B);
     SI_VAR(0) = 0;
     SI_VAR(1) = 2;
@@ -171,7 +171,7 @@ Script N(script_80240640) = SCRIPT({
     SI_VAR(3) = 35;
     SI_VAR(4) = 39;
     SI_VAR(5) = 36;
-    spawn 0x80285E9C;
+    spawn func_80285E9C;
     sleep 17;
     GotoMap(D_80240C40_B13D60, 10);
     sleep 100;

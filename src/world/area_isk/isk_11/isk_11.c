@@ -73,11 +73,11 @@ Script N(script_802401E0) = SCRIPT({
             DisablePlayerInput(1);
             sleep 20;
             group 0;
-            0x802D5830(1);
+            func_802D5830(1);
             ShowMessageAtScreenPos(0xD00E0, 160, 40);
             SI_SAVE_FLAG(892) = 1;
             DisablePlayerInput(0);
-            0x802D5830(0);
+            func_802D5830(0);
             FadeInMusic(0, 24, 0, 2000, 0, 127);
             FadeOutMusic(1, 2000);
         }
@@ -190,7 +190,7 @@ s32 pad_00091C[] = {
 
 Script N(script_MakeEntities) = SCRIPT({
     if (SI_SAVE_FLAG(888) == 0) {
-        MakeEntity(0x802BCD68, 355, 0xFFFFFE34, 430, 0xFFFFFFD8, 0x80000000);
+        MakeEntity(D_802BCD68, 355, 0xFFFFFE34, 430, 0xFFFFFFD8, 0x80000000);
         SI_MAP_VAR(0) = SI_VAR(0);
     }
     PlayEffect(32, 1, 0xFFFFFF7D, 0xFFFFFE3B, 489, 0.30078125, SI_VAR(0), 0, 0, 0, 0, 0, 0, 0);
@@ -202,7 +202,7 @@ Script N(script_MakeEntities) = SCRIPT({
     PlayEffect(32, 1, 131, 0xFFFFFD37, 489, 0.30078125, SI_VAR(0), 0, 0, 0, 0, 0, 0, 0);
     PlayEffect(32, 1, 0xFFFFFFD4, 0xFFFFFCB5, 505, 0.30078125, SI_VAR(0), 0, 0, 0, 0, 0, 0, 0);
     PlayEffect(32, 1, 131, 0xFFFFFCB5, 489, 0.30078125, SI_VAR(0), 0, 0, 0, 0, 0, 0, 0);
-    MakeEntity(0x802EA7E0, 0xFFFFFFB5, 0xFFFFFD30, 625, 0, 0x80000000);
+    MakeEntity(D_802EA7E0, 0xFFFFFFB5, 0xFFFFFD30, 625, 0, 0x80000000);
 });
 
 s32 pad_000C04[] = {
@@ -336,7 +336,7 @@ Script N(script_80241104) = SCRIPT({
     SI_MAP_VAR(1) = 0;
     spawn {
         sleep 20;
-20:
+    20:
         SetPlayerAnimation(0x60002);
         sleep 8;
         SetPlayerAnimation(0x60003);
@@ -349,7 +349,7 @@ Script N(script_80241104) = SCRIPT({
     spawn {
         sleep 20;
         SetPlayerSpeed(4);
-30:
+    30:
         PlayerMoveTo(66, 555, 0);
         PlayerMoveTo(0xFFFFFFBE, 555, 0);
         if (SI_MAP_VAR(0) == 0) {
@@ -442,7 +442,7 @@ Script N(script_80241BC4) = SCRIPT({
         return;
     }
     group 0;
-    0x802D5830(1);
+    func_802D5830(1);
     if (SI_SAVE_VAR(156) != 0) {
         DisablePlayerInput(1);
         func_802400B0_98AAC0(SI_SAVE_VAR(156), SI_VAR(0));
@@ -460,21 +460,21 @@ Script N(script_80241BC4) = SCRIPT({
             ShowGotItem(SI_VAR(0), 0, 1);
         }
         DisablePlayerInput(0);
-        0x802D5830(0);
+        func_802D5830(0);
         return;
     }
-    0x802D6420();
+    func_802D6420();
     SI_VAR(2) = SI_VAR(0);
     match SI_VAR(2) {
         == 0 {
             ShowMessageAtScreenPos(0x1D0159, 160, 40);
-            0x802D6954();
-            0x802D5830(0);
+            func_802D6954();
+            func_802D5830(0);
             return;
         }
         == -1 {
-            0x802D6954();
-            0x802D5830(0);
+            func_802D6954();
+            func_802D5830(0);
             return;
         }
     }
@@ -482,9 +482,9 @@ Script N(script_80241BC4) = SCRIPT({
     RemoveKeyItemAt(SI_VAR(1));
     MakeItemEntity(SI_SAVE_VAR(156), 0xFFFFFFA8, 0xFFFFFE04, 502, 1, 0);
     SI_MAP_VAR(10) = SI_VAR(0);
-    0x802D6954();
+    func_802D6954();
     PlaySoundAtCollider(36, 609, 0);
-    0x802D5830(0);
+    func_802D5830(0);
 });
 
 Script N(script_80241E8C) = SCRIPT({
@@ -493,7 +493,7 @@ Script N(script_80241E8C) = SCRIPT({
         return;
     }
     group 0;
-    0x802D5830(1);
+    func_802D5830(1);
     if (SI_SAVE_VAR(157) != 0) {
         DisablePlayerInput(1);
         func_802400B0_98AAC0(SI_SAVE_VAR(157), SI_VAR(0));
@@ -511,21 +511,21 @@ Script N(script_80241E8C) = SCRIPT({
             ShowGotItem(SI_VAR(0), 0, 1);
         }
         DisablePlayerInput(0);
-        0x802D5830(0);
+        func_802D5830(0);
         return;
     }
-    0x802D6420();
+    func_802D6420();
     SI_VAR(2) = SI_VAR(0);
     match SI_VAR(2) {
         == 0 {
             ShowMessageAtScreenPos(0x1D0159, 160, 40);
-            0x802D6954();
-            0x802D5830(0);
+            func_802D6954();
+            func_802D5830(0);
             return;
         }
         == -1 {
-            0x802D6954();
-            0x802D5830(0);
+            func_802D6954();
+            func_802D5830(0);
             return;
         }
     }
@@ -533,8 +533,8 @@ Script N(script_80241E8C) = SCRIPT({
     RemoveKeyItemAt(SI_VAR(1));
     MakeItemEntity(SI_SAVE_VAR(157), 0xFFFFFFD4, 0xFFFFFE04, 508, 1, 0);
     SI_MAP_VAR(11) = SI_VAR(0);
-    0x802D6954();
-    0x802D5830(0);
+    func_802D6954();
+    func_802D5830(0);
     PlaySoundAtCollider(34, 609, 0);
 });
 
@@ -544,7 +544,7 @@ Script N(script_80242154) = SCRIPT({
         return;
     }
     group 0;
-    0x802D5830(1);
+    func_802D5830(1);
     if (SI_SAVE_VAR(158) != 0) {
         DisablePlayerInput(1);
         func_802400B0_98AAC0(SI_SAVE_VAR(158), SI_VAR(0));
@@ -562,21 +562,21 @@ Script N(script_80242154) = SCRIPT({
             ShowGotItem(SI_VAR(0), 0, 1);
         }
         DisablePlayerInput(0);
-        0x802D5830(0);
+        func_802D5830(0);
         return;
     }
-    0x802D6420();
+    func_802D6420();
     SI_VAR(2) = SI_VAR(0);
     match SI_VAR(2) {
         == 0 {
             ShowMessageAtScreenPos(0x1D0159, 160, 40);
-            0x802D6954();
-            0x802D5830(0);
+            func_802D6954();
+            func_802D5830(0);
             return;
         }
         == -1 {
-            0x802D6954();
-            0x802D5830(0);
+            func_802D6954();
+            func_802D5830(0);
             return;
         }
     }
@@ -584,8 +584,8 @@ Script N(script_80242154) = SCRIPT({
     RemoveKeyItemAt(SI_VAR(1));
     MakeItemEntity(SI_SAVE_VAR(158), 0, 0xFFFFFE04, 510, 1, 0);
     SI_MAP_VAR(12) = SI_VAR(0);
-    0x802D6954();
-    0x802D5830(0);
+    func_802D6954();
+    func_802D5830(0);
     PlaySoundAtCollider(42, 609, 0);
 });
 
@@ -595,7 +595,7 @@ Script N(script_8024241C) = SCRIPT({
         return;
     }
     group 0;
-    0x802D5830(1);
+    func_802D5830(1);
     if (SI_SAVE_VAR(159) != 0) {
         DisablePlayerInput(1);
         func_802400B0_98AAC0(SI_SAVE_VAR(159), SI_VAR(0));
@@ -613,21 +613,21 @@ Script N(script_8024241C) = SCRIPT({
             ShowGotItem(SI_VAR(0), 0, 1);
         }
         DisablePlayerInput(0);
-        0x802D5830(0);
+        func_802D5830(0);
         return;
     }
-    0x802D6420();
+    func_802D6420();
     SI_VAR(2) = SI_VAR(0);
     match SI_VAR(2) {
         == 0 {
             ShowMessageAtScreenPos(0x1D0159, 160, 40);
-            0x802D6954();
-            0x802D5830(0);
+            func_802D6954();
+            func_802D5830(0);
             return;
         }
         == -1 {
-            0x802D6954();
-            0x802D5830(0);
+            func_802D6954();
+            func_802D5830(0);
             return;
         }
     }
@@ -635,8 +635,8 @@ Script N(script_8024241C) = SCRIPT({
     RemoveKeyItemAt(SI_VAR(1));
     MakeItemEntity(SI_SAVE_VAR(159), 44, 0xFFFFFE04, 508, 1, 0);
     SI_MAP_VAR(13) = SI_VAR(0);
-    0x802D6954();
-    0x802D5830(0);
+    func_802D6954();
+    func_802D5830(0);
     PlaySoundAtCollider(40, 609, 0);
 });
 
@@ -646,7 +646,7 @@ Script N(script_802426E4) = SCRIPT({
         return;
     }
     group 0;
-    0x802D5830(1);
+    func_802D5830(1);
     if (SI_SAVE_VAR(160) != 0) {
         DisablePlayerInput(1);
         func_802400B0_98AAC0(SI_SAVE_VAR(160), SI_VAR(0));
@@ -664,21 +664,21 @@ Script N(script_802426E4) = SCRIPT({
             ShowGotItem(SI_VAR(0), 0, 1);
         }
         DisablePlayerInput(0);
-        0x802D5830(0);
+        func_802D5830(0);
         return;
     }
-    0x802D6420();
+    func_802D6420();
     SI_VAR(2) = SI_VAR(0);
     match SI_VAR(2) {
         == 0 {
             ShowMessageAtScreenPos(0x1D0159, 160, 40);
-            0x802D6954();
-            0x802D5830(0);
+            func_802D6954();
+            func_802D5830(0);
             return;
         }
         == -1 {
-            0x802D6954();
-            0x802D5830(0);
+            func_802D6954();
+            func_802D5830(0);
             return;
         }
     }
@@ -686,8 +686,8 @@ Script N(script_802426E4) = SCRIPT({
     RemoveKeyItemAt(SI_VAR(1));
     MakeItemEntity(SI_SAVE_VAR(160), 88, 0xFFFFFE04, 502, 1, 0);
     SI_MAP_VAR(14) = SI_VAR(0);
-    0x802D6954();
-    0x802D5830(0);
+    func_802D6954();
+    func_802D5830(0);
     PlaySoundAtCollider(38, 609, 0);
 });
 
@@ -700,14 +700,14 @@ s32 N(itemList_802429B0)[] = {
 };
 
 Script N(script_802429B8) = SCRIPT({
-    0x802D6420();
+    func_802D6420();
     if (SI_VAR(0) == 0) {
         ShowMessageAtScreenPos(0x1D00D8, 160, 40);
-        0x802D6954();
+        func_802D6954();
         return;
     }
     if (SI_VAR(0) == -1) {
-        0x802D6954();
+        func_802D6954();
         return;
     }
     PlaySoundAt(617, 0, 355, 0xFFFFFE34, 430);
@@ -727,7 +727,7 @@ Script N(script_802429B8) = SCRIPT({
         goto 10;
     }
     ModifyColliderFlags(0, 6, 0x7FFFFE00);
-    0x802D6954();
+    func_802D6954();
     unbind;
 });
 
@@ -735,7 +735,7 @@ Script N(script_802429B8) = SCRIPT({
 // *INDENT-OFF*
 Script N(script_80242B80) = {
     SI_CMD(ScriptOpcode_IF_EQ, SI_SAVE_FLAG(888), 0),
-        SI_CMD(ScriptOpcode_CALL, 0x802C971C, 80),
+        SI_CMD(ScriptOpcode_CALL, func_802C971C, 80),
         SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_802429B8), TriggerFlag_WALL_INTERACT, 0x4000, N(itemList_802429B0), 0, 1),
     SI_CMD(ScriptOpcode_ELSE),
         SI_CMD(ScriptOpcode_CALL, EnableGroup, 80, 0),

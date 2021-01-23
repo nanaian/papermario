@@ -120,7 +120,8 @@ Script N(script_802414E0) = SCRIPT({
         match SI_SAVE_VAR(0) {
             < 53 {
                 SetMusicTrack(0, 48, 0, 8);
-            } else {
+            }
+            else {
                 SetMusicTrack(0, 49, 0, 8);
             }
         }
@@ -131,13 +132,13 @@ Script N(script_802414E0) = SCRIPT({
 });
 
 Script N(script_802415C4) = SCRIPT({
-    0x802D5FF8(137, 2);
+    func_802D5FF8(137, 2);
 });
 
 Script N(script_802415E8) = SCRIPT({
     FadeOutMusic(0, 250);
     sleep 10;
-    0x802D5FD8();
+    func_802D5FD8();
 });
 
 s32 pad_001624[] = {
@@ -163,10 +164,10 @@ Script N(script_80241680) = SCRIPT({
     SI_VAR(14) = SI_VAR(4);
     SI_VAR(12) -= SI_VAR(0);
     SI_VAR(13) -= SI_VAR(1);
-    SI_VAR(0) = f SI_VAR(12);
+    SI_VAR(0) =f SI_VAR(12);
     SI_VAR(0) /= 100.0;
     SI_VAR(15) = 100.0;
-    SI_VAR(15) /= f SI_VAR(0);
+    SI_VAR(15) /=f SI_VAR(0);
     SI_VAR(15) += 11;
     SI_VAR(5) = 200;
     SI_VAR(5) /= SI_VAR(15);
@@ -246,7 +247,8 @@ Script N(main) = SCRIPT({
         == 2 {
             spawn N(script_802427EC);
             spawn N(script_80241988);
-        } else {
+        }
+        else {
             ModifyColliderFlags(0, 1, 0x7FFFFE00);
             SI_VAR(0) = N(script_80241988);
             spawn EnterWalk;
@@ -306,8 +308,8 @@ Script N(script_80241E40) = SCRIPT({
     MakeLerp(0, 100, 90, 1);
 1:
     UpdateLerp();
-    SI_VAR(2) = f SI_VAR(0);
-    SI_VAR(3) = f SI_VAR(0);
+    SI_VAR(2) =f SI_VAR(0);
+    SI_VAR(3) =f SI_VAR(0);
     SI_VAR(2) /= 333.0;
     SI_VAR(3) /= 100.0;
     SI_VAR(2) += 0.703125;
@@ -428,8 +430,8 @@ Script N(script_802424DC) = SCRIPT({
     MakeLerp(100, 15, 150, 1);
 1:
     UpdateLerp();
-    SI_VAR(2) = f SI_VAR(0);
-    SI_VAR(3) = f SI_VAR(0);
+    SI_VAR(2) =f SI_VAR(0);
+    SI_VAR(3) =f SI_VAR(0);
     SI_VAR(2) /= 333.0;
     SI_VAR(3) /= 100.0;
     SI_VAR(2) += 0.703125;
@@ -688,19 +690,20 @@ Script N(script_8024339C) = SCRIPT({
         }
         DisablePlayerInput(1);
         group 0;
-        0x802D5830(1);
-        0x802D6420();
+        func_802D5830(1);
+        func_802D6420();
         SI_VAR(2) = SI_VAR(0);
         match SI_VAR(2) {
             == -1 {
-                0x802D6954();
-                0x802D5830(0);
+                func_802D6954();
+                func_802D5830(0);
                 sleep 10;
                 SpeakToPlayer(0, 0xC90004, 0xC90008, 0, 0x110081);
-            } else {
+            }
+            else {
                 GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
                 PlayerMoveTo(0xFFFFFFEF, 0xFFFFFFEF, 20);
-                0x802CF56C(2);
+                func_802CF56C(2);
                 InterpPlayerYaw(100, 1);
                 sleep 10;
                 AdjustCam(0, 1.0, 0, 450, 25.0, -6.0);
@@ -709,8 +712,8 @@ Script N(script_8024339C) = SCRIPT({
                 RemoveKeyItemAt(SI_VAR(1));
                 MakeItemEntity(87, 0, 0xFFFFFFC4, 6, 1, 0);
                 SI_VAR(10) = SI_VAR(0);
-                0x802D6954();
-                0x802D5830(0);
+                func_802D6954();
+                func_802D5830(0);
                 await N(script_802425E4);
             }
         }
@@ -740,7 +743,7 @@ Script N(script_80243628) = SCRIPT({
     SI_VAR(1) -= SI_VAR(6);
     SI_VAR(4) += SI_VAR(6);
     match SI_VAR(3) {
-        SI_VAR(1)..SI_VAR(4)
+    SI_VAR(1)..SI_VAR(4)
         spawn {
             if (SI_VAR(3) < SI_VAR(0)) {
                 SI_VAR(0) -= 40;
@@ -827,7 +830,8 @@ Script N(script_Interact_802437C8) = SCRIPT({
         }
         < 60 {
             SpeakToPlayer(-1, 0xC90003, 0xC90007, 0, 0x110086);
-        } else {
+        }
+        else {
             SpeakToPlayer(-1, 0xC90002, 0xC90001, 0, 0x110087);
         }
     }

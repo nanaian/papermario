@@ -81,7 +81,7 @@ Script N(script_80240AA0) = SCRIPT({
             SI_VAR(2) = 49;
             SI_VAR(4) = 50;
             SI_VAR(3) = 1;
-            await 0x80285E24;
+            await func_80285E24;
         }
     }
 });
@@ -94,7 +94,7 @@ Script N(script_80240B1C) = SCRIPT({
     SI_VAR(2) = 49;
     SI_VAR(4) = 50;
     SI_VAR(3) = 1;
-    spawn 0x80285DFC;
+    spawn func_80285DFC;
     sleep 17;
     GotoMap(D_80241620_BCE680, 2);
     sleep 100;
@@ -210,8 +210,8 @@ Script N(script_Idle_80241014) = SCRIPT({
     loop {
         func_802407AC_BCD80C();
         func_80240934_BCD994();
-        0x802CFD30(-1, 7, SI_VAR(0), 0, 0, 0);
-        0x802D0244(-1, 17);
+        func_802CFD30(-1, 7, SI_VAR(0), 0, 0, 0);
+        func_802D0244(-1, 17);
         sleep 1;
     }
 });
@@ -262,13 +262,13 @@ Script N(script_80241500) = SCRIPT({
 
 Script N(script_MakeEntities) = SCRIPT({
     if (SI_SAVE_FLAG(973) == 0) {
-        MakeEntity(0x802BCE84, 0, 0, 0, 0, 0x80000000);
+        MakeEntity(D_802BCE84, 0, 0, 0, 0, 0x80000000);
         AssignScript(N(script_80241500));
     }
-    MakeEntity(0x802EAED4, 200, 0, 0xFFFFFF9C, 0, 148, 0x80000000);
-    MakeEntity(0x802EAED4, 200, 30, 0xFFFFFF9C, 0, -1, 0x80000000);
-    MakeEntity(0x802EAED4, 165, 0, 0xFFFFFF9C, 0, 148, 0x80000000);
-    MakeEntity(0x802EAED4, 0xFFFFFF97, 0, 0xFFFFFFC9, 0, -1, 0x80000000);
+    MakeEntity(D_802EAED4, 200, 0, 0xFFFFFF9C, 0, 148, 0x80000000);
+    MakeEntity(D_802EAED4, 200, 30, 0xFFFFFF9C, 0, -1, 0x80000000);
+    MakeEntity(D_802EAED4, 165, 0, 0xFFFFFF9C, 0, 148, 0x80000000);
+    MakeEntity(D_802EAED4, 0xFFFFFF97, 0, 0xFFFFFFC9, 0, -1, 0x80000000);
 });
 
 s32 pad_00161C[] = {

@@ -217,7 +217,7 @@ Script N(main) = SCRIPT({
     SetMusicTrack(0, 32, 0, 8);
     GetEntryID(SI_VAR(0));
     match SI_VAR(0) {
-        4..5
+    4..5
         await N(script_80245DE4);
         sleep 3;
         else {
@@ -707,7 +707,7 @@ Script N(script_802458F8) = SCRIPT({
 
 Script N(script_802459B8) = SCRIPT({
     match SI_AREA_VAR(5) {
-        0..1
+    0..1
         match SI_AREA_VAR(6) {
             == 0 {
                 GotoMapSpecial(D_802475F8_DF6498, 2, 1);
@@ -816,7 +816,7 @@ Script N(script_80245DE4) = SCRIPT({
             spawn N(script_80243DF0);
             SI_MAP_FLAG(0) = 1;
             spawn {
-10:
+            10:
                 if (SI_MAP_VAR(11) < 600) {
                     sleep 1;
                     goto 10;
@@ -832,7 +832,7 @@ Script N(script_80245DE4) = SCRIPT({
             spawn N(script_80243DF0);
             SI_MAP_FLAG(0) = 1;
             spawn {
-20:
+            20:
                 if (SI_MAP_VAR(11) > 0xFFFFFDA8) {
                     sleep 1;
                     goto 20;
@@ -858,7 +858,7 @@ Script N(script_80246040) = SCRIPT({
 });
 
 s32 unk_missing_80246060[] = {
-    0x00000000, 0x00170016, 0x00000000, 0x00000000, N(script_80246040), 0x80077F70, 0x00000000, 0x8007809C,
+    0x00000000, 0x00170016, 0x00000000, 0x00000000, N(script_80246040), EnemyNpcHit, 0x00000000, EnemyNpcDefeat,
     0x00000000, 0x00000000, 0x000E0001,
 };
 
@@ -888,9 +888,9 @@ NpcSettings N(npcSettings_802460DC) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_802460BC),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xF,
@@ -923,9 +923,9 @@ NpcSettings N(npcSettings_80246158) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80246138),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xF,
@@ -950,7 +950,7 @@ Script N(script_802461CC) = SCRIPT({
 });
 
 s32 unk_missing_8024623C[] = {
-    0x00000000, 0x00190016, 0x00000000, 0x00000000, N(script_802461CC), 0x80077F70, 0x00000000, 0x8007809C,
+    0x00000000, 0x00190016, 0x00000000, 0x00000000, N(script_802461CC), EnemyNpcHit, 0x00000000, EnemyNpcDefeat,
     0x00000000, 0x00000000, 0x000E0001,
 };
 
@@ -963,7 +963,7 @@ Script N(script_80246268) = SCRIPT({
         }
         == 2 {
             SetNpcPos(-1, 0, 0xFFFFFC18, 0);
-            0x80045900(1);
+            func_80045900(1);
         }
         == 3 {
             SetEnemyFlagBits(-1, 16, 1);
@@ -1003,9 +1003,9 @@ NpcSettings N(npcSettings_802463E4) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80246368),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xF,
@@ -1066,7 +1066,7 @@ Script N(script_802464C0) = {
             SI_CMD(ScriptOpcode_CALL, SetSelfVar, 0, 0),
         SI_CMD(ScriptOpcode_END_CASE_MULTI),
         SI_CMD(ScriptOpcode_CASE_ELSE),
-            SI_CMD(ScriptOpcode_CALL, 0x800457F8),
+            SI_CMD(ScriptOpcode_CALL, func_800457F8),
         SI_CMD(ScriptOpcode_END_CASE_MULTI),
     SI_CMD(ScriptOpcode_END_MATCH),
     SI_CMD(ScriptOpcode_CALL, BindNpcAI, -1, N(script_NpcAI_80246440)),
@@ -1257,13 +1257,13 @@ s32 pad_0074DC[] = {
 };
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA564, 0xFFFFFFB5, 120, 135, 0, 343, 0x80000000);
+    MakeEntity(D_802EA564, 0xFFFFFFB5, 120, 135, 0, 343, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1186));
-    MakeEntity(0x802EA564, 0xFFFFFFCE, 70, 0xFFFFFF6A, 0, 343, 0x80000000);
+    MakeEntity(D_802EA564, 0xFFFFFFCE, 70, 0xFFFFFF6A, 0, 343, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1187));
-    MakeEntity(0x802EA564, 0, 70, 0xFFFFFF6A, 0, 343, 0x80000000);
+    MakeEntity(D_802EA564, 0, 70, 0xFFFFFF6A, 0, 343, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1188));
-    MakeEntity(0x802EA0E8, 0xFFFFFFE7, 70, 0xFFFFFF6A, 0, 0x80000000);
+    MakeEntity(D_802EA0E8, 0xFFFFFFE7, 70, 0xFFFFFF6A, 0, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1189));
 });
 

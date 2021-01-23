@@ -42,7 +42,8 @@ Script N(script_802400D0) = SCRIPT({
         }
         < 0xFFFFFFF0 {
             SetMusicTrack(0, 31, 0, 8);
-        } else {
+        }
+        else {
             SetMusicTrack(0, 30, 0, 8);
         }
     }
@@ -217,7 +218,7 @@ Script N(script_8024062C) = SCRIPT({
 
 Script N(script_MakeEntities) = SCRIPT({
     MakeItemEntity(302, 250, 75, 0xFFFFFF9C, 17, SI_SAVE_FLAG(1055));
-    MakeEntity(0x802EAA30, 375, 0, 0xFFFFFF06, 0, 0x80000000);
+    MakeEntity(D_802EAA30, 375, 0, 0xFFFFFF06, 0, 0x80000000);
     AssignScript(N(script_8024062C));
     SI_MAP_VAR(0) = SI_VAR(0);
 });

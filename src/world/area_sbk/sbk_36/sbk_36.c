@@ -523,15 +523,15 @@ Script N(script_802411C8) = SCRIPT({
 
 Script N(script_80241460) = SCRIPT({
     group 0;
-    0x802D5830(1);
+    func_802D5830(1);
     DisablePlayerInput(1);
     ShowMessageAtScreenPos(0x1D017A, 160, 40);
     DisablePlayerInput(0);
-    0x802D5830(0);
+    func_802D5830(0);
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EAFDC, 410, 0, 0xFFFFFFB5, 0, 0x80000000);
+    MakeEntity(D_802EAFDC, 410, 0, 0xFFFFFFB5, 0, 0x80000000);
     AssignScript(N(script_80241460));
 });
 

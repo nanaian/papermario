@@ -131,7 +131,8 @@ Script N(script_80243170) = SCRIPT({
         }
         < 0xFFFFFFF0 {
             SetMusicTrack(0, 31, 0, 8);
-        } else {
+        }
+        else {
             SetMusicTrack(0, 30, 0, 8);
         }
     }
@@ -250,20 +251,20 @@ Script N(script_NpcAI_802435E4) = SCRIPT({
         goto 20;
     }
     DisablePlayerPhysics(1);
-    0x802D2B6C();
+    func_802D2B6C();
     DisablePartnerAI(0);
     group 0;
-    0x802D5830(1);
+    func_802D5830(1);
     GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
     SI_VAR(1) += 20;
     SI_VAR(2) += 2;
     SetNpcPos(-1, SI_VAR(0), SI_VAR(1), SI_VAR(2));
-    0x80045838(-1, 759, 0);
+    func_80045838(-1, 759, 0);
     SetNpcAnimation(-1, 0x380008);
     sleep 10;
     SetPlayerAnimation(0x80017);
     sleep 10;
-    0x80045838(-1, 1838, 0);
+    func_80045838(-1, 1838, 0);
     spawn {
         loop 100 {
             GetNpcPos(-1, SI_VAR(0), SI_VAR(1), SI_VAR(2));
@@ -296,7 +297,7 @@ Script N(script_80243A0C) = SCRIPT({
     match SI_VAR(0) {
         == 1, 2, 4, 6 {
             GetSelfAnimationFromTable(7, SI_VAR(0));
-            await 0x800936DC;
+            await func_800936DC;
         }
     }
 });
@@ -400,7 +401,7 @@ Script N(script_80243EF8) = SCRIPT({
     if (SI_SAVE_FLAG(1046) == 1) {
         return;
     }
-    0x800441F0(SI_VAR(0));
+    func_800441F0(SI_VAR(0));
     if (SI_VAR(0) == 1) {
         return;
     }
@@ -408,7 +409,7 @@ Script N(script_80243EF8) = SCRIPT({
     if (SI_VAR(0) == 1) {
         return;
     }
-    0x802D585C(1, 0x200000);
+    func_802D585C(1, 0x200000);
     func_802423D0_C38900();
     DisablePlayerInput(1);
     DisablePartnerAI(0);
@@ -422,7 +423,7 @@ Script N(script_80243EF8) = SCRIPT({
         func_802428E0_C38E10(SI_VAR(9));
         DisablePlayerInput(0);
         EnablePartnerAI();
-        0x802D585C(0, 0x200000);
+        func_802D585C(0, 0x200000);
         func_802423EC_C3891C();
         return;
     }
@@ -437,7 +438,7 @@ Script N(script_80243EF8) = SCRIPT({
         func_802428E0_C38E10(SI_VAR(9));
         DisablePlayerInput(0);
         EnablePartnerAI();
-        0x802D585C(0, 0x200000);
+        func_802D585C(0, 0x200000);
         func_802423EC_C3891C();
         return;
     }
@@ -448,7 +449,7 @@ Script N(script_80243EF8) = SCRIPT({
     if (SI_VAR(0) != SI_VAR(11)) {
         func_802427EC_C38D1C(SI_VAR(11));
     } else {
-        0x802CF56C(2);
+        func_802CF56C(2);
     }
     sleep 10;
     ShowMessageAtScreenPos(0x1D00DF, 160, 40);
@@ -458,7 +459,7 @@ Script N(script_80243EF8) = SCRIPT({
         func_802428E0_C38E10(SI_VAR(9));
         DisablePlayerInput(0);
         EnablePartnerAI();
-        0x802D585C(0, 0x200000);
+        func_802D585C(0, 0x200000);
         func_802423EC_C3891C();
         return;
     }
@@ -474,12 +475,12 @@ Script N(script_80243EF8) = SCRIPT({
     }
     DisablePlayerInput(0);
     EnablePartnerAI();
-    0x802D585C(0, 0x200000);
+    func_802D585C(0, 0x200000);
     func_802423EC_C3891C();
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA910, 500, 0xFFFFFE98, 110, 0, 0x80000000);
+    MakeEntity(D_802EA910, 500, 0xFFFFFE98, 110, 0, 0x80000000);
     SI_MAP_VAR(0) = SI_VAR(0);
     AssignBlockFlag(SI_SAVE_FLAG(1046));
     AssignScript(N(script_80243EF8));

@@ -192,9 +192,9 @@ NpcSettings N(npcSettings_802426E4) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x6,
@@ -208,9 +208,9 @@ NpcSettings N(npcSettings_80242710) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x6,
@@ -788,7 +788,7 @@ Script N(script_80244A60) = SCRIPT({
     func_80240580_E16300();
     DisablePlayerInput(1);
     SetSelfVar(3, 3);
-    0x802D5FD8();
+    func_802D5FD8();
     spawn N(script_80244A44);
     ShowMessageAtScreenPos(0x80041, 160, 40);
     sleep 5;
@@ -821,7 +821,7 @@ Script N(script_80244A60) = SCRIPT({
         SI_VAR(10) = 3;
     }
     PlayerMoveTo(330, 185, SI_VAR(10));
-    0x802D24F4();
+    func_802D24F4();
     SetNpcFlagBits(0, 256, 0);
     sleep 5;
     SetSelfVar(3, 5);
@@ -834,7 +834,8 @@ Script N(script_80244A60) = SCRIPT({
         == 0 {
             SetSelfVar(3, 0);
             SpeakToPlayer(-1, 0x830004, 0x830001, 0, 0x80044);
-        } else {
+        }
+        else {
             SpeakToPlayer(-1, 0x830004, 0x830001, 0, 0x80042);
             ShowCoinCounter(1);
             sleep 10;
@@ -903,7 +904,8 @@ Script N(script_Interact_80245048) = SCRIPT({
             }
             ContinueSpeech(0, 0x830004, 0x830001, 0, 0x8003F);
             func_802423A4_E18124();
-        } else {
+        }
+        else {
             func_802423A4_E18124();
             sleep 5;
             ContinueSpeech(0, 0x830004, 0x830001, 0, 0x80040);
@@ -921,7 +923,7 @@ Script N(script_Interact_80245048) = SCRIPT({
     }
     EndSpeech(0, 0x830004, 0x830001, 5);
     SetSelfVar(3, 1);
-    0x802D617C(8456, 80);
+    func_802D617C(8456, 80);
     spawn N(script_80243888);
     spawn N(script_80244A28);
     sleep 25;
@@ -934,7 +936,7 @@ Script N(script_Interact_80245048) = SCRIPT({
         PlayEffect(7, 1, 355, 30, 0xFFFFFF4C, 0, 0, 0, 0, 0, 0, 0, 0, 0);
     }
     EndSpeech(0, 0x830004, 0x830001, 5);
-    0x802D5FF8(133, 0);
+    func_802D5FF8(133, 0);
     sleep 8;
     EndSpeech(0, 0x830004, 0x830001, 5);
     EnablePartnerAI();
@@ -981,7 +983,8 @@ Script N(script_Init_80245738) = SCRIPT({
         }
         == 13 {
             SetSelfVar(8, 817);
-        } else {
+        }
+        else {
             SetSelfVar(8, 818);
         }
     }
@@ -1012,7 +1015,8 @@ Script N(script_Init_802458D8) = SCRIPT({
         }
         == 32 {
             SetSelfVar(8, 812);
-        } else {
+        }
+        else {
             SetSelfVar(8, 813);
         }
     }
@@ -1363,7 +1367,7 @@ s32 N(unk_802482A0)[] = {
     0xC33100E0, 0x90EE50EE, 0xEE05EE09, 0x0E001C33, 0xC33110E0, 0x90EE5BEE, 0xEE0BEE09, 0x0E011C33,
     0xC33110E0, 0x60BE50EE, 0xEE05EB06, 0x0E011C33, 0xC3310600, 0x00B99EEE, 0xEEE99B00, 0x00601C33,
     0xC331066F, 0x12077EEE, 0xEEE7702F, 0x16601C33, 0xC3310661, 0x120EEE0E, 0xE0EEE021, 0x16601C33,
-    0xC3306000, 0x0240BEE0, 0x0EEB0420, 0x00060C33, 0xC3360888, 0x80440BEE, 0xEEB04408, 0x88806C33,
+    0xC3306000, 0x0240BEE0, 0x0EEB0420, 0x00060C33, 0xC3360888, D_80440BEE, 0xEEB04408, 0x88806C33,
     0xC3304888, 0x84844006, 0x60044848, 0x88840C33, 0xC3308888, 0x84888844, 0x44448848, 0x88880C33,
     0xC3308888, 0x888888DD, 0xDD888888, 0x88880C33, 0xC3308888, 0x84888DF1, 0x1FD88848, 0x88880C33,
     0xC3300444, 0x48888DF1, 0x1FD88884, 0x44400C33, 0xCCCCCCCC, 0xCCCCCCCC, 0xCCCCCCCC, 0xCCCCCC33,

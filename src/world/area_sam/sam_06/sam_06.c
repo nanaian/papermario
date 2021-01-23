@@ -187,7 +187,7 @@ s32 pad_000548[] = {
 // text: func_80242094_D21F24
 
 s32 unk_missing_802420C4[] = {
-    0x3C028011, 0x8042F2A2, 0x27BDFFE8, 0x10400003, 0xAFBF0010, 0x0C03AE06, 0x00000000, 0x24020002,
+    0x3C028011, D_8042F2A2, 0x27BDFFE8, 0x10400003, 0xAFBF0010, 0x0C03AE06, 0x00000000, 0x24020002,
     0x8FBF0010, 0x03E00008, 0x27BD0018, 0x27BDFFE8, 0xAFBF0010, 0x0C03AE18, 0x00000000, 0x8FBF0010,
     0x24020002, 0x03E00008, 0x27BD0018,
 };
@@ -638,9 +638,9 @@ Script N(main) = SCRIPT({
     }
     spawn {
         SI_VAR(2) = 0;
-0:
+    0:
         MakeLerp(100, 90, 5, 0);
-1:
+    1:
         UpdateLerp();
         SI_VAR(0) *= 0.0107421875;
         SI_VAR(2) += 8;
@@ -650,7 +650,7 @@ Script N(main) = SCRIPT({
             goto 1;
         }
         MakeLerp(90, 100, 5, 0);
-2:
+    2:
         UpdateLerp();
         SI_VAR(0) *= 0.0107421875;
         SI_VAR(2) += 8;
@@ -1038,7 +1038,7 @@ s32 N(unk_80244438)[] = {
 
 Script N(script_8024443C) = SCRIPT({
     SI_VAR(9) = SI_VAR(1);
-    0x802D6420();
+    func_802D6420();
     SI_VAR(10) = SI_VAR(0);
     match SI_VAR(0) {
         == 0 {}
@@ -1047,7 +1047,7 @@ Script N(script_8024443C) = SCRIPT({
             RemoveKeyItemAt(SI_VAR(1));
             GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_80241BBC_D21A4C(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |= c 50000;
+            SI_VAR(0) |=c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SetPlayerAnimation(0x60005);
             sleep 30;
@@ -1056,14 +1056,14 @@ Script N(script_8024443C) = SCRIPT({
         }
     }
     func_80241DE0_D21C70(SI_VAR(10));
-    0x802D6954();
+    func_802D6954();
     unbind;
 });
 
 // Unable to use DSL: DSL does not support script opcode 0x4E
 Script N(script_80244580) = {
     SI_CMD(ScriptOpcode_CALL, func_80241E18_D21CA8, SI_VAR(0)),
-    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_8024443C), 0x10, 0, 0x8024BEA0, 0, 1),
+    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_8024443C), 0x10, 0, D_8024BEA0, 0, 1),
     SI_CMD(ScriptOpcode_CALL, func_80241D8C_D21C1C, SI_VAR(0)),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)
@@ -1071,7 +1071,7 @@ Script N(script_80244580) = {
 
 Script N(script_802445D0) = SCRIPT({
     SI_VAR(9) = SI_VAR(1);
-    0x802D663C();
+    func_802D663C();
     SI_VAR(10) = SI_VAR(0);
     match SI_VAR(0) {
         == 0 {}
@@ -1088,14 +1088,14 @@ Script N(script_802445D0) = SCRIPT({
         }
     }
     func_80241DE0_D21C70(SI_VAR(10));
-    0x802D6954();
+    func_802D6954();
     unbind;
 });
 
 // Unable to use DSL: DSL does not support script opcode 0x4E
 Script N(script_80244704) = {
     SI_CMD(ScriptOpcode_CALL, func_80241EB4_D21D44, SI_VAR(0)),
-    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_802445D0), 0x10, 0, 0x8024C068, 0, 1),
+    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_802445D0), 0x10, 0, D_8024C068, 0, 1),
     SI_CMD(ScriptOpcode_CALL, func_80241D8C_D21C1C, SI_VAR(0)),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)
@@ -1506,7 +1506,7 @@ Script N(script_Interact_80246A94) = SCRIPT({
     await N(script_80249AB0);
     spawn {
         MakeLerp(0, 255, 60, 0);
-0:
+    0:
         UpdateLerp();
         func_80241F98_D21E28(3, SI_VAR(0));
         sleep 1;
@@ -1521,7 +1521,7 @@ Script N(script_Interact_80246A94) = SCRIPT({
         func_80242214_D220A4(SI_VAR(10));
         sleep 45;
         MakeLerp(255, 0, 30, 0);
-1:
+    1:
         UpdateLerp();
         func_80241F98_D21E28(0, SI_VAR(0));
         sleep 1;
@@ -1548,7 +1548,7 @@ Script N(script_80246E3C) = SCRIPT({
 
 Script N(script_80246EBC) = SCRIPT({
     SI_VAR(9) = SI_VAR(1);
-    0x802D6420();
+    func_802D6420();
     SI_VAR(10) = SI_VAR(0);
     match SI_VAR(0) {
         == 0 {}
@@ -1558,7 +1558,7 @@ Script N(script_80246EBC) = SCRIPT({
             DisablePartnerAI(0);
             GetNpcPos(0xFFFFFFFC, SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_8024233C_D221CC(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |= c 50000;
+            SI_VAR(0) |=c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SI_VAR(10) = spawn N(script_80246E3C);
             SetNpcAnimation(0xFFFFFFFC, 0x40002);
@@ -1591,7 +1591,7 @@ Script N(script_80246EBC) = SCRIPT({
         }
     }
     func_80241DE0_D21C70(SI_VAR(10));
-    0x802D6954();
+    func_802D6954();
     unbind;
 });
 
@@ -1600,7 +1600,7 @@ Script N(script_802471E0) = {
     SI_CMD(ScriptOpcode_SET, SI_VAR(0), SI_VAR(11)),
     SI_CMD(ScriptOpcode_SET, SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80241E18_D21CA8, SI_VAR(0)),
-    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80246EBC), 0x10, 0, 0x8024BEA0, 0, 1),
+    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80246EBC), 0x10, 0, D_8024BEA0, 0, 1),
     SI_CMD(ScriptOpcode_CALL, func_80241D8C_D21C1C, SI_VAR(0)),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)
@@ -1634,7 +1634,8 @@ Script N(script_80247250) = SCRIPT({
                     SpeakToPlayer(0xFFFFFFFC, 0x40006, 0x40001, 5, SI_VAR(8));
                     EnablePartnerAI();
                     SI_VAR(12) = 1;
-                } else {
+                }
+                else {
                     DisablePartnerAI(0);
                     sleep 1;
                     SpeakToPlayer(0xFFFFFFFC, 0x40006, 0x40001, 5, SI_VAR(9));
@@ -1727,12 +1728,12 @@ Script N(script_802477A8) = SCRIPT({
 });
 
 Script N(script_802478D4) = SCRIPT({
-    0x802D2508();
+    func_802D2508();
     sleep 1;
     GetCurrentPartner(SI_VAR(0));
     if (SI_VAR(0) == 8) {
-        0x802D2B6C();
-        0x802D244C();
+        func_802D2B6C();
+        func_802D244C();
     }
     DisablePlayerInput(1);
     SetPlayerSpeed(3.0);
@@ -1809,8 +1810,8 @@ Script N(script_80247D8C) = SCRIPT({
     }
     GetCurrentPartner(SI_VAR(0));
     if (SI_VAR(0) == 8) {
-        0x802D2B6C();
-        0x802D244C();
+        func_802D2B6C();
+        func_802D244C();
     }
     DisablePlayerInput(1);
     loop {
@@ -1846,10 +1847,10 @@ Script N(script_802480C4) = SCRIPT({
     AwaitPlayerApproach(0, 0xFFFFFF74, 60);
     GetCurrentPartner(SI_VAR(0));
     if (SI_VAR(0) == 8) {
-        0x802D2B6C();
-        0x802D244C();
+        func_802D2B6C();
+        func_802D244C();
     }
-    0x802D244C();
+    func_802D244C();
     DisablePlayerInput(1);
     loop {
         sleep 1;
@@ -1897,7 +1898,7 @@ Script N(script_802480C4) = SCRIPT({
     }
     spawn {
         MakeLerp(0, 90, 10, 1);
-71:
+    71:
         UpdateLerp();
         RotateGroup(74, SI_VAR(0), 0, 0, 1);
         RotateGroup(71, SI_VAR(0), 0, 0, -1);
@@ -2284,8 +2285,8 @@ Script N(script_80249AB0) = SCRIPT({
     InterpPlayerYaw(229, 1);
     HidePlayerShadow(1);
     SetPlayerAnimation(0x10002);
-    0x802D286C(2048);
-    0x802D2520(0x10002, 5, 7, 1, 1, 0);
+    func_802D286C(2048);
+    func_802D2520(0x10002, 5, 7, 1, 1, 0);
     spawn {
         sleep 60;
         SetPlayerAnimation(0x8001D);
@@ -2304,7 +2305,7 @@ Script N(script_80249AB0) = SCRIPT({
 Script N(script_80249D1C) = SCRIPT({
     spawn N(script_80242670);
     HidePlayerShadow(0);
-    0x802D2520(0x10002, 0, 0, 0, 0, 0);
+    func_802D2520(0x10002, 0, 0, 0, 0, 0);
     PlayerMoveTo(0xFFFFFEA5, 0xFFFFFF8E, 0);
     SetPlayerSpeed(3.0);
     PlayerMoveTo(0xFFFFFECB, 0xFFFFFFF0, 0);
@@ -2595,7 +2596,7 @@ s32 pad_00BDB4[] = {
 };
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802E9A18, 0xFFFFFF06, 120, 140, 0, 0x80000000);
+    MakeEntity(D_802E9A18, 0xFFFFFF06, 120, 140, 0, 0x80000000);
     MakeItemEntity(50, 0, 0xFFFFFC18, 0, 1, 0);
     SI_MAP_VAR(0) = SI_VAR(0);
 });

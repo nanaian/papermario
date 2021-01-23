@@ -157,7 +157,7 @@ Script N(main) = SCRIPT({
     await N(script_MakeEntities);
     func_80240000_953FC0();
     spawn N(script_8024121C);
-    0x802C971C(4);
+    func_802C971C(4);
     SetMusicTrack(0, 23, 0, 8);
     func_80240038_953FF8();
     PlaySound(0x80000061);
@@ -221,7 +221,7 @@ Script N(script_802415F8) = SCRIPT({
     if (SI_SAVE_FLAG(829) == 1) {
         return;
     }
-    0x800441F0(SI_VAR(0));
+    func_800441F0(SI_VAR(0));
     if (SI_VAR(0) == 1) {
         return;
     }
@@ -229,7 +229,7 @@ Script N(script_802415F8) = SCRIPT({
     if (SI_VAR(0) == 1) {
         return;
     }
-    0x802D585C(1, 0x200000);
+    func_802D585C(1, 0x200000);
     func_80240080_954040();
     DisablePlayerInput(1);
     DisablePartnerAI(0);
@@ -243,7 +243,7 @@ Script N(script_802415F8) = SCRIPT({
         func_80240590_954550(SI_VAR(9));
         DisablePlayerInput(0);
         EnablePartnerAI();
-        0x802D585C(0, 0x200000);
+        func_802D585C(0, 0x200000);
         func_8024009C_95405C();
         return;
     }
@@ -258,7 +258,7 @@ Script N(script_802415F8) = SCRIPT({
         func_80240590_954550(SI_VAR(9));
         DisablePlayerInput(0);
         EnablePartnerAI();
-        0x802D585C(0, 0x200000);
+        func_802D585C(0, 0x200000);
         func_8024009C_95405C();
         return;
     }
@@ -269,7 +269,7 @@ Script N(script_802415F8) = SCRIPT({
     if (SI_VAR(0) != SI_VAR(11)) {
         func_8024049C_95445C(SI_VAR(11));
     } else {
-        0x802CF56C(2);
+        func_802CF56C(2);
     }
     sleep 10;
     ShowMessageAtScreenPos(0x1D00DF, 160, 40);
@@ -279,7 +279,7 @@ Script N(script_802415F8) = SCRIPT({
         func_80240590_954550(SI_VAR(9));
         DisablePlayerInput(0);
         EnablePartnerAI();
-        0x802D585C(0, 0x200000);
+        func_802D585C(0, 0x200000);
         func_8024009C_95405C();
         return;
     }
@@ -295,13 +295,13 @@ Script N(script_802415F8) = SCRIPT({
     }
     DisablePlayerInput(0);
     EnablePartnerAI();
-    0x802D585C(0, 0x200000);
+    func_802D585C(0, 0x200000);
     func_8024009C_95405C();
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA7E0, 300, 60, 0, 0, 0x80000000);
-    MakeEntity(0x802EA910, 0xFFFFFFCE, 60, 275, 0, 0x80000000);
+    MakeEntity(D_802EA7E0, 300, 60, 0, 0, 0x80000000);
+    MakeEntity(D_802EA910, 0xFFFFFFCE, 60, 275, 0, 0x80000000);
     SI_MAP_VAR(0) = SI_VAR(0);
     AssignBlockFlag(SI_SAVE_FLAG(829));
     AssignScript(N(script_802415F8));

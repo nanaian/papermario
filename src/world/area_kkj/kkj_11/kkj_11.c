@@ -310,7 +310,8 @@ Script N(main) = SCRIPT({
             EnableModel(129, 0);
             func_80240000_ACE140();
             MakeNpcs(0, N(npcGroupList_80245EB4));
-        } else {
+        }
+        else {
             EnableModel(127, 0);
             EnableModel(128, 0);
             EnableModel(129, 0);
@@ -340,14 +341,14 @@ s32 N(itemList_80241C00)[] = {
 };
 
 Script N(script_80241C08) = SCRIPT({
-    0x802D6420();
+    func_802D6420();
     if (SI_VAR(0) == 0) {
         ShowMessageAtScreenPos(0x1D00D8, 160, 40);
-        0x802D6954();
+        func_802D6954();
         return;
     }
     if (SI_VAR(0) == -1) {
-        0x802D6954();
+        func_802D6954();
         return;
     }
     PlaySoundAt(617, 0, 0, 10, 490);
@@ -356,7 +357,7 @@ Script N(script_80241C08) = SCRIPT({
     sleep 5;
     RemoveKeyItemAt(SI_VAR(1));
     SI_SAVE_FLAG(500) = 1;
-    0x802D6954();
+    func_802D6954();
     unbind;
     bind N(script_ExitDoubleDoor_802411A0) to TriggerFlag_WALL_INTERACT 0;
 });
@@ -366,7 +367,7 @@ Script N(script_80241C08) = SCRIPT({
 Script N(script_MakeEntities) = {
     SI_CMD(ScriptOpcode_IF_LE, SI_SAVE_VAR(0), 6),
         SI_CMD(ScriptOpcode_IF_EQ, SI_SAVE_FLAG(500), 0),
-            SI_CMD(ScriptOpcode_CALL, MakeEntity, 0x802BCD68, 0, 10, 490, 180, 0x80000000),
+            SI_CMD(ScriptOpcode_CALL, MakeEntity, D_802BCD68, 0, 10, 490, 180, 0x80000000),
             SI_CMD(ScriptOpcode_SET, SI_MAP_VAR(0), SI_VAR(0)),
             SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80241C08), TriggerFlag_WALL_INTERACT, 0x4000, N(itemList_80241C00), 0, 1),
         SI_CMD(ScriptOpcode_ELSE),
@@ -677,7 +678,7 @@ NpcSettings N(npcSettings_80242E70) = {
 Script N(script_NpcAI_80242E9C) = SCRIPT({
     DisablePlayerInput(1);
     group 0;
-    0x802D5830(1);
+    func_802D5830(1);
     PlaySoundAtNpc(-1, 610, 0);
     ShowEmote(-1, 0, 0, 20, 1, 0, 0, 0, 0);
     NpcFacePlayer(-1, 5);
@@ -699,7 +700,7 @@ Script N(script_NpcAI_80242E9C) = SCRIPT({
     GotoMapSpecial(D_80245F28_AD4068, 11, 13);
     sleep 100;
     DisablePlayerInput(0);
-    0x802D5830(0);
+    func_802D5830(0);
 });
 
 Script N(script_Idle_802430A4) = SCRIPT({
@@ -819,7 +820,7 @@ Script N(script_Idle_802438C0) = SCRIPT({
     }
     DisablePlayerInput(1);
     group 0;
-    0x802D5830(1);
+    func_802D5830(1);
     PlaySoundAtNpc(-1, 610, 0);
     ShowEmote(-1, 0, 0, 20, 1, 0, 0, 0, 0);
     NpcFacePlayer(-1, 5);
@@ -833,7 +834,7 @@ Script N(script_Idle_802438C0) = SCRIPT({
     GotoMapSpecial(D_80245F28_AD4068, 11, 13);
     sleep 100;
     DisablePlayerInput(0);
-    0x802D5830(0);
+    func_802D5830(0);
 });
 
 Script N(script_Init_80243AB4) = SCRIPT({
@@ -979,7 +980,7 @@ Script N(script_NpcAI_80244710) = SCRIPT({
     DisablePlayerInput(1);
     func_80240F44_ACF084();
     group 0;
-    0x802D5830(1);
+    func_802D5830(1);
     PlaySoundAtNpc(-1, 610, 0);
     ShowEmote(-1, 0, 0, 20, 1, 0, 0, 0, 0);
     NpcFacePlayer(-1, 5);
@@ -1001,7 +1002,7 @@ Script N(script_NpcAI_80244710) = SCRIPT({
     GotoMapSpecial(D_80245F48_AD4088, 11, 13);
     sleep 100;
     DisablePlayerInput(0);
-    0x802D5830(0);
+    func_802D5830(0);
 });
 
 Script N(script_80244924) = SCRIPT({
@@ -1043,7 +1044,7 @@ Script N(script_Idle_80244AE8) = SCRIPT({
     GetEntryID(SI_VAR(0));
     if (SI_VAR(0) == 1) {
         SetSelfEnemyFlagBits(0x8000000, 1);
-        0x802D2508();
+        func_802D2508();
         spawn {
             DisablePlayerInput(1);
             SetPlayerSpeed(2.0);
@@ -1067,7 +1068,7 @@ Script N(script_Idle_80244C48) = SCRIPT({
     GetEntryID(SI_VAR(0));
     if (SI_VAR(0) == 4) {
         SetSelfEnemyFlagBits(0x8000000, 1);
-        0x802D2508();
+        func_802D2508();
         spawn {
             DisablePlayerInput(1);
             SetPlayerSpeed(2.0);

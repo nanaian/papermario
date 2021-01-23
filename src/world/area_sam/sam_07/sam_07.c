@@ -160,18 +160,18 @@ s32 pad_002374[] = {
 
 Script N(script_MakeEntities) = SCRIPT({
     if (SI_SAVE_FLAG(1455) == 0) {
-        MakeEntity(0x802E9C1C, 0xFFFFFC4F, 0xFFFFFF4D, 0xFFFFFFB5, 0, 0x80000000);
+        MakeEntity(D_802E9C1C, 0xFFFFFC4F, 0xFFFFFF4D, 0xFFFFFFB5, 0, 0x80000000);
         SI_MAP_VAR(0) = SI_VAR(0);
         AssignScript(N(script_80242784));
     } else {
-        MakeEntity(0x802E9C1C, 0xFFFFFC4F, 1, 0xFFFFFFB5, 0, 0x80000000);
+        MakeEntity(D_802E9C1C, 0xFFFFFC4F, 1, 0xFFFFFFB5, 0, 0x80000000);
         SI_MAP_VAR(0) = SI_VAR(0);
         AssignScript(N(script_80242784));
     }
-    MakeEntity(0x802EA0C4, 810, 330, 0xFFFFFF88, 90, 0x80000000);
-    MakeEntity(0x802EA588, 810, 360, 0xFFFFFF88, 90, 142, 0x80000000);
+    MakeEntity(D_802EA0C4, 810, 330, 0xFFFFFF88, 90, 0x80000000);
+    MakeEntity(D_802EA588, 810, 360, 0xFFFFFF88, 90, 142, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1456));
-    MakeEntity(0x802E9A18, 0xFFFFFABA, 0xFFFFFFC4, 0xFFFFFF88, 0, 0x80000000);
+    MakeEntity(D_802E9A18, 0xFFFFFABA, 0xFFFFFFC4, 0xFFFFFF88, 0, 0x80000000);
 });
 
 s32 pad_0024B8[] = {
@@ -236,7 +236,7 @@ Script N(script_80242784) = SCRIPT({
         PlaySoundAtCollider(22, 921, 0);
         SI_VAR(8) -= 0xFFFFFF4C;
         MakeLerp(0xFFFFFF4C, 0, 120, 10);
-0:
+    0:
         UpdateLerp();
         TranslateModel(22, 0, SI_VAR(0), 0);
         TranslateModel(23, 0, SI_VAR(0), 0);
@@ -257,7 +257,7 @@ Script N(script_80242784) = SCRIPT({
         EnableModel(135, 0);
         PlaySoundAtCollider(22, 922, 0);
         MakeLerp(0, 0xFFFFFF4C, 120, 10);
-1:
+    1:
         UpdateLerp();
         TranslateModel(22, 0, SI_VAR(0), 0);
         TranslateModel(23, 0, SI_VAR(0), 0);
@@ -317,7 +317,7 @@ Script N(script_80242C90) = SCRIPT({
         }
         == 2 {
             SetNpcPos(-1, 0, 0xFFFFFC18, 0);
-            0x80045900(1);
+            func_80045900(1);
         }
         == 3 {
             SetEnemyFlagBits(-1, 16, 1);
@@ -356,9 +356,9 @@ NpcSettings N(npcSettings_80242DEC) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80242D7C),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x16,
@@ -435,9 +435,9 @@ NpcSettings N(npcSettings_80243014) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80242F40),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x16,
@@ -458,7 +458,7 @@ Script N(script_802430C0) = SCRIPT({
     match SI_VAR(0) {
         == 1, 2, 4, 6 {
             GetSelfAnimationFromTable(7, SI_VAR(0));
-            await 0x800936DC;
+            await func_800936DC;
         }
     }
 });

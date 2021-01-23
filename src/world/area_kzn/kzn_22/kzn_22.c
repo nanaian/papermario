@@ -183,7 +183,7 @@ Script N(script_80240958) = SCRIPT({
         }
         GetCurrentPartnerID(SI_VAR(1));
         if (SI_VAR(1) != 8) {
-            0x802D2B6C();
+            func_802D2B6C();
             SetPlayerActionState(23);
             sleep 30;
         }
@@ -238,7 +238,7 @@ Script N(script_80240A34) = SCRIPT({
             }
         }
     }
-    SI_VAR(4) += f SI_VAR(5);
+    SI_VAR(4) +=f SI_VAR(5);
     TranslateModel(41, 0, SI_VAR(4), 0);
     sleep 1;
     goto 10;
@@ -279,7 +279,7 @@ s32 unk_missing_80240EC8[] = {
 };
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EAE30, 480, 235, 175, 0, 0, 0x80000000);
+    MakeEntity(D_802EAE30, 480, 235, 175, 0, 0, 0x80000000);
 });
 
 s32 pad_000F18[] = {
@@ -472,7 +472,7 @@ Script N(script_Idle_8024173C) = SCRIPT({
         goto 10;
     }
     SI_AREA_FLAG(14) = 1;
-    0x802CDE68(0, 10);
+    func_802CDE68(0, 10);
     SetNpcRotation(0, 0, 0, 180);
     SetNpcAnimation(0, 0xB60007);
     spawn {

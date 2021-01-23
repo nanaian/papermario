@@ -137,8 +137,8 @@ Script N(script_80240C1C) = SCRIPT({
     SetPlayerPos(SI_VAR(1), SI_VAR(2), SI_VAR(3));
     InterpPlayerYaw(SI_VAR(4), 0);
     PlaySound(355);
-    0x802D286C(256);
-    0x802D2520(0x10000, 5, 2, 1, 1, 0);
+    func_802D286C(256);
+    func_802D2520(0x10000, 5, 2, 1, 1, 0);
     GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
     loop 40 {
         SI_VAR(1) += 1;
@@ -159,7 +159,7 @@ Script N(script_80240C1C) = SCRIPT({
         }
     }
     sleep 2;
-    0x802D2520(0x10000, 0, 0, 0, 0, 0);
+    func_802D2520(0x10000, 0, 0, 0, 0, 0);
     sleep 1;
     SetPlayerAnimation(0x10002);
     DisablePlayerPhysics(0);
@@ -209,8 +209,8 @@ Script N(script_80240F70) = SCRIPT({
         sleep 25;
         HidePlayerShadow(0);
     }
-    0x802D286C(2304);
-    0x802D2520(0x10002, 5, 3, 1, 1, 0);
+    func_802D286C(2304);
+    func_802D2520(0x10002, 5, 3, 1, 1, 0);
     loop 40 {
         func_80240548_8699F8(1.0);
         SetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
@@ -227,7 +227,7 @@ Script N(script_80240F70) = SCRIPT({
         }
     }
     sleep 5;
-    0x802D2520(0x10002, 0, 0, 0, 0, 0);
+    func_802D2520(0x10002, 0, 0, 0, 0, 0);
     ModifyColliderFlags(1, SI_VAR(11), 0x7FFFFE00);
     DisablePlayerInput(0);
     DisablePlayerPhysics(0);
@@ -246,7 +246,7 @@ Script N(script_80241360) = SCRIPT({
         if (SI_VAR(1) != 6) {
             return;
         } else {
-            0x802D2B6C();
+            func_802D2B6C();
             DisablePlayerInput(1);
         }
     } else {
@@ -281,14 +281,14 @@ Script N(script_8024143C) = SCRIPT({
             sleep 1;
         }
     }
-    0x802D286C(2048);
-    0x802D2520(0x10002, 5, 2, 1, 1, 0);
+    func_802D286C(2048);
+    func_802D2520(0x10002, 5, 2, 1, 1, 0);
     sleep 25;
     await 0xFE363C8C;
 });
 
 Script N(script_80241618) = SCRIPT({
-    0x802D249C(SI_VAR(0));
+    func_802D249C(SI_VAR(0));
     if (SI_VAR(0) == 0) {
         return;
     }
@@ -302,7 +302,7 @@ Script N(script_80241618) = SCRIPT({
         if (SI_VAR(1) != 6) {
             return;
         } else {
-            0x802D2B6C();
+            func_802D2B6C();
             DisablePlayerInput(1);
         }
     } else {
@@ -329,8 +329,8 @@ Script N(script_80241618) = SCRIPT({
     GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
     SetPlayerPos(SI_VAR(0), SI_VAR(6), SI_VAR(7));
     SetPlayerAnimation(0x10000);
-    0x802D286C(2048);
-    0x802D2520(0x10000, 5, 3, 1, 1, 0);
+    func_802D286C(2048);
+    func_802D2520(0x10000, 5, 3, 1, 1, 0);
     spawn {
         sleep 8;
         HidePlayerShadow(1);
@@ -647,14 +647,14 @@ Script N(script_8024293C) = SCRIPT({
 
 Script N(script_MakeEntities) = SCRIPT({
     if (SI_SAVE_FLAG(394) == 0) {
-        MakeEntity(0x802EA19C, 0xFFFFFF10, 0xFFFFFFF6, 0, 0, 0x80000000);
+        MakeEntity(D_802EA19C, 0xFFFFFF10, 0xFFFFFFF6, 0, 0, 0x80000000);
         AssignScript(N(script_80242874));
     } else {
         ModifyColliderFlags(0, 11, 0x7FFFFE00);
     }
     ModifyColliderFlags(0, 17, 0x7FFFFE00);
     if (SI_SAVE_FLAG(1933) == 0) {
-        MakeEntity(0x802E9BD4, 0, 0xFFFFFC18, 0, 0, 0x80000000);
+        MakeEntity(D_802E9BD4, 0, 0xFFFFFC18, 0, 0, 0x80000000);
         AssignAreaFlag(3);
         SI_MAP_VAR(1) = SI_VAR(0);
         bind N(script_8024293C) to TriggerFlag_AREA_FLAG_SET SI_AREA_FLAG(3);
@@ -662,9 +662,9 @@ Script N(script_MakeEntities) = SCRIPT({
             func_80240960_869E10(SI_MAP_VAR(1), 125, 0xFFFFFFF6, 25);
         }
     }
-    MakeEntity(0x802EAF80, 150, 0xFFFFFFF6, 0xFFFFFFAE, 0, 2, N(script_802428AC), 1933, 0x80000000);
-    MakeEntity(0x802EAF80, 50, 0xFFFFFFF6, 0xFFFFFFAE, 0, 3, N(script_802428DC), 1933, 0x80000000);
-    MakeEntity(0x802EAF80, 0xFFFFFFCE, 0xFFFFFFF6, 0xFFFFFFAE, 0, 4, N(script_8024290C), 1933, 0x80000000);
+    MakeEntity(D_802EAF80, 150, 0xFFFFFFF6, 0xFFFFFFAE, 0, 2, N(script_802428AC), 1933, 0x80000000);
+    MakeEntity(D_802EAF80, 50, 0xFFFFFFF6, 0xFFFFFFAE, 0, 3, N(script_802428DC), 1933, 0x80000000);
+    MakeEntity(D_802EAF80, 0xFFFFFFCE, 0xFFFFFFF6, 0xFFFFFFAE, 0, 4, N(script_8024290C), 1933, 0x80000000);
 });
 
 NpcSettings N(npcSettings_80242B50) = {

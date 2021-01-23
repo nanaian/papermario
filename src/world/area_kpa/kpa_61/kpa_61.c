@@ -108,7 +108,7 @@ Script N(script_802423A0) = SCRIPT({
     UseDoorSounds(1);
     spawn {
         sleep 30;
-        0x802D5FA4(4);
+        func_802D5FA4(4);
     }
 });
 
@@ -301,9 +301,9 @@ NpcSettings N(npcSettings_80242CA0) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80242C30),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x19,
@@ -336,7 +336,7 @@ Script N(script_80242D1C) = SCRIPT({
             DoNpcDefeat();
         }
         == 2 {
-            0x80045900(0);
+            func_80045900(0);
         }
         == 3 {
             SetEnemyFlagBits(-1, 16, 1);
@@ -352,7 +352,7 @@ NpcSettings N(npcSettings_80242DB8) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80242CFC),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
     .onDefeat = &N(script_80242D1C),
     .flags = 0,
@@ -396,7 +396,7 @@ Script N(script_80242EE4) = SCRIPT({
         }
         == 2 {
             SetNpcPos(-1, 0, 0xFFFFFC18, 0);
-            0x80045900(1);
+            func_80045900(1);
         }
         == 3 {
             SetEnemyFlagBits(-1, 16, 1);
@@ -531,11 +531,11 @@ s32 pad_003BD4[] = {
 };
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA564, 0xFFFFFF1F, 0xFFFFFF9C, 175, 0, 140, 0x80000000);
+    MakeEntity(D_802EA564, 0xFFFFFF1F, 0xFFFFFF9C, 175, 0, 140, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1567));
-    MakeEntity(0x802EA564, 60, 0xFFFFFF9C, 60, 0, 163, 0x80000000);
+    MakeEntity(D_802EA564, 60, 0xFFFFFF9C, 60, 0, 163, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1568));
-    MakeEntity(0x802EA564, 575, 0xFFFFFF9C, 60, 0, 140, 0x80000000);
+    MakeEntity(D_802EA564, 575, 0xFFFFFF9C, 60, 0, 140, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1569));
     MakeItemEntity(162, 1070, 0xFFFFFFD8, 320, 17, SI_SAVE_FLAG(1570));
 });

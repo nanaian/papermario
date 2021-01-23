@@ -147,7 +147,7 @@ Script N(script_802407F8) = SCRIPT({
             DoNpcDefeat();
         }
         == 2 {
-            0x80045900(0);
+            func_80045900(0);
         }
         == 3 {
             DisablePlayerInput(1);
@@ -185,7 +185,7 @@ NpcSettings N(npcSettings_80240A44) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_802407D8),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
     .onDefeat = &N(script_802407F8),
     .flags = 0,

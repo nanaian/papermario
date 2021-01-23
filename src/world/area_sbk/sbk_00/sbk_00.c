@@ -108,9 +108,9 @@ NpcSettings N(npcSettings_8024035C) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80240330),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x9,
@@ -162,9 +162,9 @@ s32 pad_00078C[] = {
 };
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA564, 0xFFFFFF1A, 0, 155, 0, 152, 0x80000000);
+    MakeEntity(D_802EA564, 0xFFFFFF1A, 0, 155, 0, 152, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(797));
-    MakeEntity(0x802EA564, 160, 0, 205, 0, 343, 0x80000000);
+    MakeEntity(D_802EA564, 160, 0, 205, 0, 343, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(798));
 });
 

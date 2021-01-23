@@ -202,7 +202,7 @@ Script N(script_8024141C) = SCRIPT({
     SI_VAR(1) = 21;
     SI_VAR(2) = N(unk_802413FC);
     SI_VAR(3) = N(unk_80241404);
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_80241CC0_D8B3A0, 0);
     sleep 100;
@@ -215,7 +215,7 @@ Script N(script_802414C0) = SCRIPT({
     SI_VAR(1) = 17;
     SI_VAR(2) = N(unk_8024140C);
     SI_VAR(3) = N(unk_80241414);
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_80241CC8_D8B3A8, 1);
     sleep 100;
@@ -245,13 +245,13 @@ Script N(script_EnterWalk_80241634) = SCRIPT({
         == 0 {
             SI_VAR(2) = N(unk_802413FC);
             SI_VAR(3) = N(unk_80241404);
-            await 0x802861B0;
+            await func_802861B0;
             spawn N(script_802415D0);
         }
         == 1 {
             SI_VAR(2) = N(unk_8024140C);
             SI_VAR(3) = N(unk_80241414);
-            await 0x802861B0;
+            await func_802861B0;
             spawn N(script_802415D0);
         }
         == 2 {
@@ -349,9 +349,9 @@ Script N(script_80241980) = SCRIPT({
 Script N(script_MakeEntities) = SCRIPT({
     SI_SAVE_FLAG(1515) = 0;
     SI_AREA_FLAG(3) = 0;
-    MakeEntity(0x802E9BB0, 310, 0, 110, 0, 0x80000000);
+    MakeEntity(D_802E9BB0, 310, 0, 110, 0, 0x80000000);
     AssignScript(N(script_80241980));
-    MakeEntity(0x802E9BB0, 310, 0, 0xFFFFFF92, 0, 0x80000000);
+    MakeEntity(D_802E9BB0, 310, 0, 0xFFFFFF92, 0, 0x80000000);
     AssignScript(N(script_80241980));
     ParentColliderToModel(28, 49);
     ParentColliderToModel(29, 49);

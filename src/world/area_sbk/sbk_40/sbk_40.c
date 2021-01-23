@@ -130,7 +130,7 @@ Script N(script_80240548) = SCRIPT({
             DoNpcDefeat();
         }
         == 2 {
-            0x80045900(0);
+            func_80045900(0);
         }
         == 3 {
             DisablePlayerInput(1);
@@ -168,7 +168,7 @@ NpcSettings N(npcSettings_80240794) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80240528),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
     .onDefeat = &N(script_80240548),
     .flags = 0,
@@ -222,11 +222,11 @@ s32 pad_000BC4[] = {
 };
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA0E8, 0, 60, 0xFFFFFF9C, 0, 0x80000000);
+    MakeEntity(D_802EA0E8, 0, 60, 0xFFFFFF9C, 0, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(820));
-    MakeEntity(0x802EA0C4, 165, 60, 0xFFFFFED4, 0, 0x80000000);
-    MakeEntity(0x802EA0C4, 110, 60, 130, 0, 0x80000000);
-    MakeEntity(0x802EA0C4, 0xFFFFFF92, 60, 200, 0, 0x80000000);
+    MakeEntity(D_802EA0C4, 165, 60, 0xFFFFFED4, 0, 0x80000000);
+    MakeEntity(D_802EA0C4, 110, 60, 130, 0, 0x80000000);
+    MakeEntity(D_802EA0C4, 0xFFFFFF92, 60, 200, 0, 0x80000000);
 });
 
 // rodata: D_80240C80_94C020

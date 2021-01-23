@@ -124,7 +124,7 @@ Script N(script_80241FA0) = SCRIPT({
 Script N(script_MakeEntities) = SCRIPT({
     MakeItemEntity(23, 0xFFFFFE7B, 0xFFFFFD46, 0xFFFFFE58, 0, SI_SAVE_FLAG(883));
     if (SI_SAVE_FLAG(899) == 0) {
-        MakeEntity(0x802EA1C0, 0xFFFFFE05, 0xFFFFFCF4, 0xFFFFFE74, 143, 0x80000000);
+        MakeEntity(D_802EA1C0, 0xFFFFFE05, 0xFFFFFCF4, 0xFFFFFE74, 143, 0x80000000);
         AssignScript(N(script_80241FA0));
     }
     PlayEffect(32, 1, 0xFFFFFE35, 0xFFFFFDB9, 0xFFFFFF2A, 0.30078125, SI_VAR(0), 0, 0, 0, 0, 0, 0, 0);
@@ -177,10 +177,10 @@ Script N(script_802421EC) = {
         SI_CMD(ScriptOpcode_CASE_MULTI_OR_EQ, 4),
         SI_CMD(ScriptOpcode_CASE_MULTI_OR_EQ, 6),
             SI_CMD(ScriptOpcode_CALL, GetSelfAnimationFromTable, 7, SI_VAR(0)),
-            SI_CMD(ScriptOpcode_AWAIT_SCRIPT, 0x800936DC),
+            SI_CMD(ScriptOpcode_AWAIT_SCRIPT, func_800936DC),
         SI_CMD(ScriptOpcode_CASE_EQ, 3),
             SI_CMD(ScriptOpcode_SPAWN_THREAD),
-                SI_CMD(ScriptOpcode_CALL, 0x800458CC, SI_VAR(0)),
+                SI_CMD(ScriptOpcode_CALL, func_800458CC, SI_VAR(0)),
                 SI_CMD(ScriptOpcode_IF_EQ, SI_VAR(0), 0),
                     SI_CMD(ScriptOpcode_SET, SI_VAR(10), 0),
                     SI_CMD(ScriptOpcode_LOOP, 30),
@@ -257,7 +257,7 @@ Script N(script_Idle_802423C4) = SCRIPT({
     EnableNpcShadow(-1, 1);
     sleep 1;
     func_80241BC4_9942F4();
-    0x802CFD30(-1, 0, 0, 0, 0, 0);
+    func_802CFD30(-1, 0, 0, 0, 0, 0);
     SetSelfEnemyFlagBits(0x100004, 0);
     sleep 3;
     GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));

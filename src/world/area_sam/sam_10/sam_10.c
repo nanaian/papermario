@@ -154,15 +154,15 @@ s32 N(unk_80241040)[] = {
 
 Script N(script_80241044) = SCRIPT({
     group 0;
-    0x802D5830(2);
+    func_802D5830(2);
     sleep 40;
     ShowGotItem(SI_VAR(0), 0, 0);
-    0x802D5830(0);
+    func_802D5830(0);
     return;
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA5AC, 775, 540, 0xFFFFFFCE, 0, 291, 0x80000000);
+    MakeEntity(D_802EA5AC, 775, 540, 0xFFFFFFCE, 0, 291, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1463));
     MakeItemEntity(348, 0xFFFFFF60, 300, 0xFFFFFF92, 17, SI_SAVE_FLAG(1464));
     if (SI_SAVE_VAR(0) < 77) {
@@ -173,8 +173,8 @@ Script N(script_MakeEntities) = SCRIPT({
         DropItemEntityB(108, 0xFFFFFF8B, 179, 0xFFFFFFC9, 1, 0);
         func_802402BC_D37ABC();
     }
-    MakeEntity(0x802E9A18, 0xFFFFFF06, 870, 0xFFFFFF2E, 0, 0x80000000);
-    MakeEntity(0x802EA7E0, 770, 1200, 0xFFFFFF1F, 0, 0x80000000);
+    MakeEntity(D_802E9A18, 0xFFFFFF06, 870, 0xFFFFFF2E, 0, 0x80000000);
+    MakeEntity(D_802EA7E0, 770, 1200, 0xFFFFFF1F, 0, 0x80000000);
 });
 
 s32 N(intTable_802411F0)[] = {
@@ -194,8 +194,8 @@ Script N(script_802412E0) = {
     SI_CMD(ScriptOpcode_CALL, DisablePlayerInput, 1),
     SI_CMD(ScriptOpcode_CALL, FindKeyItem, 108, SI_VAR(0)),
     SI_CMD(ScriptOpcode_IF_NE, SI_VAR(0), -1),
-        SI_CMD(ScriptOpcode_CALL, 0x802D6420),
-        SI_CMD(ScriptOpcode_CALL, 0x802D6954),
+        SI_CMD(ScriptOpcode_CALL, func_802D6420),
+        SI_CMD(ScriptOpcode_CALL, func_802D6954),
         SI_CMD(ScriptOpcode_MATCH, SI_VAR(0)),
             SI_CMD(ScriptOpcode_CASE_EQ, 0),
                 SI_CMD(ScriptOpcode_CALL, DisablePlayerInput, 0),
@@ -432,7 +432,7 @@ Script N(script_80242580) = SCRIPT({
         }
         == 2 {
             SetNpcPos(-1, 0, 0xFFFFFC18, 0);
-            0x80045900(1);
+            func_80045900(1);
         }
         == 3 {
             SetEnemyFlagBits(-1, 16, 1);
@@ -480,9 +480,9 @@ NpcSettings N(npcSettings_8024270C) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_8024269C),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x17,

@@ -390,9 +390,9 @@ NpcSettings N(npcSettings_80241818) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x1A,
@@ -418,7 +418,7 @@ Script N(script_Idle_80241844) = SCRIPT({
         SetCamSpeed(0, 4.0);
         PanToTarget(0, 0, 1);
     }
-    0x802D585C(1, 0x20000);
+    func_802D585C(1, 0x20000);
     StopSound(556);
     StartBossBattle(103);
 });
@@ -443,14 +443,14 @@ Script N(script_Idle_80241A3C) = SCRIPT({
         }
         sleep 1;
     }
-    0x802D286C(8192);
-    0x802D2520(0x10002, 8, 0, 0, 0, 0);
+    func_802D286C(8192);
+    func_802D2520(0x10002, 8, 0, 0, 0, 0);
     HidePlayerShadow(1);
     DisablePartnerAI(0);
     sleep 1;
     GetNpcPos(1, SI_VAR(0), SI_VAR(1), SI_VAR(2));
     SetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
-    0x802D585C(1, 0x20000);
+    func_802D585C(1, 0x20000);
     StopSound(557);
     StartBossBattle(103);
     EnablePartnerAI();
@@ -647,9 +647,9 @@ NpcSettings N(npcSettings_802428E8) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x1A,
@@ -764,43 +764,43 @@ Script N(script_Init_80242D8C) = SCRIPT({
 });
 
 Script N(script_Init_80242DE8) = SCRIPT({
-    0x802CFD30(8, 7, 0, 0, 0, 0);
+    func_802CFD30(8, 7, 0, 0, 0, 0);
     EnableNpcShadow(8, 0);
     SetNpcPos(8, 100, 45, 0);
 });
 
 Script N(script_Init_80242E4C) = SCRIPT({
-    0x802CFD30(9, 7, 0, 0, 0, 0);
+    func_802CFD30(9, 7, 0, 0, 0, 0);
     EnableNpcShadow(9, 0);
     SetNpcPos(9, 46, 45, 0xFFFFFFE5);
 });
 
 Script N(script_Init_80242EB0) = SCRIPT({
-    0x802CFD30(10, 7, 0, 0, 0, 0);
+    func_802CFD30(10, 7, 0, 0, 0, 0);
     EnableNpcShadow(10, 0);
     SetNpcPos(10, 33, 45, 0xFFFFFFA1);
 });
 
 Script N(script_Init_80242F14) = SCRIPT({
-    0x802CFD30(11, 7, 0, 0, 0, 0);
+    func_802CFD30(11, 7, 0, 0, 0, 0);
     EnableNpcShadow(11, 0);
     SetNpcPos(11, 71, 45, 0xFFFFFF7C);
 });
 
 Script N(script_Init_80242F78) = SCRIPT({
-    0x802CFD30(12, 7, 0, 0, 0, 0);
+    func_802CFD30(12, 7, 0, 0, 0, 0);
     EnableNpcShadow(12, 0);
     SetNpcPos(12, 131, 45, 0xFFFFFF7C);
 });
 
 Script N(script_Init_80242FDC) = SCRIPT({
-    0x802CFD30(13, 7, 0, 0, 0, 0);
+    func_802CFD30(13, 7, 0, 0, 0, 0);
     EnableNpcShadow(13, 0);
     SetNpcPos(13, 169, 45, 0xFFFFFFA1);
 });
 
 Script N(script_Init_80243040) = SCRIPT({
-    0x802CFD30(14, 7, 0, 0, 0, 0);
+    func_802CFD30(14, 7, 0, 0, 0, 0);
     EnableNpcShadow(14, 0);
     SetNpcPos(14, 156, 45, 0xFFFFFFE5);
 });
@@ -1097,9 +1097,9 @@ NpcSettings N(npcSettings_80244968) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x1A,
@@ -1283,9 +1283,9 @@ s32 unk_missing_8024563C[] = {
     0x00000000, 0x00000000, 0x004B0048, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000,
     0x00000000, 0x00000000, 0x00000000, 0x00630000, 0x00000000, 0x00180018, 0x00000000, 0x00000000,
     0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00630000, 0x00000000,
-    0x00220018, 0x00000000, 0x00000000, 0x00000000, 0x80077F70, 0x00000000, 0x8007809C, 0x00000000,
-    0x00000000, 0x001A0000, 0x00000000, 0x00170016, 0x00000000, 0x00000000, 0x00000000, 0x80077F70,
-    0x00000000, 0x8007809C, 0x00000000, 0x00000000, 0x000E0001, 0x00000000, 0x00180018, 0x00000000,
+    0x00220018, 0x00000000, 0x00000000, 0x00000000, EnemyNpcHit, 0x00000000, EnemyNpcDefeat, 0x00000000,
+    0x00000000, 0x001A0000, 0x00000000, 0x00170016, 0x00000000, 0x00000000, 0x00000000, EnemyNpcHit,
+    0x00000000, EnemyNpcDefeat, 0x00000000, 0x00000000, 0x000E0001, 0x00000000, 0x00180018, 0x00000000,
     0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00630000,
 };
 
@@ -1300,7 +1300,7 @@ Script N(script_80245784) = SCRIPT({
         sleep 20;
         func_802401C4_B06BC4(SI_MAP_VAR(0), SI_VAR(7), SI_VAR(8), SI_VAR(9));
         MakeLerp(0, 0xFFFFFFF3, 5, 10);
-0:
+    0:
         UpdateLerp();
         func_802400FC_B06AFC(SI_MAP_VAR(0), SI_VAR(7), SI_VAR(0), SI_VAR(9));
         if (SI_VAR(1) == 1) {
@@ -1376,9 +1376,9 @@ Script N(script_80245AF0) = SCRIPT({
         if (SI_VAR(0) != 0) {
             GetCurrentPartnerID(SI_VAR(1));
             if (SI_VAR(1) != 8) {
-                0x802D244C();
+                func_802D244C();
             }
-            0x802D2B6C();
+            func_802D2B6C();
             sleep 5;
         }
         GetNpcPos(0xFFFFFFFC, SI_VAR(0), SI_VAR(1), SI_VAR(2));
@@ -1395,7 +1395,7 @@ Script N(script_80245AF0) = SCRIPT({
             NpcJump0(0xFFFFFFFC, SI_VAR(3), SI_VAR(1), SI_VAR(5), 12);
             EnablePartnerAI();
         }
-1:
+    1:
     }
     SpeakToPlayer(0, 0x800006, 0x800002, 0, 0x13007C);
     sleep 20;
@@ -2228,7 +2228,7 @@ Script N(script_80248998) = SCRIPT({
     SI_VAR(0) = 0;
     loop 20 {
         SI_VAR(0) += 12.0;
-        0x802CFD30(8, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(8, 7, SI_VAR(0), 0, 0, 0);
         sleep 1;
     }
     sleep 10;
@@ -2264,21 +2264,21 @@ Script N(script_80248998) = SCRIPT({
     SI_VAR(0) = 0;
     loop 20 {
         SI_VAR(0) += 12.0;
-        0x802CFD30(9, 7, SI_VAR(0), 0, 0, 0);
-        0x802CFD30(10, 7, SI_VAR(0), 0, 0, 0);
-        0x802CFD30(11, 7, SI_VAR(0), 0, 0, 0);
-        0x802CFD30(12, 7, SI_VAR(0), 0, 0, 0);
-        0x802CFD30(13, 7, SI_VAR(0), 0, 0, 0);
-        0x802CFD30(14, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(9, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(10, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(11, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(12, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(13, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(14, 7, SI_VAR(0), 0, 0, 0);
         sleep 1;
     }
-    0x802CFD30(8, 0, 0, 0, 0, 0);
-    0x802CFD30(9, 0, 0, 0, 0, 0);
-    0x802CFD30(10, 0, 0, 0, 0, 0);
-    0x802CFD30(11, 0, 0, 0, 0, 0);
-    0x802CFD30(12, 0, 0, 0, 0, 0);
-    0x802CFD30(13, 0, 0, 0, 0, 0);
-    0x802CFD30(14, 0, 0, 0, 0, 0);
+    func_802CFD30(8, 0, 0, 0, 0, 0);
+    func_802CFD30(9, 0, 0, 0, 0, 0);
+    func_802CFD30(10, 0, 0, 0, 0, 0);
+    func_802CFD30(11, 0, 0, 0, 0, 0);
+    func_802CFD30(12, 0, 0, 0, 0, 0);
+    func_802CFD30(13, 0, 0, 0, 0, 0);
+    func_802CFD30(14, 0, 0, 0, 0, 0);
     SetNpcJumpscale(4, 0.0);
     NpcJump0(4, 140, 65, 30, 20);
     GetNpcPos(8, SI_VAR(0), SI_VAR(1), SI_VAR(2));
@@ -2436,9 +2436,9 @@ s32 unk_missing_8024A860[] = {
     0x00000000, 0x004B0048, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000,
     0x00000000, 0x00000000, 0x00630000, 0x00000000, 0x00180018, 0x00000000, 0x00000000, 0x00000000,
     0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00630000, 0x00000000, 0x00220018,
-    0x00000000, 0x00000000, 0x00000000, 0x80077F70, 0x00000000, 0x8007809C, 0x00000000, 0x00000000,
-    0x001A0000, 0x00000000, 0x00170016, 0x00000000, 0x00000000, 0x00000000, 0x80077F70, 0x00000000,
-    0x8007809C, 0x00000000, 0x00000000, 0x000E0001, 0x00000000, 0x00180018, 0x00000000, 0x00000000,
+    0x00000000, 0x00000000, 0x00000000, EnemyNpcHit, 0x00000000, EnemyNpcDefeat, 0x00000000, 0x00000000,
+    0x001A0000, 0x00000000, 0x00170016, 0x00000000, 0x00000000, 0x00000000, EnemyNpcHit, 0x00000000,
+    EnemyNpcDefeat, 0x00000000, 0x00000000, 0x000E0001, 0x00000000, 0x00180018, 0x00000000, 0x00000000,
     0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00630000, 0x00000000,
     0x001A0018, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000,
     0x00000000, 0x00630000, 0x00000000, 0x00140014, 0x00000000, 0x00000000, 0x00000000, 0x00000000,
@@ -2686,7 +2686,8 @@ Script N(script_8024B254) = SCRIPT({
     match SI_VAR(0) {
         7, 9 {
             sleep 30;
-        } else {
+        }
+        else {
             loop 3 {
                 GetNpcPos(0xFFFFFFFC, SI_VAR(1), SI_VAR(2), SI_VAR(3));
                 NpcJump0(0xFFFFFFFC, SI_VAR(1), SI_VAR(2), SI_VAR(3), 10);
@@ -2848,8 +2849,8 @@ Script N(script_8024B254) = SCRIPT({
     SetNpcAnimation(15, 0x800002);
     InterpNpcYaw(17, 90, 0);
     sleep 5;
-    0x802CDE68(15, 34);
-    0x802CDE68(17, 12);
+    func_802CDE68(15, 34);
+    func_802CDE68(17, 12);
     sleep 10;
     spawn {
         func_80240E54_B07854();
@@ -2861,7 +2862,7 @@ Script N(script_8024B254) = SCRIPT({
 
 Script N(script_MakeEntities) = SCRIPT({
     if (SI_SAVE_FLAG(508) == 0) {
-        MakeEntity(0x802E9C1C, 300, 0, 0, 0, 0x80000000);
+        MakeEntity(D_802E9C1C, 300, 0, 0, 0, 0x80000000);
         SI_MAP_VAR(0) = SI_VAR(0);
         AssignAreaFlag(26);
         bind N(script_802463F4) to TriggerFlag_AREA_FLAG_SET SI_AREA_FLAG(26);

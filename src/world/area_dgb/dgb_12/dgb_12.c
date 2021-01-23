@@ -47,7 +47,8 @@ Script N(script_80240310) = SCRIPT({
         }
         < 0xFFFFFFF0 {
             SetMusicTrack(0, 31, 0, 8);
-        } else {
+        }
+        else {
             SetMusicTrack(0, 30, 0, 8);
         }
     }
@@ -156,10 +157,10 @@ s32 N(unk_80240870)[] = {
 
 Script N(script_80240874) = SCRIPT({
     group 0;
-    0x802D5830(2);
+    func_802D5830(2);
     sleep 40;
     ShowGotItem(SI_VAR(0), 0, 0);
-    0x802D5830(0);
+    func_802D5830(0);
     return;
 });
 
@@ -192,7 +193,7 @@ Script N(script_802409BC) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EAE30, 0xFFFFFF1F, 0, 0xFFFFFF0B, 0, 0, 0x80000000);
+    MakeEntity(D_802EAE30, 0xFFFFFF1F, 0, 0xFFFFFF0B, 0, 0, 0x80000000);
     AssignFlag(SI_SAVE_FLAG(1057));
     AssignScript(N(script_802409BC));
 });

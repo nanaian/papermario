@@ -61,7 +61,7 @@ s32 pad_002ACC[1];
 // text: func_802407F4_9C3104
 
 s32 unk_missing_80240814[] = {
-    0x00000000, 0x00000000, 0x00000000, 0x3C038011, 0x8063F2A2, 0x24020003, 0x54620003, 0xAC800084,
+    0x00000000, 0x00000000, 0x00000000, 0x3C038011, D_8063F2A2, 0x24020003, 0x54620003, 0xAC800084,
     0x24020001, 0xAC820084, 0x03E00008, 0x24020002, 0x00000000, 0x00000000, 0x00000000,
 };
 
@@ -84,7 +84,8 @@ Script N(script_802408B0) = SCRIPT({
         }
         == 0xFFFFFFB2 {
             FadeOutMusic(0, 500);
-        } else {
+        }
+        else {
             SetMusicTrack(0, 20, 0, 8);
         }
     }
@@ -105,7 +106,8 @@ Script N(script_80240950) = SCRIPT({
             if (SI_VAR(1) == 1) {
                 SI_VAR(0) = 0;
             }
-        } else {
+        }
+        else {
             return;
         }
     }
@@ -287,10 +289,10 @@ Script N(script_NpcAI_80241170) = SCRIPT({
     SetNpcPos(0, 0xFFFFFFE0, 0, 0);
     NpcMoveTo(0, 0xFFFFFFA8, 0, 15);
     sleep 10;
-    0x802CFD30(0, 5, 4, 2, 1, 0);
+    func_802CFD30(0, 5, 4, 2, 1, 0);
     SetNpcAnimation(0, 0x66001E);
     sleep 12;
-    0x802CFD30(0, 0, 0, 0, 0, 0);
+    func_802CFD30(0, 0, 0, 0, 0, 0);
     SetNpcAnimation(0, 0x660004);
     sleep 10;
     SpeakToPlayer(0, 0x660002, 0x660004, 0, 0xC00F4);

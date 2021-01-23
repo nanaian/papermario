@@ -118,9 +118,9 @@ Script N(script_8024058C) = SCRIPT({
 });
 
 Script N(script_802405B8) = SCRIPT({
-    0x802D5FF8(66, 0);
+    func_802D5FF8(66, 0);
     sleep 130;
-    0x802D5FD8();
+    func_802D5FD8();
 });
 
 s32 pad_0005F4[] = {
@@ -151,7 +151,7 @@ Script N(script_EnterWalk_80240688) = SCRIPT({
         SI_VAR(0) = N(script_8024065C);
         spawn EnterWalk;
     } else {
-        spawn 0x80285C50;
+        spawn func_80285C50;
         spawn N(script_8024065C);
     }
 });
@@ -217,7 +217,7 @@ Script N(script_NpcAI_8024090C) = SCRIPT({
                 }
             }
             DisablePlayerInput(1);
-            0x802CF56C(0);
+            func_802CF56C(0);
             GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
             SI_VAR(0) += 30;
             SetNpcSpeed(0xFFFFFFFC, 2.0);
@@ -233,7 +233,7 @@ Script N(script_NpcAI_8024090C) = SCRIPT({
         }
         == 0xFFFFFF89 {
             if (SI_AREA_VAR(0) == 0) {
-10:
+            10:
                 sleep 1;
                 GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
                 if (SI_VAR(0) < 360) {
@@ -278,14 +278,14 @@ Script N(script_NpcAI_8024090C) = SCRIPT({
                 sleep 10;
                 spawn {
                     SI_VAR(0) = 0;
-                    0x802CDE68(0xFFFFFFFC, 10);
+                    func_802CDE68(0xFFFFFFFC, 10);
                     loop 60 {
                         SI_VAR(0) += 53;
                         SetNpcRotation(0xFFFFFFFC, 0, 0, SI_VAR(0));
                         PlayerFaceNpc(0xFFFFFFFC, 0);
                         sleep 1;
                     }
-                    0x802CDE68(0xFFFFFFFC, 0);
+                    func_802CDE68(0xFFFFFFFC, 0);
                     SetNpcRotation(0xFFFFFFFC, 0, 0, 0);
                 }
                 spawn {
@@ -323,7 +323,7 @@ Script N(script_80240FD4) = SCRIPT({
 // Unable to use DSL: unexpected SI_END_MULTI_CASE
 // *INDENT-OFF*
 Script N(script_Idle_80240FE4) = {
-    SI_CMD(ScriptOpcode_CALL, 0x800445D4, SI_VAR(0)),
+    SI_CMD(ScriptOpcode_CALL, func_800445D4, SI_VAR(0)),
     SI_CMD(ScriptOpcode_MATCH, SI_VAR(0)),
         SI_CMD(ScriptOpcode_CASE_EQ, 100),
             SI_CMD(ScriptOpcode_LABEL, 0),
@@ -501,16 +501,16 @@ Script N(script_80241A80) = SCRIPT({
 
 Script N(script_MakeEntities) = SCRIPT({
     if (SI_SAVE_FLAG(71) == 0) {
-        MakeEntity(0x802EA10C, 0xFFFFFFB0, 0, 400, 0, 0x80000000);
+        MakeEntity(D_802EA10C, 0xFFFFFFB0, 0, 400, 0, 0x80000000);
         AssignScript(N(script_80241A80));
     }
-    MakeEntity(0x802EA0C4, 0xFFFFFF1A, 60, 0xFFFFFF74, 0, 0x80000000);
-    MakeEntity(0x802EA0C4, 0xFFFFFE48, 60, 20, 0, 0x80000000);
-    MakeEntity(0x802EA0C4, 60, 0, 370, 0, 0x80000000);
-    MakeEntity(0x802EA0C4, 85, 0, 395, 0, 0x80000000);
-    MakeEntity(0x802EA0E8, 100, 0, 0xFFFFFFBA, 0, 0x80000000);
+    MakeEntity(D_802EA0C4, 0xFFFFFF1A, 60, 0xFFFFFF74, 0, 0x80000000);
+    MakeEntity(D_802EA0C4, 0xFFFFFE48, 60, 20, 0, 0x80000000);
+    MakeEntity(D_802EA0C4, 60, 0, 370, 0, 0x80000000);
+    MakeEntity(D_802EA0C4, 85, 0, 395, 0, 0x80000000);
+    MakeEntity(D_802EA0E8, 100, 0, 0xFFFFFFBA, 0, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(70));
-    MakeEntity(0x802E9A18, 0, 60, 0, 0, 0x80000000);
+    MakeEntity(D_802E9A18, 0, 60, 0, 0, 0x80000000);
 });
 
 s32 pad_001BE4[] = {
@@ -781,7 +781,7 @@ Script N(script_80242A58) = SCRIPT({
             break;
         }
     }
-    0x802D7B44(SI_VAR(8));
+    func_802D7B44(SI_VAR(8));
     RemoveItemEntity(SI_VAR(12));
     SetPlayerAnimation(0x10002);
 });
@@ -1047,7 +1047,7 @@ Script N(script_Tree3_Callback) = SCRIPT({
     MakeItemEntity(86, 250, 132, 0xFFFFFF9C, 13, SI_SAVE_FLAG(30));
     SI_AREA_FLAG(9) = 1;
     spawn {
-10:
+    10:
         if (SI_SAVE_FLAG(30) == 0) {
             sleep 1;
             goto 10;

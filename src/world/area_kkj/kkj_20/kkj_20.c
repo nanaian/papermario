@@ -83,7 +83,7 @@ s32 pad_0002BC[] = {
 // text: func_80240404_AFDF44
 
 s32 unk_missing_80240434[] = {
-    0x3C028011, 0x8042F2A2, 0x27BDFFE8, 0x10400003, 0xAFBF0010, 0x0C03AE06, 0x00000000, 0x24020002,
+    0x3C028011, D_8042F2A2, 0x27BDFFE8, 0x10400003, 0xAFBF0010, 0x0C03AE06, 0x00000000, 0x24020002,
     0x8FBF0010, 0x03E00008, 0x27BD0018, 0x27BDFFE8, 0xAFBF0010, 0x0C03AE18, 0x00000000, 0x8FBF0010,
     0x24020002, 0x03E00008, 0x27BD0018,
 };
@@ -173,10 +173,10 @@ s32 N(unk_80240880)[] = {
 
 Script N(script_80240884) = SCRIPT({
     group 0;
-    0x802D5830(2);
+    func_802D5830(2);
     sleep 40;
     ShowGotItem(SI_VAR(0), 0, 0);
-    0x802D5830(0);
+    func_802D5830(0);
     return;
 });
 
@@ -215,7 +215,7 @@ Script N(script_802409CC) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EAE30, 95, 0, 0, 0, 0, 0x80000000);
+    MakeEntity(D_802EAE30, 95, 0, 0, 0, 0, 0x80000000);
     AssignFlag(SI_SAVE_FLAG(487));
     AssignScript(N(script_802409CC));
 });
@@ -650,7 +650,7 @@ Script N(script_80242E6C) = SCRIPT({
     await N(script_8024390C);
     spawn {
         MakeLerp(0, 255, 60, 0);
-0:
+    0:
         UpdateLerp();
         func_80240308_AFDE48(3, SI_VAR(0));
         sleep 1;
@@ -665,7 +665,7 @@ Script N(script_80242E6C) = SCRIPT({
         func_80240584_AFE0C4(SI_VAR(10));
         sleep 45;
         MakeLerp(255, 0, 30, 0);
-1:
+    1:
         UpdateLerp();
         func_80240308_AFDE48(0, SI_VAR(0));
         sleep 1;
@@ -745,7 +745,7 @@ Script N(script_80243484) = SCRIPT({
         SetPlayerSpeed(2.0);
         PlayerMoveTo(0xFFFFFFCE, 0, 0);
         InterpPlayerYaw(90, 5);
-        0x802CF56C(2);
+        func_802CF56C(2);
     }
     sleep 10;
     spawn N(script_80243214);
@@ -813,8 +813,8 @@ Script N(script_8024390C) = SCRIPT({
     InterpPlayerYaw(229, 1);
     HidePlayerShadow(1);
     SetPlayerAnimation(0x10002);
-    0x802D286C(2048);
-    0x802D2520(0x10002, 5, 7, 1, 1, 0);
+    func_802D286C(2048);
+    func_802D2520(0x10002, 5, 7, 1, 1, 0);
     spawn {
         sleep 60;
         SetPlayerAnimation(0x8001D);
@@ -833,7 +833,7 @@ Script N(script_8024390C) = SCRIPT({
 
 Script N(script_80243B94) = SCRIPT({
     HidePlayerShadow(0);
-    0x802D2520(0x10002, 0, 0, 0, 0, 0);
+    func_802D2520(0x10002, 0, 0, 0, 0, 0);
     SetPlayerPos(85, 0, 0xFFFFFFAB);
     SetPlayerSpeed(3.0);
     PlayerMoveTo(60, 0xFFFFFFCE, 0);
@@ -926,9 +926,9 @@ Script N(script_80243FDC) = SCRIPT({
     SetCamPitch(0, 18.0, -11.0);
     SetCamSpeed(0, 4.0);
     PanToTarget(0, 0, 1);
-    0x802D1270(0xFFFFFFCE, 0, 2.5);
+    func_802D1270(0xFFFFFFCE, 0, 2.5);
     InterpPlayerYaw(90, 5);
-    0x802CF56C(2);
+    func_802CF56C(2);
     sleep 10;
     SpeakToPlayer(0, 0x830004, 0x830001, 0, 0x140186);
     GetNpcPos(0, SI_VAR(0), SI_VAR(1), SI_VAR(2));
@@ -940,7 +940,7 @@ Script N(script_80243FDC) = SCRIPT({
 });
 
 Script N(script_Idle_8024426C) = SCRIPT({
-    0x802D2508();
+    func_802D2508();
     DisablePlayerInput(1);
     DisablePartnerAI(1);
     SetNpcJumpscale(0xFFFFFFFC, 0.5);
@@ -969,7 +969,8 @@ Script N(script_Init_80244394) = SCRIPT({
                 BindNpcIdle(-1, N(script_Idle_8024426C));
             }
             bind N(script_80243484) to TriggerFlag_WALL_INTERACT 23;
-        } else {
+        }
+        else {
             if (SI_SAVE_FLAG(505) == 0) {
                 SetNpcPos(-1, 0xFFFFFFF6, 30, 0xFFFFFF7C);
                 SetSelfVar(0, 1);

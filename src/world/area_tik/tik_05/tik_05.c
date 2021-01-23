@@ -320,10 +320,10 @@ s32 N(unk_80241800)[] = {
 
 Script N(script_80241804) = SCRIPT({
     group 0;
-    0x802D5830(2);
+    func_802D5830(2);
     sleep 40;
     ShowGotItem(SI_VAR(0), 0, 0);
-    0x802D5830(0);
+    func_802D5830(0);
     return;
 });
 
@@ -389,16 +389,16 @@ Script N(script_80241B34) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EAE30, 0xFFFFFF47, 60, 0xFFFFFFE7, 0, 0, 0x80000000);
+    MakeEntity(D_802EAE30, 0xFFFFFF47, 60, 0xFFFFFFE7, 0, 0, 0x80000000);
     AssignFlag(SI_SAVE_FLAG(403));
     AssignScript(N(script_80241B34));
-    MakeEntity(0x802EA0C4, 25, 50, 0, 0, 0x80000000);
+    MakeEntity(D_802EA0C4, 25, 50, 0, 0, 0x80000000);
     AssignScript(N(script_8024194C));
     if (SI_SAVE_FLAG(424) == 0) {
-        MakeEntity(0x802EAA54, 25, 75, 0, 0, 100, 0x80000000);
+        MakeEntity(D_802EAA54, 25, 75, 0, 0, 100, 0x80000000);
         SI_MAP_VAR(0) = SI_VAR(0);
     } else {
-        MakeEntity(0x802EAA54, 0xFFFFFFDD, 0xFFFFFFF6, 0, 0, 100, 0x80000000);
+        MakeEntity(D_802EAA54, 0xFFFFFFDD, 0xFFFFFFF6, 0, 0, 100, 0x80000000);
     }
 });
 
@@ -432,9 +432,9 @@ NpcSettings N(npcSettings_80241CE0) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80241CC0),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xC,

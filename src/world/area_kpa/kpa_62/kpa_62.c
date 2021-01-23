@@ -67,7 +67,7 @@ Script N(script_80240470) = SCRIPT({
     UseDoorSounds(1);
     spawn {
         sleep 30;
-        0x802D5FA4(4);
+        func_802D5FA4(4);
     }
 });
 
@@ -80,14 +80,14 @@ s32 N(itemList_80240520)[] = {
 };
 
 Script N(script_80240528) = SCRIPT({
-    0x802D6420();
+    func_802D6420();
     if (SI_VAR(0) == 0) {
         ShowMessageAtScreenPos(0x1D00D8, 160, 40);
-        0x802D6954();
+        func_802D6954();
         return;
     }
     if (SI_VAR(0) == -1) {
-        0x802D6954();
+        func_802D6954();
         return;
     }
     RemoveKeyItemAt(SI_VAR(1));
@@ -98,7 +98,7 @@ Script N(script_80240528) = SCRIPT({
     func_80240000_A72220();
     SI_VAR(1) = 0;
     sleep 5;
-    0x802D6954();
+    func_802D6954();
     unbind;
     bind N(script_ExitDoubleDoor_80240A74) to TriggerFlag_WALL_INTERACT 36;
 });
@@ -107,13 +107,13 @@ Script N(script_80240528) = SCRIPT({
 // *INDENT-OFF*
 Script N(script_MakeEntities) = {
     SI_CMD(ScriptOpcode_IF_EQ, SI_SAVE_FLAG(1564), 0),
-        SI_CMD(ScriptOpcode_CALL, MakeEntity, 0x802BCD68, 0xFFFFFF38, 10, 0xFFFFFF31, 0, 0x80000000),
+        SI_CMD(ScriptOpcode_CALL, MakeEntity, D_802BCD68, 0xFFFFFF38, 10, 0xFFFFFF31, 0, 0x80000000),
         SI_CMD(ScriptOpcode_SET, SI_MAP_VAR(0), SI_VAR(0)),
         SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80240528), TriggerFlag_WALL_INTERACT, 0x4000, N(itemList_80240520), 0, 1),
     SI_CMD(ScriptOpcode_ELSE),
         SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_ExitDoubleDoor_80240A74), TriggerFlag_WALL_INTERACT, 36, 1, 0),
     SI_CMD(ScriptOpcode_END_IF),
-    SI_CMD(ScriptOpcode_CALL, MakeEntity, 0x802EA5AC, 0xFFFFFDEC, 145, 0xFFFFFFC5, 0, 307, 0x80000000),
+    SI_CMD(ScriptOpcode_CALL, MakeEntity, D_802EA5AC, 0xFFFFFDEC, 145, 0xFFFFFFC5, 0, 307, 0x80000000),
     SI_CMD(ScriptOpcode_CALL, AssignBlockFlag, SI_SAVE_FLAG(1565)),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)
@@ -290,7 +290,8 @@ Script N(script_EnterWalk_80240EE8) = SCRIPT({
                 await N(script_80240CCC);
                 spawn N(script_80240E2C);
             }
-        } else {
+        }
+        else {
             SI_VAR(0) = N(script_80240E2C);
             spawn EnterWalk;
             sleep 1;

@@ -193,10 +193,10 @@ s32 N(unk_80240C20)[] = {
 
 Script N(script_80240C24) = SCRIPT({
     group 0;
-    0x802D5830(2);
+    func_802D5830(2);
     sleep 40;
     ShowGotItem(SI_VAR(0), 0, 0);
-    0x802D5830(0);
+    func_802D5830(0);
     return;
 });
 
@@ -276,17 +276,17 @@ Script N(script_8024103C) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA564, 0xFFFFFF42, 75, 220, 0, 143, 0x80000000);
+    MakeEntity(D_802EA564, 0xFFFFFF42, 75, 220, 0, 143, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(85));
-    MakeEntity(0x802EAE30, 633, 142, 119, 0, 0, 0x80000000);
+    MakeEntity(D_802EAE30, 633, 142, 119, 0, 0, 0x80000000);
     AssignFlag(SI_SAVE_FLAG(84));
     AssignScript(N(script_8024103C));
     if (SI_SAVE_FLAG(110) == 0) {
-        MakeEntity(0x802EAA30, 370, 115, 0xFFFFFFEC, 0, 0x80000000);
+        MakeEntity(D_802EAA30, 370, 115, 0xFFFFFFEC, 0, 0x80000000);
         AssignScript(N(script_80240F84));
         SI_MAP_VAR(0) = SI_VAR(0);
     } else {
-        MakeEntity(0x802EAA30, 370, 10, 20, 0, 0x80000000);
+        MakeEntity(D_802EAA30, 370, 10, 20, 0, 0x80000000);
         AssignScript(N(script_80240F84));
     }
 });

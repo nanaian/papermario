@@ -88,8 +88,8 @@ s32 pad_000358[] = {
 };
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802E9A18, 0, 60, 0, 0, 0x80000000);
-    MakeEntity(0x802BC7AC, 0xFFFFFFC3, 0, 0xFFFFFFF9, 0, 0x80000000);
+    MakeEntity(D_802E9A18, 0, 60, 0, 0, 0x80000000);
+    MakeEntity(D_802BC7AC, 0xFFFFFFC3, 0, 0xFFFFFFF9, 0, 0x80000000);
 });
 
 s32 pad_0003B8[] = {

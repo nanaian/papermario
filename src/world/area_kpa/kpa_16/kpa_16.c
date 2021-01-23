@@ -61,7 +61,7 @@ Script N(script_802403F0) = SCRIPT({
     }
     spawn {
         sleep 30;
-        0x802D5FA4(5);
+        func_802D5FA4(5);
     }
 });
 
@@ -285,7 +285,7 @@ Script N(main) = SCRIPT({
 
 Script N(script_MakeEntities) = SCRIPT({
     if (SI_SAVE_FLAG(1556) == 0) {
-        MakeEntity(0x802E9BD4, 470, 230, 0xFFFFFF6F, 0, 0x80000000);
+        MakeEntity(D_802E9BD4, 470, 230, 0xFFFFFF6F, 0, 0x80000000);
         AssignAreaFlag(7);
     }
 });
@@ -480,7 +480,7 @@ Script N(script_Idle_802418DC) = SCRIPT({
         sleep 30;
         SetNpcAnimation(1, 0x580006);
         SetNpcSpeed(1, 4.0);
-10:
+    10:
         NpcMoveTo(1, 550, 0xFFFFFF5B, 0);
         sleep 5;
         NpcMoveTo(1, 510, 0xFFFFFF5B, 0);

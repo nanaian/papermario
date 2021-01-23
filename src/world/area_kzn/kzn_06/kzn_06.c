@@ -196,10 +196,10 @@ Script N(script_80241190) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA588, 325, 205, 0xFFFFFFE2, 0, 149, 0x80000000);
+    MakeEntity(D_802EA588, 325, 205, 0xFFFFFFE2, 0, 149, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1312));
     if (SI_SAVE_FLAG(1313) == 0) {
-        MakeEntity(0x802EA274, 385, 5, 180, 0, 0x80000000);
+        MakeEntity(D_802EA274, 385, 5, 180, 0, 0x80000000);
         AssignScript(N(script_80241190));
     }
     if (SI_SAVE_VAR(0) < 27) {

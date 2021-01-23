@@ -243,7 +243,7 @@ Script N(script_80241E08) = SCRIPT({
     if (SI_SAVE_FLAG(1328) == 1) {
         return;
     }
-    0x800441F0(SI_VAR(0));
+    func_800441F0(SI_VAR(0));
     if (SI_VAR(0) == 1) {
         return;
     }
@@ -251,7 +251,7 @@ Script N(script_80241E08) = SCRIPT({
     if (SI_VAR(0) == 1) {
         return;
     }
-    0x802D585C(1, 0x200000);
+    func_802D585C(1, 0x200000);
     func_80240310_C68440();
     DisablePlayerInput(1);
     DisablePartnerAI(0);
@@ -265,7 +265,7 @@ Script N(script_80241E08) = SCRIPT({
         func_80240820_C68950(SI_VAR(9));
         DisablePlayerInput(0);
         EnablePartnerAI();
-        0x802D585C(0, 0x200000);
+        func_802D585C(0, 0x200000);
         func_8024032C_C6845C();
         return;
     }
@@ -280,7 +280,7 @@ Script N(script_80241E08) = SCRIPT({
         func_80240820_C68950(SI_VAR(9));
         DisablePlayerInput(0);
         EnablePartnerAI();
-        0x802D585C(0, 0x200000);
+        func_802D585C(0, 0x200000);
         func_8024032C_C6845C();
         return;
     }
@@ -291,7 +291,7 @@ Script N(script_80241E08) = SCRIPT({
     if (SI_VAR(0) != SI_VAR(11)) {
         func_8024072C_C6885C(SI_VAR(11));
     } else {
-        0x802CF56C(2);
+        func_802CF56C(2);
     }
     sleep 10;
     ShowMessageAtScreenPos(0x1D00DF, 160, 40);
@@ -301,7 +301,7 @@ Script N(script_80241E08) = SCRIPT({
         func_80240820_C68950(SI_VAR(9));
         DisablePlayerInput(0);
         EnablePartnerAI();
-        0x802D585C(0, 0x200000);
+        func_802D585C(0, 0x200000);
         func_8024032C_C6845C();
         return;
     }
@@ -317,12 +317,12 @@ Script N(script_80241E08) = SCRIPT({
     }
     DisablePlayerInput(0);
     EnablePartnerAI();
-    0x802D585C(0, 0x200000);
+    func_802D585C(0, 0x200000);
     func_8024032C_C6845C();
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA910, 530, 560, 25, 0, 0x80000000);
+    MakeEntity(D_802EA910, 530, 560, 25, 0, 0x80000000);
     SI_MAP_VAR(0) = SI_VAR(0);
     AssignBlockFlag(SI_SAVE_FLAG(1328));
     AssignScript(N(script_80241E08));

@@ -200,20 +200,20 @@ s32 pad_00158C[] = {
 };
 
 Script N(script_80241590) = SCRIPT({
-    0x800441F0(SI_VAR(0));
+    func_800441F0(SI_VAR(0));
     if (SI_VAR(0) == 1) {
         return;
     }
     group 0;
-    0x802D5830(1);
+    func_802D5830(1);
     DisablePlayerInput(1);
     ShowMessageAtScreenPos(0x1D017F, 160, 40);
     DisablePlayerInput(0);
-    0x802D5830(0);
+    func_802D5830(0);
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EAFDC, 280, 0, 0, 90, 0x80000000);
+    MakeEntity(D_802EAFDC, 280, 0, 0, 90, 0x80000000);
     AssignScript(N(script_80241590));
 });
 
@@ -272,8 +272,8 @@ Script N(script_80241704) = SCRIPT({
 });
 
 Script N(script_80241900) = SCRIPT({
-    0x802C94A0(1, func_802400D8_BAA218, 0);
-    0x802C90FC(50, 1, -1);
+    func_802C94A0(1, func_802400D8_BAA218, 0);
+    func_802C90FC(50, 1, -1);
     SetModelFlags(50, 16, 1);
     bind N(script_80241704) to TriggerFlag_WALL_INTERACT 23;
     SetTexPanner(50, 0);
@@ -360,7 +360,7 @@ Script N(script_80241E14) = SCRIPT({
         == 0 {
             spawn {
                 MakeLerp(10, 90, 10, 1);
-10:
+            10:
                 UpdateLerp();
                 RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
                 UpdateColliderTransform(SI_VAR(9));
@@ -379,7 +379,7 @@ Script N(script_80241E14) = SCRIPT({
             SI_VAR(1) = 1;
             spawn N(script_80241990);
             MakeLerp(90, 360, 30, 0);
-20:
+        20:
             UpdateLerp();
             RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
             UpdateColliderTransform(SI_VAR(9));
@@ -394,7 +394,7 @@ Script N(script_80241E14) = SCRIPT({
         == 1 {
             spawn {
                 MakeLerp(360, 270, 10, 1);
-30:
+            30:
                 UpdateLerp();
                 RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
                 UpdateColliderTransform(SI_VAR(9));
@@ -413,7 +413,7 @@ Script N(script_80241E14) = SCRIPT({
             SI_VAR(1) = 2;
             spawn N(script_80241990);
             MakeLerp(270, 0xFFFFFFF6, 30, 0);
-40:
+        40:
             UpdateLerp();
             RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
             UpdateColliderTransform(SI_VAR(9));
@@ -426,7 +426,7 @@ Script N(script_80241E14) = SCRIPT({
         == 2 {
             spawn {
                 MakeLerp(0xFFFFFFF6, 90, 10, 1);
-50:
+            50:
                 UpdateLerp();
                 RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
                 UpdateColliderTransform(SI_VAR(9));
@@ -445,7 +445,7 @@ Script N(script_80241E14) = SCRIPT({
             SI_VAR(1) = 1;
             spawn N(script_80241990);
             MakeLerp(90, 360, 30, 0);
-60:
+        60:
             UpdateLerp();
             RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
             UpdateColliderTransform(SI_VAR(9));
@@ -565,9 +565,9 @@ NpcSettings N(npcSettings_802428EC) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_802428B0),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xB,
@@ -652,7 +652,7 @@ Script N(script_Idle_802429BC) = {
     SI_CMD(ScriptOpcode_CALL, DisablePlayerInput, 1),
     SI_CMD(ScriptOpcode_CALL, GetCurrentPartner, SI_VAR(0)),
     SI_CMD(ScriptOpcode_IF_NE, SI_VAR(0), 0),
-        SI_CMD(ScriptOpcode_CALL, 0x802D2B6C),
+        SI_CMD(ScriptOpcode_CALL, func_802D2B6C),
         SI_CMD(ScriptOpcode_SLEEP_FRAMES, 20),
     SI_CMD(ScriptOpcode_END_IF),
     SI_CMD(ScriptOpcode_AWAIT_SCRIPT, N(script_8024114C)),

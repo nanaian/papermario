@@ -518,20 +518,20 @@ s32 unk_missing_80244D68[] = {
 Script N(script_80244E98) = SCRIPT({
     group 0;
     suspend group 1;
-    0x802D6420();
+    func_802D6420();
     if (SI_VAR(0) == 0) {
         ShowMessageAtScreenPos(0x1D00D8, 160, 40);
-        0x802D6954();
+        func_802D6954();
         resume group 1;
         return;
     }
     if (SI_VAR(0) == -1) {
-        0x802D6954();
+        func_802D6954();
         resume group 1;
         return;
     }
     RemoveKeyItemAt(SI_VAR(1));
-    0x802D6954();
+    func_802D6954();
     SI_SAVE_FLAG(652) = 1;
     func_80240408_9A87F8(SI_MAP_VAR(0), SI_VAR(0), SI_VAR(1), SI_VAR(2));
     PlaySoundAt(617, 0, SI_VAR(0), SI_VAR(1), SI_VAR(2));
@@ -544,20 +544,20 @@ Script N(script_80244E98) = SCRIPT({
 Script N(script_80244FEC) = SCRIPT({
     group 0;
     suspend group 1;
-    0x802D6420();
+    func_802D6420();
     if (SI_VAR(0) == 0) {
         ShowMessageAtScreenPos(0x1D00D8, 160, 40);
-        0x802D6954();
+        func_802D6954();
         resume group 1;
         return;
     }
     if (SI_VAR(0) == -1) {
-        0x802D6954();
+        func_802D6954();
         resume group 1;
         return;
     }
     RemoveKeyItemAt(SI_VAR(1));
-    0x802D6954();
+    func_802D6954();
     SI_SAVE_FLAG(653) = 1;
     func_80240408_9A87F8(SI_MAP_VAR(1), SI_VAR(0), SI_VAR(1), SI_VAR(2));
     PlaySoundAt(617, 0, SI_VAR(0), SI_VAR(1), SI_VAR(2));
@@ -611,17 +611,17 @@ Script N(script_80245198) = SCRIPT({
 
 Script N(script_MakeEntities) = SCRIPT({
     if (SI_SAVE_FLAG(653) == 0) {
-        MakeEntity(0x802BCD68, 265, 8, 90, 0xFFFFFFB0, 0x80000000);
+        MakeEntity(D_802BCD68, 265, 8, 90, 0xFFFFFFB0, 0x80000000);
         AssignScript(N(script_80245140));
         SI_MAP_VAR(1) = SI_VAR(0);
     }
     if (SI_SAVE_FLAG(652) == 0) {
-        MakeEntity(0x802BCD68, 0xFFFFFEF7, 195, 0xFFFFFFC9, 80, 0x80000000);
+        MakeEntity(D_802BCD68, 0xFFFFFEF7, 195, 0xFFFFFFC9, 80, 0x80000000);
         AssignScript(N(script_8024516C));
         SI_MAP_VAR(0) = SI_VAR(0);
     }
     if (SI_SAVE_VAR(0) <= 0xFFFFFFA9) {
-        MakeEntity(0x802E9BD4, 0, 0xFFFFFC18, 0, 0, 0x80000000);
+        MakeEntity(D_802E9BD4, 0, 0xFFFFFC18, 0, 0, 0x80000000);
         AssignAreaFlag(4);
         SI_MAP_VAR(2) = SI_VAR(0);
         if (SI_SAVE_VAR(0) == 0xFFFFFFA9) {
@@ -664,9 +664,9 @@ NpcSettings N(npcSettings_80245610) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_802455A0),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x6,
@@ -702,9 +702,9 @@ NpcSettings N(npcSettings_802456C8) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_8024566C),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x6,
@@ -745,9 +745,9 @@ NpcSettings N(npcSettings_802457AC) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_8024573C),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x6,

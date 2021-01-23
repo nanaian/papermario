@@ -104,9 +104,9 @@ NpcSettings N(npcSettings_80240300) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_802402E0),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x5,
@@ -170,15 +170,15 @@ Script N(script_Idle_80240450) = SCRIPT({
     sleep 20;
     SetNpcAnimation(-1, 0x260001);
     PlaySoundAtNpc(-1, 248, 0);
-    0x802CFE2C(-1, 8192);
-    0x802CFD30(-1, 5, 6, 1, 1, 0);
+    func_802CFE2C(-1, 8192);
+    func_802CFD30(-1, 5, 6, 1, 1, 0);
     sleep 12;
     sleep 5;
     PlaySoundAtNpc(-1, 812, 0);
     EnableNpcShadow(-1, 1);
     SetNpcJumpscale(-1, 0.6005859375);
     NpcJump0(-1, 0xFFFFFFDD, 0, 30, 23);
-    0x802CFD30(-1, 0, 0, 0, 0, 0);
+    func_802CFD30(-1, 0, 0, 0, 0, 0);
     InterpNpcYaw(-1, 90, 0);
     SetNpcFlagBits(-1, 0x240000, 0);
     SetSelfEnemyFlagBits(32, 0);
@@ -215,20 +215,20 @@ NpcGroupList N(npcGroupList_802409A8) = {
 };
 
 Script N(script_802409C0) = SCRIPT({
-    0x800441F0(SI_VAR(0));
+    func_800441F0(SI_VAR(0));
     if (SI_VAR(0) == 1) {
         return;
     }
     group 0;
-    0x802D5830(1);
+    func_802D5830(1);
     DisablePlayerInput(1);
     ShowMessageAtScreenPos(0x1D0168, 160, 40);
     DisablePlayerInput(0);
-    0x802D5830(0);
+    func_802D5830(0);
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EAFDC, 436, 0, 0xFFFFFFD6, 0, 0x80000000);
+    MakeEntity(D_802EAFDC, 436, 0, 0xFFFFFFD6, 0, 0x80000000);
     AssignScript(N(script_802409C0));
 });
 

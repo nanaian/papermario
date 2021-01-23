@@ -135,8 +135,8 @@ Script N(main) = SCRIPT({
         SI_VAR(12) = 0;
         spawn N(script_UpdateTexturePan_802405D0);
     }
-    0x802C90FC(32, 0, -1);
-    0x802C9428(0, N(displayList_80240670), 0);
+    func_802C90FC(32, 0, -1);
+    func_802C9428(0, N(displayList_80240670), 0);
     SetTexPanner(37, 0);
     spawn {
         SI_VAR(0) = 0;
@@ -154,8 +154,8 @@ Script N(main) = SCRIPT({
         SI_VAR(12) = 0;
         spawn N(script_UpdateTexturePan_802405D0);
     }
-    0x802C90FC(37, 0, -1);
-    0x802C9428(0, N(displayList_80240670), 0);
+    func_802C90FC(37, 0, -1);
+    func_802C9428(0, N(displayList_80240670), 0);
     SetCamSpeed(0, 3.0);
 });
 
@@ -172,7 +172,7 @@ Script N(script_80240B04) = SCRIPT({
         MakeLerp(0, 0xFFFFFE3E, 120, 0);
         loop {
             UpdateLerp();
-            SI_VAR(2) = f SI_VAR(0);
+            SI_VAR(2) =f SI_VAR(0);
             SI_VAR(2) /= 10;
             RotateGroup(53, SI_VAR(2), 0, 1, 0);
             func_80240310_B14080();
@@ -223,7 +223,7 @@ Script N(script_80240D40) = SCRIPT({
 Script N(script_80240E48) = SCRIPT({
     group 27;
     DisablePlayerInput(1);
-    0x802D2884(0xFFFFFF22, 0, 5);
+    func_802D2884(0xFFFFFF22, 0, 5);
     sleep 10;
     SetPlayerAnimation(0xD0013);
     sleep 10;
@@ -254,10 +254,10 @@ Script N(script_80241018) = SCRIPT({
     EnableModel(6, 0);
     EnableModel(9, 0);
     EnableModel(11, 0);
-    0x802C90FC(6, 1, -1);
-    0x802C90FC(9, 1, -1);
-    0x802C90FC(11, 1, -1);
-    0x802C94A0(1, func_80240448_B141B8, 0);
+    func_802C90FC(6, 1, -1);
+    func_802C90FC(9, 1, -1);
+    func_802C90FC(11, 1, -1);
+    func_802C94A0(1, func_80240448_B141B8, 0);
     if (SI_SAVE_VAR(0) == 0xFFFFFFB4) {
         bind N(script_80240E48) to TriggerFlag_WALL_INTERACT 7;
     } else {

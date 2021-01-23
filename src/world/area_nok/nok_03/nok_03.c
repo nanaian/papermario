@@ -113,7 +113,7 @@ Script N(script_802410AC) = SCRIPT({
         SI_VAR(0) = 0;
         SI_VAR(1) = 0;
         SI_VAR(2) = 0;
-10:
+    10:
         SetTexPanOffset(1, 0, SI_VAR(0), 0);
         SetTexPanOffset(1, 1, SI_VAR(1), SI_VAR(2));
         SI_VAR(0) -= 100;
@@ -191,9 +191,9 @@ NpcSettings N(npcSettings_8024144C) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80241410),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x6,
@@ -207,9 +207,9 @@ NpcSettings N(npcSettings_80241478) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x6,
@@ -234,7 +234,7 @@ NpcSettings N(npcSettings_802414A4) = {
 
 Script N(script_Idle_802414D0) = SCRIPT({
     spawn {
-0:
+    0:
         GetNpcPos(4, SI_VAR(0), SI_VAR(1), SI_VAR(2));
         SI_VAR(2) += 2;
         SetNpcPos(5, SI_VAR(0), SI_VAR(1), SI_VAR(2));

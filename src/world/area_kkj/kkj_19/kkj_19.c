@@ -162,7 +162,7 @@ s32 pad_000EB4[] = {
 };
 
 s32 N(unk_80240EB8)[] = {
-    0x00000000, 0x00000000, 0x00000000, 0x8010B160, 0x31100810, 0x08100810, 0x08000000, 0x00000000,
+    0x00000000, 0x00000000, 0x00000000, D_8010B160, 0x31100810, 0x08100810, 0x08000000, 0x00000000,
     0xFC617E60, 0xF5FFF578, 0xFC612660, 0xF5FFFF78, 0xFFB7B5FF, 0x7A593FFF,
 };
 
@@ -388,7 +388,7 @@ s32 N(unk_80241B14)[] = {
 
 Script N(script_80241B18) = SCRIPT({
     SI_VAR(9) = SI_VAR(1);
-    0x802D6420();
+    func_802D6420();
     SI_VAR(10) = SI_VAR(0);
     match SI_VAR(0) {
         == 0 {}
@@ -397,7 +397,7 @@ Script N(script_80241B18) = SCRIPT({
             RemoveKeyItemAt(SI_VAR(1));
             GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_8024030C_AF7C5C(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |= c 50000;
+            SI_VAR(0) |=c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SetPlayerAnimation(0x60005);
             sleep 30;
@@ -406,14 +406,14 @@ Script N(script_80241B18) = SCRIPT({
         }
     }
     func_80240530_AF7E80(SI_VAR(10));
-    0x802D6954();
+    func_802D6954();
     unbind;
 });
 
 // Unable to use DSL: DSL does not support script opcode 0x4E
 Script N(script_80241C5C) = {
     SI_CMD(ScriptOpcode_CALL, func_80240568_AF7EB8, SI_VAR(0)),
-    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80241B18), 0x10, 0, 0x802461F0, 0, 1),
+    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80241B18), 0x10, 0, D_802461F0, 0, 1),
     SI_CMD(ScriptOpcode_CALL, func_802404DC_AF7E2C, SI_VAR(0)),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)
@@ -421,7 +421,7 @@ Script N(script_80241C5C) = {
 
 Script N(script_80241CAC) = SCRIPT({
     SI_VAR(9) = SI_VAR(1);
-    0x802D663C();
+    func_802D663C();
     SI_VAR(10) = SI_VAR(0);
     match SI_VAR(0) {
         == 0 {}
@@ -438,14 +438,14 @@ Script N(script_80241CAC) = SCRIPT({
         }
     }
     func_80240530_AF7E80(SI_VAR(10));
-    0x802D6954();
+    func_802D6954();
     unbind;
 });
 
 // Unable to use DSL: DSL does not support script opcode 0x4E
 Script N(script_80241DE0) = {
     SI_CMD(ScriptOpcode_CALL, func_80240604_AF7F54, SI_VAR(0)),
-    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80241CAC), 0x10, 0, 0x802463B8, 0, 1),
+    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80241CAC), 0x10, 0, N(script_802463B8), 0, 1),
     SI_CMD(ScriptOpcode_CALL, func_802404DC_AF7E2C, SI_VAR(0)),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)
@@ -580,7 +580,8 @@ Script N(script_80242340) = SCRIPT({
         }
         == 20 {
             SI_VAR(0) = 102;
-        } else {
+        }
+        else {
             return;
         }
     }
@@ -706,18 +707,18 @@ Script N(script_80242A18) = SCRIPT({
         return;
     }
     group 0;
-    0x802D5830(1);
-    0x802D6420();
+    func_802D5830(1);
+    func_802D6420();
     SI_VAR(2) = SI_VAR(0);
     match SI_VAR(2) {
         == 0 {
-            0x802D6954();
-            0x802D5830(0);
+            func_802D6954();
+            func_802D5830(0);
             return;
         }
         == -1 {
-            0x802D6954();
-            0x802D5830(0);
+            func_802D6954();
+            func_802D5830(0);
             return;
         }
     }
@@ -733,7 +734,8 @@ Script N(script_80242A18) = SCRIPT({
                 }
                 == 95 {
                     SI_AREA_FLAG(10) = 1;
-                } else {
+                }
+                else {
                     SI_AREA_FLAG(14) = 0;
                 }
             }
@@ -753,7 +755,8 @@ Script N(script_80242A18) = SCRIPT({
                 }
                 == 98 {
                     SI_AREA_FLAG(13) = 1;
-                } else {
+                }
+                else {
                     SI_AREA_FLAG(14) = 0;
                 }
             }
@@ -772,7 +775,8 @@ Script N(script_80242A18) = SCRIPT({
                     if (SI_VAR(0) != 97) {
                         SI_AREA_FLAG(9) = 1;
                     }
-                } else {
+                }
+                else {
                     SI_AREA_FLAG(9) = 1;
                 }
             }
@@ -787,7 +791,8 @@ Script N(script_80242A18) = SCRIPT({
                         SI_AREA_VAR(5) = SI_VAR(0);
                     }
                     SI_AREA_FLAG(16) = 1;
-                } else {
+                }
+                else {
                     MakeItemEntity(356, 287, 20, 0xFFFFFFE2, 1, 0);
                     SI_AREA_VAR(5) = SI_VAR(0);
                     SI_AREA_FLAG(15) = 1;
@@ -797,8 +802,8 @@ Script N(script_80242A18) = SCRIPT({
         }
     }
     SI_AREA_VAR(3) += 1;
-    0x802D6954();
-    0x802D5830(0);
+    func_802D6954();
+    func_802D5830(0);
 });
 
 // Unable to use DSL: DSL does not support script opcode 0x4E
@@ -1115,8 +1120,8 @@ Script N(script_80243F14) = SCRIPT({
         sleep 20;
         spawn N(script_8024369C);
         GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
-        0x802D1270(SI_VAR(0), 0xFFFFFFB6, 2.0);
-        0x802D1270(287, 0xFFFFFFB6, 2.0);
+        func_802D1270(SI_VAR(0), 0xFFFFFFB6, 2.0);
+        func_802D1270(287, 0xFFFFFFB6, 2.0);
         goto 31;
     }
     if (SI_AREA_VAR(1) == 5) {

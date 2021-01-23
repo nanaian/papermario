@@ -252,7 +252,7 @@ Script N(script_8024142C) = SCRIPT({
         SI_VAR(2) = N(unk_8024137C);
         SI_VAR(3) = N(unk_80241388);
     }
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_80241E90_D8D240, 1);
     sleep 100;
@@ -270,7 +270,7 @@ Script N(script_80241510) = SCRIPT({
         SI_VAR(2) = N(unk_802413D4);
         SI_VAR(3) = N(unk_802413E0);
     }
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_80241E98_D8D248, 0);
     sleep 100;
@@ -288,7 +288,7 @@ Script N(script_802415F4) = SCRIPT({
         SI_VAR(2) = N(unk_802413EC);
         SI_VAR(3) = N(unk_802413F8);
     }
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_80241E98_D8D248, 2);
     sleep 100;
@@ -306,7 +306,7 @@ Script N(script_802416D8) = SCRIPT({
         SI_VAR(2) = N(unk_80241394);
         SI_VAR(3) = N(unk_802413A0);
     }
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_80241E90_D8D240, 2);
     sleep 100;
@@ -319,20 +319,20 @@ s32 N(itemList_802417BC)[] = {
 Script N(script_802417C4) = SCRIPT({
     group 0;
     suspend group 1;
-    0x802D6420();
+    func_802D6420();
     if (SI_VAR(0) == 0) {
         ShowMessageAtScreenPos(0x1D00D8, 160, 40);
-        0x802D6954();
+        func_802D6954();
         resume group 1;
         return;
     }
     if (SI_VAR(0) == -1) {
-        0x802D6954();
+        func_802D6954();
         resume group 1;
         return;
     }
     RemoveKeyItemAt(SI_VAR(1));
-    0x802D6954();
+    func_802D6954();
     SI_SAVE_FLAG(1520) = 1;
     func_80240F54_D8C304(SI_MAP_VAR(0), SI_VAR(0), SI_VAR(1), SI_VAR(2));
     PlaySoundAt(617, 0, SI_VAR(0), SI_VAR(1), SI_VAR(2));
@@ -403,7 +403,7 @@ Script N(script_80241A50) = SCRIPT({
             }
         }
     }
-    await 0x802861B0;
+    await func_802861B0;
     spawn N(script_80241970);
 });
 
@@ -439,10 +439,10 @@ Script N(script_80241D80) = SCRIPT({
 
 Script N(script_MakeEntities) = SCRIPT({
     if (SI_SAVE_FLAG(1520) == 0) {
-        MakeEntity(0x802BCD68, 240, 8, 0xFFFFFFB5, 270, 0x80000000);
+        MakeEntity(D_802BCD68, 240, 8, 0xFFFFFFB5, 270, 0x80000000);
         AssignScript(N(script_80241D80));
         SI_MAP_VAR(0) = SI_VAR(0);
-        MakeEntity(0x802BCD68, 240, 8, 75, 270, 0x80000000);
+        MakeEntity(D_802BCD68, 240, 8, 75, 270, 0x80000000);
         AssignScript(N(script_80241D80));
         SI_MAP_VAR(1) = SI_VAR(0);
     }

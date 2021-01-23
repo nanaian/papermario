@@ -96,9 +96,9 @@ Script N(script_80242360) = SCRIPT({
 });
 
 Script N(script_8024239C) = SCRIPT({
-    0x802D5FF8(66, 1);
+    func_802D5FF8(66, 1);
     sleep 130;
-    0x802D5FD8();
+    func_802D5FD8();
 });
 
 s32 pad_0023D8[] = {
@@ -227,7 +227,7 @@ f32 N(floatTable_80242930)[] = {
 
 Script N(script_802429A0) = SCRIPT({
     if (SI_SAVE_FLAG(1315) == 0) {
-10:
+    10:
         if (SI_SAVE_FLAG(1315) == 0) {
             sleep 1;
             goto 10;
@@ -245,11 +245,11 @@ Script N(script_80242A50) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EAE0C, 0, 45, 0xFFFFFEDE, 0, 6, 0x80000000);
+    MakeEntity(D_802EAE0C, 0, 45, 0xFFFFFEDE, 0, 6, 0x80000000);
     AssignFlag(SI_SAVE_FLAG(1315));
     spawn N(script_802429A0);
     if (SI_SAVE_FLAG(1314) == 0) {
-        MakeEntity(0x802EA274, 175, 35, 0xFFFFFF47, 0, 0x80000000);
+        MakeEntity(D_802EA274, 175, 35, 0xFFFFFF47, 0, 0x80000000);
         AssignScript(N(script_80242A50));
     }
     CreatePushBlockGrid(0, 15, 5, 0xFFFFFFC2, 0, 35, 0);
@@ -296,9 +296,9 @@ NpcSettings N(npcSettings_80242C48) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80242BD8),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x11,

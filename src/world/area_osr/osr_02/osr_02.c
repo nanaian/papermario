@@ -220,9 +220,9 @@ Script N(script_MakeEntities) = SCRIPT({
     if (SI_SAVE_VAR(0) < 89) {
         return;
     }
-    MakeEntity(0x802EA588, 180, 60, 0xFFFFFFF1, 0, 142, 0x80000000);
+    MakeEntity(D_802EA588, 180, 60, 0xFFFFFFF1, 0, 142, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1643));
-    MakeEntity(0x802E9A18, 0xFFFFFF9C, 60, 0xFFFFFFCE, 0, 0x80000000);
+    MakeEntity(D_802E9A18, 0xFFFFFF9C, 60, 0xFFFFFFCE, 0, 0x80000000);
 });
 
 s32 pad_000A3C[] = {
@@ -919,7 +919,8 @@ Script N(script_Interact_80243C24) = SCRIPT({
         }
         == 3 {
             SI_VAR(1) = 0x14014B;
-        } else {
+        }
+        else {
             SI_VAR(1) = 0x14014C;
         }
     }

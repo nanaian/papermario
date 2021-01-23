@@ -74,7 +74,8 @@ Script N(script_80241490) = SCRIPT({
         }
         < 0xFFFFFFF0 {
             SetMusicTrack(0, 31, 0, 8);
-        } else {
+        }
+        else {
             SetMusicTrack(0, 30, 0, 8);
         }
     }
@@ -128,8 +129,8 @@ Script N(main) = SCRIPT({
 
 Script N(script_MakeEntities) = SCRIPT({
     MakeItemEntity(348, 0xFFFFFF24, 75, 0xFFFFFF2E, 17, SI_SAVE_FLAG(1050));
-    MakeEntity(0x802EAED4, 0xFFFFFE8E, 0, 0xFFFFFF38, 0, -1, 0x80000000);
-    MakeEntity(0x802EAED4, 0xFFFFFE66, 0, 0xFFFFFF38, 0, -1, 0x80000000);
+    MakeEntity(D_802EAED4, 0xFFFFFE8E, 0, 0xFFFFFF38, 0, -1, 0x80000000);
+    MakeEntity(D_802EAED4, 0xFFFFFE66, 0, 0xFFFFFF38, 0, -1, 0x80000000);
 });
 
 s32 pad_0017E4[] = {
@@ -144,7 +145,7 @@ Script N(script_802417F0) = SCRIPT({
         }
         == 2 {
             SetNpcPos(-1, 0, 0xFFFFFC18, 0);
-            0x80045900(1);
+            func_80045900(1);
         }
         == 3 {
             SetEnemyFlagBits(-1, 16, 1);
@@ -192,9 +193,9 @@ NpcSettings N(npcSettings_8024197C) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_8024190C),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xD,

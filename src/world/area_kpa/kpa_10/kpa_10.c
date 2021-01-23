@@ -50,7 +50,7 @@ Script N(script_802403A0) = SCRIPT({
     UseDoorSounds(1);
     spawn {
         sleep 30;
-        0x802D5FA4(5);
+        func_802D5FA4(5);
     }
 });
 
@@ -213,8 +213,8 @@ NpcGroupList N(npcGroupList_80240E98) = {
 };
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802E9A18, 1400, 90, 0xFFFFFC95, 0, 0x80000000);
-    MakeEntity(0x802EA564, 1400, 90, 0xFFFFFE89, 0, 149, 0x80000000);
+    MakeEntity(D_802E9A18, 1400, 90, 0xFFFFFC95, 0, 0x80000000);
+    MakeEntity(D_802EA564, 1400, 90, 0xFFFFFE89, 0, 149, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1547));
 });
 

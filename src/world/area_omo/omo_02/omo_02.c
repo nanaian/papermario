@@ -223,13 +223,13 @@ Script N(script_80242E98) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA564, 300, 60, 0xFFFFFF9C, 0, 143, 0x80000000);
+    MakeEntity(D_802EA564, 300, 60, 0xFFFFFF9C, 0, 143, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1114));
-    MakeEntity(0x802EA588, 0xFFFFFF38, 60, 0xFFFFFFB2, 0, 343, 0x80000000);
+    MakeEntity(D_802EA588, 0xFFFFFF38, 60, 0xFFFFFFB2, 0, 343, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1115));
-    MakeEntity(0x802EA0C4, 0xFFFFFFB0, 89, 0xFFFFFFB2, 0, 0x80000000);
+    MakeEntity(D_802EA0C4, 0xFFFFFFB0, 89, 0xFFFFFFB2, 0, 0x80000000);
     MakeItemEntity(131, 0xFFFFFFB0, 114, 0xFFFFFFB2, 13, SI_SAVE_FLAG(1116));
-    MakeEntity(0x802BCB44, 0xFFFFFE9A, 0, 0xFFFFFFAE, 0, 0x80000000);
+    MakeEntity(D_802BCB44, 0xFFFFFE9A, 0, 0xFFFFFFAE, 0, 0x80000000);
     AssignScript(N(script_80242E98));
 });
 
@@ -519,14 +519,14 @@ Script N(script_802435F0) = {
     SI_CMD(ScriptOpcode_CALL, PanToTarget, 0, 0, 1),
     SI_CMD(ScriptOpcode_SLEEP_FRAMES, 165),
     SI_CMD(ScriptOpcode_CALL, PlaySound, 1901),
-    SI_CMD(ScriptOpcode_CALL, 0x802D62E4, 877),
+    SI_CMD(ScriptOpcode_CALL, func_802D62E4, 877),
     SI_CMD(ScriptOpcode_CALL, SetNpcAnimation, 0, 0x3B0004),
     SI_CMD(ScriptOpcode_CALL, SetNpcPos, 0, 0xFFFFFEE3, 0, 35),
     SI_CMD(ScriptOpcode_CALL, SetNpcSpeed, 0, SI_FIXED(8.0)),
     SI_CMD(ScriptOpcode_CALL, NpcMoveTo, 0, 0xFFFFFF79, 23, 0),
     SI_CMD(ScriptOpcode_CALL, NpcMoveTo, 0, 0xFFFFFF92, 0xFFFFFFF3, 0),
     SI_CMD(ScriptOpcode_CALL, SetNpcJumpscale, 0, SI_FIXED(1.0)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CDE68, 0, 10),
+    SI_CMD(ScriptOpcode_CALL, func_802CDE68, 0, 10),
     SI_CMD(ScriptOpcode_SPAWN_THREAD),
         SI_CMD(ScriptOpcode_SET, SI_VAR(0), 0),
         SI_CMD(ScriptOpcode_LOOP, 10),
@@ -548,7 +548,7 @@ Script N(script_802435F0) = {
         SI_CMD(ScriptOpcode_CALL, PlaySoundAtNpc, SI_VAR(9), 996, 0),
         SI_CMD(ScriptOpcode_SLEEP_FRAMES, 7),
     SI_CMD(ScriptOpcode_END_LOOP),
-    SI_CMD(ScriptOpcode_CALL, 0x802CDE68, 0, 0),
+    SI_CMD(ScriptOpcode_CALL, func_802CDE68, 0, 0),
     SI_CMD(ScriptOpcode_CALL, SetNpcAnimation, 0, 0x3B0001),
     SI_CMD(ScriptOpcode_CALL, NpcJump0, 0, 0xFFFFFFCE, 0, 0xFFFFFFF8, 10),
     SI_CMD(ScriptOpcode_CALL, InterpNpcYaw, 0, 270, 0),
@@ -632,7 +632,7 @@ Script N(script_80244830) = SCRIPT({
 });
 
 s32 unk_missing_80244850[] = {
-    0x00000000, 0x00170016, 0x00000000, 0x00000000, N(script_80244830), 0x80077F70, 0x00000000, 0x8007809C,
+    0x00000000, 0x00170016, 0x00000000, 0x00000000, N(script_80244830), EnemyNpcHit, 0x00000000, EnemyNpcDefeat,
     0x00000000, 0x00000000, 0x000E0001,
 };
 
@@ -646,7 +646,7 @@ Script N(script_802448A0) = SCRIPT({
 });
 
 s32 unk_missing_802448C0[] = {
-    0x00000000, 0x00170016, 0x00000000, 0x00000000, N(script_802448A0), 0x80077F70, 0x00000000, 0x8007809C,
+    0x00000000, 0x00170016, 0x00000000, 0x00000000, N(script_802448A0), EnemyNpcHit, 0x00000000, EnemyNpcDefeat,
     0x00000000, 0x00000000, 0x000E0001,
 };
 
@@ -657,9 +657,9 @@ NpcSettings N(npcSettings_802448EC) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xE,
@@ -675,7 +675,7 @@ Script N(script_80244918) = SCRIPT({
         }
         == 2 {
             SetNpcPos(-1, 0, 0xFFFFFC18, 0);
-            0x80045900(1);
+            func_80045900(1);
         }
         == 3 {
             SetEnemyFlagBits(-1, 16, 1);
@@ -715,9 +715,9 @@ NpcSettings N(npcSettings_80244A94) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80244A18),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xF,
@@ -778,7 +778,7 @@ Script N(script_80244B70) = {
             SI_CMD(ScriptOpcode_CALL, SetSelfVar, 0, 0),
         SI_CMD(ScriptOpcode_END_CASE_MULTI),
         SI_CMD(ScriptOpcode_CASE_ELSE),
-            SI_CMD(ScriptOpcode_CALL, 0x800457F8),
+            SI_CMD(ScriptOpcode_CALL, func_800457F8),
         SI_CMD(ScriptOpcode_END_CASE_MULTI),
     SI_CMD(ScriptOpcode_END_MATCH),
     SI_CMD(ScriptOpcode_CALL, BindNpcAI, -1, N(script_NpcAI_80244AF0)),
@@ -849,7 +849,7 @@ Script N(script_Idle_80244E8C) = SCRIPT({
     } else {
         SI_MAP_VAR(10) = spawn N(script_80244D64);
         SetNpcPos(-1, 0xFFFFFDC1, 0, 0xFFFFFFEC);
-10:
+    10:
         GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
         if (SI_VAR(0) < 0xFFFFFD08) {
             sleep 1;

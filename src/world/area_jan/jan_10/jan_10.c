@@ -167,7 +167,7 @@ Script N(main) = SCRIPT({
     SI_VAR(0) = N(script_802418C8);
     spawn EnterWalk;
     spawn N(script_80241790);
-    0x802C971C(69);
+    func_802C971C(69);
     EnableTexPanning(68, 1);
     spawn {
         SI_VAR(0) = 1;
@@ -214,9 +214,9 @@ NpcSettings N(npcSettings_80241BBC) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80241B80),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x10,
@@ -251,7 +251,7 @@ Script N(script_Idle_80241C14) = SCRIPT({
     SetNpcFlagBits(-1, 512, 1);
     SetNpcFlagBits(-1, 8, 0);
     SetNpcPos(-1, 0xFFFFFDCA, 100, 65);
-    0x802D617C(817, 110);
+    func_802D617C(817, 110);
     sleep 20;
     SetNpcFlagBits(-1, 512, 0);
     SetNpcFlagBits(-1, 8, 1);

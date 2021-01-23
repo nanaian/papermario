@@ -222,7 +222,7 @@ Script N(script_802408E8) = SCRIPT({
     SI_VAR(3) = 128;
     SI_VAR(4) = 124;
     SI_VAR(5) = 127;
-    spawn 0x80285E9C;
+    spawn func_80285E9C;
     sleep 17;
     GotoMap(D_8024A6D0_AE5570, 0);
     sleep 100;
@@ -254,7 +254,7 @@ Script N(script_80240AB4) = SCRIPT({
         bind N(script_802408E8) to TriggerFlag_WALL_INTERACT 7;
         bind N(script_ExitWalk_802409CC) to 0x80000 26;
     }
-    bind 0x802407F0 to TriggerFlag_WALL_INTERACT 2;
+    bind func_802407F0_A0C4E0 to TriggerFlag_WALL_INTERACT 2;
 });
 
 Script N(script_EnterWalk_80240B54) = SCRIPT({
@@ -273,7 +273,7 @@ Script N(script_EnterWalk_80240B54) = SCRIPT({
             SI_VAR(3) = 128;
             SI_VAR(4) = 124;
             SI_VAR(5) = 127;
-            await 0x80285EC4;
+            await func_80285EC4;
             spawn N(script_80240AB4);
         }
         == 2 {
@@ -401,8 +401,8 @@ Script N(main) = SCRIPT({
         SI_VAR(12) = 0;
         spawn N(script_UpdateTexturePan_80240680);
     }
-    0x802C90FC(54, 0, -1);
-    0x802C9428(0, N(displayList_80240720), 0);
+    func_802C90FC(54, 0, -1);
+    func_802C9428(0, N(displayList_80240720), 0);
 });
 
 s32 pad_00124C[] = {
@@ -434,7 +434,7 @@ Script N(script_80241250) = SCRIPT({
                 ShowMessageAtScreenPos(0x14017B, 160, 40);
             }
         }
-        0xFFFFFFCA..88
+    0xFFFFFFCA..88
         ShowMessageAtScreenPos(0x14017B, 160, 40);
         else {
             ShowMessageAtScreenPos(67, 160, 40);
@@ -467,7 +467,7 @@ Script N(script_8024143C) = SCRIPT({
                 ShowMessageAtScreenPos(0x14017C, 160, 40);
             }
         }
-        0xFFFFFFCA..88
+    0xFFFFFFCA..88
         ShowMessageAtScreenPos(0x14017C, 160, 40);
         else {
             ShowMessageAtScreenPos(68, 160, 40);
@@ -479,7 +479,7 @@ Script N(script_8024143C) = SCRIPT({
 Script N(script_80241608) = SCRIPT({
     DisablePlayerInput(1);
     match SI_SAVE_VAR(0) {
-        0xFFFFFFB4..88
+    0xFFFFFFB4..88
         func_802403A0_ADB240(SI_VAR(0));
         if (SI_VAR(0) == 0) {
             InterpPlayerYaw(45, 10);
@@ -497,7 +497,8 @@ Script N(script_80241608) = SCRIPT({
             SpeakToPlayer(0xFFFFFFFE, 0xC0001, 0xC0026, 5, 0x140044);
             SpeakToPlayer(0xFFFFFFFC, 0x200009, 0x200001, 0, 0x140045);
             EnablePartnerAI();
-        } else {
+        }
+        else {
             ShowMessageAtScreenPos(69, 160, 40);
         }
     }
@@ -528,7 +529,7 @@ Script N(script_802417D4) = SCRIPT({
                 ShowMessageAtScreenPos(0x14017D, 160, 40);
             }
         }
-        0xFFFFFFCA..88
+    0xFFFFFFCA..88
         ShowMessageAtScreenPos(0x14017D, 160, 40);
         else {
             ShowMessageAtScreenPos(70, 160, 40);
@@ -561,7 +562,7 @@ Script N(script_802419A0) = SCRIPT({
                 ShowMessageAtScreenPos(0x14017E, 160, 40);
             }
         }
-        0xFFFFFFCA..88
+    0xFFFFFFCA..88
         ShowMessageAtScreenPos(0x14017E, 160, 40);
         else {
             ShowMessageAtScreenPos(71, 160, 40);
@@ -594,7 +595,7 @@ Script N(script_80241B6C) = SCRIPT({
                 ShowMessageAtScreenPos(0x14017F, 160, 40);
             }
         }
-        0xFFFFFFCA..88
+    0xFFFFFFCA..88
         ShowMessageAtScreenPos(0x14017F, 160, 40);
         else {
             ShowMessageAtScreenPos(72, 160, 40);
@@ -694,7 +695,7 @@ Script N(script_80242228) = SCRIPT({
     if (SI_SAVE_FLAG(480) == 0) {
         await N(script_80241E4C);
     } else {
-        0x802D2884(0xFFFFFFE3, 0xFFFFFF6C, 5);
+        func_802D2884(0xFFFFFFE3, 0xFFFFFF6C, 5);
         sleep 10;
         SetPlayerAnimation(0xD0010);
         sleep 10;
@@ -731,7 +732,7 @@ Script N(script_802423F4) = SCRIPT({
         }
         await N(script_80241E4C);
     } else {
-        0x802D2884(0xFFFFFFE3, 0xFFFFFF6C, 5);
+        func_802D2884(0xFFFFFFE3, 0xFFFFFF6C, 5);
         sleep 10;
         SetPlayerAnimation(0xD0010);
         sleep 10;
@@ -782,8 +783,8 @@ Script N(script_80242744) = SCRIPT({
     if (SI_SAVE_FLAG(479) == 0) {
         EnableGroup(77, 0);
         spawn N(script_80241D3C);
-        0x802C90FC(80, 1, -1);
-        0x802C94A0(1, func_802403F8_ADB298, 0);
+        func_802C90FC(80, 1, -1);
+        func_802C94A0(1, func_802403F8_ADB298, 0);
         match SI_SAVE_VAR(0) {
             < 0xFFFFFF81 {}
             < 0xFFFFFFCA {
@@ -791,7 +792,8 @@ Script N(script_80242744) = SCRIPT({
             }
             < 95 {
                 bind N(script_80242228) to TriggerFlag_WALL_INTERACT 24;
-            } else {
+            }
+            else {
             }
         }
     } else {
@@ -1073,9 +1075,9 @@ NpcSettings N(npcSettings_802439FC) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x1A,
@@ -1150,9 +1152,9 @@ NpcSettings N(npcSettings_80243E8C) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x1A,
@@ -1227,9 +1229,9 @@ NpcSettings N(npcSettings_8024431C) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x1A,
@@ -1576,7 +1578,7 @@ Script N(script_80244E54) = SCRIPT({
     SetPlayerAnimation(0xA0001);
     spawn {
         sleep 40;
-        0x802D1270(420, 0, 2.0);
+        func_802D1270(420, 0, 2.0);
     }
     sleep 10;
     PanToTarget(0, 0, 0);

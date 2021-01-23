@@ -424,7 +424,7 @@ Script N(script_80243430) = SCRIPT({
             goto 15;
         }
     } else {
-15:
+    15:
         if (SI_VAR(11) == SI_VAR(4)) {
             if (SI_VAR(12) != 3) {
                 goto 0;
@@ -807,9 +807,9 @@ NpcSettings N(npcSettings_802449B8) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80244948),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x11,
@@ -856,7 +856,7 @@ s32 N(unk_80244A78)[] = {
 
 Script N(script_80244A7C) = SCRIPT({
     SI_VAR(9) = SI_VAR(1);
-    0x802D6420();
+    func_802D6420();
     SI_VAR(10) = SI_VAR(0);
     match SI_VAR(0) {
         == 0 {}
@@ -865,7 +865,7 @@ Script N(script_80244A7C) = SCRIPT({
             RemoveKeyItemAt(SI_VAR(1));
             GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_80242140_C5C880(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |= c 50000;
+            SI_VAR(0) |=c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SetPlayerAnimation(0x60005);
             sleep 30;
@@ -874,14 +874,14 @@ Script N(script_80244A7C) = SCRIPT({
         }
     }
     func_80242364_C5CAA4(SI_VAR(10));
-    0x802D6954();
+    func_802D6954();
     unbind;
 });
 
 // Unable to use DSL: DSL does not support script opcode 0x4E
 Script N(script_80244BC0) = {
     SI_CMD(ScriptOpcode_CALL, func_8024239C_C5CADC, SI_VAR(0)),
-    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80244A7C), 0x10, 0, 0x802465D0, 0, 1),
+    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80244A7C), 0x10, 0, D_802465D0_915C80, 0, 1),
     SI_CMD(ScriptOpcode_CALL, func_80242310_C5CA50, SI_VAR(0)),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)
@@ -898,7 +898,7 @@ Script N(script_80244C10) = SCRIPT({
 
 Script N(script_80244C90) = SCRIPT({
     SI_VAR(9) = SI_VAR(1);
-    0x802D6420();
+    func_802D6420();
     SI_VAR(10) = SI_VAR(0);
     match SI_VAR(0) {
         == 0 {}
@@ -908,7 +908,7 @@ Script N(script_80244C90) = SCRIPT({
             DisablePartnerAI(0);
             GetNpcPos(0xFFFFFFFC, SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_80242528_C5CC68(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |= c 50000;
+            SI_VAR(0) |=c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SI_VAR(10) = spawn N(script_80244C10);
             SetNpcAnimation(0xFFFFFFFC, 0x40002);
@@ -941,7 +941,7 @@ Script N(script_80244C90) = SCRIPT({
         }
     }
     func_80242364_C5CAA4(SI_VAR(10));
-    0x802D6954();
+    func_802D6954();
     unbind;
 });
 
@@ -950,7 +950,7 @@ Script N(script_80244FB4) = {
     SI_CMD(ScriptOpcode_SET, SI_VAR(0), SI_VAR(11)),
     SI_CMD(ScriptOpcode_SET, SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_8024239C_C5CADC, SI_VAR(0)),
-    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80244C90), 0x10, 0, 0x802465D0, 0, 1),
+    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80244C90), 0x10, 0, D_802465D0_915C80, 0, 1),
     SI_CMD(ScriptOpcode_CALL, func_80242310_C5CA50, SI_VAR(0)),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)
@@ -984,7 +984,8 @@ Script N(script_80245024) = SCRIPT({
                     SpeakToPlayer(0xFFFFFFFC, 0x40006, 0x40001, 5, SI_VAR(8));
                     EnablePartnerAI();
                     SI_VAR(12) = 1;
-                } else {
+                }
+                else {
                     DisablePartnerAI(0);
                     sleep 1;
                     SpeakToPlayer(0xFFFFFFFC, 0x40006, 0x40001, 5, SI_VAR(9));
@@ -1068,23 +1069,23 @@ Script N(script_Idle_802453D8) = SCRIPT({
     SI_VAR(0) = 2;
     loop 3 {
         SetNpcAnimation(-1, 0xB60007);
-        0x802D7E08(0, 1, 45, 1, 0, 0, 0, 0, 20);
+        func_802D7E08(0, 1, 45, 1, 0, 0, 0, 0, 20);
         InterpNpcYaw(-1, 270, 1);
         NpcMoveTo(-1, 0xFFFFFD71, 0, SI_VAR(0));
-        0x802D7E08(0, 1, 0xFFFFFFD3, 1, 0, 0, 0, 0, 20);
+        func_802D7E08(0, 1, 0xFFFFFFD3, 1, 0, 0, 0, 0, 20);
         InterpNpcYaw(-1, 90, 1);
         NpcMoveTo(-1, 0xFFFFFD85, 0, SI_VAR(0));
         SI_VAR(0) *= 2;
     }
-    0x802D7E08(0, 0, 45, 1, 0, 0, 0, 0, 20);
+    func_802D7E08(0, 0, 45, 1, 0, 0, 0, 0, 20);
     InterpNpcYaw(-1, 270, 2);
-    0x802D7E08(0, 0, 0xFFFFFFD3, 1, 0, 0, 0, 0, 20);
+    func_802D7E08(0, 0, 0xFFFFFFD3, 1, 0, 0, 0, 0, 20);
     InterpNpcYaw(-1, 90, 2);
     SetNpcAnimation(-1, 0xB6000D);
-    0x802D7E08(0, 0, 0xFFFFFFD3, 1, 0, 0, 0, 0, 20);
+    func_802D7E08(0, 0, 0xFFFFFFD3, 1, 0, 0, 0, 0, 20);
     SetSelfVar(0, 1);
     spawn {
-15:
+    15:
         GetNpcPos(-1, SI_VAR(0), SI_VAR(1), SI_VAR(2));
         PlayEffect(39, 0, SI_VAR(0), SI_VAR(1), SI_VAR(2), 1, 10, 0, 0, 0, 0, 0, 0, 0);
         GetSelfVar(0, SI_VAR(3));
@@ -1159,7 +1160,8 @@ Script N(script_Init_80245D80) = SCRIPT({
             } else {
                 SetNpcPos(-1, 0, 0xFFFFFC18, 0);
             }
-        } else {
+        }
+        else {
             SetNpcPos(-1, 0, 0xFFFFFC18, 0);
         }
     }

@@ -164,7 +164,8 @@ Script N(script_80243CF0) = SCRIPT({
         }
         < 0xFFFFFFF0 {
             SetMusicTrack(0, 31, 0, 8);
-        } else {
+        }
+        else {
             SetMusicTrack(0, 30, 0, 8);
         }
     }
@@ -257,7 +258,7 @@ Script N(script_80244130) = SCRIPT({
 });
 
 s32 unk_missing_80244150[] = {
-    0x00000000, 0x005A0041, 0x00000000, 0x00000000, N(script_80244130), 0x80077F70, 0x00000000, 0x8007809C,
+    0x00000000, 0x005A0041, 0x00000000, 0x00000000, N(script_80244130), EnemyNpcHit, 0x00000000, EnemyNpcDefeat,
     0x00000000, 0x00000000, 0x000D0000,
 };
 
@@ -268,9 +269,9 @@ NpcSettings N(npcSettings_8024417C) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xD,
@@ -290,7 +291,7 @@ Script N(script_802441D4) = SCRIPT({
         }
         == 2 {
             SetNpcPos(-1, 0, 0xFFFFFC18, 0);
-            0x80045900(1);
+            func_80045900(1);
         }
         == 3 {
             SetEnemyFlagBits(-1, 16, 1);
@@ -338,9 +339,9 @@ NpcSettings N(npcSettings_80244360) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_802442F0),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xD,
@@ -416,20 +417,20 @@ Script N(script_NpcAI_802444E4) = SCRIPT({
         goto 20;
     }
     DisablePlayerPhysics(1);
-    0x802D2B6C();
+    func_802D2B6C();
     DisablePartnerAI(0);
     group 0;
-    0x802D5830(1);
+    func_802D5830(1);
     GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
     SI_VAR(1) += 20;
     SI_VAR(2) += 2;
     SetNpcPos(-1, SI_VAR(0), SI_VAR(1), SI_VAR(2));
-    0x80045838(-1, 759, 0);
+    func_80045838(-1, 759, 0);
     SetNpcAnimation(-1, 0x380008);
     sleep 10;
     SetPlayerAnimation(0x80017);
     sleep 10;
-    0x80045838(-1, 1838, 0);
+    func_80045838(-1, 1838, 0);
     spawn {
         loop 100 {
             GetNpcPos(-1, SI_VAR(0), SI_VAR(1), SI_VAR(2));
@@ -462,7 +463,7 @@ Script N(script_8024490C) = SCRIPT({
     match SI_VAR(0) {
         == 1, 2, 4, 6 {
             GetSelfAnimationFromTable(7, SI_VAR(0));
-            await 0x800936DC;
+            await func_800936DC;
         }
     }
 });

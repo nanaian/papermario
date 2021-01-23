@@ -167,7 +167,7 @@ Script N(script_80241428) = SCRIPT({
     SI_VAR(3) = 19;
     SI_VAR(4) = 23;
     SI_VAR(5) = 20;
-    spawn 0x80285E9C;
+    spawn func_80285E9C;
     sleep 17;
     GotoMap(D_80241870_D57420, 1);
     sleep 100;
@@ -183,7 +183,7 @@ Script N(script_80241518) = SCRIPT({
     SI_VAR(3) = 19;
     SI_VAR(4) = 23;
     SI_VAR(5) = 20;
-    await 0x80285EC4;
+    await func_80285EC4;
     spawn N(script_802414EC);
 });
 
@@ -209,10 +209,10 @@ s32 N(unk_80241680)[] = {
 
 Script N(script_80241684) = SCRIPT({
     group 0;
-    0x802D5830(2);
+    func_802D5830(2);
     sleep 40;
     ShowGotItem(SI_VAR(0), 0, 0);
-    0x802D5830(0);
+    func_802D5830(0);
     return;
 });
 
@@ -245,7 +245,7 @@ Script N(script_802417CC) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EAE30, 200, 20, 94, 0, 0, 0x80000000);
+    MakeEntity(D_802EAE30, 200, 20, 94, 0, 0, 0x80000000);
     AssignFlag(SI_SAVE_FLAG(1493));
     AssignScript(N(script_802417CC));
 });

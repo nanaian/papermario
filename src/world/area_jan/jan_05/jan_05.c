@@ -276,7 +276,7 @@ Script N(main) = SCRIPT({
     SI_VAR(0) = N(script_8024299C);
     spawn EnterWalk;
     spawn N(script_80242750);
-    0x802C971C(118);
+    func_802C971C(118);
     EnableTexPanning(117, 1);
     spawn {
         SI_VAR(0) = 1;
@@ -628,20 +628,20 @@ Script N(script_80243F44) = SCRIPT({
     SI_VAR(6) = 0;
     SI_VAR(7) = 0;
     loop 60 {
-        SI_VAR(2) = f SI_MAP_VAR(0);
-        SI_VAR(3) = f SI_MAP_VAR(1);
-        SI_VAR(2) -= f SI_VAR(0);
-        SI_VAR(3) -= f SI_VAR(1);
-        SI_VAR(4) = f SI_VAR(2);
-        SI_VAR(5) = f SI_VAR(3);
+        SI_VAR(2) =f SI_MAP_VAR(0);
+        SI_VAR(3) =f SI_MAP_VAR(1);
+        SI_VAR(2) -=f SI_VAR(0);
+        SI_VAR(3) -=f SI_VAR(1);
+        SI_VAR(4) =f SI_VAR(2);
+        SI_VAR(5) =f SI_VAR(3);
         SI_VAR(4) *= 0.09375;
         SI_VAR(5) *= 0.09375;
         SI_VAR(6) *= 0.80078125;
         SI_VAR(7) *= 0.80078125;
-        SI_VAR(6) += f SI_VAR(4);
-        SI_VAR(7) += f SI_VAR(5);
-        SI_VAR(0) += f SI_VAR(6);
-        SI_VAR(1) += f SI_VAR(7);
+        SI_VAR(6) +=f SI_VAR(4);
+        SI_VAR(7) +=f SI_VAR(5);
+        SI_VAR(0) +=f SI_VAR(6);
+        SI_VAR(1) +=f SI_VAR(7);
         TranslateModel(101, SI_MAP_VAR(0), 0, 0);
         TranslateModel(103, SI_MAP_VAR(1), 0, 0);
         func_80240738_B4B1A8(101, SI_VAR(6));
@@ -657,8 +657,8 @@ Script N(script_8024410C) = SCRIPT({
     MakeLerp(0, 45, 30, 5);
 0:
     UpdateLerp();
-    SI_MAP_VAR(1) = f SI_VAR(0);
-    SI_MAP_VAR(0) = f SI_MAP_VAR(1);
+    SI_MAP_VAR(1) =f SI_VAR(0);
+    SI_MAP_VAR(0) =f SI_MAP_VAR(1);
     SI_MAP_VAR(0) *= -1;
     if (SI_VAR(1) == 1) {
         sleep 1;
@@ -918,7 +918,7 @@ Script N(script_NpcAI_80244700) = SCRIPT({
         goto 0;
     }
     group 0;
-    0x802D5830(1);
+    func_802D5830(1);
     DisablePlayerInput(1);
     PlaySoundAtNpc(-1, 339, 0);
     GetNpcPos(-1, SI_VAR(0), SI_VAR(1), SI_VAR(2));
@@ -958,7 +958,7 @@ Script N(script_NpcAI_80244700) = SCRIPT({
     SetNpcAnimation(-1, 0x450007);
     sleep 2;
     SetPlayerAnimation(0x1002B);
-    0x802D5830(0);
+    func_802D5830(0);
     DisablePlayerInput(0);
     StartBattle();
     SetSelfVar(0, 1);
@@ -993,7 +993,7 @@ NpcSettings N(npcSettings_80244C00) = {
     .height = 0x1E,
     .radius = 0x1E,
     .otherAI = NULL,
-    .onInteract = 0x80244A8C,
+    .onInteract = &D_80244A8C,
     .ai = &N(script_NpcAI_80244700),
     .onHit = NULL,
     .aux = NULL,
@@ -1077,7 +1077,7 @@ Script N(script_NpcAI_80244E0C) = SCRIPT({
         goto 0;
     }
     group 0;
-    0x802D5830(1);
+    func_802D5830(1);
     DisablePlayerInput(1);
     NpcFacePlayer(-1, 0);
     SetNpcAnimation(-1, 0x440008);
@@ -1088,7 +1088,7 @@ Script N(script_NpcAI_80244E0C) = SCRIPT({
     sleep 5;
     SetNpcAnimation(-1, 0x440002);
     DisablePlayerInput(0);
-    0x802D5830(0);
+    func_802D5830(0);
     StartBattle();
 });
 
@@ -1159,9 +1159,9 @@ NpcSettings N(npcSettings_802450F8) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_802450BC),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x10,
@@ -1185,7 +1185,7 @@ Script N(script_80245154) = SCRIPT({
         }
         == 2 {
             SetNpcPos(-1, 0, 0xFFFFFC18, 0);
-            0x80045900(1);
+            func_80045900(1);
         }
         == 3 {
             SetEnemyFlagBits(-1, 16, 1);
@@ -1224,9 +1224,9 @@ NpcSettings N(npcSettings_802452B0) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80245240),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x10,
@@ -1272,7 +1272,7 @@ Script N(script_Idle_802453B0) = SCRIPT({
     SetNpcFlagBits(-1, 512, 1);
     SetNpcFlagBits(-1, 8, 0);
     SetNpcPos(-1, 125, 100, 0xFFFFFE78);
-    0x802D617C(817, 110);
+    func_802D617C(817, 110);
     sleep 20;
     SetNpcFlagBits(-1, 512, 0);
     SetNpcFlagBits(-1, 8, 1);
@@ -1876,10 +1876,10 @@ s32 pad_007964[] = {
 };
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA5AC, 0, 60, 0, 0, 279, 0x80000000);
+    MakeEntity(D_802EA5AC, 0, 60, 0, 0, 279, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1238));
-    MakeEntity(0x802BC788, 205, 0, 220, 0, 0x80000000);
-    MakeEntity(0x802BCBFC, 0xFFFFFE7E, 0, 0xFFFFFF2A, 160, 0x80000000);
+    MakeEntity(D_802BC788, 205, 0, 220, 0, 0x80000000);
+    MakeEntity(D_802BCBFC, 0xFFFFFE7E, 0, 0xFFFFFF2A, 160, 0x80000000);
 });
 
 // rodata: D_80247A00_B52470

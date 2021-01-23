@@ -150,9 +150,9 @@ NpcSettings N(npcSettings_8024069C) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80240670),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x9,
@@ -415,7 +415,7 @@ Script N(script_80241488) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA0E8, 0, 60, 0xFFFFFF9C, 0, 0x80000000);
+    MakeEntity(D_802EA0E8, 0, 60, 0xFFFFFF9C, 0, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(822));
     MakeItemEntity(137, 420, 0, 168, 17, SI_SAVE_FLAG(836));
 });

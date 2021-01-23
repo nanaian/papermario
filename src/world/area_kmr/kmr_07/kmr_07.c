@@ -113,7 +113,7 @@ Script N(script_EnterWalk_80240CE0) = SCRIPT({
         SI_VAR(0) = N(script_80240C98);
         spawn EnterWalk;
     } else {
-        spawn 0x80285C50;
+        spawn func_80285C50;
         spawn N(script_80240C98);
     }
 });
@@ -156,9 +156,9 @@ NpcSettings N(npcSettings_80240ED4) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80240EB4),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x5,
@@ -325,7 +325,7 @@ Script N(script_Defeat_8024191C) = SCRIPT({
     GetBattleOutcome(SI_VAR(0));
     match SI_VAR(0) {
         == 0 {
-0:
+        0:
             if (SI_MAP_VAR(0) == 0) {
                 sleep 1;
                 goto 0;
@@ -379,9 +379,9 @@ NpcGroupList N(npcGroupList_80241DF8) = {
 };
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EAA54, 310, 0, 45, 0, 65, 0x80000000);
+    MakeEntity(D_802EAA54, 310, 0, 45, 0, 65, 0x80000000);
     SI_MAP_VAR(0) = SI_VAR(0);
-    MakeEntity(0x802E9A18, 510, 60, 110, 0, 0x80000000);
+    MakeEntity(D_802E9A18, 510, 60, 110, 0, 0x80000000);
 });
 
 s32 pad_001E7C[] = {

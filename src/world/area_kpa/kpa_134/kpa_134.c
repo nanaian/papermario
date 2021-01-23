@@ -90,7 +90,7 @@ Script N(script_80240780) = SCRIPT({
     UseDoorSounds(1);
     spawn {
         sleep 30;
-        0x802D5FA4(6);
+        func_802D5FA4(6);
     }
 });
 
@@ -354,11 +354,11 @@ Script N(script_80241570) = SCRIPT({
         ShakeCam(0, 0, 120, 1.0);
     }
     spawn {
-        0x802CA988(0, SI_VAR(4), SI_VAR(5), SI_VAR(6), SI_VAR(7));
+        func_802CA988(0, SI_VAR(4), SI_VAR(5), SI_VAR(6), SI_VAR(7));
         MakeLerp(SI_VAR(6), 600, 20, 0);
-10:
+    10:
         UpdateLerp();
-        0x802CABE8(0, SI_VAR(4), SI_VAR(5), SI_VAR(0), SI_VAR(7));
+        func_802CABE8(0, SI_VAR(4), SI_VAR(5), SI_VAR(0), SI_VAR(7));
         sleep 1;
         if (SI_VAR(1) == 1) {
             goto 10;
@@ -366,9 +366,9 @@ Script N(script_80241570) = SCRIPT({
         SI_VAR(2) = SI_VAR(0);
         sleep 5;
         MakeLerp(SI_VAR(7), 0xFFFFFFEC, 20, 0);
-15:
+    15:
         UpdateLerp();
-        0x802CABE8(0, SI_VAR(4), SI_VAR(5), SI_VAR(2), SI_VAR(0));
+        func_802CABE8(0, SI_VAR(4), SI_VAR(5), SI_VAR(2), SI_VAR(0));
         sleep 1;
         if (SI_VAR(1) == 1) {
             goto 15;
@@ -387,7 +387,7 @@ Script N(script_80241570) = SCRIPT({
         goto 30;
     }
     PlaySound(1579);
-    0x802D62E4(555);
+    func_802D62E4(555);
     SetGroupEnabled(105, 0);
     EnableModel(106, 0);
     EnableModel(108, 0);
@@ -417,11 +417,11 @@ Script N(script_80241968) = SCRIPT({
     }
     spawn {
         sleep 60;
-        0x802CA988(0, SI_VAR(4), SI_VAR(5), SI_VAR(6), SI_VAR(7));
+        func_802CA988(0, SI_VAR(4), SI_VAR(5), SI_VAR(6), SI_VAR(7));
         MakeLerp(SI_VAR(6), 600, 20, 0);
-10:
+    10:
         UpdateLerp();
-        0x802CABE8(0, SI_VAR(4), SI_VAR(5), SI_VAR(0), SI_VAR(7));
+        func_802CABE8(0, SI_VAR(4), SI_VAR(5), SI_VAR(0), SI_VAR(7));
         sleep 1;
         if (SI_VAR(1) == 1) {
             goto 10;
@@ -429,9 +429,9 @@ Script N(script_80241968) = SCRIPT({
         SI_VAR(2) = SI_VAR(0);
         sleep 5;
         MakeLerp(SI_VAR(7), 0xFFFFFFEC, 20, 0);
-15:
+    15:
         UpdateLerp();
-        0x802CABE8(0, SI_VAR(4), SI_VAR(5), SI_VAR(2), SI_VAR(0));
+        func_802CABE8(0, SI_VAR(4), SI_VAR(5), SI_VAR(2), SI_VAR(0));
         sleep 1;
         if (SI_VAR(1) == 1) {
             goto 15;
@@ -457,7 +457,7 @@ Script N(script_80241968) = SCRIPT({
     spawn {
         EnableModel(111, 1);
         MakeLerp(400, 0, 20, 0);
-20:
+    20:
         UpdateLerp();
         TranslateModel(111, 0xFFFFFF9C, SI_VAR(0), 0);
         sleep 1;
@@ -468,7 +468,7 @@ Script N(script_80241968) = SCRIPT({
         EnableModel(108, 1);
         EnableModel(113, 1);
         MakeLerp(20, 120, 180, 0);
-30:
+    30:
         UpdateLerp();
         TranslateGroup(105, 0, SI_VAR(0), 0);
         TranslateModel(108, 0, SI_VAR(0), 0);
@@ -479,9 +479,9 @@ Script N(script_80241968) = SCRIPT({
             goto 30;
         }
         MakeLerp(100, 1, 20, 0);
-40:
+    40:
         UpdateLerp();
-        SI_VAR(2) = f SI_VAR(0);
+        SI_VAR(2) =f SI_VAR(0);
         SI_VAR(2) /= 100;
         TranslateModel(113, 0xFFFFFF9C, 120, 0);
         TranslateModel(111, 0xFFFFFF9C, 120, 0);
@@ -492,7 +492,7 @@ Script N(script_80241968) = SCRIPT({
             goto 40;
         }
         PlaySound(1578);
-        0x802D62E4(554);
+        func_802D62E4(554);
         EnableModel(113, 0);
         EnableModel(111, 0);
     }
@@ -571,11 +571,11 @@ Script N(script_8024229C) = SCRIPT({
     EnableModel(106, 0);
     EnableModel(108, 1);
     spawn {
-        0x802CA988(0, SI_VAR(4), SI_VAR(5), SI_VAR(6), SI_VAR(7));
+        func_802CA988(0, SI_VAR(4), SI_VAR(5), SI_VAR(6), SI_VAR(7));
         MakeLerp(SI_VAR(6), 600, 20, 0);
-10:
+    10:
         UpdateLerp();
-        0x802CABE8(0, SI_VAR(4), SI_VAR(5), SI_VAR(0), SI_VAR(7));
+        func_802CABE8(0, SI_VAR(4), SI_VAR(5), SI_VAR(0), SI_VAR(7));
         sleep 1;
         if (SI_VAR(1) == 1) {
             goto 10;
@@ -583,9 +583,9 @@ Script N(script_8024229C) = SCRIPT({
         SI_VAR(2) = SI_VAR(0);
         sleep 5;
         MakeLerp(SI_VAR(7), 0xFFFFFFEC, 20, 0);
-15:
+    15:
         UpdateLerp();
-        0x802CABE8(0, SI_VAR(4), SI_VAR(5), SI_VAR(2), SI_VAR(0));
+        func_802CABE8(0, SI_VAR(4), SI_VAR(5), SI_VAR(2), SI_VAR(0));
         sleep 1;
         if (SI_VAR(1) == 1) {
             goto 15;
@@ -603,7 +603,7 @@ Script N(script_8024229C) = SCRIPT({
         goto 30;
     }
     PlaySound(1579);
-    0x802D62E4(555);
+    func_802D62E4(555);
     sleep 10;
     SetCamPerspective(0, 3, 25, 16, 4096);
     ResetCam(0, 90.0);
@@ -629,11 +629,11 @@ Script N(script_80242624) = SCRIPT({
     EnableModel(108, 0);
     spawn {
         sleep 60;
-        0x802CA988(0, SI_VAR(4), SI_VAR(5), SI_VAR(6), SI_VAR(7));
+        func_802CA988(0, SI_VAR(4), SI_VAR(5), SI_VAR(6), SI_VAR(7));
         MakeLerp(SI_VAR(6), 600, 20, 0);
-10:
+    10:
         UpdateLerp();
-        0x802CABE8(0, SI_VAR(4), SI_VAR(5), SI_VAR(0), SI_VAR(7));
+        func_802CABE8(0, SI_VAR(4), SI_VAR(5), SI_VAR(0), SI_VAR(7));
         sleep 1;
         if (SI_VAR(1) == 1) {
             goto 10;
@@ -641,9 +641,9 @@ Script N(script_80242624) = SCRIPT({
         SI_VAR(2) = SI_VAR(0);
         sleep 5;
         MakeLerp(SI_VAR(7), 0xFFFFFFEC, 20, 0);
-15:
+    15:
         UpdateLerp();
-        0x802CABE8(0, SI_VAR(4), SI_VAR(5), SI_VAR(2), SI_VAR(0));
+        func_802CABE8(0, SI_VAR(4), SI_VAR(5), SI_VAR(2), SI_VAR(0));
         sleep 1;
         if (SI_VAR(1) == 1) {
             goto 15;
@@ -669,7 +669,7 @@ Script N(script_80242624) = SCRIPT({
     spawn {
         EnableModel(111, 1);
         MakeLerp(400, 0, 20, 0);
-20:
+    20:
         UpdateLerp();
         TranslateModel(111, 300, SI_VAR(0), 0);
         sleep 1;
@@ -679,7 +679,7 @@ Script N(script_80242624) = SCRIPT({
         SetGroupEnabled(105, 1);
         EnableModel(113, 1);
         MakeLerp(120, 220, 180, 0);
-30:
+    30:
         UpdateLerp();
         TranslateGroup(105, 0, SI_VAR(0), 0);
         TranslateModel(106, 0, SI_VAR(0), 0);
@@ -690,9 +690,9 @@ Script N(script_80242624) = SCRIPT({
             goto 30;
         }
         MakeLerp(100, 1, 20, 0);
-40:
+    40:
         UpdateLerp();
-        SI_VAR(2) = f SI_VAR(0);
+        SI_VAR(2) =f SI_VAR(0);
         SI_VAR(2) /= 100;
         TranslateModel(113, 300, 220, 0);
         TranslateModel(111, 300, 220, 0);
@@ -703,7 +703,7 @@ Script N(script_80242624) = SCRIPT({
             goto 40;
         }
         PlaySound(1578);
-        0x802D62E4(554);
+        func_802D62E4(554);
         EnableModel(113, 0);
         EnableModel(111, 0);
     }
@@ -888,14 +888,14 @@ s32 N(itemList_80243598)[] = {
 };
 
 Script N(script_802435A0) = SCRIPT({
-    0x802D6420();
+    func_802D6420();
     if (SI_VAR(0) == 0) {
         ShowMessageAtScreenPos(0x1D00D8, 160, 40);
-        0x802D6954();
+        func_802D6954();
         return;
     }
     if (SI_VAR(0) == -1) {
-        0x802D6954();
+        func_802D6954();
         return;
     }
     RemoveKeyItemAt(SI_VAR(1));
@@ -906,7 +906,7 @@ Script N(script_802435A0) = SCRIPT({
     func_80240628_AA95C8();
     SI_VAR(1) = 0;
     sleep 5;
-    0x802D6954();
+    func_802D6954();
     unbind;
     bind N(script_ExitDoubleDoor_802408E8) to TriggerFlag_WALL_INTERACT 39;
 });
@@ -915,21 +915,21 @@ Script N(script_802435A0) = SCRIPT({
 // *INDENT-OFF*
 Script N(script_MakeEntities) = {
     SI_CMD(ScriptOpcode_IF_EQ, SI_SAVE_FLAG(1589), 0),
-        SI_CMD(ScriptOpcode_CALL, MakeEntity, 0x802BCD68, 743, 10, 115, 270, 0x80000000),
+        SI_CMD(ScriptOpcode_CALL, MakeEntity, D_802BCD68, 743, 10, 115, 270, 0x80000000),
         SI_CMD(ScriptOpcode_SET, SI_MAP_VAR(1), SI_VAR(0)),
         SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_802435A0), TriggerFlag_WALL_INTERACT, 0x4000, N(itemList_80243598), 0, 1),
     SI_CMD(ScriptOpcode_ELSE),
         SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_ExitDoubleDoor_802408E8), TriggerFlag_WALL_INTERACT, 39, 1, 0),
     SI_CMD(ScriptOpcode_END_IF),
     SI_CMD(ScriptOpcode_IF_EQ, SI_SAVE_FLAG(1590), 0),
-        SI_CMD(ScriptOpcode_CALL, MakeEntity, 0x802E9BD4, 0xFFFFFF20, 355, 0xFFFFFFE7, 0, 0x80000000),
+        SI_CMD(ScriptOpcode_CALL, MakeEntity, D_802E9BD4, 0xFFFFFF20, 355, 0xFFFFFFE7, 0, 0x80000000),
         SI_CMD(ScriptOpcode_CALL, AssignAreaFlag, 9),
         SI_CMD(ScriptOpcode_SET, SI_MAP_VAR(0), SI_VAR(0)),
     SI_CMD(ScriptOpcode_END_IF),
-    SI_CMD(ScriptOpcode_CALL, MakeEntity, 0x802EA0C4, 0xFFFFFF20, 330, 0xFFFFFFE7, 0, 0x80000000),
+    SI_CMD(ScriptOpcode_CALL, MakeEntity, D_802EA0C4, 0xFFFFFF20, 330, 0xFFFFFFE7, 0, 0x80000000),
     SI_CMD(ScriptOpcode_CALL, AssignScript, N(script_80243410)),
-    SI_CMD(ScriptOpcode_CALL, MakeEntity, 0x802EAA54, 475, 0, 0xFFFFFFEC, 90, 60, 0x80000000),
-    SI_CMD(ScriptOpcode_CALL, MakeEntity, 0x802EA588, 195, 300, 0xFFFFFFB5, 0, 163, 0x80000000),
+    SI_CMD(ScriptOpcode_CALL, MakeEntity, D_802EAA54, 475, 0, 0xFFFFFFEC, 90, 60, 0x80000000),
+    SI_CMD(ScriptOpcode_CALL, MakeEntity, D_802EA588, 195, 300, 0xFFFFFFB5, 0, 163, 0x80000000),
     SI_CMD(ScriptOpcode_CALL, AssignBlockFlag, SI_SAVE_FLAG(1591)),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)

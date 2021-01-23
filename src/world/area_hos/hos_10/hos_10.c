@@ -634,7 +634,8 @@ Script N(main) = SCRIPT({
         }
         == 2 {
             MakeNpcs(0, N(npcGroupList_80243448));
-        } else {
+        }
+        else {
         }
     }
     if (SI_SAVE_VAR(0) != 0xFFFFFF80) {
@@ -814,7 +815,7 @@ Script N(script_80243790) = SCRIPT({
         EnableModel(39, 0);
     }
     spawn {
-        SI_VAR(0) = f 0xFFFFFB9B;
+        SI_VAR(0) =f 0xFFFFFB9B;
         loop 1450 {
             TranslateModel(5, 0, SI_VAR(0), 0);
             SI_VAR(0) += -1.5;
@@ -822,7 +823,7 @@ Script N(script_80243790) = SCRIPT({
         }
     }
     spawn {
-        SI_VAR(0) = f 0xFFFFFE0C;
+        SI_VAR(0) =f 0xFFFFFE0C;
         loop 1450 {
             TranslateGroup(38, 0, SI_VAR(0), 0);
             SI_VAR(0) += -2.5;
@@ -954,7 +955,7 @@ Script N(script_8024427C) = SCRIPT({
     EnableTexPanning(33, 1);
     EnableTexPanning(36, 1);
     spawn {
-        SI_VAR(0) = f 0xFFFFF8F8;
+        SI_VAR(0) =f 0xFFFFF8F8;
         loop 450 {
             TranslateModel(5, 0, SI_VAR(0), 0);
             SI_VAR(0) += 1.5;
@@ -962,7 +963,7 @@ Script N(script_8024427C) = SCRIPT({
         }
     }
     spawn {
-        SI_VAR(0) = f 0xFFFFF943;
+        SI_VAR(0) =f 0xFFFFF943;
         loop 450 {
             TranslateGroup(38, 0, SI_VAR(0), 0);
             SI_VAR(0) += 2.5;
@@ -1075,7 +1076,7 @@ Script N(script_80244B10) = SCRIPT({
     SetCamSpeed(0, 90.0);
     PanToTarget(0, 0, 1);
     spawn {
-        SI_VAR(0) = f 0xFFFFF736;
+        SI_VAR(0) =f 0xFFFFF736;
         loop 1500 {
             TranslateModel(5, 0, SI_VAR(0), 0);
             SI_VAR(0) += 1.0;
@@ -1122,7 +1123,7 @@ Script N(script_80244B10) = SCRIPT({
     sleep 350;
     spawn {
         LoadPath(190, N(vectorList_80244930), 5, 0);
-0:
+    0:
         GetNextPathPos();
         SetPlayerPos(SI_VAR(1), SI_VAR(2), SI_VAR(3));
         sleep 1;
@@ -1135,10 +1136,10 @@ Script N(script_80244B10) = SCRIPT({
         loop {
             UpdateLerp();
             SI_VAR(0) /= 100;
-            SI_VAR(1) = f 0xFFFFFFEC;
-            SI_VAR(1) *= f SI_VAR(0);
+            SI_VAR(1) =f 0xFFFFFFEC;
+            SI_VAR(1) *=f SI_VAR(0);
             GetPlayerPos(SI_VAR(2), SI_VAR(3), SI_VAR(4));
-            SI_VAR(2) += f SI_VAR(1);
+            SI_VAR(2) +=f SI_VAR(1);
             SetNpcPos(0xFFFFFFFC, SI_VAR(2), SI_VAR(3), SI_VAR(4));
             sleep 1;
             if (SI_VAR(1) == 0) {
@@ -1152,9 +1153,9 @@ Script N(script_80244B10) = SCRIPT({
             UpdateLerp();
             SI_VAR(0) /= 100;
             SI_VAR(1) = 30;
-            SI_VAR(1) *= f SI_VAR(0);
+            SI_VAR(1) *=f SI_VAR(0);
             GetPlayerPos(SI_VAR(2), SI_VAR(3), SI_VAR(4));
-            SI_VAR(2) += f SI_VAR(1);
+            SI_VAR(2) +=f SI_VAR(1);
             SetNpcPos(0, SI_VAR(2), SI_VAR(3), SI_VAR(4));
             sleep 1;
             if (SI_VAR(1) == 0) {
@@ -1168,9 +1169,9 @@ Script N(script_80244B10) = SCRIPT({
             UpdateLerp();
             SI_VAR(0) /= 100;
             SI_VAR(1) = 60;
-            SI_VAR(1) *= f SI_VAR(0);
+            SI_VAR(1) *=f SI_VAR(0);
             GetPlayerPos(SI_VAR(2), SI_VAR(3), SI_VAR(4));
-            SI_VAR(3) += f SI_VAR(1);
+            SI_VAR(3) +=f SI_VAR(1);
             SetNpcPos(1, SI_VAR(2), SI_VAR(3), SI_VAR(4));
             sleep 1;
             if (SI_VAR(1) == 0) {
@@ -1384,7 +1385,7 @@ Script N(script_802457E4) = SCRIPT({
         NpcFlyTo(1, 100, 60, 1800, 20, 0xFFFFFFF6, 0);
     }
     spawn {
-        SI_VAR(0) = f 0xFFFFF736;
+        SI_VAR(0) =f 0xFFFFF736;
         loop 1500 {
             TranslateModel(5, 0, SI_VAR(0), 0);
             SI_VAR(0) += 1.5;
@@ -1392,7 +1393,7 @@ Script N(script_802457E4) = SCRIPT({
         }
     }
     spawn {
-        SI_VAR(0) = f 0xFFFFF574;
+        SI_VAR(0) =f 0xFFFFF574;
         loop 1200 {
             TranslateGroup(38, 0, SI_VAR(0), 0);
             SI_VAR(0) += 2.5;

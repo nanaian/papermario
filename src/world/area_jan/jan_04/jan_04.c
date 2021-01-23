@@ -163,11 +163,12 @@ MapConfig N(header) = {
 Script N(script_80241180) = SCRIPT({
     GetEntryID(SI_VAR(0));
     match SI_VAR(0) {
-        1..2
+    1..2
         SetMusicTrack(0, 42, 0, 8);
         == 3 {
             FadeInMusic(0, 36, 0, 3000, 0, 127);
-        } else {
+        }
+        else {
             SetMusicTrack(0, 36, 0, 8);
         }
     }
@@ -175,13 +176,13 @@ Script N(script_80241180) = SCRIPT({
 });
 
 Script N(script_80241244) = SCRIPT({
-    0x802D5FF8(130, 0);
+    func_802D5FF8(130, 0);
 });
 
 Script N(script_80241268) = SCRIPT({
     FadeOutMusic(0, 500);
     sleep 15;
-    0x802D5FD8();
+    func_802D5FD8();
 });
 
 s32 pad_0012A4[] = {
@@ -215,7 +216,7 @@ Script N(script_ExitWalk_8024134C) = SCRIPT({
 });
 
 Script N(script_802413E0) = SCRIPT({
-    bind 0x80241384 to 0x80000 0;
+    bind N(npcSettings_80241384) to 0x80000 0;
 });
 
 Script N(script_EnterWalk_8024140C) = SCRIPT({
@@ -226,7 +227,7 @@ Script N(script_EnterWalk_8024140C) = SCRIPT({
             SI_VAR(0) = N(script_802413E0);
             spawn EnterWalk;
         }
-        1..2
+    1..2
         spawn N(script_802449E0);
         == 3 {
             spawn N(script_80244454);
@@ -263,7 +264,7 @@ Script N(main) = SCRIPT({
     ModifyColliderFlags(0, 37, 0x80000);
     ModifyColliderFlags(0, 40, 0x80000);
     ModifyColliderFlags(3, 4, 1);
-    0x802C971C(89);
+    func_802C971C(89);
     EnableTexPanning(88, 1);
     spawn {
         SI_VAR(0) = 1;
@@ -297,10 +298,10 @@ s32 N(unk_80241800)[] = {
 
 Script N(script_80241804) = SCRIPT({
     group 0;
-    0x802D5830(2);
+    func_802D5830(2);
     sleep 40;
     ShowGotItem(SI_VAR(0), 0, 0);
-    0x802D5830(0);
+    func_802D5830(0);
     return;
 });
 
@@ -334,8 +335,8 @@ Script N(script_8024194C) = SCRIPT({
 
 Script N(script_MakeEntities) = SCRIPT({
     match SI_SAVE_VAR(0) {
-        38..95
-        MakeEntity(0x802EAE30, 0, 0, 0, 0, 0, 0x80000000);
+    38..95
+        MakeEntity(D_802EAE30, 0, 0, 0, 0, 0, 0x80000000);
         AssignFlag(SI_SAVE_FLAG(1228));
         AssignScript(N(script_8024194C));
     }
@@ -353,9 +354,9 @@ NpcSettings N(npcSettings_80241A40) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xE,
@@ -613,7 +614,8 @@ Script N(script_Interact_80242714) = SCRIPT({
         }
         < 42 {
             SpeakToPlayer(1, 0x990303, 0x990302, 0, 0x1000AB);
-        } else {
+        }
+        else {
             SpeakToPlayer(1, 0x990303, 0x990302, 0, 0x1000AC);
         }
     }
@@ -1069,7 +1071,7 @@ Script N(script_80244454) = SCRIPT({
         SetNpcPos(2, 0xFFFFFEA2, 0, 15);
         SetNpcAnimation(2, 0x970003);
         LoadPath(90, N(vectorList_80244400), 7, 0);
-10:
+    10:
         GetNextPathPos();
         SetNpcPos(2, SI_VAR(1), SI_VAR(2), SI_VAR(3));
         sleep 1;
@@ -1082,7 +1084,7 @@ Script N(script_80244454) = SCRIPT({
         SetNpcPos(6, 0xFFFFFEA2, 0, 15);
         SetNpcAnimation(6, 0x970203);
         LoadPath(90, N(vectorList_80244400), 7, 0);
-11:
+    11:
         GetNextPathPos();
         SetNpcPos(6, SI_VAR(1), SI_VAR(2), SI_VAR(3));
         sleep 1;
@@ -1154,7 +1156,7 @@ Script N(script_802449E0) = SCRIPT({
         SetCamSpeed(0, 90.0);
         PanToTarget(0, 0, 1);
         WaitForCam(0, 1.0);
-        MakeEntity(0x802EAE30, 0, 2650, 0, 148, 0x80000000);
+        MakeEntity(D_802EAE30, 0, 2650, 0, 148, 0x80000000);
         SI_VAR(10) = SI_VAR(0);
         spawn {
             func_80240BE8_B45358();
@@ -1187,7 +1189,7 @@ Script N(script_802449E0) = SCRIPT({
         SetCamSpeed(0, 1.2001953125);
         PanToTarget(0, 0, 1);
         WaitForCam(0, 1.0);
-        MakeEntity(0x802EAE30, 0, 2650, 0, 0, 0x80000000);
+        MakeEntity(D_802EAE30, 0, 2650, 0, 0, 0x80000000);
         SI_VAR(10) = SI_VAR(0);
         spawn {
             func_80240D0C_B4547C();

@@ -294,7 +294,7 @@ Script N(main) = SCRIPT({
     spawn N(script_80243F68);
     SetMusicTrack(0, 36, 0, 8);
     ClearAmbientSounds(250);
-    0x802C971C(138);
+    func_802C971C(138);
     EnableTexPanning(137, 1);
     spawn {
         SI_VAR(0) = 1;
@@ -404,22 +404,22 @@ Script N(script_8024333C) = SCRIPT({
 
 Script N(script_80243544) = SCRIPT({
     group 0;
-    0x802D5830(1);
-    0x802D6420();
+    func_802D5830(1);
+    func_802D6420();
     if (SI_VAR(0) <= 0) {
         if (SI_VAR(0) == 0) {
             ShowMessageAtScreenPos(0x1D015B, 160, 40);
         }
-        0x802D6954();
-        0x802D5830(0);
+        func_802D6954();
+        func_802D5830(0);
         return;
     }
     DisablePlayerInput(1);
     RemoveKeyItemAt(SI_VAR(1));
     MakeItemEntity(42, 0, 15, 0xFFFFFE70, 1, 0);
     SI_MAP_VAR(11) = SI_VAR(0);
-    0x802D6954();
-    0x802D5830(0);
+    func_802D6954();
+    func_802D5830(0);
     SetPlayerAnimation(0x1060006);
     sleep 20;
     SetPlayerAnimation(0x10000);
@@ -833,7 +833,7 @@ s32 pad_004A84[] = {
 };
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802BC7AC, 84, 0, 0xFFFFFEC0, 5, 0x80000000);
+    MakeEntity(D_802BC7AC, 84, 0, 0xFFFFFEC0, 5, 0x80000000);
     MakeItemEntity(343, 285, 0xFFFFFFC4, 220, 17, SI_SAVE_FLAG(1240));
 });
 
@@ -868,9 +868,9 @@ NpcSettings N(npcSettings_80244B5C) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80244B20),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x10,
@@ -934,7 +934,7 @@ Script N(script_NpcAI_80244D3C) = SCRIPT({
         goto 0;
     }
     group 0;
-    0x802D5830(1);
+    func_802D5830(1);
     DisablePlayerInput(1);
     NpcFacePlayer(-1, 0);
     SetNpcAnimation(-1, 0x440008);
@@ -945,7 +945,7 @@ Script N(script_NpcAI_80244D3C) = SCRIPT({
     sleep 5;
     SetNpcAnimation(-1, 0x440002);
     DisablePlayerInput(0);
-    0x802D5830(0);
+    func_802D5830(0);
     StartBattle();
 });
 
@@ -1002,7 +1002,7 @@ Script N(script_80244FEC) = SCRIPT({
         }
         == 2 {
             SetNpcPos(-1, 0, 0xFFFFFC18, 0);
-            0x80045900(1);
+            func_80045900(1);
         }
         == 3 {
             SetEnemyFlagBits(-1, 16, 1);
@@ -1041,9 +1041,9 @@ NpcSettings N(npcSettings_80245148) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_802450D8),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x10,

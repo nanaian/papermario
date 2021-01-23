@@ -175,20 +175,20 @@ Script N(main) = SCRIPT({
 });
 
 Script N(script_802422B0) = SCRIPT({
-    0x800441F0(SI_VAR(0));
+    func_800441F0(SI_VAR(0));
     if (SI_VAR(0) == 1) {
         return;
     }
     group 0;
-    0x802D5830(1);
+    func_802D5830(1);
     DisablePlayerInput(1);
     ShowMessageAtScreenPos(0x1D017E, 160, 40);
     DisablePlayerInput(0);
-    0x802D5830(0);
+    func_802D5830(0);
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EAFDC, 0xFFFFFED4, 0, 0, 270, 0x80000000);
+    MakeEntity(D_802EAFDC, 0xFFFFFED4, 0, 0, 270, 0x80000000);
     AssignScript(N(script_802422B0));
 });
 
@@ -385,7 +385,7 @@ Script N(script_80243170) = SCRIPT({
         == 0 {
             spawn {
                 MakeLerp(10, 90, 10, 1);
-10:
+            10:
                 UpdateLerp();
                 RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
                 UpdateColliderTransform(SI_VAR(9));
@@ -404,7 +404,7 @@ Script N(script_80243170) = SCRIPT({
             SI_VAR(1) = 1;
             spawn N(script_80242CA0);
             MakeLerp(90, 360, 30, 0);
-20:
+        20:
             UpdateLerp();
             RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
             UpdateColliderTransform(SI_VAR(9));
@@ -419,7 +419,7 @@ Script N(script_80243170) = SCRIPT({
         == 1 {
             spawn {
                 MakeLerp(360, 270, 10, 1);
-30:
+            30:
                 UpdateLerp();
                 RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
                 UpdateColliderTransform(SI_VAR(9));
@@ -438,7 +438,7 @@ Script N(script_80243170) = SCRIPT({
             SI_VAR(1) = 2;
             spawn N(script_80242CA0);
             MakeLerp(270, 0xFFFFFFF6, 30, 0);
-40:
+        40:
             UpdateLerp();
             RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
             UpdateColliderTransform(SI_VAR(9));
@@ -451,7 +451,7 @@ Script N(script_80243170) = SCRIPT({
         == 2 {
             spawn {
                 MakeLerp(0xFFFFFFF6, 90, 10, 1);
-50:
+            50:
                 UpdateLerp();
                 RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
                 UpdateColliderTransform(SI_VAR(9));
@@ -470,7 +470,7 @@ Script N(script_80243170) = SCRIPT({
             SI_VAR(1) = 1;
             spawn N(script_80242CA0);
             MakeLerp(90, 360, 30, 0);
-60:
+        60:
             UpdateLerp();
             RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
             UpdateColliderTransform(SI_VAR(9));
@@ -521,7 +521,7 @@ Script N(script_802438D0) = SCRIPT({
     if (SI_AREA_VAR(1) != 1) {
         spawn {
             MakeLerp(10, 90, 10, 1);
-10:
+        10:
             UpdateLerp();
             RotateGroup(164, SI_VAR(0), 0, 1, 0);
             UpdateColliderTransform(32);
@@ -539,7 +539,7 @@ Script N(script_802438D0) = SCRIPT({
         SI_VAR(1) = 1;
         spawn N(script_80242CA0);
         MakeLerp(90, 360, 30, 0);
-20:
+    20:
         UpdateLerp();
         RotateGroup(164, SI_VAR(0), 0, 1, 0);
         UpdateColliderTransform(32);
@@ -553,7 +553,7 @@ Script N(script_802438D0) = SCRIPT({
     } else {
         spawn {
             MakeLerp(360, 270, 10, 1);
-30:
+        30:
             UpdateLerp();
             RotateGroup(164, SI_VAR(0), 0, 1, 0);
             UpdateColliderTransform(32);
@@ -571,7 +571,7 @@ Script N(script_802438D0) = SCRIPT({
         SI_VAR(1) = 2;
         spawn N(script_80242CA0);
         MakeLerp(270, 10, 30, 0);
-40:
+    40:
         UpdateLerp();
         RotateGroup(164, SI_VAR(0), 0, 1, 0);
         UpdateColliderTransform(32);
@@ -619,7 +619,7 @@ Script N(script_80243EB0) = SCRIPT({
         }
         == 2 {
             SetNpcPos(-1, 0, 0xFFFFFC18, 0);
-            0x80045900(1);
+            func_80045900(1);
         }
         == 3 {
             SetEnemyFlagBits(-1, 16, 1);
@@ -663,9 +663,9 @@ NpcSettings N(npcSettings_80244070) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80243F9C),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xB,
@@ -686,7 +686,7 @@ Script N(script_8024411C) = SCRIPT({
     match SI_VAR(0) {
         == 1, 2, 4, 6 {
             GetSelfAnimationFromTable(7, SI_VAR(0));
-            await 0x800936DC;
+            await func_800936DC;
         }
     }
 });

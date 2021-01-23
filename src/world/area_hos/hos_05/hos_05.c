@@ -426,7 +426,7 @@ Script N(main) = SCRIPT({
     EnableGroup(146, 0);
     GetEntryID(SI_VAR(0));
     match SI_VAR(0) {
-        0..1
+    0..1
         spawn N(script_8024E00C);
     }
 });
@@ -487,10 +487,10 @@ Script N(script_80245E0C) = SCRIPT({
 Script N(script_80246028) = SCRIPT({
     func_80240690_A2A8D0();
 0:
-    SI_VAR(11) += f SI_VAR(13);
-    SI_VAR(2) += f SI_VAR(10);
-    SI_VAR(3) += f SI_VAR(11);
-    SI_VAR(4) += f SI_VAR(12);
+    SI_VAR(11) +=f SI_VAR(13);
+    SI_VAR(2) +=f SI_VAR(10);
+    SI_VAR(3) +=f SI_VAR(11);
+    SI_VAR(4) +=f SI_VAR(12);
     TranslateModel(SI_VAR(0), SI_VAR(2), SI_VAR(3), SI_VAR(4));
     func_80240634_A2A874(6, SI_VAR(2));
     SI_VAR(6) *= SI_VAR(6);
@@ -549,7 +549,7 @@ Script N(script_80246298) = SCRIPT({
     SI_VAR(5) *= 0.900390625;
     TranslateModel(SI_VAR(0), SI_VAR(2), SI_VAR(3), SI_VAR(4));
     ScaleModel(SI_VAR(0), SI_VAR(5), SI_VAR(5), SI_VAR(5));
-    SI_VAR(6) = f SI_VAR(5);
+    SI_VAR(6) =f SI_VAR(5);
     SI_VAR(6) *= 10.0;
     func_80240634_A2A874(6, SI_VAR(6));
     if (SI_VAR(6) < 2) {
@@ -638,9 +638,9 @@ NpcSettings N(npcSettings_80246680) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x1A,
@@ -690,7 +690,7 @@ Script N(script_802466E8) = SCRIPT({
             SetNpcPos(5, SI_VAR(2), SI_VAR(5), SI_VAR(4));
             GetNpcPos(6, SI_VAR(2), SI_VAR(0), SI_VAR(4));
             SetNpcPos(6, SI_VAR(2), SI_VAR(5), SI_VAR(4));
-10:
+        10:
             sleep 2;
             GetNpcVar(0, 0, SI_VAR(6));
             if (SI_VAR(6) != 0) {
@@ -719,7 +719,7 @@ Script N(script_802466E8) = SCRIPT({
             SetNpcPos(5, SI_VAR(2), SI_VAR(5), SI_VAR(4));
             GetNpcPos(6, SI_VAR(2), SI_VAR(0), SI_VAR(4));
             SetNpcPos(6, SI_VAR(2), SI_VAR(5), SI_VAR(4));
-11:
+        11:
             sleep 2;
             GetNpcVar(0, 0, SI_VAR(6));
             if (SI_VAR(6) != 0) {
@@ -738,7 +738,7 @@ Script N(script_Idle_80246BF0) = SCRIPT({
         if (SI_VAR(2) < 85) {
             GetCurrentPartner(SI_VAR(0));
             if (SI_VAR(0) != 0) {
-                0x802D2B6C();
+                func_802D2B6C();
                 sleep 15;
             }
             break;
@@ -747,7 +747,7 @@ Script N(script_Idle_80246BF0) = SCRIPT({
     }
     DisablePlayerInput(1);
     spawn {
-        0x802D2C14(1);
+        func_802D2C14(1);
         sleep 30;
         PlayerMoveTo(0, 80, 10);
         PlayerFaceNpc(0, 0);
@@ -769,7 +769,7 @@ Script N(script_Idle_80246BF0) = SCRIPT({
     PanToTarget(0, 0, 1);
     sleep 10;
     SpeakToPlayer(0, 0x120002, 0x120001, 512, 0xA0069);
-    0x802D2C14(0);
+    func_802D2C14(0);
     sleep 30;
     SetSelfVar(0, 1);
     SetPanTarget(0, 0, 136, 80);
@@ -939,7 +939,7 @@ Script N(script_Idle_80246BF0) = SCRIPT({
 Script N(script_Init_80247D54) = SCRIPT({
     GetEntryID(SI_VAR(0));
     match SI_VAR(0) {
-        0..1
+    0..1
         SetNpcAnimation(1, 0x130007);
         SetNpcAnimation(3, 0x150005);
         SetNpcAnimation(5, 0x170007);
@@ -953,7 +953,8 @@ Script N(script_Init_80247D54) = SCRIPT({
             }
             >= 92 {
                 spawn N(script_802466E8);
-            } else {
+            }
+            else {
                 RemoveNpc(-1);
             }
         }
@@ -1416,7 +1417,7 @@ Script N(script_80249AA8) = SCRIPT({
 });
 
 Script N(script_80249B48) = SCRIPT({
-    0x802D7B10(SI_ARRAY(6));
+    func_802D7B10(SI_ARRAY(6));
     GetNpcPos(5, SI_VAR(0), SI_VAR(1), SI_VAR(2));
     PlayEffect(36, 1, SI_VAR(0), SI_VAR(1), SI_VAR(2), 4, 20, 0, 0, 0, 0, 0, 0, 0);
     spawn {
@@ -1427,7 +1428,7 @@ Script N(script_80249B48) = SCRIPT({
         func_802428C8_A2CB08(6, 80, 0.5);
         LoadPath(SI_VAR(0), SI_VAR(1), SI_VAR(2), 0);
         SI_VAR(4) = 1.0;
-6:
+    6:
         GetNextPathPos();
         SetNpcPos(5, SI_VAR(1), SI_VAR(2), SI_VAR(3));
         func_80240E50_A2B090(SI_ARRAY(13), SI_ARRAY(24), SI_VAR(1), SI_VAR(2), SI_VAR(3));
@@ -1439,12 +1440,12 @@ Script N(script_80249B48) = SCRIPT({
         }
         func_80240F30_A2B170();
         SetNpcAnimation(5, 0x170006);
-        0x802CFD30(5, 0, 0, 0, 0, 0);
+        func_802CFD30(5, 0, 0, 0, 0, 0);
         SetNpcFlagBits(5, 2, 1);
-        0x802D7B10(SI_ARRAY(13));
+        func_802D7B10(SI_ARRAY(13));
     }
     sleep 20;
-    0x802D7B10(SI_ARRAY(3));
+    func_802D7B10(SI_ARRAY(3));
     GetNpcPos(2, SI_VAR(0), SI_VAR(1), SI_VAR(2));
     PlayEffect(36, 1, SI_VAR(0), SI_VAR(1), SI_VAR(2), 4, 20, 0, 0, 0, 0, 0, 0, 0);
     spawn {
@@ -1455,7 +1456,7 @@ Script N(script_80249B48) = SCRIPT({
         func_802428C8_A2CB08(3, 30, 0.5);
         LoadPath(SI_VAR(0), SI_VAR(1), SI_VAR(2), 0);
         SI_VAR(4) = 1.0;
-3:
+    3:
         GetNextPathPos();
         SetNpcPos(2, SI_VAR(1), SI_VAR(2), SI_VAR(3));
         func_80240E50_A2B090(SI_ARRAY(10), SI_ARRAY(21), SI_VAR(1), SI_VAR(2), SI_VAR(3));
@@ -1467,12 +1468,12 @@ Script N(script_80249B48) = SCRIPT({
         }
         func_80240F30_A2B170();
         SetNpcAnimation(2, 0x140009);
-        0x802CFD30(2, 0, 0, 0, 0, 0);
+        func_802CFD30(2, 0, 0, 0, 0, 0);
         SetNpcFlagBits(2, 2, 1);
-        0x802D7B10(SI_ARRAY(10));
+        func_802D7B10(SI_ARRAY(10));
     }
     sleep 20;
-    0x802D7B10(SI_ARRAY(4));
+    func_802D7B10(SI_ARRAY(4));
     GetNpcPos(3, SI_VAR(0), SI_VAR(1), SI_VAR(2));
     PlayEffect(36, 1, SI_VAR(0), SI_VAR(1), SI_VAR(2), 4, 20, 0, 0, 0, 0, 0, 0, 0);
     spawn {
@@ -1483,7 +1484,7 @@ Script N(script_80249B48) = SCRIPT({
         func_802428C8_A2CB08(4, 0xFFFFFFB0, 0.30078125);
         LoadPath(SI_VAR(0), SI_VAR(1), SI_VAR(2), 0);
         SI_VAR(4) = 1.0;
-4:
+    4:
         GetNextPathPos();
         SetNpcPos(3, SI_VAR(1), SI_VAR(2), SI_VAR(3));
         func_80240E50_A2B090(SI_ARRAY(11), SI_ARRAY(22), SI_VAR(1), SI_VAR(2), SI_VAR(3));
@@ -1495,12 +1496,12 @@ Script N(script_80249B48) = SCRIPT({
         }
         func_80240F30_A2B170();
         SetNpcAnimation(3, 0x150007);
-        0x802CFD30(3, 0, 0, 0, 0, 0);
+        func_802CFD30(3, 0, 0, 0, 0, 0);
         SetNpcFlagBits(3, 2, 1);
-        0x802D7B10(SI_ARRAY(11));
+        func_802D7B10(SI_ARRAY(11));
     }
     sleep 20;
-    0x802D7B10(SI_ARRAY(7));
+    func_802D7B10(SI_ARRAY(7));
     GetNpcPos(6, SI_VAR(0), SI_VAR(1), SI_VAR(2));
     PlayEffect(36, 1, SI_VAR(0), SI_VAR(1), SI_VAR(2), 4, 20, 0, 0, 0, 0, 0, 0, 0);
     spawn {
@@ -1511,7 +1512,7 @@ Script N(script_80249B48) = SCRIPT({
         func_802428C8_A2CB08(7, 120, 0.5);
         LoadPath(SI_VAR(0), SI_VAR(1), SI_VAR(2), 0);
         SI_VAR(4) = 1.0;
-7:
+    7:
         GetNextPathPos();
         SetNpcPos(6, SI_VAR(1), SI_VAR(2), SI_VAR(3));
         func_80240E50_A2B090(SI_ARRAY(14), SI_ARRAY(25), SI_VAR(1), SI_VAR(2), SI_VAR(3));
@@ -1523,12 +1524,12 @@ Script N(script_80249B48) = SCRIPT({
         }
         func_80240F30_A2B170();
         SetNpcAnimation(6, 0x180008);
-        0x802CFD30(6, 0, 0, 0, 0, 0);
+        func_802CFD30(6, 0, 0, 0, 0, 0);
         SetNpcFlagBits(6, 2, 1);
-        0x802D7B10(SI_ARRAY(14));
+        func_802D7B10(SI_ARRAY(14));
     }
     sleep 20;
-    0x802D7B10(SI_ARRAY(5));
+    func_802D7B10(SI_ARRAY(5));
     GetNpcPos(4, SI_VAR(0), SI_VAR(1), SI_VAR(2));
     PlayEffect(36, 1, SI_VAR(0), SI_VAR(1), SI_VAR(2), 4, 20, 0, 0, 0, 0, 0, 0, 0);
     spawn {
@@ -1539,7 +1540,7 @@ Script N(script_80249B48) = SCRIPT({
         func_802428C8_A2CB08(5, 120, 0.5);
         LoadPath(SI_VAR(0), SI_VAR(1), SI_VAR(2), 0);
         SI_VAR(4) = 1.0;
-5:
+    5:
         GetNextPathPos();
         SetNpcPos(4, SI_VAR(1), SI_VAR(2), SI_VAR(3));
         func_80240E50_A2B090(SI_ARRAY(12), SI_ARRAY(23), SI_VAR(1), SI_VAR(2), SI_VAR(3));
@@ -1551,12 +1552,12 @@ Script N(script_80249B48) = SCRIPT({
         }
         func_80240F30_A2B170();
         SetNpcAnimation(4, 0x160005);
-        0x802CFD30(4, 0, 0, 0, 0, 0);
+        func_802CFD30(4, 0, 0, 0, 0, 0);
         SetNpcFlagBits(4, 2, 1);
-        0x802D7B10(SI_ARRAY(12));
+        func_802D7B10(SI_ARRAY(12));
     }
     sleep 20;
-    0x802D7B10(SI_ARRAY(2));
+    func_802D7B10(SI_ARRAY(2));
     GetNpcPos(1, SI_VAR(0), SI_VAR(1), SI_VAR(2));
     PlayEffect(36, 1, SI_VAR(0), SI_VAR(1), SI_VAR(2), 4, 20, 0, 0, 0, 0, 0, 0, 0);
     spawn {
@@ -1567,7 +1568,7 @@ Script N(script_80249B48) = SCRIPT({
         func_802428C8_A2CB08(2, 0xFFFFFFC4, 0.5);
         LoadPath(SI_VAR(0), SI_VAR(1), SI_VAR(2), 0);
         SI_VAR(4) = 1.0;
-2:
+    2:
         GetNextPathPos();
         SetNpcPos(1, SI_VAR(1), SI_VAR(2), SI_VAR(3));
         func_80240E50_A2B090(SI_ARRAY(9), SI_ARRAY(20), SI_VAR(1), SI_VAR(2), SI_VAR(3));
@@ -1579,9 +1580,9 @@ Script N(script_80249B48) = SCRIPT({
         }
         func_80240F30_A2B170();
         SetNpcAnimation(1, 0x130008);
-        0x802CFD30(1, 0, 0, 0, 0, 0);
+        func_802CFD30(1, 0, 0, 0, 0, 0);
         SetNpcFlagBits(1, 2, 1);
-        0x802D7B10(SI_ARRAY(9));
+        func_802D7B10(SI_ARRAY(9));
     }
     sleep 20;
 });
@@ -1601,7 +1602,7 @@ s32 N(intTable_8024A9D0)[] = {
 };
 
 s32 N(unk_8024AA20)[] = {
-    0x8024F510, 0x00000000,
+    D_8024F510, 0x00000000,
 };
 
 s32 N(unk_8024AA28)[] = {
@@ -1667,7 +1668,7 @@ s32 N(unk_8024ACB8)[] = {
 // Unable to use DSL: DSL does not support script opcode 0x3C
 // *INDENT-OFF*
 Script N(script_8024ACC0) = {
-    SI_CMD(ScriptOpcode_USE_ARRAY, 0x8024F380),
+    SI_CMD(ScriptOpcode_USE_ARRAY, D_8024F380),
     SI_CMD(ScriptOpcode_CALL, DisablePlayerInput, 1),
     SI_CMD(ScriptOpcode_CALL, DisablePlayerPhysics, 1),
     SI_CMD(ScriptOpcode_CALL, func_80240880_A2AAC0, 0, 0, 0, 0, 0, 0, 0, 995, 1000),
@@ -1709,22 +1710,22 @@ s32 N(unk_8024AEC8)[] = {
 // Unable to use DSL: DSL does not support script opcode 0x30
 // *INDENT-OFF*
 Script N(script_8024AECC) = {
-    SI_CMD(ScriptOpcode_CALL, 0x802CFE80, 10, 2),
-    SI_CMD(ScriptOpcode_CALL, 0x802CFEEC, 10, 0, 1, 20, 5),
-    SI_CMD(ScriptOpcode_CALL, 0x802CFE80, 0, 2),
-    SI_CMD(ScriptOpcode_CALL, 0x802CFE80, 1, 2),
-    SI_CMD(ScriptOpcode_CALL, 0x802CFE80, 2, 2),
-    SI_CMD(ScriptOpcode_CALL, 0x802CFE80, 3, 2),
-    SI_CMD(ScriptOpcode_CALL, 0x802CFE80, 4, 2),
-    SI_CMD(ScriptOpcode_CALL, 0x802CFE80, 5, 2),
-    SI_CMD(ScriptOpcode_CALL, 0x802CFE80, 6, 2),
-    SI_CMD(ScriptOpcode_CALL, 0x802CFFC0, 0, 0, 1, 25, 12, 4, 18, 0, 0),
-    SI_CMD(ScriptOpcode_CALL, 0x802CFFC0, 1, 0, 1, 25, 12, 4, 18, 0, 0),
-    SI_CMD(ScriptOpcode_CALL, 0x802CFFC0, 2, 0, 1, 25, 12, 4, 18, 0, 0),
-    SI_CMD(ScriptOpcode_CALL, 0x802CFFC0, 3, 0, 1, 25, 12, 4, 18, 0, 0),
-    SI_CMD(ScriptOpcode_CALL, 0x802CFFC0, 4, 0, 1, 25, 12, 4, 18, 0, 0),
-    SI_CMD(ScriptOpcode_CALL, 0x802CFFC0, 5, 0, 1, 25, 12, 4, 18, 0, 0),
-    SI_CMD(ScriptOpcode_CALL, 0x802CFFC0, 6, 0, 1, 25, 12, 4, 18, 0, 0),
+    SI_CMD(ScriptOpcode_CALL, func_802CFE80, 10, 2),
+    SI_CMD(ScriptOpcode_CALL, func_802CFEEC, 10, 0, 1, 20, 5),
+    SI_CMD(ScriptOpcode_CALL, func_802CFE80, 0, 2),
+    SI_CMD(ScriptOpcode_CALL, func_802CFE80, 1, 2),
+    SI_CMD(ScriptOpcode_CALL, func_802CFE80, 2, 2),
+    SI_CMD(ScriptOpcode_CALL, func_802CFE80, 3, 2),
+    SI_CMD(ScriptOpcode_CALL, func_802CFE80, 4, 2),
+    SI_CMD(ScriptOpcode_CALL, func_802CFE80, 5, 2),
+    SI_CMD(ScriptOpcode_CALL, func_802CFE80, 6, 2),
+    SI_CMD(ScriptOpcode_CALL, func_802CFFC0, 0, 0, 1, 25, 12, 4, 18, 0, 0),
+    SI_CMD(ScriptOpcode_CALL, func_802CFFC0, 1, 0, 1, 25, 12, 4, 18, 0, 0),
+    SI_CMD(ScriptOpcode_CALL, func_802CFFC0, 2, 0, 1, 25, 12, 4, 18, 0, 0),
+    SI_CMD(ScriptOpcode_CALL, func_802CFFC0, 3, 0, 1, 25, 12, 4, 18, 0, 0),
+    SI_CMD(ScriptOpcode_CALL, func_802CFFC0, 4, 0, 1, 25, 12, 4, 18, 0, 0),
+    SI_CMD(ScriptOpcode_CALL, func_802CFFC0, 5, 0, 1, 25, 12, 4, 18, 0, 0),
+    SI_CMD(ScriptOpcode_CALL, func_802CFFC0, 6, 0, 1, 25, 12, 4, 18, 0, 0),
     SI_CMD(ScriptOpcode_CALL, SetNpcFlagBits, 10, 0x40000, 1),
     SI_CMD(ScriptOpcode_CALL, SetNpcAnimation, 7, 0x800017),
     SI_CMD(ScriptOpcode_CALL, SetNpcAnimation, 8, 0x800021),
@@ -1757,8 +1758,8 @@ Script N(script_8024AECC) = {
     SI_CMD(ScriptOpcode_CALL, LoadSettings, 0, N(unk_802496EC)),
     SI_CMD(ScriptOpcode_CALL, func_802440D0_A2E310),
     SI_CMD(ScriptOpcode_SLEEP_FRAMES, 50),
-    SI_CMD(ScriptOpcode_CALL, 0x802CFD30, 7, 8, 0, 0, 0, 0),
-    SI_CMD(ScriptOpcode_CALL, 0x802CFD30, 8, 8, 0, 0, 0, 0),
+    SI_CMD(ScriptOpcode_CALL, func_802CFD30, 7, 8, 0, 0, 0, 0),
+    SI_CMD(ScriptOpcode_CALL, func_802CFD30, 8, 8, 0, 0, 0, 0),
     SI_CMD(ScriptOpcode_CALL, SetNpcPos, 7, 0xFFFFFFC0, 135, 85),
     SI_CMD(ScriptOpcode_CALL, SetNpcPos, 8, 0xFFFFFFC0, 135, 85),
     SI_CMD(ScriptOpcode_SPAWN_THREAD),
@@ -1768,8 +1769,8 @@ Script N(script_8024AECC) = {
             SI_CMD(ScriptOpcode_IF_GT, SI_VAR(0), 255),
                 SI_CMD(ScriptOpcode_SET, SI_VAR(0), 255),
             SI_CMD(ScriptOpcode_END_IF),
-            SI_CMD(ScriptOpcode_CALL, 0x802CFD30, 7, 8, 0, 0, 0, SI_VAR(0)),
-            SI_CMD(ScriptOpcode_CALL, 0x802CFD30, 8, 8, 0, 0, 0, SI_VAR(0)),
+            SI_CMD(ScriptOpcode_CALL, func_802CFD30, 7, 8, 0, 0, 0, SI_VAR(0)),
+            SI_CMD(ScriptOpcode_CALL, func_802CFD30, 8, 8, 0, 0, 0, SI_VAR(0)),
             SI_CMD(ScriptOpcode_SLEEP_FRAMES, 1),
         SI_CMD(ScriptOpcode_END_LOOP),
     SI_CMD(ScriptOpcode_END_SPAWN_THREAD),
@@ -1808,8 +1809,8 @@ Script N(script_8024AECC) = {
         SI_CMD(ScriptOpcode_SLEEP_FRAMES, 5),
     SI_CMD(ScriptOpcode_END_LOOP),
     SI_CMD(ScriptOpcode_SLEEP_FRAMES, 30),
-    SI_CMD(ScriptOpcode_CALL, 0x802CFD30, 7, 8, 0, 0, 0, 255),
-    SI_CMD(ScriptOpcode_CALL, 0x802CFD30, 8, 8, 0, 0, 0, 255),
+    SI_CMD(ScriptOpcode_CALL, func_802CFD30, 7, 8, 0, 0, 0, 255),
+    SI_CMD(ScriptOpcode_CALL, func_802CFD30, 8, 8, 0, 0, 0, 255),
     SI_CMD(ScriptOpcode_SPAWN_THREAD),
         SI_CMD(ScriptOpcode_SET, SI_VAR(0), 0),
         SI_CMD(ScriptOpcode_LOOP, 4),
@@ -1817,13 +1818,13 @@ Script N(script_8024AECC) = {
             SI_CMD(ScriptOpcode_IF_GT, SI_VAR(0), 255),
                 SI_CMD(ScriptOpcode_SET, SI_VAR(0), 255),
             SI_CMD(ScriptOpcode_END_IF),
-            SI_CMD(ScriptOpcode_CALL, 0x802CFD30, 7, 8, SI_VAR(0), SI_VAR(0), SI_VAR(0), 255),
-            SI_CMD(ScriptOpcode_CALL, 0x802CFD30, 8, 8, SI_VAR(0), SI_VAR(0), SI_VAR(0), 255),
+            SI_CMD(ScriptOpcode_CALL, func_802CFD30, 7, 8, SI_VAR(0), SI_VAR(0), SI_VAR(0), 255),
+            SI_CMD(ScriptOpcode_CALL, func_802CFD30, 8, 8, SI_VAR(0), SI_VAR(0), SI_VAR(0), 255),
             SI_CMD(ScriptOpcode_SLEEP_FRAMES, 1),
         SI_CMD(ScriptOpcode_END_LOOP),
     SI_CMD(ScriptOpcode_END_SPAWN_THREAD),
     SI_CMD(ScriptOpcode_SLEEP_FRAMES, 3),
-    SI_CMD(ScriptOpcode_CALL, 0x802D7B10, SI_ARRAY(17)),
+    SI_CMD(ScriptOpcode_CALL, func_802D7B10, SI_ARRAY(17)),
     SI_CMD(ScriptOpcode_SPAWN_THREAD),
         SI_CMD(ScriptOpcode_CALL, EnableTexPanning, 25, 1),
         SI_CMD(ScriptOpcode_CALL, EnableTexPanning, 15, 1),
@@ -1933,7 +1934,7 @@ Script N(script_8024AECC) = {
         SI_CMD(ScriptOpcode_SLEEP_FRAMES, 5),
     SI_CMD(ScriptOpcode_END_LOOP),
     SI_CMD(ScriptOpcode_SLEEP_FRAMES, 27),
-    SI_CMD(ScriptOpcode_CALL, 0x802D7B10, SI_ARRAY(17)),
+    SI_CMD(ScriptOpcode_CALL, func_802D7B10, SI_ARRAY(17)),
     SI_CMD(ScriptOpcode_CALL, func_80240880_A2AAC0, 0, 0, 0, 0, 0, 0, 0, 995, 1000),
     SI_CMD(ScriptOpcode_CALL, func_80240DA0_A2AFE0, 0, 25),
     SI_CMD(ScriptOpcode_CALL, SetPanTarget, 0, 0xFFFFFFDA, 210, 85),
@@ -2099,8 +2100,8 @@ Script N(script_8024AECC) = {
     SI_CMD(ScriptOpcode_CALL, SetNpcAnimation, 6, 0x180008),
     SI_CMD(ScriptOpcode_SPAWN_THREAD),
         SI_CMD(ScriptOpcode_SLEEP_FRAMES, 5),
-        SI_CMD(ScriptOpcode_CALL, 0x802D7B10, SI_ARRAY(18)),
-        SI_CMD(ScriptOpcode_CALL, 0x802D7B10, SI_ARRAY(19)),
+        SI_CMD(ScriptOpcode_CALL, func_802D7B10, SI_ARRAY(18)),
+        SI_CMD(ScriptOpcode_CALL, func_802D7B10, SI_ARRAY(19)),
     SI_CMD(ScriptOpcode_END_SPAWN_THREAD),
     SI_CMD(ScriptOpcode_CALL, PlayEffect, 57, 0, 18, 256, 0xFFFFFFEB, SI_FIXED(0.40625), 60, 0, 0, 0, 0, 0, 0, 0),
     SI_CMD(ScriptOpcode_SET, SI_VAR(0), 120),
@@ -2141,20 +2142,20 @@ Script N(script_8024AECC) = {
     SI_CMD(ScriptOpcode_END_SPAWN_THREAD),
     SI_CMD(ScriptOpcode_SPAWN_THREAD),
         SI_CMD(ScriptOpcode_SLEEP_FRAMES, 28),
-        SI_CMD(ScriptOpcode_CALL, 0x802CFD30, 0, 5, 8, 1, 1, 0),
+        SI_CMD(ScriptOpcode_CALL, func_802CFD30, 0, 5, 8, 1, 1, 0),
     SI_CMD(ScriptOpcode_END_SPAWN_THREAD),
     SI_CMD(ScriptOpcode_SET, SI_VAR(0), 255),
     SI_CMD(ScriptOpcode_LOOP, 20),
-        SI_CMD(ScriptOpcode_CALL, 0x802CFD30, 1, 7, SI_VAR(0), 0, 0, 0),
-        SI_CMD(ScriptOpcode_CALL, 0x802CFD30, 2, 7, SI_VAR(0), 0, 0, 0),
-        SI_CMD(ScriptOpcode_CALL, 0x802CFD30, 3, 7, SI_VAR(0), 0, 0, 0),
-        SI_CMD(ScriptOpcode_CALL, 0x802CFD30, 4, 7, SI_VAR(0), 0, 0, 0),
-        SI_CMD(ScriptOpcode_CALL, 0x802CFD30, 5, 7, SI_VAR(0), 0, 0, 0),
-        SI_CMD(ScriptOpcode_CALL, 0x802CFD30, 6, 7, SI_VAR(0), 0, 0, 0),
+        SI_CMD(ScriptOpcode_CALL, func_802CFD30, 1, 7, SI_VAR(0), 0, 0, 0),
+        SI_CMD(ScriptOpcode_CALL, func_802CFD30, 2, 7, SI_VAR(0), 0, 0, 0),
+        SI_CMD(ScriptOpcode_CALL, func_802CFD30, 3, 7, SI_VAR(0), 0, 0, 0),
+        SI_CMD(ScriptOpcode_CALL, func_802CFD30, 4, 7, SI_VAR(0), 0, 0, 0),
+        SI_CMD(ScriptOpcode_CALL, func_802CFD30, 5, 7, SI_VAR(0), 0, 0, 0),
+        SI_CMD(ScriptOpcode_CALL, func_802CFD30, 6, 7, SI_VAR(0), 0, 0, 0),
         SI_CMD(ScriptOpcode_SLEEP_FRAMES, 1),
     SI_CMD(ScriptOpcode_END_LOOP),
     SI_CMD(ScriptOpcode_SLEEP_FRAMES, 15),
-    SI_CMD(ScriptOpcode_CALL, 0x802CFD30, 0, 7, 255, 0, 0, 0),
+    SI_CMD(ScriptOpcode_CALL, func_802CFD30, 0, 7, 255, 0, 0, 0),
     SI_CMD(ScriptOpcode_CALL, PlayEffect, 125, 2, 0xFFFFFF7E, 220, 130, 1, 0, 0, 0, 0, 0, 0, 0, 0),
     SI_CMD(ScriptOpcode_SET, SI_ARRAY(0), SI_VAR(15)),
     SI_CMD(ScriptOpcode_SET, SI_VAR(0), 0xFFFFFF7E),
@@ -2163,7 +2164,7 @@ Script N(script_8024AECC) = {
     SI_CMD(ScriptOpcode_ADD_F, SI_VAR(1), SI_FIXED(-30.0)),
     SI_CMD(ScriptOpcode_CALL, SetNpcPos, 9, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_SPAWN, N(script_80249AA8)),
-    SI_CMD(ScriptOpcode_CALL, 0x802D7B10, SI_ARRAY(1)),
+    SI_CMD(ScriptOpcode_CALL, func_802D7B10, SI_ARRAY(1)),
     SI_CMD(ScriptOpcode_CALL, GetNpcPos, 0, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, PlayEffect, 36, 1, SI_VAR(0), SI_VAR(1), SI_VAR(2), 4, 20, 0, 0, 0, 0, 0, 0, 0),
     SI_CMD(ScriptOpcode_SPAWN_THREAD),
@@ -2186,9 +2187,9 @@ Script N(script_8024AECC) = {
         SI_CMD(ScriptOpcode_END_IF),
         SI_CMD(ScriptOpcode_CALL, func_80240F30_A2B170),
         SI_CMD(ScriptOpcode_CALL, SetNpcAnimation, 0, 0x120004),
-        SI_CMD(ScriptOpcode_CALL, 0x802CFD30, 0, 0, 0, 0, 0, 0),
+        SI_CMD(ScriptOpcode_CALL, func_802CFD30, 0, 0, 0, 0, 0, 0),
         SI_CMD(ScriptOpcode_CALL, SetNpcFlagBits, 0, 2, 1),
-        SI_CMD(ScriptOpcode_CALL, 0x802D7B10, SI_ARRAY(8)),
+        SI_CMD(ScriptOpcode_CALL, func_802D7B10, SI_ARRAY(8)),
     SI_CMD(ScriptOpcode_END_SPAWN_THREAD),
     SI_CMD(ScriptOpcode_SLEEP_FRAMES, 15),
     SI_CMD(ScriptOpcode_CALL, func_80240DA0_A2AFE0, 0, 50),
@@ -2331,9 +2332,9 @@ Script N(script_8024DCD4) = SCRIPT({
         MakeLerp(0, 60, 30, 10);
         loop {
             UpdateLerp();
-            SI_VAR(2) = f SI_VAR(0);
+            SI_VAR(2) =f SI_VAR(0);
             SI_VAR(2) *= 0.1005859375;
-            SI_VAR(2) += f SI_MAP_VAR(11);
+            SI_VAR(2) +=f SI_MAP_VAR(11);
             TranslateGroup(146, 0, SI_VAR(2), 0);
             TranslateGroup(144, 0, SI_VAR(2), 0);
             RotateGroup(144, SI_MAP_VAR(10), 0, 1, 0);
@@ -2345,9 +2346,9 @@ Script N(script_8024DCD4) = SCRIPT({
         MakeLerp(60, 0, 30, 10);
         loop {
             UpdateLerp();
-            SI_VAR(2) = f SI_VAR(0);
+            SI_VAR(2) =f SI_VAR(0);
             SI_VAR(2) *= 0.1005859375;
-            SI_VAR(2) += f SI_MAP_VAR(11);
+            SI_VAR(2) +=f SI_MAP_VAR(11);
             TranslateGroup(146, 0, SI_VAR(2), 0);
             TranslateGroup(144, 0, SI_VAR(2), 0);
             RotateGroup(144, SI_MAP_VAR(10), 0, 1, 0);
@@ -2393,8 +2394,8 @@ Script N(script_8024E00C) = SCRIPT({
     if (SI_SAVE_VAR(0) < 92) {
         EnableModel(147, 0);
     } else {
-        0x802C90FC(147, 0, -1);
-        0x802C94A0(0, func_8024564C_A2F88C, 0);
+        func_802C90FC(147, 0, -1);
+        func_802C94A0(0, func_8024564C_A2F88C, 0);
         EnableModel(147, 1);
         func_8024569C_A2F8DC(127);
         EnableGroup(144, 1);
@@ -2439,8 +2440,8 @@ Script N(script_8024E148) = SCRIPT({
     PlaySoundAt(163, 0, 0, 250, 0);
     PlayEffect(53, 2, 0, 250, 0, 10, SI_VAR(9), 0, 0, 0, 0, 0, 0, 0);
     sleep 20;
-    0x802C90FC(145, 1, -1);
-    0x802C94A0(1, func_802456C8_A2F908, 0);
+    func_802C90FC(145, 1, -1);
+    func_802C94A0(1, func_802456C8_A2F908, 0);
     EnableGroup(146, 1);
     spawn {
         MakeLerp(0, 200, 75, 1);
@@ -2454,8 +2455,8 @@ Script N(script_8024E148) = SCRIPT({
         }
     }
     sleep 60;
-    0x802C90FC(147, 0, -1);
-    0x802C94A0(0, func_8024564C_A2F88C, 0);
+    func_802C90FC(147, 0, -1);
+    func_802C94A0(0, func_8024564C_A2F88C, 0);
     EnableModel(147, 1);
     MakeLerp(0, 127, 60, 10);
     loop {
@@ -2468,7 +2469,7 @@ Script N(script_8024E148) = SCRIPT({
     }
     sleep 40;
     PlaySoundAt(1187, 0, 0, 250, 0);
-    0x802D7B10(SI_VAR(9));
+    func_802D7B10(SI_VAR(9));
     EnableGroup(144, 1);
     MakeLerp(200, 0, 45, 4);
     loop {
@@ -2626,7 +2627,7 @@ Script N(script_8024ED24) = SCRIPT({
         MakeLerp(0xFFFFFEA2, 0xFFFFFFBA, 60, 4);
         loop {
             UpdateLerp();
-            SI_VAR(2) = f SI_VAR(0);
+            SI_VAR(2) =f SI_VAR(0);
             SI_VAR(2) /= 10;
             SetCamPitch(0, 17.0, SI_VAR(2));
             SetCamSpeed(0, 90.0);

@@ -188,9 +188,9 @@ Script N(script_80241570) = SCRIPT({
         SetPlayerAnimation(0x8000D);
         loop 50 {
             func_802400F8_B7A148(SI_VAR(0), -15.0, SI_VAR(2));
-            SI_VAR(1) += f SI_VAR(2);
+            SI_VAR(1) +=f SI_VAR(2);
             SI_VAR(1) *= 0.9306640625;
-            SI_VAR(0) += f SI_VAR(1);
+            SI_VAR(0) +=f SI_VAR(1);
             TranslateModel(SI_VAR(13), 0, SI_VAR(0), 0);
             TranslateModel(SI_VAR(14), 0, SI_VAR(0), 0);
             SI_VAR(3) = SI_VAR(7);
@@ -246,9 +246,9 @@ Script N(script_80241570) = SCRIPT({
             SI_VAR(1) = 0.0;
             loop 100 {
                 func_802400F8_B7A148(SI_VAR(0), 20.0, SI_VAR(2));
-                SI_VAR(1) += f SI_VAR(2);
+                SI_VAR(1) +=f SI_VAR(2);
                 SI_VAR(1) *= 0.9306640625;
-                SI_VAR(0) += f SI_VAR(1);
+                SI_VAR(0) +=f SI_VAR(1);
                 TranslateModel(SI_VAR(13), 0, SI_VAR(0), 0);
                 TranslateModel(SI_VAR(14), 0, SI_VAR(0), 0);
                 sleep 1;
@@ -269,20 +269,20 @@ Script N(script_80241E10) = SCRIPT({
     SI_VAR(6) = 0;
     SI_VAR(7) = 0;
     loop 60 {
-        SI_VAR(2) = f SI_MAP_VAR(0);
-        SI_VAR(3) = f SI_MAP_VAR(1);
-        SI_VAR(2) -= f SI_VAR(0);
-        SI_VAR(3) -= f SI_VAR(1);
-        SI_VAR(4) = f SI_VAR(2);
-        SI_VAR(5) = f SI_VAR(3);
+        SI_VAR(2) =f SI_MAP_VAR(0);
+        SI_VAR(3) =f SI_MAP_VAR(1);
+        SI_VAR(2) -=f SI_VAR(0);
+        SI_VAR(3) -=f SI_VAR(1);
+        SI_VAR(4) =f SI_VAR(2);
+        SI_VAR(5) =f SI_VAR(3);
         SI_VAR(4) *= 0.09375;
         SI_VAR(5) *= 0.09375;
         SI_VAR(6) *= 0.80078125;
         SI_VAR(7) *= 0.80078125;
-        SI_VAR(6) += f SI_VAR(4);
-        SI_VAR(7) += f SI_VAR(5);
-        SI_VAR(0) += f SI_VAR(6);
-        SI_VAR(1) += f SI_VAR(7);
+        SI_VAR(6) +=f SI_VAR(4);
+        SI_VAR(7) +=f SI_VAR(5);
+        SI_VAR(0) +=f SI_VAR(6);
+        SI_VAR(1) +=f SI_VAR(7);
         TranslateModel(55, SI_MAP_VAR(0), 0, 0);
         TranslateModel(57, SI_MAP_VAR(1), 0, 0);
         func_802401CC_B7A21C(55, SI_VAR(6));
@@ -296,8 +296,8 @@ Script N(script_80241FD8) = SCRIPT({
     MakeLerp(0, 45, 30, 5);
     loop {
         UpdateLerp();
-        SI_MAP_VAR(1) = f SI_VAR(0);
-        SI_MAP_VAR(0) = f SI_MAP_VAR(1);
+        SI_MAP_VAR(1) =f SI_VAR(0);
+        SI_MAP_VAR(0) =f SI_MAP_VAR(1);
         SI_MAP_VAR(1) *= 1.5;
         SI_MAP_VAR(0) *= -1;
         sleep 1;
@@ -750,7 +750,7 @@ Script N(script_NpcAI_802432A0) = SCRIPT({
 });
 
 s32 unk_missing_802432DC[] = {
-    0x00000000, 0x00140016, 0x00000000, 0x00000000, N(script_NpcAI_802432A0), 0x80077F70, 0x00000000, 0x8007809C,
+    0x00000000, 0x00140016, 0x00000000, 0x00000000, N(script_NpcAI_802432A0), EnemyNpcHit, 0x00000000, EnemyNpcDefeat,
     0x00000000, 0x00000000, 0x00060000,
 };
 
@@ -761,9 +761,9 @@ NpcSettings N(npcSettings_80243308) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x6,

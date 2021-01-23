@@ -62,7 +62,8 @@ Script N(script_80240640) = SCRIPT({
     match SI_SAVE_VAR(0) {
         < 0xFFFFFFD0 {
             SetMusicTrack(0, 27, 1, 8);
-        } else {
+        }
+        else {
             SetMusicTrack(0, 26, 0, 8);
         }
     }
@@ -76,7 +77,8 @@ Script N(script_802406C0) = SCRIPT({
         }
         < 0xFFFFFFF0 {
             SetMusicTrack(0, 31, 0, 8);
-        } else {
+        }
+        else {
             SetMusicTrack(0, 29, 0, 8);
         }
     }
@@ -93,7 +95,7 @@ Script N(script_80240768) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EAB04, 100, 0, 0xFFFFFFD8, 0, 4, 0x80000000);
+    MakeEntity(D_802EAB04, 100, 0, 0xFFFFFFD8, 0, 4, 0x80000000);
     AssignPanelFlag(SI_SAVE_FLAG(933));
 });
 
@@ -130,8 +132,8 @@ Script N(script_EnterWalk_80240910) = SCRIPT({
     SI_VAR(0) = 240.0;
     loop 20 {
         SI_VAR(0) -= 12.0;
-        0x802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
-        0x802CFD30(1, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(1, 7, SI_VAR(0), 0, 0, 0);
         sleep 1;
     }
     sleep 10;
@@ -305,7 +307,7 @@ Script N(script_80241390) = SCRIPT({
 
 Script N(script_802413D8) = SCRIPT({
     DisablePlayerInput(1);
-    0x802D2B6C();
+    func_802D2B6C();
     if (SI_AREA_FLAG(3) == 0) {
         await N(script_802412FC);
         SI_AREA_FLAG(3) = 1;
@@ -393,8 +395,8 @@ Script N(script_8024175C) = SCRIPT({
     SI_VAR(0) = 0.0;
     loop 20 {
         SI_VAR(0) += 12.0;
-        0x802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
-        0x802CFD30(1, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(1, 7, SI_VAR(0), 0, 0, 0);
         sleep 1;
     }
     sleep 10;
@@ -423,8 +425,8 @@ Script N(script_8024175C) = SCRIPT({
     SI_VAR(0) = 240.0;
     loop 20 {
         SI_VAR(0) -= 12.0;
-        0x802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
-        0x802CFD30(1, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(1, 7, SI_VAR(0), 0, 0, 0);
         sleep 1;
     }
     SetNpcPos(0, 0, 0xFFFFFC18, 0);

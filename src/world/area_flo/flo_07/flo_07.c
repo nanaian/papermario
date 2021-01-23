@@ -78,7 +78,8 @@ Script N(script_802407A0) = SCRIPT({
         match SI_SAVE_VAR(0) {
             < 53 {
                 SetMusicTrack(0, 48, 0, 8);
-            } else {
+            }
+            else {
                 SetMusicTrack(0, 49, 0, 8);
             }
         }
@@ -87,13 +88,13 @@ Script N(script_802407A0) = SCRIPT({
 });
 
 Script N(script_8024086C) = SCRIPT({
-    0x802D5FF8(137, 1);
+    func_802D5FF8(137, 1);
 });
 
 Script N(script_80240890) = SCRIPT({
     FadeOutMusic(0, 250);
     sleep 10;
-    0x802D5FD8();
+    func_802D5FD8();
 });
 
 s32 pad_0008CC[] = {
@@ -124,10 +125,10 @@ Script N(script_8024096C) = SCRIPT({
     SI_VAR(14) = SI_VAR(4);
     SI_VAR(12) -= SI_VAR(0);
     SI_VAR(13) -= SI_VAR(1);
-    SI_VAR(0) = f SI_VAR(12);
+    SI_VAR(0) =f SI_VAR(12);
     SI_VAR(0) /= 100.0;
     SI_VAR(15) = 100.0;
-    SI_VAR(15) /= f SI_VAR(0);
+    SI_VAR(15) /=f SI_VAR(0);
     SI_VAR(15) += 11;
     SI_VAR(5) = 200;
     SI_VAR(5) /= SI_VAR(15);
@@ -529,7 +530,7 @@ Script N(script_80241DBC) = SCRIPT({
         SI_SAVE_FLAG(1396) = 1;
     }
     PlaySound(1980);
-    0x802D62E4(956);
+    func_802D62E4(956);
     SI_AREA_FLAG(6) = 1;
     sleep 20;
     SpeakToPlayer(0, 0xC80002, 0xC80001, 0, 0x11006A);
@@ -592,7 +593,8 @@ Script N(script_Interact_80242044) = SCRIPT({
         }
         < 60 {
             SpeakToPlayer(-1, 0xC80002, 0xC80001, 0, 0x110076);
-        } else {
+        }
+        else {
             SpeakToPlayer(-1, 0xC80002, 0xC80001, 0, 0x110077);
         }
     }

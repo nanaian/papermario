@@ -87,13 +87,13 @@ Script N(script_80240510) = SCRIPT({
 });
 
 Script N(script_802405E4) = SCRIPT({
-    0x802D5FF8(130, 0);
+    func_802D5FF8(130, 0);
 });
 
 Script N(script_80240608) = SCRIPT({
     FadeOutMusic(0, 500);
     sleep 15;
-    0x802D5FD8();
+    func_802D5FD8();
 });
 
 s32 pad_000644[] = {
@@ -168,9 +168,9 @@ NpcSettings N(npcSettings_8024087C) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xE,
@@ -342,7 +342,7 @@ Script N(script_Hit_8024104C) = SCRIPT({
             == 4 {}
             == 6 {}
             else {
-                0x8004580C(SI_VAR(0));
+                func_8004580C(SI_VAR(0));
                 if (SI_VAR(0) == 0) {
                     sleep 25;
                     DisablePlayerInput(0);
@@ -362,7 +362,7 @@ Script N(script_Hit_8024104C) = SCRIPT({
     SetNpcAnimation(2, 0x6D0003);
     SetNpcAnimation(3, 0x6D0004);
     spawn {
-10:
+    10:
         SetNpcFlagBits(2, 2, 1);
         SetNpcFlagBits(3, 2, 1);
         sleep 2;
@@ -381,7 +381,7 @@ Script N(script_Hit_8024104C) = SCRIPT({
         SI_VAR(1) = 0xFFFFFFE5;
         SI_VAR(2) = 0xFFFFFFCE;
     }
-    0x802D2C14(1);
+    func_802D2C14(1);
     SetNpcFlagBits(0xFFFFFFFC, 256, 1);
     SetPlayerSpeed(3.0);
     PlayerMoveTo(SI_VAR(1), 0, 0);
@@ -434,7 +434,7 @@ Script N(script_Hit_8024104C) = SCRIPT({
         SpeakToPlayer(1, 0x60006, 0x60001, 0, 0xF0057);
         SetPlayerAnimation(0x10029);
     }
-    0x802D2C14(0);
+    func_802D2C14(0);
     sleep 20;
     SetNpcAnimation(1, 0x60001);
     PlaySoundAtNpc(1, 610, 0);
@@ -574,25 +574,25 @@ Script N(script_Defeat_80241EE0) = SCRIPT({
             SetNpcAnimation(-1, 0x6D0007);
             SetNpcSpeed(-1, 10.0);
             NpcMoveTo(-1, 400, 0, 0);
-0:
+        0:
             if (SI_MAP_FLAG(0) == 0) {
                 sleep 1;
                 goto 0;
             }
             GetNpcPos(2, SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(3) -= f SI_VAR(0);
-            SI_VAR(4) -= f SI_VAR(1);
-            SI_VAR(5) -= f SI_VAR(2);
+            SI_VAR(3) -=f SI_VAR(0);
+            SI_VAR(4) -=f SI_VAR(1);
+            SI_VAR(5) -=f SI_VAR(2);
             SI_VAR(3) /= 60.0;
             SI_VAR(4) /= 60.0;
             SI_VAR(5) /= 60.0;
             SI_VAR(6) = 2.1669921875;
             SI_VAR(7) = 100.0;
             loop 60 {
-                SI_VAR(0) += f SI_VAR(3);
-                SI_VAR(1) += f SI_VAR(4);
-                SI_VAR(2) += f SI_VAR(5);
-                SI_VAR(7) += f SI_VAR(6);
+                SI_VAR(0) +=f SI_VAR(3);
+                SI_VAR(1) +=f SI_VAR(4);
+                SI_VAR(2) +=f SI_VAR(5);
+                SI_VAR(7) +=f SI_VAR(6);
                 func_80240314_DDF624(SI_VAR(0), SI_VAR(1), SI_VAR(2), SI_VAR(7));
                 sleep 1;
             }

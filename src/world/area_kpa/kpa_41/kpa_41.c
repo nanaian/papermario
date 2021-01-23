@@ -34,7 +34,7 @@ Script N(script_80240080) = SCRIPT({
     UseDoorSounds(1);
     spawn {
         sleep 30;
-        0x802D5FA4(7);
+        func_802D5FA4(7);
     }
 });
 
@@ -106,7 +106,8 @@ Script N(script_EnterWalk_8024041C) = SCRIPT({
     match SI_VAR(0) {
         == 2 {
             SI_AREA_VAR(11) = 5;
-        } else {
+        }
+        else {
         }
     }
     SI_VAR(0) = N(script_8024039C);

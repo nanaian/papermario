@@ -268,10 +268,10 @@ s32 N(unk_80241930)[] = {
 
 Script N(script_80241934) = SCRIPT({
     group 0;
-    0x802D5830(2);
+    func_802D5830(2);
     sleep 40;
     ShowGotItem(SI_VAR(0), 0, 0);
-    0x802D5830(0);
+    func_802D5830(0);
     return;
 });
 
@@ -297,9 +297,9 @@ Script N(script_8024199C) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA0E8, 445, 60, 80, 0, 0x80000000);
+    MakeEntity(D_802EA0E8, 445, 60, 80, 0, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1504));
-    MakeEntity(0x802EA0E8, 445, 60, 0xFFFFFFB0, 0, 0x80000000);
+    MakeEntity(D_802EA0E8, 445, 60, 0xFFFFFFB0, 0, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1505));
 });
 

@@ -68,7 +68,8 @@ Script N(script_80240850) = SCRIPT({
         }
         == 4 {
             FadeOutMusic(0, 500);
-        } else {
+        }
+        else {
             SetMusicTrack(0, 32, 0, 8);
         }
     }
@@ -82,7 +83,8 @@ Script N(script_802408E0) = SCRIPT({
         }
         == 4 {
             SI_VAR(0) = 1;
-        } else {
+        }
+        else {
             return;
         }
     }
@@ -189,9 +191,9 @@ NpcSettings N(npcSettings_80240F00) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xE,
@@ -214,12 +216,12 @@ Script N(script_80240F98) = {
         SI_CMD(ScriptOpcode_SLEEP_FRAMES, 10),
         SI_CMD(ScriptOpcode_CALL, GetCurrentPartner, SI_VAR(0)),
         SI_CMD(ScriptOpcode_IF_NE, SI_VAR(0), 0),
-            SI_CMD(ScriptOpcode_CALL, 0x802D2B6C),
+            SI_CMD(ScriptOpcode_CALL, func_802D2B6C),
             SI_CMD(ScriptOpcode_SLEEP_FRAMES, 30),
-            SI_CMD(ScriptOpcode_CALL, 0x802D2C14, 1),
+            SI_CMD(ScriptOpcode_CALL, func_802D2C14, 1),
             SI_CMD(ScriptOpcode_CALL, SetNpcFlagBits, 0xFFFFFFFC, 256, 1),
             SI_CMD(ScriptOpcode_SLEEP_FRAMES, 45),
-            SI_CMD(ScriptOpcode_CALL, 0x802D2C14, 0),
+            SI_CMD(ScriptOpcode_CALL, func_802D2C14, 0),
         SI_CMD(ScriptOpcode_END_IF),
     SI_CMD(ScriptOpcode_END_SPAWN_THREAD),
     SI_CMD(ScriptOpcode_CALL, SpeakToPlayer, 0, 0x76000A, 0x760002, 0, 0xF005F),
@@ -433,7 +435,7 @@ Script N(script_80241AC4) = {
             SI_CMD(ScriptOpcode_END_IF),
         SI_CMD(ScriptOpcode_END_LOOP),
         SI_CMD(ScriptOpcode_CALL, PlaySound, 1901),
-        SI_CMD(ScriptOpcode_CALL, 0x802D62E4, 877),
+        SI_CMD(ScriptOpcode_CALL, func_802D62E4, 877),
     SI_CMD(ScriptOpcode_ELSE),
         SI_CMD(ScriptOpcode_SET, SI_VAR(0), SI_VAR(9)),
         SI_CMD(ScriptOpcode_SUB, SI_VAR(0), 0),
@@ -455,7 +457,7 @@ Script N(script_80241AC4) = {
                     SI_CMD(ScriptOpcode_CALL, SetNpcJumpscale, SI_VAR(9), SI_FIXED(1.0)),
                     SI_CMD(ScriptOpcode_CALL, NpcJump0, SI_VAR(9), SI_VAR(3), SI_VAR(4), SI_VAR(5), 10),
                 SI_CMD(ScriptOpcode_CASE_EQ, 2),
-                    SI_CMD(ScriptOpcode_CALL, 0x802CDE68, SI_VAR(9), 10),
+                    SI_CMD(ScriptOpcode_CALL, func_802CDE68, SI_VAR(9), 10),
                     SI_CMD(ScriptOpcode_SPAWN_THREAD),
                         SI_CMD(ScriptOpcode_SET, SI_VAR(3), 0),
                         SI_CMD(ScriptOpcode_LOOP, 10),
@@ -481,7 +483,7 @@ Script N(script_80241AC4) = {
                         SI_CMD(ScriptOpcode_SLEEP_FRAMES, 7),
                     SI_CMD(ScriptOpcode_END_LOOP),
                     SI_CMD(ScriptOpcode_SLEEP_FRAMES, 6),
-                    SI_CMD(ScriptOpcode_CALL, 0x802CDE68, SI_VAR(9), 0),
+                    SI_CMD(ScriptOpcode_CALL, func_802CDE68, SI_VAR(9), 0),
                     SI_CMD(ScriptOpcode_CALL, SetNpcAnimation, SI_VAR(9), 0x3B0001),
                     SI_CMD(ScriptOpcode_CALL, NpcJump0, SI_VAR(9), 0xFFFFFF1A, 0, 63, 10),
                     SI_CMD(ScriptOpcode_CALL, InterpNpcYaw, SI_VAR(9), 90, 0),

@@ -124,11 +124,11 @@ Script N(script_80242C30) = SCRIPT({
     DisablePlayerInput(1);
     GetCurrentPartner(SI_VAR(0));
     if (SI_VAR(0) != 0) {
-        0x802D2B6C();
+        func_802D2B6C();
         sleep 20;
         loop {
             sleep 1;
-            0x802D249C(SI_VAR(0));
+            func_802D249C(SI_VAR(0));
             if (SI_VAR(0) == 1) {
                 break;
             }
@@ -293,13 +293,13 @@ Script N(script_802433B8) = SCRIPT({
         SI_VAR(12) = 0;
         spawn N(script_UpdateTexturePan_80243310);
     }
-    0x802C90FC(20, 0, -1);
-    0x802C90FC(22, 0, -1);
-    0x802C90FC(37, 0, -1);
-    0x802C90FC(39, 0, -1);
-    0x802C90FC(54, 0, -1);
-    0x802C90FC(56, 0, -1);
-    0x802C94A0(0, func_8024030C_A1652C, 0);
+    func_802C90FC(20, 0, -1);
+    func_802C90FC(22, 0, -1);
+    func_802C90FC(37, 0, -1);
+    func_802C90FC(39, 0, -1);
+    func_802C90FC(54, 0, -1);
+    func_802C90FC(56, 0, -1);
+    func_802C94A0(0, func_8024030C_A1652C, 0);
     SetModelFlags(20, 256, 1);
     SetModelFlags(22, 256, 1);
     SetModelFlags(37, 256, 1);
@@ -315,19 +315,19 @@ Script N(script_802433B8) = SCRIPT({
     SetModelFlags(50, 256, 1);
     SetModelFlags(51, 256, 1);
     SetModelFlags(52, 256, 1);
-    0x802C9C70(0, 60, 1);
-    0x802C94A0(1, func_80240434_A16654, 0);
-    0x802C90FC(60, 1, -1);
-    0x802C90FC(62, 1, -1);
-    0x802C90FC(64, 1, -1);
-    0x802C90FC(66, 1, -1);
-    0x802C90FC(68, 1, -1);
-    0x802C90FC(70, 1, -1);
-    0x802C90FC(72, 1, -1);
-    0x802C90FC(74, 1, -1);
-    0x802C90FC(76, 1, -1);
-    0x802C90FC(82, 1, -1);
-    0x802C90FC(88, 1, -1);
+    func_802C9C70(0, 60, 1);
+    func_802C94A0(1, func_80240434_A16654, 0);
+    func_802C90FC(60, 1, -1);
+    func_802C90FC(62, 1, -1);
+    func_802C90FC(64, 1, -1);
+    func_802C90FC(66, 1, -1);
+    func_802C90FC(68, 1, -1);
+    func_802C90FC(70, 1, -1);
+    func_802C90FC(72, 1, -1);
+    func_802C90FC(74, 1, -1);
+    func_802C90FC(76, 1, -1);
+    func_802C90FC(82, 1, -1);
+    func_802C90FC(88, 1, -1);
     SetModelFlags(60, 128, 1);
     SetModelFlags(62, 128, 1);
     SetModelFlags(64, 128, 1);
@@ -339,22 +339,22 @@ Script N(script_802433B8) = SCRIPT({
     SetModelFlags(76, 128, 1);
     SetModelFlags(82, 128, 1);
     SetModelFlags(88, 128, 1);
-    0x802C9C70(1, 60, 1);
-    0x802C94A0(2, func_80240610_A16830, 0);
-    0x802C90FC(78, 2, -1);
-    0x802C90FC(90, 2, -1);
+    func_802C9C70(1, 60, 1);
+    func_802C94A0(2, func_80240610_A16830, 0);
+    func_802C90FC(78, 2, -1);
+    func_802C90FC(90, 2, -1);
     SetModelFlags(78, 128, 1);
     SetModelFlags(90, 128, 1);
-    0x802C9C70(2, 60, 1);
-    0x802C94A0(3, func_80240904_A16B24, 0);
-    0x802C90FC(84, 3, -1);
-    0x802C90FC(92, 3, -1);
+    func_802C9C70(2, 60, 1);
+    func_802C94A0(3, func_80240904_A16B24, 0);
+    func_802C90FC(84, 3, -1);
+    func_802C90FC(92, 3, -1);
     SetModelFlags(84, 128, 1);
     SetModelFlags(92, 128, 1);
-    0x802C9C70(3, 60, 1);
-    0x802C94A0(4, func_80240BFC_A16E1C, 0);
-    0x802C90FC(80, 4, -1);
-    0x802C90FC(86, 4, -1);
+    func_802C9C70(3, 60, 1);
+    func_802C94A0(4, func_80240BFC_A16E1C, 0);
+    func_802C90FC(80, 4, -1);
+    func_802C90FC(86, 4, -1);
     SetModelFlags(80, 128, 1);
     SetModelFlags(86, 128, 1);
     spawn {
@@ -514,9 +514,9 @@ NpcSettings N(npcSettings_80244548) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_802444D8),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x18,

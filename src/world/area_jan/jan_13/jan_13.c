@@ -145,7 +145,7 @@ Script N(script_80240854) = SCRIPT({
 Script N(script_80240A64) = SCRIPT({
     func_802401AC_B7695C();
     if (SI_VAR(3) < 1.0) {
-        SI_VAR(4) = f SI_VAR(3);
+        SI_VAR(4) =f SI_VAR(3);
     } else {
         SI_VAR(4) = 1.0;
     }
@@ -370,14 +370,14 @@ Script N(script_80241154) = SCRIPT({
             PlaySoundAtPlayer(610, 0);
             ShowEmote(0, 0, 0, 20, 0, 0, 0, 0, 0);
             GetModelCenter(59);
-            0x802D2884(SI_VAR(0), SI_VAR(2), 4);
+            func_802D2884(SI_VAR(0), SI_VAR(2), 4);
             GetPlayerPos(SI_VAR(3), SI_VAR(1), SI_VAR(2));
             SI_VAR(4) = SI_VAR(0);
             SI_VAR(5) = SI_VAR(0);
             SI_VAR(4) -= 120;
             SI_VAR(5) += 120;
             match SI_VAR(3) {
-                SI_VAR(4)..SI_VAR(5)
+            SI_VAR(4)..SI_VAR(5)
                 SI_VAR(0) += SI_VAR(3);
                 SI_VAR(0) /= 2;
             }
@@ -552,7 +552,7 @@ Script N(script_80241F5C) = SCRIPT({
         if (SI_VAR(5) == 1) {
             DisablePlayerInput(1);
             func_802402B8_B76A68();
-            0x802D2B6C();
+            func_802D2B6C();
             loop 10 {
                 GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
                 if (SI_VAR(4) < 40) {
@@ -560,8 +560,8 @@ Script N(script_80241F5C) = SCRIPT({
                 }
                 SI_VAR(3) *= 10;
                 SI_VAR(5) *= 10;
-                SI_VAR(3) += f SI_VAR(0);
-                SI_VAR(5) += f SI_VAR(2);
+                SI_VAR(3) +=f SI_VAR(0);
+                SI_VAR(5) +=f SI_VAR(2);
                 SI_VAR(3) /= 11;
                 SI_VAR(5) /= 11;
                 SetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
@@ -677,13 +677,13 @@ Script N(script_80242438) = SCRIPT({
     EnableTexPanning(52, 1);
     EnableTexPanning(54, 1);
     EnableTexPanning(56, 1);
-    0x802C90FC(46, 0, -1);
-    0x802C90FC(48, 0, -1);
-    0x802C90FC(50, 0, -1);
-    0x802C90FC(52, 0, -1);
-    0x802C90FC(54, 0, -1);
-    0x802C90FC(56, 0, -1);
-    0x802C94A0(0, func_80240000_B767B0, 0);
+    func_802C90FC(46, 0, -1);
+    func_802C90FC(48, 0, -1);
+    func_802C90FC(50, 0, -1);
+    func_802C90FC(52, 0, -1);
+    func_802C90FC(54, 0, -1);
+    func_802C90FC(56, 0, -1);
+    func_802C94A0(0, func_80240000_B767B0, 0);
     SI_VAR(0) = 0;
     loop {
         SI_VAR(0) -= 2000;
@@ -948,10 +948,10 @@ s32 pad_0037E4[] = {
 };
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802BC7AC, 0xFFFFFF57, 0, 0xFFFFFF8D, 10, 0x80000000);
-    MakeEntity(0x802EA588, 0xFFFFFF47, 85, 0xFFFFFFDD, 0, 139, 0x80000000);
+    MakeEntity(D_802BC7AC, 0xFFFFFF57, 0, 0xFFFFFF8D, 10, 0x80000000);
+    MakeEntity(D_802EA588, 0xFFFFFF47, 85, 0xFFFFFFDD, 0, 139, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1251));
-    0x80111F2C(1);
+    func_80111F2C(1);
 });
 
 s32 pad_00386C[] = {

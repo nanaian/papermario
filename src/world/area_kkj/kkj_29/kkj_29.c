@@ -120,7 +120,7 @@ Script N(main) = SCRIPT({
         FadeOutMusic(0, 500);
     }
     UseDoorSounds(0);
-    bind 0x80240110 to TriggerFlag_WALL_INTERACT 2;
+    bind N(entryList) to TriggerFlag_WALL_INTERACT 2;
     spawn N(script_EnterSingleDoor_802401B4);
 });
 
@@ -666,17 +666,17 @@ Script N(script_802422B8) = SCRIPT({
 Script N(script_8024243C) = SCRIPT({
     SI_VAR(0) = 31;
     loop 10 {
-        0x802C91A4(SI_VAR(0), 2);
+        func_802C91A4(SI_VAR(0), 2);
         SI_VAR(0) += 1;
     }
     SI_VAR(0) = 64;
     loop 10 {
-        0x802C91A4(SI_VAR(0), 2);
+        func_802C91A4(SI_VAR(0), 2);
         SI_VAR(0) += 1;
     }
     SI_VAR(0) = 97;
     loop 10 {
-        0x802C91A4(SI_VAR(0), 2);
+        func_802C91A4(SI_VAR(0), 2);
         SI_VAR(0) += 1;
     }
 });
@@ -700,13 +700,13 @@ Script N(script_80242524) = SCRIPT({
     SI_VAR(2) -= SI_VAR(1);
     if (SI_VAR(1) != 0) {
         loop SI_VAR(1) {
-            0x802C91A4(SI_VAR(0), 0);
+            func_802C91A4(SI_VAR(0), 0);
             SI_VAR(0) += 1;
         }
     }
     if (SI_VAR(2) != 0) {
         loop SI_VAR(2) {
-            0x802C91A4(SI_VAR(0), 2);
+            func_802C91A4(SI_VAR(0), 2);
             SI_VAR(0) += 1;
         }
     }
@@ -721,40 +721,40 @@ Script N(script_8024268C) = SCRIPT({
     loop {
         match SI_AREA_VAR(6) {
             == 0 {
-                0x802C91A4(40, SI_VAR(4));
-                0x802C91A4(39, SI_VAR(3));
-                0x802C91A4(38, SI_VAR(2));
-                0x802C91A4(37, SI_VAR(1));
-                0x802C91A4(36, SI_VAR(0));
-                0x802C91A4(35, SI_VAR(4));
-                0x802C91A4(34, SI_VAR(3));
-                0x802C91A4(33, SI_VAR(2));
-                0x802C91A4(32, SI_VAR(1));
-                0x802C91A4(31, SI_VAR(0));
+                func_802C91A4(40, SI_VAR(4));
+                func_802C91A4(39, SI_VAR(3));
+                func_802C91A4(38, SI_VAR(2));
+                func_802C91A4(37, SI_VAR(1));
+                func_802C91A4(36, SI_VAR(0));
+                func_802C91A4(35, SI_VAR(4));
+                func_802C91A4(34, SI_VAR(3));
+                func_802C91A4(33, SI_VAR(2));
+                func_802C91A4(32, SI_VAR(1));
+                func_802C91A4(31, SI_VAR(0));
             }
             == 1 {
-                0x802C91A4(73, SI_VAR(4));
-                0x802C91A4(72, SI_VAR(3));
-                0x802C91A4(71, SI_VAR(2));
-                0x802C91A4(70, SI_VAR(1));
-                0x802C91A4(69, SI_VAR(0));
-                0x802C91A4(68, SI_VAR(4));
-                0x802C91A4(67, SI_VAR(3));
-                0x802C91A4(66, SI_VAR(2));
-                0x802C91A4(65, SI_VAR(1));
-                0x802C91A4(64, SI_VAR(0));
+                func_802C91A4(73, SI_VAR(4));
+                func_802C91A4(72, SI_VAR(3));
+                func_802C91A4(71, SI_VAR(2));
+                func_802C91A4(70, SI_VAR(1));
+                func_802C91A4(69, SI_VAR(0));
+                func_802C91A4(68, SI_VAR(4));
+                func_802C91A4(67, SI_VAR(3));
+                func_802C91A4(66, SI_VAR(2));
+                func_802C91A4(65, SI_VAR(1));
+                func_802C91A4(64, SI_VAR(0));
             }
             == 2 {
-                0x802C91A4(106, SI_VAR(4));
-                0x802C91A4(105, SI_VAR(3));
-                0x802C91A4(104, SI_VAR(2));
-                0x802C91A4(103, SI_VAR(1));
-                0x802C91A4(102, SI_VAR(0));
-                0x802C91A4(101, SI_VAR(4));
-                0x802C91A4(100, SI_VAR(3));
-                0x802C91A4(99, SI_VAR(2));
-                0x802C91A4(98, SI_VAR(1));
-                0x802C91A4(97, SI_VAR(0));
+                func_802C91A4(106, SI_VAR(4));
+                func_802C91A4(105, SI_VAR(3));
+                func_802C91A4(104, SI_VAR(2));
+                func_802C91A4(103, SI_VAR(1));
+                func_802C91A4(102, SI_VAR(0));
+                func_802C91A4(101, SI_VAR(4));
+                func_802C91A4(100, SI_VAR(3));
+                func_802C91A4(99, SI_VAR(2));
+                func_802C91A4(98, SI_VAR(1));
+                func_802C91A4(97, SI_VAR(0));
             }
         }
         sleep 1;
@@ -1085,14 +1085,14 @@ Script N(script_80243AE4) = SCRIPT({
 
 Script N(script_80243B80) = SCRIPT({
     loop {
-        0x802D7E08(0, 1, 0xFFFFFFD3, 0, 0, 0, 0, 0, 20);
+        func_802D7E08(0, 1, 0xFFFFFFD3, 0, 0, 0, 0, 0, 20);
         sleep 20;
     }
 });
 
 Script N(script_80243BE0) = SCRIPT({
     loop {
-        0x802D7E08(0xFFFFFFFC, 1, 0xFFFFFFD3, 1, 0, 0, 0, 0, 20);
+        func_802D7E08(0xFFFFFFFC, 1, 0xFFFFFFD3, 1, 0, 0, 0, 0, 20);
         sleep 20;
     }
 });
@@ -1102,7 +1102,7 @@ Script N(script_80243C40) = SCRIPT({
     DisablePlayerInput(1);
     DisablePlayerPhysics(1);
     RotateModel(3, 120, 0, 1, 0);
-    0x802D1270(250, 0xFFFFFFE2, 2.0);
+    func_802D1270(250, 0xFFFFFFE2, 2.0);
     await N(script_80243A34);
     DisablePartnerAI(0);
     spawn N(script_80243AE4);
@@ -1148,7 +1148,7 @@ Script N(script_80243C40) = SCRIPT({
     NpcMoveTo(1, SI_VAR(0), SI_VAR(2), 0);
     SpeakToPlayer(1, 0x580008, 0x580001, 0, 0x1400F3);
     spawn {
-        0x802D1270(0, 0xFFFFFFE7, 2.0);
+        func_802D1270(0, 0xFFFFFFE7, 2.0);
         SetPlayerAnimation(0xC0014);
         SetPlayerPos(0xFFFFFF1A, 23, 0xFFFFFF74);
     }
@@ -1391,8 +1391,8 @@ Script N(script_80243C40) = SCRIPT({
         kill SI_VAR(10);
         sleep 10;
         InterpPlayerYaw(90, 7);
-        0x802D1270(0xFFFFFF4C, 0xFFFFFFE8, 2.0);
-        0x802D1270(0xFFFFFF88, 0xFFFFFFE8, 2.0);
+        func_802D1270(0xFFFFFF4C, 0xFFFFFFE8, 2.0);
+        func_802D1270(0xFFFFFF88, 0xFFFFFFE8, 2.0);
     }
     spawn {
         SetNpcPos(0xFFFFFFFC, 0xFFFFFF51, 60, 0xFFFFFF9C);

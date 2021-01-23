@@ -166,7 +166,7 @@ Script N(script_80242240) = SCRIPT({
         SI_VAR(0) = 0;
         SI_VAR(1) = 0;
         SI_VAR(2) = 0;
-10:
+    10:
         SetTexPanOffset(1, 0, SI_VAR(0), 0);
         SetTexPanOffset(1, 1, SI_VAR(1), SI_VAR(2));
         SI_VAR(0) -= 100;
@@ -225,15 +225,15 @@ Script N(main) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA0C4, 30, 60, 0xFFFFFFAB, 0, 0x80000000);
-    MakeEntity(0x802EA564, 110, 60, 0xFFFFFFAB, 0, 343, 0x80000000);
+    MakeEntity(D_802EA0C4, 30, 60, 0xFFFFFFAB, 0, 0x80000000);
+    MakeEntity(D_802EA564, 110, 60, 0xFFFFFFAB, 0, 343, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(594));
-    MakeEntity(0x802EA0C4, 330, 60, 0xFFFFFFAB, 0, 0x80000000);
-    MakeEntity(0x802EA5AC, 380, 60, 0xFFFFFFAB, 0, 285, 0x80000000);
+    MakeEntity(D_802EA0C4, 330, 60, 0xFFFFFFAB, 0, 0x80000000);
+    MakeEntity(D_802EA5AC, 380, 60, 0xFFFFFFAB, 0, 285, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(595));
-    MakeEntity(0x802EA0C4, 650, 60, 0xFFFFFFAB, 0, 0x80000000);
-    MakeEntity(0x802EA0C4, 700, 60, 0xFFFFFFAB, 0, 0x80000000);
-    MakeEntity(0x802EA564, 750, 60, 0xFFFFFFAB, 0, 152, 0x80000000);
+    MakeEntity(D_802EA0C4, 650, 60, 0xFFFFFFAB, 0, 0x80000000);
+    MakeEntity(D_802EA0C4, 700, 60, 0xFFFFFFAB, 0, 0x80000000);
+    MakeEntity(D_802EA564, 750, 60, 0xFFFFFFAB, 0, 152, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(596));
 });
 
@@ -261,7 +261,7 @@ Script N(script_80242770) = SCRIPT({
 });
 
 s32 unk_missing_80242790[] = {
-    0x00000000, 0x00140017, 0x00000000, 0x00000000, N(script_80242770), 0x80077F70, 0x00000000, 0x8007809C,
+    0x00000000, 0x00140017, 0x00000000, 0x00000000, N(script_80242770), EnemyNpcHit, 0x00000000, EnemyNpcDefeat,
     0x00000000, 0x00000000, 0x00050000,
 };
 
@@ -295,9 +295,9 @@ NpcSettings N(npcSettings_8024285C) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_802427EC),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x6,
@@ -338,9 +338,9 @@ NpcSettings N(npcSettings_80242940) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_802428D0),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x6,
@@ -373,9 +373,9 @@ NpcSettings N(npcSettings_802429BC) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_8024299C),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x6,
@@ -405,9 +405,9 @@ NpcSettings N(npcSettings_80242A14) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x63,
@@ -621,7 +621,7 @@ Script N(script_Idle_8024344C) = SCRIPT({
     }
     DisablePlayerInput(1);
     parallel {
-10:
+    10:
         sleep 3;
         PlayerFaceNpc(-1, 0);
         sleep 1;
@@ -808,7 +808,7 @@ Script N(script_Idle_802440BC) = SCRIPT({
     goto 1;
 10:
     DisablePlayerInput(1);
-    0x802D2B6C();
+    func_802D2B6C();
     SetMusicTrack(0, 91, 0, 8);
     SpeakToPlayer(8, 0x470002, 0x470001, 0, 0xC012C);
     if (SI_AREA_VAR(2) == 0) {
@@ -934,7 +934,7 @@ Script N(script_Idle_802440BC) = SCRIPT({
     goto 41;
 43:
     DisablePlayerInput(1);
-    0x802D2B6C();
+    func_802D2B6C();
     SetPlayerPos(SI_VAR(3), SI_VAR(1), SI_VAR(2));
     SpeakToPlayer(8, 0x470002, 0x470001, 0, 0xC0130);
     GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
@@ -970,7 +970,7 @@ Script N(script_Idle_802440BC) = SCRIPT({
     goto 51;
 53:
     DisablePlayerInput(1);
-    0x802D2B6C();
+    func_802D2B6C();
     SetMusicTrack(0, 91, 0, 8);
     SetPlayerPos(SI_VAR(3), SI_VAR(1), SI_VAR(2));
     SpeakToPlayer(8, 0x470002, 0x470001, 0, 0xC0132);

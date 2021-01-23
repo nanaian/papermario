@@ -58,9 +58,9 @@ Script N(script_802400FC) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EAB04, 0, 0, 225, 0, 4, 0x80000000);
+    MakeEntity(D_802EAB04, 0, 0, 225, 0, 4, 0x80000000);
     AssignPanelFlag(SI_SAVE_FLAG(796));
-    MakeEntity(0x802BCA74, 327, 0, 8, 0, N(tweesterPathList_802400F4), 0x80000000);
+    MakeEntity(D_802BCA74, 327, 0, 8, 0, N(tweesterPathList_802400F4), 0x80000000);
     AssignScript(N(script_802400FC));
 });
 

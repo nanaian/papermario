@@ -93,7 +93,8 @@ Script N(script_802406D0) = SCRIPT({
         }
         == 0xFFFFFFB4 {
             SetMusicTrack(0, 120, 1, 8);
-        } else {
+        }
+        else {
             SetMusicTrack(0, 17, 0, 8);
             PlaySound(0x8000005C);
         }
@@ -332,10 +333,10 @@ s32 N(unk_80241340)[] = {
 
 Script N(script_80241344) = SCRIPT({
     group 0;
-    0x802D5830(2);
+    func_802D5830(2);
     sleep 40;
     ShowGotItem(SI_VAR(0), 0, 0);
-    0x802D5830(0);
+    func_802D5830(0);
     return;
 });
 
@@ -375,14 +376,14 @@ Script N(script_802414D8) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EAE30, 810, 0, 0xFFFFFFCE, 0, 0, 0x80000000);
+    MakeEntity(D_802EAE30, 810, 0, 0xFFFFFFCE, 0, 0, 0x80000000);
     AssignFlag(SI_SAVE_FLAG(641));
     AssignScript(N(script_8024148C));
-    MakeEntity(0x802EAE30, 0xFFFFFD12, 200, 0xFFFFFF83, 0, 0, 0x80000000);
+    MakeEntity(D_802EAE30, 0xFFFFFD12, 200, 0xFFFFFF83, 0, 0, 0x80000000);
     AssignFlag(SI_SAVE_FLAG(642));
     AssignScript(N(script_802414D8));
-    MakeEntity(0x802E9A18, 0xFFFFFC68, 60, 80, 0, 0x80000000);
-    MakeEntity(0x802E9A18, 325, 60, 220, 0, 0x80000000);
+    MakeEntity(D_802E9A18, 0xFFFFFC68, 60, 80, 0, 0x80000000);
+    MakeEntity(D_802E9A18, 325, 60, 220, 0, 0x80000000);
 });
 
 s32 pad_00160C[] = {
@@ -396,9 +397,9 @@ NpcSettings N(npcSettings_80241610) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x63,
@@ -434,7 +435,7 @@ Script N(script_Idle_802416C0) = SCRIPT({
     spawn {
         PlaySoundAtCollider(6, 451, 0);
         MakeLerp(0, 100, 10, 10);
-0:
+    0:
         UpdateLerp();
         RotateModel(67, SI_VAR(0), 0, -1, 0);
         RotateModel(65, SI_VAR(0), 0, 1, 0);
@@ -457,10 +458,10 @@ Script N(script_Idle_802416C0) = SCRIPT({
     SetNpcSpeed(-1, 4.5);
     NpcMoveTo(-1, 0xFFFFFDD4, 180, 0);
     WaitForCam(0, 1.0);
-    0x802CFD30(-1, 5, 4, 2, 1, 0);
+    func_802CFD30(-1, 5, 4, 2, 1, 0);
     SetNpcAnimation(-1, 0x66001E);
     sleep 12;
-    0x802CFD30(-1, 0, 0, 0, 0, 0);
+    func_802CFD30(-1, 0, 0, 0, 0, 0);
     SetNpcAnimation(-1, 0x660004);
     sleep 10;
     SpeakToPlayer(-1, 0x660014, 0x660004, 0, 0xC00D2);
@@ -532,7 +533,7 @@ Script N(script_Defeat_80241D80) = SCRIPT({
 
 Script N(script_80241DA4) = SCRIPT({
     DisablePartnerAI(0);
-    0x802CF56C(2);
+    func_802CF56C(2);
     SetNpcPos(1, 0xFFFFFDC9, 26, 236);
     PlayerFaceNpc(1, 0);
     NpcFaceNpc(0xFFFFFFFC, 1, 0);
@@ -542,7 +543,7 @@ Script N(script_80241DA4) = SCRIPT({
     SetCamSpeed(0, 90.0);
     PanToTarget(0, 0, 1);
     sleep 1;
-    0x802D2508();
+    func_802D2508();
     DisablePlayerInput(1);
     sleep 40;
     SpeakToPlayer(1, 0x120002, 0x120001, 512, 0xC010D);

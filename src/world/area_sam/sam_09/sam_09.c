@@ -157,8 +157,8 @@ Script N(script_802407DC) = SCRIPT({
 
 Script N(script_802409E4) = SCRIPT({
     if (SI_MAP_VAR(0) == -1) {
-        0x802D663C();
-        0x802D6954();
+        func_802D663C();
+        func_802D6954();
         if (SI_VAR(0) == 0) {
             ShowMessageAtScreenPos(0x1D015E, 160, 40);
             return;
@@ -204,8 +204,8 @@ Script N(script_802409E4) = SCRIPT({
 
 Script N(script_80240C80) = SCRIPT({
     if (SI_MAP_VAR(1) == -1) {
-        0x802D663C();
-        0x802D6954();
+        func_802D663C();
+        func_802D6954();
         if (SI_VAR(0) == 0) {
             ShowMessageAtScreenPos(0x1D015E, 160, 40);
             return;
@@ -251,8 +251,8 @@ Script N(script_80240C80) = SCRIPT({
 
 Script N(script_80240F1C) = SCRIPT({
     if (SI_MAP_VAR(2) == -1) {
-        0x802D663C();
-        0x802D6954();
+        func_802D663C();
+        func_802D6954();
         if (SI_VAR(0) == 0) {
             ShowMessageAtScreenPos(0x1D015E, 160, 40);
             return;

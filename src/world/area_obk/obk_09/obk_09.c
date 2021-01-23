@@ -213,8 +213,8 @@ Script N(script_80240990) = SCRIPT({
     SI_VAR(0) = 0.0;
     loop 20 {
         SI_VAR(0) += 12.0;
-        0x802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
-        0x802CFD30(1, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(0, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(1, 7, SI_VAR(0), 0, 0, 0);
         sleep 1;
     }
     sleep 40;
@@ -413,7 +413,8 @@ Script N(script_Init_80241A94) = SCRIPT({
         >= 0xFFFFFFDC {
             SetNpcPos(1, 30, 70, 0xFFFFFFB5);
             SetNpcYaw(1, 270);
-        } else {
+        }
+        else {
         }
     }
 });
@@ -428,7 +429,7 @@ Script N(script_Init_80241B44) = SCRIPT({
     SetNpcAnimation(-1, 0x140009);
     SetNpcPos(-1, 0, 0xFFFFFC18, 0xFFFFFF9C);
     EnableNpcShadow(-1, 0);
-    0x802CFD30(-1, 7, 170, 0, 0, 0);
+    func_802CFD30(-1, 7, 170, 0, 0, 0);
     if (SI_SAVE_VAR(0) >= 0xFFFFFFDC) {
         RemoveNpc(-1);
     }

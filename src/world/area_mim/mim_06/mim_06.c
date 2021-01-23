@@ -462,7 +462,7 @@ Script N(script_80243FF4) = SCRIPT({
         == 0 {
             spawn {
                 MakeLerp(10, 90, 10, 1);
-10:
+            10:
                 UpdateLerp();
                 RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
                 UpdateColliderTransform(SI_VAR(9));
@@ -481,7 +481,7 @@ Script N(script_80243FF4) = SCRIPT({
             SI_VAR(1) = 1;
             spawn N(script_80243B70);
             MakeLerp(90, 360, 30, 0);
-20:
+        20:
             UpdateLerp();
             RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
             UpdateColliderTransform(SI_VAR(9));
@@ -496,7 +496,7 @@ Script N(script_80243FF4) = SCRIPT({
         == 1 {
             spawn {
                 MakeLerp(360, 270, 10, 1);
-30:
+            30:
                 UpdateLerp();
                 RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
                 UpdateColliderTransform(SI_VAR(9));
@@ -515,7 +515,7 @@ Script N(script_80243FF4) = SCRIPT({
             SI_VAR(1) = 2;
             spawn N(script_80243B70);
             MakeLerp(270, 0xFFFFFFF6, 30, 0);
-40:
+        40:
             UpdateLerp();
             RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
             UpdateColliderTransform(SI_VAR(9));
@@ -528,7 +528,7 @@ Script N(script_80243FF4) = SCRIPT({
         == 2 {
             spawn {
                 MakeLerp(0xFFFFFFF6, 90, 10, 1);
-50:
+            50:
                 UpdateLerp();
                 RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
                 UpdateColliderTransform(SI_VAR(9));
@@ -547,7 +547,7 @@ Script N(script_80243FF4) = SCRIPT({
             SI_VAR(1) = 1;
             spawn N(script_80243B70);
             MakeLerp(90, 360, 30, 0);
-60:
+        60:
             UpdateLerp();
             RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
             UpdateColliderTransform(SI_VAR(9));
@@ -640,7 +640,7 @@ Script N(script_802449F0) = SCRIPT({
         }
         == 2 {
             SetNpcPos(-1, 0, 0xFFFFFC18, 0);
-            0x80045900(1);
+            func_80045900(1);
         }
         == 3 {
             SetEnemyFlagBits(-1, 16, 1);
@@ -684,9 +684,9 @@ NpcSettings N(npcSettings_80244BB0) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80244ADC),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xB,
@@ -707,7 +707,7 @@ Script N(script_80244C5C) = SCRIPT({
     match SI_VAR(0) {
         == 1, 2, 4, 6 {
             GetSelfAnimationFromTable(7, SI_VAR(0));
-            await 0x800936DC;
+            await func_800936DC;
         }
     }
 });
@@ -755,9 +755,9 @@ NpcSettings N(npcSettings_80244D80) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80244D44),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xB,

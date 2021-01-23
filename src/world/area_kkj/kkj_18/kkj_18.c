@@ -208,7 +208,7 @@ Script N(main) = SCRIPT({
     if (SI_SAVE_VAR(0) == 6) {
         MakeNpcs(0, N(npcGroupList_80241EF0));
     }
-    spawn 0x80240A30;
+    spawn N(script_EnterSingleDoor_80240A30);
     SetTexPanner(23, 0);
     spawn {
         SI_VAR(0) = 0;
@@ -226,8 +226,8 @@ Script N(main) = SCRIPT({
         SI_VAR(12) = 0;
         spawn N(script_UpdateTexturePan_802408C0);
     }
-    0x802C90FC(23, 0, -1);
-    0x802C9428(0, N(displayList_80240960), 0);
+    func_802C90FC(23, 0, -1);
+    func_802C9428(0, N(displayList_80240960), 0);
     spawn N(script_80240870);
     UseDoorSounds(0);
     spawn N(script_EnterSingleDoor_80240C3C);
@@ -277,9 +277,9 @@ NpcSettings N(npcSettings_80241068) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x1A,
@@ -303,7 +303,7 @@ NpcSettings N(npcSettings_80241094) = {
 };
 
 Script N(script_Idle_802410C0) = SCRIPT({
-    0x802D2508();
+    func_802D2508();
     spawn N(script_80244C08);
 });
 
@@ -446,7 +446,7 @@ s32 N(unk_80241F14)[] = {
 
 Script N(script_80241F18) = SCRIPT({
     SI_VAR(9) = SI_VAR(1);
-    0x802D6420();
+    func_802D6420();
     SI_VAR(10) = SI_VAR(0);
     match SI_VAR(0) {
         == 0 {}
@@ -455,7 +455,7 @@ Script N(script_80241F18) = SCRIPT({
             RemoveKeyItemAt(SI_VAR(1));
             GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_8024039C_AF303C(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |= c 50000;
+            SI_VAR(0) |=c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SetPlayerAnimation(0x60005);
             sleep 30;
@@ -464,14 +464,14 @@ Script N(script_80241F18) = SCRIPT({
         }
     }
     func_802405C0_AF3260(SI_VAR(10));
-    0x802D6954();
+    func_802D6954();
     unbind;
 });
 
 // Unable to use DSL: DSL does not support script opcode 0x4E
 Script N(script_8024205C) = {
     SI_CMD(ScriptOpcode_CALL, func_802405F8_AF3298, SI_VAR(0)),
-    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80241F18), 0x10, 0, 0x80244CB0, 0, 1),
+    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80241F18), 0x10, 0, D_80244CB0, 0, 1),
     SI_CMD(ScriptOpcode_CALL, func_8024056C_AF320C, SI_VAR(0)),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)
@@ -479,7 +479,7 @@ Script N(script_8024205C) = {
 
 Script N(script_802420AC) = SCRIPT({
     SI_VAR(9) = SI_VAR(1);
-    0x802D663C();
+    func_802D663C();
     SI_VAR(10) = SI_VAR(0);
     match SI_VAR(0) {
         == 0 {}
@@ -496,14 +496,14 @@ Script N(script_802420AC) = SCRIPT({
         }
     }
     func_802405C0_AF3260(SI_VAR(10));
-    0x802D6954();
+    func_802D6954();
     unbind;
 });
 
 // Unable to use DSL: DSL does not support script opcode 0x4E
 Script N(script_802421E0) = {
     SI_CMD(ScriptOpcode_CALL, func_80240694_AF3334, SI_VAR(0)),
-    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_802420AC), 0x10, 0, 0x80244E78, 0, 1),
+    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_802420AC), 0x10, 0, D_80244E78_A1B098, 0, 1),
     SI_CMD(ScriptOpcode_CALL, func_8024056C_AF320C, SI_VAR(0)),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)
@@ -664,7 +664,7 @@ Script N(script_80242C08) = SCRIPT({
     GetNpcPos(5, SI_VAR(0), SI_VAR(1), SI_VAR(2));
     SetNpcJumpscale(5, 0.05078125);
     NpcJump0(5, SI_VAR(0), 0xFFFFFFF8, SI_VAR(2), 8);
-    0x802CDE68(5, 15);
+    func_802CDE68(5, 15);
     SI_VAR(3) = 0;
     loop 5 {
         SI_VAR(3) += 50;
@@ -684,7 +684,7 @@ Script N(script_80242D50) = SCRIPT({
     SetNpcRotation(4, 0, 0, 0xFFFFFFE7);
     SetNpcJumpscale(4, 0.05078125);
     NpcJump0(4, SI_VAR(0), 0xFFFFFFF8, SI_VAR(2), 8);
-    0x802CDE68(4, 15);
+    func_802CDE68(4, 15);
     SI_VAR(3) = 0;
     loop 5 {
         SI_VAR(3) -= 50;
@@ -730,7 +730,7 @@ Script N(script_80242EB4) = SCRIPT({
     sleep 18;
     SetMusicTrack(0, 114, 0, 8);
     sleep 30;
-    0x802D7CF8(0, 0, 0, 320, 240, 128, 10);
+    func_802D7CF8(0, 0, 0, 320, 240, 128, 10);
     SetCamSpeed(0, 12.0);
     loop 7 {
         SetCamDistance(0, 65);
@@ -743,7 +743,7 @@ Script N(script_80242EB4) = SCRIPT({
     func_80240774_AF3414();
     func_80240774_AF3414();
     func_80240774_AF3414();
-    0x802D7CF8(0, 0, 0, 320, 240, 0, 10);
+    func_802D7CF8(0, 0, 0, 320, 240, 0, 10);
     UseSettingsFrom(0, 120, 0, 10);
     SetPanTarget(0, 120, 0, 10);
     SetCamSpeed(0, 90.0);
@@ -767,8 +767,8 @@ Script N(script_802432A4) = SCRIPT({
         UpdateLerp();
         SI_VAR(2) = 3.30078125;
         SI_VAR(3) = -2.2998046875;
-        SI_VAR(2) *= f SI_VAR(0);
-        SI_VAR(3) *= f SI_VAR(0);
+        SI_VAR(2) *=f SI_VAR(0);
+        SI_VAR(3) *=f SI_VAR(0);
         SI_VAR(2) += -100.0;
         SI_VAR(3) += 150.0;
         SI_VAR(4) = 100.0;
@@ -805,9 +805,9 @@ Script N(script_802435FC) = SCRIPT({
         SI_VAR(2) = 0.2001953125;
         SI_VAR(3) = -0.2998046875;
         SI_VAR(4) = 0.5;
-        SI_VAR(2) *= f SI_VAR(0);
-        SI_VAR(3) *= f SI_VAR(0);
-        SI_VAR(4) *= f SI_VAR(0);
+        SI_VAR(2) *=f SI_VAR(0);
+        SI_VAR(3) *=f SI_VAR(0);
+        SI_VAR(4) *=f SI_VAR(0);
         SI_VAR(2) += 105.0;
         SI_VAR(3) += 30.0;
         SI_VAR(4) += 20.0;
@@ -823,9 +823,9 @@ Script N(script_802435FC) = SCRIPT({
         SI_VAR(2) = 0.2001953125;
         SI_VAR(3) = 0.30078125;
         SI_VAR(4) = 0.5;
-        SI_VAR(2) *= f SI_VAR(0);
-        SI_VAR(3) *= f SI_VAR(0);
-        SI_VAR(4) *= f SI_VAR(0);
+        SI_VAR(2) *=f SI_VAR(0);
+        SI_VAR(3) *=f SI_VAR(0);
+        SI_VAR(4) *=f SI_VAR(0);
         SI_VAR(2) += 125.0;
         SI_VAR(3) += 0.0;
         SI_VAR(4) += 70.0;
@@ -872,7 +872,7 @@ Script N(script_80243A88) = SCRIPT({
     GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
     SI_VAR(1) += 35;
     loop {
-        0x802D7E08(0, 1, 0xFFFFFFD3, 2, SI_VAR(0), SI_VAR(1), SI_VAR(2), 13, 20);
+        func_802D7E08(0, 1, 0xFFFFFFD3, 2, SI_VAR(0), SI_VAR(1), SI_VAR(2), 13, 20);
         sleep 20;
     }
 });

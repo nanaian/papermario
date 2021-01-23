@@ -266,7 +266,8 @@ Script N(script_80242164) = SCRIPT({
                 return;
             }
             SI_VAR(0) = 1;
-        } else {
+        }
+        else {
             return;
         }
     }
@@ -763,20 +764,20 @@ s32 N(displayList_80243AD8)[] = {
 };
 
 s32 N(unk_80243BB8)[] = {
-    0x007B6690, 0x007B70E0, 0x80234000, 0x007B5960, 0x007B6690, 0x80234000, 0x007C4F50, 0x007C7410,
-    0x80234000, 0x007C7410, 0x007C7E50, 0x80234000, 0x007B70E0, 0x007B8030, 0x80234000, 0x007B8030,
-    0x007B8D30, 0x80234000, 0x007B8D30, 0x007B97E0, 0x80234000, 0x007B97E0, 0x007BA280, 0x80234000,
-    0x007BA280, 0x007BB050, 0x80234000, 0x007BB050, 0x007BBD80, 0x80234000, 0x007BBD80, 0x007BEDD0,
-    0x80234000, 0x007BEDD0, 0x007C16C0, 0x80234000, 0x007C16C0, 0x007C3A00, 0x80234000, 0x007C3A00,
-    0x007C44D0, 0x80234000, 0x007C44D0, 0x007C4F50, 0x80234000, 0x007C7E50, 0x007CA850, 0x80234000,
-    0x007CA850, 0x007CD5F0, 0x80234000, 0x007CD5F0, 0x007CDB30, 0x80234000, 0x007CDB30, 0x007CEFF0,
-    0x80234000, 0x007CEFF0, 0x007CFCC0, 0x80234000, 0x007CFCC0, 0x007D0860, 0x80234000, 0x007D0860,
-    0x007D14E0, 0x80234000, 0x007D14E0, 0x007D2080, 0x80234000, 0x007D2080, 0x007D2960, 0x80234000,
-    0x007D2960, 0x007D3260, 0x80234000, 0x007D3260, 0x007D5570, 0x80234000, 0x007D5570, 0x007D6F80,
-    0x80234000, 0x007D6F80, 0x007D76B0, 0x80234000, 0x007D76B0, 0x007D8FF0, 0x80234000, 0x007D8FF0,
-    0x007D96E0, 0x80234000, 0x007D96E0, 0x007D98E0, 0x80234000, 0x007D98E0, 0x007DA140, 0x80234000,
-    0x007DA140, 0x007DC180, 0x80234000, 0x007DC180, 0x007DE970, 0x80234000, 0x007DE970, 0x007DF2B0,
-    0x80234000, 0x007DF2B0, 0x007E03B0, 0x80234000, 0x007E03B0, 0x007E0E80, 0x80234000,
+    0x007B6690, 0x007B70E0, D_80234000, 0x007B5960, 0x007B6690, D_80234000, 0x007C4F50, 0x007C7410,
+    D_80234000, 0x007C7410, 0x007C7E50, D_80234000, 0x007B70E0, 0x007B8030, D_80234000, 0x007B8030,
+    0x007B8D30, D_80234000, 0x007B8D30, 0x007B97E0, D_80234000, 0x007B97E0, 0x007BA280, D_80234000,
+    0x007BA280, 0x007BB050, D_80234000, 0x007BB050, 0x007BBD80, D_80234000, 0x007BBD80, 0x007BEDD0,
+    D_80234000, 0x007BEDD0, 0x007C16C0, D_80234000, 0x007C16C0, 0x007C3A00, D_80234000, 0x007C3A00,
+    0x007C44D0, D_80234000, 0x007C44D0, 0x007C4F50, D_80234000, 0x007C7E50, 0x007CA850, D_80234000,
+    0x007CA850, 0x007CD5F0, D_80234000, 0x007CD5F0, 0x007CDB30, D_80234000, 0x007CDB30, 0x007CEFF0,
+    D_80234000, 0x007CEFF0, 0x007CFCC0, D_80234000, 0x007CFCC0, 0x007D0860, D_80234000, 0x007D0860,
+    0x007D14E0, D_80234000, 0x007D14E0, 0x007D2080, D_80234000, 0x007D2080, 0x007D2960, D_80234000,
+    0x007D2960, 0x007D3260, D_80234000, 0x007D3260, 0x007D5570, D_80234000, 0x007D5570, 0x007D6F80,
+    D_80234000, 0x007D6F80, 0x007D76B0, D_80234000, 0x007D76B0, 0x007D8FF0, D_80234000, 0x007D8FF0,
+    0x007D96E0, D_80234000, 0x007D96E0, 0x007D98E0, D_80234000, 0x007D98E0, 0x007DA140, D_80234000,
+    0x007DA140, 0x007DC180, D_80234000, 0x007DC180, 0x007DE970, D_80234000, 0x007DE970, 0x007DF2B0,
+    D_80234000, 0x007DF2B0, 0x007E03B0, D_80234000, 0x007E03B0, 0x007E0E80, D_80234000,
 };
 
 s32 N(unk_80243D74)[] = {
@@ -803,7 +804,7 @@ s32 N(unk_80243DDC)[] = {
 
 Script N(script_80243DE0) = SCRIPT({
     SI_VAR(9) = SI_VAR(1);
-    0x802D6420();
+    func_802D6420();
     SI_VAR(10) = SI_VAR(0);
     match SI_VAR(0) {
         == 0 {}
@@ -812,7 +813,7 @@ Script N(script_80243DE0) = SCRIPT({
             RemoveKeyItemAt(SI_VAR(1));
             GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_802415DC_C8F18C(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |= c 50000;
+            SI_VAR(0) |=c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SetPlayerAnimation(0x60005);
             sleep 30;
@@ -821,14 +822,14 @@ Script N(script_80243DE0) = SCRIPT({
         }
     }
     func_80241800_C8F3B0(SI_VAR(10));
-    0x802D6954();
+    func_802D6954();
     unbind;
 });
 
 // Unable to use DSL: DSL does not support script opcode 0x4E
 Script N(script_80243F24) = {
     SI_CMD(ScriptOpcode_CALL, func_80241838_C8F3E8, SI_VAR(0)),
-    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80243DE0), 0x10, 0, 0x80248388, 0, 1),
+    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80243DE0), 0x10, 0, D_80248388, 0, 1),
     SI_CMD(ScriptOpcode_CALL, func_802417AC_C8F35C, SI_VAR(0)),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)
@@ -845,7 +846,7 @@ Script N(script_80243F74) = SCRIPT({
 
 Script N(script_80243FF4) = SCRIPT({
     SI_VAR(9) = SI_VAR(1);
-    0x802D6420();
+    func_802D6420();
     SI_VAR(10) = SI_VAR(0);
     match SI_VAR(0) {
         == 0 {}
@@ -855,7 +856,7 @@ Script N(script_80243FF4) = SCRIPT({
             DisablePartnerAI(0);
             GetNpcPos(0xFFFFFFFC, SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_802419C4_C8F574(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |= c 50000;
+            SI_VAR(0) |=c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SI_VAR(10) = spawn N(script_80243F74);
             SetNpcAnimation(0xFFFFFFFC, 0x40002);
@@ -888,7 +889,7 @@ Script N(script_80243FF4) = SCRIPT({
         }
     }
     func_80241800_C8F3B0(SI_VAR(10));
-    0x802D6954();
+    func_802D6954();
     unbind;
 });
 
@@ -897,7 +898,7 @@ Script N(script_80244318) = {
     SI_CMD(ScriptOpcode_SET, SI_VAR(0), SI_VAR(11)),
     SI_CMD(ScriptOpcode_SET, SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80241838_C8F3E8, SI_VAR(0)),
-    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80243FF4), 0x10, 0, 0x80248388, 0, 1),
+    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80243FF4), 0x10, 0, D_80248388, 0, 1),
     SI_CMD(ScriptOpcode_CALL, func_802417AC_C8F35C, SI_VAR(0)),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)
@@ -931,7 +932,8 @@ Script N(script_80244388) = SCRIPT({
                     SpeakToPlayer(0xFFFFFFFC, 0x40006, 0x40001, 5, SI_VAR(8));
                     EnablePartnerAI();
                     SI_VAR(12) = 1;
-                } else {
+                }
+                else {
                     DisablePartnerAI(0);
                     sleep 1;
                     SpeakToPlayer(0xFFFFFFFC, 0x40006, 0x40001, 5, SI_VAR(9));
@@ -973,7 +975,7 @@ Script N(script_802446D8) = SCRIPT({
 
 Script N(script_Idle_8024473C) = SCRIPT({
     if (SI_SAVE_FLAG(1327) == 0) {
-0:
+    0:
         GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
         if (SI_VAR(0) < 300) {
             sleep 1;
@@ -985,7 +987,7 @@ Script N(script_Idle_8024473C) = SCRIPT({
         SI_SAVE_FLAG(1327) = 1;
         DisablePlayerInput(0);
         SetSelfVar(0, 0);
-5:
+    5:
         InterpNpcYaw(-1, 90, 0);
         sleep 30;
         InterpNpcYaw(-1, 270, 0);
@@ -1113,61 +1115,61 @@ Script N(script_80244C78) = SCRIPT({
 Script N(script_80245010) = SCRIPT({
     spawn {
         func_80241BC0_C8F770(0, 15);
-        PlayModelAnimation(0, 0x80200000);
+        PlayModelAnimation(0, gBackgroundImage);
         SetAnimModelPosition(0, 220, 20, 0xFFFFFFD8);
         func_80241BC0_C8F770(3, 36);
-        PlayModelAnimation(3, 0x8020A000);
+        PlayModelAnimation(3, D_8020A000);
         SetAnimModelPosition(3, 220, 20, 0xFFFFFFD8);
         sleep 59;
         func_80241BC0_C8F770(0, 0);
-        PlayModelAnimation(0, 0x80200000);
+        PlayModelAnimation(0, gBackgroundImage);
         func_80241BC0_C8F770(3, 34);
-        PlayModelAnimation(3, 0x8020A000);
+        PlayModelAnimation(3, D_8020A000);
     }
     sleep 5;
     spawn {
         func_80241BC0_C8F770(1, 32);
-        PlayModelAnimation(1, 0x80204000);
+        PlayModelAnimation(1, D_80204000);
         SetAnimModelPosition(1, 220, 20, 0xFFFFFFD8);
         sleep 59;
         func_80241BC0_C8F770(1, 31);
-        PlayModelAnimation(1, 0x80204000);
+        PlayModelAnimation(1, D_80204000);
     }
     sleep 7;
     func_80241BC0_C8F770(2, 32);
-    PlayModelAnimation(2, 0x80207000);
+    PlayModelAnimation(2, D_80207000);
     SetAnimModelPosition(2, 270, 34, 0xFFFFFFEC);
     sleep 62;
     func_80241BC0_C8F770(2, 31);
-    PlayModelAnimation(2, 0x80207000);
+    PlayModelAnimation(2, D_80207000);
 });
 
 Script N(script_8024522C) = SCRIPT({
     func_80241BC0_C8F770(0, 0);
-    PlayModelAnimation(0, 0x80200000);
+    PlayModelAnimation(0, gBackgroundImage);
     func_80241BC0_C8F770(1, 31);
-    PlayModelAnimation(1, 0x80204000);
+    PlayModelAnimation(1, D_80204000);
     func_80241BC0_C8F770(3, 34);
-    PlayModelAnimation(3, 0x8020A000);
+    PlayModelAnimation(3, D_8020A000);
     sleep 10;
     func_80241BC0_C8F770(2, 31);
-    PlayModelAnimation(2, 0x80207000);
+    PlayModelAnimation(2, D_80207000);
 });
 
 Script N(script_802452E8) = SCRIPT({
     func_80241BC0_C8F770(0, 17);
-    PlayModelAnimation(0, 0x80200000);
+    PlayModelAnimation(0, gBackgroundImage);
 });
 
 Script N(script_80245320) = SCRIPT({
     func_80241BC0_C8F770(0, 16);
-    PlayModelAnimation(0, 0x80200000);
+    PlayModelAnimation(0, gBackgroundImage);
     func_80241BC0_C8F770(1, 33);
-    PlayModelAnimation(1, 0x80204000);
+    PlayModelAnimation(1, D_80204000);
     func_80241BC0_C8F770(2, 33);
-    PlayModelAnimation(2, 0x80207000);
+    PlayModelAnimation(2, D_80207000);
     func_80241BC0_C8F770(3, 35);
-    PlayModelAnimation(3, 0x8020A000);
+    PlayModelAnimation(3, D_8020A000);
 });
 
 Script N(script_Idle_802453D0) = SCRIPT({
@@ -1182,24 +1184,24 @@ Script N(script_Idle_802453D0) = SCRIPT({
     SetMusicTrack(0, 87, 0, 8);
     LoadModelAnimation(0, N(unk_802431F8));
     func_80241BC0_C8F770(0, 0);
-    PlayModelAnimation(0, 0x80200000);
+    PlayModelAnimation(0, gBackgroundImage);
     SetAnimModelPosition(0, 220, 0xFFFFFF9C, 0xFFFFFFD8);
-    0x802CD418(0, 128, 1);
+    func_802CD418(0, 128, 1);
     LoadModelAnimation(1, N(unk_80243388));
     func_80241BC0_C8F770(1, 31);
-    PlayModelAnimation(1, 0x80204000);
+    PlayModelAnimation(1, D_80204000);
     SetAnimModelPosition(1, 220, 0xFFFFFF9C, 0xFFFFFFD8);
-    0x802CD418(1, 128, 1);
+    func_802CD418(1, 128, 1);
     LoadModelAnimation(2, N(unk_80243388));
     func_80241BC0_C8F770(2, 31);
-    PlayModelAnimation(2, 0x80207000);
+    PlayModelAnimation(2, D_80207000);
     SetAnimModelPosition(2, 270, 0xFFFFFF9C, 0xFFFFFFEC);
-    0x802CD418(2, 128, 1);
+    func_802CD418(2, 128, 1);
     LoadModelAnimation(3, N(unk_802434B8));
     func_80241BC0_C8F770(3, 34);
-    PlayModelAnimation(3, 0x8020A000);
+    PlayModelAnimation(3, D_8020A000);
     SetAnimModelPosition(3, 220, 0xFFFFFF9C, 0xFFFFFFD8);
-    0x802CD418(3, 128, 1);
+    func_802CD418(3, 128, 1);
     func_8024140C_C8EFBC();
     SetSelfVar(1, 1);
     InterpPlayerYaw(90, 0);
@@ -1222,7 +1224,7 @@ Script N(script_Idle_802453D0) = SCRIPT({
         }
     }
     spawn {
-        0x802D2B6C();
+        func_802D2B6C();
         SetPlayerSpeed(3.0);
         PlayerMoveTo(200, 0xFFFFFFE2, 0);
         InterpPlayerYaw(90, 0);
@@ -1298,162 +1300,162 @@ Script N(script_80245BDC) = {
         SI_CMD(ScriptOpcode_SLEEP_FRAMES, 1),
     SI_CMD(ScriptOpcode_END_LOOP),
     SI_CMD(ScriptOpcode_LABEL, 0),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD7D8, 0, 10, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD7D8, 0, 10, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, SetNpcPos, 2, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD8F8, 0, 10, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD8F8, 0, 10, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, SetNpcRotation, 2, SI_VAR(0), 0, SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_802413FC_C8EFAC),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD7D8, 0, 10, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD7D8, 0, 10, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240BD4_C8E784, 0, 0, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD8F8, 0, 10, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD8F8, 0, 10, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_ADD, SI_VAR(2), 90),
     SI_CMD(ScriptOpcode_CALL, func_80240CD8_C8E888, 0, 0, SI_VAR(0), 0, SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240DA4_C8E954, 0, 0, 1, 1, 1),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD7D8, 0, 5, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD7D8, 0, 5, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240BD4_C8E784, 0, 1, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD8F8, 0, 5, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD8F8, 0, 5, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240CD8_C8E888, 0, 1, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240DA4_C8E954, 0, 1, SI_FIXED(0.71484375), SI_FIXED(0.71484375), SI_FIXED(1.0)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD7D8, 0, 9, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD7D8, 0, 9, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240BD4_C8E784, 0, 2, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD8F8, 0, 9, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD8F8, 0, 9, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240CD8_C8E888, 0, 2, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240DA4_C8E954, 0, 2, SI_FIXED(0.71484375), SI_FIXED(0.71484375), SI_FIXED(1.0)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD7D8, 0, 4, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD7D8, 0, 4, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240BD4_C8E784, 0, 3, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD8F8, 0, 4, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD8F8, 0, 4, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240CD8_C8E888, 0, 3, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240DA4_C8E954, 0, 3, SI_FIXED(0.71484375), SI_FIXED(0.71484375), SI_FIXED(1.0)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD7D8, 0, 8, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD7D8, 0, 8, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240BD4_C8E784, 0, 4, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD8F8, 0, 8, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD8F8, 0, 8, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240CD8_C8E888, 0, 4, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240DA4_C8E954, 0, 4, SI_FIXED(0.71484375), SI_FIXED(0.71484375), SI_FIXED(1.0)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD7D8, 0, 3, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD7D8, 0, 3, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240BD4_C8E784, 0, 5, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD8F8, 0, 3, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD8F8, 0, 3, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240CD8_C8E888, 0, 5, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240DA4_C8E954, 0, 5, SI_FIXED(0.71484375), SI_FIXED(0.71484375), SI_FIXED(1.0)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD7D8, 0, 7, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD7D8, 0, 7, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240BD4_C8E784, 0, 6, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD8F8, 0, 7, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD8F8, 0, 7, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240CD8_C8E888, 0, 6, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240DA4_C8E954, 0, 6, SI_FIXED(0.71484375), SI_FIXED(0.71484375), SI_FIXED(1.0)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD7D8, 0, 2, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD7D8, 0, 2, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240BD4_C8E784, 0, 7, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD8F8, 0, 2, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD8F8, 0, 2, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240CD8_C8E888, 0, 7, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240DA4_C8E954, 0, 7, SI_FIXED(0.71484375), SI_FIXED(0.71484375), SI_FIXED(1.0)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD7D8, 0, 6, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD7D8, 0, 6, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240BD4_C8E784, 0, 8, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD8F8, 0, 6, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD8F8, 0, 6, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240CD8_C8E888, 0, 8, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240DA4_C8E954, 0, 8, SI_FIXED(0.71484375), SI_FIXED(0.71484375), SI_FIXED(1.0)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD7D8, 1, 8, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD7D8, 1, 8, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, SetNpcPos, 3, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD8F8, 1, 8, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD8F8, 1, 8, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, SetNpcRotation, 3, SI_VAR(0), 0, SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD7D8, 1, 8, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD7D8, 1, 8, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240BD4_C8E784, 1, 0, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD8F8, 1, 8, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD8F8, 1, 8, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_ADD, SI_VAR(2), 90),
     SI_CMD(ScriptOpcode_CALL, func_80240CD8_C8E888, 1, 0, SI_VAR(0), 0, SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240DA4_C8E954, 1, 0, 1, 1, 1),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD7D8, 1, 4, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD7D8, 1, 4, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_SUB, SI_VAR(2), 2),
     SI_CMD(ScriptOpcode_CALL, func_80240BD4_C8E784, 1, 1, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD8F8, 1, 4, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD8F8, 1, 4, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240CD8_C8E888, 1, 1, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240DA4_C8E954, 1, 1, SI_FIXED(0.71484375), SI_FIXED(0.71484375), SI_FIXED(1.0)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD7D8, 1, 7, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD7D8, 1, 7, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240BD4_C8E784, 1, 2, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD8F8, 1, 7, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD8F8, 1, 7, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240CD8_C8E888, 1, 2, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240DA4_C8E954, 1, 2, SI_FIXED(0.71484375), SI_FIXED(0.71484375), SI_FIXED(1.0)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD7D8, 1, 3, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD7D8, 1, 3, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240BD4_C8E784, 1, 3, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD8F8, 1, 3, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD8F8, 1, 3, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240CD8_C8E888, 1, 3, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240DA4_C8E954, 1, 3, SI_FIXED(0.71484375), SI_FIXED(0.71484375), SI_FIXED(1.0)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD7D8, 1, 6, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD7D8, 1, 6, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240BD4_C8E784, 1, 4, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD8F8, 1, 6, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD8F8, 1, 6, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240CD8_C8E888, 1, 4, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240DA4_C8E954, 1, 4, SI_FIXED(0.71484375), SI_FIXED(0.71484375), SI_FIXED(1.0)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD7D8, 1, 2, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD7D8, 1, 2, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240BD4_C8E784, 1, 5, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD8F8, 1, 2, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD8F8, 1, 2, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240CD8_C8E888, 1, 5, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240DA4_C8E954, 1, 5, SI_FIXED(0.71484375), SI_FIXED(0.71484375), SI_FIXED(1.0)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD7D8, 1, 5, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD7D8, 1, 5, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240BD4_C8E784, 1, 6, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD8F8, 1, 5, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD8F8, 1, 5, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240CD8_C8E888, 1, 6, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240DA4_C8E954, 1, 6, SI_FIXED(0.71484375), SI_FIXED(0.71484375), SI_FIXED(1.0)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD7D8, 2, 8, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD7D8, 2, 8, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, SetNpcPos, 4, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD8F8, 2, 8, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD8F8, 2, 8, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, SetNpcRotation, 4, SI_VAR(0), 0, SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD7D8, 2, 8, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD7D8, 2, 8, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240BD4_C8E784, 2, 0, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD8F8, 2, 8, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD8F8, 2, 8, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_ADD, SI_VAR(2), 90),
     SI_CMD(ScriptOpcode_CALL, func_80240CD8_C8E888, 2, 0, SI_VAR(0), 0, SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240DA4_C8E954, 2, 0, 1, 1, 1),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD7D8, 2, 4, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD7D8, 2, 4, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_SUB, SI_VAR(2), 2),
     SI_CMD(ScriptOpcode_CALL, func_80240BD4_C8E784, 2, 1, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD8F8, 2, 4, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD8F8, 2, 4, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240CD8_C8E888, 2, 1, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240DA4_C8E954, 2, 1, SI_FIXED(0.71484375), SI_FIXED(0.71484375), SI_FIXED(1.0)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD7D8, 2, 7, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD7D8, 2, 7, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240BD4_C8E784, 2, 2, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD8F8, 2, 7, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD8F8, 2, 7, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240CD8_C8E888, 2, 2, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240DA4_C8E954, 2, 2, SI_FIXED(0.71484375), SI_FIXED(0.71484375), SI_FIXED(1.0)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD7D8, 2, 3, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD7D8, 2, 3, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240BD4_C8E784, 2, 3, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD8F8, 2, 3, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD8F8, 2, 3, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240CD8_C8E888, 2, 3, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240DA4_C8E954, 2, 3, SI_FIXED(0.71484375), SI_FIXED(0.71484375), SI_FIXED(1.0)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD7D8, 2, 6, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD7D8, 2, 6, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240BD4_C8E784, 2, 4, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD8F8, 2, 6, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD8F8, 2, 6, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240CD8_C8E888, 2, 4, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240DA4_C8E954, 2, 4, SI_FIXED(0.71484375), SI_FIXED(0.71484375), SI_FIXED(1.0)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD7D8, 2, 2, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD7D8, 2, 2, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240BD4_C8E784, 2, 5, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD8F8, 2, 2, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD8F8, 2, 2, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240CD8_C8E888, 2, 5, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240DA4_C8E954, 2, 5, SI_FIXED(0.71484375), SI_FIXED(0.71484375), SI_FIXED(1.0)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD7D8, 2, 5, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD7D8, 2, 5, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240BD4_C8E784, 2, 6, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD8F8, 2, 5, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD8F8, 2, 5, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240CD8_C8E888, 2, 6, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240DA4_C8E954, 2, 6, SI_FIXED(0.71484375), SI_FIXED(0.71484375), SI_FIXED(1.0)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD7D8, 3, 4, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD7D8, 3, 4, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240BD4_C8E784, 3, 0, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD8F8, 3, 4, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD8F8, 3, 4, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240CD8_C8E888, 3, 0, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240DA4_C8E954, 3, 0, SI_FIXED(0.71484375), SI_FIXED(0.71484375), SI_FIXED(1.0)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD7D8, 3, 6, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD7D8, 3, 6, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240BD4_C8E784, 3, 1, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD8F8, 3, 6, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD8F8, 3, 6, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240CD8_C8E888, 3, 1, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240DA4_C8E954, 3, 1, SI_FIXED(0.71484375), SI_FIXED(0.71484375), SI_FIXED(1.0)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD7D8, 3, 3, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD7D8, 3, 3, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240BD4_C8E784, 3, 2, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD8F8, 3, 3, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD8F8, 3, 3, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240CD8_C8E888, 3, 2, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240DA4_C8E954, 3, 2, SI_FIXED(0.71484375), SI_FIXED(0.71484375), SI_FIXED(1.0)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD7D8, 3, 5, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD7D8, 3, 5, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240BD4_C8E784, 3, 3, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD8F8, 3, 5, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD8F8, 3, 5, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240CD8_C8E888, 3, 3, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240DA4_C8E954, 3, 3, SI_FIXED(0.71484375), SI_FIXED(0.71484375), SI_FIXED(1.0)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD7D8, 3, 2, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD7D8, 3, 2, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240BD4_C8E784, 3, 4, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
-    SI_CMD(ScriptOpcode_CALL, 0x802CD8F8, 3, 2, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
+    SI_CMD(ScriptOpcode_CALL, func_802CD8F8, 3, 2, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240CD8_C8E888, 3, 4, SI_VAR(0), SI_VAR(1), SI_VAR(2)),
     SI_CMD(ScriptOpcode_CALL, func_80240DA4_C8E954, 3, 4, SI_FIXED(0.71484375), SI_FIXED(0.71484375), SI_FIXED(1.0)),
     SI_CMD(ScriptOpcode_SLEEP_FRAMES, 1),
@@ -1727,9 +1729,9 @@ s32 pad_0082B8[] = {
 };
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA564, 0xFFFFFF56, 310, 0xFFFFFEAC, 0, 140, 0x80000000);
+    MakeEntity(D_802EA564, 0xFFFFFF56, 310, 0xFFFFFEAC, 0, 140, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1336));
-    MakeEntity(0x802EA564, 0xFFFFFFBA, 310, 0xFFFFFEAC, 0, 163, 0x80000000);
+    MakeEntity(D_802EA564, 0xFFFFFFBA, 310, 0xFFFFFEAC, 0, 163, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1337));
 });
 

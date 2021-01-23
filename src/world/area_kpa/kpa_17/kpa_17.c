@@ -44,7 +44,7 @@ Script N(script_80240060) = SCRIPT({
     UseDoorSounds(1);
     spawn {
         sleep 30;
-        0x802D5FA4(5);
+        func_802D5FA4(5);
     }
 });
 
@@ -53,11 +53,11 @@ s32 pad_0000D8[] = {
 };
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA7E0, 1000, 90, 0xFFFFFDC1, 0, 0x80000000);
-    MakeEntity(0x802EAED4, 820, 60, 0xFFFFFDCB, 0, -1, 0x80000000);
-    MakeEntity(0x802EAED4, 820, 30, 0xFFFFFDCB, 0, 137, 0x80000000);
+    MakeEntity(D_802EA7E0, 1000, 90, 0xFFFFFDC1, 0, 0x80000000);
+    MakeEntity(D_802EAED4, 820, 60, 0xFFFFFDCB, 0, -1, 0x80000000);
+    MakeEntity(D_802EAED4, 820, 30, 0xFFFFFDCB, 0, 137, 0x80000000);
     AssignCrateFlag(SI_SAVE_FLAG(1559));
-    MakeEntity(0x802EAED4, 855, 30, 0xFFFFFDCB, 0, 149, 0x80000000);
+    MakeEntity(D_802EAED4, 855, 30, 0xFFFFFDCB, 0, 149, 0x80000000);
     AssignCrateFlag(SI_SAVE_FLAG(1560));
 });
 
@@ -157,7 +157,7 @@ Script N(script_802404C8) = SCRIPT({
     if (SI_VAR(0) == 1) {
         SetNpcFlagBits(0xFFFFFFFC, 512, 1);
     } else {
-        0x802CF56C(1);
+        func_802CF56C(1);
     }
     PlaySoundAtPlayer(353, 0);
     SetPlayerAnimation(0x80018);
@@ -195,7 +195,7 @@ Script N(script_802404C8) = SCRIPT({
     PanToTarget(0, 0, 0);
     DisablePlayerInput(0);
     ClearPartnerMoveHistory(0xFFFFFFFC);
-    0x802CF56C(0);
+    func_802CF56C(0);
 });
 
 Script N(script_80240854) = SCRIPT({
@@ -203,7 +203,7 @@ Script N(script_80240854) = SCRIPT({
     EnableModel(8, 0);
     ModifyColliderFlags(0, 16, 0x7FFFFE00);
     SI_SAVE_FLAG(1558) = 1;
-    0x802D2508();
+    func_802D2508();
     DisablePlayerInput(1);
     sleep 80;
     DisablePartnerAI(0);

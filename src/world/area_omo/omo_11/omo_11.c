@@ -338,7 +338,7 @@ Script N(script_80242008) = SCRIPT({
     if (SI_SAVE_FLAG(1194) == 1) {
         return;
     }
-    0x800441F0(SI_VAR(0));
+    func_800441F0(SI_VAR(0));
     if (SI_VAR(0) == 1) {
         return;
     }
@@ -346,7 +346,7 @@ Script N(script_80242008) = SCRIPT({
     if (SI_VAR(0) == 1) {
         return;
     }
-    0x802D585C(1, 0x200000);
+    func_802D585C(1, 0x200000);
     func_80240790_DDCFC0();
     DisablePlayerInput(1);
     DisablePartnerAI(0);
@@ -360,7 +360,7 @@ Script N(script_80242008) = SCRIPT({
         func_80240CA0_DDD4D0(SI_VAR(9));
         DisablePlayerInput(0);
         EnablePartnerAI();
-        0x802D585C(0, 0x200000);
+        func_802D585C(0, 0x200000);
         func_802407AC_DDCFDC();
         return;
     }
@@ -375,7 +375,7 @@ Script N(script_80242008) = SCRIPT({
         func_80240CA0_DDD4D0(SI_VAR(9));
         DisablePlayerInput(0);
         EnablePartnerAI();
-        0x802D585C(0, 0x200000);
+        func_802D585C(0, 0x200000);
         func_802407AC_DDCFDC();
         return;
     }
@@ -386,7 +386,7 @@ Script N(script_80242008) = SCRIPT({
     if (SI_VAR(0) != SI_VAR(11)) {
         func_80240BAC_DDD3DC(SI_VAR(11));
     } else {
-        0x802CF56C(2);
+        func_802CF56C(2);
     }
     sleep 10;
     ShowMessageAtScreenPos(0x1D00DF, 160, 40);
@@ -396,7 +396,7 @@ Script N(script_80242008) = SCRIPT({
         func_80240CA0_DDD4D0(SI_VAR(9));
         DisablePlayerInput(0);
         EnablePartnerAI();
-        0x802D585C(0, 0x200000);
+        func_802D585C(0, 0x200000);
         func_802407AC_DDCFDC();
         return;
     }
@@ -412,27 +412,27 @@ Script N(script_80242008) = SCRIPT({
     }
     DisablePlayerInput(0);
     EnablePartnerAI();
-    0x802D585C(0, 0x200000);
+    func_802D585C(0, 0x200000);
     func_802407AC_DDCFDC();
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA910, 0xFFFFFF8D, 270, 0xFFFFFF88, 0, 0x80000000);
+    MakeEntity(D_802EA910, 0xFFFFFF8D, 270, 0xFFFFFF88, 0, 0x80000000);
     SI_MAP_VAR(0) = SI_VAR(0);
     AssignBlockFlag(SI_SAVE_FLAG(1194));
     AssignScript(N(script_80242008));
-    MakeEntity(0x802EA0E8, 315, 270, 0xFFFFFF9C, 0, 0x80000000);
+    MakeEntity(D_802EA0E8, 315, 270, 0xFFFFFF9C, 0, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1177));
-    0x80111F2C(1);
-    MakeEntity(0x802EA588, 685, 60, 0xFFFFFF9C, 0, 139, 0x80000000);
+    func_80111F2C(1);
+    MakeEntity(D_802EA588, 685, 60, 0xFFFFFF9C, 0, 139, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1181));
-    MakeEntity(0x802EA588, 0xFFFFFDA8, 60, 0xFFFFFFCE, 0, 129, 0x80000000);
+    MakeEntity(D_802EA588, 0xFFFFFDA8, 60, 0xFFFFFFCE, 0, 129, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1182));
-    MakeEntity(0x802EA564, 0xFFFFFF9C, 60, 0xFFFFFFD3, 0, 343, 0x80000000);
+    MakeEntity(D_802EA564, 0xFFFFFF9C, 60, 0xFFFFFFD3, 0, 343, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1180));
-    MakeEntity(0x802EA5D0, 0xFFFFFF6A, 60, 0xFFFFFFD3, 0, 306, 0x80000000);
+    MakeEntity(D_802EA5D0, 0xFFFFFF6A, 60, 0xFFFFFFD3, 0, 306, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1178));
-    MakeEntity(0x802EA564, 0xFFFFFF38, 60, 0xFFFFFFD3, 0, 343, 0x80000000);
+    MakeEntity(D_802EA564, 0xFFFFFF38, 60, 0xFFFFFFD3, 0, 343, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1179));
 });
 
@@ -466,9 +466,9 @@ NpcSettings N(npcSettings_802426A0) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80242680),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xF,

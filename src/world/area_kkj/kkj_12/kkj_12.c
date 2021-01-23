@@ -241,7 +241,7 @@ Script N(script_NpcAI_802411C0) = SCRIPT({
     DisablePlayerInput(1);
     func_80240714_AD47A4();
     group 0;
-    0x802D5830(1);
+    func_802D5830(1);
     PlaySoundAtNpc(-1, 610, 0);
     ShowEmote(-1, 0, 0, 20, 1, 0, 0, 0, 0);
     NpcFacePlayer(-1, 5);
@@ -263,7 +263,7 @@ Script N(script_NpcAI_802411C0) = SCRIPT({
     GotoMapSpecial(D_80241E38_AD5EC8, 11, 13);
     sleep 100;
     DisablePlayerInput(0);
-    0x802D5830(0);
+    func_802D5830(0);
 });
 
 Script N(script_Idle_802413D4) = SCRIPT({

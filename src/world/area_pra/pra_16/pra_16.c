@@ -238,7 +238,7 @@ Script N(script_8024133C) = SCRIPT({
         SI_VAR(2) = N(unk_8024128C);
         SI_VAR(3) = N(unk_80241298);
     }
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_80241AF0_D6B610, 2);
     sleep 100;
@@ -257,7 +257,7 @@ Script N(script_80241430) = SCRIPT({
         SI_VAR(2) = N(unk_802412E4);
         SI_VAR(3) = N(unk_802412F0);
     }
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_80241AF8_D6B618, 0);
     sleep 100;
@@ -276,7 +276,7 @@ Script N(script_80241524) = SCRIPT({
         SI_VAR(2) = N(unk_802412FC);
         SI_VAR(3) = N(unk_80241308);
     }
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_80241AF8_D6B618, 2);
     sleep 100;
@@ -295,7 +295,7 @@ Script N(script_80241618) = SCRIPT({
         SI_VAR(2) = N(unk_802412A4);
         SI_VAR(3) = N(unk_802412B0);
     }
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_80241AF0_D6B610, 3);
     sleep 100;
@@ -352,7 +352,7 @@ Script N(script_8024178C) = SCRIPT({
             }
         }
     }
-    await 0x802861B0;
+    await func_802861B0;
     spawn N(script_8024170C);
 });
 

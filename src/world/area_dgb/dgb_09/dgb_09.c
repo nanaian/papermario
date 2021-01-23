@@ -139,7 +139,8 @@ Script N(script_80243880) = SCRIPT({
         }
         < 0xFFFFFFF0 {
             SetMusicTrack(0, 31, 0, 8);
-        } else {
+        }
+        else {
             SetMusicTrack(0, 30, 0, 8);
         }
     }
@@ -296,7 +297,7 @@ Script N(script_80244000) = SCRIPT({
         }
         == 2 {
             SetNpcPos(-1, 0, 0xFFFFFC18, 0);
-            0x80045900(1);
+            func_80045900(1);
         }
         == 3 {
             SetEnemyFlagBits(-1, 16, 1);
@@ -344,9 +345,9 @@ NpcSettings N(npcSettings_8024418C) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_8024411C),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xD,
@@ -383,9 +384,9 @@ NpcSettings N(npcSettings_80244258) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_802441E8),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xD,
@@ -461,20 +462,20 @@ Script N(script_NpcAI_802443DC) = SCRIPT({
         goto 20;
     }
     DisablePlayerPhysics(1);
-    0x802D2B6C();
+    func_802D2B6C();
     DisablePartnerAI(0);
     group 0;
-    0x802D5830(1);
+    func_802D5830(1);
     GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
     SI_VAR(1) += 20;
     SI_VAR(2) += 2;
     SetNpcPos(-1, SI_VAR(0), SI_VAR(1), SI_VAR(2));
-    0x80045838(-1, 759, 0);
+    func_80045838(-1, 759, 0);
     SetNpcAnimation(-1, 0x380008);
     sleep 10;
     SetPlayerAnimation(0x80017);
     sleep 10;
-    0x80045838(-1, 1838, 0);
+    func_80045838(-1, 1838, 0);
     spawn {
         loop 100 {
             GetNpcPos(-1, SI_VAR(0), SI_VAR(1), SI_VAR(2));
@@ -507,7 +508,7 @@ Script N(script_80244804) = SCRIPT({
     match SI_VAR(0) {
         == 1, 2, 4, 6 {
             GetSelfAnimationFromTable(7, SI_VAR(0));
-            await 0x800936DC;
+            await func_800936DC;
         }
     }
 });

@@ -59,9 +59,9 @@ Script N(script_80240810) = SCRIPT({
 });
 
 Script N(script_8024083C) = SCRIPT({
-    0x802D5FF8(66, 1);
+    func_802D5FF8(66, 1);
     sleep 130;
-    0x802D5FD8();
+    func_802D5FD8();
 });
 
 s32 pad_000878[] = {
@@ -284,7 +284,7 @@ s32 pad_001448[] = {
 
 Script N(script_80241450) = SCRIPT({
     if (SI_SAVE_FLAG(423) == 0) {
-10:
+    10:
         if (SI_SAVE_FLAG(423) == 0) {
             sleep 1;
             goto 10;
@@ -363,24 +363,24 @@ Script N(script_802416D8) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EAE0C, 0xFFFFFEF2, 0xFFFFFFA6, 0, 90, 3, 0x80000000);
+    MakeEntity(D_802EAE0C, 0xFFFFFEF2, 0xFFFFFFA6, 0, 90, 3, 0x80000000);
     AssignFlag(SI_SAVE_FLAG(423));
     spawn N(script_80241450);
-    MakeEntity(0x802EA0C4, 210, 0xFFFFFFB5, 0xFFFFFFEC, 0, 0x80000000);
+    MakeEntity(D_802EA0C4, 210, 0xFFFFFFB5, 0xFFFFFFEC, 0, 0x80000000);
     AssignScript(N(script_802414F0));
     if (SI_SAVE_FLAG(425) == 0) {
-        MakeEntity(0x802EAA54, 210, 0xFFFFFFCE, 0xFFFFFFEC, 0, 100, 0x80000000);
+        MakeEntity(D_802EAA54, 210, 0xFFFFFFCE, 0xFFFFFFEC, 0, 100, 0x80000000);
         SI_MAP_VAR(0) = SI_VAR(0);
     } else {
-        MakeEntity(0x802EAA54, 150, 0xFFFFFF79, 0xFFFFFFEC, 0, 100, 0x80000000);
+        MakeEntity(D_802EAA54, 150, 0xFFFFFF79, 0xFFFFFFEC, 0, 100, 0x80000000);
     }
-    MakeEntity(0x802EA0C4, 0xFFFFFF88, 0xFFFFFFD3, 0xFFFFFFEC, 0, 0x80000000);
+    MakeEntity(D_802EA0C4, 0xFFFFFF88, 0xFFFFFFD3, 0xFFFFFFEC, 0, 0x80000000);
     AssignScript(N(script_802416D8));
     if (SI_SAVE_FLAG(426) == 0) {
-        MakeEntity(0x802EAA54, 0xFFFFFF88, 0xFFFFFFEC, 0xFFFFFFEC, 0, 100, 0x80000000);
+        MakeEntity(D_802EAA54, 0xFFFFFF88, 0xFFFFFFEC, 0xFFFFFFEC, 0, 100, 0x80000000);
         SI_MAP_VAR(1) = SI_VAR(0);
     } else {
-        MakeEntity(0x802EAA54, 0xFFFFFFC4, 0xFFFFFF79, 0xFFFFFFEC, 0, 100, 0x80000000);
+        MakeEntity(D_802EAA54, 0xFFFFFFC4, 0xFFFFFF79, 0xFFFFFFEC, 0, 100, 0x80000000);
     }
 });
 

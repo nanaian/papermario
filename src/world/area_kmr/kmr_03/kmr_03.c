@@ -149,7 +149,7 @@ NpcSettings N(npcSettings_80240950) = {
 Script N(script_8024097C) = SCRIPT({
 1:
     if (SI_AREA_FLAG(8) == 1) {
-100:
+    100:
         AwaitPlayerLeave(294, 123, 170);
         EnableNpcAI(0, 0);
         DisablePlayerInput(1);
@@ -179,7 +179,7 @@ Script N(script_NpcAI_80240B50) = SCRIPT({
 1:
     match SI_SAVE_VAR(0) {
         == 0xFFFFFF86 {
-89:
+        89:
             func_80240218_8C81A8(0xFFFFFF8A, 86, 0xFFFFFFBA, 0xFFFFFFF1);
             sleep 1;
             if (SI_VAR(0) == 0) {
@@ -329,30 +329,30 @@ Script N(script_802414C8) = SCRIPT({
 
 Script N(script_MakeEntities) = SCRIPT({
     if (SI_SAVE_VAR(0) < 0xFFFFFF8B) {
-        MakeEntity(0x802EA10C, 45, 0, 70, 15, 0x80000000);
+        MakeEntity(D_802EA10C, 45, 0, 70, 15, 0x80000000);
         AssignScript(N(script_80241470));
     } else {
         ModifyColliderFlags(0, 9, 0x7FFFFE00);
     }
     if (SI_SAVE_FLAG(54) == 0) {
-        MakeEntity(0x802EA19C, 230, 0, 310, 15, 0x80000000);
+        MakeEntity(D_802EA19C, 230, 0, 310, 15, 0x80000000);
         AssignScript(N(script_802414A8));
     }
-    MakeEntity(0x802EA588, 230, 60, 310, 15, 151, 0x80000000);
+    MakeEntity(D_802EA588, 230, 60, 310, 15, 151, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(52));
-    MakeEntity(0x802EA0C4, 230, 50, 0xFFFFFF60, 15, 0x80000000);
-    MakeEntity(0x802EA0C4, 165, 0, 380, 20, 0x80000000);
-    MakeEntity(0x802EA564, 0xFFFFFF56, 0, 370, 43, 343, 0x80000000);
+    MakeEntity(D_802EA0C4, 230, 50, 0xFFFFFF60, 15, 0x80000000);
+    MakeEntity(D_802EA0C4, 165, 0, 380, 20, 0x80000000);
+    MakeEntity(D_802EA564, 0xFFFFFF56, 0, 370, 43, 343, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(50));
-    MakeEntity(0x802EAA54, 345, 75, 0xFFFFFF06, 0, 100, 0x80000000);
+    MakeEntity(D_802EAA54, 345, 75, 0xFFFFFF06, 0, 100, 0x80000000);
     MakeItemEntity(343, 345, 205, 0xFFFFFF06, 17, SI_SAVE_FLAG(56));
     MakeItemEntity(343, 345, 230, 0xFFFFFF06, 17, SI_SAVE_FLAG(57));
     MakeItemEntity(343, 345, 255, 0xFFFFFF06, 17, SI_SAVE_FLAG(58));
     MakeItemEntity(343, 345, 280, 0xFFFFFF06, 17, SI_SAVE_FLAG(59));
     MakeItemEntity(128, 229, 250, 0xFFFFFF64, 17, SI_SAVE_FLAG(49));
-    MakeEntity(0x802EAB04, 300, 0, 150, 0, 18, 0x80000000);
+    MakeEntity(D_802EAB04, 300, 0, 150, 0, 18, 0x80000000);
     AssignPanelFlag(SI_SAVE_FLAG(88));
-    MakeEntity(0x802EA7E0, 130, 60, 0, 0, 0x80000000);
+    MakeEntity(D_802EA7E0, 130, 60, 0, 0, 0x80000000);
 });
 
 s32 pad_0017E8[] = {
@@ -666,11 +666,11 @@ Script N(script_80242340) = SCRIPT({
         SetCamSpeed(0, 0.2001953125);
         PanToTarget(0, 0, 1);
     }
-    0x802D286C(0x2800);
-    0x802D2520(0x10002, 5, 5, 1, 1, 0);
+    func_802D286C(0x2800);
+    func_802D2520(0x10002, 5, 5, 1, 1, 0);
     sleep 100;
     WaitForCam(0, 1.0);
-    0x802D2520(0x10002, 0, 0, 0, 0, 0);
+    func_802D2520(0x10002, 0, 0, 0, 0, 0);
     HidePlayerShadow(0);
     SetPlayerAnimation(0x10006);
     sleep 10;

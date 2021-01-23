@@ -33,11 +33,11 @@ Script N(script_80240060) = SCRIPT({
             DisablePlayerInput(1);
             sleep 20;
             group 0;
-            0x802D5830(1);
+            func_802D5830(1);
             ShowMessageAtScreenPos(0xD00E1, 160, 40);
             SI_SAVE_FLAG(893) = 1;
             DisablePlayerInput(0);
-            0x802D5830(0);
+            func_802D5830(0);
             FadeInMusic(0, 25, 0, 2000, 0, 127);
             FadeOutMusic(1, 2000);
         }
@@ -112,7 +112,7 @@ s32 pad_000458[] = {
 Script N(script_MakeEntities) = SCRIPT({
     PlayEffect(32, 1, 486, 0xFFFFFCB3, 130, 0.30078125, SI_VAR(0), 0, 0, 0, 0, 0, 0, 0);
     PlayEffect(32, 1, 499, 0xFFFFFCB3, 42, 0.30078125, SI_VAR(0), 0, 0, 0, 0, 0, 0, 0);
-    MakeEntity(0x802E9A18, 560, 0xFFFFFCAE, 100, 0xFFFFFFF6, 0x80000000);
+    MakeEntity(D_802E9A18, 560, 0xFFFFFCAE, 100, 0xFFFFFFF6, 0x80000000);
 });
 
 s32 pad_00051C[] = {

@@ -185,7 +185,7 @@ Script N(script_802412C8) = SCRIPT({
     if (SI_SAVE_FLAG(903) == 1) {
         return;
     }
-    0x800441F0(SI_VAR(0));
+    func_800441F0(SI_VAR(0));
     if (SI_VAR(0) == 1) {
         return;
     }
@@ -193,7 +193,7 @@ Script N(script_802412C8) = SCRIPT({
     if (SI_VAR(0) == 1) {
         return;
     }
-    0x802D585C(1, 0x200000);
+    func_802D585C(1, 0x200000);
     func_80240000_988B60();
     DisablePlayerInput(1);
     DisablePartnerAI(0);
@@ -207,7 +207,7 @@ Script N(script_802412C8) = SCRIPT({
         func_80240510_989070(SI_VAR(9));
         DisablePlayerInput(0);
         EnablePartnerAI();
-        0x802D585C(0, 0x200000);
+        func_802D585C(0, 0x200000);
         func_8024001C_988B7C();
         return;
     }
@@ -222,7 +222,7 @@ Script N(script_802412C8) = SCRIPT({
         func_80240510_989070(SI_VAR(9));
         DisablePlayerInput(0);
         EnablePartnerAI();
-        0x802D585C(0, 0x200000);
+        func_802D585C(0, 0x200000);
         func_8024001C_988B7C();
         return;
     }
@@ -233,7 +233,7 @@ Script N(script_802412C8) = SCRIPT({
     if (SI_VAR(0) != SI_VAR(11)) {
         func_8024041C_988F7C(SI_VAR(11));
     } else {
-        0x802CF56C(2);
+        func_802CF56C(2);
     }
     sleep 10;
     ShowMessageAtScreenPos(0x1D00DF, 160, 40);
@@ -243,7 +243,7 @@ Script N(script_802412C8) = SCRIPT({
         func_80240510_989070(SI_VAR(9));
         DisablePlayerInput(0);
         EnablePartnerAI();
-        0x802D585C(0, 0x200000);
+        func_802D585C(0, 0x200000);
         func_8024001C_988B7C();
         return;
     }
@@ -259,7 +259,7 @@ Script N(script_802412C8) = SCRIPT({
     }
     DisablePlayerInput(0);
     EnablePartnerAI();
-    0x802D585C(0, 0x200000);
+    func_802D585C(0, 0x200000);
     func_8024001C_988B7C();
 });
 
@@ -288,14 +288,14 @@ Script N(script_80241748) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA910, 0xFFFFFDDA, 0xFFFFFD30, 0, 0, 0x80000000);
+    MakeEntity(D_802EA910, 0xFFFFFDDA, 0xFFFFFD30, 0, 0, 0x80000000);
     SI_MAP_VAR(0) = SI_VAR(0);
     AssignBlockFlag(SI_SAVE_FLAG(903));
     AssignScript(N(script_802412C8));
     spawn {
         func_80240D38_989898();
     }
-    MakeEntity(0x802EAA30, 0xFFFFFDFC, 0xFFFFFCF4, 0xFFFFFFB9, 0, 0x80000000);
+    MakeEntity(D_802EAA30, 0xFFFFFDFC, 0xFFFFFCF4, 0xFFFFFFB9, 0, 0x80000000);
     AssignScript(N(script_80241748));
     PlayEffect(32, 1, 0xFFFFFE02, 0xFFFFFE3B, 43, 0.30078125, SI_VAR(0), 0, 0, 0, 0, 0, 0, 0);
     PlayEffect(32, 1, 0xFFFFFE02, 0xFFFFFD37, 43, 0.30078125, SI_VAR(0), 0, 0, 0, 0, 0, 0, 0);

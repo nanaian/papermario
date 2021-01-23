@@ -142,7 +142,8 @@ Script N(script_80240F58) = SCRIPT({
         == 3 {}
         == 4 {
             spawn N(script_80240F20);
-        } else {
+        }
+        else {
             if (SI_SAVE_FLAG(532) == 0) {
                 SetMusicTrack(0, 99, 1, 8);
             } else {
@@ -335,12 +336,12 @@ Script N(script_80241790) = SCRIPT({
     EnableTexPanning(9, 1);
     EnableTexPanning(154, 1);
     EnableTexPanning(162, 1);
-    0x802C90FC(162, 0, -1);
-    0x802C90FC(154, 0, -1);
-    0x802C90FC(160, 1, -1);
-    0x802C90FC(152, 1, -1);
-    0x802C94A0(0, func_80240000_A26ED0, 0);
-    0x802C94A0(1, func_80240154_A27024, 0);
+    func_802C90FC(162, 0, -1);
+    func_802C90FC(154, 0, -1);
+    func_802C90FC(160, 1, -1);
+    func_802C90FC(152, 1, -1);
+    func_802C94A0(0, func_80240000_A26ED0, 0);
+    func_802C94A0(1, func_80240154_A27024, 0);
 });
 
 s32 pad_001A44[] = {
@@ -574,9 +575,9 @@ Script N(script_80242474) = SCRIPT({
     MakeLerp(SI_VAR(3), SI_VAR(4), 30, 10);
     loop {
         UpdateLerp();
-        SI_VAR(2) = f SI_VAR(0);
+        SI_VAR(2) =f SI_VAR(0);
         SI_VAR(2) *= 0.1005859375;
-        SI_VAR(2) += f SI_MAP_VAR(11);
+        SI_VAR(2) +=f SI_MAP_VAR(11);
         TranslateGroup(171, SI_MAP_VAR(10), SI_VAR(2), 0);
         RotateGroup(171, SI_MAP_VAR(12), 0, 1, 0);
         sleep 1;

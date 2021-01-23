@@ -148,7 +148,7 @@ Script N(main) = SCRIPT({
         SetMusicTrack(0, 117, 0, 8);
     }
     UseDoorSounds(0);
-    bind 0x80241120 to TriggerFlag_WALL_INTERACT 2;
+    bind N(header) to TriggerFlag_WALL_INTERACT 2;
     spawn N(script_EnterSingleDoor_802411C4);
     sleep 1;
 });
@@ -192,7 +192,7 @@ NpcSettings N(npcSettings_8024140C) = {
 Script N(script_NpcAI_80241438) = SCRIPT({
     DisablePlayerInput(1);
     group 0;
-    0x802D5830(1);
+    func_802D5830(1);
     PlaySoundAtNpc(-1, 610, 0);
     ShowEmote(-1, 0, 0, 20, 1, 0, 0, 0, 0);
     NpcFacePlayer(-1, 0);
@@ -472,7 +472,7 @@ Script N(script_NpcAI_80242978) = SCRIPT({
     DisablePlayerInput(1);
     func_80240EF4_AEE304();
     group 0;
-    0x802D5830(1);
+    func_802D5830(1);
     PlaySoundAtNpc(-1, 610, 0);
     ShowEmote(-1, 0, 0, 20, 1, 0, 0, 0, 0);
     NpcFacePlayer(-1, 0);

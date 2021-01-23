@@ -166,7 +166,7 @@ Script N(script_80241860) = SCRIPT({
     SI_VAR(2) = 57;
     SI_VAR(4) = 58;
     SI_VAR(3) = 1;
-    await 0x80285E24;
+    await func_80285E24;
 });
 
 Script N(script_802418BC) = SCRIPT({
@@ -177,7 +177,7 @@ Script N(script_802418BC) = SCRIPT({
     SI_VAR(2) = 57;
     SI_VAR(4) = 58;
     SI_VAR(3) = 1;
-    spawn 0x80285DFC;
+    spawn func_80285DFC;
     sleep 17;
     GotoMap(D_80246EC0_BDA730, 4);
     sleep 100;
@@ -366,7 +366,7 @@ Script N(script_8024231C) = SCRIPT({
         await N(script_8024224C);
     } else {
         DisablePlayerInput(1);
-        0x802D2B6C();
+        func_802D2B6C();
         await N(script_8024217C);
         sleep 20;
         await N(script_8024224C);
@@ -379,7 +379,7 @@ Script N(script_8024231C) = SCRIPT({
 Script N(script_8024240C) = {
     SI_CMD(ScriptOpcode_LABEL, 3),
     SI_CMD(ScriptOpcode_CALL, DisablePlayerInput, 1),
-    SI_CMD(ScriptOpcode_CALL, 0x802D2B6C),
+    SI_CMD(ScriptOpcode_CALL, func_802D2B6C),
     SI_CMD(ScriptOpcode_LOOP, 3),
         SI_CMD(ScriptOpcode_CALL, PlaySoundAtCollider, 13, 246, 0),
         SI_CMD(ScriptOpcode_CALL, RotateModel, 16, -1, 1, 0, 0),
@@ -437,7 +437,7 @@ Script N(script_8024240C) = {
 Script N(script_802427A4) = {
     SI_CMD(ScriptOpcode_LABEL, 5),
     SI_CMD(ScriptOpcode_CALL, DisablePlayerInput, 1),
-    SI_CMD(ScriptOpcode_CALL, 0x802D2B6C),
+    SI_CMD(ScriptOpcode_CALL, func_802D2B6C),
     SI_CMD(ScriptOpcode_LOOP, 5),
         SI_CMD(ScriptOpcode_CALL, PlaySoundAtCollider, 16, 246, 0),
         SI_CMD(ScriptOpcode_CALL, RotateModel, 26, -1, 1, 0, 0),
@@ -511,7 +511,7 @@ s32 pad_002C54[] = {
 };
 
 Script N(script_80242C60) = SCRIPT({
-    0x802D617C(0xB0000011, 0);
+    func_802D617C(0xB0000011, 0);
     PlaySoundAtModel(SI_VAR(2), 0xB0000011, 0);
     func_80240840_BD40B0(5);
     SI_VAR(3) = 90;
@@ -560,7 +560,7 @@ Script N(script_80242C60) = SCRIPT({
     if (SI_VAR(1) == 1) {
         goto 40;
     }
-    0x802D617C(0xB0000012, 0);
+    func_802D617C(0xB0000012, 0);
     PlaySoundAtModel(SI_VAR(2), 0xB0000012, 0);
 });
 
@@ -659,7 +659,7 @@ Script N(script_MakeEntities) = SCRIPT({
         func_80240870_BD40E0();
         SI_MAP_VAR(0) = SI_VAR(0);
     }
-    MakeEntity(0x802EAB04, 0, 0, 0, 0, 5, 0x80000000);
+    MakeEntity(D_802EAB04, 0, 0, 0, 0, 5, 0x80000000);
     AssignPanelFlag(SI_SAVE_FLAG(980));
 });
 
@@ -1075,8 +1075,8 @@ Script N(script_Idle_80244FF4) = SCRIPT({
     loop {
         func_80240FE4_BD4854();
         func_8024116C_BD49DC();
-        0x802CFD30(-1, 7, SI_VAR(0), 0, 0, 0);
-        0x802D0244(-1, 17);
+        func_802CFD30(-1, 7, SI_VAR(0), 0, 0, 0);
+        func_802D0244(-1, 17);
         sleep 1;
     }
 });
@@ -1218,7 +1218,7 @@ Script N(script_80245B28) = SCRIPT({
     MakeLerp(255, 0, 60, 0);
 0:
     UpdateLerp();
-    0x802CFD30(SI_VAR(10), 7, SI_VAR(0), 0, 0, 0);
+    func_802CFD30(SI_VAR(10), 7, SI_VAR(0), 0, 0, 0);
     sleep 1;
     if (SI_VAR(1) == 1) {
         goto 0;
@@ -1228,7 +1228,7 @@ Script N(script_80245B28) = SCRIPT({
 
 Script N(script_80245C34) = SCRIPT({
     DisablePlayerInput(1);
-    0x802D2B6C();
+    func_802D2B6C();
     SetMusicTrack(0, 141, 0, 8);
     sleep 20;
     InterpPlayerYaw(90, 0);
@@ -1245,8 +1245,8 @@ Script N(script_80245C34) = SCRIPT({
     MakeLerp(0, 255, 30, 0);
     loop {
         UpdateLerp();
-        0x802CFD30(11, 7, SI_VAR(0), 0, 0, 0);
-        0x802D721C(SI_MAP_VAR(0), SI_VAR(0));
+        func_802CFD30(11, 7, SI_VAR(0), 0, 0, 0);
+        func_802D721C(SI_MAP_VAR(0), SI_VAR(0));
         sleep 1;
         if (SI_VAR(1) == 0) {
             break;
@@ -1259,8 +1259,8 @@ Script N(script_80245C34) = SCRIPT({
     MakeLerp(255, 0, 30, 0);
     loop {
         UpdateLerp();
-        0x802CFD30(11, 7, SI_VAR(0), 0, 0, 0);
-        0x802D721C(SI_MAP_VAR(0), SI_VAR(0));
+        func_802CFD30(11, 7, SI_VAR(0), 0, 0, 0);
+        func_802D721C(SI_MAP_VAR(0), SI_VAR(0));
         sleep 1;
         if (SI_VAR(1) == 0) {
             break;
@@ -1279,11 +1279,11 @@ Script N(script_80245C34) = SCRIPT({
     MakeLerp(0, 255, 30, 0);
     loop {
         UpdateLerp();
-        0x802CFD30(11, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(11, 7, SI_VAR(0), 0, 0, 0);
         GetNpcPos(11, SI_VAR(3), SI_VAR(4), SI_VAR(5));
         SI_VAR(4) += 20;
         SetItemPos(SI_MAP_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5));
-        0x802D721C(SI_MAP_VAR(0), SI_VAR(0));
+        func_802D721C(SI_MAP_VAR(0), SI_VAR(0));
         sleep 1;
         if (SI_VAR(1) == 0) {
             break;
@@ -1474,7 +1474,7 @@ Script N(script_80245C34) = SCRIPT({
         MakeLerp(255, 0, 20, 0);
         loop {
             UpdateLerp();
-            0x802CFD30(SI_MAP_VAR(6), 7, SI_VAR(0), 0, 0, 0);
+            func_802CFD30(SI_MAP_VAR(6), 7, SI_VAR(0), 0, 0, 0);
             sleep 1;
             if (SI_VAR(1) == 0) {
                 break;
@@ -1486,7 +1486,7 @@ Script N(script_80245C34) = SCRIPT({
         MakeLerp(0, 255, 20, 0);
         loop {
             UpdateLerp();
-            0x802CFD30(SI_MAP_VAR(6), 7, SI_VAR(0), 0, 0, 0);
+            func_802CFD30(SI_MAP_VAR(6), 7, SI_VAR(0), 0, 0, 0);
             sleep 1;
             if (SI_VAR(1) == 0) {
                 break;

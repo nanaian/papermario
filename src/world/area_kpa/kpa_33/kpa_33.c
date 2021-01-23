@@ -46,7 +46,7 @@ Script N(script_80240390) = SCRIPT({
     UseDoorSounds(1);
     spawn {
         sleep 30;
-        0x802D5FA4(7);
+        func_802D5FA4(7);
     }
 });
 
@@ -55,7 +55,7 @@ s32 pad_0003F8[] = {
 };
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802E9A18, 0, 10, 0, 0, 0x80000000);
+    MakeEntity(D_802E9A18, 0, 10, 0, 0, 0x80000000);
 });
 
 s32 pad_000434[] = {

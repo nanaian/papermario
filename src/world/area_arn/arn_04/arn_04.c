@@ -127,7 +127,8 @@ Script N(script_802433D0) = SCRIPT({
         }
         < 0xFFFFFFF0 {
             SetMusicTrack(0, 31, 0, 8);
-        } else {
+        }
+        else {
             SetMusicTrack(0, 29, 0, 8);
         }
     }
@@ -203,9 +204,9 @@ NpcSettings N(npcSettings_802436B0) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80243690),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xC,
@@ -246,9 +247,9 @@ NpcSettings N(npcSettings_80243794) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80243724),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xC,
@@ -281,9 +282,9 @@ NpcSettings N(npcSettings_80243814) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_802437F0),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xF,
@@ -367,11 +368,11 @@ s32 pad_00403C[] = {
 };
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA564, 450, 285, 120, 0, 140, 0x80000000);
+    MakeEntity(D_802EA564, 450, 285, 120, 0, 140, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1008));
-    MakeEntity(0x802EA564, 720, 333, 75, 0, 343, 0x80000000);
+    MakeEntity(D_802EA564, 720, 333, 75, 0, 343, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1009));
-    MakeEntity(0x802EA0E8, 600, 290, 200, 0, 0x80000000);
+    MakeEntity(D_802EA0E8, 600, 290, 200, 0, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1010));
     MakeItemEntity(348, 540, 230, 13, 17, SI_SAVE_FLAG(1019));
 });

@@ -123,10 +123,10 @@ s32 N(unk_802408C0)[] = {
 
 Script N(script_802408C4) = SCRIPT({
     group 0;
-    0x802D5830(2);
+    func_802D5830(2);
     sleep 40;
     ShowGotItem(SI_VAR(0), 0, 0);
-    0x802D5830(0);
+    func_802D5830(0);
     return;
 });
 
@@ -192,7 +192,8 @@ Script N(script_80240BD4) = SCRIPT({
             SetPlayerAnimation(0xC0002);
             sleep 10;
             SetPlayerAnimation(0xA0001);
-        } else {
+        }
+        else {
             sleep 10;
             SI_VAR(9) = SI_VAR(0);
             await N(script_80240940);
@@ -216,12 +217,13 @@ Script N(script_80240D9C) = SCRIPT({
         }
         269, 297, 273 {
             group 0;
-            0x802D5830(2);
+            func_802D5830(2);
             ShowGotItem(SI_VAR(0), 0, 0);
-            0x802D5830(0);
+            func_802D5830(0);
             AddBadge(SI_VAR(0), SI_VAR(1));
             func_80240500_AF2160();
-        } else {
+        }
+        else {
             func_80240568_AF21C8();
             if (SI_VAR(1) <= 0) {
                 ShowMessageAtScreenPos(0x1D00D5, 160, 40);

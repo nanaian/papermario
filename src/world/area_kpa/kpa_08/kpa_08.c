@@ -99,7 +99,7 @@ Script N(script_80241500) = SCRIPT({
     UseDoorSounds(1);
     spawn {
         sleep 30;
-        0x802D5FA4(7);
+        func_802D5FA4(7);
     }
 });
 
@@ -237,7 +237,7 @@ Script N(script_80241830) = SCRIPT({
 
 Script N(script_MakeEntities) = SCRIPT({
     SI_AREA_FLAG(3) = 0;
-    MakeEntity(0x802E9BB0, 10, 0, 0, 0, 0x80000000);
+    MakeEntity(D_802E9BB0, 10, 0, 0, 0, 0x80000000);
     AssignScript(N(script_80241830));
     ParentColliderToModel(15, 63);
     TranslateGroup(64, 0, 0xFFFFFFCE, 0);
@@ -290,7 +290,7 @@ Script N(script_80241DC4) = SCRIPT({
     match SI_VAR(0) {
         == 1, 2, 4, 6 {
             GetSelfAnimationFromTable(7, SI_VAR(0));
-            await 0x800936DC;
+            await func_800936DC;
         }
     }
 });
@@ -304,7 +304,7 @@ Script N(script_80241E50) = SCRIPT({
         }
         == 2 {
             func_802413C4_A4DDE4();
-            0x80045900(0);
+            func_80045900(0);
         }
     }
 });
@@ -360,7 +360,7 @@ Script N(script_80241FFC) = SCRIPT({
         }
         == 2 {
             SetNpcPos(-1, 0, 0xFFFFFC18, 0);
-            0x80045900(1);
+            func_80045900(1);
         }
         == 3 {
             SetEnemyFlagBits(-1, 16, 1);

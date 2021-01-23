@@ -49,7 +49,8 @@ Script N(script_80240250) = SCRIPT({
         }
         < 0xFFFFFFF0 {
             SetMusicTrack(0, 31, 0, 8);
-        } else {
+        }
+        else {
             SetMusicTrack(0, 30, 0, 8);
         }
     }
@@ -293,9 +294,9 @@ Script N(script_80240CB8) = {
 
 Script N(script_80240E68) = SCRIPT({
     func_8024013C_C4C4CC();
-    0x802CA988(0, SI_VAR(2), SI_VAR(3), SI_VAR(4), SI_VAR(5));
+    func_802CA988(0, SI_VAR(2), SI_VAR(3), SI_VAR(4), SI_VAR(5));
     func_802401C0_C4C550();
-    0x802D2B6C();
+    func_802D2B6C();
     GotoMap(D_80241048_C4D3D8, SI_VAR(0));
     sleep 100;
 });
@@ -318,15 +319,15 @@ Script N(script_80240F20) = SCRIPT({
 
 Script N(script_MakeEntities) = SCRIPT({
     if (SI_SAVE_FLAG(1052) == 0) {
-        MakeEntity(0x802BCE84, 500, 0, 0xFFFFFF9C, 0, 0x80000000);
+        MakeEntity(D_802BCE84, 500, 0, 0xFFFFFF9C, 0, 0x80000000);
         AssignScript(N(script_80240EE0));
     }
     if (SI_SAVE_FLAG(1053) == 0) {
-        MakeEntity(0x802BCE84, 500, 0, 0xFFFFFF06, 0, 0x80000000);
+        MakeEntity(D_802BCE84, 500, 0, 0xFFFFFF06, 0, 0x80000000);
         AssignScript(N(script_80240F00));
     }
     if (SI_SAVE_FLAG(1054) == 0) {
-        MakeEntity(0x802BCE84, 375, 0, 0xFFFFFF06, 0, 0x80000000);
+        MakeEntity(D_802BCE84, 375, 0, 0xFFFFFF06, 0, 0x80000000);
         AssignScript(N(script_80240F20));
     }
 });

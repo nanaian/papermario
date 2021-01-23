@@ -107,8 +107,8 @@ Script N(script_802411D0) = SCRIPT({
     SetPlayerPos(SI_VAR(1), SI_VAR(2), SI_VAR(3));
     InterpPlayerYaw(SI_VAR(4), 0);
     PlaySound(355);
-    0x802D286C(256);
-    0x802D2520(0x10000, 5, 2, 1, 1, 0);
+    func_802D286C(256);
+    func_802D2520(0x10000, 5, 2, 1, 1, 0);
     GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
     loop 40 {
         SI_VAR(1) += 1;
@@ -129,7 +129,7 @@ Script N(script_802411D0) = SCRIPT({
         }
     }
     sleep 2;
-    0x802D2520(0x10000, 0, 0, 0, 0, 0);
+    func_802D2520(0x10000, 0, 0, 0, 0, 0);
     sleep 1;
     SetPlayerAnimation(0x10002);
     DisablePlayerPhysics(0);
@@ -179,8 +179,8 @@ Script N(script_80241524) = SCRIPT({
         sleep 25;
         HidePlayerShadow(0);
     }
-    0x802D286C(2304);
-    0x802D2520(0x10002, 5, 3, 1, 1, 0);
+    func_802D286C(2304);
+    func_802D2520(0x10002, 5, 3, 1, 1, 0);
     loop 40 {
         func_8024023C_8A260C(1.0);
         SetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
@@ -197,7 +197,7 @@ Script N(script_80241524) = SCRIPT({
         }
     }
     sleep 5;
-    0x802D2520(0x10002, 0, 0, 0, 0, 0);
+    func_802D2520(0x10002, 0, 0, 0, 0, 0);
     ModifyColliderFlags(1, SI_VAR(11), 0x7FFFFE00);
     DisablePlayerInput(0);
     DisablePlayerPhysics(0);
@@ -216,7 +216,7 @@ Script N(script_80241914) = SCRIPT({
         if (SI_VAR(1) != 6) {
             return;
         } else {
-            0x802D2B6C();
+            func_802D2B6C();
             DisablePlayerInput(1);
         }
     } else {
@@ -251,14 +251,14 @@ Script N(script_802419F0) = SCRIPT({
             sleep 1;
         }
     }
-    0x802D286C(2048);
-    0x802D2520(0x10002, 5, 2, 1, 1, 0);
+    func_802D286C(2048);
+    func_802D2520(0x10002, 5, 2, 1, 1, 0);
     sleep 25;
     await 0xFE363C8C;
 });
 
 Script N(script_80241BCC) = SCRIPT({
-    0x802D249C(SI_VAR(0));
+    func_802D249C(SI_VAR(0));
     if (SI_VAR(0) == 0) {
         return;
     }
@@ -272,7 +272,7 @@ Script N(script_80241BCC) = SCRIPT({
         if (SI_VAR(1) != 6) {
             return;
         } else {
-            0x802D2B6C();
+            func_802D2B6C();
             DisablePlayerInput(1);
         }
     } else {
@@ -299,8 +299,8 @@ Script N(script_80241BCC) = SCRIPT({
     GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
     SetPlayerPos(SI_VAR(0), SI_VAR(6), SI_VAR(7));
     SetPlayerAnimation(0x10000);
-    0x802D286C(2048);
-    0x802D2520(0x10000, 5, 3, 1, 1, 0);
+    func_802D286C(2048);
+    func_802D2520(0x10000, 5, 3, 1, 1, 0);
     spawn {
         sleep 8;
         HidePlayerShadow(1);
@@ -593,18 +593,18 @@ Script N(script_80242DD0) = SCRIPT({
 
 Script N(script_MakeEntities) = SCRIPT({
     if (SI_SAVE_FLAG(397) == 0) {
-        MakeEntity(0x802EA19C, 0xFFFFFEE8, 0xFFFFFFEC, 0xFFFFFFEC, 0, 0x80000000);
+        MakeEntity(D_802EA19C, 0xFFFFFEE8, 0xFFFFFFEC, 0xFFFFFFEC, 0, 0x80000000);
         AssignScript(N(script_80242DD0));
     } else {
         ModifyColliderFlags(0, 9, 0x7FFFFE00);
     }
-    MakeEntity(0x802EA588, 0xFFFFFFB5, 40, 0xFFFFFF88, 0, 163, 0x80000000);
+    MakeEntity(D_802EA588, 0xFFFFFFB5, 40, 0xFFFFFF88, 0, 163, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(416));
-    MakeEntity(0x802EA588, 175, 40, 0, 0, 146, 0x80000000);
+    MakeEntity(D_802EA588, 175, 40, 0, 0, 146, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(417));
-    MakeEntity(0x802EA588, 0xFFFFFF06, 40, 0xFFFFFF9C, 0, 139, 0x80000000);
+    MakeEntity(D_802EA588, 0xFFFFFF06, 40, 0xFFFFFF9C, 0, 139, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(418));
-    MakeEntity(0x802EA564, 0xFFFFFF38, 40, 0xFFFFFF9C, 0, 343, 0x80000000);
+    MakeEntity(D_802EA564, 0xFFFFFF38, 40, 0xFFFFFF9C, 0, 343, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(419));
 });
 
@@ -642,9 +642,9 @@ NpcSettings N(npcSettings_80243010) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80242FA0),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x13,

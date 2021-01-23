@@ -87,7 +87,8 @@ Script N(script_EnterWalk_802402C0) = SCRIPT({
     match SI_VAR(0) {
         == 4 {
             spawn N(script_80240240);
-        } else {
+        }
+        else {
             SI_VAR(0) = N(script_80240240);
             spawn EnterWalk;
         }
@@ -132,13 +133,13 @@ Script N(script_8024047C) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802BCA74, 327, 0, 8, 0, N(tweesterPathList_80240474), 0x80000000);
+    MakeEntity(D_802BCA74, 327, 0, 8, 0, N(tweesterPathList_80240474), 0x80000000);
     AssignScript(N(script_8024047C));
-    MakeEntity(0x802EA0E8, 0, 60, 0xFFFFFF9C, 0, 0x80000000);
+    MakeEntity(D_802EA0E8, 0, 60, 0xFFFFFF9C, 0, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(817));
-    MakeEntity(0x802EA564, 0xFFFFFF10, 0, 215, 0, 343, 0x80000000);
+    MakeEntity(D_802EA564, 0xFFFFFF10, 0, 215, 0, 343, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(800));
-    MakeEntity(0x802EA564, 220, 0, 150, 0, 164, 0x80000000);
+    MakeEntity(D_802EA564, 220, 0, 150, 0, 164, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(801));
 });
 

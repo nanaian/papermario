@@ -97,7 +97,8 @@ Script N(script_EnterWalk_802403E0) = SCRIPT({
     match SI_VAR(0) {
         == 4 {
             spawn N(script_80240360);
-        } else {
+        }
+        else {
             SI_VAR(0) = N(script_80240360);
             spawn EnterWalk;
         }
@@ -156,7 +157,7 @@ Script N(script_80240648) = SCRIPT({
             DoNpcDefeat();
         }
         == 2 {
-            0x80045900(0);
+            func_80045900(0);
         }
         == 3 {
             DisablePlayerInput(1);
@@ -194,7 +195,7 @@ NpcSettings N(npcSettings_80240894) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80240628),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
     .onDefeat = &N(script_80240648),
     .flags = 0,
@@ -230,9 +231,9 @@ NpcSettings N(npcSettings_8024091C) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_802408F0),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x9,

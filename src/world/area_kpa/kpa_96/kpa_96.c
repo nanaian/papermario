@@ -44,7 +44,7 @@ Script N(script_80240080) = SCRIPT({
     UseDoorSounds(1);
     spawn {
         sleep 30;
-        0x802D5FA4(6);
+        func_802D5FA4(6);
     }
 });
 
@@ -178,7 +178,7 @@ Script N(script_Interact_8024058C) = SCRIPT({
             ContinueSpeech(-1, 0x270002, 0x270001, 0, 0x130050);
         }
     } else {
-        await 0x80284054;
+        await func_80284054;
     }
 });
 

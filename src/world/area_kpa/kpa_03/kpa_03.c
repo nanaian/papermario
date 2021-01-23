@@ -214,9 +214,9 @@ NpcSettings N(npcSettings_80242230) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_802421C0),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x19,
@@ -276,11 +276,11 @@ Script N(script_8024243C) = SCRIPT({
     func_80240934_A48EF4();
     SetNpcAnimation(-1, 0x33000F);
     func_8024097C_A48F3C();
-    0x80045580(1);
+    func_80045580(1);
     SetNpcFlagBits(-1, 512, 1);
     SetNpcAnimation(-1, 0x330000);
     func_802409D4_A48F94();
-    0x80045580(0);
+    func_80045580(0);
     SetSelfVar(2, 5);
     SetSelfVar(3, 2);
     SetSelfVar(5, 5);
@@ -289,10 +289,10 @@ Script N(script_8024243C) = SCRIPT({
 });
 
 s32 unk_missing_80242530[] = {
-    0x00000000, 0x00140016, 0x00000000, 0x00000000, N(script_8024228C), 0x80077F70, 0x00000000, 0x8007809C,
+    0x00000000, 0x00140016, 0x00000000, 0x00000000, N(script_8024228C), EnemyNpcHit, 0x00000000, EnemyNpcDefeat,
     0x00000000, 0x00000000, 0x000A0000, 0x00000000, 0x00140016, 0x00000000, 0x00000000, N(script_8024243C),
-    0x80077F70, 0x00000000, 0x8007809C, 0x00000000, 0x00000000, 0x000A0000, 0x00000000, 0x00140016,
-    0x00000000, 0x00000000, N(script_8024232C), 0x80077F70, 0x00000000, 0x8007809C, 0x00000000, 0x00000000,
+    EnemyNpcHit, 0x00000000, EnemyNpcDefeat, 0x00000000, 0x00000000, 0x000A0000, 0x00000000, 0x00140016,
+    0x00000000, 0x00000000, N(script_8024232C), EnemyNpcHit, 0x00000000, EnemyNpcDefeat, 0x00000000, 0x00000000,
     0x00110000,
 };
 
@@ -303,9 +303,9 @@ NpcSettings N(npcSettings_802425B4) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_802423CC),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x19,
@@ -351,7 +351,7 @@ Script N(script_802426B4) = SCRIPT({
     match SI_VAR(0) {
         == 1, 2, 4, 6 {
             GetSelfAnimationFromTable(7, SI_VAR(0));
-            await 0x800936DC;
+            await func_800936DC;
         }
     }
 });
@@ -365,7 +365,7 @@ Script N(script_80242740) = SCRIPT({
         }
         == 2 {
             func_80241D6C_A4A32C();
-            0x80045900(0);
+            func_80045900(0);
         }
     }
 });
@@ -421,7 +421,7 @@ Script N(script_802428EC) = SCRIPT({
         }
         == 2 {
             SetNpcPos(-1, 0, 0xFFFFFC18, 0);
-            0x80045900(1);
+            func_80045900(1);
         }
         == 3 {
             SetEnemyFlagBits(-1, 16, 1);
@@ -600,9 +600,9 @@ Script N(script_MakeEntities) = SCRIPT({
     spawn {
         func_80241E50_A4A410();
     }
-    MakeEntity(0x802EAA30, 0xFFFFFE70, 0xFFFFFED4, 0xFFFFFF6A, 0, 0x80000000);
+    MakeEntity(D_802EAA30, 0xFFFFFE70, 0xFFFFFED4, 0xFFFFFF6A, 0, 0x80000000);
     AssignScript(N(script_80243690));
-    MakeEntity(0x802EA564, 620, 0xFFFFFFBF, 0xFFFFFF38, 0, 131, 0x80000000);
+    MakeEntity(D_802EA564, 620, 0xFFFFFFBF, 0xFFFFFF38, 0, 131, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1546));
 });
 

@@ -226,9 +226,9 @@ Script N(script_80240AD4) = SCRIPT({
     UpdateLerp();
     SI_VAR(0) /= 100;
     SI_VAR(2) = 1;
-    SI_VAR(2) += f SI_VAR(0);
+    SI_VAR(2) +=f SI_VAR(0);
     SI_VAR(3) = 1;
-    SI_VAR(3) -= f SI_VAR(0);
+    SI_VAR(3) -=f SI_VAR(0);
     ScaleModel(70, SI_VAR(2), SI_VAR(3), SI_VAR(2));
     sleep 1;
     if (SI_VAR(1) == 1) {
@@ -242,7 +242,7 @@ Script N(script_80240BB4) = SCRIPT({
     UpdateLerp();
     SI_VAR(0) /= 10;
     SI_VAR(2) = 0;
-    SI_VAR(2) -= f SI_VAR(0);
+    SI_VAR(2) -=f SI_VAR(0);
     TranslateGroup(60, 0, SI_VAR(0), 0);
     TranslateModel(59, 0, SI_VAR(2), 0);
     sleep 1;
@@ -254,7 +254,7 @@ Script N(script_80240BB4) = SCRIPT({
     UpdateLerp();
     SI_VAR(0) /= 10;
     SI_VAR(2) = 0;
-    SI_VAR(2) -= f SI_VAR(0);
+    SI_VAR(2) -=f SI_VAR(0);
     TranslateGroup(60, 0, SI_VAR(0), 0);
     TranslateModel(59, 0, SI_VAR(2), 0);
     sleep 1;
@@ -264,7 +264,7 @@ Script N(script_80240BB4) = SCRIPT({
 });
 
 Script N(script_80240D5C) = SCRIPT({
-    0x802C971C(67);
+    func_802C971C(67);
     MakeLerp(0xFFFFFF38, 0, 120, 0);
 10:
     UpdateLerp();
@@ -338,7 +338,7 @@ Script N(script_80240EB8) = SCRIPT({
 
 Script N(script_802411A0) = SCRIPT({
     SI_AREA_FLAG(1) = 0;
-    0x802C971C(60);
+    func_802C971C(60);
     if (SI_SAVE_VAR(0) < 0xFFFFFFC3) {
         bind N(script_80240EB8) to TriggerFlag_AREA_FLAG_SET SI_AREA_FLAG(1);
         EnableModel(61, 0);
@@ -396,7 +396,7 @@ Script N(script_802414F0) = SCRIPT({
 });
 
 Script N(script_802415A0) = SCRIPT({
-    0x802D249C(SI_VAR(0));
+    func_802D249C(SI_VAR(0));
     if (SI_VAR(0) == 0) {
         return;
     }

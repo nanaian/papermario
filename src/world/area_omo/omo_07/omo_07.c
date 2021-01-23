@@ -304,7 +304,7 @@ Script N(script_80243900) = SCRIPT({
 });
 
 s32 unk_missing_80243920[] = {
-    0x00000000, 0x00170016, 0x00000000, 0x00000000, N(script_80243900), 0x80077F70, 0x00000000, 0x8007809C,
+    0x00000000, 0x00170016, 0x00000000, 0x00000000, N(script_80243900), EnemyNpcHit, 0x00000000, EnemyNpcDefeat,
     0x00000000, 0x00000000, 0x000E0001,
 };
 
@@ -338,9 +338,9 @@ NpcSettings N(npcSettings_802439BC) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_8024397C),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xE,
@@ -348,7 +348,7 @@ NpcSettings N(npcSettings_802439BC) = {
 };
 
 s32 unk_missing_802439E8[] = {
-    0x00000000, 0x00170016, 0x00000000, 0x00000000, N(script_8024399C), 0x80077F70, 0x00000000, 0x8007809C,
+    0x00000000, 0x00170016, 0x00000000, 0x00000000, N(script_8024399C), EnemyNpcHit, 0x00000000, EnemyNpcDefeat,
     0x00000000, 0x00000000, 0x000E0001,
 };
 
@@ -386,9 +386,9 @@ NpcSettings N(npcSettings_80243ACC) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80243A5C),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xE,
@@ -402,9 +402,9 @@ NpcSettings N(npcSettings_80243AF8) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xE,
@@ -434,9 +434,9 @@ NpcSettings N(npcSettings_80243B50) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x1A,
@@ -463,7 +463,7 @@ Script N(script_80243B7C) = SCRIPT({
     spawn {
         if (SI_VAR(0) < 25) {
             MakeLerp(0, 180, 30, 10);
-10:
+        10:
             UpdateLerp();
             RotateModel(93, SI_VAR(0), 0, 1, 0);
             sleep 1;
@@ -472,7 +472,7 @@ Script N(script_80243B7C) = SCRIPT({
             }
         } else {
             MakeLerp(180, 0, 30, 10);
-11:
+        11:
             UpdateLerp();
             RotateModel(93, SI_VAR(0), 0, 1, 0);
             sleep 1;
@@ -592,7 +592,7 @@ Script N(script_NpcAI_80244140) = SCRIPT({
                 SI_VAR(2) = SI_MAP_VAR(0);
                 SI_VAR(2) += 180;
                 MakeLerp(SI_MAP_VAR(0), SI_VAR(2), 30, 10);
-10:
+            10:
                 UpdateLerp();
                 RotateModel(93, SI_VAR(0), 0, 1, 0);
                 UpdateColliderTransform(21);
@@ -923,10 +923,10 @@ s32 N(unk_80245E00)[] = {
 
 Script N(script_80245E04) = SCRIPT({
     group 0;
-    0x802D5830(2);
+    func_802D5830(2);
     sleep 40;
     ShowGotItem(SI_VAR(0), 0, 0);
-    0x802D5830(0);
+    func_802D5830(0);
     return;
 });
 
@@ -1033,22 +1033,22 @@ Script N(script_80246294) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EAE30, 1130, 0, 0, 0, 0, 0x80000000);
+    MakeEntity(D_802EAE30, 1130, 0, 0, 0, 0, 0x80000000);
     AssignFlag(SI_SAVE_FLAG(1142));
     AssignScript(N(script_80245F4C));
-    MakeEntity(0x802EAE30, 0xFFFFFC72, 80, 0xFFFFFF9C, 0, 0, 0x80000000);
+    MakeEntity(D_802EAE30, 0xFFFFFC72, 80, 0xFFFFFF9C, 0, 0, 0x80000000);
     AssignFlag(SI_SAVE_FLAG(1143));
     AssignScript(N(script_80245FA8));
-    MakeEntity(0x802EAE30, 750, 0, 0xFFFFFF9C, 0, 0, 0x80000000);
+    MakeEntity(D_802EAE30, 750, 0, 0xFFFFFF9C, 0, 0, 0x80000000);
     AssignFlag(SI_SAVE_FLAG(1144));
     AssignScript(N(script_80245FF4));
-    MakeEntity(0x802EA564, 650, 60, 0xFFFFFFE2, 0, 343, 0x80000000);
+    MakeEntity(D_802EA564, 650, 60, 0xFFFFFFE2, 0, 343, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1141));
-    MakeEntity(0x802BCB44, 0xFFFFFEB6, 0, 127, 0, 0x80000000);
+    MakeEntity(D_802BCB44, 0xFFFFFEB6, 0, 127, 0, 0x80000000);
     AssignScript(N(script_8024623C));
-    MakeEntity(0x802BCB44, 0xFFFFFEFC, 0, 127, 0, 0x80000000);
+    MakeEntity(D_802BCB44, 0xFFFFFEFC, 0, 127, 0, 0x80000000);
     AssignScript(N(script_80246268));
-    MakeEntity(0x802BCB44, 0xFFFFFF40, 80, 0xFFFFFF7C, 0, 0x80000000);
+    MakeEntity(D_802BCB44, 0xFFFFFF40, 80, 0xFFFFFF7C, 0, 0x80000000);
     AssignScript(N(script_80246294));
 });
 
@@ -1094,12 +1094,12 @@ Script N(script_802465BC) = SCRIPT({
         SI_VAR(3) = SI_VAR(9);
         SI_VAR(4) = SI_VAR(10);
         SI_VAR(5) = SI_VAR(11);
-        SI_VAR(3) -= f SI_VAR(6);
-        SI_VAR(4) -= f SI_VAR(7);
-        SI_VAR(5) -= f SI_VAR(8);
-        SI_VAR(6) = f SI_VAR(9);
-        SI_VAR(7) = f SI_VAR(10);
-        SI_VAR(8) = f SI_VAR(11);
+        SI_VAR(3) -=f SI_VAR(6);
+        SI_VAR(4) -=f SI_VAR(7);
+        SI_VAR(5) -=f SI_VAR(8);
+        SI_VAR(6) =f SI_VAR(9);
+        SI_VAR(7) =f SI_VAR(10);
+        SI_VAR(8) =f SI_VAR(11);
         if (SI_VAR(3) != 0) {
             if (SI_VAR(5) != 0) {
                 PlayEffect(31, 0, SI_VAR(0), SI_VAR(1), SI_VAR(2), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1.0, 0, 0, 0, 0, 0);

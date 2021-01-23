@@ -72,7 +72,7 @@ Script N(script_80241420) = SCRIPT({
     UseDoorSounds(1);
     spawn {
         sleep 30;
-        0x802D5FA4(6);
+        func_802D5FA4(6);
     }
 });
 
@@ -273,7 +273,7 @@ Script N(script_80241DC0) = SCRIPT({
         }
         == 2 {
             SetNpcPos(-1, 0, 0xFFFFFC18, 0);
-            0x80045900(1);
+            func_80045900(1);
         }
         == 3 {
             SetEnemyFlagBits(-1, 16, 1);
@@ -312,9 +312,9 @@ NpcSettings N(npcSettings_80241F30) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80241EC0),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x1E,
@@ -375,7 +375,7 @@ Script N(script_8024200C) = {
             SI_CMD(ScriptOpcode_CALL, SetSelfVar, 0, 0),
         SI_CMD(ScriptOpcode_END_CASE_MULTI),
         SI_CMD(ScriptOpcode_CASE_ELSE),
-            SI_CMD(ScriptOpcode_CALL, 0x800457F8),
+            SI_CMD(ScriptOpcode_CALL, func_800457F8),
         SI_CMD(ScriptOpcode_END_CASE_MULTI),
     SI_CMD(ScriptOpcode_END_MATCH),
     SI_CMD(ScriptOpcode_CALL, BindNpcAI, -1, N(script_NpcAI_80241F8C)),
@@ -517,9 +517,9 @@ s32 pad_0031A4[] = {
 };
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA564, 205, 60, 110, 0, 140, 0x80000000);
+    MakeEntity(D_802EA564, 205, 60, 110, 0, 140, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1581));
-    MakeEntity(0x802EA588, 5, 60, 110, 0, 163, 0x80000000);
+    MakeEntity(D_802EA588, 5, 60, 110, 0, 163, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1582));
 });
 

@@ -234,7 +234,7 @@ Script N(script_8024137C) = SCRIPT({
         SI_VAR(2) = N(unk_802412AC);
         SI_VAR(3) = N(unk_8024131C);
     }
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_80241B68_D77F08, 0);
     sleep 100;
@@ -252,7 +252,7 @@ Script N(script_80241460) = SCRIPT({
         SI_VAR(2) = N(unk_802412C4);
         SI_VAR(3) = N(unk_802412D0);
     }
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_80241B70_D77F10, 0);
     sleep 100;
@@ -270,7 +270,7 @@ Script N(script_80241544) = SCRIPT({
         SI_VAR(2) = N(unk_802412DC);
         SI_VAR(3) = N(unk_802412E8);
     }
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_80241B70_D77F10, 3);
     sleep 100;
@@ -288,7 +288,7 @@ Script N(script_80241628) = SCRIPT({
         SI_VAR(2) = N(unk_8024131C);
         SI_VAR(3) = N(unk_802412B8);
     }
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_80241B78_D77F18, 0);
     sleep 100;
@@ -317,7 +317,7 @@ Script N(script_EnterWalk_802417A8) = SCRIPT({
                 SI_VAR(2) = N(unk_802412AC);
                 SI_VAR(3) = N(unk_8024131C);
             }
-            await 0x802861B0;
+            await func_802861B0;
             spawn N(script_8024170C);
         }
         == 2 {
@@ -328,7 +328,7 @@ Script N(script_EnterWalk_802417A8) = SCRIPT({
                 SI_VAR(2) = N(unk_802412C4);
                 SI_VAR(3) = N(unk_802412D0);
             }
-            await 0x802861B0;
+            await func_802861B0;
             spawn N(script_8024170C);
         }
         == 3 {
@@ -339,7 +339,7 @@ Script N(script_EnterWalk_802417A8) = SCRIPT({
                 SI_VAR(2) = N(unk_802412DC);
                 SI_VAR(3) = N(unk_802412E8);
             }
-            await 0x802861B0;
+            await func_802861B0;
             spawn N(script_8024170C);
         }
         == 4 {
@@ -350,7 +350,7 @@ Script N(script_EnterWalk_802417A8) = SCRIPT({
                 SI_VAR(2) = N(unk_802412B8);
                 SI_VAR(3) = N(unk_8024131C);
             }
-            await 0x802861B0;
+            await func_802861B0;
             spawn N(script_8024170C);
         }
     }

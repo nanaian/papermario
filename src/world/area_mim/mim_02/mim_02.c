@@ -207,9 +207,9 @@ NpcSettings N(npcSettings_80241678) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_8024163C),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xB,
@@ -230,7 +230,7 @@ s32 N(unk_802416B0)[] = {
 
 Script N(script_802416B4) = SCRIPT({
     SI_VAR(9) = SI_VAR(1);
-    0x802D6420();
+    func_802D6420();
     SI_VAR(10) = SI_VAR(0);
     match SI_VAR(0) {
         == 0 {}
@@ -239,7 +239,7 @@ Script N(script_802416B4) = SCRIPT({
             RemoveKeyItemAt(SI_VAR(1));
             GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
             func_80240EE0_B98AE0(SI_VAR(3), SI_VAR(4), SI_VAR(5));
-            SI_VAR(0) |= c 50000;
+            SI_VAR(0) |=c 50000;
             MakeItemEntity(SI_VAR(0), SI_VAR(3), SI_VAR(4), SI_VAR(5), 1, 0);
             SetPlayerAnimation(0x60005);
             sleep 30;
@@ -248,14 +248,14 @@ Script N(script_802416B4) = SCRIPT({
         }
     }
     func_80241104_B98D04(SI_VAR(10));
-    0x802D6954();
+    func_802D6954();
     unbind;
 });
 
 // Unable to use DSL: DSL does not support script opcode 0x4E
 Script N(script_802417F8) = {
     SI_CMD(ScriptOpcode_CALL, func_8024113C_B98D3C, SI_VAR(0)),
-    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_802416B4), 0x10, 0, 0x80243880, 0, 1),
+    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_802416B4), 0x10, 0, D_80243880_B7D8D0, 0, 1),
     SI_CMD(ScriptOpcode_CALL, func_802410B0_B98CB0, SI_VAR(0)),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)
@@ -535,7 +535,7 @@ Script N(script_80242C14) = SCRIPT({
         == 0 {
             spawn {
                 MakeLerp(10, 90, 10, 1);
-10:
+            10:
                 UpdateLerp();
                 RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
                 UpdateColliderTransform(SI_VAR(9));
@@ -554,7 +554,7 @@ Script N(script_80242C14) = SCRIPT({
             SI_VAR(1) = 1;
             spawn N(script_80242790);
             MakeLerp(90, 360, 30, 0);
-20:
+        20:
             UpdateLerp();
             RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
             UpdateColliderTransform(SI_VAR(9));
@@ -569,7 +569,7 @@ Script N(script_80242C14) = SCRIPT({
         == 1 {
             spawn {
                 MakeLerp(360, 270, 10, 1);
-30:
+            30:
                 UpdateLerp();
                 RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
                 UpdateColliderTransform(SI_VAR(9));
@@ -588,7 +588,7 @@ Script N(script_80242C14) = SCRIPT({
             SI_VAR(1) = 2;
             spawn N(script_80242790);
             MakeLerp(270, 0xFFFFFFF6, 30, 0);
-40:
+        40:
             UpdateLerp();
             RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
             UpdateColliderTransform(SI_VAR(9));
@@ -601,7 +601,7 @@ Script N(script_80242C14) = SCRIPT({
         == 2 {
             spawn {
                 MakeLerp(0xFFFFFFF6, 90, 10, 1);
-50:
+            50:
                 UpdateLerp();
                 RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
                 UpdateColliderTransform(SI_VAR(9));
@@ -620,7 +620,7 @@ Script N(script_80242C14) = SCRIPT({
             SI_VAR(1) = 1;
             spawn N(script_80242790);
             MakeLerp(90, 360, 30, 0);
-60:
+        60:
             UpdateLerp();
             RotateGroup(SI_VAR(10), SI_VAR(0), 0, 1, 0);
             UpdateColliderTransform(SI_VAR(9));

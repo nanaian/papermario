@@ -31,7 +31,8 @@ Script N(script_80240060) = SCRIPT({
         }
         < 0xFFFFFFF0 {
             SetMusicTrack(0, 31, 0, 8);
-        } else {
+        }
+        else {
             SetMusicTrack(0, 30, 0, 8);
         }
     }
@@ -111,8 +112,8 @@ Script N(main) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802E9A18, 0xFFFFFED4, 60, 75, 0, 0x80000000);
-    MakeEntity(0x802EA7E0, 0xFFFFFE3E, 60, 75, 0, 0x80000000);
+    MakeEntity(D_802E9A18, 0xFFFFFED4, 60, 75, 0, 0x80000000);
+    MakeEntity(D_802EA7E0, 0xFFFFFE3E, 60, 75, 0, 0x80000000);
 });
 
 s32 pad_0004C8[] = {

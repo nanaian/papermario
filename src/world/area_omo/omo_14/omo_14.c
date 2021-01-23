@@ -36,7 +36,7 @@ s32 pad_000158[] = {
 // text: func_80240564_DE5C14
 
 s32 unk_missing_80240590[] = {
-    0x3C038011, 0x8063EBB3, 0x24020006, 0x54620003, 0xAC800088, 0x24020001, 0xAC820088, 0x03E00008,
+    0x3C038011, D_8063EBB3, 0x24020006, 0x54620003, 0xAC800088, 0x24020001, 0xAC820088, 0x03E00008,
     0x24020002, 0x00000000, 0x00000000, 0x00000000,
 };
 
@@ -121,9 +121,9 @@ NpcSettings N(npcSettings_802408F0) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xE,

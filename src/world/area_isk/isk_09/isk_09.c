@@ -84,11 +84,11 @@ Script N(script_80240380) = SCRIPT({
             DisablePlayerInput(1);
             sleep 20;
             group 0;
-            0x802D5830(1);
+            func_802D5830(1);
             ShowMessageAtScreenPos(0xD00DF, 160, 40);
             SI_SAVE_FLAG(891) = 1;
             DisablePlayerInput(0);
-            0x802D5830(0);
+            func_802D5830(0);
             FadeInMusic(0, 24, 0, 2000, 0, 127);
             FadeOutMusic(1, 2000);
         }
@@ -108,9 +108,9 @@ Script N(script_80240380) = SCRIPT({
 });
 
 Script N(script_8024053C) = SCRIPT({
-    0x802D5FF8(66, 1);
+    func_802D5FF8(66, 1);
     sleep 130;
-    0x802D5FD8();
+    func_802D5FD8();
 });
 
 s32 pad_000578[] = {
@@ -154,10 +154,10 @@ s32 N(unk_802406F0)[] = {
 
 Script N(script_802406F4) = SCRIPT({
     group 0;
-    0x802D5830(2);
+    func_802D5830(2);
     sleep 40;
     ShowGotItem(SI_VAR(0), 0, 0);
-    0x802D5830(0);
+    func_802D5830(0);
     return;
 });
 
@@ -237,14 +237,14 @@ Script N(script_80240AA8) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EAE0C, 0xFFFFFF62, 0xFFFFFE9A, 0xFFFFFDCE, 283, 5, 0x80000000);
+    MakeEntity(D_802EAE0C, 0xFFFFFF62, 0xFFFFFE9A, 0xFFFFFDCE, 283, 5, 0x80000000);
     AssignFlag(SI_SAVE_FLAG(900));
     spawn N(script_802408BC);
     if (SI_SAVE_FLAG(896) == 0) {
-        MakeEntity(0x802EA19C, 0xFFFFFEEE, 0xFFFFFE7A, 0xFFFFFDFB, 115, 0x80000000);
+        MakeEntity(D_802EA19C, 0xFFFFFEEE, 0xFFFFFE7A, 0xFFFFFDFB, 115, 0x80000000);
         AssignScript(N(script_80240AA8));
     }
-    MakeEntity(0x802EAE30, 50, 0xFFFFFF10, 0xFFFFFDE9, 222, 0, 0x80000000);
+    MakeEntity(D_802EAE30, 50, 0xFFFFFF10, 0xFFFFFDE9, 222, 0, 0x80000000);
     AssignFlag(SI_SAVE_FLAG(901));
     AssignScript(N(script_80240A5C));
     PlayEffect(32, 1, 0xFFFFFE09, 0xFFFFFEBD, 0xFFFFFFD4, 0.30078125, SI_VAR(0), 0, 0, 0, 0, 0, 0, 0);
@@ -503,7 +503,7 @@ Script N(script_80241DB0) = SCRIPT({
 });
 
 Script N(script_80241E80) = SCRIPT({
-    0x802D249C(SI_VAR(0));
+    func_802D249C(SI_VAR(0));
     if (SI_VAR(0) == 0) {
         return;
     }
@@ -538,7 +538,7 @@ Script N(script_80241E80) = SCRIPT({
 });
 
 Script N(script_8024207C) = SCRIPT({
-    0x802D249C(SI_VAR(0));
+    func_802D249C(SI_VAR(0));
     if (SI_VAR(0) == 0) {
         return;
     }
@@ -573,7 +573,7 @@ Script N(script_8024207C) = SCRIPT({
 });
 
 Script N(script_80242278) = SCRIPT({
-    0x802D249C(SI_VAR(0));
+    func_802D249C(SI_VAR(0));
     if (SI_VAR(0) == 0) {
         return;
     }
@@ -608,7 +608,7 @@ Script N(script_80242278) = SCRIPT({
 });
 
 Script N(script_80242474) = SCRIPT({
-    0x802D249C(SI_VAR(0));
+    func_802D249C(SI_VAR(0));
     if (SI_VAR(0) == 0) {
         return;
     }

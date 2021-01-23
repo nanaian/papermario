@@ -134,7 +134,7 @@ MapConfig N(header) = {
 
 Script N(script_80240D90) = SCRIPT({
     match SI_SAVE_VAR(0) {
-        0xFFFFFFF3..5
+    0xFFFFFFF3..5
         SetMusicTrack(0, 74, 0, 6);
         else {
             SetMusicTrack(0, 0, 0, 6);
@@ -261,7 +261,7 @@ Script N(script_802410B0) = SCRIPT({
 Script N(script_802413EC) = SCRIPT({
     group 11;
     spawn {
-0:
+    0:
         RandInt(50, SI_VAR(0));
         SI_VAR(0) += 10;
         func_80240170_A0BE60();
@@ -269,7 +269,7 @@ Script N(script_802413EC) = SCRIPT({
         goto 0;
     }
     spawn {
-1:
+    1:
         RandInt(50, SI_VAR(0));
         SI_VAR(0) += 20;
         func_8024036C_A0C05C();
@@ -277,7 +277,7 @@ Script N(script_802413EC) = SCRIPT({
         goto 1;
     }
     spawn {
-2:
+    2:
         RandInt(50, SI_VAR(0));
         SI_VAR(0) += 20;
         func_80240584_A0C274();
@@ -292,7 +292,7 @@ Script N(script_ExitWalk_80241554) = SCRIPT({
     UseExitHeading(60, 0);
     spawn ExitWalk;
     match SI_SAVE_VAR(0) {
-        0xFFFFFF81..95
+    0xFFFFFF81..95
         GotoMap(D_80244B60_A10850, 1);
         else {
             GotoMap(D_80244B58_A10848, 1);
@@ -446,9 +446,9 @@ NpcSettings N(npcSettings_80241B34) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x1A,
@@ -631,11 +631,11 @@ Script N(script_80242878) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EAFDC, 450, 10, 0xFFFFFF47, 0, 0x80000000);
+    MakeEntity(D_802EAFDC, 450, 10, 0xFFFFFF47, 0, 0x80000000);
     AssignScript(N(script_80242830));
-    MakeEntity(0x802EAFDC, 855, 0xFFFFFFF6, 0xFFFFFFD8, 0, 0x80000000);
+    MakeEntity(D_802EAFDC, 855, 0xFFFFFFF6, 0xFFFFFFD8, 0, 0x80000000);
     AssignScript(N(script_80242878));
-    MakeEntity(0x802EAB04, 380, 0xFFFFFFF6, 25, 0, 16, 0x80000000);
+    MakeEntity(D_802EAB04, 380, 0xFFFFFFF6, 25, 0, 16, 0x80000000);
     AssignPanelFlag(SI_SAVE_FLAG(538));
 });
 
@@ -762,7 +762,7 @@ Script N(script_80242F20) = SCRIPT({
         }
     }
     DisablePlayerInput(1);
-    0x802CF56C(2);
+    func_802CF56C(2);
     spawn {
         SI_VAR(0) += 0xFFFFFFEC;
         PlayerMoveTo(SI_VAR(0), SI_VAR(2), 10);
@@ -788,7 +788,7 @@ Script N(script_80242F20) = SCRIPT({
     spawn {
         SI_VAR(3) = 360;
         loop 3 {
-22:
+        22:
             sleep 1;
             SI_VAR(3) -= 45;
             if (SI_VAR(3) > 0) {
@@ -842,9 +842,9 @@ Script N(script_80242F20) = SCRIPT({
     LoadPath(70, N(vectorList_802429D4), 10, 0);
 1:
     GetNextPathPos();
-    SI_VAR(1) += f SI_VAR(4);
-    SI_VAR(2) += f SI_VAR(5);
-    SI_VAR(3) += f SI_VAR(6);
+    SI_VAR(1) +=f SI_VAR(4);
+    SI_VAR(2) +=f SI_VAR(5);
+    SI_VAR(3) +=f SI_VAR(6);
     SetNpcPos(0, SI_VAR(1), SI_VAR(2), SI_VAR(3));
     func_80240994_A0C684();
     sleep 1;
@@ -921,7 +921,7 @@ Script N(script_80242F20) = SCRIPT({
             goto 15;
         }
     } else {
-15:
+    15:
         ContinueSpeech(0, 0x200009, 0x200001, 0, 0xA0016);
         SpeakToPlayer(0xFFFFFFFC, 0x10008, 0x10001, 0, 0xA0017);
         SpeakToPlayer(0, 0x200009, 0x200001, 0, 0xA0018);
@@ -1024,7 +1024,7 @@ Script N(script_80242F20) = SCRIPT({
 });
 
 Script N(script_80244210) = SCRIPT({
-    0x802D5830(1);
+    func_802D5830(1);
     SetMusicTrack(0, 112, 0, 8);
     sleep 60;
     SetCamLeadPlayer(0, 1);
@@ -1055,9 +1055,9 @@ Script N(script_80244210) = SCRIPT({
     LoadPath(85, N(vectorList_80242A88), 8, 0);
 0:
     GetNextPathPos();
-    SI_VAR(1) += f SI_VAR(4);
-    SI_VAR(2) += f SI_VAR(5);
-    SI_VAR(3) += f SI_VAR(6);
+    SI_VAR(1) +=f SI_VAR(4);
+    SI_VAR(2) +=f SI_VAR(5);
+    SI_VAR(3) +=f SI_VAR(6);
     SetNpcPos(0, SI_VAR(1), SI_VAR(2), SI_VAR(3));
     func_80240994_A0C684();
     sleep 1;
@@ -1067,7 +1067,7 @@ Script N(script_80244210) = SCRIPT({
     sleep 45;
     spawn {
         LoadPath(60, N(vectorList_80242AE8), 6, 0);
-1:
+    1:
         GetNextPathPos();
         SetNpcPos(0, SI_VAR(1), SI_VAR(2), SI_VAR(3));
         func_80240994_A0C684();
@@ -1092,11 +1092,11 @@ Script N(script_80244210) = SCRIPT({
     spawn {
         GetNpcPos(0, SI_VAR(4), SI_VAR(5), SI_VAR(6));
         LoadPath(120, N(vectorList_80242B30), 9, 1);
-2:
+    2:
         GetNextPathPos();
-        SI_VAR(1) += f SI_VAR(4);
-        SI_VAR(2) += f SI_VAR(5);
-        SI_VAR(3) += f SI_VAR(6);
+        SI_VAR(1) +=f SI_VAR(4);
+        SI_VAR(2) +=f SI_VAR(5);
+        SI_VAR(3) +=f SI_VAR(6);
         SetNpcPos(0, SI_VAR(1), SI_VAR(2), SI_VAR(3));
         func_80240994_A0C684();
         sleep 1;
@@ -1139,7 +1139,7 @@ Script N(script_80244210) = SCRIPT({
     SetPlayerAnimation(0x10002);
     spawn {
         SI_SAVE_VAR(0) = 0xFFFFFF98;
-        0x802D5830(0);
+        func_802D5830(0);
         ResetCam(0, 4.0);
     }
     sleep 10;
@@ -1151,8 +1151,8 @@ s32 pad_004AE4[] = {
 };
 
 Script N(script_80244AF0) = SCRIPT({
-    0x802C90FC(1, 1, -1);
-    0x802C94A0(1, func_80240C40_A0C930, 0);
+    func_802C90FC(1, 1, -1);
+    func_802C94A0(1, func_80240C40_A0C930, 0);
 });
 
 // rodata: D_80244B30_A10820

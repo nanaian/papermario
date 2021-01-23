@@ -31,7 +31,8 @@ Script N(script_80240060) = SCRIPT({
         }
         < 0xFFFFFFF0 {
             SetMusicTrack(0, 31, 0, 8);
-        } else {
+        }
+        else {
             SetMusicTrack(0, 30, 0, 8);
         }
     }
@@ -113,7 +114,7 @@ s32 pad_00047C[] = {
 };
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA564, 500, 60, 75, 0, 163, 0x80000000);
+    MakeEntity(D_802EA564, 500, 60, 75, 0, 163, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1065));
 });
 

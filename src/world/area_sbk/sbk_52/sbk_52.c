@@ -97,10 +97,10 @@ s32 pad_0003BC[] = {
 };
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA0E8, 0, 60, 0xFFFFFF9C, 0, 0x80000000);
+    MakeEntity(D_802EA0E8, 0, 60, 0xFFFFFF9C, 0, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(821));
-    MakeEntity(0x802EA0C4, 80, 60, 270, 0, 0x80000000);
-    MakeEntity(0x802EA0C4, 0xFFFFFF2E, 60, 165, 0, 0x80000000);
+    MakeEntity(D_802EA0C4, 80, 60, 270, 0, 0x80000000);
+    MakeEntity(D_802EA0C4, 0xFFFFFF2E, 60, 165, 0, 0x80000000);
 });
 
 s32 pad_00044C[] = {

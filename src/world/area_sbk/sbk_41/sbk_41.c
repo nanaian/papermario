@@ -118,7 +118,7 @@ Script N(script_802403FC) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802BCA74, 327, 0, 8, 0, N(tweesterPathList_802403F4), 0x80000000);
+    MakeEntity(D_802BCA74, 327, 0, 8, 0, N(tweesterPathList_802403F4), 0x80000000);
     AssignScript(N(script_802403FC));
 });
 

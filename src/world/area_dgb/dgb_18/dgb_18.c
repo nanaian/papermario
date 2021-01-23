@@ -96,7 +96,8 @@ Script N(script_802412C0) = SCRIPT({
         }
         < 0xFFFFFFF0 {
             SetMusicTrack(0, 31, 0, 8);
-        } else {
+        }
+        else {
             SetMusicTrack(0, 30, 0, 8);
         }
     }
@@ -160,7 +161,7 @@ Script N(script_802415B0) = SCRIPT({
 });
 
 s32 unk_missing_802415D0[] = {
-    0x00000000, 0x005A0041, 0x00000000, 0x00000000, N(script_802415B0), 0x80077F70, 0x00000000, 0x8007809C,
+    0x00000000, 0x005A0041, 0x00000000, 0x00000000, N(script_802415B0), EnemyNpcHit, 0x00000000, EnemyNpcDefeat,
     0x00000000, 0x00000000, 0x000D0000,
 };
 
@@ -171,9 +172,9 @@ NpcSettings N(npcSettings_802415FC) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xD,
@@ -352,7 +353,7 @@ Script N(script_Idle_80241654) = SCRIPT({
         MakeLerp(0, 50, 18, 1);
         loop {
             UpdateLerp();
-            0x802CDE68(-1, SI_VAR(0));
+            func_802CDE68(-1, SI_VAR(0));
             sleep 1;
             if (SI_VAR(1) == 0) {
                 break;
@@ -375,7 +376,7 @@ Script N(script_Idle_80241654) = SCRIPT({
     FadeOutMusic(0, 1000);
     SetNpcScale(-1, 1.25, 1.25, 1.25);
     SetNpcPos(-1, SI_VAR(3), SI_VAR(4), SI_VAR(5));
-    0x802CDE68(-1, 0);
+    func_802CDE68(-1, 0);
     SetNpcRotation(-1, 0, 0, 0);
     SetNpcAnimation(-1, 0x6A0002);
     sleep 15;
@@ -398,7 +399,7 @@ Script N(script_Idle_80241654) = SCRIPT({
             PlaySoundAtNpc(-1, 8248, 0);
             RandInt(10, SI_VAR(1));
             SI_VAR(1) += 10;
-            0x802D8248(SI_VAR(0), SI_VAR(1));
+            func_802D8248(SI_VAR(0), SI_VAR(1));
             sleep 30;
         }
     }
@@ -416,7 +417,7 @@ Script N(script_Idle_80241654) = SCRIPT({
 Script N(script_Idle_80242494) = SCRIPT({
     SetNpcScale(-1, 1.25, 1.25, 1.25);
     SetNpcPos(-1, 600, 50, 115);
-    0x802CDE68(-1, 0);
+    func_802CDE68(-1, 0);
     SetNpcRotation(-1, 0, 0, 0);
     SetNpcAnimation(-1, 0x6A0002);
     sleep 15;
@@ -439,7 +440,7 @@ Script N(script_Idle_80242494) = SCRIPT({
             PlaySoundAtNpc(-1, 8248, 0);
             RandInt(10, SI_VAR(1));
             SI_VAR(1) += 10;
-            0x802D8248(SI_VAR(0), SI_VAR(1));
+            func_802D8248(SI_VAR(0), SI_VAR(1));
             sleep 30;
         }
     }
@@ -450,7 +451,7 @@ Script N(script_NpcAI_802426B0) = SCRIPT({
     PlaySoundAtNpc(-1, 8249, 0);
     ShowSleepBubble(0, 0, 50, 2, 552, 111, 128, 30, SI_VAR(0));
     sleep 360;
-    0x802D8248(SI_VAR(0), 20);
+    func_802D8248(SI_VAR(0), 20);
     SetNpcVar(-1, 1, 2);
     sleep 20;
     PlaySoundAtNpc(-1, 753, 0);
@@ -680,10 +681,10 @@ s32 N(unk_802436E0)[] = {
 
 Script N(script_802436E4) = SCRIPT({
     group 0;
-    0x802D5830(2);
+    func_802D5830(2);
     sleep 40;
     ShowGotItem(SI_VAR(0), 0, 0);
-    0x802D5830(0);
+    func_802D5830(0);
     return;
 });
 
@@ -715,7 +716,7 @@ Script N(script_8024382C) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EAE30, 845, 0, 145, 0xFFFFFFDD, 0, 0x80000000);
+    MakeEntity(D_802EAE30, 845, 0, 145, 0xFFFFFFDD, 0, 0x80000000);
     AssignFlag(SI_SAVE_FLAG(1071));
     AssignScript(N(script_8024382C));
 });

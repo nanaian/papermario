@@ -365,7 +365,7 @@ Script N(script_802421F8) = SCRIPT({
     if (SI_SAVE_FLAG(434) == 1) {
         return;
     }
-    0x800441F0(SI_VAR(0));
+    func_800441F0(SI_VAR(0));
     if (SI_VAR(0) == 1) {
         return;
     }
@@ -373,7 +373,7 @@ Script N(script_802421F8) = SCRIPT({
     if (SI_VAR(0) == 1) {
         return;
     }
-    0x802D585C(1, 0x200000);
+    func_802D585C(1, 0x200000);
     func_80240680_886A40();
     DisablePlayerInput(1);
     DisablePartnerAI(0);
@@ -387,7 +387,7 @@ Script N(script_802421F8) = SCRIPT({
         func_80240B90_886F50(SI_VAR(9));
         DisablePlayerInput(0);
         EnablePartnerAI();
-        0x802D585C(0, 0x200000);
+        func_802D585C(0, 0x200000);
         func_8024069C_886A5C();
         return;
     }
@@ -402,7 +402,7 @@ Script N(script_802421F8) = SCRIPT({
         func_80240B90_886F50(SI_VAR(9));
         DisablePlayerInput(0);
         EnablePartnerAI();
-        0x802D585C(0, 0x200000);
+        func_802D585C(0, 0x200000);
         func_8024069C_886A5C();
         return;
     }
@@ -413,7 +413,7 @@ Script N(script_802421F8) = SCRIPT({
     if (SI_VAR(0) != SI_VAR(11)) {
         func_80240A9C_886E5C(SI_VAR(11));
     } else {
-        0x802CF56C(2);
+        func_802CF56C(2);
     }
     sleep 10;
     ShowMessageAtScreenPos(0x1D00DF, 160, 40);
@@ -423,7 +423,7 @@ Script N(script_802421F8) = SCRIPT({
         func_80240B90_886F50(SI_VAR(9));
         DisablePlayerInput(0);
         EnablePartnerAI();
-        0x802D585C(0, 0x200000);
+        func_802D585C(0, 0x200000);
         func_8024069C_886A5C();
         return;
     }
@@ -439,26 +439,26 @@ Script N(script_802421F8) = SCRIPT({
     }
     DisablePlayerInput(0);
     EnablePartnerAI();
-    0x802D585C(0, 0x200000);
+    func_802D585C(0, 0x200000);
     func_8024069C_886A5C();
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA910, 0xFFFFFF74, 160, 0xFFFFFFD8, 0, 0x80000000);
+    MakeEntity(D_802EA910, 0xFFFFFF74, 160, 0xFFFFFFD8, 0, 0x80000000);
     SI_MAP_VAR(0) = SI_VAR(0);
     AssignBlockFlag(SI_SAVE_FLAG(434));
     AssignScript(N(script_802421F8));
     CreatePushBlockGrid(0, 7, 6, 0xFFFFFFC0, 0xFFFFFFF1, 0xFFFFFFA2, 0);
     SetPushBlock(0, 1, 4, 1);
-    MakeEntity(0x802EA588, 0xFFFFFFCC, 70, 0xFFFFFFE0, 0, 343, 0x80000000);
+    MakeEntity(D_802EA588, 0xFFFFFFCC, 70, 0xFFFFFFE0, 0, 343, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(405));
-    0x80111F2C(1);
-    MakeEntity(0x802EA588, 23, 70, 0xFFFFFFE0, 0, 343, 0x80000000);
+    func_80111F2C(1);
+    MakeEntity(D_802EA588, 23, 70, 0xFFFFFFE0, 0, 343, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(406));
-    0x80111F2C(1);
-    MakeEntity(0x802EA588, 98, 70, 0xFFFFFFE0, 0, 343, 0x80000000);
+    func_80111F2C(1);
+    MakeEntity(D_802EA588, 98, 70, 0xFFFFFFE0, 0, 343, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(407));
-    0x80111F2C(1);
+    func_80111F2C(1);
 });
 
 s32 pad_0027F8[] = {

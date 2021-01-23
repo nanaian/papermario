@@ -197,9 +197,9 @@ Script N(script_MakeEntities) = SCRIPT({
     spawn {
         func_80240138_D53DE8();
     }
-    MakeEntity(0x802EAA30, 124, 0xFFFFFF38, 0xFFFFFFB5, 0, 0x80000000);
+    MakeEntity(D_802EAA30, 124, 0xFFFFFF38, 0xFFFFFFB5, 0, 0x80000000);
     AssignScript(N(script_802407A0));
-    MakeEntity(0x802E9A18, 0xFFFFFF38, 60, 0xFFFFFFB5, 0, 0x80000000);
+    MakeEntity(D_802E9A18, 0xFFFFFF38, 60, 0xFFFFFFB5, 0, 0x80000000);
 });
 
 s32 pad_0009B8[] = {

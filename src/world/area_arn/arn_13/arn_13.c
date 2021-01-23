@@ -43,7 +43,8 @@ Script N(script_80240060) = SCRIPT({
         }
         < 0xFFFFFFF0 {
             SetMusicTrack(0, 85, 0, 8);
-        } else {
+        }
+        else {
             SetMusicTrack(0, 29, 0, 8);
         }
     }
@@ -170,9 +171,9 @@ NpcSettings N(npcSettings_802404CC) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_802404AC),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xC,
@@ -274,7 +275,7 @@ Script N(script_80240BF0) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EAFDC, 200, 0, 0xFFFFFFD8, 0, 0x80000000);
+    MakeEntity(D_802EAFDC, 200, 0, 0xFFFFFFD8, 0, 0x80000000);
     AssignScript(N(script_80240BF0));
 });
 

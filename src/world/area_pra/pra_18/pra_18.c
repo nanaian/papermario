@@ -242,7 +242,7 @@ Script N(script_802412DC) = SCRIPT({
         SI_VAR(2) = N(unk_8024128C);
         SI_VAR(3) = N(unk_80241294);
     }
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_80243380_D6E9A0, 1);
     sleep 100;
@@ -255,7 +255,7 @@ Script N(script_802413C0) = SCRIPT({
     SI_VAR(1) = 35;
     SI_VAR(2) = N(unk_802412C4);
     SI_VAR(3) = N(unk_802412D0);
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_80243388_D6E9A8, 1);
     sleep 100;
@@ -273,7 +273,7 @@ Script N(script_80241464) = SCRIPT({
         SI_VAR(2) = N(unk_8024129C);
         SI_VAR(3) = N(unk_802412A4);
     }
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_80243380_D6E9A0, 2);
     sleep 100;
@@ -313,7 +313,7 @@ Script N(script_802415C4) = SCRIPT({
             }
         }
     }
-    await 0x802861B0;
+    await func_802861B0;
     spawn N(script_80241548);
 });
 
@@ -362,9 +362,9 @@ NpcSettings N(npcSettings_80241940) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x63,

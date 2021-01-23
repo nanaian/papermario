@@ -125,9 +125,9 @@ Script N(script_80240ED0) = SCRIPT({
 });
 
 Script N(script_80240F38) = SCRIPT({
-    0x802D5FF8(66, 1);
+    func_802D5FF8(66, 1);
     sleep 130;
-    0x802D5FD8();
+    func_802D5FD8();
 });
 
 s32 pad_000F74[] = {
@@ -151,21 +151,21 @@ Script N(script_80240FC0) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EAE0C, 180, 0, 0xFFFFFF51, 0xFFFFFFF6, 0, 0x80000000);
+    MakeEntity(D_802EAE0C, 180, 0, 0xFFFFFF51, 0xFFFFFFF6, 0, 0x80000000);
     AssignFlag(SI_SAVE_FLAG(967));
     AssignScript(N(script_80240FC0));
     MakeItemEntity(362, 0, 0xFFFFFC18, 0, 1, 0);
     func_80240000_BC7E60();
     SI_MAP_VAR(0) = SI_VAR(0);
     if (SI_SAVE_FLAG(968) == 0) {
-        MakeEntity(0x802BCE84, 0, 0, 0, 0, 0x80000000);
+        MakeEntity(D_802BCE84, 0, 0, 0, 0, 0x80000000);
         AssignScript(N(script_80240F80));
     }
-    MakeEntity(0x802EAED4, 0xFFFFFFC4, 0, 0xFFFFFF42, 0, 163, 0x80000000);
+    MakeEntity(D_802EAED4, 0xFFFFFFC4, 0, 0xFFFFFF42, 0, 163, 0x80000000);
     AssignCrateFlag(SI_SAVE_FLAG(970));
-    MakeEntity(0x802EAED4, 0xFFFFFFC4, 30, 0xFFFFFF42, 0, -1, 0x80000000);
-    MakeEntity(0x802EAED4, 0xFFFFFFEC, 0, 0xFFFFFF42, 0, -1, 0x80000000);
-    MakeEntity(0x802EAB04, 0xFFFFFF51, 0, 0xFFFFFFB5, 0, 0, 0x80000000);
+    MakeEntity(D_802EAED4, 0xFFFFFFC4, 30, 0xFFFFFF42, 0, -1, 0x80000000);
+    MakeEntity(D_802EAED4, 0xFFFFFFEC, 0, 0xFFFFFF42, 0, -1, 0x80000000);
+    MakeEntity(D_802EAB04, 0xFFFFFF51, 0, 0xFFFFFFB5, 0, 0, 0x80000000);
     AssignPanelFlag(SI_SAVE_FLAG(972));
 });
 
@@ -715,7 +715,7 @@ Script N(script_802437FC) = SCRIPT({
         SetTexPanner(31, 0);
         SI_VAR(0) = 0;
         SI_VAR(1) = 0;
-20:
+    20:
         SI_VAR(0) += 300;
         SI_VAR(1) += 100;
         SetTexPanOffset(0, 0, SI_VAR(0), SI_VAR(1));
@@ -780,7 +780,7 @@ Script N(script_80243ADC) = SCRIPT({
         MakeLerp(255, 0, 10, 0);
         loop {
             UpdateLerp();
-            0x802D721C(SI_MAP_VAR(0), SI_VAR(0));
+            func_802D721C(SI_MAP_VAR(0), SI_VAR(0));
             sleep 1;
             if (SI_VAR(1) == 0) {
                 break;
@@ -832,7 +832,7 @@ Script N(script_80243D24) = SCRIPT({
     MakeLerp(0, 255, 60, 0);
 0:
     UpdateLerp();
-    0x802CFD30(SI_VAR(10), 7, SI_VAR(0), 0, 0, 0);
+    func_802CFD30(SI_VAR(10), 7, SI_VAR(0), 0, 0, 0);
     sleep 1;
     if (SI_VAR(1) == 1) {
         goto 0;
@@ -848,7 +848,7 @@ Script N(script_80243DC8) = SCRIPT({
     MakeLerp(255, 0, 60, 0);
 0:
     UpdateLerp();
-    0x802CFD30(SI_VAR(10), 7, SI_VAR(0), 0, 0, 0);
+    func_802CFD30(SI_VAR(10), 7, SI_VAR(0), 0, 0, 0);
     sleep 1;
     if (SI_VAR(1) == 1) {
         goto 0;
@@ -884,7 +884,7 @@ Script N(script_80243ED4) = SCRIPT({
             break;
         }
     }
-    0x802D7B44(SI_VAR(8));
+    func_802D7B44(SI_VAR(8));
     RemoveItemEntity(SI_VAR(12));
     SetPlayerAnimation(0x10002);
     spawn {
@@ -912,8 +912,8 @@ Script N(script_802441AC) = SCRIPT({
     MakeLerp(0, 255, 30, 0);
     loop {
         UpdateLerp();
-        0x802CFD30(9, 7, SI_VAR(0), 0, 0, 0);
-        0x802D721C(SI_MAP_VAR(0), SI_VAR(0));
+        func_802CFD30(9, 7, SI_VAR(0), 0, 0, 0);
+        func_802D721C(SI_MAP_VAR(0), SI_VAR(0));
         sleep 1;
         if (SI_VAR(1) == 0) {
             break;
@@ -950,7 +950,7 @@ Script N(script_802441AC) = SCRIPT({
         MakeLerp(255, 0, 10, 0);
         loop {
             UpdateLerp();
-            0x802CFD30(9, 7, SI_VAR(0), 0, 0, 0);
+            func_802CFD30(9, 7, SI_VAR(0), 0, 0, 0);
             sleep 1;
             if (SI_VAR(1) == 0) {
                 break;
@@ -992,7 +992,7 @@ Script N(script_802441AC) = SCRIPT({
     MakeLerp(0, 255, 10, 0);
     loop {
         UpdateLerp();
-        0x802CFD30(9, 7, SI_VAR(0), 0, 0, 0);
+        func_802CFD30(9, 7, SI_VAR(0), 0, 0, 0);
         sleep 1;
         if (SI_VAR(1) == 0) {
             break;
@@ -1113,7 +1113,7 @@ Script N(script_802441AC) = SCRIPT({
     spawn N(script_80243DC8);
     sleep 60;
     SetNpcPos(11, 0xFFFFFF60, 10, 0xFFFFFF51);
-    0x802CFD30(11, 7, 0, 0, 0, 0);
+    func_802CFD30(11, 7, 0, 0, 0, 0);
     SI_VAR(10) = 11;
     spawn N(script_80243D24);
     sleep 60;

@@ -114,7 +114,8 @@ Script N(script_802418E0) = SCRIPT({
         }
         < 0xFFFFFFF0 {
             SetMusicTrack(0, 31, 0, 8);
-        } else {
+        }
+        else {
             SetMusicTrack(0, 30, 0, 8);
         }
     }
@@ -238,7 +239,7 @@ Script N(script_80241EA0) = SCRIPT({
         }
         == 2 {
             SetNpcPos(-1, 0, 0xFFFFFC18, 0);
-            0x80045900(1);
+            func_80045900(1);
         }
         == 3 {
             SetEnemyFlagBits(-1, 16, 1);
@@ -266,7 +267,7 @@ Script N(script_80241FBC) = SCRIPT({
 });
 
 s32 unk_missing_8024202C[] = {
-    0x00000000, 0x00240022, 0x00000000, 0x00000000, N(script_80241FBC), 0x80077F70, 0x00000000, 0x8007809C,
+    0x00000000, 0x00240022, 0x00000000, 0x00000000, N(script_80241FBC), EnemyNpcHit, 0x00000000, EnemyNpcDefeat,
     0x00000000, 0x00000000, 0x000D0000,
 };
 
@@ -293,9 +294,9 @@ NpcSettings N(npcSettings_8024212C) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xD,
@@ -473,21 +474,21 @@ s32 pad_002AC8[] = {
 Script N(script_80242AD0) = SCRIPT({
     group 0;
     suspend group 1;
-    0x802D6420();
+    func_802D6420();
     if (SI_VAR(0) == 0) {
         ShowMessageAtScreenPos(0x1D00D8, 160, 40);
-        0x802D6954();
+        func_802D6954();
         resume group 1;
         return;
     }
     if (SI_VAR(0) == -1) {
-        0x802D6954();
+        func_802D6954();
         resume group 1;
         return;
     }
     FindKeyItem(19, SI_VAR(0));
     RemoveKeyItemAt(SI_VAR(0));
-    0x802D6954();
+    func_802D6954();
     SI_SAVE_FLAG(1066) = 1;
     func_80241790_C50CA0(SI_MAP_VAR(0), SI_VAR(0), SI_VAR(1), SI_VAR(2));
     PlaySoundAt(617, 0, SI_VAR(0), SI_VAR(1), SI_VAR(2));
@@ -503,7 +504,7 @@ Script N(script_80242C38) = SCRIPT({
 
 Script N(script_MakeEntities) = SCRIPT({
     if (SI_SAVE_FLAG(1066) == 0) {
-        MakeEntity(0x802BCD68, 130, 8, 175, 0xFFFFFFB0, 0x80000000);
+        MakeEntity(D_802BCD68, 130, 8, 175, 0xFFFFFFB0, 0x80000000);
         AssignScript(N(script_80242C38));
         SI_MAP_VAR(0) = SI_VAR(0);
     }

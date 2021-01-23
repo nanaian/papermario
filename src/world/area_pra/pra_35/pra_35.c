@@ -268,7 +268,7 @@ Script N(script_80242FAC) = SCRIPT({
     SI_VAR(1) = 20;
     SI_VAR(2) = N(unk_80242F7C);
     SI_VAR(3) = N(unk_80242F88);
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_80243FD0_D91220, 0);
     sleep 100;
@@ -281,7 +281,7 @@ Script N(script_80243050) = SCRIPT({
     SI_VAR(1) = 20;
     SI_VAR(2) = N(unk_80242F94);
     SI_VAR(3) = N(unk_80242FA0);
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_80243FD8_D91228, 0);
     sleep 100;
@@ -311,13 +311,13 @@ Script N(script_EnterWalk_802431C4) = SCRIPT({
         == 0 {
             SI_VAR(2) = N(unk_80242F7C);
             SI_VAR(3) = N(unk_80242F88);
-            await 0x802861B0;
+            await func_802861B0;
             spawn N(script_80243160);
         }
         == 1 {
             SI_VAR(2) = N(unk_80242F94);
             SI_VAR(3) = N(unk_80242FA0);
-            await 0x802861B0;
+            await func_802861B0;
             spawn N(script_80243160);
         }
         == 2 {
@@ -374,7 +374,7 @@ Script N(script_802434B0) = SCRIPT({
         }
         == 2 {
             SetNpcPos(-1, 0, 0xFFFFFC18, 0);
-            0x80045900(1);
+            func_80045900(1);
         }
         == 3 {
             SetEnemyFlagBits(-1, 16, 1);
@@ -422,9 +422,9 @@ NpcSettings N(npcSettings_8024363C) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_802435CC),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x17,
@@ -484,9 +484,9 @@ NpcSettings N(npcSettings_8024378C) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_8024376C),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x17,
@@ -561,10 +561,10 @@ s32 N(unk_80243DE0)[] = {
 
 Script N(script_80243DE4) = SCRIPT({
     group 0;
-    0x802D5830(2);
+    func_802D5830(2);
     sleep 40;
     ShowGotItem(SI_VAR(0), 0, 0);
-    0x802D5830(0);
+    func_802D5830(0);
     return;
 });
 
@@ -597,7 +597,7 @@ Script N(script_80243F2C) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EAE30, 435, 0, 0xFFFFFFBA, 0, 0, 0x80000000);
+    MakeEntity(D_802EAE30, 435, 0, 0xFFFFFFBA, 0, 0, 0x80000000);
     AssignFlag(SI_SAVE_FLAG(1517));
     AssignScript(N(script_80243F2C));
 });

@@ -67,7 +67,7 @@ Script N(script_802404E0) = SCRIPT({
     UseDoorSounds(1);
     spawn {
         sleep 30;
-        0x802D5FA4(5);
+        func_802D5FA4(5);
     }
 });
 
@@ -203,11 +203,11 @@ Script N(script_MakeEntities) = SCRIPT({
     SI_AREA_FLAG(5) = 0;
     SI_AREA_FLAG(6) = 0;
     if (SI_SAVE_FLAG(1550) == 0) {
-        MakeEntity(0x802E9BD4, 285, 10, 0xFFFFFFC9, 0, 0x80000000);
+        MakeEntity(D_802E9BD4, 285, 10, 0xFFFFFFC9, 0, 0x80000000);
         AssignAreaFlag(5);
     }
     if (SI_SAVE_FLAG(1551) == 0) {
-        MakeEntity(0x802E9BD4, 935, 10, 0xFFFFFFC9, 0, 0x80000000);
+        MakeEntity(D_802E9BD4, 935, 10, 0xFFFFFFC9, 0, 0x80000000);
         AssignAreaFlag(6);
     }
 });
@@ -223,7 +223,7 @@ Script N(script_80240D80) = SCRIPT({
         TranslateGroup(114, 125, 0, 0);
         UpdateColliderTransform(33);
         if (SI_SAVE_FLAG(1550) == 0) {
-11:
+        11:
             if (SI_AREA_FLAG(5) == 0) {
                 sleep 1;
                 goto 11;
@@ -293,7 +293,7 @@ Script N(script_80240D80) = SCRIPT({
     TranslateGroup(117, 75, 0, 0);
     UpdateColliderTransform(35);
     if (SI_SAVE_FLAG(1551) == 0) {
-12:
+    12:
         if (SI_AREA_FLAG(6) == 0) {
             sleep 1;
             goto 12;

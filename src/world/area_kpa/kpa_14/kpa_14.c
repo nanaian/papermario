@@ -93,7 +93,7 @@ Script N(script_802408E0) = SCRIPT({
     UseDoorSounds(1);
     spawn {
         sleep 30;
-        0x802D5FA4(5);
+        func_802D5FA4(5);
     }
 });
 
@@ -257,7 +257,7 @@ Script N(script_802410BC) = SCRIPT({
                 GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
                 if (SI_VAR(1) < 120) {
                     match SI_VAR(0) {
-                        1200..1245
+                    1200..1245
                         DisablePlayerInput(1);
                         DisablePlayerPhysics(1);
                         SI_MAP_VAR(11) = 1;
@@ -269,7 +269,7 @@ Script N(script_802410BC) = SCRIPT({
                             SI_VAR(5) = 1400;
                         }
                         sleep 1;
-                        0x802D2B6C();
+                        func_802D2B6C();
                         SetPlayerActionState(23);
                         sleep 10;
                         UseSettingsFrom(0, SI_VAR(5), 30, 0xFFFFFF79);
@@ -390,10 +390,10 @@ s32 N(unk_80241900)[] = {
 
 Script N(script_80241904) = SCRIPT({
     group 0;
-    0x802D5830(2);
+    func_802D5830(2);
     sleep 40;
     ShowGotItem(SI_VAR(0), 0, 0);
-    0x802D5830(0);
+    func_802D5830(0);
     return;
 });
 
@@ -402,14 +402,14 @@ s32 N(itemList_8024196C)[] = {
 };
 
 Script N(script_80241974) = SCRIPT({
-    0x802D6420();
+    func_802D6420();
     if (SI_VAR(0) == 0) {
         ShowMessageAtScreenPos(0x1D00D8, 160, 40);
-        0x802D6954();
+        func_802D6954();
         return;
     }
     if (SI_VAR(0) == -1) {
-        0x802D6954();
+        func_802D6954();
         return;
     }
     RemoveKeyItemAt(SI_VAR(1));
@@ -420,7 +420,7 @@ Script N(script_80241974) = SCRIPT({
     func_8024063C_A57AEC();
     SI_VAR(1) = 0;
     sleep 5;
-    0x802D6954();
+    func_802D6954();
     unbind;
     bind N(script_ExitSingleDoor_80240A88) to TriggerFlag_WALL_INTERACT 88;
 });
@@ -429,7 +429,7 @@ Script N(script_80241974) = SCRIPT({
 // *INDENT-OFF*
 Script N(script_MakeEntities) = {
     SI_CMD(ScriptOpcode_IF_EQ, SI_SAVE_FLAG(1552), 0),
-        SI_CMD(ScriptOpcode_CALL, MakeEntity, 0x802BCD68, 1995, 40, 0xFFFFFF5E, 270, 0x80000000),
+        SI_CMD(ScriptOpcode_CALL, MakeEntity, D_802BCD68, 1995, 40, 0xFFFFFF5E, 270, 0x80000000),
         SI_CMD(ScriptOpcode_SET, SI_MAP_VAR(0), SI_VAR(0)),
         SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_80241974), TriggerFlag_WALL_INTERACT, 0x4000, N(itemList_8024196C), 0, 1),
     SI_CMD(ScriptOpcode_ELSE),

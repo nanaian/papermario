@@ -113,8 +113,8 @@ Script N(script_80240B70) = SCRIPT({
     SetPlayerPos(SI_VAR(1), SI_VAR(2), SI_VAR(3));
     InterpPlayerYaw(SI_VAR(4), 0);
     PlaySound(355);
-    0x802D286C(256);
-    0x802D2520(0x10000, 5, 2, 1, 1, 0);
+    func_802D286C(256);
+    func_802D2520(0x10000, 5, 2, 1, 1, 0);
     GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
     loop 40 {
         SI_VAR(1) += 1;
@@ -135,7 +135,7 @@ Script N(script_80240B70) = SCRIPT({
         }
     }
     sleep 2;
-    0x802D2520(0x10000, 0, 0, 0, 0, 0);
+    func_802D2520(0x10000, 0, 0, 0, 0, 0);
     sleep 1;
     SetPlayerAnimation(0x10002);
     DisablePlayerPhysics(0);
@@ -185,8 +185,8 @@ Script N(script_80240EC4) = SCRIPT({
         sleep 25;
         HidePlayerShadow(0);
     }
-    0x802D286C(2304);
-    0x802D2520(0x10002, 5, 3, 1, 1, 0);
+    func_802D286C(2304);
+    func_802D2520(0x10002, 5, 3, 1, 1, 0);
     loop 40 {
         func_8024023C_86ED3C(1.0);
         SetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
@@ -203,7 +203,7 @@ Script N(script_80240EC4) = SCRIPT({
         }
     }
     sleep 5;
-    0x802D2520(0x10002, 0, 0, 0, 0, 0);
+    func_802D2520(0x10002, 0, 0, 0, 0, 0);
     ModifyColliderFlags(1, SI_VAR(11), 0x7FFFFE00);
     DisablePlayerInput(0);
     DisablePlayerPhysics(0);
@@ -222,7 +222,7 @@ Script N(script_802412B4) = SCRIPT({
         if (SI_VAR(1) != 6) {
             return;
         } else {
-            0x802D2B6C();
+            func_802D2B6C();
             DisablePlayerInput(1);
         }
     } else {
@@ -257,14 +257,14 @@ Script N(script_80241390) = SCRIPT({
             sleep 1;
         }
     }
-    0x802D286C(2048);
-    0x802D2520(0x10002, 5, 2, 1, 1, 0);
+    func_802D286C(2048);
+    func_802D2520(0x10002, 5, 2, 1, 1, 0);
     sleep 25;
     await 0xFE363C8C;
 });
 
 Script N(script_8024156C) = SCRIPT({
-    0x802D249C(SI_VAR(0));
+    func_802D249C(SI_VAR(0));
     if (SI_VAR(0) == 0) {
         return;
     }
@@ -278,7 +278,7 @@ Script N(script_8024156C) = SCRIPT({
         if (SI_VAR(1) != 6) {
             return;
         } else {
-            0x802D2B6C();
+            func_802D2B6C();
             DisablePlayerInput(1);
         }
     } else {
@@ -305,8 +305,8 @@ Script N(script_8024156C) = SCRIPT({
     GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
     SetPlayerPos(SI_VAR(0), SI_VAR(6), SI_VAR(7));
     SetPlayerAnimation(0x10000);
-    0x802D286C(2048);
-    0x802D2520(0x10000, 5, 3, 1, 1, 0);
+    func_802D286C(2048);
+    func_802D2520(0x10000, 5, 3, 1, 1, 0);
     spawn {
         sleep 8;
         HidePlayerShadow(1);
@@ -371,7 +371,8 @@ Script N(script_EnterWalk_80241A68) = SCRIPT({
             SI_VAR(10) = N(script_80241A20);
             SI_VAR(11) = 6;
             spawn N(script_80240EC4);
-        } else {
+        }
+        else {
             SI_VAR(0) = N(script_80241A20);
             spawn EnterWalk;
         }
@@ -637,9 +638,9 @@ Script N(script_80242940) = SCRIPT({
     ParentColliderToModel(SI_VAR(11), SI_VAR(10));
     SI_VAR(0) = 0.0;
     SI_VAR(13) = -300.0;
-    SI_VAR(13) -= f SI_VAR(12);
+    SI_VAR(13) -=f SI_VAR(12);
 0:
-    SI_VAR(1) = f SI_VAR(12);
+    SI_VAR(1) =f SI_VAR(12);
     SI_VAR(0) -= 80.0;
 1:
     func_80240960_86F460();
@@ -652,7 +653,7 @@ Script N(script_80242940) = SCRIPT({
         goto 1;
     }
     TranslateModel(SI_VAR(10), 0, SI_VAR(13), 0);
-    SI_VAR(0) = f SI_VAR(13);
+    SI_VAR(0) =f SI_VAR(13);
     SI_VAR(12) = -300.0;
     sleep 1;
     goto 0;
@@ -698,11 +699,11 @@ s32 pad_002C24[] = {
 };
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA564, 200, 50, 0xFFFFFFB5, 0, 129, 0x80000000);
+    MakeEntity(D_802EA564, 200, 50, 0xFFFFFFB5, 0, 129, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(400));
-    MakeEntity(0x802EA564, 140, 50, 0xFFFFFFB5, 0, 343, 0x80000000);
+    MakeEntity(D_802EA564, 140, 50, 0xFFFFFFB5, 0, 343, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(401));
-    MakeEntity(0x802EA564, 260, 50, 0xFFFFFFB5, 0, 343, 0x80000000);
+    MakeEntity(D_802EA564, 260, 50, 0xFFFFFFB5, 0, 343, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(402));
 });
 

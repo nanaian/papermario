@@ -36,11 +36,11 @@ Script N(script_80240060) = SCRIPT({
             DisablePlayerInput(1);
             sleep 20;
             group 0;
-            0x802D5830(1);
+            func_802D5830(1);
             ShowMessageAtScreenPos(0xD00DD, 160, 40);
             SI_SAVE_FLAG(889) = 1;
             DisablePlayerInput(0);
-            0x802D5830(0);
+            func_802D5830(0);
             FadeInMusic(0, 24, 0, 2000, 0, 127);
             FadeOutMusic(1, 2000);
         }
@@ -122,7 +122,7 @@ Script N(script_80240490) = SCRIPT({
     SetTexPanner(26, 2);
     EnableTexPanning(26, 1);
     SI_VAR(0) = 0;
-    0x802C9428(0, N(displayList_80240480), 0);
+    func_802C9428(0, N(displayList_80240480), 0);
     SetModelFlags(26, 16, 1);
 0:
     SI_VAR(0) += 70;
@@ -135,7 +135,7 @@ Script N(script_80240490) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802E9A18, 0xFFFFFDEE, 60, 43, 0, 0x80000000);
+    MakeEntity(D_802E9A18, 0xFFFFFDEE, 60, 43, 0, 0x80000000);
 });
 
 s32 pad_0005B4[] = {

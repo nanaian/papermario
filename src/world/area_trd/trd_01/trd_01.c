@@ -211,7 +211,7 @@ Script N(script_80241BE4) = SCRIPT({
     SI_SAVE_VAR(0) = 0xFFFFFFB0;
     group 0;
     sleep 1;
-    0x802D5830(1);
+    func_802D5830(1);
     sleep 20;
     SI_VAR(0) = 0;
     SI_VAR(1) = 220;
@@ -436,7 +436,7 @@ Script N(script_80241BE4) = SCRIPT({
     ResetCam(0, 1.5);
     StopSound(0x80000006);
     DisablePlayerInput(0);
-    0x802D5830(0);
+    func_802D5830(0);
     unbind;
 });
 
@@ -544,21 +544,21 @@ Script N(script_80242FD0) = SCRIPT({
 Script N(script_8024310C) = SCRIPT({
     group 0;
     suspend group 1;
-    0x802D6420();
+    func_802D6420();
     if (SI_VAR(0) == 0) {
         ShowMessageAtScreenPos(0x1D00D8, 160, 40);
-        0x802D6954();
+        func_802D6954();
         resume group 1;
         return;
     }
     if (SI_VAR(0) == -1) {
-        0x802D6954();
+        func_802D6954();
         resume group 1;
         return;
     }
     FindKeyItem(16, SI_VAR(0));
     RemoveKeyItemAt(SI_VAR(0));
-    0x802D6954();
+    func_802D6954();
     SI_SAVE_FLAG(650) = 1;
     func_80240344_99CCD4(SI_MAP_VAR(0), SI_VAR(0), SI_VAR(1), SI_VAR(2));
     PlaySoundAt(617, 0, SI_VAR(0), SI_VAR(1), SI_VAR(2));
@@ -575,12 +575,12 @@ Script N(script_8024328C) = SCRIPT({
 
 Script N(script_MakeEntities) = SCRIPT({
     if (SI_SAVE_FLAG(650) == 0) {
-        MakeEntity(0x802BCD68, 315, 8, 0, 0xFFFFFFB0, 0x80000000);
+        MakeEntity(D_802BCD68, 315, 8, 0, 0xFFFFFFB0, 0x80000000);
         AssignScript(N(script_8024328C));
         SI_MAP_VAR(0) = SI_VAR(0);
     }
     if (SI_SAVE_VAR(0) < 0xFFFFFFB0) {
-        MakeEntity(0x802E9BD4, 0, 220, 255, 0, 0x80000000);
+        MakeEntity(D_802E9BD4, 0, 220, 255, 0, 0x80000000);
         AssignAreaFlag(1);
     }
     MakeItemEntity(265, 0xFFFFFEF4, 656, 0xFFFFFFD8, 17, SI_SAVE_FLAG(638));
@@ -625,9 +625,9 @@ NpcSettings N(npcSettings_80243490) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80243420),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x6,
@@ -657,9 +657,9 @@ NpcSettings N(npcSettings_80243500) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_802434E0),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x6,

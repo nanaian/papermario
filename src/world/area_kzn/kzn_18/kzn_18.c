@@ -284,7 +284,7 @@ s32 unk_missing_80240E18[] = {
 
 Script N(script_Idle_80240E44) = SCRIPT({
     if (SI_SAVE_VAR(0) < 33) {
-0:
+    0:
         GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
         if (SI_VAR(0) < 0xFFFFFF83) {
             sleep 1;
@@ -450,10 +450,10 @@ NpcGroupList N(npcGroupList_80241A4C) = {
 };
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EAB04, 250, 250, 0xFFFFFF1F, 0, 23, 0x80000000);
+    MakeEntity(D_802EAB04, 250, 250, 0xFFFFFF1F, 0, 23, 0x80000000);
     AssignPanelFlag(SI_SAVE_FLAG(1339));
-    MakeEntity(0x802E9A18, 0xFFFFFE5C, 85, 0xFFFFFFB0, 0, 0x80000000);
-    MakeEntity(0x802EA7E0, 350, 310, 0xFFFFFF06, 0, 0x80000000);
+    MakeEntity(D_802E9A18, 0xFFFFFE5C, 85, 0xFFFFFFB0, 0, 0x80000000);
+    MakeEntity(D_802EA7E0, 350, 310, 0xFFFFFF06, 0, 0x80000000);
 });
 
 // rodata: D_80241B00_C8DBA0

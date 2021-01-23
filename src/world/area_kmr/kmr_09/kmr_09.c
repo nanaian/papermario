@@ -140,9 +140,9 @@ NpcSettings N(npcSettings_80241840) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80241820),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x5,
@@ -183,9 +183,9 @@ NpcSettings N(npcSettings_80241924) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_802418B4),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x6,
@@ -264,11 +264,11 @@ Script N(script_Idle_80241E54) = SCRIPT({
         goto 0;
     }
     PlaySoundAtNpc(-1, 248, 0);
-    0x802CFE2C(-1, 8192);
-    0x802CFD30(-1, 5, 6, 1, 1, 0);
+    func_802CFE2C(-1, 8192);
+    func_802CFD30(-1, 5, 6, 1, 1, 0);
     sleep 15;
-    0x802CFE2C(-1, 8192);
-    0x802CFD30(-1, 3, 0, 0, 0, 0);
+    func_802CFE2C(-1, 8192);
+    func_802CFD30(-1, 3, 0, 0, 0, 0);
     spawn {
         sleep 2;
         SI_VAR(0) = 0.0;
@@ -283,7 +283,7 @@ Script N(script_Idle_80241E54) = SCRIPT({
     EnableNpcShadow(-1, 1);
     SetNpcJumpscale(-1, 0.6005859375);
     NpcJump0(-1, 0xFFFFFFDD, 0, 25, 23);
-    0x802CFD30(-1, 0, 0, 0, 0, 0);
+    func_802CFD30(-1, 0, 0, 0, 0, 0);
     InterpNpcYaw(-1, 90, 0);
     SetNpcFlagBits(-1, 32, 1);
     SetNpcFlagBits(-1, 64, 0);
@@ -347,10 +347,10 @@ s32 pad_0025A8[] = {
 };
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA564, 400, 60, 0xFFFFFFF1, 0, 343, 0x80000000);
+    MakeEntity(D_802EA564, 400, 60, 0xFFFFFFF1, 0, 343, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(77));
-    MakeEntity(0x802EA0C4, 450, 60, 0xFFFFFFF1, 0, 0x80000000);
-    MakeEntity(0x802EA564, 500, 60, 0xFFFFFFF1, 0, 343, 0x80000000);
+    MakeEntity(D_802EA0C4, 450, 60, 0xFFFFFFF1, 0, 0x80000000);
+    MakeEntity(D_802EA564, 500, 60, 0xFFFFFFF1, 0, 343, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(78));
 });
 

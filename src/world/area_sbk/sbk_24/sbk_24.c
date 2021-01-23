@@ -101,7 +101,8 @@ Script N(script_EnterWalk_80240600) = SCRIPT({
     match SI_VAR(0) {
         == 4 {
             spawn N(script_80240580);
-        } else {
+        }
+        else {
             SI_VAR(0) = N(script_80240580);
             spawn EnterWalk;
         }
@@ -165,7 +166,7 @@ Script N(script_80240878) = SCRIPT({
             DoNpcDefeat();
         }
         == 2 {
-            0x80045900(0);
+            func_80045900(0);
         }
         == 3 {
             DisablePlayerInput(1);
@@ -197,12 +198,12 @@ Script N(script_80240878) = SCRIPT({
 });
 
 s32 unk_missing_80240AC4[] = {
-    0x00000000, 0x001A0018, 0x00000000, 0x00000000, N(script_80240858), 0x80077F70, 0x00000000, N(script_80240878),
+    0x00000000, 0x001A0018, 0x00000000, 0x00000000, N(script_80240858), EnemyNpcHit, 0x00000000, N(script_80240878),
     0x00000000, 0x00000000, 0x00090005,
 };
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA5D0, 340, 60, 0xFFFFFF56, 0, 259, 0x80000000);
+    MakeEntity(D_802EA5D0, 340, 60, 0xFFFFFF56, 0, 259, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(810));
 });
 

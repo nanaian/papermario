@@ -167,7 +167,7 @@ Script N(script_80241908) = SCRIPT({
     SI_VAR(3) = 20;
     SI_VAR(4) = 24;
     SI_VAR(5) = 21;
-    spawn 0x80285E9C;
+    spawn func_80285E9C;
     sleep 17;
     GotoMap(D_802421F0_D614A0, 2);
     sleep 100;
@@ -182,7 +182,7 @@ Script N(script_802419CC) = SCRIPT({
     SI_VAR(3) = 30;
     SI_VAR(4) = 28;
     SI_VAR(5) = 31;
-    spawn 0x80285E9C;
+    spawn func_80285E9C;
     sleep 17;
     GotoMap(D_802421F8_D614A8, 0);
     sleep 100;
@@ -201,14 +201,14 @@ Script N(script_80241AD8) = SCRIPT({
             SI_VAR(3) = 20;
             SI_VAR(4) = 24;
             SI_VAR(5) = 21;
-            await 0x80285EC4;
+            await func_80285EC4;
         }
         == 1 {
             SI_VAR(2) = 27;
             SI_VAR(3) = 30;
             SI_VAR(4) = 28;
             SI_VAR(5) = 31;
-            await 0x80285EC4;
+            await func_80285EC4;
         }
     }
     spawn N(script_80241A90);
@@ -259,7 +259,7 @@ Script N(script_NpcAI_80241D40) = SCRIPT({
 });
 
 s32 unk_missing_80241D60[] = {
-    0x00000000, 0x00140014, 0x00000000, 0x00000000, N(script_80241CF0), 0x80077F70, 0x00000000, 0x8007809C,
+    0x00000000, 0x00140014, 0x00000000, 0x00000000, N(script_80241CF0), EnemyNpcHit, 0x00000000, EnemyNpcDefeat,
     0x00000800, 0x00000000, 0x000A0000,
 };
 
@@ -270,9 +270,9 @@ NpcSettings N(npcSettings_80241D8C) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80241D40),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0x800,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x16,

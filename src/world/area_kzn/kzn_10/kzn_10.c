@@ -174,7 +174,7 @@ Script N(script_80240D10) = SCRIPT({
 10:
     GetCurrentPartner(SI_VAR(0));
     if (SI_VAR(0) != 0) {
-        0x802D2B6C();
+        func_802D2B6C();
     }
 0:
     sleep 1;
@@ -204,14 +204,14 @@ Script N(script_80240D10) = SCRIPT({
     SetPlayerAnimation(0x1000F);
     sleep 1;
     func_80240330_C7E4B0();
-    0x802D2520(0x1000F, 4, 3.0, 3.0, 0, 0);
+    func_802D2520(0x1000F, 4, 3.0, 3.0, 0, 0);
 1:
     sleep 1;
     if (SI_AREA_FLAG(2) == 0) {
         goto 1;
     }
     sleep 30;
-    0x802D2520(0x1000F, 0, 0, 0, 0, 0);
+    func_802D2520(0x1000F, 0, 0, 0, 0, 0);
     SetPlayerAnimation(0x10030);
     func_802404B4_C7E634(0);
 2:
@@ -248,7 +248,8 @@ Script N(script_80240FB0) = SCRIPT({
                 SI_VAR(0) = SI_VAR(3);
                 SI_VAR(6) = 800;
                 SI_VAR(6) -= SI_VAR(0);
-            } else {
+            }
+            else {
                 SI_VAR(6) = 500;
             }
         }
@@ -316,7 +317,7 @@ Script N(script_80241464) = SCRIPT({
         }
         sleep 1;
     }
-    0x802D2B6C();
+    func_802D2B6C();
     SetGroupEnabled(41, 1);
     EnableModel(42, 1);
     DisablePlayerInput(1);

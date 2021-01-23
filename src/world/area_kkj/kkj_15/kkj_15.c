@@ -184,7 +184,7 @@ Script N(script_ExitSingleDoor_80240870) = SCRIPT({
 });
 
 Script N(script_80240A04) = SCRIPT({
-    bind 0x80240960 to TriggerFlag_WALL_INTERACT 2;
+    bind func_80240960 to TriggerFlag_WALL_INTERACT 2;
 });
 
 Script N(script_EnterSingleDoor_80240A30) = SCRIPT({
@@ -208,7 +208,8 @@ Script N(script_EnterSingleDoor_80240A30) = SCRIPT({
                 }
                 == 0xFFFFFFF2 {
                     spawn N(script_802453F4);
-                } else {
+                }
+                else {
                     spawn N(script_80241550);
                     spawn N(script_80240A04);
                 }
@@ -265,8 +266,8 @@ Script N(main) = SCRIPT({
         SI_VAR(12) = 0;
         spawn N(script_UpdateTexturePan_80240750);
     }
-    0x802C90FC(74, 0, -1);
-    0x802C9428(0, N(displayList_802407F0), 0);
+    func_802C90FC(74, 0, -1);
+    func_802C9428(0, N(displayList_802407F0), 0);
     SetTexPanner(78, 0);
     spawn {
         SI_VAR(0) = 0;
@@ -284,8 +285,8 @@ Script N(main) = SCRIPT({
         SI_VAR(12) = 0;
         spawn N(script_UpdateTexturePan_80240750);
     }
-    0x802C90FC(78, 0, -1);
-    0x802C9428(0, N(displayList_802407F0), 0);
+    func_802C90FC(78, 0, -1);
+    func_802C9428(0, N(displayList_802407F0), 0);
     UseDoorSounds(0);
     spawn N(script_80240680);
     GetEntryID(SI_VAR(0));
@@ -319,7 +320,7 @@ Script N(script_80241010) = SCRIPT({
     MakeLerp(0, 0xFFFFF8F8, 360, 0);
     loop {
         UpdateLerp();
-        SI_VAR(2) = f SI_VAR(0);
+        SI_VAR(2) =f SI_VAR(0);
         SI_VAR(2) /= 10;
         RotateGroup(95, SI_VAR(2), 0, 1, 0);
         func_80240340_AE58D0();
@@ -342,7 +343,7 @@ Script N(script_802411DC) = SCRIPT({
     MakeLerp(0xFFFFFABA, 0xFFFFF8F8, 90, 0);
     loop {
         UpdateLerp();
-        SI_VAR(2) = f SI_VAR(0);
+        SI_VAR(2) =f SI_VAR(0);
         SI_VAR(2) /= 10;
         RotateGroup(95, SI_VAR(2), 0, 1, 0);
         func_80240340_AE58D0();
@@ -395,7 +396,8 @@ Script N(script_80241550) = SCRIPT({
     match SI_SAVE_VAR(0) {
         == 0xFFFFFFB4 {
             await N(script_80241408);
-        } else {
+        }
+        else {
             await N(script_8024135C);
         }
     }
@@ -696,7 +698,7 @@ Script N(script_80241A70) = SCRIPT({
     SpeakToNpc(0, 0x800006, 0x800002, 0, 2, 0x14000F);
     sleep 20;
     kill SI_VAR(11);
-    0x802D7B10(SI_VAR(10));
+    func_802D7B10(SI_VAR(10));
     EnableSpriteShading(0);
     sleep 30;
     await N(script_80241870);
@@ -1108,7 +1110,7 @@ Script N(script_80243C8C) = SCRIPT({
     }
     sleep 30;
     FadeOutMusic(0, 1000);
-    await 0x802408C0;
+    await func_802408C0;
     PanToTarget(0, 0, 0);
     EnablePartnerAI();
     DisablePlayerPhysics(0);
@@ -1367,7 +1369,7 @@ Script N(script_802453F4) = SCRIPT({
         DisablePlayerPhysics(0);
         func_802405D0_AE5B60();
         SetPlayerAnimation(0xC000E);
-        0x802D1270(30, 0xFFFFFFF6, 2.0);
+        func_802D1270(30, 0xFFFFFFF6, 2.0);
         DisablePlayerPhysics(1);
         func_802405EC_AE5B7C();
         SetNpcVar(0, 0, 0);
@@ -1467,7 +1469,7 @@ Script N(script_802453F4) = SCRIPT({
     }
     sleep 30;
     FadeOutMusic(0, 1000);
-    await 0x80240910;
+    await N(script_ExitDoubleDoor_80240910);
     PanToTarget(0, 0, 0);
     EnablePartnerAI();
     DisablePlayerPhysics(0);
@@ -1501,9 +1503,9 @@ NpcSettings N(npcSettings_802462BC) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x1A,
@@ -1517,9 +1519,9 @@ NpcSettings N(npcSettings_802462E8) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x63,
@@ -1730,9 +1732,9 @@ NpcSettings N(npcSettings_802475CC) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x1A,

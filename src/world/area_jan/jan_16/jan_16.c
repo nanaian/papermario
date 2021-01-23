@@ -77,7 +77,8 @@ Script N(script_802405D0) = SCRIPT({
         == 3 {
             SetMusicTrack(0, 40, 1, 8);
             SI_AREA_FLAG(3) = 1;
-        } else {
+        }
+        else {
             if (SI_AREA_FLAG(3) == 0) {
                 SetMusicTrack(0, 40, 0, 8);
             }
@@ -130,8 +131,8 @@ Script N(script_80240838) = SCRIPT({
 Script N(script_802409F8) = SCRIPT({
     SI_VAR(15) = 0;
     loop {
-        SI_VAR(0) = f SI_MAP_VAR(10);
-        SI_VAR(1) = f SI_MAP_VAR(10);
+        SI_VAR(0) =f SI_MAP_VAR(10);
+        SI_VAR(1) =f SI_MAP_VAR(10);
         SI_VAR(0) *= -0.01953125;
         SI_VAR(1) *= 0.0400390625;
         SI_VAR(0) += 1;
@@ -141,11 +142,11 @@ Script N(script_802409F8) = SCRIPT({
         if (SI_VAR(15) >= 600) {
             SI_VAR(15) = 0;
         }
-        SI_VAR(0) = f SI_VAR(10);
+        SI_VAR(0) =f SI_VAR(10);
         SI_VAR(0) *= -0.046875;
-        SI_MAP_VAR(10) += f SI_VAR(0);
+        SI_MAP_VAR(10) +=f SI_VAR(0);
         SI_MAP_VAR(10) *= 0.84375;
-        SI_VAR(10) += f SI_MAP_VAR(10);
+        SI_VAR(10) +=f SI_MAP_VAR(10);
         sleep 1;
     }
 });
@@ -164,7 +165,7 @@ Script N(script_80240B3C) = SCRIPT({
     WaitForCam(0, 1.0);
     GetCurrentPartner(SI_VAR(0));
     if (SI_VAR(0) != 0) {
-        0x802D2B6C();
+        func_802D2B6C();
     }
     sleep 15;
     spawn {
@@ -323,7 +324,7 @@ Script N(script_Init_80241570) = SCRIPT({
         < 21 {
             goto 20;
         }
-        21..22
+    21..22
         BindNpcInteract(-1, N(script_Interact_80241540));
         GetSelfNpcID(SI_VAR(0));
         if (SI_VAR(0) == 1) {
@@ -334,7 +335,7 @@ Script N(script_Init_80241570) = SCRIPT({
             SetNpcPos(5, 0xFFFFFE65, 93, 0xFFFFFFF0);
         }
         > 22 {
-20:
+        20:
             ModifyColliderFlags(0, 32, 0x7FFFFE00);
             RemoveNpc(-1);
         }
@@ -411,7 +412,7 @@ Script N(script_Interact_802416C4) = SCRIPT({
         SI_VAR(0) = 1;
         loop 6 {
             match SI_VAR(0) {
-                1..4
+            1..4
                 PlaySoundAtCollider(30, 396, 0);
                 == 5 {
                     PlaySoundAtCollider(30, 397, 0);
@@ -428,14 +429,14 @@ Script N(script_Interact_802416C4) = SCRIPT({
     SI_VAR(3) = 0.25;
     loop 5 {
         loop 10 {
-            SI_VAR(2) += f SI_VAR(3);
+            SI_VAR(2) +=f SI_VAR(3);
             ScaleGroup(84, 1, SI_VAR(2), 1);
             sleep 1;
         }
         PlayEffect(6, 1, 123, 0, 352, 0, 0, 0, 0, 0, 0, 0, 0, 0);
         PlayEffect(6, 1, 193, 0, 450, 0, 0, 0, 0, 0, 0, 0, 0, 0);
         loop 10 {
-            SI_VAR(2) -= f SI_VAR(3);
+            SI_VAR(2) -=f SI_VAR(3);
             ScaleGroup(84, 1, SI_VAR(2), 1);
             sleep 1;
         }
@@ -563,8 +564,8 @@ s32 pad_002C68[] = {
 };
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802BC7AC, 0xFFFFFF90, 0, 210, 0, 0x80000000);
-    MakeEntity(0x802BC7AC, 0xFFFFFE3B, 0, 188, 170, 0x80000000);
+    MakeEntity(D_802BC7AC, 0xFFFFFF90, 0, 210, 0, 0x80000000);
+    MakeEntity(D_802BC7AC, 0xFFFFFE3B, 0, 188, 170, 0x80000000);
 });
 
 s32 pad_002CC8[] = {

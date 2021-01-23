@@ -176,7 +176,7 @@ Script N(main) = SCRIPT({
     spawn N(script_80240A30);
     UseDoorSounds(2);
     bind N(script_ExitDoubleDoor_80240B74) to TriggerFlag_WALL_INTERACT 2;
-    bind 0x80240AD0 to TriggerFlag_WALL_INTERACT 7;
+    bind N(npcSettings_80240AD0) to TriggerFlag_WALL_INTERACT 7;
     spawn N(script_EnterDoubleDoor_80240C18);
 });
 
@@ -427,9 +427,9 @@ NpcSettings N(npcSettings_80241BA0) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x1A,
@@ -475,7 +475,7 @@ Script N(script_NpcAI_80241D10) = SCRIPT({
     DisablePlayerInput(1);
     func_80240784_B03004();
     group 0;
-    0x802D5830(1);
+    func_802D5830(1);
     PlaySoundAtNpc(-1, 610, 0);
     ShowEmote(-1, 0, 0, 20, 1, 0, 0, 0, 0);
     NpcFacePlayer(-1, 0);
@@ -773,9 +773,9 @@ Script N(script_80243010) = SCRIPT({
     }
     spawn {
         GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
-        0x802D1270(190, SI_VAR(2), 4.0);
-        0x802D1270(195, 0xFFFFFFB0, 4.0);
-        0x802D1270(190, 0xFFFFFFB0, 4.0);
+        func_802D1270(190, SI_VAR(2), 4.0);
+        func_802D1270(195, 0xFFFFFFB0, 4.0);
+        func_802D1270(190, 0xFFFFFFB0, 4.0);
         loop {
             sleep 1;
             GetNpcPos(0, SI_VAR(0), SI_VAR(1), SI_VAR(2));

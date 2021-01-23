@@ -172,7 +172,7 @@ s32 pad_0020AC[] = {
 
 Script N(script_MakeEntities) = SCRIPT({
     MakeItemEntity(59, 100, 0, 0xFFFFFF9C, 17, SI_SAVE_FLAG(1449));
-    MakeEntity(0x802EA588, 490, 140, 0xFFFFFFB5, 0, 146, 0x80000000);
+    MakeEntity(D_802EA588, 490, 140, 0xFFFFFFB5, 0, 146, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1450));
 });
 
@@ -187,9 +187,9 @@ NpcSettings N(npcSettings_80242120) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = NULL,
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x63,
@@ -220,7 +220,7 @@ Script N(script_80242178) = SCRIPT({
         }
         == 2 {
             SetNpcPos(-1, 0, 0xFFFFFC18, 0);
-            0x80045900(1);
+            func_80045900(1);
         }
         == 3 {
             SetEnemyFlagBits(-1, 16, 1);
@@ -259,9 +259,9 @@ NpcSettings N(npcSettings_802422D4) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80242264),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x16,
@@ -338,9 +338,9 @@ NpcSettings N(npcSettings_802424FC) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80242428),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x16,
@@ -361,7 +361,7 @@ Script N(script_802425A8) = SCRIPT({
     match SI_VAR(0) {
         == 1, 2, 4, 6 {
             GetSelfAnimationFromTable(7, SI_VAR(0));
-            await 0x800936DC;
+            await func_800936DC;
         }
     }
 });
@@ -861,7 +861,7 @@ Script N(script_80245E00) = SCRIPT({
         goto 0;
     }
     DisablePlayerInput(1);
-    0x802D2B6C();
+    func_802D2B6C();
     SetMusicTrack(0, 92, 0, 8);
     ShowMessageAtScreenPos(0x1200E0, 160, 40);
     SetNpcAnimation(-1, 0x7E0001);
@@ -886,9 +886,9 @@ Script N(script_80245E00) = SCRIPT({
     SetPlayerPos(495, 80, 0);
     GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
     GetNpcPos(6, SI_VAR(3), SI_VAR(4), SI_VAR(5));
-    SI_VAR(0) += f SI_VAR(3);
-    SI_VAR(1) += f SI_VAR(4);
-    SI_VAR(2) += f SI_VAR(5);
+    SI_VAR(0) +=f SI_VAR(3);
+    SI_VAR(1) +=f SI_VAR(4);
+    SI_VAR(2) +=f SI_VAR(5);
     SI_VAR(0) /= 2.0;
     SI_VAR(1) /= 2.0;
     SI_VAR(2) /= 2.0;
@@ -916,12 +916,12 @@ Script N(script_80245E00) = SCRIPT({
         SetNpcAnimation(-1, 0x7E0001);
         spawn N(script_80241DA0);
         DisablePlayerInput(0);
-4:
+    4:
         GetPlayerPos(SI_VAR(3), SI_VAR(4), SI_VAR(5));
         sleep 1;
         if (SI_VAR(3) > SI_VAR(0)) {
             DisablePlayerInput(1);
-            0x802D2B6C();
+            func_802D2B6C();
             SetMusicTrack(0, 92, 0, 8);
             goto 2;
         }
@@ -1049,7 +1049,7 @@ Script N(script_80246A38) = {
         SI_CMD(ScriptOpcode_IF_EQ, SI_VAR(10), -1),
             SI_CMD(ScriptOpcode_BREAK_LOOP),
         SI_CMD(ScriptOpcode_END_IF),
-        SI_CMD(ScriptOpcode_CALL, 0x802CFD30, SI_VAR(10), 7, SI_VAR(2), 0, 0, 0),
+        SI_CMD(ScriptOpcode_CALL, func_802CFD30, SI_VAR(10), 7, SI_VAR(2), 0, 0, 0),
     SI_CMD(ScriptOpcode_END_LOOP),
     SI_CMD(ScriptOpcode_SLEEP_FRAMES, 1),
     SI_CMD(ScriptOpcode_IF_EQ, SI_VAR(1), 1),
@@ -1080,9 +1080,9 @@ Script N(script_80246CDC) = SCRIPT({
     SetNpcAnimation(-1, 0x7E000C);
     GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
     GetNpcPos(6, SI_VAR(3), SI_VAR(4), SI_VAR(5));
-    SI_VAR(0) += f SI_VAR(3);
-    SI_VAR(1) += f SI_VAR(4);
-    SI_VAR(2) += f SI_VAR(5);
+    SI_VAR(0) +=f SI_VAR(3);
+    SI_VAR(1) +=f SI_VAR(4);
+    SI_VAR(2) +=f SI_VAR(5);
     SI_VAR(0) /= 2.0;
     SI_VAR(1) /= 2.0;
     SI_VAR(2) /= 2.0;

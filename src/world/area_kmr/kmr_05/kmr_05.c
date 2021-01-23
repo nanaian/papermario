@@ -166,9 +166,9 @@ NpcSettings N(npcSettings_80241B00) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80241AE0),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x5,
@@ -209,9 +209,9 @@ NpcSettings N(npcSettings_80241BE4) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80241B74),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x6,
@@ -244,9 +244,9 @@ NpcSettings N(npcSettings_80241C60) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80241C40),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x6,
@@ -282,10 +282,10 @@ Script N(script_Aux_80241D2C) = SCRIPT({
 });
 
 Script N(script_Idle_80241E44) = SCRIPT({
-    0x800445D4(SI_VAR(0));
+    func_800445D4(SI_VAR(0));
     match SI_VAR(0) {
         == 100 {
-10:
+        10:
             GetPlayerPos(SI_VAR(0), SI_VAR(1), SI_VAR(2));
             sleep 1;
             if (SI_VAR(1) < 100) {

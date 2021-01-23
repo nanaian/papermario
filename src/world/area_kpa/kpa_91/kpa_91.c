@@ -106,7 +106,7 @@ s32 pad_005D68[2];
 // text: func_8024166C_A880BC
 
 s32 unk_missing_8024169C[] = {
-    0x3C028011, 0x8042F2A2, 0x27BDFFE8, 0x10400003, 0xAFBF0010, 0x0C03AE06, 0x00000000, 0x24020002,
+    0x3C028011, D_8042F2A2, 0x27BDFFE8, 0x10400003, 0xAFBF0010, 0x0C03AE06, 0x00000000, 0x24020002,
     0x8FBF0010, 0x03E00008, 0x27BD0018, 0x27BDFFE8, 0xAFBF0010, 0x0C03AE18, 0x00000000, 0x8FBF0010,
     0x24020002, 0x03E00008, 0x27BD0018,
 };
@@ -147,7 +147,7 @@ Script N(script_80241960) = SCRIPT({
     UseDoorSounds(1);
     spawn {
         sleep 30;
-        0x802D5FA4(6);
+        func_802D5FA4(6);
     }
 });
 
@@ -276,9 +276,9 @@ NpcSettings N(npcSettings_80241DF0) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80241D94),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0x19,
@@ -690,7 +690,7 @@ Script N(script_8024415C) = SCRIPT({
     await N(script_80244564);
     spawn {
         MakeLerp(0, 255, 60, 0);
-0:
+    0:
         UpdateLerp();
         func_80241570_A87FC0(3, SI_VAR(0));
         sleep 1;
@@ -705,7 +705,7 @@ Script N(script_8024415C) = SCRIPT({
         func_802417EC_A8823C(SI_VAR(10));
         sleep 45;
         MakeLerp(255, 0, 30, 0);
-1:
+    1:
         UpdateLerp();
         func_80241570_A87FC0(0, SI_VAR(0));
         sleep 1;
@@ -752,8 +752,8 @@ Script N(script_80244564) = SCRIPT({
     InterpPlayerYaw(114, 1);
     HidePlayerShadow(1);
     SetPlayerAnimation(0x10002);
-    0x802D286C(0x2800);
-    0x802D2520(0x10002, 5, 7, 1, 1, 0);
+    func_802D286C(0x2800);
+    func_802D2520(0x10002, 5, 7, 1, 1, 0);
     sleep 61;
     SetPlayerAnimation(0x8001D);
     spawn {
@@ -771,7 +771,7 @@ Script N(script_80244800) = SCRIPT({
     UseSettingsFrom(0, SI_MAP_VAR(1), SI_MAP_VAR(2), SI_MAP_VAR(3));
     SetCamSpeed(0, 90.0);
     SetPanTarget(0, SI_MAP_VAR(1), SI_MAP_VAR(2), SI_MAP_VAR(3));
-    0x802D2520(0x10002, 0, 0, 0, 0, 0);
+    func_802D2520(0x10002, 0, 0, 0, 0, 0);
     HidePlayerShadow(0);
     SetPlayerPos(0xFFFFFF75, 0, 0xFFFFFFA6);
     PlayerMoveTo(0xFFFFFF9A, 0xFFFFFF7E, 20);
@@ -963,14 +963,14 @@ s32 N(itemList_802457E0)[] = {
 };
 
 Script N(script_802457E8) = SCRIPT({
-    0x802D6420();
+    func_802D6420();
     if (SI_VAR(0) == 0) {
         ShowMessageAtScreenPos(0x1D00D8, 160, 40);
-        0x802D6954();
+        func_802D6954();
         return;
     }
     if (SI_VAR(0) == -1) {
-        0x802D6954();
+        func_802D6954();
         return;
     }
     RemoveKeyItemAt(SI_VAR(1));
@@ -981,7 +981,7 @@ Script N(script_802457E8) = SCRIPT({
     func_80241830_A88280();
     SI_VAR(1) = 0;
     sleep 5;
-    0x802D6954();
+    func_802D6954();
     bind N(script_80241A58) to TriggerFlag_WALL_INTERACT 37;
     unbind;
 });
@@ -990,7 +990,7 @@ Script N(script_802457E8) = SCRIPT({
 // *INDENT-OFF*
 Script N(script_MakeEntities) = {
     SI_CMD(ScriptOpcode_IF_EQ, SI_SAVE_FLAG(1573), 0),
-        SI_CMD(ScriptOpcode_CALL, MakeEntity, 0x802BCD68, 0xFFFFFFFB, 10, 13, 0, 0x80000000),
+        SI_CMD(ScriptOpcode_CALL, MakeEntity, D_802BCD68, 0xFFFFFFFB, 10, 13, 0, 0x80000000),
         SI_CMD(ScriptOpcode_SET, SI_MAP_VAR(0), SI_VAR(0)),
         SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_802457E8), TriggerFlag_WALL_INTERACT, 0x4000, N(itemList_802457E0), 0, 1),
     SI_CMD(ScriptOpcode_ELSE),

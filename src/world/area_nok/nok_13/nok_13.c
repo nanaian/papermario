@@ -126,7 +126,7 @@ Script N(script_8024170C) = SCRIPT({
         SI_VAR(0) = 0;
         SI_VAR(1) = 0;
         SI_VAR(2) = 0;
-10:
+    10:
         SetTexPanOffset(1, 0, SI_VAR(0), 0);
         SetTexPanOffset(1, 1, SI_VAR(1), SI_VAR(2));
         SI_VAR(0) -= 100;
@@ -195,39 +195,39 @@ Script N(script_80241AB0) = SCRIPT({
         PlaySoundAt(8456, 0, 40, 60, 0xFFFFFEE3);
         SI_AREA_VAR(1) = 3;
         PlayEffect(17, 0, 40, 73, 0xFFFFFEE3, 10, 0, 0, 0, 0, 0, 0, 0, 0);
-        MakeEntity(0x802EA5AC, 40, 60, 0xFFFFFEE3, 90, 326, 0x80000000);
+        MakeEntity(D_802EA5AC, 40, 60, 0xFFFFFEE3, 90, 326, 0x80000000);
         AssignBlockFlag(SI_SAVE_FLAG(598));
     }
 });
 
 Script N(script_80241B94) = SCRIPT({
     group 0;
-    0x802D5830(1);
+    func_802D5830(1);
     DisablePlayerInput(1);
     ShowMessageAtScreenPos(0x1D0178, 160, 40);
     DisablePlayerInput(0);
-    0x802D5830(0);
+    func_802D5830(0);
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EAFDC, 0xFFFFFE52, 150, 0xFFFFFFB5, 0, 0x80000000);
+    MakeEntity(D_802EAFDC, 0xFFFFFE52, 150, 0xFFFFFFB5, 0, 0x80000000);
     AssignScript(N(script_80241B94));
     if (SI_SAVE_FLAG(598) == 0) {
         SI_AREA_VAR(1) = 0;
-        MakeEntity(0x802EA0C4, 70, 0, 0xFFFFFF06, 90, 0x80000000);
+        MakeEntity(D_802EA0C4, 70, 0, 0xFFFFFF06, 90, 0x80000000);
         AssignScript(N(script_80241A40));
-        MakeEntity(0x802EA0C4, 70, 0, 0xFFFFFEC0, 90, 0x80000000);
+        MakeEntity(D_802EA0C4, 70, 0, 0xFFFFFEC0, 90, 0x80000000);
         AssignScript(N(script_80241A78));
-        MakeEntity(0x802EA0C4, 0xFFFFFFF6, 0, 0xFFFFFEE3, 90, 0x80000000);
+        MakeEntity(D_802EA0C4, 0xFFFFFFF6, 0, 0xFFFFFEE3, 90, 0x80000000);
         AssignScript(N(script_80241AB0));
     } else {
-        MakeEntity(0x802EA0C4, 70, 0, 0xFFFFFF06, 90, 0x80000000);
-        MakeEntity(0x802EA0C4, 70, 0, 0xFFFFFEC0, 90, 0x80000000);
-        MakeEntity(0x802EA0C4, 0xFFFFFFF6, 0, 0xFFFFFEE3, 90, 0x80000000);
-        MakeEntity(0x802EA5AC, 40, 60, 0xFFFFFEE3, 90, 326, 0x80000000);
+        MakeEntity(D_802EA0C4, 70, 0, 0xFFFFFF06, 90, 0x80000000);
+        MakeEntity(D_802EA0C4, 70, 0, 0xFFFFFEC0, 90, 0x80000000);
+        MakeEntity(D_802EA0C4, 0xFFFFFFF6, 0, 0xFFFFFEE3, 90, 0x80000000);
+        MakeEntity(D_802EA5AC, 40, 60, 0xFFFFFEE3, 90, 326, 0x80000000);
         AssignBlockFlag(SI_SAVE_FLAG(598));
     }
-    MakeEntity(0x802EAB04, 0xFFFFFF01, 150, 0xFFFFFF9C, 90, 104, 0x80000000);
+    MakeEntity(D_802EAB04, 0xFFFFFF01, 150, 0xFFFFFF9C, 90, 104, 0x80000000);
     AssignPanelFlag(SI_SAVE_FLAG(608));
     MakeItemEntity(164, 0xFFFFFF65, 150, 0xFFFFFF7E, 17, SI_SAVE_FLAG(616));
 });
@@ -247,7 +247,7 @@ Script N(script_80241E50) = SCRIPT({
 });
 
 s32 N(unk_80241E8C)[] = {
-    0x00000000, 0x00140016, 0x00000000, 0x00000000, N(script_80241E50), 0x80077F70, 0x00000000, 0x8007809C,
+    0x00000000, 0x00140016, 0x00000000, 0x00000000, N(script_80241E50), EnemyNpcHit, 0x00000000, EnemyNpcDefeat,
     0x00000000, 0x00000000, 0x00060000, 0x00000001, N(unk_80241E8C), 0x432F0000, 0x00000000, 0xC3870000,
     0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x000000B4, 0x80000000, 0x00000000, 0x00000000,
     0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000,

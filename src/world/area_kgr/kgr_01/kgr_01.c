@@ -114,9 +114,9 @@ Script N(script_80240848) = SCRIPT({
     ParentColliderToModel(1, 10000);
     EnableModel(10000, 0);
     spawn N(script_802407C4);
-    0x802C9C70(1, 4, 1);
-    0x802C94A0(1, func_80240354_8A9D64, 0);
-    0x802C90FC(4, 1, -1);
+    func_802C9C70(1, 4, 1);
+    func_802C94A0(1, func_80240354_8A9D64, 0);
+    func_802C90FC(4, 1, -1);
     HidePlayerShadow(1);
 });
 

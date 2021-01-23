@@ -345,9 +345,9 @@ NpcSettings N(npcSettings_80241610) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_802415F0),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xB,
@@ -380,9 +380,9 @@ NpcSettings N(npcSettings_8024168C) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_8024166C),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xC,
@@ -400,7 +400,7 @@ Script N(script_Idle_802416B8) = SCRIPT({
     spawn {
         PlaySoundAtNpc(-1, 993, 0);
         MakeLerp(0xFFFFFFA6, 0, 10, 0);
-1:
+    1:
         UpdateLerp();
         SetNpcRotation(-1, SI_VAR(0), 0, 0);
         sleep 1;
@@ -409,7 +409,7 @@ Script N(script_Idle_802416B8) = SCRIPT({
         }
         GetNpcPos(-1, SI_VAR(10), SI_VAR(11), SI_VAR(12));
         MakeLerp(0, 360, 15, 0);
-2:
+    2:
         UpdateLerp();
         SetNpcRotation(-1, 0, SI_VAR(0), 0);
         sleep 1;
@@ -482,16 +482,16 @@ Script N(script_80241D70) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA588, 200, 50, 0xFFFFFFB5, 0, 140, 0x80000000);
+    MakeEntity(D_802EA588, 200, 50, 0xFFFFFFB5, 0, 140, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(408));
-    MakeEntity(0x802EA0E8, 0, 50, 0xFFFFFFB5, 0, 0x80000000);
+    MakeEntity(D_802EA0E8, 0, 50, 0xFFFFFFB5, 0, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(409));
-    MakeEntity(0x802EA0C4, 0xFFFFFF9C, 50, 0xFFFFFFB5, 0, 0x80000000);
-    MakeEntity(0x802EA0C4, 0xFFFFFFCE, 50, 0xFFFFFFB5, 0, 0x80000000);
-    MakeEntity(0x802EA0C4, 50, 50, 0xFFFFFFB5, 0, 0x80000000);
-    MakeEntity(0x802EA0C4, 100, 50, 0xFFFFFFB5, 0, 0x80000000);
-    MakeEntity(0x802EA0C4, 250, 50, 0xFFFFFFB5, 0, 0x80000000);
-    MakeEntity(0x802EA0C4, 150, 50, 0xFFFFFFB5, 0, 0x80000000);
+    MakeEntity(D_802EA0C4, 0xFFFFFF9C, 50, 0xFFFFFFB5, 0, 0x80000000);
+    MakeEntity(D_802EA0C4, 0xFFFFFFCE, 50, 0xFFFFFFB5, 0, 0x80000000);
+    MakeEntity(D_802EA0C4, 50, 50, 0xFFFFFFB5, 0, 0x80000000);
+    MakeEntity(D_802EA0C4, 100, 50, 0xFFFFFFB5, 0, 0x80000000);
+    MakeEntity(D_802EA0C4, 250, 50, 0xFFFFFFB5, 0, 0x80000000);
+    MakeEntity(D_802EA0C4, 150, 50, 0xFFFFFFB5, 0, 0x80000000);
     AssignScript(N(script_80241D70));
 });
 

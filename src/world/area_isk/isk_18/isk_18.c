@@ -164,11 +164,11 @@ Script N(script_NpcAI_80240E00) = SCRIPT({
     func_802407D4_998744();
     SetNpcAnimation(-1, 0x33000F);
     func_8024081C_99878C();
-    0x80045580(1);
+    func_80045580(1);
     SetNpcFlagBits(-1, 512, 1);
     SetNpcAnimation(-1, 0x330000);
     func_80240874_9987E4();
-    0x80045580(0);
+    func_80045580(0);
     SetSelfVar(2, 5);
     SetSelfVar(3, 2);
     SetSelfVar(5, 5);
@@ -183,9 +183,9 @@ NpcSettings N(npcSettings_80240EF4) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80240C50),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xA,
@@ -199,9 +199,9 @@ NpcSettings N(npcSettings_80240F20) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80240E00),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xA,
@@ -209,9 +209,9 @@ NpcSettings N(npcSettings_80240F20) = {
 };
 
 s32 unk_missing_80240F4C[] = {
-    0x00000000, 0x00140016, 0x00000000, 0x00000000, N(script_80240CF0), 0x80077F70, 0x00000000, 0x8007809C,
+    0x00000000, 0x00140016, 0x00000000, 0x00000000, N(script_80240CF0), EnemyNpcHit, 0x00000000, EnemyNpcDefeat,
     0x00000000, 0x00000000, 0x00110000, 0x00000000, 0x00180018, 0x00000000, 0x00000000, N(script_80240D90),
-    0x80077F70, 0x00000000, 0x8007809C, 0x00000000, 0x00000000, 0x00190000,
+    EnemyNpcHit, 0x00000000, EnemyNpcDefeat, 0x00000000, 0x00000000, 0x00190000,
 };
 
 StaticNpc N(npcGroup_80240FA4)[] = {

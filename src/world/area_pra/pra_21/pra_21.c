@@ -82,7 +82,7 @@ Script N(script_80240274) = SCRIPT({
     SI_VAR(1) = 32;
     SI_VAR(2) = N(unk_802401C0);
     SI_VAR(3) = N(unk_802401C8);
-    spawn 0x80285EEC;
+    spawn func_80285EEC;
     sleep 17;
     GotoMap(D_80240958_D78878, 0);
     sleep 100;
@@ -104,7 +104,7 @@ Script N(script_EnterSingleDoor_80240360) = SCRIPT({
         == 1 {
             SI_VAR(2) = N(unk_802401C0);
             SI_VAR(3) = N(unk_802401C8);
-            await 0x802861B0;
+            await func_802861B0;
         }
     }
     spawn N(script_80240318);
@@ -196,11 +196,11 @@ Script N(script_MakeEntities) = SCRIPT({
     spawn {
         func_802400AC_D77FCC();
     }
-    MakeEntity(0x802EAA30, 366, 0xFFFFFF38, 0xFFFFFFB0, 0, 0x80000000);
+    MakeEntity(D_802EAA30, 366, 0xFFFFFF38, 0xFFFFFFB0, 0, 0x80000000);
     AssignScript(N(script_802406B0));
-    MakeEntity(0x802EA564, 55, 80, 0xFFFFFFB5, 0, 163, 0x80000000);
+    MakeEntity(D_802EA564, 55, 80, 0xFFFFFFB5, 0, 163, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1509));
-    MakeEntity(0x802EAB04, 50, 0, 0xFFFFFFB5, 0, 17, 0x80000000);
+    MakeEntity(D_802EAB04, 50, 0, 0xFFFFFFB5, 0, 17, 0x80000000);
     AssignPanelFlag(SI_SAVE_FLAG(1510));
 });
 

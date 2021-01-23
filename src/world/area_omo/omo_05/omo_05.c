@@ -251,7 +251,7 @@ Script N(script_80242EC0) = SCRIPT({
 });
 
 s32 unk_missing_80242EE0[] = {
-    0x00000000, 0x00170016, 0x00000000, 0x00000000, N(script_80242EC0), 0x80077F70, 0x00000000, 0x8007809C,
+    0x00000000, 0x00170016, 0x00000000, 0x00000000, N(script_80242EC0), EnemyNpcHit, 0x00000000, EnemyNpcDefeat,
     0x00000000, 0x00000000, 0x000E0001,
 };
 
@@ -281,9 +281,9 @@ NpcSettings N(npcSettings_80242F5C) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80242F3C),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
-    .onDefeat = 0x8007809C,
+    .onDefeat = &EnemyNpcDefeat,
     .flags = 0,
     .unk_24 = { 0, 0, 0, 0 },
     .level = 0xF,
@@ -308,7 +308,7 @@ Script N(script_80242FD0) = SCRIPT({
 });
 
 s32 unk_missing_80243040[] = {
-    0x00000000, 0x00190016, 0x00000000, 0x00000000, N(script_80242FD0), 0x80077F70, 0x00000000, 0x8007809C,
+    0x00000000, 0x00190016, 0x00000000, 0x00000000, N(script_80242FD0), EnemyNpcHit, 0x00000000, EnemyNpcDefeat,
     0x00000000, 0x00000000, 0x000E0001,
 };
 
@@ -338,7 +338,7 @@ s32 N(unk_8024309C)[] = {
 
 Script N(script_802430A0) = SCRIPT({
     SI_VAR(9) = SI_VAR(1);
-    0x802D663C();
+    func_802D663C();
     SI_VAR(10) = SI_VAR(0);
     match SI_VAR(0) {
         == 0 {}
@@ -355,14 +355,14 @@ Script N(script_802430A0) = SCRIPT({
         }
     }
     func_802421CC_DB448C(SI_VAR(10));
-    0x802D6954();
+    func_802D6954();
     unbind;
 });
 
 // Unable to use DSL: DSL does not support script opcode 0x4E
 Script N(script_802431D4) = {
     SI_CMD(ScriptOpcode_CALL, func_80242204_DB44C4, SI_VAR(0)),
-    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_802430A0), 0x10, 0, 0x80245650, 0, 1),
+    SI_CMD(ScriptOpcode_BIND_TRIGGER, N(script_802430A0), 0x10, 0, D_80245650, 0, 1),
     SI_CMD(ScriptOpcode_CALL, func_80242178_DB4438, SI_VAR(0)),
     SI_CMD(ScriptOpcode_RETURN),
     SI_CMD(ScriptOpcode_END)
@@ -387,7 +387,7 @@ Script N(script_Interact_80243224) = SCRIPT({
     } else {
         SpeakToPlayer(-1, 0xC10004, 0xC10001, 0, 0xF0041);
     }
-    SI_VAR(0) = 0x802457C0;
+    SI_VAR(0) = func_802457C0_A2FA00;
     SI_VAR(1) = -1;
     await N(script_802431D4);
     if (SI_VAR(0) <= 0) {
@@ -420,9 +420,9 @@ Script N(script_Interact_80243224) = SCRIPT({
                 SI_VAR(2) = -1.0;
                 SI_VAR(3) = -0.349609375;
                 SI_VAR(4) = 0.0;
-                SI_VAR(2) *= f SI_VAR(0);
-                SI_VAR(3) *= f SI_VAR(0);
-                SI_VAR(4) *= f SI_VAR(0);
+                SI_VAR(2) *=f SI_VAR(0);
+                SI_VAR(3) *=f SI_VAR(0);
+                SI_VAR(4) *=f SI_VAR(0);
                 SI_VAR(2) += -270.0;
                 SI_VAR(3) += 35.0;
                 SI_VAR(4) += 110.0;
@@ -438,9 +438,9 @@ Script N(script_Interact_80243224) = SCRIPT({
                 SI_VAR(2) = -1.0;
                 SI_VAR(3) = 0.3505859375;
                 SI_VAR(4) = 0.0;
-                SI_VAR(2) *= f SI_VAR(0);
-                SI_VAR(3) *= f SI_VAR(0);
-                SI_VAR(4) *= f SI_VAR(0);
+                SI_VAR(2) *=f SI_VAR(0);
+                SI_VAR(3) *=f SI_VAR(0);
+                SI_VAR(4) *=f SI_VAR(0);
                 SI_VAR(2) += -355.0;
                 SI_VAR(3) += 0.0;
                 SI_VAR(4) += 110.0;
@@ -457,9 +457,9 @@ Script N(script_Interact_80243224) = SCRIPT({
                 SI_VAR(2) = 1.0;
                 SI_VAR(3) = -0.349609375;
                 SI_VAR(4) = 0.0;
-                SI_VAR(2) *= f SI_VAR(0);
-                SI_VAR(3) *= f SI_VAR(0);
-                SI_VAR(4) *= f SI_VAR(0);
+                SI_VAR(2) *=f SI_VAR(0);
+                SI_VAR(3) *=f SI_VAR(0);
+                SI_VAR(4) *=f SI_VAR(0);
                 SI_VAR(2) += -240.0;
                 SI_VAR(3) += 35.0;
                 SI_VAR(4) += 110.0;
@@ -475,9 +475,9 @@ Script N(script_Interact_80243224) = SCRIPT({
                 SI_VAR(2) = 1.0;
                 SI_VAR(3) = 0.3505859375;
                 SI_VAR(4) = 0.0;
-                SI_VAR(2) *= f SI_VAR(0);
-                SI_VAR(3) *= f SI_VAR(0);
-                SI_VAR(4) *= f SI_VAR(0);
+                SI_VAR(2) *=f SI_VAR(0);
+                SI_VAR(3) *=f SI_VAR(0);
+                SI_VAR(4) *=f SI_VAR(0);
                 SI_VAR(2) += -155.0;
                 SI_VAR(3) += 0.0;
                 SI_VAR(4) += 110.0;
@@ -511,7 +511,7 @@ Script N(script_Interact_80243224) = SCRIPT({
                 GetNpcPos(2, SI_VAR(0), SI_VAR(1), SI_VAR(2));
                 SetNpcJumpscale(2, 0.05078125);
                 NpcJump0(2, SI_VAR(0), 2, SI_VAR(2), 8);
-                0x802CDE68(2, 15);
+                func_802CDE68(2, 15);
                 SI_VAR(3) = 0;
                 loop 5 {
                     SI_VAR(3) += 50;
@@ -529,7 +529,7 @@ Script N(script_Interact_80243224) = SCRIPT({
                 GetNpcPos(1, SI_VAR(0), SI_VAR(1), SI_VAR(2));
                 SetNpcJumpscale(1, 0.05078125);
                 NpcJump0(1, SI_VAR(0), 2, SI_VAR(2), 8);
-                0x802CDE68(1, 15);
+                func_802CDE68(1, 15);
                 SI_VAR(3) = 0;
                 loop 5 {
                     SI_VAR(3) -= 50;
@@ -567,7 +567,7 @@ Script N(script_Interact_80243224) = SCRIPT({
             sleep 18;
             SetMusicTrack(0, 114, 0, 8);
             sleep 30;
-            0x802D7CF8(0, 0, 0, 320, 240, 128, 10);
+            func_802D7CF8(0, 0, 0, 320, 240, 128, 10);
             loop 7 {
                 SetCamDistance(0, 320.0);
                 SetCamPitch(0, 14.0, 0.0);
@@ -590,14 +590,14 @@ Script N(script_Interact_80243224) = SCRIPT({
             func_80242328_DB45E8();
             func_80242328_DB45E8();
             func_80242328_DB45E8();
-            0x802D7CF8(0, 0, 0, 320, 240, 0, 10);
+            func_802D7CF8(0, 0, 0, 320, 240, 0, 10);
             UseSettingsFrom(0, 0xFFFFFF06, 0, 100);
             SetPanTarget(0, 0xFFFFFF06, 0, 100);
             SetCamSpeed(0, 90.0);
             PanToTarget(0, 0, 1);
             SetSelfVar(0, 1);
             spawn {
-19:
+            19:
                 PlayerFaceNpc(-1, 0);
                 GetSelfVar(0, SI_VAR(0));
                 if (SI_VAR(0) != 0) {
@@ -621,14 +621,14 @@ Script N(script_Interact_80243224) = SCRIPT({
             SetNpcRotation(-1, 0, 0, 0xFFFFFFD3);
             InterpNpcYaw(-1, 90, 0);
             MakeLerp(0, 100, 30, 0);
-10:
+        10:
             UpdateLerp();
             SI_VAR(2) = 3.9501953125;
             SI_VAR(3) = -1.8994140625;
             SI_VAR(4) = 0.0;
-            SI_VAR(2) *= f SI_VAR(0);
-            SI_VAR(3) *= f SI_VAR(0);
-            SI_VAR(4) *= f SI_VAR(0);
+            SI_VAR(2) *=f SI_VAR(0);
+            SI_VAR(3) *=f SI_VAR(0);
+            SI_VAR(4) *=f SI_VAR(0);
             SI_VAR(2) += -445.0;
             SI_VAR(3) += 130.0;
             SI_VAR(4) += 230.0;
@@ -659,7 +659,7 @@ Script N(script_Interact_80243224) = SCRIPT({
                 SetSelfVar(0, 2);
             }
             ShowMessageAtScreenPos(0xF0045, 160, 40);
-12:
+        12:
             GetSelfVar(0, SI_VAR(0));
             if (SI_VAR(0) != 2) {
                 sleep 1;
@@ -773,18 +773,18 @@ s32 pad_005148[] = {
 };
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA564, 400, 70, 0xFFFFFF6A, 0, 343, 0x80000000);
+    MakeEntity(D_802EA564, 400, 70, 0xFFFFFF6A, 0, 343, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1134));
-    MakeEntity(0x802EA564, 550, 70, 0xFFFFFF6A, 0, 343, 0x80000000);
+    MakeEntity(D_802EA564, 550, 70, 0xFFFFFF6A, 0, 343, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1135));
     if (SI_SAVE_FLAG(1106) == 0) {
         if (SI_SAVE_VAR(0) > 0xFFFFFFFD) {
             MakeItemEntity(41, 0xFFFFFF06, 0, 120, 0, SI_SAVE_FLAG(1106));
         }
     }
-    MakeEntity(0x802EA588, 475, 70, 0xFFFFFF6A, 0, 154, 0x80000000);
+    MakeEntity(D_802EA588, 475, 70, 0xFFFFFF6A, 0, 154, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1136));
-    MakeEntity(0x802EA588, 0xFFFFFDE4, 70, 0xFFFFFF6A, 0, 155, 0x80000000);
+    MakeEntity(D_802EA588, 0xFFFFFDE4, 70, 0xFFFFFF6A, 0, 155, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(1137));
 });
 

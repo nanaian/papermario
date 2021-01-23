@@ -199,12 +199,12 @@ Script N(script_80240720) = SCRIPT({
 
 Script N(script_MakeEntities) = SCRIPT({
     if (SI_SAVE_FLAG(662) == 0) {
-        MakeEntity(0x802BCF24, 0xFFFFFE2A, 0xFFFFFFB5, 139, 0, 0x80000000);
+        MakeEntity(D_802BCF24, 0xFFFFFE2A, 0xFFFFFFB5, 139, 0, 0x80000000);
         AssignScript(N(script_80240720));
     }
-    MakeEntity(0x802EA7E0, 1400, 0xFFFFFFF1, 135, 0, 0x80000000);
-    MakeEntity(0x802E9A18, 1490, 0xFFFFFFF1, 135, 0, 0x80000000);
-    MakeEntity(0x802EA564, 0xFFFFFDE4, 0xFFFFFFF1, 135, 0, 163, 0x80000000);
+    MakeEntity(D_802EA7E0, 1400, 0xFFFFFFF1, 135, 0, 0x80000000);
+    MakeEntity(D_802E9A18, 1490, 0xFFFFFFF1, 135, 0, 0x80000000);
+    MakeEntity(D_802EA564, 0xFFFFFDE4, 0xFFFFFFF1, 135, 0, 163, 0x80000000);
     AssignBlockFlag(SI_SAVE_FLAG(640));
 });
 
@@ -224,7 +224,7 @@ Script N(script_80240844) = SCRIPT({
     SI_VAR(3) = 10;
     SI_VAR(10) = 0x2E0001;
     SI_VAR(11) = 0x2E0001;
-    await 0x800936C0;
+    await func_800936C0;
     SetNpcAnimation(-1, 0x2E0002);
     sleep 15;
     GetNpcPos(-1, SI_VAR(0), SI_VAR(1), SI_VAR(2));
@@ -260,10 +260,10 @@ Script N(script_80240A48) = {
         SI_CMD(ScriptOpcode_CASE_MULTI_OR_EQ, 4),
         SI_CMD(ScriptOpcode_CASE_MULTI_OR_EQ, 6),
             SI_CMD(ScriptOpcode_SET, SI_VAR(0), 0x2E0003),
-            SI_CMD(ScriptOpcode_AWAIT_SCRIPT, 0x800936DC),
+            SI_CMD(ScriptOpcode_AWAIT_SCRIPT, func_800936DC),
         SI_CMD(ScriptOpcode_CASE_EQ, 3),
             SI_CMD(ScriptOpcode_SPAWN_THREAD),
-                SI_CMD(ScriptOpcode_CALL, 0x800458CC, SI_VAR(0)),
+                SI_CMD(ScriptOpcode_CALL, func_800458CC, SI_VAR(0)),
                 SI_CMD(ScriptOpcode_IF_EQ, SI_VAR(0), 0),
                     SI_CMD(ScriptOpcode_SET, SI_VAR(10), 0),
                     SI_CMD(ScriptOpcode_LOOP, 30),
@@ -320,7 +320,7 @@ Script N(script_80240C2C) = SCRIPT({
 s32 unk_missing_80240CE4[] = {
     0x002E0001, 0x001A0020, N(script_80240820), 0x00000000, N(script_80240844), N(script_80240A48), 0x00000000, N(script_80240B80),
     0x00000000, 0x00000000, 0x000A0000, 0x002D0001, 0x000E001F, N(script_80240C0C), 0x00000000, N(unk_80240C1C),
-    0x80077F70, 0x00000000, N(script_80240C2C), 0x00000000, 0x00000000, 0x00050000,
+    EnemyNpcHit, 0x00000000, N(script_80240C2C), 0x00000000, 0x00000000, 0x00050000,
 };
 
 Script N(script_80240D3C) = SCRIPT({
@@ -512,7 +512,7 @@ Script N(script_802417F8) = SCRIPT({
 
 Script N(script_NpcAI_802419DC) = SCRIPT({
     if (SI_SAVE_VAR(0) < 0xFFFFFFB1) {
-100:
+    100:
         GetNpcVar(70, 0, SI_VAR(0));
         if (SI_VAR(0) == 0) {
             sleep 1;
@@ -544,7 +544,7 @@ Script N(script_NpcAI_80241B6C) = SCRIPT({
 1:
     SetSelfVar(0, 0);
     EnableNpcShadow(-1, 0);
-    0x80045580(0);
+    func_80045580(0);
     SetNpcFlagBits(-1, 2, 1);
     SetNpcPos(-1, 0, 0xFFFFFC18, 0);
 2:
@@ -557,14 +557,14 @@ Script N(script_NpcAI_80241B6C) = SCRIPT({
     SetNpcAnimation(-1, 0x2D0004);
     EnableNpcShadow(-1, 1);
     SetNpcFlagBits(-1, 2, 0);
-    0x80045580(1);
+    func_80045580(1);
     GetNpcPos(SI_VAR(0), SI_VAR(1), SI_VAR(2), SI_VAR(3));
     GetNpcYaw(SI_VAR(0), SI_VAR(4));
     AddVectorPolar(SI_VAR(1), SI_VAR(3), 14.0, SI_VAR(4));
     SI_VAR(2) += 11;
     SetNpcPos(-1, SI_VAR(1), SI_VAR(2), SI_VAR(3));
     InterpNpcYaw(-1, SI_VAR(4), 0);
-    0x80045838(-1, 808, 0x200000);
+    func_80045838(-1, 808, 0x200000);
     SI_VAR(10) = SI_VAR(1);
     SI_VAR(10) -= 10;
     SI_VAR(11) = SI_VAR(2);
@@ -584,7 +584,7 @@ Script N(script_NpcAI_80241B6C) = SCRIPT({
             NpcMoveTo(-1, 0xFFFFFE3E, SI_VAR(3), 0);
         }
     }
-    0x80045838(-1, 0xB0000018, 0);
+    func_80045838(-1, 0xB0000018, 0);
     SetNpcAnimation(-1, 0x2D0005);
     GetNpcPos(-1, SI_VAR(0), SI_VAR(1), SI_VAR(2));
     SI_VAR(1) += 5;
@@ -610,7 +610,7 @@ Script N(script_80241FB8) = SCRIPT({
             DoNpcDefeat();
         }
         == 2 {
-            0x80045900(0);
+            func_80045900(0);
         }
     }
 });
@@ -669,7 +669,7 @@ NpcSettings N(npcSettings_8024217C) = {
     .otherAI = &N(script_80240C0C),
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80241B6C),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
     .onDefeat = &N(script_80241FB8),
     .flags = 0,
@@ -1005,7 +1005,7 @@ Script N(script_Idle_802443CC) = SCRIPT({
 
 Script N(script_Init_80244428) = SCRIPT({
     BindNpcIdle(-1, N(script_Idle_802443CC));
-    0x80045580(1);
+    func_80045580(1);
 });
 
 StaticNpc N(npcGroup_8024445C)[] = {

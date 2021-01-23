@@ -105,7 +105,7 @@ Script N(script_80240460) = SCRIPT({
                 PlaySound(11);
                 PlaySoundAt(8456, 0, 0xFFFFFFB0, 60, 0xFFFFFF38);
                 PlayEffect(17, 0, 0xFFFFFFB0, 73, 0xFFFFFF38, 10, 0, 0, 0, 0, 0, 0, 0, 0);
-                MakeEntity(0x802EA564, 0xFFFFFFB0, 60, 0xFFFFFF38, 0, 138, 0x80000000);
+                MakeEntity(D_802EA564, 0xFFFFFFB0, 60, 0xFFFFFF38, 0, 138, 0x80000000);
                 AssignBlockFlag(SI_SAVE_FLAG(802));
             }
         }
@@ -114,7 +114,7 @@ Script N(script_80240460) = SCRIPT({
                 PlaySound(11);
                 PlaySoundAt(8456, 0, 0xFFFFFF4C, 60, 0xFFFFFF38);
                 PlayEffect(17, 0, 0xFFFFFF4C, 73, 0xFFFFFF38, 10, 0, 0, 0, 0, 0, 0, 0, 0);
-                MakeEntity(0x802EA564, 0xFFFFFF4C, 60, 0xFFFFFF38, 0, 140, 0x80000000);
+                MakeEntity(D_802EA564, 0xFFFFFF4C, 60, 0xFFFFFF38, 0, 140, 0x80000000);
                 AssignBlockFlag(SI_SAVE_FLAG(803));
             }
         }
@@ -123,7 +123,7 @@ Script N(script_80240460) = SCRIPT({
                 PlaySound(11);
                 PlaySoundAt(8456, 0, 0xFFFFFF7E, 60, 0xFFFFFF6A);
                 PlayEffect(17, 0, 0xFFFFFF7E, 73, 0xFFFFFF6A, 10, 0, 0, 0, 0, 0, 0, 0, 0);
-                MakeEntity(0x802EA564, 0xFFFFFF7E, 60, 0xFFFFFF6A, 0, 142, 0x80000000);
+                MakeEntity(D_802EA564, 0xFFFFFF7E, 60, 0xFFFFFF6A, 0, 142, 0x80000000);
                 AssignBlockFlag(SI_SAVE_FLAG(804));
             }
         }
@@ -131,18 +131,18 @@ Script N(script_80240460) = SCRIPT({
 });
 
 Script N(script_MakeEntities) = SCRIPT({
-    MakeEntity(0x802EA07C, 0xFFFFFF7E, 0, 0xFFFFFF38, 0, 0x80000000);
+    MakeEntity(D_802EA07C, 0xFFFFFF7E, 0, 0xFFFFFF38, 0, 0x80000000);
     AssignScript(N(script_80240460));
     if (SI_SAVE_FLAG(802) == 1) {
-        MakeEntity(0x802EA564, 0xFFFFFFB0, 60, 0xFFFFFF38, 0, 138, 0x80000000);
+        MakeEntity(D_802EA564, 0xFFFFFFB0, 60, 0xFFFFFF38, 0, 138, 0x80000000);
         AssignBlockFlag(SI_SAVE_FLAG(802));
     }
     if (SI_SAVE_FLAG(803) == 1) {
-        MakeEntity(0x802EA564, 0xFFFFFF4C, 60, 0xFFFFFF38, 0, 140, 0x80000000);
+        MakeEntity(D_802EA564, 0xFFFFFF4C, 60, 0xFFFFFF38, 0, 140, 0x80000000);
         AssignBlockFlag(SI_SAVE_FLAG(803));
     }
     if (SI_SAVE_FLAG(804) == 1) {
-        MakeEntity(0x802EA564, 0xFFFFFF7E, 60, 0xFFFFFF6A, 0, 142, 0x80000000);
+        MakeEntity(D_802EA564, 0xFFFFFF7E, 60, 0xFFFFFF6A, 0, 142, 0x80000000);
         AssignBlockFlag(SI_SAVE_FLAG(804));
     }
 });
@@ -186,7 +186,7 @@ Script N(script_80240928) = SCRIPT({
             DoNpcDefeat();
         }
         == 2 {
-            0x80045900(0);
+            func_80045900(0);
         }
         == 3 {
             DisablePlayerInput(1);
@@ -224,7 +224,7 @@ NpcSettings N(npcSettings_80240B74) = {
     .otherAI = NULL,
     .onInteract = NULL,
     .ai = &N(script_NpcAI_80240908),
-    .onHit = 0x80077F70,
+    .onHit = &EnemyNpcHit,
     .aux = NULL,
     .onDefeat = &N(script_80240928),
     .flags = 0,
