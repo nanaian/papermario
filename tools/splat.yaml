@@ -8314,8 +8314,7 @@ segments:
     start: 0xE1E380
     vram: 0x80240000
     files:
-    - [0xE1E380, bin]
-    - [0xE1E460, bin]
+    - [0xE1E380, .data, world/area_mgm/mgm_03/mgm_03]
   - name: world/area_gv/gv_01/
     type: code
     overlay: True
