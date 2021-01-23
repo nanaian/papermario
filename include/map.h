@@ -9,7 +9,7 @@
 
 #define ENTRY_COUNT(entryList) (sizeof(entryList) / sizeof(Vec4f))
 
-typedef Vec4f EntryList[0];
+typedef Vec4f EntryList[];
 
 /// Fields other than main, entryList, entryCount, background, and tattle are initialised when the map loads.
 typedef struct MapConfig {
