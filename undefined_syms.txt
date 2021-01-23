@@ -5,8 +5,6 @@ ExecutePlayerAction = 0x8028505C;
 ExecutePeachAction = 0x80285174;
 PlayerFirstStrike = 0x802851FC;
 StartDefend = 0x802852B8;
-EnterWalk = 0x80285960;
-ExitWalk = 0x80285CF4;
 RunAwayStart = 0x802868BC;
 RunAwayFail = 0x80287078;
 RunAwayReset = 0x80287128;
@@ -29,6 +27,15 @@ DoAirLift = 0x8029C37C;
 DoBlowAway = 0x8029C4A8;
 DoBurnHit = 0x8029A0D0;
 DoDeath = 0x8029AEC0;
+
+EnterWalk = 0x80285960;
+EnterWalkShort = 0x80285A60;
+EnterSavePoint = 0x80285CB0;
+ExitWalk = 0x80285CF4;
+ExitSingleDoor = 0x80285DAC;
+EnterSingleDoor = 0x80285DD4;
+ExitDoubleDoor = 0x80285E4C;
+EnterDoubleDoor = 0x80285E74;
 
 rdpstateinit_dl = 0x80093BB8;
 paragoomba = 0x8021CD00;
