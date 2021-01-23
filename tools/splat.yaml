@@ -5342,10 +5342,9 @@ segments:
     start: 0xAA2180
     vram: 0x80240000
     files:
-    - [0xAA2180, bin]
-    - [0xAA2240, bin]
-    - [0xAA23B0, bin] # rodata
-    - [0xAA23C0, bin] # rodata
+    - [0xAA2180, .data, world/area_kpa/kpa_117/kpa_117]
+    - [0xAA2240, .data, world/area_kpa/kpa_117/kpa_117_2]
+    - [0xAA23B0, .rodata, world/area_kpa/kpa_117/kpa_117_2]
   - name: world/area_kpa/kpa_118/
     type: code
     overlay: True
