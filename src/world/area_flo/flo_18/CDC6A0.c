@@ -1,8 +1,6 @@
 #include "flo_18.h"
 
-#include "world/common/UnkTexturePanFunc.inc.c"
-
-#include "world/common/UnkTexturePanFunc2.inc.c"
+#include "world/common/UnkTexturePanFuncs.inc.c"
 
 INCLUDE_ASM(s32, "world/area_flo/flo_18/CDC6A0", func_8024030C_CDC9AC);
 

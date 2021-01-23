@@ -1,8 +1,6 @@
 #include "jan_01.h"
 
-#include "world/common/UnkTexturePanFunc.inc.c"
-
-#include "world/common/UnkTexturePanFunc2.inc.c"
+#include "world/common/UnkTexturePanFuncs.inc.c"
 
 INCLUDE_ASM(s32, "world/area_jan/jan_01/B28030", func_8024030C_B2833C);
 

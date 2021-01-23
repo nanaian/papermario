@@ -1,8 +1,6 @@
 #include "kzn_19.h"
 
-#include "world/common/UnkTexturePanFunc.inc.c"
-
-#include "world/common/UnkTexturePanFunc2.inc.c"
+#include "world/common/UnkTexturePanFuncs.inc.c"
 
 INCLUDE_ASM(s32, "world/area_kzn/kzn_19/C8DBB0", func_8024030C_C8DEBC);
 
