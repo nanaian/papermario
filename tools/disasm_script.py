@@ -67,7 +67,7 @@ class ScriptDisassembler:
             argc = self.read_word()
 
             if opcode > 0xFF or argc > 0xFF:
-                raise Exception(f"script '{script_name}' is malformed")
+                raise Exception(f"script '{self.script_name}' is malformed")
 
             argv = []
             for i in range(0, argc):

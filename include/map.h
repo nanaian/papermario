@@ -88,7 +88,7 @@ typedef struct NpcSettings {
 typedef struct ItemDrop {
     /* 0x00 */ ItemId item;
     /* 0x02 */ s16 weight;
-    /* 0x04 */ s16 unk_08;
+    /* 0x04 */ s16 unk_08; // TODO: this is padding, remove it
 } ItemDrop; // size = 0x06
 
 /// @brief Describes heart/flower drop chances after defeating an Npc in the overworld.
@@ -165,7 +165,7 @@ typedef struct StatDrop {
 #define OVERRIDE_MOVEMENT_SPEED(speed) (speed * 32767)
 #define NO_OVERRIDE_MOVEMENT_SPEED OVERRIDE_MOVEMENT_SPEED(-1)
 
-typedef struct StaticNPC {
+typedef struct StaticNpc {
     /* 0x000 */ NpcId id;
     /* 0x004 */ NpcSettings* settings;
     /* 0x008 */ Vec3f pos;
@@ -241,6 +241,37 @@ typedef struct {
     /* 0x04 */ StaticNpc* npcs;
     /* 0x08 */ BattleID battle;
 } NpcGroupList[]; // size = 0x0C
+
+typedef struct {
+    /* 0x00 */ s32 count;
+    /* 0x04 */ s32 modelIDs[0];
+} ModelIdList; // size = 4 + count * 4
+
+typedef struct {
+    /* 0x00 */ s32 count;
+    /* 0x04 */ Vec3f vectors[0];
+} TreeEffectVectorList; // size = 4 + count * 0x0C
+
+typedef struct {
+    /* 0x00 */ s32 itemID;
+    /* 0x04 */ Vec3i pos;
+    /* 0x10 */ s32 type;
+    /* 0x14 */ Bytecode flag;
+    /* 0x18 */ s32 unk_18;
+} TreeDrop; // size = 0x1C
+
+typedef struct {
+    /* 0x00 */ s32 count;
+    /* 0x04 */ TreeDrop drops[0];
+} TreeDropList; // size = 4 + count * 0x1C
+
+typedef struct {
+    /* 0x00 */ ModelIdList* leaves;
+    /* 0x04 */ ModelIdList* trunk;
+    /* 0x08 */ TreeDropList* drops;
+    /* 0x0C */ TreeEffectVectorList* effectVectors;
+    /* 0x10 */ Script* callback;
+} ShakeTree; // size = 0x14
 
 #define NPC_GROUP(npcs, battle) { sizeof(npcs) / sizeof(StaticNpc), &npcs, battle }
 
