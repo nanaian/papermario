@@ -8485,11 +8485,13 @@ segments:
     - [0xE225B0, c]
     - [0xE22B30, bin]
   - type: code
+    name: world/action/
+    ld_name: world_action_idle
     start: 0xE23260
     vram: 0x802B6000
     overlay: True
     subsections:
-    - [0xE23260, c]
+    - [0xE23260, c, idle]
     - [0xE23690, bin]
   - type: code
     start: 0xE236E0
